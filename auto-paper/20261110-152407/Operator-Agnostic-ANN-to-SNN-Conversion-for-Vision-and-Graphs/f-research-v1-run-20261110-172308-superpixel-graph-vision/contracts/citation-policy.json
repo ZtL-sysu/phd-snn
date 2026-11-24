@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "min_unique": 36,
+  "as_of": "2026-11-10",
+  "recent_window_years": 5,
+  "window_rationale": "QCFS (ICLR 2022) established the clip-floor-shift paradigm on which all recent low-latency conversion baselines build; a 5-year window retains the foundational calibration work while requiring a strict recent majority.",
+  "require_recent_majority": true
+}

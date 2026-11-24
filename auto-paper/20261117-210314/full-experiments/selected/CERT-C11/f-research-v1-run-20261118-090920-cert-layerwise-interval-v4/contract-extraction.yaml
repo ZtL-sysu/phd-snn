@@ -1,0 +1,24 @@
+schema_version: 3
+guidance: inputs/guidance-v4.md
+title: Layerwise Interval Certificates for Quantized Messages in Frozen Two-Layer GNN-to-SNN Conversion
+exact_chain: M=XW0; M_hat=Q(M); H=relu(A M+b0); Z=A H W1+b_out
+precision: source float32 snapshots cast to float64 before all quantization and reconstruction
+proposed: B_abs[i,k]=sum_j(abs(A)abs(A))[i,j] delta_j abs(W1[j,k])
+minkowski: B_mink[i,k]=norm(W1[:,k],2) sum_j(abs(A)abs(A))[i,j] delta_j
+global_outputwise: B_global_col[i,k]=rowsum(abs(A)abs(A))[i] max(delta) norm(W1[:,k],1)
+global_uniform_control: B_abs equals B_global_col within tolerance
+per_channel_gate: every per-channel cell tightens at least 25 percent versus B_global_col
+metrics:
+  width_over_rms: median(all N by C bound entries) / RMS(all N by C actual errors)
+  tolerance: value <= bound + 1e-10 + 1e-12*abs(bound)
+  zero_rule: ratio zero only if numerator and RMS are zero; otherwise infinity and fail
+  clipping: endpoint safeguard only; out-of-range beyond tolerance fails
+  constant_channel: identity quantization and zero radius
+strong_gate:
+  containment_cells: 36
+  median_width_over_rms_max: 10
+  per_cell_width_over_rms_max: 15
+  global_uniform_equality_cells: 18
+  per_channel_min_tightening: 0.25
+  proposed_no_looser_than_minkowski: true
+interpretation: deterministic theorem/implementation containment, not statistical coverage

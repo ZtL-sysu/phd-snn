@@ -1,0 +1,60 @@
+{
+  "device": "cuda",
+  "rows": [
+    {
+      "dataset": "cora",
+      "levels": 4,
+      "coverage": 1.0,
+      "global_coverage": 1.0,
+      "proposed_width_over_rms": 4.072068170243819,
+      "global_width_over_rms": 27.41771478336042,
+      "tightening": 0.8514803949775157
+    },
+    {
+      "dataset": "cora",
+      "levels": 8,
+      "coverage": 1.0,
+      "global_coverage": 1.0,
+      "proposed_width_over_rms": 6.226815770971891,
+      "global_width_over_rms": 41.92588112719195,
+      "tightening": 0.8514803838688234
+    },
+    {
+      "dataset": "chameleon",
+      "levels": 4,
+      "coverage": 1.0,
+      "global_coverage": 1.0,
+      "proposed_width_over_rms": 6.723266671044753,
+      "global_width_over_rms": 34.47444298043937,
+      "tightening": 0.8049782363457039
+    },
+    {
+      "dataset": "chameleon",
+      "levels": 8,
+      "coverage": 1.0,
+      "global_coverage": 1.0,
+      "proposed_width_over_rms": 4.75229230194674,
+      "global_width_over_rms": 24.368008556197665,
+      "tightening": 0.8049782241750707
+    },
+    {
+      "dataset": "squirrel",
+      "levels": 4,
+      "coverage": 1.0,
+      "global_coverage": 1.0,
+      "proposed_width_over_rms": 3.061744910056952,
+      "global_width_over_rms": 15.071521347100619,
+      "tightening": 0.7968522991445748
+    },
+    {
+      "dataset": "squirrel",
+      "levels": 8,
+      "coverage": 1.0,
+      "global_coverage": 1.0,
+      "proposed_width_over_rms": 4.385735618543505,
+      "global_width_over_rms": 21.588902892301725,
+      "tightening": 0.7968523161912322
+    }
+  ],
+  "elapsed_sec": 2.5531252999790013
+}

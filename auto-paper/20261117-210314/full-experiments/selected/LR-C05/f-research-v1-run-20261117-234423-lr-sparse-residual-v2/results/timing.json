@@ -1,0 +1,5891 @@
+{
+  "device": "NVIDIA GeForce RTX 3060",
+  "rows": [
+    {
+      "dataset": "cora",
+      "seed": 0,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.3751248999033123,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.788,
+            "teacher_agreement": 0.884,
+            "logit_mse": 0.32412123680114746
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.05606036260724068
+          }
+        },
+        {
+          "elapsed_sec": 0.37620549998246133,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.788,
+            "teacher_agreement": 0.884,
+            "logit_mse": 0.32412123680114746
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.05606036260724068
+          }
+        },
+        {
+          "elapsed_sec": 0.3733659000135958,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.788,
+            "teacher_agreement": 0.884,
+            "logit_mse": 0.32412123680114746
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.05606036260724068
+          }
+        },
+        {
+          "elapsed_sec": 0.3742314998526126,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.788,
+            "teacher_agreement": 0.884,
+            "logit_mse": 0.32412123680114746
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.05606036260724068
+          }
+        },
+        {
+          "elapsed_sec": 0.3735199000220746,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.788,
+            "teacher_agreement": 0.884,
+            "logit_mse": 0.32412123680114746
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.05606036260724068
+          }
+        },
+        {
+          "elapsed_sec": 0.37400730000808835,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.788,
+            "teacher_agreement": 0.884,
+            "logit_mse": 0.32412123680114746
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.05606036260724068
+          }
+        },
+        {
+          "elapsed_sec": 0.37373730004765093,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.788,
+            "teacher_agreement": 0.884,
+            "logit_mse": 0.32412123680114746
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.05606036260724068
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.37400730000808835,
+      "p95_elapsed_sec": 0.37588131995871665,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 0,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.407987599959597,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.78,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.3193046450614929
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.932,
+            "logit_mse": 0.0595061294734478
+          }
+        },
+        {
+          "elapsed_sec": 0.4067595999222249,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.78,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.3193046450614929
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.932,
+            "logit_mse": 0.0595061294734478
+          }
+        },
+        {
+          "elapsed_sec": 0.40591019997373223,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.78,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.3193046450614929
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.932,
+            "logit_mse": 0.0595061294734478
+          }
+        },
+        {
+          "elapsed_sec": 0.4064491998869926,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.78,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.3193046450614929
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.932,
+            "logit_mse": 0.0595061294734478
+          }
+        },
+        {
+          "elapsed_sec": 0.40774339996278286,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.78,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.3193046450614929
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.932,
+            "logit_mse": 0.0595061294734478
+          }
+        },
+        {
+          "elapsed_sec": 0.4080998001154512,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.78,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.3193046450614929
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.932,
+            "logit_mse": 0.0595061294734478
+          }
+        },
+        {
+          "elapsed_sec": 0.4067783001810312,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.78,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.3193046450614929
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.932,
+            "logit_mse": 0.0595061294734478
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.4067783001810312,
+      "p95_elapsed_sec": 0.40806614006869496,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 0,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.376074800034985,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.784,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.3219105303287506
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05880261957645416
+          }
+        },
+        {
+          "elapsed_sec": 2.402055600192398,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.784,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.3219105303287506
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05880261957645416
+          }
+        },
+        {
+          "elapsed_sec": 2.38733800011687,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.784,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.3219105303287506
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05880261957645416
+          }
+        },
+        {
+          "elapsed_sec": 2.403569499962032,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.784,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.3219105303287506
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05880261957645416
+          }
+        },
+        {
+          "elapsed_sec": 2.401689400197938,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.784,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.3219105303287506
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05880261957645416
+          }
+        },
+        {
+          "elapsed_sec": 2.4871370000764728,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.784,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.3219105303287506
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05880261957645416
+          }
+        },
+        {
+          "elapsed_sec": 2.452227900037542,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.784,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.3219105303287506
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05880261957645416
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.402055600192398,
+      "p95_elapsed_sec": 2.4766642700647936,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 0,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.4244522999506444,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3219308853149414
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.92,
+            "logit_mse": 0.05590735003352165
+          }
+        },
+        {
+          "elapsed_sec": 0.4192276999820024,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3219308853149414
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.92,
+            "logit_mse": 0.05590735003352165
+          }
+        },
+        {
+          "elapsed_sec": 0.42020370019599795,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3219308853149414
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.92,
+            "logit_mse": 0.05590735003352165
+          }
+        },
+        {
+          "elapsed_sec": 0.4190382999368012,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3219308853149414
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.92,
+            "logit_mse": 0.05590735003352165
+          }
+        },
+        {
+          "elapsed_sec": 0.42753309989348054,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3219308853149414
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.92,
+            "logit_mse": 0.05590735003352165
+          }
+        },
+        {
+          "elapsed_sec": 0.42885230015963316,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3219308853149414
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.92,
+            "logit_mse": 0.05590735003352165
+          }
+        },
+        {
+          "elapsed_sec": 0.43552870000712574,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3219308853149414
+          },
+          "T4": {
+            "accuracy": 0.768,
+            "teacher_agreement": 0.92,
+            "logit_mse": 0.05590735003352165
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.4244522999506444,
+      "p95_elapsed_sec": 0.43352578005287795,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 0,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.4160940998699516,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.776,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3246876299381256
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.922,
+            "logit_mse": 0.0585966520011425
+          }
+        },
+        {
+          "elapsed_sec": 0.4151548999361694,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.776,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3246876299381256
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.922,
+            "logit_mse": 0.0585966520011425
+          }
+        },
+        {
+          "elapsed_sec": 0.41724959993734956,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.776,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3246876299381256
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.922,
+            "logit_mse": 0.0585966520011425
+          }
+        },
+        {
+          "elapsed_sec": 0.41540930001065135,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.776,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3246876299381256
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.922,
+            "logit_mse": 0.0585966520011425
+          }
+        },
+        {
+          "elapsed_sec": 0.41614270000718534,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.776,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3246876299381256
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.922,
+            "logit_mse": 0.0585966520011425
+          }
+        },
+        {
+          "elapsed_sec": 0.41658219997771084,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.776,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3246876299381256
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.922,
+            "logit_mse": 0.0585966520011425
+          }
+        },
+        {
+          "elapsed_sec": 0.41864039981737733,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.776,
+            "teacher_agreement": 0.888,
+            "logit_mse": 0.3246876299381256
+          },
+          "T4": {
+            "accuracy": 0.774,
+            "teacher_agreement": 0.922,
+            "logit_mse": 0.0585966520011425
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.41614270000718534,
+      "p95_elapsed_sec": 0.418223159853369,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 0,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.4199534000363201,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.782,
+            "teacher_agreement": 0.906,
+            "logit_mse": 0.3208194673061371
+          },
+          "T4": {
+            "accuracy": 0.764,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05546584725379944
+          }
+        },
+        {
+          "elapsed_sec": 0.42081190017051995,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.782,
+            "teacher_agreement": 0.906,
+            "logit_mse": 0.3208194673061371
+          },
+          "T4": {
+            "accuracy": 0.764,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05546584725379944
+          }
+        },
+        {
+          "elapsed_sec": 0.4199395999312401,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.782,
+            "teacher_agreement": 0.906,
+            "logit_mse": 0.3208194673061371
+          },
+          "T4": {
+            "accuracy": 0.764,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05546584725379944
+          }
+        },
+        {
+          "elapsed_sec": 0.4179796001408249,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.782,
+            "teacher_agreement": 0.906,
+            "logit_mse": 0.3208194673061371
+          },
+          "T4": {
+            "accuracy": 0.764,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05546584725379944
+          }
+        },
+        {
+          "elapsed_sec": 0.41751970001496375,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.782,
+            "teacher_agreement": 0.906,
+            "logit_mse": 0.3208194673061371
+          },
+          "T4": {
+            "accuracy": 0.764,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05546584725379944
+          }
+        },
+        {
+          "elapsed_sec": 0.4231018000282347,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.782,
+            "teacher_agreement": 0.906,
+            "logit_mse": 0.3208194673061371
+          },
+          "T4": {
+            "accuracy": 0.764,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05546584725379944
+          }
+        },
+        {
+          "elapsed_sec": 0.42039019986987114,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.782,
+            "teacher_agreement": 0.906,
+            "logit_mse": 0.3208194673061371
+          },
+          "T4": {
+            "accuracy": 0.764,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.05546584725379944
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.4199534000363201,
+      "p95_elapsed_sec": 0.4224148300709203,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 1,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.3739407998509705,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.848,
+            "logit_mse": 0.15721727907657623
+          },
+          "T4": {
+            "accuracy": 0.752,
+            "teacher_agreement": 0.886,
+            "logit_mse": 0.020879492163658142
+          }
+        },
+        {
+          "elapsed_sec": 0.37420630012638867,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.848,
+            "logit_mse": 0.15721727907657623
+          },
+          "T4": {
+            "accuracy": 0.752,
+            "teacher_agreement": 0.886,
+            "logit_mse": 0.020879492163658142
+          }
+        },
+        {
+          "elapsed_sec": 0.3725829999893904,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.848,
+            "logit_mse": 0.15721727907657623
+          },
+          "T4": {
+            "accuracy": 0.752,
+            "teacher_agreement": 0.886,
+            "logit_mse": 0.020879492163658142
+          }
+        },
+        {
+          "elapsed_sec": 0.37396789994090796,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.848,
+            "logit_mse": 0.15721727907657623
+          },
+          "T4": {
+            "accuracy": 0.752,
+            "teacher_agreement": 0.886,
+            "logit_mse": 0.020879492163658142
+          }
+        },
+        {
+          "elapsed_sec": 0.3738945000804961,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.848,
+            "logit_mse": 0.15721727907657623
+          },
+          "T4": {
+            "accuracy": 0.752,
+            "teacher_agreement": 0.886,
+            "logit_mse": 0.020879492163658142
+          }
+        },
+        {
+          "elapsed_sec": 0.3739183999132365,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.848,
+            "logit_mse": 0.15721727907657623
+          },
+          "T4": {
+            "accuracy": 0.752,
+            "teacher_agreement": 0.886,
+            "logit_mse": 0.020879492163658142
+          }
+        },
+        {
+          "elapsed_sec": 0.3745712998788804,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.848,
+            "logit_mse": 0.15721727907657623
+          },
+          "T4": {
+            "accuracy": 0.752,
+            "teacher_agreement": 0.886,
+            "logit_mse": 0.020879492163658142
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.3739407998509705,
+      "p95_elapsed_sec": 0.3744617999531329,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 1,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.4067059000954032,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.862,
+            "logit_mse": 0.15632224082946777
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.904,
+            "logit_mse": 0.022627826780080795
+          }
+        },
+        {
+          "elapsed_sec": 0.4079158999957144,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.862,
+            "logit_mse": 0.15632224082946777
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.904,
+            "logit_mse": 0.022627826780080795
+          }
+        },
+        {
+          "elapsed_sec": 0.40963669982738793,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.862,
+            "logit_mse": 0.15632224082946777
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.904,
+            "logit_mse": 0.022627826780080795
+          }
+        },
+        {
+          "elapsed_sec": 0.40832320018671453,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.862,
+            "logit_mse": 0.15632224082946777
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.904,
+            "logit_mse": 0.022627826780080795
+          }
+        },
+        {
+          "elapsed_sec": 0.4070790000259876,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.862,
+            "logit_mse": 0.15632224082946777
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.904,
+            "logit_mse": 0.022627826780080795
+          }
+        },
+        {
+          "elapsed_sec": 0.4101946000009775,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.862,
+            "logit_mse": 0.15632224082946777
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.904,
+            "logit_mse": 0.022627826780080795
+          }
+        },
+        {
+          "elapsed_sec": 0.41123079997487366,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.862,
+            "logit_mse": 0.15632224082946777
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.904,
+            "logit_mse": 0.022627826780080795
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.40832320018671453,
+      "p95_elapsed_sec": 0.4109199399827048,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 1,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.3910115000326186,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.742,
+            "teacher_agreement": 0.866,
+            "logit_mse": 0.15569646656513214
+          },
+          "T4": {
+            "accuracy": 0.756,
+            "teacher_agreement": 0.892,
+            "logit_mse": 0.021922843530774117
+          }
+        },
+        {
+          "elapsed_sec": 2.4012891000602394,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.742,
+            "teacher_agreement": 0.866,
+            "logit_mse": 0.15569646656513214
+          },
+          "T4": {
+            "accuracy": 0.756,
+            "teacher_agreement": 0.892,
+            "logit_mse": 0.021922843530774117
+          }
+        },
+        {
+          "elapsed_sec": 2.398950800066814,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.742,
+            "teacher_agreement": 0.866,
+            "logit_mse": 0.15569646656513214
+          },
+          "T4": {
+            "accuracy": 0.756,
+            "teacher_agreement": 0.892,
+            "logit_mse": 0.021922843530774117
+          }
+        },
+        {
+          "elapsed_sec": 2.425325999967754,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.742,
+            "teacher_agreement": 0.866,
+            "logit_mse": 0.15569646656513214
+          },
+          "T4": {
+            "accuracy": 0.756,
+            "teacher_agreement": 0.892,
+            "logit_mse": 0.021922843530774117
+          }
+        },
+        {
+          "elapsed_sec": 2.4026484999340028,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.742,
+            "teacher_agreement": 0.866,
+            "logit_mse": 0.15569646656513214
+          },
+          "T4": {
+            "accuracy": 0.756,
+            "teacher_agreement": 0.892,
+            "logit_mse": 0.021922843530774117
+          }
+        },
+        {
+          "elapsed_sec": 2.571702500106767,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.742,
+            "teacher_agreement": 0.866,
+            "logit_mse": 0.15569646656513214
+          },
+          "T4": {
+            "accuracy": 0.756,
+            "teacher_agreement": 0.892,
+            "logit_mse": 0.021922843530774117
+          }
+        },
+        {
+          "elapsed_sec": 2.430448800092563,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.742,
+            "teacher_agreement": 0.866,
+            "logit_mse": 0.15569646656513214
+          },
+          "T4": {
+            "accuracy": 0.756,
+            "teacher_agreement": 0.892,
+            "logit_mse": 0.021922843530774117
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.4026484999340028,
+      "p95_elapsed_sec": 2.5293263901025056,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 1,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.42179339984431863,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.85,
+            "logit_mse": 0.15454140305519104
+          },
+          "T4": {
+            "accuracy": 0.754,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.021018702536821365
+          }
+        },
+        {
+          "elapsed_sec": 0.4201873999554664,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.85,
+            "logit_mse": 0.15454140305519104
+          },
+          "T4": {
+            "accuracy": 0.754,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.021018702536821365
+          }
+        },
+        {
+          "elapsed_sec": 0.41896320017986,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.85,
+            "logit_mse": 0.15454140305519104
+          },
+          "T4": {
+            "accuracy": 0.754,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.021018702536821365
+          }
+        },
+        {
+          "elapsed_sec": 0.42325760005041957,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.85,
+            "logit_mse": 0.15454140305519104
+          },
+          "T4": {
+            "accuracy": 0.754,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.021018702536821365
+          }
+        },
+        {
+          "elapsed_sec": 0.4229115000925958,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.85,
+            "logit_mse": 0.15454140305519104
+          },
+          "T4": {
+            "accuracy": 0.754,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.021018702536821365
+          }
+        },
+        {
+          "elapsed_sec": 0.42306650010868907,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.85,
+            "logit_mse": 0.15454140305519104
+          },
+          "T4": {
+            "accuracy": 0.754,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.021018702536821365
+          }
+        },
+        {
+          "elapsed_sec": 0.4203884999733418,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.736,
+            "teacher_agreement": 0.85,
+            "logit_mse": 0.15454140305519104
+          },
+          "T4": {
+            "accuracy": 0.754,
+            "teacher_agreement": 0.89,
+            "logit_mse": 0.021018702536821365
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.42179339984431863,
+      "p95_elapsed_sec": 0.4232002700679004,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 1,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.4165529999881983,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.856,
+            "logit_mse": 0.15661825239658356
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02114689350128174
+          }
+        },
+        {
+          "elapsed_sec": 0.4168604000005871,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.856,
+            "logit_mse": 0.15661825239658356
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02114689350128174
+          }
+        },
+        {
+          "elapsed_sec": 0.41618519998155534,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.856,
+            "logit_mse": 0.15661825239658356
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02114689350128174
+          }
+        },
+        {
+          "elapsed_sec": 0.416759799933061,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.856,
+            "logit_mse": 0.15661825239658356
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02114689350128174
+          }
+        },
+        {
+          "elapsed_sec": 0.41778460005298257,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.856,
+            "logit_mse": 0.15661825239658356
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02114689350128174
+          }
+        },
+        {
+          "elapsed_sec": 0.4161922999192029,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.856,
+            "logit_mse": 0.15661825239658356
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02114689350128174
+          }
+        },
+        {
+          "elapsed_sec": 0.415943699888885,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.734,
+            "teacher_agreement": 0.856,
+            "logit_mse": 0.15661825239658356
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02114689350128174
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.4165529999881983,
+      "p95_elapsed_sec": 0.4175073400372639,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 1,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.4197135998401791,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.744,
+            "teacher_agreement": 0.868,
+            "logit_mse": 0.15682144463062286
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02107902802526951
+          }
+        },
+        {
+          "elapsed_sec": 0.42048120009712875,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.744,
+            "teacher_agreement": 0.868,
+            "logit_mse": 0.15682144463062286
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02107902802526951
+          }
+        },
+        {
+          "elapsed_sec": 0.41871699993498623,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.744,
+            "teacher_agreement": 0.868,
+            "logit_mse": 0.15682144463062286
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02107902802526951
+          }
+        },
+        {
+          "elapsed_sec": 0.4180105000268668,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.744,
+            "teacher_agreement": 0.868,
+            "logit_mse": 0.15682144463062286
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02107902802526951
+          }
+        },
+        {
+          "elapsed_sec": 0.418432499980554,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.744,
+            "teacher_agreement": 0.868,
+            "logit_mse": 0.15682144463062286
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02107902802526951
+          }
+        },
+        {
+          "elapsed_sec": 0.4196599000133574,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.744,
+            "teacher_agreement": 0.868,
+            "logit_mse": 0.15682144463062286
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02107902802526951
+          }
+        },
+        {
+          "elapsed_sec": 0.4179219000507146,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.744,
+            "teacher_agreement": 0.868,
+            "logit_mse": 0.15682144463062286
+          },
+          "T4": {
+            "accuracy": 0.766,
+            "teacher_agreement": 0.898,
+            "logit_mse": 0.02107902802526951
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.41871699993498623,
+      "p95_elapsed_sec": 0.4202509200200438,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 2,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.37465510005131364,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.694,
+            "teacher_agreement": 0.814,
+            "logit_mse": 0.3553035259246826
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.06144895777106285
+          }
+        },
+        {
+          "elapsed_sec": 0.3739535000640899,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.694,
+            "teacher_agreement": 0.814,
+            "logit_mse": 0.3553035259246826
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.06144895777106285
+          }
+        },
+        {
+          "elapsed_sec": 0.3749750000424683,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.694,
+            "teacher_agreement": 0.814,
+            "logit_mse": 0.3553035259246826
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.06144895777106285
+          }
+        },
+        {
+          "elapsed_sec": 0.3743652000557631,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.694,
+            "teacher_agreement": 0.814,
+            "logit_mse": 0.3553035259246826
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.06144895777106285
+          }
+        },
+        {
+          "elapsed_sec": 0.3747455000411719,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.694,
+            "teacher_agreement": 0.814,
+            "logit_mse": 0.3553035259246826
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.06144895777106285
+          }
+        },
+        {
+          "elapsed_sec": 0.37588659999892116,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.694,
+            "teacher_agreement": 0.814,
+            "logit_mse": 0.3553035259246826
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.06144895777106285
+          }
+        },
+        {
+          "elapsed_sec": 0.374261099845171,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.694,
+            "teacher_agreement": 0.814,
+            "logit_mse": 0.3553035259246826
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.916,
+            "logit_mse": 0.06144895777106285
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.37465510005131364,
+      "p95_elapsed_sec": 0.3756131200119853,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 2,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.4069890999235213,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.71,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.36649617552757263
+          },
+          "T4": {
+            "accuracy": 0.802,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.06499131768941879
+          }
+        },
+        {
+          "elapsed_sec": 0.40870200004428625,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.71,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.36649617552757263
+          },
+          "T4": {
+            "accuracy": 0.802,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.06499131768941879
+          }
+        },
+        {
+          "elapsed_sec": 0.40711460006423295,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.71,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.36649617552757263
+          },
+          "T4": {
+            "accuracy": 0.802,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.06499131768941879
+          }
+        },
+        {
+          "elapsed_sec": 0.40730739990249276,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.71,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.36649617552757263
+          },
+          "T4": {
+            "accuracy": 0.802,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.06499131768941879
+          }
+        },
+        {
+          "elapsed_sec": 0.4071883999276906,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.71,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.36649617552757263
+          },
+          "T4": {
+            "accuracy": 0.802,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.06499131768941879
+          }
+        },
+        {
+          "elapsed_sec": 0.40685830009169877,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.71,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.36649617552757263
+          },
+          "T4": {
+            "accuracy": 0.802,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.06499131768941879
+          }
+        },
+        {
+          "elapsed_sec": 0.40702170017175376,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.71,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.36649617552757263
+          },
+          "T4": {
+            "accuracy": 0.802,
+            "teacher_agreement": 0.926,
+            "logit_mse": 0.06499131768941879
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.40711460006423295,
+      "p95_elapsed_sec": 0.4082836200017482,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 2,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.3803501001093537,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.704,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.3632013499736786
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06275749206542969
+          }
+        },
+        {
+          "elapsed_sec": 2.4047071000095457,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.704,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.3632013499736786
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06275749206542969
+          }
+        },
+        {
+          "elapsed_sec": 2.420299099991098,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.704,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.3632013499736786
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06275749206542969
+          }
+        },
+        {
+          "elapsed_sec": 2.4882632000371814,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.704,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.3632013499736786
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06275749206542969
+          }
+        },
+        {
+          "elapsed_sec": 2.4616966999601573,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.704,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.3632013499736786
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06275749206542969
+          }
+        },
+        {
+          "elapsed_sec": 2.4211573000065982,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.704,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.3632013499736786
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06275749206542969
+          }
+        },
+        {
+          "elapsed_sec": 2.3986424999311566,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.704,
+            "teacher_agreement": 0.83,
+            "logit_mse": 0.3632013499736786
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06275749206542969
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.420299099991098,
+      "p95_elapsed_sec": 2.480293250014074,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 2,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.4201672999188304,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.81,
+            "logit_mse": 0.3554110527038574
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.912,
+            "logit_mse": 0.061859823763370514
+          }
+        },
+        {
+          "elapsed_sec": 0.4186238998081535,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.81,
+            "logit_mse": 0.3554110527038574
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.912,
+            "logit_mse": 0.061859823763370514
+          }
+        },
+        {
+          "elapsed_sec": 0.41847370006144047,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.81,
+            "logit_mse": 0.3554110527038574
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.912,
+            "logit_mse": 0.061859823763370514
+          }
+        },
+        {
+          "elapsed_sec": 0.4179704000707716,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.81,
+            "logit_mse": 0.3554110527038574
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.912,
+            "logit_mse": 0.061859823763370514
+          }
+        },
+        {
+          "elapsed_sec": 0.4196534000802785,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.81,
+            "logit_mse": 0.3554110527038574
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.912,
+            "logit_mse": 0.061859823763370514
+          }
+        },
+        {
+          "elapsed_sec": 0.41904730000533164,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.81,
+            "logit_mse": 0.3554110527038574
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.912,
+            "logit_mse": 0.061859823763370514
+          }
+        },
+        {
+          "elapsed_sec": 0.42060220008715987,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.81,
+            "logit_mse": 0.3554110527038574
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.912,
+            "logit_mse": 0.061859823763370514
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.41904730000533164,
+      "p95_elapsed_sec": 0.42047173003666105,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 2,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.416187800001353,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.7,
+            "teacher_agreement": 0.844,
+            "logit_mse": 0.3664250075817108
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.91,
+            "logit_mse": 0.06607753783464432
+          }
+        },
+        {
+          "elapsed_sec": 0.4159452999010682,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.7,
+            "teacher_agreement": 0.844,
+            "logit_mse": 0.3664250075817108
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.91,
+            "logit_mse": 0.06607753783464432
+          }
+        },
+        {
+          "elapsed_sec": 0.418628100072965,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.7,
+            "teacher_agreement": 0.844,
+            "logit_mse": 0.3664250075817108
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.91,
+            "logit_mse": 0.06607753783464432
+          }
+        },
+        {
+          "elapsed_sec": 0.41697959997691214,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.7,
+            "teacher_agreement": 0.844,
+            "logit_mse": 0.3664250075817108
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.91,
+            "logit_mse": 0.06607753783464432
+          }
+        },
+        {
+          "elapsed_sec": 0.4180349998641759,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.7,
+            "teacher_agreement": 0.844,
+            "logit_mse": 0.3664250075817108
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.91,
+            "logit_mse": 0.06607753783464432
+          }
+        },
+        {
+          "elapsed_sec": 0.4161113000009209,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.7,
+            "teacher_agreement": 0.844,
+            "logit_mse": 0.3664250075817108
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.91,
+            "logit_mse": 0.06607753783464432
+          }
+        },
+        {
+          "elapsed_sec": 0.4162286000791937,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.7,
+            "teacher_agreement": 0.844,
+            "logit_mse": 0.3664250075817108
+          },
+          "T4": {
+            "accuracy": 0.792,
+            "teacher_agreement": 0.91,
+            "logit_mse": 0.06607753783464432
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.4162286000791937,
+      "p95_elapsed_sec": 0.4184501700103283,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "cora",
+      "seed": 2,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 0.41880950005725026,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.836,
+            "logit_mse": 0.35853180289268494
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06287087500095367
+          }
+        },
+        {
+          "elapsed_sec": 0.41778159979730844,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.836,
+            "logit_mse": 0.35853180289268494
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06287087500095367
+          }
+        },
+        {
+          "elapsed_sec": 0.4196234999690205,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.836,
+            "logit_mse": 0.35853180289268494
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06287087500095367
+          }
+        },
+        {
+          "elapsed_sec": 0.41776870004832745,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.836,
+            "logit_mse": 0.35853180289268494
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06287087500095367
+          }
+        },
+        {
+          "elapsed_sec": 0.41988419997505844,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.836,
+            "logit_mse": 0.35853180289268494
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06287087500095367
+          }
+        },
+        {
+          "elapsed_sec": 0.42009130003862083,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.836,
+            "logit_mse": 0.35853180289268494
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06287087500095367
+          }
+        },
+        {
+          "elapsed_sec": 0.4187565001193434,
+          "peak_memory_mb": 88.716796875,
+          "T2": {
+            "accuracy": 0.696,
+            "teacher_agreement": 0.836,
+            "logit_mse": 0.35853180289268494
+          },
+          "T4": {
+            "accuracy": 0.786,
+            "teacher_agreement": 0.924,
+            "logit_mse": 0.06287087500095367
+          }
+        }
+      ],
+      "median_elapsed_sec": 0.41880950005725026,
+      "p95_elapsed_sec": 0.4200291700195521,
+      "peak_memory_mb": 88.716796875
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 0,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.1602527000941336,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.49794238683127573,
+            "teacher_agreement": 0.6762688614540466,
+            "logit_mse": 0.3651479184627533
+          },
+          "T4": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7366255144032922,
+            "logit_mse": 0.16303770244121552
+          }
+        },
+        {
+          "elapsed_sec": 2.159333100076765,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.49794238683127573,
+            "teacher_agreement": 0.6762688614540466,
+            "logit_mse": 0.3651479184627533
+          },
+          "T4": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7366255144032922,
+            "logit_mse": 0.16303770244121552
+          }
+        },
+        {
+          "elapsed_sec": 2.1608716999180615,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.49794238683127573,
+            "teacher_agreement": 0.6762688614540466,
+            "logit_mse": 0.3651479184627533
+          },
+          "T4": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7366255144032922,
+            "logit_mse": 0.16303770244121552
+          }
+        },
+        {
+          "elapsed_sec": 2.1594857000745833,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.49794238683127573,
+            "teacher_agreement": 0.6762688614540466,
+            "logit_mse": 0.3651479184627533
+          },
+          "T4": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7366255144032922,
+            "logit_mse": 0.16303770244121552
+          }
+        },
+        {
+          "elapsed_sec": 2.1590354000218213,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.49794238683127573,
+            "teacher_agreement": 0.6762688614540466,
+            "logit_mse": 0.3651479184627533
+          },
+          "T4": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7366255144032922,
+            "logit_mse": 0.16303770244121552
+          }
+        },
+        {
+          "elapsed_sec": 2.159707000013441,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.49794238683127573,
+            "teacher_agreement": 0.6762688614540466,
+            "logit_mse": 0.3651479184627533
+          },
+          "T4": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7366255144032922,
+            "logit_mse": 0.16303770244121552
+          }
+        },
+        {
+          "elapsed_sec": 2.159112600143999,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.49794238683127573,
+            "teacher_agreement": 0.6762688614540466,
+            "logit_mse": 0.3651479184627533
+          },
+          "T4": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7366255144032922,
+            "logit_mse": 0.16303770244121552
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.1594857000745833,
+      "p95_elapsed_sec": 2.160685999970883,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 0,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.209032000042498,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.7174211248285323,
+            "logit_mse": 0.23246413469314575
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.11338093131780624
+          }
+        },
+        {
+          "elapsed_sec": 2.209771400084719,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.7174211248285323,
+            "logit_mse": 0.23246413469314575
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.11338093131780624
+          }
+        },
+        {
+          "elapsed_sec": 2.2108692000620067,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.7174211248285323,
+            "logit_mse": 0.23246413469314575
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.11338093131780624
+          }
+        },
+        {
+          "elapsed_sec": 2.2132925000041723,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.7174211248285323,
+            "logit_mse": 0.23246413469314575
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.11338093131780624
+          }
+        },
+        {
+          "elapsed_sec": 2.211558199953288,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.7174211248285323,
+            "logit_mse": 0.23246413469314575
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.11338093131780624
+          }
+        },
+        {
+          "elapsed_sec": 2.212586099980399,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.7174211248285323,
+            "logit_mse": 0.23246413469314575
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.11338093131780624
+          }
+        },
+        {
+          "elapsed_sec": 2.2119492997881025,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.7174211248285323,
+            "logit_mse": 0.23246413469314575
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.11338093131780624
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.211558199953288,
+      "p95_elapsed_sec": 2.2130805799970403,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 0,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 5.22788090002723,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.541838134430727,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.23478300869464874
+          },
+          "T4": {
+            "accuracy": 0.5912208504801097,
+            "teacher_agreement": 0.8120713305898491,
+            "logit_mse": 0.10718779265880585
+          }
+        },
+        {
+          "elapsed_sec": 5.335144700016826,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.541838134430727,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.23478300869464874
+          },
+          "T4": {
+            "accuracy": 0.5912208504801097,
+            "teacher_agreement": 0.8120713305898491,
+            "logit_mse": 0.10718779265880585
+          }
+        },
+        {
+          "elapsed_sec": 5.291256800061092,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.541838134430727,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.23478300869464874
+          },
+          "T4": {
+            "accuracy": 0.5912208504801097,
+            "teacher_agreement": 0.8120713305898491,
+            "logit_mse": 0.10718779265880585
+          }
+        },
+        {
+          "elapsed_sec": 5.349480299977586,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.541838134430727,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.23478300869464874
+          },
+          "T4": {
+            "accuracy": 0.5912208504801097,
+            "teacher_agreement": 0.8120713305898491,
+            "logit_mse": 0.10718779265880585
+          }
+        },
+        {
+          "elapsed_sec": 5.43212109990418,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.541838134430727,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.23478300869464874
+          },
+          "T4": {
+            "accuracy": 0.5912208504801097,
+            "teacher_agreement": 0.8120713305898491,
+            "logit_mse": 0.10718779265880585
+          }
+        },
+        {
+          "elapsed_sec": 5.347970800008625,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.541838134430727,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.23478300869464874
+          },
+          "T4": {
+            "accuracy": 0.5912208504801097,
+            "teacher_agreement": 0.8120713305898491,
+            "logit_mse": 0.10718779265880585
+          }
+        },
+        {
+          "elapsed_sec": 5.255797199904919,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.541838134430727,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.23478300869464874
+          },
+          "T4": {
+            "accuracy": 0.5912208504801097,
+            "teacher_agreement": 0.8120713305898491,
+            "logit_mse": 0.10718779265880585
+          }
+        }
+      ],
+      "median_elapsed_sec": 5.335144700016826,
+      "p95_elapsed_sec": 5.407328859926201,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 0,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.223570500034839,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5034293552812071,
+            "teacher_agreement": 0.6817558299039781,
+            "logit_mse": 0.359167218208313
+          },
+          "T4": {
+            "accuracy": 0.5212620027434842,
+            "teacher_agreement": 0.7448559670781894,
+            "logit_mse": 0.15852509438991547
+          }
+        },
+        {
+          "elapsed_sec": 2.2214645000640303,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5034293552812071,
+            "teacher_agreement": 0.6817558299039781,
+            "logit_mse": 0.359167218208313
+          },
+          "T4": {
+            "accuracy": 0.5212620027434842,
+            "teacher_agreement": 0.7448559670781894,
+            "logit_mse": 0.15852509438991547
+          }
+        },
+        {
+          "elapsed_sec": 2.22517849993892,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5034293552812071,
+            "teacher_agreement": 0.6817558299039781,
+            "logit_mse": 0.359167218208313
+          },
+          "T4": {
+            "accuracy": 0.5212620027434842,
+            "teacher_agreement": 0.7448559670781894,
+            "logit_mse": 0.15852509438991547
+          }
+        },
+        {
+          "elapsed_sec": 2.2255262001417577,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5034293552812071,
+            "teacher_agreement": 0.6817558299039781,
+            "logit_mse": 0.359167218208313
+          },
+          "T4": {
+            "accuracy": 0.5212620027434842,
+            "teacher_agreement": 0.7448559670781894,
+            "logit_mse": 0.15852509438991547
+          }
+        },
+        {
+          "elapsed_sec": 2.224097999976948,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5034293552812071,
+            "teacher_agreement": 0.6817558299039781,
+            "logit_mse": 0.359167218208313
+          },
+          "T4": {
+            "accuracy": 0.5212620027434842,
+            "teacher_agreement": 0.7448559670781894,
+            "logit_mse": 0.15852509438991547
+          }
+        },
+        {
+          "elapsed_sec": 2.223979900125414,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5034293552812071,
+            "teacher_agreement": 0.6817558299039781,
+            "logit_mse": 0.359167218208313
+          },
+          "T4": {
+            "accuracy": 0.5212620027434842,
+            "teacher_agreement": 0.7448559670781894,
+            "logit_mse": 0.15852509438991547
+          }
+        },
+        {
+          "elapsed_sec": 2.2254925000015646,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5034293552812071,
+            "teacher_agreement": 0.6817558299039781,
+            "logit_mse": 0.359167218208313
+          },
+          "T4": {
+            "accuracy": 0.5212620027434842,
+            "teacher_agreement": 0.7448559670781894,
+            "logit_mse": 0.15852509438991547
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.224097999976948,
+      "p95_elapsed_sec": 2.2255160900997,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 0,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.2234396999701858,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7119341563786008,
+            "logit_mse": 0.2631513476371765
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7791495198902606,
+            "logit_mse": 0.14411227405071259
+          }
+        },
+        {
+          "elapsed_sec": 2.222792800050229,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7119341563786008,
+            "logit_mse": 0.2631513476371765
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7791495198902606,
+            "logit_mse": 0.14411227405071259
+          }
+        },
+        {
+          "elapsed_sec": 2.223382600117475,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7119341563786008,
+            "logit_mse": 0.2631513476371765
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7791495198902606,
+            "logit_mse": 0.14411227405071259
+          }
+        },
+        {
+          "elapsed_sec": 2.2244645000901073,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7119341563786008,
+            "logit_mse": 0.2631513476371765
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7791495198902606,
+            "logit_mse": 0.14411227405071259
+          }
+        },
+        {
+          "elapsed_sec": 2.224421299993992,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7119341563786008,
+            "logit_mse": 0.2631513476371765
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7791495198902606,
+            "logit_mse": 0.14411227405071259
+          }
+        },
+        {
+          "elapsed_sec": 2.2256127998698503,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7119341563786008,
+            "logit_mse": 0.2631513476371765
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7791495198902606,
+            "logit_mse": 0.14411227405071259
+          }
+        },
+        {
+          "elapsed_sec": 2.222798699978739,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5185185185185185,
+            "teacher_agreement": 0.7119341563786008,
+            "logit_mse": 0.2631513476371765
+          },
+          "T4": {
+            "accuracy": 0.5582990397805213,
+            "teacher_agreement": 0.7791495198902606,
+            "logit_mse": 0.14411227405071259
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.2234396999701858,
+      "p95_elapsed_sec": 2.2252683099359274,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 0,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.227989099919796,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5267489711934157,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.26451072096824646
+          },
+          "T4": {
+            "accuracy": 0.5637860082304527,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.12063229084014893
+          }
+        },
+        {
+          "elapsed_sec": 2.2290400001220405,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5267489711934157,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.26451072096824646
+          },
+          "T4": {
+            "accuracy": 0.5637860082304527,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.12063229084014893
+          }
+        },
+        {
+          "elapsed_sec": 2.235209599835798,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5267489711934157,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.26451072096824646
+          },
+          "T4": {
+            "accuracy": 0.5637860082304527,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.12063229084014893
+          }
+        },
+        {
+          "elapsed_sec": 2.2296264998149127,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5267489711934157,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.26451072096824646
+          },
+          "T4": {
+            "accuracy": 0.5637860082304527,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.12063229084014893
+          }
+        },
+        {
+          "elapsed_sec": 2.2296752999536693,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5267489711934157,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.26451072096824646
+          },
+          "T4": {
+            "accuracy": 0.5637860082304527,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.12063229084014893
+          }
+        },
+        {
+          "elapsed_sec": 2.2295572999864817,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5267489711934157,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.26451072096824646
+          },
+          "T4": {
+            "accuracy": 0.5637860082304527,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.12063229084014893
+          }
+        },
+        {
+          "elapsed_sec": 2.2296086999122053,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5267489711934157,
+            "teacher_agreement": 0.7064471879286695,
+            "logit_mse": 0.26451072096824646
+          },
+          "T4": {
+            "accuracy": 0.5637860082304527,
+            "teacher_agreement": 0.7942386831275721,
+            "logit_mse": 0.12063229084014893
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.2296086999122053,
+      "p95_elapsed_sec": 2.2335493098711594,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 1,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.1700271998997778,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4567901234567901,
+            "teacher_agreement": 0.5843621399176955,
+            "logit_mse": 0.723372757434845
+          },
+          "T4": {
+            "accuracy": 0.4993141289437586,
+            "teacher_agreement": 0.7325102880658436,
+            "logit_mse": 0.26457729935646057
+          }
+        },
+        {
+          "elapsed_sec": 2.1898660000879318,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4567901234567901,
+            "teacher_agreement": 0.5843621399176955,
+            "logit_mse": 0.723372757434845
+          },
+          "T4": {
+            "accuracy": 0.4993141289437586,
+            "teacher_agreement": 0.7325102880658436,
+            "logit_mse": 0.26457729935646057
+          }
+        },
+        {
+          "elapsed_sec": 2.1825365000404418,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4567901234567901,
+            "teacher_agreement": 0.5843621399176955,
+            "logit_mse": 0.723372757434845
+          },
+          "T4": {
+            "accuracy": 0.4993141289437586,
+            "teacher_agreement": 0.7325102880658436,
+            "logit_mse": 0.26457729935646057
+          }
+        },
+        {
+          "elapsed_sec": 2.170321200042963,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4567901234567901,
+            "teacher_agreement": 0.5843621399176955,
+            "logit_mse": 0.723372757434845
+          },
+          "T4": {
+            "accuracy": 0.4993141289437586,
+            "teacher_agreement": 0.7325102880658436,
+            "logit_mse": 0.26457729935646057
+          }
+        },
+        {
+          "elapsed_sec": 2.1719495998695493,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4567901234567901,
+            "teacher_agreement": 0.5843621399176955,
+            "logit_mse": 0.723372757434845
+          },
+          "T4": {
+            "accuracy": 0.4993141289437586,
+            "teacher_agreement": 0.7325102880658436,
+            "logit_mse": 0.26457729935646057
+          }
+        },
+        {
+          "elapsed_sec": 2.180256900144741,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4567901234567901,
+            "teacher_agreement": 0.5843621399176955,
+            "logit_mse": 0.723372757434845
+          },
+          "T4": {
+            "accuracy": 0.4993141289437586,
+            "teacher_agreement": 0.7325102880658436,
+            "logit_mse": 0.26457729935646057
+          }
+        },
+        {
+          "elapsed_sec": 2.173422500025481,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4567901234567901,
+            "teacher_agreement": 0.5843621399176955,
+            "logit_mse": 0.723372757434845
+          },
+          "T4": {
+            "accuracy": 0.4993141289437586,
+            "teacher_agreement": 0.7325102880658436,
+            "logit_mse": 0.26457729935646057
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.173422500025481,
+      "p95_elapsed_sec": 2.187667150073685,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 1,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.2154663000255823,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6241426611796982,
+            "logit_mse": 0.5550724864006042
+          },
+          "T4": {
+            "accuracy": 0.5390946502057613,
+            "teacher_agreement": 0.7887517146776406,
+            "logit_mse": 0.1713820993900299
+          }
+        },
+        {
+          "elapsed_sec": 2.215877200011164,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6241426611796982,
+            "logit_mse": 0.5550724864006042
+          },
+          "T4": {
+            "accuracy": 0.5390946502057613,
+            "teacher_agreement": 0.7887517146776406,
+            "logit_mse": 0.1713820993900299
+          }
+        },
+        {
+          "elapsed_sec": 2.2168683998752385,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6241426611796982,
+            "logit_mse": 0.5550724864006042
+          },
+          "T4": {
+            "accuracy": 0.5390946502057613,
+            "teacher_agreement": 0.7887517146776406,
+            "logit_mse": 0.1713820993900299
+          }
+        },
+        {
+          "elapsed_sec": 2.2150958001147956,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6241426611796982,
+            "logit_mse": 0.5550724864006042
+          },
+          "T4": {
+            "accuracy": 0.5390946502057613,
+            "teacher_agreement": 0.7887517146776406,
+            "logit_mse": 0.1713820993900299
+          }
+        },
+        {
+          "elapsed_sec": 2.225309500005096,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6241426611796982,
+            "logit_mse": 0.5550724864006042
+          },
+          "T4": {
+            "accuracy": 0.5390946502057613,
+            "teacher_agreement": 0.7887517146776406,
+            "logit_mse": 0.1713820993900299
+          }
+        },
+        {
+          "elapsed_sec": 2.2182112999726087,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6241426611796982,
+            "logit_mse": 0.5550724864006042
+          },
+          "T4": {
+            "accuracy": 0.5390946502057613,
+            "teacher_agreement": 0.7887517146776406,
+            "logit_mse": 0.1713820993900299
+          }
+        },
+        {
+          "elapsed_sec": 2.2147125001065433,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6241426611796982,
+            "logit_mse": 0.5550724864006042
+          },
+          "T4": {
+            "accuracy": 0.5390946502057613,
+            "teacher_agreement": 0.7887517146776406,
+            "logit_mse": 0.1713820993900299
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.215877200011164,
+      "p95_elapsed_sec": 2.22318003999535,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 1,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 5.528880400117487,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6296296296296297,
+            "logit_mse": 0.4786509871482849
+          },
+          "T4": {
+            "accuracy": 0.5596707818930041,
+            "teacher_agreement": 0.831275720164609,
+            "logit_mse": 0.1734415590763092
+          }
+        },
+        {
+          "elapsed_sec": 5.31059359991923,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6296296296296297,
+            "logit_mse": 0.4786509871482849
+          },
+          "T4": {
+            "accuracy": 0.5596707818930041,
+            "teacher_agreement": 0.831275720164609,
+            "logit_mse": 0.1734415590763092
+          }
+        },
+        {
+          "elapsed_sec": 5.620073999976739,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6296296296296297,
+            "logit_mse": 0.4786509871482849
+          },
+          "T4": {
+            "accuracy": 0.5596707818930041,
+            "teacher_agreement": 0.831275720164609,
+            "logit_mse": 0.1734415590763092
+          }
+        },
+        {
+          "elapsed_sec": 5.409096100134775,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6296296296296297,
+            "logit_mse": 0.4786509871482849
+          },
+          "T4": {
+            "accuracy": 0.5596707818930041,
+            "teacher_agreement": 0.831275720164609,
+            "logit_mse": 0.1734415590763092
+          }
+        },
+        {
+          "elapsed_sec": 5.320848499890417,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6296296296296297,
+            "logit_mse": 0.4786509871482849
+          },
+          "T4": {
+            "accuracy": 0.5596707818930041,
+            "teacher_agreement": 0.831275720164609,
+            "logit_mse": 0.1734415590763092
+          }
+        },
+        {
+          "elapsed_sec": 5.356163499876857,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6296296296296297,
+            "logit_mse": 0.4786509871482849
+          },
+          "T4": {
+            "accuracy": 0.5596707818930041,
+            "teacher_agreement": 0.831275720164609,
+            "logit_mse": 0.1734415590763092
+          }
+        },
+        {
+          "elapsed_sec": 5.259510200005025,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.47462277091906724,
+            "teacher_agreement": 0.6296296296296297,
+            "logit_mse": 0.4786509871482849
+          },
+          "T4": {
+            "accuracy": 0.5596707818930041,
+            "teacher_agreement": 0.831275720164609,
+            "logit_mse": 0.1734415590763092
+          }
+        }
+      ],
+      "median_elapsed_sec": 5.356163499876857,
+      "p95_elapsed_sec": 5.592715920018963,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 1,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.226273899897933,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.45816186556927296,
+            "teacher_agreement": 0.5898491083676269,
+            "logit_mse": 0.712082028388977
+          },
+          "T4": {
+            "accuracy": 0.50480109739369,
+            "teacher_agreement": 0.7297668038408779,
+            "logit_mse": 0.2583903670310974
+          }
+        },
+        {
+          "elapsed_sec": 2.222335600061342,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.45816186556927296,
+            "teacher_agreement": 0.5898491083676269,
+            "logit_mse": 0.712082028388977
+          },
+          "T4": {
+            "accuracy": 0.50480109739369,
+            "teacher_agreement": 0.7297668038408779,
+            "logit_mse": 0.2583903670310974
+          }
+        },
+        {
+          "elapsed_sec": 2.2269641999155283,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.45816186556927296,
+            "teacher_agreement": 0.5898491083676269,
+            "logit_mse": 0.712082028388977
+          },
+          "T4": {
+            "accuracy": 0.50480109739369,
+            "teacher_agreement": 0.7297668038408779,
+            "logit_mse": 0.2583903670310974
+          }
+        },
+        {
+          "elapsed_sec": 2.228255300084129,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.45816186556927296,
+            "teacher_agreement": 0.5898491083676269,
+            "logit_mse": 0.712082028388977
+          },
+          "T4": {
+            "accuracy": 0.50480109739369,
+            "teacher_agreement": 0.7297668038408779,
+            "logit_mse": 0.2583903670310974
+          }
+        },
+        {
+          "elapsed_sec": 2.228016900131479,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.45816186556927296,
+            "teacher_agreement": 0.5898491083676269,
+            "logit_mse": 0.712082028388977
+          },
+          "T4": {
+            "accuracy": 0.50480109739369,
+            "teacher_agreement": 0.7297668038408779,
+            "logit_mse": 0.2583903670310974
+          }
+        },
+        {
+          "elapsed_sec": 2.2284359999466687,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.45816186556927296,
+            "teacher_agreement": 0.5898491083676269,
+            "logit_mse": 0.712082028388977
+          },
+          "T4": {
+            "accuracy": 0.50480109739369,
+            "teacher_agreement": 0.7297668038408779,
+            "logit_mse": 0.2583903670310974
+          }
+        },
+        {
+          "elapsed_sec": 2.228623100090772,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.45816186556927296,
+            "teacher_agreement": 0.5898491083676269,
+            "logit_mse": 0.712082028388977
+          },
+          "T4": {
+            "accuracy": 0.50480109739369,
+            "teacher_agreement": 0.7297668038408779,
+            "logit_mse": 0.2583903670310974
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.228016900131479,
+      "p95_elapsed_sec": 2.228566970047541,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 1,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.227882699808106,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4691358024691358,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.6157692670822144
+          },
+          "T4": {
+            "accuracy": 0.5473251028806584,
+            "teacher_agreement": 0.7860082304526749,
+            "logit_mse": 0.22236722707748413
+          }
+        },
+        {
+          "elapsed_sec": 2.2320934999734163,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4691358024691358,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.6157692670822144
+          },
+          "T4": {
+            "accuracy": 0.5473251028806584,
+            "teacher_agreement": 0.7860082304526749,
+            "logit_mse": 0.22236722707748413
+          }
+        },
+        {
+          "elapsed_sec": 2.2286705998703837,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4691358024691358,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.6157692670822144
+          },
+          "T4": {
+            "accuracy": 0.5473251028806584,
+            "teacher_agreement": 0.7860082304526749,
+            "logit_mse": 0.22236722707748413
+          }
+        },
+        {
+          "elapsed_sec": 2.2303129001520574,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4691358024691358,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.6157692670822144
+          },
+          "T4": {
+            "accuracy": 0.5473251028806584,
+            "teacher_agreement": 0.7860082304526749,
+            "logit_mse": 0.22236722707748413
+          }
+        },
+        {
+          "elapsed_sec": 2.2327071998734027,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4691358024691358,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.6157692670822144
+          },
+          "T4": {
+            "accuracy": 0.5473251028806584,
+            "teacher_agreement": 0.7860082304526749,
+            "logit_mse": 0.22236722707748413
+          }
+        },
+        {
+          "elapsed_sec": 2.2257111999206245,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4691358024691358,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.6157692670822144
+          },
+          "T4": {
+            "accuracy": 0.5473251028806584,
+            "teacher_agreement": 0.7860082304526749,
+            "logit_mse": 0.22236722707748413
+          }
+        },
+        {
+          "elapsed_sec": 2.2384971000719815,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4691358024691358,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.6157692670822144
+          },
+          "T4": {
+            "accuracy": 0.5473251028806584,
+            "teacher_agreement": 0.7860082304526749,
+            "logit_mse": 0.22236722707748413
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.2303129001520574,
+      "p95_elapsed_sec": 2.236760130012408,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 1,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.23220880003646,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4718792866941015,
+            "teacher_agreement": 0.6200274348422496,
+            "logit_mse": 0.5927545428276062
+          },
+          "T4": {
+            "accuracy": 0.5692729766803841,
+            "teacher_agreement": 0.8161865569272977,
+            "logit_mse": 0.18229049444198608
+          }
+        },
+        {
+          "elapsed_sec": 2.2291168000083417,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4718792866941015,
+            "teacher_agreement": 0.6200274348422496,
+            "logit_mse": 0.5927545428276062
+          },
+          "T4": {
+            "accuracy": 0.5692729766803841,
+            "teacher_agreement": 0.8161865569272977,
+            "logit_mse": 0.18229049444198608
+          }
+        },
+        {
+          "elapsed_sec": 2.23031620006077,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4718792866941015,
+            "teacher_agreement": 0.6200274348422496,
+            "logit_mse": 0.5927545428276062
+          },
+          "T4": {
+            "accuracy": 0.5692729766803841,
+            "teacher_agreement": 0.8161865569272977,
+            "logit_mse": 0.18229049444198608
+          }
+        },
+        {
+          "elapsed_sec": 2.23231069999747,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4718792866941015,
+            "teacher_agreement": 0.6200274348422496,
+            "logit_mse": 0.5927545428276062
+          },
+          "T4": {
+            "accuracy": 0.5692729766803841,
+            "teacher_agreement": 0.8161865569272977,
+            "logit_mse": 0.18229049444198608
+          }
+        },
+        {
+          "elapsed_sec": 2.2294315001927316,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4718792866941015,
+            "teacher_agreement": 0.6200274348422496,
+            "logit_mse": 0.5927545428276062
+          },
+          "T4": {
+            "accuracy": 0.5692729766803841,
+            "teacher_agreement": 0.8161865569272977,
+            "logit_mse": 0.18229049444198608
+          }
+        },
+        {
+          "elapsed_sec": 2.229340499965474,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4718792866941015,
+            "teacher_agreement": 0.6200274348422496,
+            "logit_mse": 0.5927545428276062
+          },
+          "T4": {
+            "accuracy": 0.5692729766803841,
+            "teacher_agreement": 0.8161865569272977,
+            "logit_mse": 0.18229049444198608
+          }
+        },
+        {
+          "elapsed_sec": 2.230950199998915,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.4718792866941015,
+            "teacher_agreement": 0.6200274348422496,
+            "logit_mse": 0.5927545428276062
+          },
+          "T4": {
+            "accuracy": 0.5692729766803841,
+            "teacher_agreement": 0.8161865569272977,
+            "logit_mse": 0.18229049444198608
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.23031620006077,
+      "p95_elapsed_sec": 2.232280130009167,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 2,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.1716795000247657,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5075445816186557,
+            "teacher_agreement": 0.6515775034293553,
+            "logit_mse": 0.49033498764038086
+          },
+          "T4": {
+            "accuracy": 0.5198902606310014,
+            "teacher_agreement": 0.7681755829903978,
+            "logit_mse": 0.26511919498443604
+          }
+        },
+        {
+          "elapsed_sec": 2.1699307998642325,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5075445816186557,
+            "teacher_agreement": 0.6515775034293553,
+            "logit_mse": 0.49033498764038086
+          },
+          "T4": {
+            "accuracy": 0.5198902606310014,
+            "teacher_agreement": 0.7681755829903978,
+            "logit_mse": 0.26511919498443604
+          }
+        },
+        {
+          "elapsed_sec": 2.17093180003576,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5075445816186557,
+            "teacher_agreement": 0.6515775034293553,
+            "logit_mse": 0.49033498764038086
+          },
+          "T4": {
+            "accuracy": 0.5198902606310014,
+            "teacher_agreement": 0.7681755829903978,
+            "logit_mse": 0.26511919498443604
+          }
+        },
+        {
+          "elapsed_sec": 2.172058600001037,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5075445816186557,
+            "teacher_agreement": 0.6515775034293553,
+            "logit_mse": 0.49033498764038086
+          },
+          "T4": {
+            "accuracy": 0.5198902606310014,
+            "teacher_agreement": 0.7681755829903978,
+            "logit_mse": 0.26511919498443604
+          }
+        },
+        {
+          "elapsed_sec": 2.172440100228414,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5075445816186557,
+            "teacher_agreement": 0.6515775034293553,
+            "logit_mse": 0.49033498764038086
+          },
+          "T4": {
+            "accuracy": 0.5198902606310014,
+            "teacher_agreement": 0.7681755829903978,
+            "logit_mse": 0.26511919498443604
+          }
+        },
+        {
+          "elapsed_sec": 2.171089200070128,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5075445816186557,
+            "teacher_agreement": 0.6515775034293553,
+            "logit_mse": 0.49033498764038086
+          },
+          "T4": {
+            "accuracy": 0.5198902606310014,
+            "teacher_agreement": 0.7681755829903978,
+            "logit_mse": 0.26511919498443604
+          }
+        },
+        {
+          "elapsed_sec": 2.171852499945089,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5075445816186557,
+            "teacher_agreement": 0.6515775034293553,
+            "logit_mse": 0.49033498764038086
+          },
+          "T4": {
+            "accuracy": 0.5198902606310014,
+            "teacher_agreement": 0.7681755829903978,
+            "logit_mse": 0.26511919498443604
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.1716795000247657,
+      "p95_elapsed_sec": 2.172325650160201,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 2,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.2179533999878913,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.532235939643347,
+            "teacher_agreement": 0.700960219478738,
+            "logit_mse": 0.37503495812416077
+          },
+          "T4": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.813443072702332,
+            "logit_mse": 0.18844440579414368
+          }
+        },
+        {
+          "elapsed_sec": 2.2194540000054985,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.532235939643347,
+            "teacher_agreement": 0.700960219478738,
+            "logit_mse": 0.37503495812416077
+          },
+          "T4": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.813443072702332,
+            "logit_mse": 0.18844440579414368
+          }
+        },
+        {
+          "elapsed_sec": 2.2163505000062287,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.532235939643347,
+            "teacher_agreement": 0.700960219478738,
+            "logit_mse": 0.37503495812416077
+          },
+          "T4": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.813443072702332,
+            "logit_mse": 0.18844440579414368
+          }
+        },
+        {
+          "elapsed_sec": 2.2166527998633683,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.532235939643347,
+            "teacher_agreement": 0.700960219478738,
+            "logit_mse": 0.37503495812416077
+          },
+          "T4": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.813443072702332,
+            "logit_mse": 0.18844440579414368
+          }
+        },
+        {
+          "elapsed_sec": 2.2184113999828696,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.532235939643347,
+            "teacher_agreement": 0.700960219478738,
+            "logit_mse": 0.37503495812416077
+          },
+          "T4": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.813443072702332,
+            "logit_mse": 0.18844440579414368
+          }
+        },
+        {
+          "elapsed_sec": 2.2169485001359135,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.532235939643347,
+            "teacher_agreement": 0.700960219478738,
+            "logit_mse": 0.37503495812416077
+          },
+          "T4": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.813443072702332,
+            "logit_mse": 0.18844440579414368
+          }
+        },
+        {
+          "elapsed_sec": 2.2166572001297027,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.532235939643347,
+            "teacher_agreement": 0.700960219478738,
+            "logit_mse": 0.37503495812416077
+          },
+          "T4": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.813443072702332,
+            "logit_mse": 0.18844440579414368
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.2169485001359135,
+      "p95_elapsed_sec": 2.21914121999871,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 2,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 5.345172999892384,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5377229080932785,
+            "teacher_agreement": 0.6954732510288066,
+            "logit_mse": 0.36384081840515137
+          },
+          "T4": {
+            "accuracy": 0.5816186556927297,
+            "teacher_agreement": 0.8628257887517147,
+            "logit_mse": 0.1644059419631958
+          }
+        },
+        {
+          "elapsed_sec": 5.351043100003153,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5377229080932785,
+            "teacher_agreement": 0.6954732510288066,
+            "logit_mse": 0.36384081840515137
+          },
+          "T4": {
+            "accuracy": 0.5816186556927297,
+            "teacher_agreement": 0.8628257887517147,
+            "logit_mse": 0.1644059419631958
+          }
+        },
+        {
+          "elapsed_sec": 5.264553500106558,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5377229080932785,
+            "teacher_agreement": 0.6954732510288066,
+            "logit_mse": 0.36384081840515137
+          },
+          "T4": {
+            "accuracy": 0.5816186556927297,
+            "teacher_agreement": 0.8628257887517147,
+            "logit_mse": 0.1644059419631958
+          }
+        },
+        {
+          "elapsed_sec": 5.391752400202677,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5377229080932785,
+            "teacher_agreement": 0.6954732510288066,
+            "logit_mse": 0.36384081840515137
+          },
+          "T4": {
+            "accuracy": 0.5816186556927297,
+            "teacher_agreement": 0.8628257887517147,
+            "logit_mse": 0.1644059419631958
+          }
+        },
+        {
+          "elapsed_sec": 5.546585200121626,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5377229080932785,
+            "teacher_agreement": 0.6954732510288066,
+            "logit_mse": 0.36384081840515137
+          },
+          "T4": {
+            "accuracy": 0.5816186556927297,
+            "teacher_agreement": 0.8628257887517147,
+            "logit_mse": 0.1644059419631958
+          }
+        },
+        {
+          "elapsed_sec": 5.255833299830556,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5377229080932785,
+            "teacher_agreement": 0.6954732510288066,
+            "logit_mse": 0.36384081840515137
+          },
+          "T4": {
+            "accuracy": 0.5816186556927297,
+            "teacher_agreement": 0.8628257887517147,
+            "logit_mse": 0.1644059419631958
+          }
+        },
+        {
+          "elapsed_sec": 5.389734500087798,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5377229080932785,
+            "teacher_agreement": 0.6954732510288066,
+            "logit_mse": 0.36384081840515137
+          },
+          "T4": {
+            "accuracy": 0.5816186556927297,
+            "teacher_agreement": 0.8628257887517147,
+            "logit_mse": 0.1644059419631958
+          }
+        }
+      ],
+      "median_elapsed_sec": 5.351043100003153,
+      "p95_elapsed_sec": 5.500135360145941,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 2,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.2244237998966128,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5089163237311386,
+            "teacher_agreement": 0.6556927297668038,
+            "logit_mse": 0.4840623438358307
+          },
+          "T4": {
+            "accuracy": 0.5253772290809328,
+            "teacher_agreement": 0.7709190672153635,
+            "logit_mse": 0.2602282464504242
+          }
+        },
+        {
+          "elapsed_sec": 2.2276166998781264,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5089163237311386,
+            "teacher_agreement": 0.6556927297668038,
+            "logit_mse": 0.4840623438358307
+          },
+          "T4": {
+            "accuracy": 0.5253772290809328,
+            "teacher_agreement": 0.7709190672153635,
+            "logit_mse": 0.2602282464504242
+          }
+        },
+        {
+          "elapsed_sec": 2.22427159990184,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5089163237311386,
+            "teacher_agreement": 0.6556927297668038,
+            "logit_mse": 0.4840623438358307
+          },
+          "T4": {
+            "accuracy": 0.5253772290809328,
+            "teacher_agreement": 0.7709190672153635,
+            "logit_mse": 0.2602282464504242
+          }
+        },
+        {
+          "elapsed_sec": 2.230080099776387,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5089163237311386,
+            "teacher_agreement": 0.6556927297668038,
+            "logit_mse": 0.4840623438358307
+          },
+          "T4": {
+            "accuracy": 0.5253772290809328,
+            "teacher_agreement": 0.7709190672153635,
+            "logit_mse": 0.2602282464504242
+          }
+        },
+        {
+          "elapsed_sec": 2.229554600082338,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5089163237311386,
+            "teacher_agreement": 0.6556927297668038,
+            "logit_mse": 0.4840623438358307
+          },
+          "T4": {
+            "accuracy": 0.5253772290809328,
+            "teacher_agreement": 0.7709190672153635,
+            "logit_mse": 0.2602282464504242
+          }
+        },
+        {
+          "elapsed_sec": 2.237361599924043,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5089163237311386,
+            "teacher_agreement": 0.6556927297668038,
+            "logit_mse": 0.4840623438358307
+          },
+          "T4": {
+            "accuracy": 0.5253772290809328,
+            "teacher_agreement": 0.7709190672153635,
+            "logit_mse": 0.2602282464504242
+          }
+        },
+        {
+          "elapsed_sec": 2.2302564000710845,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5089163237311386,
+            "teacher_agreement": 0.6556927297668038,
+            "logit_mse": 0.4840623438358307
+          },
+          "T4": {
+            "accuracy": 0.5253772290809328,
+            "teacher_agreement": 0.7709190672153635,
+            "logit_mse": 0.2602282464504242
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.229554600082338,
+      "p95_elapsed_sec": 2.2352300399681555,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 2,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.2256396000739187,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.48010973936899864,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.4656679332256317
+          },
+          "T4": {
+            "accuracy": 0.5404663923182441,
+            "teacher_agreement": 0.8024691358024691,
+            "logit_mse": 0.22636233270168304
+          }
+        },
+        {
+          "elapsed_sec": 2.2278750999830663,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.48010973936899864,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.4656679332256317
+          },
+          "T4": {
+            "accuracy": 0.5404663923182441,
+            "teacher_agreement": 0.8024691358024691,
+            "logit_mse": 0.22636233270168304
+          }
+        },
+        {
+          "elapsed_sec": 2.2307385001331568,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.48010973936899864,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.4656679332256317
+          },
+          "T4": {
+            "accuracy": 0.5404663923182441,
+            "teacher_agreement": 0.8024691358024691,
+            "logit_mse": 0.22636233270168304
+          }
+        },
+        {
+          "elapsed_sec": 2.229380700038746,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.48010973936899864,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.4656679332256317
+          },
+          "T4": {
+            "accuracy": 0.5404663923182441,
+            "teacher_agreement": 0.8024691358024691,
+            "logit_mse": 0.22636233270168304
+          }
+        },
+        {
+          "elapsed_sec": 2.2297683998476714,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.48010973936899864,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.4656679332256317
+          },
+          "T4": {
+            "accuracy": 0.5404663923182441,
+            "teacher_agreement": 0.8024691358024691,
+            "logit_mse": 0.22636233270168304
+          }
+        },
+        {
+          "elapsed_sec": 2.2307066000066698,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.48010973936899864,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.4656679332256317
+          },
+          "T4": {
+            "accuracy": 0.5404663923182441,
+            "teacher_agreement": 0.8024691358024691,
+            "logit_mse": 0.22636233270168304
+          }
+        },
+        {
+          "elapsed_sec": 2.2347158999182284,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.48010973936899864,
+            "teacher_agreement": 0.6227709190672154,
+            "logit_mse": 0.4656679332256317
+          },
+          "T4": {
+            "accuracy": 0.5404663923182441,
+            "teacher_agreement": 0.8024691358024691,
+            "logit_mse": 0.22636233270168304
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.2297683998476714,
+      "p95_elapsed_sec": 2.233522679982707,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 2,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 2.235545199830085,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.6858710562414266,
+            "logit_mse": 0.4153617322444916
+          },
+          "T4": {
+            "accuracy": 0.551440329218107,
+            "teacher_agreement": 0.8326474622770919,
+            "logit_mse": 0.19562000036239624
+          }
+        },
+        {
+          "elapsed_sec": 2.23691050009802,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.6858710562414266,
+            "logit_mse": 0.4153617322444916
+          },
+          "T4": {
+            "accuracy": 0.551440329218107,
+            "teacher_agreement": 0.8326474622770919,
+            "logit_mse": 0.19562000036239624
+          }
+        },
+        {
+          "elapsed_sec": 2.2340544001199305,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.6858710562414266,
+            "logit_mse": 0.4153617322444916
+          },
+          "T4": {
+            "accuracy": 0.551440329218107,
+            "teacher_agreement": 0.8326474622770919,
+            "logit_mse": 0.19562000036239624
+          }
+        },
+        {
+          "elapsed_sec": 2.235449699917808,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.6858710562414266,
+            "logit_mse": 0.4153617322444916
+          },
+          "T4": {
+            "accuracy": 0.551440329218107,
+            "teacher_agreement": 0.8326474622770919,
+            "logit_mse": 0.19562000036239624
+          }
+        },
+        {
+          "elapsed_sec": 2.2365943999029696,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.6858710562414266,
+            "logit_mse": 0.4153617322444916
+          },
+          "T4": {
+            "accuracy": 0.551440329218107,
+            "teacher_agreement": 0.8326474622770919,
+            "logit_mse": 0.19562000036239624
+          }
+        },
+        {
+          "elapsed_sec": 2.234002999961376,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.6858710562414266,
+            "logit_mse": 0.4153617322444916
+          },
+          "T4": {
+            "accuracy": 0.551440329218107,
+            "teacher_agreement": 0.8326474622770919,
+            "logit_mse": 0.19562000036239624
+          }
+        },
+        {
+          "elapsed_sec": 2.233033899916336,
+          "peak_memory_mb": 156.72021484375,
+          "T2": {
+            "accuracy": 0.5349794238683128,
+            "teacher_agreement": 0.6858710562414266,
+            "logit_mse": 0.4153617322444916
+          },
+          "T4": {
+            "accuracy": 0.551440329218107,
+            "teacher_agreement": 0.8326474622770919,
+            "logit_mse": 0.19562000036239624
+          }
+        }
+      ],
+      "median_elapsed_sec": 2.235449699917808,
+      "p95_elapsed_sec": 2.2368156700395048,
+      "peak_memory_mb": 156.72021484375
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 0,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.5669255000539124,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3485576923076923,
+            "teacher_agreement": 0.49939903846153844,
+            "logit_mse": 0.285965234041214
+          },
+          "T4": {
+            "accuracy": 0.37680288461538464,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13555720448493958
+          }
+        },
+        {
+          "elapsed_sec": 1.5682596999686211,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3485576923076923,
+            "teacher_agreement": 0.49939903846153844,
+            "logit_mse": 0.285965234041214
+          },
+          "T4": {
+            "accuracy": 0.37680288461538464,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13555720448493958
+          }
+        },
+        {
+          "elapsed_sec": 1.56895300000906,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3485576923076923,
+            "teacher_agreement": 0.49939903846153844,
+            "logit_mse": 0.285965234041214
+          },
+          "T4": {
+            "accuracy": 0.37680288461538464,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13555720448493958
+          }
+        },
+        {
+          "elapsed_sec": 1.5691717001609504,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3485576923076923,
+            "teacher_agreement": 0.49939903846153844,
+            "logit_mse": 0.285965234041214
+          },
+          "T4": {
+            "accuracy": 0.37680288461538464,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13555720448493958
+          }
+        },
+        {
+          "elapsed_sec": 1.5688375998288393,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3485576923076923,
+            "teacher_agreement": 0.49939903846153844,
+            "logit_mse": 0.285965234041214
+          },
+          "T4": {
+            "accuracy": 0.37680288461538464,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13555720448493958
+          }
+        },
+        {
+          "elapsed_sec": 1.5687818001024425,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3485576923076923,
+            "teacher_agreement": 0.49939903846153844,
+            "logit_mse": 0.285965234041214
+          },
+          "T4": {
+            "accuracy": 0.37680288461538464,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13555720448493958
+          }
+        },
+        {
+          "elapsed_sec": 1.570653400151059,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3485576923076923,
+            "teacher_agreement": 0.49939903846153844,
+            "logit_mse": 0.285965234041214
+          },
+          "T4": {
+            "accuracy": 0.37680288461538464,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13555720448493958
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.5688375998288393,
+      "p95_elapsed_sec": 1.5702088901540265,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 0,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6482400000095367,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.36658653846153844,
+            "teacher_agreement": 0.5546875,
+            "logit_mse": 0.23480811715126038
+          },
+          "T4": {
+            "accuracy": 0.40444711538461536,
+            "teacher_agreement": 0.7932692307692307,
+            "logit_mse": 0.09485239535570145
+          }
+        },
+        {
+          "elapsed_sec": 1.6495074999984354,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.36658653846153844,
+            "teacher_agreement": 0.5546875,
+            "logit_mse": 0.23480811715126038
+          },
+          "T4": {
+            "accuracy": 0.40444711538461536,
+            "teacher_agreement": 0.7932692307692307,
+            "logit_mse": 0.09485239535570145
+          }
+        },
+        {
+          "elapsed_sec": 1.6470526000484824,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.36658653846153844,
+            "teacher_agreement": 0.5546875,
+            "logit_mse": 0.23480811715126038
+          },
+          "T4": {
+            "accuracy": 0.40444711538461536,
+            "teacher_agreement": 0.7932692307692307,
+            "logit_mse": 0.09485239535570145
+          }
+        },
+        {
+          "elapsed_sec": 1.648039299994707,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.36658653846153844,
+            "teacher_agreement": 0.5546875,
+            "logit_mse": 0.23480811715126038
+          },
+          "T4": {
+            "accuracy": 0.40444711538461536,
+            "teacher_agreement": 0.7932692307692307,
+            "logit_mse": 0.09485239535570145
+          }
+        },
+        {
+          "elapsed_sec": 1.6498488998040557,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.36658653846153844,
+            "teacher_agreement": 0.5546875,
+            "logit_mse": 0.23480811715126038
+          },
+          "T4": {
+            "accuracy": 0.40444711538461536,
+            "teacher_agreement": 0.7932692307692307,
+            "logit_mse": 0.09485239535570145
+          }
+        },
+        {
+          "elapsed_sec": 1.6487821999471635,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.36658653846153844,
+            "teacher_agreement": 0.5546875,
+            "logit_mse": 0.23480811715126038
+          },
+          "T4": {
+            "accuracy": 0.40444711538461536,
+            "teacher_agreement": 0.7932692307692307,
+            "logit_mse": 0.09485239535570145
+          }
+        },
+        {
+          "elapsed_sec": 1.6579742000903934,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.36658653846153844,
+            "teacher_agreement": 0.5546875,
+            "logit_mse": 0.23480811715126038
+          },
+          "T4": {
+            "accuracy": 0.40444711538461536,
+            "teacher_agreement": 0.7932692307692307,
+            "logit_mse": 0.09485239535570145
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6487821999471635,
+      "p95_elapsed_sec": 1.6555366100044921,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 0,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 8.378448599949479,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.359375,
+            "teacher_agreement": 0.5402644230769231,
+            "logit_mse": 0.2427157759666443
+          },
+          "T4": {
+            "accuracy": 0.39783653846153844,
+            "teacher_agreement": 0.7956730769230769,
+            "logit_mse": 0.09078626334667206
+          }
+        },
+        {
+          "elapsed_sec": 8.586222799960524,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.359375,
+            "teacher_agreement": 0.5402644230769231,
+            "logit_mse": 0.2427157759666443
+          },
+          "T4": {
+            "accuracy": 0.39783653846153844,
+            "teacher_agreement": 0.7956730769230769,
+            "logit_mse": 0.09078626334667206
+          }
+        },
+        {
+          "elapsed_sec": 8.401942499913275,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.359375,
+            "teacher_agreement": 0.5402644230769231,
+            "logit_mse": 0.2427157759666443
+          },
+          "T4": {
+            "accuracy": 0.39783653846153844,
+            "teacher_agreement": 0.7956730769230769,
+            "logit_mse": 0.09078626334667206
+          }
+        },
+        {
+          "elapsed_sec": 8.381110799964517,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.359375,
+            "teacher_agreement": 0.5402644230769231,
+            "logit_mse": 0.2427157759666443
+          },
+          "T4": {
+            "accuracy": 0.39783653846153844,
+            "teacher_agreement": 0.7956730769230769,
+            "logit_mse": 0.09078626334667206
+          }
+        },
+        {
+          "elapsed_sec": 8.387943200068548,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.359375,
+            "teacher_agreement": 0.5402644230769231,
+            "logit_mse": 0.2427157759666443
+          },
+          "T4": {
+            "accuracy": 0.39783653846153844,
+            "teacher_agreement": 0.7956730769230769,
+            "logit_mse": 0.09078626334667206
+          }
+        },
+        {
+          "elapsed_sec": 8.57134269992821,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.359375,
+            "teacher_agreement": 0.5402644230769231,
+            "logit_mse": 0.2427157759666443
+          },
+          "T4": {
+            "accuracy": 0.39783653846153844,
+            "teacher_agreement": 0.7956730769230769,
+            "logit_mse": 0.09078626334667206
+          }
+        },
+        {
+          "elapsed_sec": 8.47784739988856,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.359375,
+            "teacher_agreement": 0.5402644230769231,
+            "logit_mse": 0.2427157759666443
+          },
+          "T4": {
+            "accuracy": 0.39783653846153844,
+            "teacher_agreement": 0.7956730769230769,
+            "logit_mse": 0.09078626334667206
+          }
+        }
+      ],
+      "median_elapsed_sec": 8.401942499913275,
+      "p95_elapsed_sec": 8.581758769950829,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 0,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6842600998934358,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5042067307692307,
+            "logit_mse": 0.2829315960407257
+          },
+          "T4": {
+            "accuracy": 0.37740384615384615,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13416726887226105
+          }
+        },
+        {
+          "elapsed_sec": 1.6879948999267071,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5042067307692307,
+            "logit_mse": 0.2829315960407257
+          },
+          "T4": {
+            "accuracy": 0.37740384615384615,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13416726887226105
+          }
+        },
+        {
+          "elapsed_sec": 1.687837699893862,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5042067307692307,
+            "logit_mse": 0.2829315960407257
+          },
+          "T4": {
+            "accuracy": 0.37740384615384615,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13416726887226105
+          }
+        },
+        {
+          "elapsed_sec": 1.687649899860844,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5042067307692307,
+            "logit_mse": 0.2829315960407257
+          },
+          "T4": {
+            "accuracy": 0.37740384615384615,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13416726887226105
+          }
+        },
+        {
+          "elapsed_sec": 1.692556699970737,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5042067307692307,
+            "logit_mse": 0.2829315960407257
+          },
+          "T4": {
+            "accuracy": 0.37740384615384615,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13416726887226105
+          }
+        },
+        {
+          "elapsed_sec": 1.7010501001495868,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5042067307692307,
+            "logit_mse": 0.2829315960407257
+          },
+          "T4": {
+            "accuracy": 0.37740384615384615,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13416726887226105
+          }
+        },
+        {
+          "elapsed_sec": 1.687855799915269,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5042067307692307,
+            "logit_mse": 0.2829315960407257
+          },
+          "T4": {
+            "accuracy": 0.37740384615384615,
+            "teacher_agreement": 0.7301682692307693,
+            "logit_mse": 0.13416726887226105
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.687855799915269,
+      "p95_elapsed_sec": 1.6985020800959318,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 0,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6696087999735028,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3563701923076923,
+            "teacher_agreement": 0.5258413461538461,
+            "logit_mse": 0.2521775960922241
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7698317307692307,
+            "logit_mse": 0.10678494721651077
+          }
+        },
+        {
+          "elapsed_sec": 1.6736913998611271,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3563701923076923,
+            "teacher_agreement": 0.5258413461538461,
+            "logit_mse": 0.2521775960922241
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7698317307692307,
+            "logit_mse": 0.10678494721651077
+          }
+        },
+        {
+          "elapsed_sec": 1.666829900117591,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3563701923076923,
+            "teacher_agreement": 0.5258413461538461,
+            "logit_mse": 0.2521775960922241
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7698317307692307,
+            "logit_mse": 0.10678494721651077
+          }
+        },
+        {
+          "elapsed_sec": 1.6707387999631464,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3563701923076923,
+            "teacher_agreement": 0.5258413461538461,
+            "logit_mse": 0.2521775960922241
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7698317307692307,
+            "logit_mse": 0.10678494721651077
+          }
+        },
+        {
+          "elapsed_sec": 1.6725504999049008,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3563701923076923,
+            "teacher_agreement": 0.5258413461538461,
+            "logit_mse": 0.2521775960922241
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7698317307692307,
+            "logit_mse": 0.10678494721651077
+          }
+        },
+        {
+          "elapsed_sec": 1.667695000069216,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3563701923076923,
+            "teacher_agreement": 0.5258413461538461,
+            "logit_mse": 0.2521775960922241
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7698317307692307,
+            "logit_mse": 0.10678494721651077
+          }
+        },
+        {
+          "elapsed_sec": 1.667210099985823,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3563701923076923,
+            "teacher_agreement": 0.5258413461538461,
+            "logit_mse": 0.2521775960922241
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7698317307692307,
+            "logit_mse": 0.10678494721651077
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6696087999735028,
+      "p95_elapsed_sec": 1.6733491298742593,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 0,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6850638999603689,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3659855769230769,
+            "teacher_agreement": 0.5612980769230769,
+            "logit_mse": 0.22404834628105164
+          },
+          "T4": {
+            "accuracy": 0.4104567307692308,
+            "teacher_agreement": 0.7962740384615384,
+            "logit_mse": 0.08807437866926193
+          }
+        },
+        {
+          "elapsed_sec": 1.7038755000103265,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3659855769230769,
+            "teacher_agreement": 0.5612980769230769,
+            "logit_mse": 0.22404834628105164
+          },
+          "T4": {
+            "accuracy": 0.4104567307692308,
+            "teacher_agreement": 0.7962740384615384,
+            "logit_mse": 0.08807437866926193
+          }
+        },
+        {
+          "elapsed_sec": 1.6981215002015233,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3659855769230769,
+            "teacher_agreement": 0.5612980769230769,
+            "logit_mse": 0.22404834628105164
+          },
+          "T4": {
+            "accuracy": 0.4104567307692308,
+            "teacher_agreement": 0.7962740384615384,
+            "logit_mse": 0.08807437866926193
+          }
+        },
+        {
+          "elapsed_sec": 1.6849132000934333,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3659855769230769,
+            "teacher_agreement": 0.5612980769230769,
+            "logit_mse": 0.22404834628105164
+          },
+          "T4": {
+            "accuracy": 0.4104567307692308,
+            "teacher_agreement": 0.7962740384615384,
+            "logit_mse": 0.08807437866926193
+          }
+        },
+        {
+          "elapsed_sec": 1.680627399822697,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3659855769230769,
+            "teacher_agreement": 0.5612980769230769,
+            "logit_mse": 0.22404834628105164
+          },
+          "T4": {
+            "accuracy": 0.4104567307692308,
+            "teacher_agreement": 0.7962740384615384,
+            "logit_mse": 0.08807437866926193
+          }
+        },
+        {
+          "elapsed_sec": 1.6825376998167485,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3659855769230769,
+            "teacher_agreement": 0.5612980769230769,
+            "logit_mse": 0.22404834628105164
+          },
+          "T4": {
+            "accuracy": 0.4104567307692308,
+            "teacher_agreement": 0.7962740384615384,
+            "logit_mse": 0.08807437866926193
+          }
+        },
+        {
+          "elapsed_sec": 1.6862083000596613,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3659855769230769,
+            "teacher_agreement": 0.5612980769230769,
+            "logit_mse": 0.22404834628105164
+          },
+          "T4": {
+            "accuracy": 0.4104567307692308,
+            "teacher_agreement": 0.7962740384615384,
+            "logit_mse": 0.08807437866926193
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6850638999603689,
+      "p95_elapsed_sec": 1.7021493000676855,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 1,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.5643798999954015,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2938701923076923,
+            "teacher_agreement": 0.42908653846153844,
+            "logit_mse": 0.2992096543312073
+          },
+          "T4": {
+            "accuracy": 0.3792067307692308,
+            "teacher_agreement": 0.7602163461538461,
+            "logit_mse": 0.10260875523090363
+          }
+        },
+        {
+          "elapsed_sec": 1.5630065000150353,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2938701923076923,
+            "teacher_agreement": 0.42908653846153844,
+            "logit_mse": 0.2992096543312073
+          },
+          "T4": {
+            "accuracy": 0.3792067307692308,
+            "teacher_agreement": 0.7602163461538461,
+            "logit_mse": 0.10260875523090363
+          }
+        },
+        {
+          "elapsed_sec": 1.5631787001620978,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2938701923076923,
+            "teacher_agreement": 0.42908653846153844,
+            "logit_mse": 0.2992096543312073
+          },
+          "T4": {
+            "accuracy": 0.3792067307692308,
+            "teacher_agreement": 0.7602163461538461,
+            "logit_mse": 0.10260875523090363
+          }
+        },
+        {
+          "elapsed_sec": 1.564550100127235,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2938701923076923,
+            "teacher_agreement": 0.42908653846153844,
+            "logit_mse": 0.2992096543312073
+          },
+          "T4": {
+            "accuracy": 0.3792067307692308,
+            "teacher_agreement": 0.7602163461538461,
+            "logit_mse": 0.10260875523090363
+          }
+        },
+        {
+          "elapsed_sec": 1.5628202001098543,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2938701923076923,
+            "teacher_agreement": 0.42908653846153844,
+            "logit_mse": 0.2992096543312073
+          },
+          "T4": {
+            "accuracy": 0.3792067307692308,
+            "teacher_agreement": 0.7602163461538461,
+            "logit_mse": 0.10260875523090363
+          }
+        },
+        {
+          "elapsed_sec": 1.5793063999153674,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2938701923076923,
+            "teacher_agreement": 0.42908653846153844,
+            "logit_mse": 0.2992096543312073
+          },
+          "T4": {
+            "accuracy": 0.3792067307692308,
+            "teacher_agreement": 0.7602163461538461,
+            "logit_mse": 0.10260875523090363
+          }
+        },
+        {
+          "elapsed_sec": 1.5635111001320183,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2938701923076923,
+            "teacher_agreement": 0.42908653846153844,
+            "logit_mse": 0.2992096543312073
+          },
+          "T4": {
+            "accuracy": 0.3792067307692308,
+            "teacher_agreement": 0.7602163461538461,
+            "logit_mse": 0.10260875523090363
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.5635111001320183,
+      "p95_elapsed_sec": 1.5748795099789277,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 1,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6592613998800516,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31850961538461536,
+            "teacher_agreement": 0.5054086538461539,
+            "logit_mse": 0.24983854591846466
+          },
+          "T4": {
+            "accuracy": 0.390625,
+            "teacher_agreement": 0.8082932692307693,
+            "logit_mse": 0.06902691721916199
+          }
+        },
+        {
+          "elapsed_sec": 1.647740500047803,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31850961538461536,
+            "teacher_agreement": 0.5054086538461539,
+            "logit_mse": 0.24983854591846466
+          },
+          "T4": {
+            "accuracy": 0.390625,
+            "teacher_agreement": 0.8082932692307693,
+            "logit_mse": 0.06902691721916199
+          }
+        },
+        {
+          "elapsed_sec": 1.6487410999834538,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31850961538461536,
+            "teacher_agreement": 0.5054086538461539,
+            "logit_mse": 0.24983854591846466
+          },
+          "T4": {
+            "accuracy": 0.390625,
+            "teacher_agreement": 0.8082932692307693,
+            "logit_mse": 0.06902691721916199
+          }
+        },
+        {
+          "elapsed_sec": 1.6481786000076681,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31850961538461536,
+            "teacher_agreement": 0.5054086538461539,
+            "logit_mse": 0.24983854591846466
+          },
+          "T4": {
+            "accuracy": 0.390625,
+            "teacher_agreement": 0.8082932692307693,
+            "logit_mse": 0.06902691721916199
+          }
+        },
+        {
+          "elapsed_sec": 1.6462655998766422,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31850961538461536,
+            "teacher_agreement": 0.5054086538461539,
+            "logit_mse": 0.24983854591846466
+          },
+          "T4": {
+            "accuracy": 0.390625,
+            "teacher_agreement": 0.8082932692307693,
+            "logit_mse": 0.06902691721916199
+          }
+        },
+        {
+          "elapsed_sec": 1.6485615000128746,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31850961538461536,
+            "teacher_agreement": 0.5054086538461539,
+            "logit_mse": 0.24983854591846466
+          },
+          "T4": {
+            "accuracy": 0.390625,
+            "teacher_agreement": 0.8082932692307693,
+            "logit_mse": 0.06902691721916199
+          }
+        },
+        {
+          "elapsed_sec": 1.6445005999412388,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31850961538461536,
+            "teacher_agreement": 0.5054086538461539,
+            "logit_mse": 0.24983854591846466
+          },
+          "T4": {
+            "accuracy": 0.390625,
+            "teacher_agreement": 0.8082932692307693,
+            "logit_mse": 0.06902691721916199
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6481786000076681,
+      "p95_elapsed_sec": 1.6561053099110723,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 1,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 8.389672999968752,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3112980769230769,
+            "teacher_agreement": 0.48497596153846156,
+            "logit_mse": 0.2552401125431061
+          },
+          "T4": {
+            "accuracy": 0.3876201923076923,
+            "teacher_agreement": 0.8359375,
+            "logit_mse": 0.07105924934148788
+          }
+        },
+        {
+          "elapsed_sec": 8.37371820001863,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3112980769230769,
+            "teacher_agreement": 0.48497596153846156,
+            "logit_mse": 0.2552401125431061
+          },
+          "T4": {
+            "accuracy": 0.3876201923076923,
+            "teacher_agreement": 0.8359375,
+            "logit_mse": 0.07105924934148788
+          }
+        },
+        {
+          "elapsed_sec": 8.429205199936405,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3112980769230769,
+            "teacher_agreement": 0.48497596153846156,
+            "logit_mse": 0.2552401125431061
+          },
+          "T4": {
+            "accuracy": 0.3876201923076923,
+            "teacher_agreement": 0.8359375,
+            "logit_mse": 0.07105924934148788
+          }
+        },
+        {
+          "elapsed_sec": 8.461930999998003,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3112980769230769,
+            "teacher_agreement": 0.48497596153846156,
+            "logit_mse": 0.2552401125431061
+          },
+          "T4": {
+            "accuracy": 0.3876201923076923,
+            "teacher_agreement": 0.8359375,
+            "logit_mse": 0.07105924934148788
+          }
+        },
+        {
+          "elapsed_sec": 8.54141389997676,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3112980769230769,
+            "teacher_agreement": 0.48497596153846156,
+            "logit_mse": 0.2552401125431061
+          },
+          "T4": {
+            "accuracy": 0.3876201923076923,
+            "teacher_agreement": 0.8359375,
+            "logit_mse": 0.07105924934148788
+          }
+        },
+        {
+          "elapsed_sec": 8.481435199966654,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3112980769230769,
+            "teacher_agreement": 0.48497596153846156,
+            "logit_mse": 0.2552401125431061
+          },
+          "T4": {
+            "accuracy": 0.3876201923076923,
+            "teacher_agreement": 0.8359375,
+            "logit_mse": 0.07105924934148788
+          }
+        },
+        {
+          "elapsed_sec": 8.738876899937168,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3112980769230769,
+            "teacher_agreement": 0.48497596153846156,
+            "logit_mse": 0.2552401125431061
+          },
+          "T4": {
+            "accuracy": 0.3876201923076923,
+            "teacher_agreement": 0.8359375,
+            "logit_mse": 0.07105924934148788
+          }
+        }
+      ],
+      "median_elapsed_sec": 8.461930999998003,
+      "p95_elapsed_sec": 8.679637999949046,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 1,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6875891000963748,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.29447115384615385,
+            "teacher_agreement": 0.43569711538461536,
+            "logit_mse": 0.2974981963634491
+          },
+          "T4": {
+            "accuracy": 0.38221153846153844,
+            "teacher_agreement": 0.7626201923076923,
+            "logit_mse": 0.10292896628379822
+          }
+        },
+        {
+          "elapsed_sec": 1.690829399973154,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.29447115384615385,
+            "teacher_agreement": 0.43569711538461536,
+            "logit_mse": 0.2974981963634491
+          },
+          "T4": {
+            "accuracy": 0.38221153846153844,
+            "teacher_agreement": 0.7626201923076923,
+            "logit_mse": 0.10292896628379822
+          }
+        },
+        {
+          "elapsed_sec": 1.692775100003928,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.29447115384615385,
+            "teacher_agreement": 0.43569711538461536,
+            "logit_mse": 0.2974981963634491
+          },
+          "T4": {
+            "accuracy": 0.38221153846153844,
+            "teacher_agreement": 0.7626201923076923,
+            "logit_mse": 0.10292896628379822
+          }
+        },
+        {
+          "elapsed_sec": 1.6898437000345439,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.29447115384615385,
+            "teacher_agreement": 0.43569711538461536,
+            "logit_mse": 0.2974981963634491
+          },
+          "T4": {
+            "accuracy": 0.38221153846153844,
+            "teacher_agreement": 0.7626201923076923,
+            "logit_mse": 0.10292896628379822
+          }
+        },
+        {
+          "elapsed_sec": 1.6900772000662982,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.29447115384615385,
+            "teacher_agreement": 0.43569711538461536,
+            "logit_mse": 0.2974981963634491
+          },
+          "T4": {
+            "accuracy": 0.38221153846153844,
+            "teacher_agreement": 0.7626201923076923,
+            "logit_mse": 0.10292896628379822
+          }
+        },
+        {
+          "elapsed_sec": 1.6872497000731528,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.29447115384615385,
+            "teacher_agreement": 0.43569711538461536,
+            "logit_mse": 0.2974981963634491
+          },
+          "T4": {
+            "accuracy": 0.38221153846153844,
+            "teacher_agreement": 0.7626201923076923,
+            "logit_mse": 0.10292896628379822
+          }
+        },
+        {
+          "elapsed_sec": 1.6860320998821408,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.29447115384615385,
+            "teacher_agreement": 0.43569711538461536,
+            "logit_mse": 0.2974981963634491
+          },
+          "T4": {
+            "accuracy": 0.38221153846153844,
+            "teacher_agreement": 0.7626201923076923,
+            "logit_mse": 0.10292896628379822
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6898437000345439,
+      "p95_elapsed_sec": 1.6921913899946959,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 1,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6650904999114573,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2878605769230769,
+            "teacher_agreement": 0.4561298076923077,
+            "logit_mse": 0.2710196375846863
+          },
+          "T4": {
+            "accuracy": 0.38521634615384615,
+            "teacher_agreement": 0.7824519230769231,
+            "logit_mse": 0.08737459778785706
+          }
+        },
+        {
+          "elapsed_sec": 1.6684023002162576,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2878605769230769,
+            "teacher_agreement": 0.4561298076923077,
+            "logit_mse": 0.2710196375846863
+          },
+          "T4": {
+            "accuracy": 0.38521634615384615,
+            "teacher_agreement": 0.7824519230769231,
+            "logit_mse": 0.08737459778785706
+          }
+        },
+        {
+          "elapsed_sec": 1.6656510001048446,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2878605769230769,
+            "teacher_agreement": 0.4561298076923077,
+            "logit_mse": 0.2710196375846863
+          },
+          "T4": {
+            "accuracy": 0.38521634615384615,
+            "teacher_agreement": 0.7824519230769231,
+            "logit_mse": 0.08737459778785706
+          }
+        },
+        {
+          "elapsed_sec": 1.6655449999962002,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2878605769230769,
+            "teacher_agreement": 0.4561298076923077,
+            "logit_mse": 0.2710196375846863
+          },
+          "T4": {
+            "accuracy": 0.38521634615384615,
+            "teacher_agreement": 0.7824519230769231,
+            "logit_mse": 0.08737459778785706
+          }
+        },
+        {
+          "elapsed_sec": 1.6661018999293447,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2878605769230769,
+            "teacher_agreement": 0.4561298076923077,
+            "logit_mse": 0.2710196375846863
+          },
+          "T4": {
+            "accuracy": 0.38521634615384615,
+            "teacher_agreement": 0.7824519230769231,
+            "logit_mse": 0.08737459778785706
+          }
+        },
+        {
+          "elapsed_sec": 1.6667362998705357,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2878605769230769,
+            "teacher_agreement": 0.4561298076923077,
+            "logit_mse": 0.2710196375846863
+          },
+          "T4": {
+            "accuracy": 0.38521634615384615,
+            "teacher_agreement": 0.7824519230769231,
+            "logit_mse": 0.08737459778785706
+          }
+        },
+        {
+          "elapsed_sec": 1.6662109999451786,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.2878605769230769,
+            "teacher_agreement": 0.4561298076923077,
+            "logit_mse": 0.2710196375846863
+          },
+          "T4": {
+            "accuracy": 0.38521634615384615,
+            "teacher_agreement": 0.7824519230769231,
+            "logit_mse": 0.08737459778785706
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6661018999293447,
+      "p95_elapsed_sec": 1.667902500112541,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 1,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6900146000552922,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31490384615384615,
+            "teacher_agreement": 0.49158653846153844,
+            "logit_mse": 0.24402372539043427
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7974759615384616,
+            "logit_mse": 0.058246415108442307
+          }
+        },
+        {
+          "elapsed_sec": 1.683124199975282,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31490384615384615,
+            "teacher_agreement": 0.49158653846153844,
+            "logit_mse": 0.24402372539043427
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7974759615384616,
+            "logit_mse": 0.058246415108442307
+          }
+        },
+        {
+          "elapsed_sec": 1.6809666999615729,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31490384615384615,
+            "teacher_agreement": 0.49158653846153844,
+            "logit_mse": 0.24402372539043427
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7974759615384616,
+            "logit_mse": 0.058246415108442307
+          }
+        },
+        {
+          "elapsed_sec": 1.6789345999713987,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31490384615384615,
+            "teacher_agreement": 0.49158653846153844,
+            "logit_mse": 0.24402372539043427
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7974759615384616,
+            "logit_mse": 0.058246415108442307
+          }
+        },
+        {
+          "elapsed_sec": 1.6810137000866234,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31490384615384615,
+            "teacher_agreement": 0.49158653846153844,
+            "logit_mse": 0.24402372539043427
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7974759615384616,
+            "logit_mse": 0.058246415108442307
+          }
+        },
+        {
+          "elapsed_sec": 1.6783918000292033,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31490384615384615,
+            "teacher_agreement": 0.49158653846153844,
+            "logit_mse": 0.24402372539043427
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7974759615384616,
+            "logit_mse": 0.058246415108442307
+          }
+        },
+        {
+          "elapsed_sec": 1.6801728999707848,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.31490384615384615,
+            "teacher_agreement": 0.49158653846153844,
+            "logit_mse": 0.24402372539043427
+          },
+          "T4": {
+            "accuracy": 0.3858173076923077,
+            "teacher_agreement": 0.7974759615384616,
+            "logit_mse": 0.058246415108442307
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6809666999615729,
+      "p95_elapsed_sec": 1.6879474800312892,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 2,
+      "method": "svd_only",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.564065800048411,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33533653846153844,
+            "teacher_agreement": 0.5943509615384616,
+            "logit_mse": 0.2762403190135956
+          },
+          "T4": {
+            "accuracy": 0.3707932692307692,
+            "teacher_agreement": 0.7193509615384616,
+            "logit_mse": 0.11108040809631348
+          }
+        },
+        {
+          "elapsed_sec": 1.5643900998402387,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33533653846153844,
+            "teacher_agreement": 0.5943509615384616,
+            "logit_mse": 0.2762403190135956
+          },
+          "T4": {
+            "accuracy": 0.3707932692307692,
+            "teacher_agreement": 0.7193509615384616,
+            "logit_mse": 0.11108040809631348
+          }
+        },
+        {
+          "elapsed_sec": 1.5629484001547098,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33533653846153844,
+            "teacher_agreement": 0.5943509615384616,
+            "logit_mse": 0.2762403190135956
+          },
+          "T4": {
+            "accuracy": 0.3707932692307692,
+            "teacher_agreement": 0.7193509615384616,
+            "logit_mse": 0.11108040809631348
+          }
+        },
+        {
+          "elapsed_sec": 1.5635591999161988,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33533653846153844,
+            "teacher_agreement": 0.5943509615384616,
+            "logit_mse": 0.2762403190135956
+          },
+          "T4": {
+            "accuracy": 0.3707932692307692,
+            "teacher_agreement": 0.7193509615384616,
+            "logit_mse": 0.11108040809631348
+          }
+        },
+        {
+          "elapsed_sec": 1.5686508999206126,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33533653846153844,
+            "teacher_agreement": 0.5943509615384616,
+            "logit_mse": 0.2762403190135956
+          },
+          "T4": {
+            "accuracy": 0.3707932692307692,
+            "teacher_agreement": 0.7193509615384616,
+            "logit_mse": 0.11108040809631348
+          }
+        },
+        {
+          "elapsed_sec": 1.5720112000126392,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33533653846153844,
+            "teacher_agreement": 0.5943509615384616,
+            "logit_mse": 0.2762403190135956
+          },
+          "T4": {
+            "accuracy": 0.3707932692307692,
+            "teacher_agreement": 0.7193509615384616,
+            "logit_mse": 0.11108040809631348
+          }
+        },
+        {
+          "elapsed_sec": 1.5664997999556363,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33533653846153844,
+            "teacher_agreement": 0.5943509615384616,
+            "logit_mse": 0.2762403190135956
+          },
+          "T4": {
+            "accuracy": 0.3707932692307692,
+            "teacher_agreement": 0.7193509615384616,
+            "logit_mse": 0.11108040809631348
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.5643900998402387,
+      "p95_elapsed_sec": 1.5710031099850312,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 2,
+      "method": "top_abs",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6469272000249475,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3551682692307692,
+            "teacher_agreement": 0.6364182692307693,
+            "logit_mse": 0.22403453290462494
+          },
+          "T4": {
+            "accuracy": 0.3972355769230769,
+            "teacher_agreement": 0.8016826923076923,
+            "logit_mse": 0.07078719139099121
+          }
+        },
+        {
+          "elapsed_sec": 1.6487857999745756,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3551682692307692,
+            "teacher_agreement": 0.6364182692307693,
+            "logit_mse": 0.22403453290462494
+          },
+          "T4": {
+            "accuracy": 0.3972355769230769,
+            "teacher_agreement": 0.8016826923076923,
+            "logit_mse": 0.07078719139099121
+          }
+        },
+        {
+          "elapsed_sec": 1.6496759001165628,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3551682692307692,
+            "teacher_agreement": 0.6364182692307693,
+            "logit_mse": 0.22403453290462494
+          },
+          "T4": {
+            "accuracy": 0.3972355769230769,
+            "teacher_agreement": 0.8016826923076923,
+            "logit_mse": 0.07078719139099121
+          }
+        },
+        {
+          "elapsed_sec": 1.6530873998999596,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3551682692307692,
+            "teacher_agreement": 0.6364182692307693,
+            "logit_mse": 0.22403453290462494
+          },
+          "T4": {
+            "accuracy": 0.3972355769230769,
+            "teacher_agreement": 0.8016826923076923,
+            "logit_mse": 0.07078719139099121
+          }
+        },
+        {
+          "elapsed_sec": 1.6504138000309467,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3551682692307692,
+            "teacher_agreement": 0.6364182692307693,
+            "logit_mse": 0.22403453290462494
+          },
+          "T4": {
+            "accuracy": 0.3972355769230769,
+            "teacher_agreement": 0.8016826923076923,
+            "logit_mse": 0.07078719139099121
+          }
+        },
+        {
+          "elapsed_sec": 1.6498732999898493,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3551682692307692,
+            "teacher_agreement": 0.6364182692307693,
+            "logit_mse": 0.22403453290462494
+          },
+          "T4": {
+            "accuracy": 0.3972355769230769,
+            "teacher_agreement": 0.8016826923076923,
+            "logit_mse": 0.07078719139099121
+          }
+        },
+        {
+          "elapsed_sec": 1.647059200098738,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.3551682692307692,
+            "teacher_agreement": 0.6364182692307693,
+            "logit_mse": 0.22403453290462494
+          },
+          "T4": {
+            "accuracy": 0.3972355769230769,
+            "teacher_agreement": 0.8016826923076923,
+            "logit_mse": 0.07078719139099121
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6496759001165628,
+      "p95_elapsed_sec": 1.6522853199392558,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 2,
+      "method": "a2q_node_budget",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 8.871440699789673,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5625,
+            "logit_mse": 0.22026585042476654
+          },
+          "T4": {
+            "accuracy": 0.3870192307692308,
+            "teacher_agreement": 0.7992788461538461,
+            "logit_mse": 0.07672938704490662
+          }
+        },
+        {
+          "elapsed_sec": 8.69678770005703,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5625,
+            "logit_mse": 0.22026585042476654
+          },
+          "T4": {
+            "accuracy": 0.3870192307692308,
+            "teacher_agreement": 0.7992788461538461,
+            "logit_mse": 0.07672938704490662
+          }
+        },
+        {
+          "elapsed_sec": 8.500591499963775,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5625,
+            "logit_mse": 0.22026585042476654
+          },
+          "T4": {
+            "accuracy": 0.3870192307692308,
+            "teacher_agreement": 0.7992788461538461,
+            "logit_mse": 0.07672938704490662
+          }
+        },
+        {
+          "elapsed_sec": 8.679501899983734,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5625,
+            "logit_mse": 0.22026585042476654
+          },
+          "T4": {
+            "accuracy": 0.3870192307692308,
+            "teacher_agreement": 0.7992788461538461,
+            "logit_mse": 0.07672938704490662
+          }
+        },
+        {
+          "elapsed_sec": 8.603036500047892,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5625,
+            "logit_mse": 0.22026585042476654
+          },
+          "T4": {
+            "accuracy": 0.3870192307692308,
+            "teacher_agreement": 0.7992788461538461,
+            "logit_mse": 0.07672938704490662
+          }
+        },
+        {
+          "elapsed_sec": 8.467352899955586,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5625,
+            "logit_mse": 0.22026585042476654
+          },
+          "T4": {
+            "accuracy": 0.3870192307692308,
+            "teacher_agreement": 0.7992788461538461,
+            "logit_mse": 0.07672938704490662
+          }
+        },
+        {
+          "elapsed_sec": 8.396171600092202,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.35216346153846156,
+            "teacher_agreement": 0.5625,
+            "logit_mse": 0.22026585042476654
+          },
+          "T4": {
+            "accuracy": 0.3870192307692308,
+            "teacher_agreement": 0.7992788461538461,
+            "logit_mse": 0.07672938704490662
+          }
+        }
+      ],
+      "median_elapsed_sec": 8.603036500047892,
+      "p95_elapsed_sec": 8.81904479986988,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 2,
+      "method": "uniform",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6902630000840873,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33774038461538464,
+            "teacher_agreement": 0.5949519230769231,
+            "logit_mse": 0.27497172355651855
+          },
+          "T4": {
+            "accuracy": 0.3713942307692308,
+            "teacher_agreement": 0.7253605769230769,
+            "logit_mse": 0.10839158296585083
+          }
+        },
+        {
+          "elapsed_sec": 1.6878084000200033,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33774038461538464,
+            "teacher_agreement": 0.5949519230769231,
+            "logit_mse": 0.27497172355651855
+          },
+          "T4": {
+            "accuracy": 0.3713942307692308,
+            "teacher_agreement": 0.7253605769230769,
+            "logit_mse": 0.10839158296585083
+          }
+        },
+        {
+          "elapsed_sec": 1.6899274999741465,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33774038461538464,
+            "teacher_agreement": 0.5949519230769231,
+            "logit_mse": 0.27497172355651855
+          },
+          "T4": {
+            "accuracy": 0.3713942307692308,
+            "teacher_agreement": 0.7253605769230769,
+            "logit_mse": 0.10839158296585083
+          }
+        },
+        {
+          "elapsed_sec": 1.68453190010041,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33774038461538464,
+            "teacher_agreement": 0.5949519230769231,
+            "logit_mse": 0.27497172355651855
+          },
+          "T4": {
+            "accuracy": 0.3713942307692308,
+            "teacher_agreement": 0.7253605769230769,
+            "logit_mse": 0.10839158296585083
+          }
+        },
+        {
+          "elapsed_sec": 1.6921210000291467,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33774038461538464,
+            "teacher_agreement": 0.5949519230769231,
+            "logit_mse": 0.27497172355651855
+          },
+          "T4": {
+            "accuracy": 0.3713942307692308,
+            "teacher_agreement": 0.7253605769230769,
+            "logit_mse": 0.10839158296585083
+          }
+        },
+        {
+          "elapsed_sec": 1.6879700000863522,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33774038461538464,
+            "teacher_agreement": 0.5949519230769231,
+            "logit_mse": 0.27497172355651855
+          },
+          "T4": {
+            "accuracy": 0.3713942307692308,
+            "teacher_agreement": 0.7253605769230769,
+            "logit_mse": 0.10839158296585083
+          }
+        },
+        {
+          "elapsed_sec": 1.6868945001624525,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.33774038461538464,
+            "teacher_agreement": 0.5949519230769231,
+            "logit_mse": 0.27497172355651855
+          },
+          "T4": {
+            "accuracy": 0.3713942307692308,
+            "teacher_agreement": 0.7253605769230769,
+            "logit_mse": 0.10839158296585083
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6879700000863522,
+      "p95_elapsed_sec": 1.691563600045629,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 2,
+      "method": "one_spike",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.6648118000011891,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34314903846153844,
+            "teacher_agreement": 0.5576923076923077,
+            "logit_mse": 0.23325441777706146
+          },
+          "T4": {
+            "accuracy": 0.3840144230769231,
+            "teacher_agreement": 0.7728365384615384,
+            "logit_mse": 0.09529928863048553
+          }
+        },
+        {
+          "elapsed_sec": 1.6684198998846114,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34314903846153844,
+            "teacher_agreement": 0.5576923076923077,
+            "logit_mse": 0.23325441777706146
+          },
+          "T4": {
+            "accuracy": 0.3840144230769231,
+            "teacher_agreement": 0.7728365384615384,
+            "logit_mse": 0.09529928863048553
+          }
+        },
+        {
+          "elapsed_sec": 1.6661313001532108,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34314903846153844,
+            "teacher_agreement": 0.5576923076923077,
+            "logit_mse": 0.23325441777706146
+          },
+          "T4": {
+            "accuracy": 0.3840144230769231,
+            "teacher_agreement": 0.7728365384615384,
+            "logit_mse": 0.09529928863048553
+          }
+        },
+        {
+          "elapsed_sec": 1.6678408000152558,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34314903846153844,
+            "teacher_agreement": 0.5576923076923077,
+            "logit_mse": 0.23325441777706146
+          },
+          "T4": {
+            "accuracy": 0.3840144230769231,
+            "teacher_agreement": 0.7728365384615384,
+            "logit_mse": 0.09529928863048553
+          }
+        },
+        {
+          "elapsed_sec": 1.6679243999533355,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34314903846153844,
+            "teacher_agreement": 0.5576923076923077,
+            "logit_mse": 0.23325441777706146
+          },
+          "T4": {
+            "accuracy": 0.3840144230769231,
+            "teacher_agreement": 0.7728365384615384,
+            "logit_mse": 0.09529928863048553
+          }
+        },
+        {
+          "elapsed_sec": 1.6670661999378353,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34314903846153844,
+            "teacher_agreement": 0.5576923076923077,
+            "logit_mse": 0.23325441777706146
+          },
+          "T4": {
+            "accuracy": 0.3840144230769231,
+            "teacher_agreement": 0.7728365384615384,
+            "logit_mse": 0.09529928863048553
+          }
+        },
+        {
+          "elapsed_sec": 1.6655584999825805,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34314903846153844,
+            "teacher_agreement": 0.5576923076923077,
+            "logit_mse": 0.23325441777706146
+          },
+          "T4": {
+            "accuracy": 0.3840144230769231,
+            "teacher_agreement": 0.7728365384615384,
+            "logit_mse": 0.09529928863048553
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.6670661999378353,
+      "p95_elapsed_sec": 1.6682712499052286,
+      "peak_memory_mb": 218.2275390625
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 2,
+      "method": "downstream_jacobian",
+      "warmups": 3,
+      "timed_repeats": [
+        {
+          "elapsed_sec": 1.678596599958837,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34375,
+            "teacher_agreement": 0.5919471153846154,
+            "logit_mse": 0.23424145579338074
+          },
+          "T4": {
+            "accuracy": 0.3936298076923077,
+            "teacher_agreement": 0.7872596153846154,
+            "logit_mse": 0.06916380673646927
+          }
+        },
+        {
+          "elapsed_sec": 1.6781464000232518,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34375,
+            "teacher_agreement": 0.5919471153846154,
+            "logit_mse": 0.23424145579338074
+          },
+          "T4": {
+            "accuracy": 0.3936298076923077,
+            "teacher_agreement": 0.7872596153846154,
+            "logit_mse": 0.06916380673646927
+          }
+        },
+        {
+          "elapsed_sec": 1.682802600087598,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34375,
+            "teacher_agreement": 0.5919471153846154,
+            "logit_mse": 0.23424145579338074
+          },
+          "T4": {
+            "accuracy": 0.3936298076923077,
+            "teacher_agreement": 0.7872596153846154,
+            "logit_mse": 0.06916380673646927
+          }
+        },
+        {
+          "elapsed_sec": 1.68046969990246,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34375,
+            "teacher_agreement": 0.5919471153846154,
+            "logit_mse": 0.23424145579338074
+          },
+          "T4": {
+            "accuracy": 0.3936298076923077,
+            "teacher_agreement": 0.7872596153846154,
+            "logit_mse": 0.06916380673646927
+          }
+        },
+        {
+          "elapsed_sec": 1.6777371000498533,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34375,
+            "teacher_agreement": 0.5919471153846154,
+            "logit_mse": 0.23424145579338074
+          },
+          "T4": {
+            "accuracy": 0.3936298076923077,
+            "teacher_agreement": 0.7872596153846154,
+            "logit_mse": 0.06916380673646927
+          }
+        },
+        {
+          "elapsed_sec": 1.6781454000156373,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34375,
+            "teacher_agreement": 0.5919471153846154,
+            "logit_mse": 0.23424145579338074
+          },
+          "T4": {
+            "accuracy": 0.3936298076923077,
+            "teacher_agreement": 0.7872596153846154,
+            "logit_mse": 0.06916380673646927
+          }
+        },
+        {
+          "elapsed_sec": 1.6823517000302672,
+          "peak_memory_mb": 218.2275390625,
+          "T2": {
+            "accuracy": 0.34375,
+            "teacher_agreement": 0.5919471153846154,
+            "logit_mse": 0.23424145579338074
+          },
+          "T4": {
+            "accuracy": 0.3936298076923077,
+            "teacher_agreement": 0.7872596153846154,
+            "logit_mse": 0.06916380673646927
+          }
+        }
+      ],
+      "median_elapsed_sec": 1.678596599958837,
+      "p95_elapsed_sec": 1.6826673300703987,
+      "peak_memory_mb": 218.2275390625
+    }
+  ]
+}

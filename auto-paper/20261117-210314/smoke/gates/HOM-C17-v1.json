@@ -1,0 +1,11 @@
+{
+  "candidate": "HOM-C17-v1",
+  "frozen_at": "2026-11-17T23:45:00+08:00",
+  "confirmation_seeds": [4, 5, 6],
+  "high_homophily": ["cora", "citeseer", "pubmed"],
+  "low_homophily": ["chameleon", "squirrel"],
+  "excluded_middle": ["ogbn-arxiv"],
+  "group_delta_difference_pp_min": 5.0,
+  "passing_seeds_min": 2,
+  "test_isolation": "validation masks only; seeds0-3 excluded from confirmation"
+}

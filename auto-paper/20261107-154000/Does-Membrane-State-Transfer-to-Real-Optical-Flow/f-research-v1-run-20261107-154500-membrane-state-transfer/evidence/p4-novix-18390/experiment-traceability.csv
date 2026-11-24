@@ -1,0 +1,10 @@
+requirement,result_key,evidence
+complete biological edge table,graph.dense_graph,data/official_download_summary.json; data/graph_cache/dense_graph_meta.json
+exact-hop KC self-check,invariants.kc_reachable_count,data/graph_cache/graph_bundle.json
+15-cell gate grid,gate_operating_point_grid,evidence/gate_operating_point.csv
+firing-rate-yoked 2x2,yoked_firing_rate_2x2,evidence/yoked_firing_rate_2x2.csv
+variance-information separation,variance_information_separation,evidence/variance_vs_information.csv
+five internal readouts,readout_state_variables,evidence/readout_state_variables.csv
+one-factor ablations,one_factor_ablations,evidence/main_table.csv
+raw NPZ per condition and seed,raw_artifacts,evidence/raw/*.npz
+real protocol preregistration,preregistration,config_preregistered.json + config_preregistered.sha256

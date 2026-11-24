@@ -1,0 +1,10 @@
+{
+  "candidate": "CONF-C09-v1",
+  "frozen_at": "2026-11-17T22:35:00+08:00",
+  "target_selective_error": 0.05,
+  "minimum_validation_coverage": 0.30,
+  "random_draws": 2000,
+  "random_win_fraction_min": 0.95,
+  "partitions": {"dev": 512, "tune": 512, "validation": 512},
+  "test_isolation": "no test NPZ read"
+}

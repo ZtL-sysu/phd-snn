@@ -1,0 +1,398 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-guidance-builder-v1",
+  "contract_version": "v1",
+  "delivery_mode": "preparation",
+  "readiness": [
+    {
+      "path": "contracts/delivery-readiness.json",
+      "sha256": "3be58a7c9265309036bb84856ed1c1a895e6632b29c5efce33f260bd4b3c0aed"
+    }
+  ],
+  "contract": [
+    {
+      "path": "contracts/execution-contract-v1.md",
+      "sha256": "da64714b2c08d8b86e45c2d1c31fd2d666b69bb3fb14e6739271dd0d2a77bb2f"
+    },
+    {
+      "path": "contracts/execution-contract-v1-addendum-C8.md",
+      "sha256": "56dd17ae2c93ac22cc15511248861b2972b15b2f34f2a583f3f479a974f83298"
+    },
+    {
+      "path": "contracts/agent_prompt_v2_ICML25.snapshot.md",
+      "sha256": "3a8a4887cd93bef0acad79fc149b3edf145223b44d169048ecc77b7313363a47"
+    }
+  ],
+  "history": [
+    {
+      "action": "pass",
+      "stage": "CCFA-startup"
+    },
+    {
+      "action": "pass",
+      "stage": "G0"
+    },
+    {
+      "action": "pass",
+      "stage": "G1"
+    },
+    {
+      "action": "pass",
+      "stage": "G2"
+    },
+    {
+      "action": "pass",
+      "stage": "G3"
+    },
+    {
+      "action": "pass",
+      "stage": "G4"
+    },
+    {
+      "action": "pass",
+      "stage": "G5"
+    },
+    {
+      "action": "pass",
+      "stage": "G6"
+    },
+    {
+      "action": "pass",
+      "stage": "G7"
+    },
+    {
+      "action": "pass",
+      "stage": "G8"
+    },
+    {
+      "action": "pass",
+      "stage": "validation"
+    },
+    {
+      "action": "pass",
+      "stage": "handoff"
+    }
+  ],
+  "stages": [
+    {
+      "id": "CCFA-startup",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "contracts/execution-contract-v1.md",
+          "sha256": "da64714b2c08d8b86e45c2d1c31fd2d666b69bb3fb14e6739271dd0d2a77bb2f"
+        },
+        {
+          "path": "contracts/execution-contract-v1-addendum-C8.md",
+          "sha256": "56dd17ae2c93ac22cc15511248861b2972b15b2f34f2a583f3f479a974f83298"
+        },
+        {
+          "path": "contracts/agent_prompt_v2_ICML25.snapshot.md",
+          "sha256": "3a8a4887cd93bef0acad79fc149b3edf145223b44d169048ecc77b7313363a47"
+        },
+        {
+          "path": "notes/overlap-risk-AB.md",
+          "sha256": "0bf668fabc937f5b4b2bc76209991fb140de882c9aefb27c5110c4a2ec798968"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "ccfa-startup-packet/startup-stage-plan.md",
+          "sha256": "5bc0f8e3f7953354a6cc8d85cfeebd449974b80d2ed26083fa33858be633a57d"
+        },
+        {
+          "path": "ccfa-startup-packet/idea-cards.md",
+          "sha256": "1ec10e92f92f324d17885379a647d09a4ad4e78986aecae407b6b5f764035f65"
+        },
+        {
+          "path": "ccfa-startup-packet/prior-art-opportunity-map.md",
+          "sha256": "f42c2471e2fa49f6d3d80375e914664418f2cca88bc511ac05080ae817338917"
+        },
+        {
+          "path": "ccfa-startup-packet/idea-red-team-review.md",
+          "sha256": "5341342b90dc05564d89c9396739b91b688fe3432d3c6f61dca3546ec70042a5"
+        },
+        {
+          "path": "ccfa-startup-packet/claim-evidence-matrix.md",
+          "sha256": "e136f80e0aa894e743c13b016cf9c4e3a90fc7c5681cb865693f9415629574f2"
+        },
+        {
+          "path": "ccfa-startup-packet/strong-result-feasibility-contract.md",
+          "sha256": "f99cd6ecea36259b446cd599f81ab93398037a3d93501a9550bb709a0e2a1e73"
+        },
+        {
+          "path": "ccfa-startup-packet/startup-decision.md",
+          "sha256": "11eebdd40339b124f7ca69366ab46ea213baebab4cb5a571660ac96f430c8dfb"
+        },
+        {
+          "path": "ccfa-startup-packet/feasibility-contract.json",
+          "sha256": "7eb233a9eef45c70e8d48c061db7211ecdde233a9264de51a3ee610f54021ca3"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in ccfa-startup-packet/startup-stage-plan.md"
+    },
+    {
+      "id": "G0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/startup-stage-plan.md",
+          "sha256": "5bc0f8e3f7953354a6cc8d85cfeebd449974b80d2ed26083fa33858be633a57d"
+        },
+        {
+          "path": "notes/G0_literature_map.md",
+          "sha256": "6840787a07d2b954ff4221729ce76fdf6ca9af2d7e3850fa355040103778ce16"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "notes/G0_literature_map.md",
+          "sha256": "6840787a07d2b954ff4221729ce76fdf6ca9af2d7e3850fa355040103778ce16"
+        },
+        {
+          "path": "notes/G0_source_conflicts.md",
+          "sha256": "f60614b822b1e93db6ddb374749c3f28551ab168b1d867033bca1444c80b0eb7"
+        },
+        {
+          "path": "ccfa-startup-packet/prior-art-opportunity-map.md",
+          "sha256": "f42c2471e2fa49f6d3d80375e914664418f2cca88bc511ac05080ae817338917"
+        },
+        {
+          "path": "literature-baseline-matrix.md",
+          "sha256": "35062320c7bba5fe3db8dde1bef1bce8bfbab59435e3fffe84053ee0fe931d26"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in notes/G0_literature_map.md"
+    },
+    {
+      "id": "G1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "notes/G0_literature_map.md",
+          "sha256": "6840787a07d2b954ff4221729ce76fdf6ca9af2d7e3850fa355040103778ce16"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "dataset-access-log.md",
+          "sha256": "e9c5653c98903b6b6afb654f2492b5344503f0cf6e2bc163d84ae0939ca060b5"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in dataset-access-log.md"
+    },
+    {
+      "id": "G2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/claim-evidence-matrix.md",
+          "sha256": "e136f80e0aa894e743c13b016cf9c4e3a90fc7c5681cb865693f9415629574f2"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "ccfa-startup-packet/claim-evidence-matrix.md",
+          "sha256": "e136f80e0aa894e743c13b016cf9c4e3a90fc7c5681cb865693f9415629574f2"
+        },
+        {
+          "path": "guidance.md",
+          "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in ccfa-startup-packet/claim-evidence-matrix.md"
+    },
+    {
+      "id": "G3",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/idea-cards.md",
+          "sha256": "1ec10e92f92f324d17885379a647d09a4ad4e78986aecae407b6b5f764035f65"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "theoretical-feasibility-audit.md",
+          "sha256": "13f183c3158e12484b77b5db969a694e180280334f05a8bcf9a9eebdbd97da25"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in theoretical-feasibility-audit.md"
+    },
+    {
+      "id": "G4",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/prior-art-opportunity-map.md",
+          "sha256": "f42c2471e2fa49f6d3d80375e914664418f2cca88bc511ac05080ae817338917"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "novelty-feasibility-report.md",
+          "sha256": "21da5e5b2983ed543b3383c3221272fce2b5e388a1ae68ca9398729f957eb1fb"
+        },
+        {
+          "path": "notes/overlap-risk-AB.md",
+          "sha256": "0bf668fabc937f5b4b2bc76209991fb140de882c9aefb27c5110c4a2ec798968"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in novelty-feasibility-report.md"
+    },
+    {
+      "id": "G5",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "hardware-profile.md",
+          "sha256": "301a2dbfa9ee22329da47a5735c602819e4f213edaa584931b4329c9ff2e23f8"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "hardware-profile.md",
+          "sha256": "301a2dbfa9ee22329da47a5735c602819e4f213edaa584931b4329c9ff2e23f8"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in hardware-profile.md"
+    },
+    {
+      "id": "G6",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/prior-art-opportunity-map.md",
+          "sha256": "f42c2471e2fa49f6d3d80375e914664418f2cca88bc511ac05080ae817338917"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "literature-baseline-matrix.md",
+          "sha256": "35062320c7bba5fe3db8dde1bef1bce8bfbab59435e3fffe84053ee0fe931d26"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in literature-baseline-matrix.md"
+    },
+    {
+      "id": "G7",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/claim-evidence-matrix.md",
+          "sha256": "e136f80e0aa894e743c13b016cf9c4e3a90fc7c5681cb865693f9415629574f2"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "ccfa-startup-packet/strong-result-feasibility-contract.md",
+          "sha256": "f99cd6ecea36259b446cd599f81ab93398037a3d93501a9550bb709a0e2a1e73"
+        },
+        {
+          "path": "ccfa-startup-packet/feasibility-contract.json",
+          "sha256": "7eb233a9eef45c70e8d48c061db7211ecdde233a9264de51a3ee610f54021ca3"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in ccfa-startup-packet/strong-result-feasibility-contract.md"
+    },
+    {
+      "id": "G8",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/idea-red-team-review.md",
+          "sha256": "5341342b90dc05564d89c9396739b91b688fe3432d3c6f61dca3546ec70042a5"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "story-strength-audit.md",
+          "sha256": "caf5fd8973989084fe0a1419796eaccc4b6c9cc0fdc0684695b9c7f14e7e35c3"
+        },
+        {
+          "path": "ccfa-startup-packet/idea-red-team-review.md",
+          "sha256": "5341342b90dc05564d89c9396739b91b688fe3432d3c6f61dca3546ec70042a5"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in story-strength-audit.md"
+    },
+    {
+      "id": "validation",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "guidance.md",
+          "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+        },
+        {
+          "path": "ccfa-startup-packet/feasibility-contract.json",
+          "sha256": "7eb233a9eef45c70e8d48c061db7211ecdde233a9264de51a3ee610f54021ca3"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "guidance.md",
+          "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+        },
+        {
+          "path": "scenario-decision-log.md",
+          "sha256": "7dfb86ee6dd1bb8ea7c73b4921d90d8dde24a1552d0e0eceae18116d08577f4c"
+        },
+        {
+          "path": "ccfa-startup-packet/feasibility-contract.json",
+          "sha256": "7eb233a9eef45c70e8d48c061db7211ecdde233a9264de51a3ee610f54021ca3"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in guidance.md"
+    },
+    {
+      "id": "handoff",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "guidance.md",
+          "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+        },
+        {
+          "path": "scenario-decision-log.md",
+          "sha256": "7dfb86ee6dd1bb8ea7c73b4921d90d8dde24a1552d0e0eceae18116d08577f4c"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "notes/handoff-note.md",
+          "sha256": "8e79d07072a46097fb9f307a4e4949e4db49a7f53058db7296877b910b56772d"
+        },
+        {
+          "path": "guidance.md",
+          "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in notes/handoff-note.md"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "stage": "P9/AutoResearchClaw-18-PEER_REVIEW",
+  "status": "passed",
+  "arc_version": "0.3.1",
+  "arc_stage_source": "C:\\code\\AutoResearchClaw\\researchclaw\\pipeline\\stage_impls\\_review_publish.py",
+  "arc_stage_source_sha256": "8fad56dfaf795a3cb9a0da0ce3a8cb42eefcd7a2704c38c28b1e062ed56a331d",
+  "executor_identity": {
+    "provider": "acp",
+    "agent": "codex",
+    "agent_cli_version": "0.169.0-alpha.11.1",
+    "configured_model": "group/never-stuck",
+    "acpx_version": "0.19.2"
+  },
+  "context_isolation": {
+    "status": "verified-clean-external-boundary",
+    "internal_arc_calls": 1,
+    "external_review_calls": 2,
+    "reviewer_a_messages_sha256": "a940026aa3df78a0f0ad50706e203f314a267834c748edfc1955cbe1d20a26ef",
+    "reviewer_b_messages_sha256": "2aee0493c00946fcb92af2c8082fa678237ff1d86453f482799d8630fa65d906",
+    "arc_internal_prompt_sent_to_model": false,
+    "raw_execution_logs_sent_to_model": false,
+    "reviewer_sessions_isolated": true,
+    "note": "The installed ARC Stage 18 control flow was executed. Its historical context prompt was replaced at the external boundary by two separate clean reviewer requests. Reviewer A and Reviewer B used isolated Codex ACP sessions and received only the P8 manuscript and compact evidence digest."
+  },
+  "validation": {
+    "problems": [],
+    "reviewer_a_sha256": "1045eb1699cfd20b43b9b95b0fedd8e3e411a8105c71824aafa66f4b4e99a0f5",
+    "reviewer_b_sha256": "b93194968dbfe52c3cd77a7ffcdfac795b6c30a37c75db6c25c8ba72f570ee40",
+    "combined_reviews_sha256": "e92b65450b61e18161fda4e0f3e24fd1d148725665868cb515d4bcc5834ee99e"
+  },
+  "arc_stage_result": {
+    "stage": "18",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "reviews.md"
+    ],
+    "evidence_refs": [
+      "stage-18/reviews.md"
+    ]
+  }
+}

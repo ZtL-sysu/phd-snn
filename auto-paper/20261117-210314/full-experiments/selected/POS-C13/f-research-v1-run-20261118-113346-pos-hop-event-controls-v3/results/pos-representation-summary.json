@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "hybrid_rows": [
+    {
+      "dataset": "chameleon",
+      "method": "hybrid",
+      "relative_error": 0.039516596857952446,
+      "average_bits_per_value": 4.272435434286767,
+      "storage_reduction": 7.489873280049234,
+      "escape_fraction": 0.005000212503718815,
+      "escape_threshold": 0.01990978822505471
+    },
+    {
+      "dataset": "squirrel",
+      "method": "hybrid",
+      "relative_error": 0.04878773335282821,
+      "average_bits_per_value": 4.209221465585153,
+      "storage_reduction": 7.602355984743003,
+      "escape_fraction": 0.00500000506217781,
+      "escape_threshold": 0.027510960511900537
+    }
+  ],
+  "permutation_max_raw": 2.220446049250313e-16,
+  "permutation_max_hybrid": 2.220446049250313e-16,
+  "shuffle_by_dataset": {
+    "chameleon": {
+      "mean": 3.724691779955247,
+      "min": 3.4543953714636584,
+      "max": 3.87556516590679
+    },
+    "squirrel": {
+      "mean": 3.6264346068019293,
+      "min": 3.3102621639477503,
+      "max": 4.0847623107874105
+    }
+  },
+  "identity_shuffle_count": 0,
+  "representation_gate_pass": true
+}

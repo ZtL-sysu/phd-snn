@@ -1,0 +1,267 @@
+{
+  "protocol": {
+    "name": "f-research-v1 P4 C1 correction loop v3 attempt #8",
+    "round": "round-014",
+    "attempt": 8,
+    "status_at_lock": "PRE_OUTCOME_LOCKED",
+    "design_valid_intent": true,
+    "abandon_allowed": false,
+    "no_test_selection": true,
+    "real_domains_are_required": true,
+    "synthetic_is_diagnostic_only": true
+  },
+  "reproducibility": {
+    "python_hash_seed": 0,
+    "deterministic_torch": true,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "main_seeds": [1, 2, 3, 4, 5],
+    "extended_seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "bootstrap_seed": 814014,
+    "bootstrap_resamples": 2000,
+    "calibration_seed": 814015,
+    "calibration_monte_carlo_repetitions": 1000,
+    "calibration_inner_bootstrap_resamples": 499,
+    "raw_npz_per_condition_seed": true
+  },
+  "hardware_policy": {
+    "gpu_required": true,
+    "local_time_budget": null,
+    "local_step_budget": null,
+    "dense_connectome_forbidden": true,
+    "message_passing": "edge_index_index_add_"
+  },
+  "data": {
+    "connectome": {
+      "url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content",
+      "expected_bytes": 178853187,
+      "filename": "connections_biological.csv.gz",
+      "prefix_allowed": false,
+      "range_chunk_bytes": 33554432,
+      "gzip_crc_required": true
+    },
+    "annotations": {
+      "record_api": "https://zenodo.org/api/records/21549559",
+      "filename": "neuron_annotations_flywire_v2.1.0.tsv.gz",
+      "gzip_crc_required": true
+    },
+    "eye_positions": {
+      "record_api": "https://zenodo.org/api/records/21549559",
+      "filename": "right_visual_positions_all_neurons.csv"
+    },
+    "davis": {
+      "url": "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip",
+      "expected_bytes": 832766765,
+      "filename": "DAVIS-2017-trainval-480p.zip",
+      "archive_crc_required": true
+    },
+    "sintel": {
+      "url": "http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+      "https_fallback_url": "https://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+      "expected_bytes": 5627783629,
+      "filename": "MPI-Sintel-complete.zip",
+      "archive_crc_required": true
+    },
+    "failure_policy": "mark_unavailable_with_reason_and_observed_bytes; never substitute toy data"
+  },
+  "synthetic": {
+    "explicit_label": "SYNTHETIC",
+    "n": 400,
+    "frames": 8,
+    "height": 32,
+    "width": 32,
+    "classes": 2,
+    "direction_labels": {"left": 0, "right": 1},
+    "radius_inclusive": [3, 5],
+    "start_x_inclusive": [8, 24],
+    "speed_pixels_per_frame": 2,
+    "split": {"train_fraction": 0.7, "stratified": true, "seed": 14008},
+    "stimulus_seed": 14008,
+    "flash_control": true,
+    "ceiling_threshold": 0.9
+  },
+  "first_hard_gate": {
+    "name": "real_domain_ceiling_and_label_decidability_gate",
+    "ceiling_threshold": 0.7,
+    "states": ["LABEL_NOT_DECODABLE", "INPUT_BOTTLENECK", "DOMAIN_USABLE"],
+    "state_rule": {
+      "LABEL_NOT_DECODABLE": "GT oracle upper 95% CI point estimate < 0.70",
+      "INPUT_BOTTLENECK": "GT oracle point estimate >= 0.70 and input ceiling point estimate < 0.70",
+      "DOMAIN_USABLE": "GT oracle and input ceiling point estimates both >= 0.70"
+    },
+    "claim_rule": "Only DOMAIN_USABLE permits a real-domain delta claim",
+    "nonusable_policy": "all real-domain contrasts diagnostic_only; still execute conditions 1-12",
+    "frozen_historical_18533_retest_targets": {
+      "DAVIS": 0.617284,
+      "SINTEL": 0.3125,
+      "SINTEL_oracle": 0.6875
+    },
+    "label_construction_families": {
+      "SINTEL": [
+        "scene_frame_global_median_flow_x_sign",
+        "voronoi_weighted_median_flow_x_sign",
+        "dominant_orientation_halfplane"
+      ],
+      "DAVIS": [
+        "foreground_mask_centroid_dx_sign",
+        "foreground_mask_flow_proxy_dx_sign",
+        "scene_temporal_centroid_trend_sign"
+      ]
+    },
+    "tie_policy": "drop exact zero-direction examples before class matching",
+    "class_matching": "deterministic hash order downsample to minority class within split"
+  },
+  "flow_coherence": {
+    "definition": "magnitude-weighted resultant length of unit GT-flow directions within frozen Voronoi cells, averaged by cell flow energy",
+    "fixed_thresholds": [0.0, 0.5, 0.75, 1.0000001],
+    "strata": ["low", "medium", "high"],
+    "voronoi": {
+      "coordinate_system": "normalized image coordinates",
+      "centers": "4x4 regular centers at (2k+1)/8 for k=0..3",
+      "count": 16,
+      "locked_before_main_contrasts": true
+    },
+    "readout_scopes": ["global_pool", "ommatidial_subregions", "hybrid"],
+    "matched_n_rule": "minimum balanced per-class count across three scopes within domain and stratum",
+    "empty_cell_policy": "mark unavailable; do not alter thresholds"
+  },
+  "retinal_drive_transfer": {
+    "injection_location": "before compound-eye sampling and before feature construction",
+    "snr_ladder": [0.0, 0.05, 0.1, 0.15, 0.25, 0.4],
+    "temporal_omega_radians_per_frame": 0.7853981633974483,
+    "phase_radians": 0.0,
+    "injection_dimension": "horizontal-direction opponent drive; positive on right-preferring, negative on left-preferring ommatidia",
+    "stages": ["drive", "syn", "v", "KC"],
+    "conditions": ["stateless", "LIF"],
+    "metrics": ["recovered_amplitude", "phase_lag", "gain", "coherence"],
+    "slope_fit": "OLS through origin across positive SNR levels, per seed",
+    "primary_estimand": "H_slope(LIF)-H_slope(stateless)",
+    "bootstrap_resamples": 2000,
+    "no_input_signal_rule": "both KC slopes have 95% CI containing zero and absolute point estimate < 0.01",
+    "decay_localization_rule": "earliest adjacent-stage median gain ratio below 0.5; ties choose upstream stage"
+  },
+  "model": {
+    "stimulus_frames": 8,
+    "connectome_hops_reported": [1, 2, 3, 4, 5, 6, 7, 8],
+    "kc_selection_fallback": [2048, 1024, 512, 256, 128],
+    "selected_k_rule": "largest fallback K with all selected KC reachable and GPU sparse edge representation feasible",
+    "hidden_feature_dim": 64,
+    "ridge_alphas": [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0],
+    "ridge_selection": "train-only 5-fold stratified CV; deterministic tie chooses larger alpha",
+    "pca_variance": 0.95,
+    "pca_max_components": 128,
+    "preprocessing_fit_scope": "train_only",
+    "lif": {
+      "surrogate": "sigmoid straight-through",
+      "surrogate_slope": 10.0,
+      "membrane_decay": 0.85,
+      "synaptic_decay": 0.7,
+      "threshold": 1.0,
+      "adaptive_threshold_increment": 0.15,
+      "adaptive_threshold_decay": 0.9,
+      "refractory_frames": 1,
+      "ei_signs": true,
+      "gain": 1.0
+    },
+    "parameter_matching": "identical frozen projection/readout dimensions and trainable readout count across condition pairs"
+  },
+  "condition_matrix": {
+    "historical_anchor": ["stateless", "lif_homeostasis", "lif_combo", "degree_null_lif", "A=0"],
+    "ablation": ["lif_combo_minus_adaptive_threshold", "lif_combo_minus_refractory", "lif_combo_minus_EI_sign"],
+    "negative_controls": ["shuffled_frame_order", "flash", "frozen_gain", "label_permutation", "degree_preserving_null", "identity_graph"],
+    "A=0_interpretation": "input-information upper bound only; never biological-wiring advantage",
+    "degree_null_invariant": "exact in-degree, out-degree, weight multiset, nnz, reciprocal-pair count, and self-loop count equality required"
+  },
+  "condition_arm_symmetry": {
+    "rng_streams": "numpy SeedSequence spawn using arm-specific child index; require no equal first 4096 uint64 values",
+    "shared_object_registry": ["scaler", "PCA", "ridge", "graph_tensor", "normalization_statistics"],
+    "forbidden": "any mutable or label-dependent object identity shared across arms",
+    "swap_counterfactual": "swap condition labels without swapping computations; metric vector must swap exactly within 1e-12",
+    "states_added": ["NO_INPUT_SIGNAL_PATH", "CONDITION_ASYMMETRY_CONFOUNDED"],
+    "confounded_policy": "retain numerical values; prohibit scientific claims"
+  },
+  "branch_localization": {
+    "units": ["drive", "syn", "v", "spike", "KC", "logit"],
+    "hash_algorithm": "sha256 over little-endian float32 C-contiguous bytes",
+    "difference_tolerance": 1e-8,
+    "unit_counterfactual_epsilon": 0.25,
+    "forced_probe_threshold": 0.9,
+    "output_if_none": "NOT_LOCALIZED",
+    "zero_delta_policy": "never interpret scientifically"
+  },
+  "calibration": {
+    "families": {
+      "stratified_paired_bootstrap": {
+        "test_statistic": "paired mean delta",
+        "strata": "domain x class x coherence stratum",
+        "decision": "two-sided percentile-bootstrap inversion at alpha 0.05"
+      },
+      "studentized_bootstrap": {
+        "test_statistic": "paired mean divided by paired standard error with +1e-12 guard",
+        "decision": "two-sided bootstrap-t at alpha 0.05"
+      },
+      "redefined_permutation_family": {
+        "test_statistic": "paired mean delta",
+        "randomization_unit": "seed within domain/readout/stratum cell",
+        "decision": "exact sign flip when n<=20, otherwise 65536 deterministic Monte Carlo flips"
+      }
+    },
+    "monte_carlo_repetitions": 1000,
+    "null_generator": "exchangeable paired Gaussian plus shared stratum random effect; arm-specific independent noise; zero true effect",
+    "alpha": 0.05,
+    "empirical_type1_upper_limit": 0.075,
+    "report_all_families": true,
+    "global_failure_rule": "if any family empirical type-I error exceeds 0.075, label all contrasts uncalibrated"
+  },
+  "holdout": {
+    "scene_hash": "sha256(UTF-8 scene name) first 8 bytes interpreted big-endian modulo 5",
+    "exposed_folds": [0, 1, 2, 3],
+    "unexposed_fold": 4,
+    "constructibility": "at least one scene and at least two samples per class after label construction in unexposed fold",
+    "matching": "within domain and fold, deterministic sha256(sample id) order downsample both classes to minority count",
+    "matched_n": "twice minority-class count",
+    "no_adaptation_after_results": true,
+    "unavailable_label": "HOLDOUT_NOT_CONSTRUCTIBLE",
+    "required_diagnostics": ["SINTEL_exposed_unexposed_sign_consistency", "DAVIS_historical_unexposed_minus_0.011069_sign_flip_preserved"]
+  },
+  "statistics": {
+    "paired_bootstrap_resamples": 2000,
+    "confidence_level": 0.95,
+    "exact_p": "two-sided paired sign-flip",
+    "multiple_testing": "Benjamini-Hochberg",
+    "fdr_q": 0.05,
+    "five_seed_minimum_two_sided_p": 0.0625,
+    "eleven_seed_minimum_two_sided_p": 0.0009765625,
+    "noninferiority_margin": 0.15,
+    "effect_threshold_minimum": 0.15,
+    "effect_threshold_expected_strong": 0.25
+  },
+  "guidance": {
+    "minimum": "real-domain delta >= +0.15 plus transfer adjudication plus localized one-factor ablation",
+    "expected_strong": "real-domain delta >= +0.25 plus transfer adjudication plus localized one-factor ablation",
+    "ceiling_threshold": 0.7,
+    "both_domains_unusable_migration_verdict": "NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE",
+    "failure_forces_transfer_claim_false": true
+  },
+  "idempotent_reference": {
+    "root": "evidence/p4-novix-18533",
+    "do_not_rerun_or_recompute": true,
+    "files": {
+      "result.json": {"expected_bytes": 5393376, "sha256_prefix": "9f24e07f0d703841"},
+      "config.json": {"expected_bytes": 32759, "sha256_prefix": "78c84bda1396ff49"},
+      "config_preregistered.json": {"expected_bytes": 22352, "sha256_prefix": "0a7c6d473a110e6a"},
+      "MANIFEST.txt": {"expected_bytes": 65614, "sha256_prefix": "1015e8a78d4e1c68"}
+    },
+    "referenced_items": [
+      "measurement_identifiability_gate",
+      "feature_level_known_signal_injection_ladder",
+      "gradient_path_2x2",
+      "stateless_trained_identically",
+      "DAVIS_input_encoding_ladder_7_levels",
+      "SINTEL_delta_zero_three_state",
+      "historical_three_test_calibration",
+      "test_exposure_ledger",
+      "cross_implementation_fixed_covariates"
+    ]
+  }
+}

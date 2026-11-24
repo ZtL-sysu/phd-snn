@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "stage": "P7/AutoResearchClaw-17-PAPER_DRAFT",
+  "status": "failed-validation",
+  "arc_checkout": "C:\\code\\AutoResearchClaw",
+  "arc_version": "0.3.1",
+  "arc_stage_source": "C:\\code\\AutoResearchClaw\\researchclaw\\pipeline\\stage_impls\\_paper_writing.py",
+  "arc_stage_source_sha256": "aa1a84ff85691fed8a6691d0ab1839e5b6e449347840458ed10535432b559321",
+  "executor_identity": {
+    "provider": "acp",
+    "agent": "codex",
+    "agent_cli_version": "0.169.0-alpha.11.1",
+    "configured_codex_model": "group/never-stuck",
+    "acpx_version": "0.19.2",
+    "response_models": [
+      "acp:codex",
+      "acp:codex",
+      "acp:codex"
+    ],
+    "researchclaw_version": "0.3.1"
+  },
+  "context_isolation": {
+    "status": "verified-clean-external-boundary",
+    "clean_request_files": [
+      "writing\\request-p7-part-1-title-abstract-introduction-related-work.json",
+      "writing\\request-p7-part-2-method-experiments-setup.json",
+      "writing\\request-p7-part-3-results-discussion-conclusion.json"
+    ],
+    "clean_request_hashes": [
+      "ae3f136f95441c5ae87fda88366de8e74be6debabd4a6c2f6d86166d417f2757",
+      "4082ee80cd594bc57e384158f7e014cb82870b6f259e2bfbc3142d8d1364f883",
+      "c4aa5dcaa034a9d22385c48c5b424a687fc390e305a079de48e4a0c246d3e538"
+    ],
+    "arc_internal_prompt_sent_to_model": false,
+    "raw_execution_logs_sent_to_model": false,
+    "compatibility_fixture_used_as_model_context": false,
+    "internal_arc_calls": 3,
+    "external_model_calls": 4,
+    "note": "The installed ARC Stage 17 control flow was executed. Its three historical writing calls were replaced at the external model boundary by the three bounded writing_adapter requests through a Codex ACP session. A separate pre-run availability probe asked Codex to reply only 'OK' and contained no research content. The ARC anti-simulation fixture was used only to pass its internal guard and was never sent to the model."
+  },
+  "responses": [
+    {
+      "model": "acp:codex",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "finish_reason": "stop",
+      "truncated": false
+    },
+    {
+      "model": "acp:codex",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "finish_reason": "stop",
+      "truncated": false
+    },
+    {
+      "model": "acp:codex",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "finish_reason": "stop",
+      "truncated": false
+    }
+  ],
+  "validation": {
+    "valid": false,
+    "problems": [
+      "draft has fewer than 2800 words"
+    ],
+    "expected_sections": [
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "4 Experiments and Results",
+      "5 Discussion",
+      "6 Conclusion"
+    ],
+    "actual_sections": [
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "4 Experiments and Results",
+      "5 Discussion",
+      "6 Conclusion"
+    ],
+    "word_count": 2204,
+    "draft_sha256": "da4c77c0cf3909ae284c0d74db8245d7619fd476c43e5836601a795bc36c2e6d",
+    "reverse_outline_sha256": "356e8644058e9dad098d450b546b7e875e4d10fb88528a4b89ce68fe8c9f0c58"
+  },
+  "arc_stage_result": {
+    "stage": "17",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "paper_draft.md"
+    ],
+    "evidence_refs": [
+      "stage-17/paper_draft.md"
+    ]
+  }
+}

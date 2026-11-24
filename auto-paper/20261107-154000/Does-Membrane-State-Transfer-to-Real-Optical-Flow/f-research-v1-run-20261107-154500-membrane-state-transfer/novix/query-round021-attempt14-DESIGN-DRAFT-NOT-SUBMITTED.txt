@@ -1,0 +1,193 @@
+================================================================================
+round 021 / attempt #14 · DESIGN DRAFT — **NOT SUBMITTED**
+H15：内容寻址的证据身份契约（immutable content-addressed evidence objects ×
+      bounded fixed-size terminal manifest × read-drain independence）
+状态：**不得原样启用**。必须先按 `acceptance-verdict-18885.md` 的真实实测修订。
+生成：2026-11-09 17:0x GMT+8。本轮 `18885` 在途，按 §3.6(2) 不提交、不等待、不换题。
+================================================================================
+
+【本预案为何 NOT SUBMITTED】
+Step 0 权威复核：
+· `_r021_probe.py`（16 KB 前缀只读，2 次独立 HTTP 200，4.5 s / 5.0 s）：
+  `18885` 顶层 `status=processing` / `createdBy=637` / `version=2` /
+  `createdAt 2026-11-09 07:31:58` / `updatedAt 16:53:24 → 16:53:30`
+  （round-020 收尾为 15:41:41 → 单调增长）。**跨第 5 轮仍非终态。**
+· `_r021_tailprobe.py`（本轮**新方法**：1 MB 分块流式、只保留末 512 KB、
+  本机读取上限 240 s，明确标注该上限是**本机一次 HTTP GET 的诊断读参数**，
+  不是 novix 任务预算、不是 `--max-turns`、不是 `--timeout`、不是阻塞 watch）：
+  HTTP 200，流出 **6,768,115 B** 后于 **110.6 s** 以
+  `IncompleteRead(476659 bytes read)` 断链，`eof_clean=false`；
+  头部 `status=processing` / `updatedAt 17:02:42`；
+  尾部仍是 runner 源码片段（`_validate_binary_labels` / `_LABEL_TOLERANCE`），
+  `tail_has_promise_complete=false`，末尾 step id `3697648…3697652`
+  （首 step id `3696237`）。**`finalReply` 连续第 4 轮（018/019/020/021）不可读。**
+· `check_inflight.py` 机械记 `transport_error_retry`（本地 120 s 超时），
+  **原条目保留 + 主会话追加权威纠正**：CLI 大响应读断链属传输层问题，
+  不是任务失败、不是终态、不是科学负结果。
+结论：同一 idea 在途 → 本轮不重提交、不等待、不动流水线、不 pull、不写 verdict。
+按 §3.6(3) 仍必须交付**一次实质优化**，即本预案；`attempt_count` 不虚增（保持 9）。
+
+--------------------------------------------------------------------------------
+## 0. 本轮唯一新增事实（全部来自本机权威复核的原始字节，不是推断）
+
+1. **排除「本机短读」解释**：前 3 轮把 `finalReply` 不可读归因于
+   「>8 MB 单体响应 + 约 100 s 链路截断」，但无法区分「本机读得太短」与
+   「响应本身在被持续追加、永远追不上」。本轮换用长上限流式尾捕，
+   流出 6.77 MB / 110.6 s 仍在断链，且**尾部是正在生成的 Python 代码、
+   无 COMPLETE 标记、step id 仍在推进**。这证明：被绑定的 `steps[]` 是
+   **无界追加的单体可变对象**，其增长与本机读取策略无关；
+   顶层 `status` 与全部证据体被绑在**同一个持续膨胀的可变工件**里。
+   （这是工具/协议事实，不是科学结果，不计入任何分数或达标判定。）
+2. **本机侧同构缺陷首次被检出**：`f-research-v1` run root 的
+   `pipeline-state.json` 把 `experiment-traceability.md` 以不可变哈希
+   `34b498f3…` 绑进 `contract` 清单，而该**可变追加型账本**在
+   2026-11-09 05:54（18696 证据归档）被追加后实际为 `dafea5c7…`，
+   9/10 其余条目 MATCH。实跑 `--before P0` = **rc=1 `contract: stale hash`**、
+   `--complete` / `--submission-ready` 均 rc=1。
+   → 远端「绑定无限增长的可变响应」与本机「绑定无限增长的可变账本」
+   是**同一个失败模式在两处的独立实例**。这一条是本轮最关键的机制级线索。
+3. 既有 4 份 NOT-SUBMITTED 预案的诊断对象分别是：H11 信息预算可辨识性（017）、
+   H12 判定装置一致性 / 离线重判定（018）、H13 门级增量证据可审计性契约（019，
+   改「证据生成/回收时序」）、H14 执行终止契约（020，改「何时停止」）。
+   **没有任何一个把「被绑定证据工件本身的身份/不可变性」当作唯一自变量。**
+   H14 的 `project/status.json` 心跳与 ≤16 KB 终态指针清单仍允许
+   「单体响应原地追加」；H13 的 ≤64 KB 门分片也未禁止**分片被原地改写**。
+
+--------------------------------------------------------------------------------
+## 1. 死磕四要素（§3.6(3)）
+
+### 1.1 上一轮失败点（如实，不改写、不删除）
+
+- 最近一次**有正式科学判定**的仍是 `18696` = `REJECT_FAILURE`
+  （round-015/016 幂等、9/9 SHA-256 核验归档，`evidence/p4-novix-18696/`）：
+  `design_valid=true`、全量真跑完（23/23 + 142/142 + 148/148、165 raw NPZ、
+  614/614 重哈希），但两真实域 ceiling DAVIS `0.424242` / SINTEL `0.400000`
+  均 < 0.70（`INPUT_BOTTLENECK`、`gt_oracle_upper_bound=1.0` 明确非历史
+  `0.6875` 重算）、三族校准 stratified paired bootstrap `0.149` 失败、
+  unexposed 符号翻转、`c1_guidance.verdict=failure`、全部 contrast `uncalibrated`、
+  `scientific_interpretation_allowed=false`、`transfer_claim_made=false`。
+  诊断进展（不是达标）：`localized_unit=syn`、两域 holdout `CONSTRUCTIBLE`、
+  两臂 `SYMMETRIC`、`INPUT_SIGNAL_PATH_MEASURABLE` 但 LIF−stateless 逐环节全负、
+  最大衰减 `drive→syn`。`idempotent_reference=unavailable` 如实保留。
+- `18885`（attempt #9 / H10）**结果未出**：五档 `drive_to_syn_energy_ratio` /
+  `H_slope(drive)` / `H_slope_recovery` / `localized_unit` 落点**全部未知**。
+  **不得假定 H10 成败、不得预支结论、不得把 attempt #10/#11/#12/#13 原样启用。**
+- 本轮新增失败点（**不是科学负结果、不是机制否证、不是 kill hit**）：
+  连续 4 轮 `finalReply` 不可完整回收 + 任务 >9.5 h 无终态 + `steps[]` 无界增长 +
+  尾部仍是 runner 源码；以及本机 `pipeline-state.json` 契约哈希陈旧导致
+  `--before P0` 结构性失败。二者共同指向「可变工件被当作不可变证据绑定」。
+
+### 1.2 本轮假设 H15（可证伪、机制级不同于 H10/H11/H12/H13/H14）
+
+**H15：证据身份契约假设。** 症状簇（`design_valid=true` 但科学结论不可判定、
+交付物缺失 / `project/config.json` 不存在、`idempotent_reference=unavailable`、
+`all_archive_hashes_verified=false`、终态回复不可回收，以及本机契约
+`stale hash`）可能**部分**来自：证据链把**可原地追加/改写的工件**当作
+**不可变身份**来绑定，因此任何时刻读到的「同一份证据」其实不是同一份；
+远端是无限膨胀的单体 `steps[]` 响应，本机是被追加的
+`experiment-traceability.md`。这既不是「证据生成的时序」（H13）、
+也不是「agent 何时停止」（H14），而是**证据工件本身的身份语义**。
+
+- **唯一自变量**：`evidence_identity_contract_version ∈
+  {mutable_monolithic_binding (as archived in 18885 / local pipeline-state),
+   content_addressed_immutable_objects_with_bounded_manifest}`。
+  网络 / 数据 / seeds / 阈值 / 估计量 / 判定算子 / H10 五档能量门**全部不变**，
+  不重训、不重判定、不下调任何门槛。
+- **新机制（历轮从未有）**：
+  (a) 每个证据单元是**写一次的内容寻址对象** `obj_sha256 → bytes`，
+      创建后**禁止原地追加或改写**；新增内容产生新对象，不改旧对象。
+  (b) **固定体积终态清单** `project/manifest.json`：只列对象 id、sha256、
+      字节数、cell 计数与终态谓词；其体积上界由**冻结的 cell 数量**决定，
+      **与 steps 长度 / 源码长度无关**（预注册 ≤ 16 KB）。
+  (c) **读排空独立性检验**（直接对准本轮新事实）：预注册记录
+      `terminal_manifest_bytes` 与 `steps_len` 的 Spearman 相关、
+      以及终态判定所需读取字节数；若终态可由有界清单独立判定，
+      则「本机链路追不上无界响应」不再是终态判定的必要条件。
+  (d) **本机决定性对照**：把可变追加型账本从 `contract` 绑定中排除，
+      改为绑定其**冻结版本化快照**；对照实跑
+      `pipeline_state.py --before P0`：原契约 rc=1 `stale hash`，
+      版本化快照契约若 rc=0，则在**本机独立隔离**身份绑定缺陷。
+      **该对照仅为诊断，不是科学结果、不进 P5、不写论文。**
+  (e) 每次读取都重算 `sha256(actual_bytes)` 与 manifest 声明值比对，
+      不一致即 `IDENTITY_MISMATCH`，禁 `design_valid=true`。
+- **三态诊断落点（全部预注册、双向；均为诊断，均不是达标、均不是机制否证）**：
+  - `IDENTITY_DRIFT_CONFIRMED`：检出 ≥1 次被绑定工件的原地改写，或
+    终态清单哈希不匹配 → 支持 H15；下一版把「写一次内容寻址 + 有界清单」
+    升为第一硬门，并在本机先修复契约绑定。
+  - `IDENTITY_CLEAN`：全部被绑定对象不可变、清单可核验、终态回复 ≤16 KB
+    → H15 作为主因被否证，回到 H10 五档能量门，H11/H12/H13/H14 降为独立复核门。
+  - `UNINFORMATIVE_TRACE`：轨迹不足以判定（含本轮「顶层可读、尾部不可读」）
+    → 不写科学结论，改为本机离线对 SHA-256 核验归档重判定，继续同一 C1。
+- **决定性对照（沿用，不新增网络机制）**：`A=0` 输入信息上界、精确保度零模型、
+  `stateless_trained_identically`；`degree_null − LIF` 按实测符号报告；
+  **禁止「生物接线带来精度优势」主张**。
+
+### 1.3 具体改动：相对 `query-round016-attempt9.txt`（H10，最后一次**已提交**）
+###      与 H11/H12/H13/H14 四份 NOT-SUBMITTED 预案的 10 条机制级 diff
+
+1. **第一主门整体替换**：H10 的 `drive_to_syn_energy_dilution_gate` 前移为
+   `evidence_identity_gate`（对象级写一次约束 + 冻结清单 + 逐次重哈希）。
+   H10 五档能量门**幂等保留为第二主门**，不删除、不下调、不静默跳过。
+2. **新增 `write_once_no_in_place_mutation` 硬规则**：H14 只禁止冻结点后
+   **代码**变更（`post_freeze_no_code_mutation`），H15 禁止的是**任何证据工件**
+   的原地追加/改写（含 `steps[]` 响应体、`project/status.json` 心跳分片、
+   本机 `experiment-traceability.md`）。这是对象身份层，不是代码变更层。
+3. **新增固定体积终态清单**：H14 的「≤16 KB 终态回复指针清单」是
+   指针集合，H15 的 `project/manifest.json` 是**体积上界由冻结 cell 数决定、
+   且与 steps 长度解耦**的可核验清单，并附带 `terminal_decidable_from_manifest_only`
+   布尔判据。二者语义不同，非重复。
+4. **新增读排空独立性检验**（本轮新方法直接催生、历轮全无）：
+   预注册 `terminal_manifest_bytes × steps_len` 相关与「终态判定所需读取字节数」，
+   把「本机链路截断」从终态判定的必要条件中剥离。H13/H14 都未测量该量。
+5. **新增本机决定性对照**：`pipeline_state.py --before P0` 在
+   「原可变绑定契约」与「冻结版本化快照契约」两态下的 rc 对比；
+   这是唯一一条不依赖远端在途任务即可本机独立复现的诊断路径。
+   H12 的「离线轨迹重判定」用的是远端归档，H15 用的是本机契约结构。
+6. **H14 完成谓词降为第二硬门**：`execution_termination_gate`
+   （冻结 cell_registry + 单调 `cells_completed`）**保留但不再第一**；
+   完成谓词改为「所有冻结 cell 均有对应内容寻址对象且清单哈希一致」，
+   即**逻辑停止条件仍不是时间/步数预算**。
+7. **H13 门级分片语义改写**：分片不再是「可回收的时间增量」，而是
+   **不可变对象**；分片 id = 其 SHA-256，`identity_fallback_used=false`，
+   禁止对已发布分片做任何修补（修补 = 新对象 + deviation 台账）。
+8. **H11/H12 降为独立复核门**：信息预算可辨识性、判定装置一致性
+   各自单独出报告，不与身份门共用证据，避免把身份漂移误读为统计不一致。
+9. **六主文件 + `project/config.json` 修复与幂等引用**：沿用并加固
+   （18533/18696 交付缺陷），新增 `project/manifest.json` 为第七主文件；
+   `project/status.json` 分片可增量读取保持为提交前**硬检查项**。
+10. **门槛与统计全不下调**：`minimum(+0.15)` / `expected_strong(+0.25)` /
+    真实域 ceiling `0.70` / ≥11 paired seeds / 2000 bootstrap / BH-FDR /
+    三族校准 / A=0 与保度零模型全部原样保留；
+    提交命令仍为 `novix task create --json <query> --provider novixlet
+    --resource-pool exp-4090 --gpu --gpu-count 1`，
+    **不带 `--max-turns` / `--timeout` / 阻塞 watch / 任何时间步数预算**；
+    数据 URL（Zenodo 21549559 CC BY 4.0 / DAVIS / SINTEL）与 SYNTHETIC 标注、
+    依赖清单、seeds、六主文件落 `project/` 全部不变。
+
+### 1.4 预期信号 / 若失败下一步
+
+- `IDENTITY_DRIFT_CONFIRMED` → 身份门升第一硬门；**先在本机**用版本化
+  不可变契约修复 `--before P0` 的 `stale hash`（保留原失败证据、不删、
+  不伪造 history），再决定是否提交新 query。
+- `IDENTITY_CLEAN` → H15 否证；回 H10 五档与 `localized_unit=syn`，
+  四份旧预案降级为独立复核门；继续同一 C1，不换题。
+- `UNINFORMATIVE_TRACE`（含本轮）→ **不写科学结论**、本机离线对
+  SHA-256 核验归档重判定、继续同一 C1；`attempt_count` 不虚增。
+- 任何情形：**不进 P5 / 不写论文 / 不标 stage passed / 不宣告达标 /
+  不触发 `qualified` / 不改 `abandon_allowed`**。
+- 若 `18885` 终态回来：必须先按 `acceptance-verdict-18885.md` 的真实实测
+  （H10 五档、三族校准、符号、18533 必跑项、训练后 real delta 是否达
+  `minimum(+0.15)`、四类判定管线缺陷是否被其自身修复）**修订本预案四要素**
+  再决定启用 / 合并 / 废弃；**本预案标注「不得原样启用」**，
+  与 H11（017）/ H12（018）/ H13（019）/ H14（020）并列为第 5 份待修订预案。
+
+--------------------------------------------------------------------------------
+## 2. 本轮提交决策（如实）
+
+**NOT SUBMITTED**。`18885` 在途、无终态、无状态跃迁；按 §3.6(2)
+不重提交、不等待、不 pull、不写 verdict、不动 26 阶段流水线。
+`primary_focus=C1` 锁定，`attempt_count=9` 不虚增，
+`abandon_allowed=False`（(a) 7/7、(b) 0/2、(c) 0/2，未全满足且 (c) 单独阻断换题）。
+本预案是一次**机制级实质优化**（H15，10 条 diff，四要素齐），
+不是原样重提、不是只调超参、不是凑显著、不是把负结果改写成正结果。
+================================================================================

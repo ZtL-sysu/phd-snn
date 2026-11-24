@@ -1,0 +1,55 @@
+{
+  "review_execution": "independent-agent",
+  "verdict": "proceed",
+  "score": 9.2,
+  "confidence": "high",
+  "checks": [
+    {
+      "id": 1,
+      "name": "section_structure",
+      "status": "pass",
+      "evidence": "Exactly six numbered sections; Abstract and References unnumbered."
+    },
+    {
+      "id": 2,
+      "name": "claim_evidence_alignment",
+      "status": "pass",
+      "evidence": "Claims map to 36 raw rows and frozen summary statistics."
+    },
+    {
+      "id": 3,
+      "name": "numeric_consistency",
+      "status": "pass",
+      "evidence": "36/36 table rows match raw results; summary medians/ranges match recomputation."
+    },
+    {
+      "id": 4,
+      "name": "citations",
+      "status": "pass",
+      "evidence": "34 cited keys resolve to 50 BibTeX entries; required metadata present; 31/50 entries dated 2022-2026."
+    },
+    {
+      "id": 5,
+      "name": "figures_tables",
+      "status": "pass",
+      "evidence": "Figure assets/source data exist; Table 1 definitions and 36-row Table 2 are complete and traceable."
+    },
+    {
+      "id": 6,
+      "name": "scope_wording",
+      "status": "pass",
+      "evidence": "No rate-coded wording; deterministic final-logit and matched-ablation boundaries are explicit."
+    },
+    {
+      "id": 7,
+      "name": "reproducibility_readability",
+      "status": "pass",
+      "evidence": "Model shapes and provenance are linked; manuscript is concise, ordered, and preserves negative evidence."
+    }
+  ],
+  "blocking_actions": [],
+  "nonblocking_actions": [
+    "Preserve bibliography, raw results, Figure 3 source data, model shapes, and provenance manifest in the final package.",
+    "Keep the scoped contribution wording and all 36 Table 2 rows unchanged."
+  ]
+}

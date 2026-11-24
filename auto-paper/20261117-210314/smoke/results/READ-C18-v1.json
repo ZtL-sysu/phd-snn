@@ -1,0 +1,54 @@
+{
+  "rows": [
+    {
+      "dataset": "cora",
+      "classes": 7,
+      "graphs": 500,
+      "prediction_preservation": 1.0,
+      "output_slot_reduction": 0.7142857142857143,
+      "median_margin": 1.628753237426281
+    },
+    {
+      "dataset": "citeseer",
+      "classes": 6,
+      "graphs": 500,
+      "prediction_preservation": 1.0,
+      "output_slot_reduction": 0.6666666666666667,
+      "median_margin": 0.5593016445636749
+    },
+    {
+      "dataset": "pubmed",
+      "classes": 3,
+      "graphs": 500,
+      "prediction_preservation": 1.0,
+      "output_slot_reduction": 0.33333333333333337,
+      "median_margin": 1.4982586801052094
+    },
+    {
+      "dataset": "chameleon",
+      "classes": 5,
+      "graphs": 729,
+      "prediction_preservation": 1.0,
+      "output_slot_reduction": 0.6,
+      "median_margin": 0.5943986028432846
+    },
+    {
+      "dataset": "squirrel",
+      "classes": 5,
+      "graphs": 1664,
+      "prediction_preservation": 1.0,
+      "output_slot_reduction": 0.6,
+      "median_margin": 0.39438848569989204
+    },
+    {
+      "dataset": "ogbn-arxiv",
+      "classes": 40,
+      "graphs": 29799,
+      "prediction_preservation": 1.0,
+      "output_slot_reduction": 0.95,
+      "median_margin": 0.41760849952697754
+    }
+  ],
+  "median_output_slot_reduction": 0.6333333333333333,
+  "gate_pass": true
+}

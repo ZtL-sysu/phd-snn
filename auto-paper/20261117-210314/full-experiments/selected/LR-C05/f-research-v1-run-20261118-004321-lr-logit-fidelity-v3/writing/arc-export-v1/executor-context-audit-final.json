@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "stage": "P13/AutoResearchClaw-22-EXPORT_PUBLISH",
+  "status": "passed",
+  "arc_stage": "22",
+  "template": "generic",
+  "clean_compile": true,
+  "validation": {
+    "schema_version": 1,
+    "status": "passed",
+    "compile_returncode": 0,
+    "compile_errors": [],
+    "undefined_citations_or_references": [],
+    "page_count": 10,
+    "pdf_text_checks": {
+      "unresolved_markers": false,
+      "six_sections_present": true,
+      "forbidden_checklist_absent": true
+    },
+    "font_embedding_failures": [],
+    "hashes": {
+      "paper.tex": "73b80a2dd38e726cd8fffb0059f47ec7aa613b0af0ec36423aa6adefaf77069e",
+      "paper.pdf": "f26ce0d6a1296bfe0659d9117aa540aa40410b86c5cf87509b851e5370072d98",
+      "paper.log": "aaf463cdeb286b65185ffd648993f107eb7651e7e991be9a7e337ddbb181a4f8",
+      "references.bib": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "generated_utc": "2026-11-08T02:22:56Z",
+  "files": {
+    "connections_biological.csv.gz": {
+      "path": "data/downloads/connections_biological.csv.gz",
+      "url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content",
+      "bytes": 178853187,
+      "expected_bytes": 178853187,
+      "sha256": "402fa0e61198e6f26b2ef4fd18e0123cc2edff0bb1edca9dd31b29b8171580bc",
+      "prefix": false,
+      "range_part_bytes": [
+        67108864,
+        67108864,
+        44635459
+      ],
+      "gzip_integrity_header_checked": true,
+      "status": "available"
+    },
+    "neuron_annotations_flywire_v2.1.0.tsv.gz": {
+      "path": "data/downloads/neuron_annotations_flywire_v2.1.0.tsv.gz",
+      "url": "https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content",
+      "bytes": 7740866,
+      "expected_bytes": 7740866,
+      "sha256": "c68615fea6699908a3e13bad2b17917a77b1a2865d861f70373fd2714db2f43d",
+      "status": "available",
+      "gzip_integrity_header_checked": true
+    },
+    "right_visual_positions_all_neurons.csv": {
+      "path": "data/downloads/right_visual_positions_all_neurons.csv",
+      "url": "https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content",
+      "bytes": 629193,
+      "expected_bytes": 629193,
+      "sha256": "fbbd0c2ab83719cc4eff3df9a90e4a6dffe1b2ff9144db64709049c6567cd932",
+      "status": "available"
+    },
+    "DAVIS-2017-trainval-480p.zip": {
+      "path": "data/downloads/DAVIS-2017-trainval-480p.zip",
+      "url": "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip",
+      "bytes": 832766765,
+      "expected_bytes": 832766765,
+      "sha256": "e3d0b5b77c3d031b000a19e0e25e3e2cac65d183755601bc2cf066df1a2aa492",
+      "status": "available",
+      "zip_integrity": true
+    },
+    "MPI-Sintel-complete.zip": {
+      "path": "data/downloads/MPI-Sintel-complete.zip",
+      "bytes_received": 350551807,
+      "remote_content_length": 5627783629,
+      "zip_integrity": false,
+      "elapsed_download_seconds": 119.342,
+      "availability_guard_seconds": 120,
+      "status": "unavailable",
+      "reason": "curl timeout after 119342 ms with 350551807 of 5627783629 bytes; archive incomplete and invalid",
+      "partial_retained": false
+    }
+  },
+  "reproduction_note": "Required graph sources are byte/hash validated. Optional real domains are explicitly unavailable after their frozen guard rather than replaced."
+}

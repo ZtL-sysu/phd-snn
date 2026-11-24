@@ -3,10 +3,10 @@
 ## Overview
 
 - 项目目标：统一保存 GNN→SNN 研究的数据、代码、模型权重、论文与可接续记录。
-- 当前阶段：2026-11-17 完成同级 `gnn2snn*` 资料归档、去重、根目录 legacy 归档与 GitHub 研究同步。
+- 当前阶段：严格全项目筛查发现，已达到用户 8.0 顶会合格线的是 `auto-paper/20261028-171500/Spiking-GNN-Conversion/f-research-v1-run-20261028-174053-gnn-snn-conv/deliverables/` 中的两篇稿件：Paper A（NeurIPS 2026 E&D，独立 skill full review 9）和 Paper B（CCF-A main ML track，独立 skill full review 8）。两者均 P21 完成、clean-build 文本一致、0 undefined references。后续 LR/CERT/POS 与 fable5 新方向均未达到该门槛，保留为负证据或 diagnostic，不能取代这两篇。
 - 当前路线：以 `phd-snn` 为唯一本地入口；保留数据集、研究代码和有用权重；大文件与原始 checkpoint 留在本地，不上传 GitHub。
-- 下一步重点：整理记录已同步到 GitHub 分支 `docs/resource-reorg-20261117`；重复项 trash 已按用户确认永久删除，剩余为 PR 与少量探针代码是否上传的选择。
-- 最后更新：2026-11-17。
+- 下一步重点：仅需作者提供并统一作者名单/单位/通讯、目标 venue 确认、代码数据匿名链接或公开链接、声明、投稿批准；这些只影响提交字段，不影响科学结论。未获批准前不得投稿。
+- 最后更新：2026-11-18。
 
 ## Key Decisions
 
@@ -33,6 +33,13 @@
 
 ## Verified（已验证，有证据）
 
+- 2026-11-17 GNN→SNN idea/smoke：`auto-paper/20261117-210314/` 中 10 个候选通过预注册机制门槛，覆盖因果残差、几何等变、图置换、符号消息、低秩/边权事件、误差证书、位置编码、延迟调度和 top-two readout；完整结果见 `idea-portfolio.md`。
+- 同轮 9 个候选被拒绝或判不确定，负证据见 `rejection-summary.md`；简单 T1/T2 自适应升级、算子标量阈值、拓扑标量律、共形低覆盖选择、零消息剪枝、均匀 centroid 编码等均未被改名复用。
+- 新 smoke 代码先写失败测试再实现，最终 `smoke/tests` 32/32 通过；路径隐私检查通过；证据清单中的 16 个 SHA256 复核一致。
+- 2026-11-17 全量实验：本机 RTX3060 上完成 10 个模块的 baseline/method matrices；P0–P5A canonical stages passed，13/13 tests，34 个 JSON 解析通过。9 项达到机制强门槛，SIGN-C04 强门槛失败。
+- 独立 CCFA Agent 只读冻结结果后评分：LR 5.7、CERT 5.2、POS 5.0、EDGE 4.5、EQ 4.2、DYN 3.4、PERM 3.1、READ 2.7、DLY 2.3、SIGN 1.9；当前 `accept-to-develop` 为 0，交付定位是 mechanism-screen report。
+- 最终报告：`auto-paper/20261117-210314/full-experiments/f-research-v1-run-20261117-220203-ten-idea-full/deliverables/ten-idea-full-experiment-and-ccfa-review.md`。
+
 - 顶层 Git 已初始化并创建分支 `docs/resource-reorg-20261117`；提交 `157db24` 已 push 到 `ZtL-sysu/gnn2snn`，`git ls-remote` 验证远端 SHA 与本地 HEAD 一致。
 - 归档后 `git -C archive-gnn2snn/gnn2snn-main worktree list --porcelain` 显示的 3 个同级 worktree 都指向新路径；其余 5 个 worktree 在用户目录下，未移动。
 - `verified-evidence.zip` 在 6 个位置 SHA256 完全相同；只保留 `archive-gnn2snn/gnn2snn-main/artifacts/verified-evidence.zip`，其余 5 份移入 trash。
@@ -47,6 +54,8 @@
 
 ## Pending（待验证）
 
+- LR-C05、CERT-C11、POS-C13：均已完成 P0–P21；POS-C13 最终交付位于 `auto-paper/20261117-210314/full-experiments/selected/POS-C13/f-research-v1-run-20261118-113346-pos-hop-event-controls-v3/deliverables/POS-C13-final-v2`。`POS-C13-final-v1` 是不完整恢复包，仅作负证据。
+- `docs/research-plans/claude-fable5.2/`：已导入并开展严格研究。动态视觉图 V2 因强基线打平、结构指标不一致和独立评审 3/10 被否决；替代的 NTU delta、residual-debt streaming GNN、failure census、公平能耗等均未通过硬门槛。保留全部负证据，不得把被否 V2 当最终稿。
 - `third_party/SpikeGraphormer` 仍有原有未提交修改和未跟踪数据，整理过程未触碰。
 - `legacy/` 中可能含平台 token 读取逻辑和本机绝对路径，不上传 GitHub。
 - 顶层工作区仍有未跟踪的小型 `_r*_probe.py` 和 `_current_*.txt`；它们可能含平台 token 读取逻辑或路径配置，未加入本次公开提交。
@@ -61,5 +70,6 @@
 
 ## Next
 
-1. 用户决定是否从 `docs/resource-reorg-20261117` 创建 PR。
-2. 如需上传平台探针代码，先逐个去除 token 读取逻辑和路径依赖。
+1. 交付 Paper A/B 两篇已达标稿件及其证据包；不得用后续被否稿件替换。
+2. 等用户补齐作者/venue/声明/投稿授权后，再同步 TeX/PDF/metadata 并准备投稿；当前不提交、不上传。
+3. 如需上传平台探针代码，先逐个去除 token 读取逻辑和路径依赖。

@@ -1,0 +1,9 @@
+{
+  "candidate": "A_layerwise_thresholded_delta_inference",
+  "stage": "stage-1-sparsity-census",
+  "status": "blocked",
+  "reason": "No directly public NTU RGB+D 60 skeleton sequence dataset was found inside the run root or imported material set. Stage-1 gate requires frame-wise sequences; static Fashion-MNIST/MNIST cannot proxy temporal sparsity.",
+  "gate": "At least 80 percent layer activations inactive at a threshold that changes accuracy by at most 0.5 pp.",
+  "next": "Search only directly public/license-clear or locally available streaming graph datasets; otherwise screen other material-backed directions.",
+  "preserved_negative": true
+}

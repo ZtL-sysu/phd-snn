@@ -1,0 +1,11 @@
+{
+  "schema_version": 2,
+  "stage": "P14-final",
+  "tex_cited_keys": 32,
+  "bib_entries": 32,
+  "missing_keys": [],
+  "uncited_keys": [],
+  "pdf_question_placeholders": false,
+  "undefined_citation_warnings": false,
+  "pass": true
+}

@@ -1,0 +1,1482 @@
+[
+  {
+    "host": "H1_mean",
+    "seed": 0,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H1_mean__s0.npz",
+    "fit": {
+      "factor": 0.65,
+      "train_agreement": 0.8635531135531136,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8470695970695971,
+          "spikes_per_node": 17.790953008344314
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8635531135531136,
+          "spikes_per_node": 15.223978919631094
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8589743589743589,
+          "spikes_per_node": 12.823451910408432
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8562271062271062,
+          "spikes_per_node": 10.520860781730347
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8498168498168498,
+          "spikes_per_node": 8.75889328063241
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8351648351648352,
+          "spikes_per_node": 7.271848924022837
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.7701465201465202,
+          "spikes_per_node": 4.737373737373737
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.598079561042524,
+      "teacher_agreement": 0.8422496570644719,
+      "logit_mse": 0.29675364782180513,
+      "spikes_per_node": 10.520860781730347
+    },
+    "proposed": {
+      "factor": 0.65,
+      "accuracy": 0.588477366255144,
+      "teacher_agreement": 0.8532235939643347,
+      "logit_mse": 0.5830210222171281,
+      "spikes_per_node": 15.223978919631094
+    },
+    "random_factor": 1.25,
+    "random": {
+      "factor": 1.25,
+      "accuracy": 0.5898491083676269,
+      "teacher_agreement": 0.8573388203017832,
+      "logit_mse": 0.33083210184049705,
+      "spikes_per_node": 8.75889328063241
+    },
+    "paired_bootstrap": {
+      "mean_pp": -0.9363511659807955,
+      "lower_95_pp": -2.880658436214001,
+      "upper_95_pp": 1.0973936899862813
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H1_mean",
+    "seed": 1,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H1_mean__s1.npz",
+    "fit": {
+      "factor": 1.0,
+      "train_agreement": 0.9029304029304029,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8717948717948718,
+          "spikes_per_node": 17.35836627140975
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8791208791208791,
+          "spikes_per_node": 14.657004830917874
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8690476190476191,
+          "spikes_per_node": 12.366710584101888
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.9029304029304029,
+          "spikes_per_node": 10.18620992534036
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8772893772893773,
+          "spikes_per_node": 8.342555994729908
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8562271062271062,
+          "spikes_per_node": 6.9771629336846726
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.7435897435897436,
+          "spikes_per_node": 4.451471234079929
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.5871056241426612,
+      "teacher_agreement": 0.8724279835390947,
+      "logit_mse": 0.3041980972142097,
+      "spikes_per_node": 10.18620992534036
+    },
+    "proposed": {
+      "factor": 1.0,
+      "accuracy": 0.5871056241426612,
+      "teacher_agreement": 0.8724279835390947,
+      "logit_mse": 0.3041980972142097,
+      "spikes_per_node": 10.18620992534036
+    },
+    "random_factor": 0.5,
+    "random": {
+      "factor": 0.5,
+      "accuracy": 0.5967078189300411,
+      "teacher_agreement": 0.8491083676268861,
+      "logit_mse": 1.1268522967497843,
+      "spikes_per_node": 17.35836627140975
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H1_mean",
+    "seed": 2,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H1_mean__s2.npz",
+    "fit": {
+      "factor": 1.0,
+      "train_agreement": 0.8937728937728938,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8617216117216118,
+          "spikes_per_node": 18.151515151515152
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8745421245421245,
+          "spikes_per_node": 15.248572683355292
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8873626373626373,
+          "spikes_per_node": 12.648660518225736
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8937728937728938,
+          "spikes_per_node": 10.711901624945103
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8809523809523809,
+          "spikes_per_node": 8.803689064558629
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8763736263736264,
+          "spikes_per_node": 7.1133069828722
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.8315018315018315,
+          "spikes_per_node": 4.440931049626702
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.5994513031550068,
+      "teacher_agreement": 0.869684499314129,
+      "logit_mse": 0.350182359269584,
+      "spikes_per_node": 10.711901624945103
+    },
+    "proposed": {
+      "factor": 1.0,
+      "accuracy": 0.5994513031550068,
+      "teacher_agreement": 0.869684499314129,
+      "logit_mse": 0.350182359269584,
+      "spikes_per_node": 10.711901624945103
+    },
+    "random_factor": 0.65,
+    "random": {
+      "factor": 0.65,
+      "accuracy": 0.5953360768175583,
+      "teacher_agreement": 0.8765432098765432,
+      "logit_mse": 0.8844651820690103,
+      "spikes_per_node": 15.248572683355292
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H1_mean",
+    "seed": 3,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H1_mean__s3.npz",
+    "fit": {
+      "factor": 0.65,
+      "train_agreement": 0.8873626373626373,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.858058608058608,
+          "spikes_per_node": 17.511198945981555
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8873626373626373,
+          "spikes_per_node": 15.066315327184892
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8782051282051282,
+          "spikes_per_node": 13.056214317083882
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8681318681318682,
+          "spikes_per_node": 10.428194993412385
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8562271062271062,
+          "spikes_per_node": 8.341238471673254
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8379120879120879,
+          "spikes_per_node": 6.719367588932807
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.7985347985347986,
+          "spikes_per_node": 4.469477382520861
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.5953360768175583,
+      "teacher_agreement": 0.8683127572016461,
+      "logit_mse": 0.29775601934929335,
+      "spikes_per_node": 10.428194993412385
+    },
+    "proposed": {
+      "factor": 0.65,
+      "accuracy": 0.607681755829904,
+      "teacher_agreement": 0.8806584362139918,
+      "logit_mse": 0.7176639622509194,
+      "spikes_per_node": 15.066315327184892
+    },
+    "random_factor": 1.5,
+    "random": {
+      "factor": 1.5,
+      "accuracy": 0.6008230452674898,
+      "teacher_agreement": 0.8175582990397805,
+      "logit_mse": 0.42634216267862113,
+      "spikes_per_node": 6.719367588932807
+    },
+    "paired_bootstrap": {
+      "mean_pp": 1.229561042524005,
+      "lower_95_pp": -0.5486968449931353,
+      "upper_95_pp": 3.017832647462282
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H2_sum",
+    "seed": 0,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H2_sum__s0.npz",
+    "fit": {
+      "factor": 2.0,
+      "train_agreement": 1.0,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8827838827838828,
+          "spikes_per_node": 0.9696969696969697
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.9706959706959707,
+          "spikes_per_node": 0.696969696969697
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.9954212454212454,
+          "spikes_per_node": 0.48967940272288096
+        },
+        {
+          "factor": 1.0,
+          "agreement": 1.0,
+          "spikes_per_node": 0.3465085638998682
+        },
+        {
+          "factor": 1.25,
+          "agreement": 1.0,
+          "spikes_per_node": 0.21124286341677645
+        },
+        {
+          "factor": 1.5,
+          "agreement": 1.0,
+          "spikes_per_node": 0.1510759771629337
+        },
+        {
+          "factor": 2.0,
+          "agreement": 1.0,
+          "spikes_per_node": 0.0878348704435661
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.2030178326474623,
+      "teacher_agreement": 1.0,
+      "logit_mse": 0.000319307035615739,
+      "spikes_per_node": 0.3465085638998682
+    },
+    "proposed": {
+      "factor": 2.0,
+      "accuracy": 0.2030178326474623,
+      "teacher_agreement": 1.0,
+      "logit_mse": 0.000845365351154442,
+      "spikes_per_node": 0.0878348704435661
+    },
+    "random_factor": 1.25,
+    "random": {
+      "factor": 1.25,
+      "accuracy": 0.2030178326474623,
+      "teacher_agreement": 1.0,
+      "logit_mse": 0.0005125332256689496,
+      "spikes_per_node": 0.21124286341677645
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H2_sum",
+    "seed": 1,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H2_sum__s1.npz",
+    "fit": {
+      "factor": 2.0,
+      "train_agreement": 1.0,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 1.0,
+          "spikes_per_node": 0.0004391743522178305
+        },
+        {
+          "factor": 0.65,
+          "agreement": 1.0,
+          "spikes_per_node": 0.0
+        },
+        {
+          "factor": 0.8,
+          "agreement": 1.0,
+          "spikes_per_node": 0.0
+        },
+        {
+          "factor": 1.0,
+          "agreement": 1.0,
+          "spikes_per_node": 0.0
+        },
+        {
+          "factor": 1.25,
+          "agreement": 1.0,
+          "spikes_per_node": 0.0
+        },
+        {
+          "factor": 1.5,
+          "agreement": 1.0,
+          "spikes_per_node": 0.0
+        },
+        {
+          "factor": 2.0,
+          "agreement": 1.0,
+          "spikes_per_node": 0.0
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.24417009602194786,
+      "teacher_agreement": 1.0,
+      "logit_mse": 4.4394068871511635e-07,
+      "spikes_per_node": 0.0
+    },
+    "proposed": {
+      "factor": 2.0,
+      "accuracy": 0.24417009602194786,
+      "teacher_agreement": 1.0,
+      "logit_mse": 4.4394068871511635e-07,
+      "spikes_per_node": 0.0
+    },
+    "random_factor": 0.5,
+    "random": {
+      "factor": 0.5,
+      "accuracy": 0.24417009602194786,
+      "teacher_agreement": 1.0,
+      "logit_mse": 3.187982241089203e-07,
+      "spikes_per_node": 0.0004391743522178305
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H2_sum",
+    "seed": 2,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H2_sum__s2.npz",
+    "fit": {
+      "factor": 2.0,
+      "train_agreement": 1.0,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 1.0,
+          "spikes_per_node": 0.014931927975406236
+        },
+        {
+          "factor": 0.65,
+          "agreement": 1.0,
+          "spikes_per_node": 0.014492753623188406
+        },
+        {
+          "factor": 0.8,
+          "agreement": 1.0,
+          "spikes_per_node": 0.013614404918752744
+        },
+        {
+          "factor": 1.0,
+          "agreement": 1.0,
+          "spikes_per_node": 0.012736056214317084
+        },
+        {
+          "factor": 1.25,
+          "agreement": 1.0,
+          "spikes_per_node": 0.007905138339920948
+        },
+        {
+          "factor": 1.5,
+          "agreement": 1.0,
+          "spikes_per_node": 0.007026789635485288
+        },
+        {
+          "factor": 2.0,
+          "agreement": 1.0,
+          "spikes_per_node": 0.006587615283267457
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.2030178326474623,
+      "teacher_agreement": 1.0,
+      "logit_mse": 1.8765110009555845e-06,
+      "spikes_per_node": 0.012736056214317084
+    },
+    "proposed": {
+      "factor": 2.0,
+      "accuracy": 0.2030178326474623,
+      "teacher_agreement": 1.0,
+      "logit_mse": 1.6116545938840026e-05,
+      "spikes_per_node": 0.006587615283267457
+    },
+    "random_factor": 0.65,
+    "random": {
+      "factor": 0.65,
+      "accuracy": 0.2030178326474623,
+      "teacher_agreement": 1.0,
+      "logit_mse": 4.284636466460638e-06,
+      "spikes_per_node": 0.014492753623188406
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H2_sum",
+    "seed": 3,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H2_sum__s3.npz",
+    "fit": {
+      "factor": 0.8,
+      "train_agreement": 0.9413919413919414,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.9056776556776557,
+          "spikes_per_node": 0.357487922705314
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8763736263736264,
+          "spikes_per_node": 0.2933684672815108
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.9413919413919414,
+          "spikes_per_node": 0.19806763285024154
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.9084249084249084,
+          "spikes_per_node": 0.11989459815546773
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.891941391941392,
+          "spikes_per_node": 0.08915239350021958
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8690476190476191,
+          "spikes_per_node": 0.06938954765041722
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.8553113553113553,
+          "spikes_per_node": 0.046991655687307864
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.2167352537722908,
+      "teacher_agreement": 0.9094650205761317,
+      "logit_mse": 0.00012099982696968361,
+      "spikes_per_node": 0.11989459815546773
+    },
+    "proposed": {
+      "factor": 0.8,
+      "accuracy": 0.23182441700960219,
+      "teacher_agreement": 0.9382716049382716,
+      "logit_mse": 0.00010430823625633629,
+      "spikes_per_node": 0.19806763285024154
+    },
+    "random_factor": 1.5,
+    "random": {
+      "factor": 1.5,
+      "accuracy": 0.2030178326474623,
+      "teacher_agreement": 0.8765432098765432,
+      "logit_mse": 0.00025232920282122295,
+      "spikes_per_node": 0.06938954765041722
+    },
+    "paired_bootstrap": {
+      "mean_pp": 1.4990397805212619,
+      "lower_95_pp": 0.6858710562414272,
+      "upper_95_pp": 2.4691358024691357
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H3_sym",
+    "seed": 0,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H3_sym__s0.npz",
+    "fit": {
+      "factor": 0.8,
+      "train_agreement": 0.8827838827838828,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8727106227106227,
+          "spikes_per_node": 19.853315766359245
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8736263736263736,
+          "spikes_per_node": 16.685111989459816
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8827838827838828,
+          "spikes_per_node": 14.207290294246816
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8717948717948718,
+          "spikes_per_node": 11.90689503732982
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8644688644688645,
+          "spikes_per_node": 9.468159859464206
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8452380952380952,
+          "spikes_per_node": 7.50812472551603
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.75,
+          "spikes_per_node": 4.6732542819499345
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.6200274348422496,
+      "teacher_agreement": 0.8477366255144033,
+      "logit_mse": 0.43171527605066756,
+      "spikes_per_node": 11.90689503732982
+    },
+    "proposed": {
+      "factor": 0.8,
+      "accuracy": 0.6310013717421125,
+      "teacher_agreement": 0.8614540466392319,
+      "logit_mse": 0.3585652490397231,
+      "spikes_per_node": 14.207290294246816
+    },
+    "random_factor": 1.25,
+    "random": {
+      "factor": 1.25,
+      "accuracy": 0.6035665294924554,
+      "teacher_agreement": 0.8381344307270233,
+      "logit_mse": 0.5129859875944863,
+      "spikes_per_node": 9.468159859464206
+    },
+    "paired_bootstrap": {
+      "mean_pp": 1.108710562414266,
+      "lower_95_pp": -1.2345679012345623,
+      "upper_95_pp": 3.429355281207136
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H3_sym",
+    "seed": 1,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H3_sym__s1.npz",
+    "fit": {
+      "factor": 0.5,
+      "train_agreement": 0.9010989010989011,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.9010989010989011,
+          "spikes_per_node": 19.960913482652614
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8965201465201466,
+          "spikes_per_node": 16.712340799297323
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8663003663003663,
+          "spikes_per_node": 14.37461572244181
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8836996336996337,
+          "spikes_per_node": 12.169082125603865
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8415750915750916,
+          "spikes_per_node": 9.978919631093545
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8351648351648352,
+          "spikes_per_node": 7.8981115502854635
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.7463369963369964,
+          "spikes_per_node": 4.86649099692578
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.6049382716049383,
+      "teacher_agreement": 0.8545953360768176,
+      "logit_mse": 0.47007620171278386,
+      "spikes_per_node": 12.169082125603865
+    },
+    "proposed": {
+      "factor": 0.5,
+      "accuracy": 0.6227709190672154,
+      "teacher_agreement": 0.8930041152263375,
+      "logit_mse": 0.7400998957592977,
+      "spikes_per_node": 19.960913482652614
+    },
+    "random_factor": 0.5,
+    "random": {
+      "factor": 0.5,
+      "accuracy": 0.6227709190672154,
+      "teacher_agreement": 0.8930041152263375,
+      "logit_mse": 0.7400998957592977,
+      "spikes_per_node": 19.960913482652614
+    },
+    "paired_bootstrap": {
+      "mean_pp": 1.7747599451303153,
+      "lower_95_pp": -0.689300411522634,
+      "upper_95_pp": 4.252400548696844
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H3_sym",
+    "seed": 2,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H3_sym__s2.npz",
+    "fit": {
+      "factor": 1.0,
+      "train_agreement": 0.9001831501831502,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8406593406593407,
+          "spikes_per_node": 18.868247694334652
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8653846153846154,
+          "spikes_per_node": 16.05226174791392
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.9001831501831502,
+          "spikes_per_node": 13.451032059727712
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.9001831501831502,
+          "spikes_per_node": 10.829161176987263
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8717948717948718,
+          "spikes_per_node": 8.552920509442249
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8278388278388278,
+          "spikes_per_node": 7.042160737812912
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.760989010989011,
+          "spikes_per_node": 4.8230127360562145
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.6035665294924554,
+      "teacher_agreement": 0.8724279835390947,
+      "logit_mse": 0.4419604861444065,
+      "spikes_per_node": 10.829161176987263
+    },
+    "proposed": {
+      "factor": 1.0,
+      "accuracy": 0.6035665294924554,
+      "teacher_agreement": 0.8724279835390947,
+      "logit_mse": 0.4419604861444065,
+      "spikes_per_node": 10.829161176987263
+    },
+    "random_factor": 0.65,
+    "random": {
+      "factor": 0.65,
+      "accuracy": 0.6186556927297668,
+      "teacher_agreement": 0.8203017832647462,
+      "logit_mse": 0.5649070518305135,
+      "spikes_per_node": 16.05226174791392
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H3_sym",
+    "seed": 3,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H3_sym__s3.npz",
+    "fit": {
+      "factor": 0.8,
+      "train_agreement": 0.891941391941392,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8278388278388278,
+          "spikes_per_node": 19.904259991216513
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8498168498168498,
+          "spikes_per_node": 16.652173913043477
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.891941391941392,
+          "spikes_per_node": 14.14185331576636
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.86996336996337,
+          "spikes_per_node": 11.78524374176548
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8443223443223443,
+          "spikes_per_node": 9.442248572683356
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.8186813186813187,
+          "spikes_per_node": 7.628458498023716
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.6987179487179487,
+          "spikes_per_node": 4.9727711901624945
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.6282578875171467,
+      "teacher_agreement": 0.8641975308641975,
+      "logit_mse": 0.4111085043234238,
+      "spikes_per_node": 11.78524374176548
+    },
+    "proposed": {
+      "factor": 0.8,
+      "accuracy": 0.644718792866941,
+      "teacher_agreement": 0.8834019204389575,
+      "logit_mse": 0.345222825394993,
+      "spikes_per_node": 14.14185331576636
+    },
+    "random_factor": 1.5,
+    "random": {
+      "factor": 1.5,
+      "accuracy": 0.5912208504801097,
+      "teacher_agreement": 0.7956104252400549,
+      "logit_mse": 0.6584482296213123,
+      "spikes_per_node": 7.628458498023716
+    },
+    "paired_bootstrap": {
+      "mean_pp": 1.643278463648834,
+      "lower_95_pp": -0.6858710562414272,
+      "upper_95_pp": 3.978052126200271
+    },
+    "dataset": "chameleon"
+  },
+  {
+    "host": "H1_mean",
+    "seed": 0,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H1_mean__s0.npz",
+    "fit": {
+      "factor": 1.0,
+      "train_agreement": 0.9038461538461539,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.828125,
+          "spikes_per_node": 13.911170928667564
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8794070512820513,
+          "spikes_per_node": 11.449528936742935
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8922275641025641,
+          "spikes_per_node": 9.854258796385311
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.9038461538461539,
+          "spikes_per_node": 8.165160546048837
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8193108974358975,
+          "spikes_per_node": 6.091136319938474
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.7712339743589743,
+          "spikes_per_node": 4.329744279946164
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.7291666666666666,
+          "spikes_per_node": 2.38473370505672
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.4188701923076923,
+      "teacher_agreement": 0.8924278846153846,
+      "logit_mse": 0.0994498418773354,
+      "spikes_per_node": 8.165160546048837
+    },
+    "proposed": {
+      "factor": 1.0,
+      "accuracy": 0.4188701923076923,
+      "teacher_agreement": 0.8924278846153846,
+      "logit_mse": 0.0994498418773354,
+      "spikes_per_node": 8.165160546048837
+    },
+    "random_factor": 1.25,
+    "random": {
+      "factor": 1.25,
+      "accuracy": 0.40564903846153844,
+      "teacher_agreement": 0.8028846153846154,
+      "logit_mse": 0.10093955487418088,
+      "spikes_per_node": 6.091136319938474
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "squirrel"
+  },
+  {
+    "host": "H1_mean",
+    "seed": 1,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H1_mean__s1.npz",
+    "fit": {
+      "factor": 1.0,
+      "train_agreement": 0.889823717948718,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8229166666666666,
+          "spikes_per_node": 13.909825033647376
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8561698717948718,
+          "spikes_per_node": 11.36742934051144
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8790064102564102,
+          "spikes_per_node": 9.749471255527784
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.889823717948718,
+          "spikes_per_node": 7.93155162468756
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8453525641025641,
+          "spikes_per_node": 6.012305325898866
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.750801282051282,
+          "spikes_per_node": 4.363968467602384
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.5232371794871795,
+          "spikes_per_node": 2.378773312824457
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.4170673076923077,
+      "teacher_agreement": 0.8707932692307693,
+      "logit_mse": 0.09706007243973491,
+      "spikes_per_node": 7.93155162468756
+    },
+    "proposed": {
+      "factor": 1.0,
+      "accuracy": 0.4170673076923077,
+      "teacher_agreement": 0.8707932692307693,
+      "logit_mse": 0.09706007243973491,
+      "spikes_per_node": 7.93155162468756
+    },
+    "random_factor": 0.5,
+    "random": {
+      "factor": 0.5,
+      "accuracy": 0.4152644230769231,
+      "teacher_agreement": 0.8010817307692307,
+      "logit_mse": 0.3082067388826892,
+      "spikes_per_node": 13.909825033647376
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "squirrel"
+  },
+  {
+    "host": "H1_mean",
+    "seed": 2,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H1_mean__s2.npz",
+    "fit": {
+      "factor": 0.65,
+      "train_agreement": 0.9126602564102564,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8770032051282052,
+          "spikes_per_node": 13.32532205345126
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.9126602564102564,
+          "spikes_per_node": 10.875024033839646
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.9106570512820513,
+          "spikes_per_node": 9.301095943087867
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8986378205128205,
+          "spikes_per_node": 7.661026725629687
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8870192307692307,
+          "spikes_per_node": 6.109402038069602
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.859375,
+          "spikes_per_node": 4.4185733512786
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.7564102564102564,
+          "spikes_per_node": 2.4541434339550086
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.4140625,
+      "teacher_agreement": 0.8834134615384616,
+      "logit_mse": 0.08138322851958807,
+      "spikes_per_node": 7.661026725629687
+    },
+    "proposed": {
+      "factor": 0.65,
+      "accuracy": 0.4296875,
+      "teacher_agreement": 0.8894230769230769,
+      "logit_mse": 0.11139118586221569,
+      "spikes_per_node": 10.875024033839646
+    },
+    "random_factor": 0.65,
+    "random": {
+      "factor": 0.65,
+      "accuracy": 0.4296875,
+      "teacher_agreement": 0.8894230769230769,
+      "logit_mse": 0.11139118586221569,
+      "spikes_per_node": 10.875024033839646
+    },
+    "paired_bootstrap": {
+      "mean_pp": 1.566045673076923,
+      "lower_95_pp": 0.36057692307692724,
+      "upper_95_pp": 2.765925480769224
+    },
+    "dataset": "squirrel"
+  },
+  {
+    "host": "H1_mean",
+    "seed": 3,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H1_mean__s3.npz",
+    "fit": {
+      "factor": 1.0,
+      "train_agreement": 0.9094551282051282,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8782051282051282,
+          "spikes_per_node": 13.454912516823688
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8834134615384616,
+          "spikes_per_node": 10.796193039800038
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.9002403846153846,
+          "spikes_per_node": 9.086906364160738
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.9094551282051282,
+          "spikes_per_node": 7.299942318784849
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.8177083333333334,
+          "spikes_per_node": 5.562007306287253
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.75,
+          "spikes_per_node": 4.134397231301673
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.610176282051282,
+          "spikes_per_node": 2.1645837338973273
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.4104567307692308,
+      "teacher_agreement": 0.8960336538461539,
+      "logit_mse": 0.11977083477699123,
+      "spikes_per_node": 7.299942318784849
+    },
+    "proposed": {
+      "factor": 1.0,
+      "accuracy": 0.4104567307692308,
+      "teacher_agreement": 0.8960336538461539,
+      "logit_mse": 0.11977083477699123,
+      "spikes_per_node": 7.299942318784849
+    },
+    "random_factor": 1.5,
+    "random": {
+      "factor": 1.5,
+      "accuracy": 0.3719951923076923,
+      "teacher_agreement": 0.7373798076923077,
+      "logit_mse": 0.23856497694971793,
+      "spikes_per_node": 4.134397231301673
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.0,
+      "lower_95_pp": 0.0,
+      "upper_95_pp": 0.0
+    },
+    "dataset": "squirrel"
+  },
+  {
+    "host": "H3_sym",
+    "seed": 0,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H3_sym__s0.npz",
+    "fit": {
+      "factor": 0.8,
+      "train_agreement": 0.9114583333333334,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8225160256410257,
+          "spikes_per_node": 16.558354162661026
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8629807692307693,
+          "spikes_per_node": 13.547394731782349
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.9114583333333334,
+          "spikes_per_node": 10.995770044222265
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.7912660256410257,
+          "spikes_per_node": 8.812728321476639
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.7395833333333334,
+          "spikes_per_node": 7.044991347817727
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.6794871794871795,
+          "spikes_per_node": 5.50394154970198
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.5336538461538461,
+          "spikes_per_node": 3.8986733320515286
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.4375,
+      "teacher_agreement": 0.7614182692307693,
+      "logit_mse": 0.2638643535508074,
+      "spikes_per_node": 8.812728321476639
+    },
+    "proposed": {
+      "factor": 0.8,
+      "accuracy": 0.43028846153846156,
+      "teacher_agreement": 0.8822115384615384,
+      "logit_mse": 0.1829667412164304,
+      "spikes_per_node": 10.995770044222265
+    },
+    "random_factor": 1.25,
+    "random": {
+      "factor": 1.25,
+      "accuracy": 0.42427884615384615,
+      "teacher_agreement": 0.7097355769230769,
+      "logit_mse": 0.3937347293226424,
+      "spikes_per_node": 7.044991347817727
+    },
+    "paired_bootstrap": {
+      "mean_pp": -0.707842548076923,
+      "lower_95_pp": -2.4038461538461564,
+      "upper_95_pp": 0.9014423076923073
+    },
+    "dataset": "squirrel"
+  },
+  {
+    "host": "H3_sym",
+    "seed": 1,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H3_sym__s1.npz",
+    "fit": {
+      "factor": 0.8,
+      "train_agreement": 0.8974358974358975,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8461538461538461,
+          "spikes_per_node": 15.285906556431456
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8858173076923077,
+          "spikes_per_node": 12.451259373197463
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8974358974358975,
+          "spikes_per_node": 10.463756969813497
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8509615384615384,
+          "spikes_per_node": 8.55566237262065
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.7780448717948718,
+          "spikes_per_node": 6.766775620073063
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.6470352564102564,
+          "spikes_per_node": 5.1515093251297825
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.5969551282051282,
+          "spikes_per_node": 3.2489905787348587
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.4308894230769231,
+      "teacher_agreement": 0.8383413461538461,
+      "logit_mse": 0.18007258007227378,
+      "spikes_per_node": 8.55566237262065
+    },
+    "proposed": {
+      "factor": 0.8,
+      "accuracy": 0.43689903846153844,
+      "teacher_agreement": 0.8888221153846154,
+      "logit_mse": 0.13572424857574084,
+      "spikes_per_node": 10.463756969813497
+    },
+    "random_factor": 0.5,
+    "random": {
+      "factor": 0.5,
+      "accuracy": 0.43569711538461536,
+      "teacher_agreement": 0.8551682692307693,
+      "logit_mse": 0.2870514593353526,
+      "spikes_per_node": 15.285906556431456
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.6017127403846154,
+      "lower_95_pp": -0.6009615384615363,
+      "upper_95_pp": 1.8644831730769165
+    },
+    "dataset": "squirrel"
+  },
+  {
+    "host": "H3_sym",
+    "seed": 2,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H3_sym__s2.npz",
+    "fit": {
+      "factor": 0.65,
+      "train_agreement": 0.9018429487179487,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.8221153846153846,
+          "spikes_per_node": 16.514708709863488
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.9018429487179487,
+          "spikes_per_node": 13.249375120169198
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8986378205128205,
+          "spikes_per_node": 11.091713132089982
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8649839743589743,
+          "spikes_per_node": 8.908479138627188
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.7920673076923077,
+          "spikes_per_node": 7.070178811766968
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.7099358974358975,
+          "spikes_per_node": 5.727936935204768
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.6233974358974359,
+          "spikes_per_node": 4.104979811574697
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.43930288461538464,
+      "teacher_agreement": 0.8275240384615384,
+      "logit_mse": 0.317949504818956,
+      "spikes_per_node": 8.908479138627188
+    },
+    "proposed": {
+      "factor": 0.65,
+      "accuracy": 0.4483173076923077,
+      "teacher_agreement": 0.8671875,
+      "logit_mse": 0.2886013183244697,
+      "spikes_per_node": 13.249375120169198
+    },
+    "random_factor": 0.65,
+    "random": {
+      "factor": 0.65,
+      "accuracy": 0.4483173076923077,
+      "teacher_agreement": 0.8671875,
+      "logit_mse": 0.2886013183244697,
+      "spikes_per_node": 13.249375120169198
+    },
+    "paired_bootstrap": {
+      "mean_pp": 0.9053786057692307,
+      "lower_95_pp": -0.7226562500000028,
+      "upper_95_pp": 2.524038461538458
+    },
+    "dataset": "squirrel"
+  },
+  {
+    "host": "H3_sym",
+    "seed": 3,
+    "checkpoint": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H3_sym__s3.npz",
+    "fit": {
+      "factor": 0.8,
+      "train_agreement": 0.8830128205128205,
+      "candidates": [
+        {
+          "factor": 0.5,
+          "agreement": 0.7431891025641025,
+          "spikes_per_node": 16.67544702941742
+        },
+        {
+          "factor": 0.65,
+          "agreement": 0.8754006410256411,
+          "spikes_per_node": 13.345318208036916
+        },
+        {
+          "factor": 0.8,
+          "agreement": 0.8830128205128205,
+          "spikes_per_node": 10.950778696404537
+        },
+        {
+          "factor": 1.0,
+          "agreement": 0.8425480769230769,
+          "spikes_per_node": 8.792155354739473
+        },
+        {
+          "factor": 1.25,
+          "agreement": 0.7055288461538461,
+          "spikes_per_node": 6.945010574889444
+        },
+        {
+          "factor": 1.5,
+          "agreement": 0.6474358974358975,
+          "spikes_per_node": 5.738704095366276
+        },
+        {
+          "factor": 2.0,
+          "agreement": 0.5196314102564102,
+          "spikes_per_node": 4.032493751201692
+        }
+      ]
+    },
+    "baseline": {
+      "factor": 1.0,
+      "accuracy": 0.4501201923076923,
+      "teacher_agreement": 0.8137019230769231,
+      "logit_mse": 0.3073865717328453,
+      "spikes_per_node": 8.792155354739473
+    },
+    "proposed": {
+      "factor": 0.8,
+      "accuracy": 0.4453125,
+      "teacher_agreement": 0.859375,
+      "logit_mse": 0.29486075842537274,
+      "spikes_per_node": 10.950778696404537
+    },
+    "random_factor": 1.5,
+    "random": {
+      "factor": 1.5,
+      "accuracy": 0.4140625,
+      "teacher_agreement": 0.6165865384615384,
+      "logit_mse": 0.49526541514172495,
+      "spikes_per_node": 5.738704095366276
+    },
+    "paired_bootstrap": {
+      "mean_pp": -0.47475961538461536,
+      "lower_95_pp": -1.9230769230769218,
+      "upper_95_pp": 0.9615384615384637
+    },
+    "dataset": "squirrel"
+  }
+]

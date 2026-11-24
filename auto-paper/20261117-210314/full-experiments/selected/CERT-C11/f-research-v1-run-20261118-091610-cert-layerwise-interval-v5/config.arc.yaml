@@ -1,0 +1,25 @@
+project:
+  name: "cert-layerwise-interval-v5"
+  mode: "full-auto"
+research:
+  topic: "Layerwise interval certificates for quantized messages in frozen two-layer GNN-to-SNN conversion"
+  domains: ["graph-neural-networks", "spiking-neural-networks", "verified-machine-learning"]
+  quality_threshold: 4.0
+runtime:
+  timezone: "Asia/Shanghai"
+  max_parallel_tasks: 1
+experiment:
+  mode: "sandbox"
+  time_budget_sec: 900
+  metric_key: "deterministic_containment"
+  metric_direction: "maximize"
+  sandbox:
+    python_path: "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe"
+    gpu_required: false
+    max_memory_mb: 12288
+security:
+  hitl_required_stages: []
+  allow_publish_without_approval: false
+  redact_sensitive_logs: true
+figure_agent:
+  enabled: false

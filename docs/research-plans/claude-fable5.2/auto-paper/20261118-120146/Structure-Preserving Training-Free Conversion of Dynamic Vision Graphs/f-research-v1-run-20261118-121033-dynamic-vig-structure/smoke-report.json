@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "samples": 64,
+  "nodes_per_sample": 49,
+  "neighbor_shape": [
+    49,
+    9
+  ],
+  "finite_teacher_messages": true,
+  "finite_encoded": true,
+  "encoded_events_first_sample": 433,
+  "neighbor_jaccard_first_sample": 0.08888888888888889,
+  "winner_agreement_first_sample": 0.3469387888908386,
+  "oracle_exact": true
+}

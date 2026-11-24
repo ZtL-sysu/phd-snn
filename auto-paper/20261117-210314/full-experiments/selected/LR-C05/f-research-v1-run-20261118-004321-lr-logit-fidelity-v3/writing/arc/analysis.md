@@ -1,0 +1,3 @@
+# Accepted scientific analysis
+
+Output-Jacobian-selected sparse residual coefficients at rank128 and a 2% budget reduce the ratio of three-seed mean split-specific logit MSE by 26.23%, 33.99%, and 25.83% versus the strongest matched padded-bit control on Cora, Chameleon, and Squirrel. Maximum three-seed-mean task degradation is 1.86 pp and maximum seed-level degradation is 2.85 pp. Paired p95 runtime ratios range 1.020–1.124× with 218.23 MB peak allocation. The focal setting was fixed after validation exposure; the test run is held-out confirmation, not preregistered replication. No task-superiority, temporal-event, energy or broad-GNN claim is supported.

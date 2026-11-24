@@ -1,0 +1,5004 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "doi": "10.1109/TPAMI.2023.3275769",
+      "record": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              11,
+              14
+            ]
+          ],
+          "date-time": "2026-11-14T01:07:23Z",
+          "timestamp": 1794618443958,
+          "version": "4.9.1"
+        },
+        "reference-count": 78,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "issue": "12",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2023-12-01T00:00:00Z",
+              "timestamp": 1701388800000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2023-12-01T00:00:00Z",
+              "timestamp": 1701388800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2023,
+                  12,
+                  1
+                ]
+              ],
+              "date-time": "2023-12-01T00:00:00Z",
+              "timestamp": 1701388800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "name": "STI 2030 Major Projects",
+            "award": [
+              "2021ZD0200400"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2021ZD0200400"
+                ]
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "61925603"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "61925603"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "62376247"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "62376247"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "U1909202"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "U1909202"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "name": "Key Research and Development Program of Zhejiang Province in China",
+            "award": [
+              "2020C03004"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2020C03004"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Zhejiang Lab",
+            "award": [
+              "2021KC0AC01"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2021KC0AC01"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "https://ror.org/02m2h7991",
+                "id-type": "ROR",
+                "asserted-by": "crossref"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Pattern Anal. Mach. Intell."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              12
+            ]
+          ]
+        },
+        "DOI": "10.1109/tpami.2023.3275769",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2023,
+              9,
+              18
+            ]
+          ],
+          "date-time": "2023-09-18T13:52:29Z",
+          "timestamp": 1695045149000
+        },
+        "page": "14546-14562",
+        "source": "Crossref",
+        "is-referenced-by-count": 122,
+        "title": [
+          "Fast-SNN: Fast Spiking Neural Network by Converting Quantized ANN"
+        ],
+        "prefix": "10.1109",
+        "volume": "45",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-2192-8700",
+            "authenticated-orcid": false,
+            "given": "Yangfan",
+            "family": "Hu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "College of Computer Science and Technology, Zhejiang University, Hangzhou, Zhejiang, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3968-3622",
+            "authenticated-orcid": false,
+            "given": "Qian",
+            "family": "Zheng",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computer Science and Technology, Zhejiang University, Hangzhou, Zhejiang, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9104-2315",
+            "authenticated-orcid": false,
+            "given": "Xudong",
+            "family": "Jiang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Electrical and Electronic Engineering, Nanyang Technological University, Singapore"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4049-6181",
+            "authenticated-orcid": false,
+            "given": "Gang",
+            "family": "Pan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computer Science and Technology, Zhejiang University, Hangzhou, Zhejiang, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TPAMI.2013.71"
+          },
+          {
+            "key": "ref57",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR46437.2021.01101"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TPAMI.2021.3114196"
+          },
+          {
+            "key": "ref56",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11263-015-0816-y"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2015.7280696"
+          },
+          {
+            "key": "ref59",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3387902.3392613"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11263-014-0788-3"
+          },
+          {
+            "key": "ref58",
+            "article-title": "Energy table for 45nm process",
+            "author": "horowitz",
+            "year": "2014",
+            "journal-title": "Stanford VLSI wiki"
+          },
+          {
+            "key": "ref53",
+            "first-page": "1097",
+            "article-title": "ImageNet classification with deep convolutional neural networks",
+            "volume": "25",
+            "author": "krizhevsky",
+            "year": "2012",
+            "journal-title": "Proc Adv Neural Inf Process Syst"
+          },
+          {
+            "key": "ref52",
+            "article-title": "TorchVision: PyTorch's computer vision library",
+            "year": "2016"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV48922.2021.00266"
+          },
+          {
+            "key": "ref55",
+            "article-title": "Learning multiple layers of features from tiny images",
+            "author": "krizhevsky",
+            "year": "2009"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2019/189"
+          },
+          {
+            "key": "ref54",
+            "article-title": "Very deep convolutional networks for large-scale image recognition",
+            "author": "simonyan",
+            "year": "2014"
+          },
+          {
+            "key": "ref17",
+            "article-title": "Spiking deep residual network",
+            "author": "hu",
+            "year": "2018"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2017.00682"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v34i07.6787"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2019.00095"
+          },
+          {
+            "key": "ref51",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2016.90"
+          },
+          {
+            "key": "ref50",
+            "first-page": "448",
+            "article-title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+            "author": "ioffe",
+            "year": "2015",
+            "journal-title": "Proc Int Conf Mach Learn"
+          },
+          {
+            "key": "ref46",
+            "article-title": "Additive powers-of-two quantization: An efficient non-uniform discretization for neural networks",
+            "author": "li",
+            "year": "2020",
+            "journal-title": "Proc Int Conf Learn Representations"
+          },
+          {
+            "key": "ref45",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISCAS45731.2020.9180918"
+          },
+          {
+            "key": "ref48",
+            "first-page": "5370",
+            "article-title": "Cluster-promoting quantization with bit-drop for minimizing network quantization loss",
+            "author": "lee",
+            "year": "2021",
+            "journal-title": "Proc IEEE Conf Comput Vis Pattern Recognit"
+          },
+          {
+            "key": "ref47",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV48922.2021.00521"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1088/2634-4386/ac8828"
+          },
+          {
+            "key": "ref41",
+            "article-title": "PrivateSNN: Fully privacy-preserving spiking neural networks",
+            "author": "kim",
+            "year": "2021"
+          },
+          {
+            "key": "ref44",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/AICAS.2019.8771624"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1088/2634-4386/ac9b86"
+          },
+          {
+            "key": "ref49",
+            "first-page": "8026",
+            "article-title": "PyTorch: An imperative style, high-performance deep learning library",
+            "author": "paszke",
+            "year": "2019",
+            "journal-title": "Proc Adv Neural Inf Process Syst"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco_a_01086"
+          },
+          {
+            "key": "ref7",
+            "first-page": "1419",
+            "article-title": "SLAYER: Spike layer error reassignment in time",
+            "author": "shrestha",
+            "year": "0",
+            "journal-title": "Proc Adv Neural Inf Process Syst"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2018.00331"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/science.1254642"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0893-6080(97)00011-7"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JSSC.2007.914337"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MM.2018.112130359"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3489517.3530473"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neuron.2021.01.009"
+          },
+          {
+            "key": "ref78",
+            "article-title": "Rethinking atrous convolution for semantic image segmentation",
+            "author": "chen",
+            "year": "2017"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JPROC.2020.3045625"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSP.2021.3121632"
+          },
+          {
+            "key": "ref36",
+            "article-title": "Temporal efficient training of spiking neural network via gradient re-weighting",
+            "author": "deng",
+            "year": "2022"
+          },
+          {
+            "key": "ref75",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2017.660"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2021.3111897"
+          },
+          {
+            "key": "ref74",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TPAMI.2017.2699184"
+          },
+          {
+            "key": "ref30",
+            "first-page": "12 022",
+            "article-title": "Temporal spike sequence learning via backpropagation for deep spiking neural networks",
+            "volume": "33",
+            "author": "zhang",
+            "year": "2020",
+            "journal-title": "Proc Adv Neural Inf Process Syst"
+          },
+          {
+            "key": "ref77",
+            "article-title": "Semantic image segmentation with deep convolutional nets and fully connected CRFs",
+            "author": "chen",
+            "year": "2014"
+          },
+          {
+            "key": "ref33",
+            "article-title": "Training spiking neural networks using lessons from deep learning",
+            "author": "eshraghian",
+            "year": "2021"
+          },
+          {
+            "key": "ref76",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV.2011.6126343"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-031-20053-3_3"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41586-019-1677-2"
+          },
+          {
+            "key": "ref1",
+            "first-page": "4114",
+            "article-title": "Binarized neural networks",
+            "volume": "29",
+            "author": "hubara",
+            "year": "2016",
+            "journal-title": "Proc Adv Neural Inf Process Syst"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-031-19775-8_7"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2021.09.022"
+          },
+          {
+            "key": "ref71",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TPAMI.2016.2644615"
+          },
+          {
+            "key": "ref70",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2015.7298965"
+          },
+          {
+            "key": "ref73",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2017.549"
+          },
+          {
+            "key": "ref72",
+            "first-page": "234",
+            "article-title": "U-Net: Convolutional networks for biomedical image segmentation",
+            "author": "ronneberger",
+            "year": "2015",
+            "journal-title": "Proc Int Conf Med Image Comput Comput -Assist Interv"
+          },
+          {
+            "key": "ref68",
+            "first-page": "21",
+            "article-title": "SSD: Single shot multibox detector",
+            "author": "liu",
+            "year": "2016",
+            "journal-title": "Proc Eur Conf Comput Vis"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MSP.2019.2931595"
+          },
+          {
+            "key": "ref67",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2016.91"
+          },
+          {
+            "key": "ref23",
+            "first-page": "6316",
+            "article-title": "A free lunch from ANN: Towards efficient, accurate spiking neural networks calibration",
+            "author": "li",
+            "year": "2021",
+            "journal-title": "Proc Int Conf Mach Learn"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2020.00119"
+          },
+          {
+            "key": "ref69",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2017.690"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2016.00508"
+          },
+          {
+            "key": "ref64",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV.2015.169"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR42600.2020.01357"
+          },
+          {
+            "key": "ref63",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2014.81"
+          },
+          {
+            "key": "ref66",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV.2017.322"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v35i12.17265"
+          },
+          {
+            "key": "ref65",
+            "first-page": "91",
+            "article-title": "Faster R-CNN: Towards real-time object detection with region proposal networks",
+            "volume": "28",
+            "author": "ren",
+            "year": "2015",
+            "journal-title": "Proc Adv Neural Inf Process Syst"
+          },
+          {
+            "key": "ref21",
+            "article-title": "Optimal conversion of conventional artificial neural networks to spiking neural networks",
+            "author": "deng",
+            "year": "2021",
+            "journal-title": "Proc Int Conf Learn Representations"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2021.773954"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v33i01.33011311"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v35i12.17320"
+          },
+          {
+            "key": "ref60",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ACCESS.2020.3047071"
+          },
+          {
+            "key": "ref62",
+            "first-page": "740",
+            "article-title": "Microsoft COCO: Common objects in context",
+            "author": "lin",
+            "year": "2014",
+            "journal-title": "Proc Eur Conf Comput Vis"
+          },
+          {
+            "key": "ref61",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11263-009-0275-4"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx7/34/10308548/10254579.pdf?arnumber=10254579",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2023,
+              11,
+              27
+            ]
+          ],
+          "date-time": "2023-11-27T14:53:11Z",
+          "timestamp": 1701096791000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/10254579/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2023,
+              12
+            ]
+          ]
+        },
+        "references-count": 78,
+        "journal-issue": {
+          "issue": "12"
+        },
+        "URL": "https://doi.org/10.1109/tpami.2023.3275769",
+        "relation": {},
+        "ISSN": [
+          "0162-8828",
+          "2160-9292",
+          "1939-3539"
+        ],
+        "issn-type": [
+          {
+            "value": "0162-8828",
+            "type": "print"
+          },
+          {
+            "value": "2160-9292",
+            "type": "electronic"
+          },
+          {
+            "value": "1939-3539",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2023,
+              12
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "doi": "10.1109/ICASSP48485.2024.10448202",
+      "record": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              11,
+              3
+            ]
+          ],
+          "date-time": "2026-11-03T17:43:21Z",
+          "timestamp": 1793727801472,
+          "version": "4.6.1"
+        },
+        "reference-count": 24,
+        "publisher": "IEEE",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  4,
+                  14
+                ]
+              ],
+              "date-time": "2024-04-14T00:00:00Z",
+              "timestamp": 1713052800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  4,
+                  14
+                ]
+              ],
+              "date-time": "2024-04-14T00:00:00Z",
+              "timestamp": 1713052800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [],
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              14
+            ]
+          ]
+        },
+        "DOI": "10.1109/icassp48485.2024.10448202",
+        "type": "proceedings-article",
+        "created": {
+          "date-parts": [
+            [
+              2024,
+              3,
+              18
+            ]
+          ],
+          "date-time": "2024-03-18T18:56:31Z",
+          "timestamp": 1710788191000
+        },
+        "page": "6475-6479",
+        "source": "Crossref",
+        "is-referenced-by-count": 2,
+        "title": [
+          "Optimal ANN-SNN Conversion with Group Neurons"
+        ],
+        "prefix": "10.1109",
+        "author": [
+          {
+            "given": "Liuzhenghao",
+            "family": "Lv",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Peking University,School of Electronic and Computer Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Wei",
+            "family": "Fang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University,School of Computer Science,China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Li",
+            "family": "Yuan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University,School of Electronic and Computer Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yonghong",
+            "family": "Tian",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University,School of Electronic and Computer Engineering,China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0893-6080(97)00011-7"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNN.2003.820440"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/BF02478259"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MC.2019.2903009"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MM.2018.112130359"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41586-019-1424-8"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/photonics9100698"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISCAS51556.2021.9401667"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2018.00331"
+          },
+          {
+            "key": "ref10",
+            "first-page": "21056",
+            "article-title": "Deep residual learning in spiking neural networks",
+            "volume": "34",
+            "author": "Fang",
+            "year": "2021",
+            "journal-title": "Advances in Neural Information Processing Systems"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2022/343"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11263-014-0788-3"
+          },
+          {
+            "key": "ref13",
+            "article-title": "Optimal ann-snn conversion for high-accuracy and ultra-low-latency spiking neural networks",
+            "author": "Bu",
+            "year": "2023"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2017.00682"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR42600.2020.01357"
+          },
+          {
+            "key": "ref16",
+            "article-title": "Optimal conversion of conventional artificial neural networks to spiking neural networks",
+            "author": "Deng",
+            "year": "2021"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2021/321"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/DAC18074.2021.9586266"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2022/345"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2022/347"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v36i1.19874"
+          },
+          {
+            "key": "ref22",
+            "article-title": "Bridging the gap between anns and snns by calibrating offset spikes",
+            "author": "Hao",
+            "year": "2023"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v37i1.25071"
+          },
+          {
+            "key": "ref24",
+            "first-page": "6316",
+            "article-title": "A free lunch from ann: Towards efficient, accurate spiking neural networks calibration",
+            "volume-title": "International Conference on Machine Learning",
+            "author": "Li"
+          }
+        ],
+        "event": {
+          "name": "ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+          "location": "Seoul, Korea, Republic of",
+          "start": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                14
+              ]
+            ]
+          },
+          "end": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                19
+              ]
+            ]
+          }
+        },
+        "container-title": [
+          "ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx7/10445798/10445803/10448202.pdf?arnumber=10448202",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              2
+            ]
+          ],
+          "date-time": "2024-08-02T06:57:49Z",
+          "timestamp": 1722581869000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/10448202/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              14
+            ]
+          ]
+        },
+        "references-count": 24,
+        "URL": "https://doi.org/10.1109/icassp48485.2024.10448202",
+        "relation": {},
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              14
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "doi": "10.1145/3664647.3680620",
+      "record": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              11,
+              7
+            ]
+          ],
+          "date-time": "2026-11-07T07:34:28Z",
+          "timestamp": 1794036868478,
+          "version": "4.8.0"
+        },
+        "publisher-location": "New York, NY, USA",
+        "reference-count": 63,
+        "publisher": "ACM",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  10,
+                  28
+                ]
+              ],
+              "date-time": "2024-10-28T00:00:00Z",
+              "timestamp": 1730073600000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+          }
+        ],
+        "funder": [
+          {
+            "name": "the Beijing Nova Program",
+            "award": [
+              "20230484362"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "20230484362"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "the National Natural Science Foundation of China",
+            "award": [
+              "62176003, 62088102"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "62176003, 62088102"
+                ]
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [
+            "dl.acm.org"
+          ],
+          "crossmark-restriction": true
+        },
+        "short-container-title": [],
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1145/3664647.3680620",
+        "type": "proceedings-article",
+        "created": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              26
+            ]
+          ],
+          "date-time": "2024-10-26T02:59:27Z",
+          "timestamp": 1729911567000
+        },
+        "page": "10688-10697",
+        "update-policy": "https://doi.org/10.1145/crossmark-policy",
+        "source": "Crossref",
+        "is-referenced-by-count": 23,
+        "title": [
+          "Towards High-performance Spiking Transformers from ANN to SNN Conversion"
+        ],
+        "prefix": "10.1145",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3187-5681",
+            "authenticated-orcid": false,
+            "given": "Zihan",
+            "family": "Huang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Peking University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0000-5460-5580",
+            "authenticated-orcid": false,
+            "given": "Xinyu",
+            "family": "Shi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9074-2857",
+            "authenticated-orcid": false,
+            "given": "Zecheng",
+            "family": "Hao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0000-0706-083X",
+            "authenticated-orcid": false,
+            "given": "Tong",
+            "family": "Bu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5171-1898",
+            "authenticated-orcid": false,
+            "given": "Jianhao",
+            "family": "Ding",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0683-6936",
+            "authenticated-orcid": false,
+            "given": "Zhaofei",
+            "family": "Yu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4234-6099",
+            "authenticated-orcid": false,
+            "given": "Tiejun",
+            "family": "Huang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Peking University, Beijing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "320",
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              28
+            ]
+          ]
+        },
+        "reference": [
+          {
+            "key": "e_1_3_2_1_1_1",
+            "volume-title": "The European Symposium on Artificial Neural Networks",
+            "volume": "48",
+            "author": "Bohte Sander M",
+            "year": "2000",
+            "unstructured": "Sander M Bohte, Joost N Kok, and Johannes A La Poutré. 2000. SpikeProp: Backpropagation for Networks of Spiking Neurons.. In The European Symposium on Artificial Neural Networks, Vol. 48. 419--424."
+          },
+          {
+            "key": "e_1_3_2_1_2_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v36i1.19874"
+          },
+          {
+            "key": "e_1_3_2_1_3_1",
+            "volume-title": "Optimal ANN-SNN Conversion for High-accuracy and Ultra-low-latency Spiking Neural Networks. In International Conference on Learning Representations.",
+            "author": "Bu Tong",
+            "year": "2022",
+            "unstructured": "Tong Bu, Wei Fang, Jianhao Ding, PENGLIN DAI, Zhaofei Yu, and Tiejun Huang. 2022. Optimal ANN-SNN Conversion for High-accuracy and Ultra-low-latency Spiking Neural Networks. In International Conference on Learning Representations."
+          },
+          {
+            "key": "e_1_3_2_1_4_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11263-014-0788-3"
+          },
+          {
+            "key": "e_1_3_2_1_5_1",
+            "volume-title": "Proceedings of the International Conference on Learning Representations.",
+            "author": "Chen Peng",
+            "year": "2024",
+            "unstructured": "Peng Chen, Yingying ZHANG, Yunyao Cheng, Yang Shu, Yihang Wang, Qingsong Wen, Bin Yang, and Chenjuan Guo. 2024. Multi-scale Transformers with Adaptive Pathways for Time Series Forecasting. In Proceedings of the International Conference on Learning Representations."
+          },
+          {
+            "key": "e_1_3_2_1_6_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MM.2018.112130359"
+          },
+          {
+            "key": "e_1_3_2_1_7_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MC.2019.2903009"
+          },
+          {
+            "key": "e_1_3_2_1_8_1",
+            "volume-title": "Imagenet: A Large-Scale Hierarchical Image Database. In IEEE Conference on Computer Vision and Pattern Recognition. 248--255",
+            "author": "Deng Jia",
+            "year": "2009",
+            "unstructured": "Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. 2009. Imagenet: A Large-Scale Hierarchical Image Database. In IEEE Conference on Computer Vision and Pattern Recognition. 248--255."
+          },
+          {
+            "key": "e_1_3_2_1_9_1",
+            "volume-title": "Optimal Conversion of Conventional Artificial Neural Networks to Spiking Neural Networks. In International Conference on Learning Representations.",
+            "author": "Deng Shikuang",
+            "year": "2021",
+            "unstructured": "Shikuang Deng and Shi Gu. 2021. Optimal Conversion of Conventional Artificial Neural Networks to Spiking Neural Networks. In International Conference on Learning Representations."
+          },
+          {
+            "key": "e_1_3_2_1_10_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2015.7280696"
+          },
+          {
+            "key": "e_1_3_2_1_11_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2021/321"
+          },
+          {
+            "key": "e_1_3_2_1_12_1",
+            "volume-title": "International Conference on Learning Representations.",
+            "author": "Dosovitskiy Alexey",
+            "year": "2021",
+            "unstructured": "Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby. 2021. An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale. In International Conference on Learning Representations."
+          },
+          {
+            "key": "e_1_3_2_1_13_1",
+            "first-page": "34377",
+            "article-title": "Temporal Effective Batch Normalization in Spiking Neural Networks",
+            "volume": "35",
+            "author": "Duan Chaoteng",
+            "year": "2022",
+            "unstructured": "Chaoteng Duan, Jianhao Ding, Shiyan Chen, Zhaofei Yu, and Tiejun Huang. 2022. Temporal Effective Batch Normalization in Spiking Neural Networks. Advances in Neural Information Processing Systems, Vol. 35 (2022), 34377--34390.",
+            "journal-title": "Advances in Neural Information Processing Systems"
+          },
+          {
+            "key": "e_1_3_2_1_14_1",
+            "volume-title": "Learned Step Size Quantization. arXiv preprint arXiv:1902.08153",
+            "author": "Esser Steven K",
+            "year": "2019",
+            "unstructured": "Steven K Esser, Jeffrey L McKinstry, Deepika Bablani, Rathinakumar Appuswamy, and Dharmendra S Modha. 2019. Learned Step Size Quantization. arXiv preprint arXiv:1902.08153 (2019)."
+          },
+          {
+            "key": "e_1_3_2_1_15_1",
+            "first-page": "21056",
+            "article-title": "Deep Residual Learning in Spiking Neural Networks",
+            "volume": "34",
+            "author": "Fang Wei",
+            "year": "2021",
+            "unstructured": "Wei Fang, Zhaofei Yu, Yanqi Chen, Tiejun Huang, Timothée Masquelier, and Yonghong Tian. 2021. Deep Residual Learning in Spiking Neural Networks. In Advances in Neural Information Processing Systems, Vol. 34. 21056--21069.",
+            "journal-title": "Advances in Neural Information Processing Systems"
+          },
+          {
+            "key": "e_1_3_2_1_16_1",
+            "volume-title": "EVA-02: A Visual Representation for Neon Genesis. arXiv preprint arXiv:2303.11331",
+            "author": "Fang Yuxin",
+            "year": "2023",
+            "unstructured": "Yuxin Fang, Quan Sun, Xinggang Wang, Tiejun Huang, Xinlong Wang, and Yue Cao. 2023. EVA-02: A Visual Representation for Neon Genesis. arXiv preprint arXiv:2303.11331 (2023)."
+          },
+          {
+            "key": "e_1_3_2_1_17_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR52729.2023.01855"
+          },
+          {
+            "key": "e_1_3_2_1_18_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1017/CBO9781107447615"
+          },
+          {
+            "key": "e_1_3_2_1_19_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR42600.2020.01357"
+          },
+          {
+            "key": "e_1_3_2_1_20_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11633-022-1388-2"
+          },
+          {
+            "key": "e_1_3_2_1_21_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v37i1.25071"
+          },
+          {
+            "key": "e_1_3_2_1_22_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/DAC18074.2021.9586266"
+          },
+          {
+            "key": "e_1_3_2_1_23_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISSCC.2014.6757323"
+          },
+          {
+            "key": "e_1_3_2_1_24_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR52729.2023.00292"
+          },
+          {
+            "key": "e_1_3_2_1_25_1",
+            "volume-title": "Proceedings of the 40th International Conference on Machine Learning",
+            "volume": "202",
+            "author": "Jiang Haiyan",
+            "year": "2023",
+            "unstructured": "Haiyan Jiang, Srinivas Anumasa, Giulia De Masi, Huan Xiong, and Bin Gu. 2023. A Unified Optimization Framework of ANN-SNN Conversion: Towards Optimal Mapping from Activation Values to Firing Rates. In Proceedings of the 40th International Conference on Machine Learning, Vol. 202. 14945--14974."
+          },
+          {
+            "key": "e_1_3_2_1_26_1",
+            "volume-title": "Proceedings of the International Conference on Learning Representations.",
+            "author": "Jiang Yizhou",
+            "year": "2024",
+            "unstructured": "Yizhou Jiang, Kunlin Hu, Tianren Zhang, Haichuan Gao, Yuqian Liu, Ying Fang, and Feng Chen. 2024. Spatio-Temporal Approximation: A Training-Free SNN Conversion for Transformers. In Proceedings of the International Conference on Learning Representations."
+          },
+          {
+            "key": "e_1_3_2_1_27_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2016.00508"
+          },
+          {
+            "key": "e_1_3_2_1_28_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2022.918793"
+          },
+          {
+            "key": "e_1_3_2_1_29_1",
+            "volume-title": "Accurate Spiking Neural Networks Calibration. In Proceedings of the 38th International Conference on Machine Learning",
+            "volume": "139",
+            "author": "Li Yuhang",
+            "year": "2021",
+            "unstructured": "Yuhang Li, Shikuang Deng, Xin Dong, Ruihao Gong, and Shi Gu. 2021. A Free Lunch From ANN: Towards Efficient, Accurate Spiking Neural Networks Calibration. In Proceedings of the 38th International Conference on Machine Learning, Vol. 139. 6316--6325."
+          },
+          {
+            "key": "e_1_3_2_1_30_1",
+            "volume-title": "Spikeformer: A Novel Architecture for Training High-Performance Low-Latency Spiking Neural Network. arXiv preprint arXiv:2211.10686",
+            "author": "Li Yudong",
+            "year": "2022",
+            "unstructured": "Yudong Li, Yunlin Lei, and Xu Yang. 2022. Spikeformer: A Novel Architecture for Training High-Performance Low-Latency Spiking Neural Network. arXiv preprint arXiv:2211.10686 (2022)."
+          },
+          {
+            "key": "e_1_3_2_1_31_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2022/345"
+          },
+          {
+            "key": "e_1_3_2_1_32_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR52729.2023.01386"
+          },
+          {
+            "key": "e_1_3_2_1_33_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0893-6080(97)00011-7"
+          },
+          {
+            "key": "e_1_3_2_1_34_1",
+            "volume-title": "Modha",
+            "author": "Merolla Paul A.",
+            "year": "2014",
+            "unstructured": "Paul A. Merolla, John V. Arthur, Rodrigo Alvarez-Icaza, Andrew S. Cassidy, Jun Sawada, Filipp Akopyan, Bryan L. Jackson, Nabil Imam, Chen Guo, Yutaka Nakamura, Bernard Brezzo, Ivan Vo, Steven K. Esser, Rathinakumar Appuswamy, Brian Taba, Arnon Amir, Myron D. Flickner, William P. Risk, Rajit Manohar, and Dharmendra S. Modha. 2014. A Million Spiking-neuron Integrated Circuit with a Scalable Communication Network and Interface. Science, Vol. 345, 6197 (2014), 668--673."
+          },
+          {
+            "key": "e_1_3_2_1_35_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MSP.2019.2931595"
+          },
+          {
+            "key": "e_1_3_2_1_36_1",
+            "volume-title": "Nature",
+            "volume": "572",
+            "author": "Pei Jing",
+            "year": "2019",
+            "unstructured": "Jing Pei, Lei Deng, Sen Song, Mingguo Zhao, Youhui Zhang, Shuang Wu, Guanrui Wang, Zhe Zou, Zhenzhi Wu, Wei He, et al. 2019. Towards Artificial General Intelligence with Hybrid Tianjic Chip Architecture. Nature, Vol. 572, 7767 (2019), 106--111."
+          },
+          {
+            "key": "e_1_3_2_1_37_1",
+            "volume-title": "Proceedings of the International Conference on Machine Learning",
+            "volume": "139",
+            "author": "Radford Alec",
+            "year": "2021",
+            "unstructured": "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. 2021. Learning Transferable Visual Models From Natural Language Supervision. In Proceedings of the International Conference on Machine Learning, Vol. 139. 8748--8763."
+          },
+          {
+            "key": "e_1_3_2_1_38_1",
+            "volume-title": "Diet-snn: Direct Input Encoding with Leakage and Threshold Optimization in Deep Spiking Neural Networks. arXiv preprint arXiv:2008.03658",
+            "author": "Rathi Nitin",
+            "year": "2020",
+            "unstructured": "Nitin Rathi and Kaushik Roy. 2020. Diet-snn: Direct Input Encoding with Leakage and Threshold Optimization in Deep Spiking Neural Networks. arXiv preprint arXiv:2008.03658 (2020)."
+          },
+          {
+            "key": "e_1_3_2_1_39_1",
+            "volume-title": "Nature",
+            "volume": "575",
+            "author": "Roy Kaushik",
+            "year": "2019",
+            "unstructured": "Kaushik Roy, Akhilesh Jaiswal, and Priyadarshini Panda. 2019. Towards Spike-based Machine Intelligence with Neuromorphic Computing. Nature, Vol. 575, 7784 (2019), 607--617."
+          },
+          {
+            "key": "e_1_3_2_1_40_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2017.00682"
+          },
+          {
+            "key": "e_1_3_2_1_41_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2019.00095"
+          },
+          {
+            "key": "e_1_3_2_1_42_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR52733.2024.00536"
+          },
+          {
+            "key": "e_1_3_2_1_43_1",
+            "volume-title": "EVA-CLIP: Improved Training Techniques for Clip at Scale. arXiv preprint arXiv:2303.15389",
+            "author": "Sun Quan",
+            "year": "2023",
+            "unstructured": "Quan Sun, Yuxin Fang, Ledell Wu, Xinlong Wang, and Yue Cao. 2023. EVA-CLIP: Improved Training Techniques for Clip at Scale. arXiv preprint arXiv:2303.15389 (2023)."
+          },
+          {
+            "key": "e_1_3_2_1_44_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2018.12.002"
+          },
+          {
+            "key": "e_1_3_2_1_45_1",
+            "volume-title": "Advances in Neural Information Processing Systems",
+            "volume": "30",
+            "author": "Vaswani Ashish",
+            "year": "2017",
+            "unstructured": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ? ukasz Kaiser, and Illia Polosukhin. 2017. Attention is All you Need. In Advances in Neural Information Processing Systems, Vol. 30."
+          },
+          {
+            "key": "e_1_3_2_1_46_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2023/342"
+          },
+          {
+            "key": "e_1_3_2_1_47_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v37i1.25081"
+          },
+          {
+            "key": "e_1_3_2_1_48_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2022/347"
+          },
+          {
+            "key": "e_1_3_2_1_49_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV51070.2023.00169"
+          },
+          {
+            "key": "e_1_3_2_1_50_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2018.00331"
+          },
+          {
+            "key": "e_1_3_2_1_51_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41467-021-27653-2"
+          },
+          {
+            "key": "e_1_3_2_1_52_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2024.3373599"
+          },
+          {
+            "key": "e_1_3_2_1_53_1",
+            "first-page": "64043",
+            "article-title": "Spike-driven Transformer",
+            "volume": "36",
+            "author": "Yao Man",
+            "year": "2023",
+            "unstructured": "Man Yao, JiaKui Hu, Zhaokun Zhou, Li Yuan, Yonghong Tian, Bo Xu, and Guoqi Li. 2023. Spike-driven Transformer. In Advances in Neural Information Processing Systems, Vol. 36. 64043--64058.",
+            "journal-title": "Advances in Neural Information Processing Systems"
+          },
+          {
+            "key": "e_1_3_2_1_54_1",
+            "volume-title": "Understanding the Functional Roles of Modelling Components in Spiking Neural Networks. arXiv preprint arXiv:2403.16674",
+            "author": "Yin Huifeng",
+            "year": "2024",
+            "unstructured": "Huifeng Yin, Hanle Zheng, Jiayi Mao, Siyuan Ding, Xing Liu, Mingkun Xu, Yifan Hu, Jing Pei, and Lei Deng. 2024. Understanding the Functional Roles of Modelling Components in Spiking Neural Networks. arXiv preprint arXiv:2403.16674 (2024)."
+          },
+          {
+            "key": "e_1_3_2_1_55_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neuron.2021.01.009"
+          },
+          {
+            "key": "e_1_3_2_1_56_1",
+            "volume-title": "Low Latency and Sparse Computing Spiking Neural Networks With Self-Driven Adaptive Threshold Plasticity",
+            "author": "Zhang Anguo",
+            "year": "2023",
+            "unstructured": "Anguo Zhang, Jieming Shi, Junyi Wu, Yongcheng Zhou, and Wei Yu. 2023. Low Latency and Sparse Computing Spiking Neural Networks With Self-Driven Adaptive Threshold Plasticity. IEEE Transactions on Neural Networks and Learning Systems (2023), 1--12."
+          },
+          {
+            "key": "e_1_3_2_1_57_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR52688.2022.00860"
+          },
+          {
+            "key": "e_1_3_2_1_58_1",
+            "volume-title": "Spike Transformer: Monocular Depth Estimation for Spiking Camera. In European Conference on Computer Vision. 34--52",
+            "author": "Zhang Jiyuan",
+            "year": "2022",
+            "unstructured": "Jiyuan Zhang, Lulu Tang, Zhaofei Yu, Jiwen Lu, and Tiejun Huang. 2022. Spike Transformer: Monocular Depth Estimation for Spiking Camera. In European Conference on Computer Vision. 34--52."
+          },
+          {
+            "key": "e_1_3_2_1_59_1",
+            "first-page": "12022",
+            "article-title": "Temporal Spike Sequence Learning via Backpropagation for Deep Spiking Neural Networks",
+            "volume": "33",
+            "author": "Zhang Wenrui",
+            "year": "2020",
+            "unstructured": "Wenrui Zhang and Peng Li. 2020. Temporal Spike Sequence Learning via Backpropagation for Deep Spiking Neural Networks. In Advances in Neural Information Processing Systems, Vol. 33. 12022--12033.",
+            "journal-title": "Advances in Neural Information Processing Systems"
+          },
+          {
+            "key": "e_1_3_2_1_60_1",
+            "doi-asserted-by": "crossref",
+            "unstructured": "Rong Zhao Zheyu Yang Hao Zheng Yujie Wu Faqiang Liu Zhenzhi Wu Lukai Li Feng Chen Seng Song Jun Zhu et al. 2022. A Framework for the General Design and Computation of Hybrid Neural Networks. Nature communications Vol. 13 1 (2022) 3427.",
+            "DOI": "10.1038/s41467-022-30964-7"
+          },
+          {
+            "key": "e_1_3_2_1_61_1",
+            "volume-title": "Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network. arXiv preprint arXiv:2304.11954",
+            "author": "Zhou Chenlin",
+            "year": "2023",
+            "unstructured": "Chenlin Zhou, Liutao Yu, Zhaokun Zhou, Han Zhang, Zhengyu Ma, Huihui Zhou, and Yonghong Tian. 2023. Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network. arXiv preprint arXiv:2304.11954 (2023)."
+          },
+          {
+            "key": "e_1_3_2_1_62_1",
+            "volume-title": "Proceedings of the International Conference on Learning Representations.",
+            "author": "Zhou Zhaokun",
+            "year": "2023",
+            "unstructured": "Zhaokun Zhou, Yuesheng Zhu, Chao He, Yaowei Wang, Shuicheng YAN, Yonghong Tian, and Li Yuan. 2023. Spikformer: When Spiking Neural Network Meets Transformer. In Proceedings of the International Conference on Learning Representations."
+          },
+          {
+            "key": "e_1_3_2_1_63_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TCDS.2021.3073846"
+          }
+        ],
+        "event": {
+          "name": "MM '24: The 32nd ACM International Conference on Multimedia",
+          "location": "Melbourne VIC Australia",
+          "acronym": "MM '24",
+          "sponsor": [
+            "SIGMM ACM Special Interest Group on Multimedia"
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 32nd ACM International Conference on Multimedia"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "https://dl.acm.org/doi/10.1145/3664647.3680620",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://dl.acm.org/doi/pdf/10.1145/3664647.3680620",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2025,
+              6,
+              18
+            ]
+          ],
+          "date-time": "2025-06-18T21:17:56Z",
+          "timestamp": 1750281476000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://dl.acm.org/doi/10.1145/3664647.3680620"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              28
+            ]
+          ]
+        },
+        "references-count": 63,
+        "alternative-id": [
+          "10.1145/3664647.3680620",
+          "10.1145/3664647"
+        ],
+        "URL": "https://doi.org/10.1145/3664647.3680620",
+        "relation": {},
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              28
+            ]
+          ]
+        },
+        "assertion": [
+          {
+            "value": "2024-10-28",
+            "order": 3,
+            "name": "published",
+            "label": "Published",
+            "group": {
+              "name": "publication_history",
+              "label": "Publication History"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1016/j.ins.2026.123828",
+      "record": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              7
+            ]
+          ],
+          "date-time": "2026-10-07T16:46:59Z",
+          "timestamp": 1791391619996,
+          "version": "4.3.3"
+        },
+        "reference-count": 49,
+        "publisher": "Elsevier BV",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  11,
+                  1
+                ]
+              ],
+              "date-time": "2026-11-01T00:00:00Z",
+              "timestamp": 1793491200000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  11,
+                  1
+                ]
+              ],
+              "date-time": "2026-11-01T00:00:00Z",
+              "timestamp": 1793491200000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://www.elsevier.com/legal/tdmrep-license"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  11,
+                  1
+                ]
+              ],
+              "date-time": "2026-11-01T00:00:00Z",
+              "timestamp": 1793491200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-017"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  11,
+                  1
+                ]
+              ],
+              "date-time": "2026-11-01T00:00:00Z",
+              "timestamp": 1793491200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  11,
+                  1
+                ]
+              ],
+              "date-time": "2026-11-01T00:00:00Z",
+              "timestamp": 1793491200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-012"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  11,
+                  1
+                ]
+              ],
+              "date-time": "2026-11-01T00:00:00Z",
+              "timestamp": 1793491200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  11,
+                  1
+                ]
+              ],
+              "date-time": "2026-11-01T00:00:00Z",
+              "timestamp": 1793491200000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-004"
+          }
+        ],
+        "funder": [
+          {
+            "DOI": "10.13039/501100005358",
+            "name": "Linyi University",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "Z6126063"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "Z6126063"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100005358",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100012166",
+            "name": "National Key Research and Development Program of China",
+            "doi-asserted-by": "publisher",
+            "id": [
+              {
+                "id": "10.13039/501100012166",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100012165",
+            "name": "Key Technologies Research and Development Program",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "2020YFE0201500"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "2020YFE0201500"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100012165",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [
+            "elsevier.com",
+            "sciencedirect.com"
+          ],
+          "crossmark-restriction": true
+        },
+        "short-container-title": [
+          "Information Sciences"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              11
+            ]
+          ]
+        },
+        "DOI": "10.1016/j.ins.2026.123828",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              6,
+              23
+            ]
+          ],
+          "date-time": "2026-06-23T07:13:57Z",
+          "timestamp": 1782198837000
+        },
+        "page": "123828",
+        "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+        "source": "Crossref",
+        "is-referenced-by-count": 1,
+        "special_numbering": "C",
+        "title": [
+          "SpikeGraphormer: A high-performance graph transformer with spiking graph attention"
+        ],
+        "prefix": "10.1016",
+        "volume": "755",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-5567-4553",
+            "authenticated-orcid": false,
+            "given": "Yundong",
+            "family": "Sun",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dongjie",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yansong",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhaoshuo",
+            "family": "Tian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ning",
+            "family": "Cao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5124-1686",
+            "authenticated-orcid": false,
+            "given": "Gregory",
+            "family": "O’Hare",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "78",
+        "reference": [
+          {
+            "issue": "118960",
+            "key": "10.1016/j.ins.2026.123828_bib0005",
+            "article-title": "SRFA-GRL: predicting group influence in social networks with graph representation learning",
+            "volume": "638",
+            "author": "Jia",
+            "year": "2023",
+            "journal-title": "Inf. Sci."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0010",
+            "series-title": "Proceedings of the AAAI Conference on Artificial Intelligence",
+            "first-page": "17204",
+            "article-title": "Pre-training graph neural networks on molecules by using subgraph-conditioned graph information bottleneck",
+            "volume": "vol. 39",
+            "author": "Lee",
+            "year": "2025"
+          },
+          {
+            "issue": "111340",
+            "key": "10.1016/j.ins.2026.123828_bib0015",
+            "article-title": "FrameERC: framelet transform based multimodal graph neural networks for emotion recognition in conversation",
+            "volume": "161",
+            "author": "Ming",
+            "year": "2025",
+            "journal-title": "Pattern Recognit."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0020",
+            "series-title": "International Conference on Machine Learning",
+            "first-page": "6861",
+            "article-title": "Simplifying graph convolutional networks",
+            "author": "Felix",
+            "year": "2019"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0025",
+            "series-title": "International Conference on Learning Representations",
+            "article-title": "Semi-supervised classification with graph convolutional networks",
+            "author": "Kipf",
+            "year": "2016"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0030",
+            "series-title": "International Conference on Learning Representations",
+            "article-title": "Graph attention networks",
+            "author": "Veličković",
+            "year": "2018"
+          },
+          {
+            "issue": "5",
+            "key": "10.1016/j.ins.2026.123828_bib0035",
+            "doi-asserted-by": "crossref",
+            "first-page": "3656",
+            "DOI": "10.1109/TNSE.2025.3563697",
+            "article-title": "Mitigating degree bias in graph representation learning with learnable structural augmentation and structural self-attention",
+            "volume": "12",
+            "author": "Hoang",
+            "year": "2025",
+            "journal-title": "IEEE Trans. Netw. Sci. Eng."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0040",
+            "first-page": "7793",
+            "article-title": "Beyond homophily in graph neural networks: current limitations and effective designs",
+            "volume": "33",
+            "author": "Zhu",
+            "year": "2020",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0045",
+            "series-title": "International Conference on Machine Learning",
+            "first-page": "7865",
+            "article-title": "On over-squashing in message passing neural networks: the impact of width, depth, and topology",
+            "author": "Di Giovanni",
+            "year": "2023"
+          },
+          {
+            "issue": "5",
+            "key": "10.1016/j.ins.2026.123828_bib0050",
+            "doi-asserted-by": "crossref",
+            "first-page": "1595",
+            "DOI": "10.1109/TETCI.2023.3249255",
+            "article-title": "Can graph neural networks go deeper without over-smoothing? Yes, with a randomized path exploration!",
+            "volume": "7",
+            "author": "Bose",
+            "year": "2023",
+            "journal-title": "IEEE Trans. Emerg. Top. Comput. Intell."
+          },
+          {
+            "issue": "3",
+            "key": "10.1016/j.ins.2026.123828_bib0055",
+            "doi-asserted-by": "crossref",
+            "first-page": "1064",
+            "DOI": "10.1109/TKDE.2024.3512181",
+            "article-title": "AEGK: aligned entropic graph kernels through continuous-time quantum walks",
+            "volume": "37",
+            "author": "Bai",
+            "year": "2025",
+            "journal-title": "IEEE Trans. Knowl. Data Eng."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0060",
+            "first-page": "27387",
+            "article-title": "Nodeformer: a scalable graph structure learning transformer for node classification",
+            "volume": "35",
+            "author": "Qitian",
+            "year": "2022",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0065",
+            "series-title": "Proceedings of the AAAI Conference on Artificial Intelligence",
+            "first-page": "12456",
+            "article-title": "Transitivity-preserving graph representation learning for bridging local connectivity and role-based similarity",
+            "volume": "vol. 38",
+            "author": "Lee",
+            "year": "2024"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0070",
+            "first-page": "28877",
+            "article-title": "Do transformers really perform badly for graph representation?",
+            "volume": "34",
+            "author": "Ying",
+            "year": "2021",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0075",
+            "first-page": "13266",
+            "article-title": "Representing long-range context for graph neural networks with global attention",
+            "volume": "34",
+            "author": "Zhanghao",
+            "year": "2021",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0080",
+            "doi-asserted-by": "crossref",
+            "first-page": "21171",
+            "DOI": "10.52202/068431-1539",
+            "article-title": "Hierarchical graph transformer with adaptive node sampling",
+            "volume": "35",
+            "author": "Zhang",
+            "year": "2022",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0085",
+            "author": "Zhao"
+          },
+          {
+            "issue": "8",
+            "key": "10.1016/j.ins.2026.123828_bib0090",
+            "doi-asserted-by": "crossref",
+            "first-page": "9393",
+            "DOI": "10.1109/TPAMI.2023.3241201",
+            "article-title": "Attention spiking neural networks",
+            "volume": "45",
+            "author": "Yao",
+            "year": "2023",
+            "journal-title": "IEEE Trans. Pattern Anal. Mach. Intell."
+          },
+          {
+            "issue": "4",
+            "key": "10.1016/j.ins.2026.123828_bib0095",
+            "doi-asserted-by": "crossref",
+            "first-page": "4367",
+            "DOI": "10.1109/TNNLS.2024.3371592",
+            "article-title": "Guest editorial: deep neural networks for graphs: theory, models, algorithms, and applications",
+            "volume": "35",
+            "author": "Ming",
+            "year": "2024",
+            "journal-title": "IEEE Trans. Neural Netw. Learn. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0100",
+            "series-title": "Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence",
+            "first-page": "4702",
+            "article-title": "Hierarchical transformer for scalable graph learning",
+            "author": "Zhu",
+            "year": "2023"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0105",
+            "series-title": "The Eleventh International Conference on Learning Representations",
+            "article-title": "NAGphormer: a tokenized graph transformer for node classification in large graphs",
+            "author": "Chen",
+            "year": "2022"
+          },
+          {
+            "issue": "12",
+            "key": "10.1016/j.ins.2026.123828_bib0110",
+            "doi-asserted-by": "crossref",
+            "first-page": "1",
+            "DOI": "10.1145/3571155",
+            "article-title": "Exploring neuromorphic computing based on spiking neural networks: algorithms to hardware",
+            "volume": "55",
+            "author": "Rathi",
+            "year": "2023",
+            "journal-title": "ACM Comput. Surv."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0115",
+            "article-title": "Spike-driven transformer",
+            "volume": "36",
+            "author": "Yao",
+            "year": "2024",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0120",
+            "series-title": "The Eleventh International Conference on Learning Representations",
+            "article-title": "Spikformer: when spiking neural network meets transformer",
+            "author": "Zhou",
+            "year": "2022"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0125",
+            "series-title": "Proceedings of the AAAI Conference on Artificial Intelligence",
+            "first-page": "102",
+            "article-title": "Complex dynamic neurons improved spiking transformer network for efficient automatic speech recognition",
+            "volume": "vol. 37",
+            "author": "Wang",
+            "year": "2023"
+          },
+          {
+            "issue": "9",
+            "key": "10.1016/j.ins.2026.123828_bib0130",
+            "doi-asserted-by": "crossref",
+            "first-page": "1659",
+            "DOI": "10.1016/S0893-6080(97)00011-7",
+            "article-title": "Networks of spiking neurons: the third generation of neural network models",
+            "volume": "10",
+            "author": "Maass",
+            "year": "1997",
+            "journal-title": "Neural Netw."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0135",
+            "series-title": "International Conference on Machine Learning",
+            "first-page": "3469",
+            "article-title": "Structure-aware transformer for graph representation learning",
+            "author": "Chen",
+            "year": "2022"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0140",
+            "series-title": "Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+            "first-page": "353",
+            "article-title": "Neighbour interaction based click-through rate prediction via graph-masked transformer",
+            "author": "Min",
+            "year": "2022"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0145",
+            "article-title": "Simplifying and empowering transformers for large-graph representations",
+            "volume": "36",
+            "author": "Qitian",
+            "year": "2024",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0150",
+            "series-title": "Proceedings of Machine Learning and Systems",
+            "article-title": "Efficiently scaling transformer inference",
+            "volume": "vol. 5",
+            "author": "Pope",
+            "year": "2023"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0155",
+            "doi-asserted-by": "crossref",
+            "first-page": "412",
+            "DOI": "10.1016/j.neunet.2023.03.015",
+            "article-title": "A learnable sampling method for scalable graph neural networks",
+            "volume": "162",
+            "author": "Zhao",
+            "year": "2023",
+            "journal-title": "Neural Netw."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0160",
+            "series-title": "Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining",
+            "first-page": "1666",
+            "article-title": "Understanding negative sampling in graph representation learning",
+            "author": "Yang",
+            "year": "2020"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0165",
+            "author": "Dwivedi"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0170",
+            "doi-asserted-by": "crossref",
+            "first-page": "14501",
+            "DOI": "10.52202/068431-1054",
+            "article-title": "Recipe for a general, powerful, scalable graph transformer",
+            "volume": "35",
+            "author": "Rampášek",
+            "year": "2022",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0175",
+            "series-title": "The Twelfth International Conference on Learning Representations",
+            "article-title": "Polynormer: polynomial-expressive graph transformer in linear time",
+            "author": "Deng",
+            "year": "2024"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0180",
+            "series-title": "Proceedings of the AAAI Conference on Artificial Intelligence",
+            "first-page": "16298",
+            "article-title": "GT-SNT: a linear-time transformer for large-scale graphs via spiking node tokenization",
+            "volume": "vol. 40",
+            "author": "Zhang",
+            "year": "2026"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0185",
+            "author": "Frasca"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0190",
+            "series-title": "The Thirty-Eighth Annual Conference on Neural Information Processing Systems",
+            "article-title": "Spiking graph neural network on riemannian manifolds",
+            "author": "Sun",
+            "year": "2024"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0195",
+            "first-page": "29",
+            "article-title": "Matching networks for one shot learning",
+            "author": "Vinyals",
+            "year": "2016",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0200",
+            "first-page": "2825",
+            "article-title": "Scikit-Learn: machine learning in Python",
+            "volume": "12",
+            "author": "Pedregosa",
+            "year": "2011",
+            "journal-title": "J. Mach. Learn. Res."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0205",
+            "author": "Lim"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0210",
+            "author": "Platonov"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0215",
+            "first-page": "22118",
+            "article-title": "Open graph benchmark: datasets for machine learning on graphs",
+            "volume": "33",
+            "author": "Weihua",
+            "year": "2020",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0220",
+            "series-title": "International Conference on Learning Representations",
+            "article-title": "Graphsaint: graph sampling based inductive learning method",
+            "author": "Zeng",
+            "year": "2019"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0225",
+            "series-title": "International Conference on Learning Representations",
+            "article-title": "DropEdge: towards deep graph convolutional networks on node classification",
+            "author": "Rong",
+            "year": "2020"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0230",
+            "series-title": "International Conference on Machine Learning",
+            "first-page": "1972",
+            "article-title": "Learning discrete structures for graph neural networks",
+            "author": "Franceschi",
+            "year": "2019"
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0235",
+            "first-page": "19314",
+            "article-title": "Iterative deep graph learning for graph neural networks: better and robust node embeddings",
+            "volume": "33",
+            "author": "Chen",
+            "year": "2020",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0240",
+            "doi-asserted-by": "crossref",
+            "first-page": "23716",
+            "DOI": "10.52202/068431-1723",
+            "article-title": "Flamingo: a visual language model for few-shot learning",
+            "volume": "35",
+            "author": "Alayrac",
+            "year": "2022",
+            "journal-title": "Adv. Neural Inf. Process. Syst."
+          },
+          {
+            "key": "10.1016/j.ins.2026.123828_bib0245",
+            "author": "Shazeer"
+          }
+        ],
+        "container-title": [
+          "Information Sciences"
+        ],
+        "original-title": [],
+        "language": "en",
+        "link": [
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0020025526007590?httpAccept=text/xml",
+            "content-type": "text/xml",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://api.elsevier.com/content/article/PII:S0020025526007590?httpAccept=text/plain",
+            "content-type": "text/plain",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              28
+            ]
+          ],
+          "date-time": "2026-08-28T13:46:21Z",
+          "timestamp": 1787924781000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0020025526007590"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              11
+            ]
+          ]
+        },
+        "references-count": 49,
+        "alternative-id": [
+          "S0020025526007590"
+        ],
+        "URL": "https://doi.org/10.1016/j.ins.2026.123828",
+        "relation": {},
+        "ISSN": [
+          "0020-0255"
+        ],
+        "issn-type": [
+          {
+            "value": "0020-0255",
+            "type": "print"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              11
+            ]
+          ]
+        },
+        "assertion": [
+          {
+            "value": "Elsevier",
+            "name": "publisher",
+            "label": "This article is maintained by"
+          },
+          {
+            "value": "SpikeGraphormer: A high-performance graph transformer with spiking graph attention",
+            "name": "articletitle",
+            "label": "Article Title"
+          },
+          {
+            "value": "Information Sciences",
+            "name": "journaltitle",
+            "label": "Journal Title"
+          },
+          {
+            "value": "https://doi.org/10.1016/j.ins.2026.123828",
+            "name": "articlelink",
+            "label": "CrossRef DOI link to publisher maintained version"
+          },
+          {
+            "value": "article",
+            "name": "content_type",
+            "label": "Content Type"
+          },
+          {
+            "value": "© 2026 Elsevier Inc. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+            "name": "copyright",
+            "label": "Copyright"
+          }
+        ],
+        "article-number": "123828"
+      }
+    },
+    {
+      "doi": "10.1109/ICMLT65785.2025.11193154",
+      "record": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              5,
+              20
+            ]
+          ],
+          "date-time": "2026-05-20T20:47:33Z",
+          "timestamp": 1779310053810,
+          "version": "3.51.4"
+        },
+        "reference-count": 18,
+        "publisher": "IEEE",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2025,
+                  5,
+                  23
+                ]
+              ],
+              "date-time": "2025-05-23T00:00:00Z",
+              "timestamp": 1747958400000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2025,
+                  5,
+                  23
+                ]
+              ],
+              "date-time": "2025-05-23T00:00:00Z",
+              "timestamp": 1747958400000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [],
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              5,
+              23
+            ]
+          ]
+        },
+        "DOI": "10.1109/icmlt65785.2025.11193154",
+        "type": "proceedings-article",
+        "created": {
+          "date-parts": [
+            [
+              2025,
+              10,
+              13
+            ]
+          ],
+          "date-time": "2025-10-13T17:39:05Z",
+          "timestamp": 1760377145000
+        },
+        "page": "166-170",
+        "source": "Crossref",
+        "is-referenced-by-count": 5,
+        "title": [
+          "Low-Rank Matrix Approximation for Neural Network Compression"
+        ],
+        "prefix": "10.1109",
+        "author": [
+          {
+            "given": "Kalyan",
+            "family": "Cherukuri",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Kalyan Cherukuri and Aarav Lala are With the Illinois Mathematics and Science Academy"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Aarav",
+            "family": "Lala",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Kalyan Cherukuri and Aarav Lala are With the Illinois Mathematics and Science Academy"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s10462-020-09816-7"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.parco.2021.102792"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/computers12030060"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1037/h0042519"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/323533a0"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/5.726791"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.5555/2999134.2999257"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.48550/ARXIV.1706.03762"
+          },
+          {
+            "key": "ref9",
+            "article-title": "An image is worth 16x16 words: Transformers for image recognition at scale",
+            "volume-title": "International Conference on Learning Representations",
+            "author": "Dosovitskiy",
+            "year": "2021"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV.2015.169"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1137/090771806"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/11503415_22"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIT.2010.2044061"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICMSP53480.2021.9513402"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s00348-019-2768-4"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSP.2021.3062988"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1093/nsr/nwad083"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.12720/jait.13.3.295-300"
+          }
+        ],
+        "event": {
+          "name": "2025 10th International Conference on Machine Learning Technologies (ICMLT)",
+          "location": "Helsinki, Finland",
+          "start": {
+            "date-parts": [
+              [
+                2025,
+                5,
+                23
+              ]
+            ]
+          },
+          "end": {
+            "date-parts": [
+              [
+                2025,
+                5,
+                25
+              ]
+            ]
+          }
+        },
+        "container-title": [
+          "2025 10th International Conference on Machine Learning Technologies (ICMLT)"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx8/11192828/11192850/11193154.pdf?arnumber=11193154",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2025,
+              10,
+              14
+            ]
+          ],
+          "date-time": "2025-10-14T05:31:09Z",
+          "timestamp": 1760419869000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/11193154/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              5,
+              23
+            ]
+          ]
+        },
+        "references-count": 18,
+        "URL": "https://doi.org/10.1109/icmlt65785.2025.11193154",
+        "relation": {},
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              5,
+              23
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "doi": "10.1109/TNNLS.2023.3263008",
+      "record": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              30
+            ]
+          ],
+          "date-time": "2026-10-30T17:04:30Z",
+          "timestamp": 1793379870615,
+          "version": "4.5.0"
+        },
+        "reference-count": 95,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "issue": "9",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  9,
+                  1
+                ]
+              ],
+              "date-time": "2024-09-01T00:00:00Z",
+              "timestamp": 1725148800000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  9,
+                  1
+                ]
+              ],
+              "date-time": "2024-09-01T00:00:00Z",
+              "timestamp": 1725148800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  9,
+                  1
+                ]
+              ],
+              "date-time": "2024-09-01T00:00:00Z",
+              "timestamp": 1725148800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "name": "MIAI @ Grenoble Alpes",
+            "award": [
+              "ANR-19-P3IA-0003"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "ANR-19-P3IA-0003"
+                ]
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Neural Netw. Learning Syst."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              9
+            ]
+          ]
+        },
+        "DOI": "10.1109/tnnls.2023.3263008",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2023,
+              4,
+              7
+            ]
+          ],
+          "date-time": "2023-04-07T13:30:05Z",
+          "timestamp": 1680874205000
+        },
+        "page": "11906-11921",
+        "source": "Crossref",
+        "is-referenced-by-count": 125,
+        "title": [
+          "Backpropagation-Based Learning Techniques for Deep Spiking Neural Networks: A Survey"
+        ],
+        "prefix": "10.1109",
+        "volume": "35",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-2622-3101",
+            "authenticated-orcid": false,
+            "given": "Manon",
+            "family": "Dampfhoffer",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "CEA, CNRS, Grenoble Institute of Technology, University of Grenoble Alpes, Grenoble, France"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2572-5353",
+            "authenticated-orcid": false,
+            "given": "Thomas",
+            "family": "Mesquida",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "CEA, LIST, Grenoble, France"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-4319-6563",
+            "authenticated-orcid": false,
+            "given": "Alexandre",
+            "family": "Valentian",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "CEA, LIST, Grenoble, France"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9569-0072",
+            "authenticated-orcid": false,
+            "given": "Lorena",
+            "family": "Anghel",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "CEA, CNRS, Grenoble Institute of Technology, University of Grenoble Alpes, Grenoble, France"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "volume-title": "Learning multiple layers of features from tiny images",
+            "author": "Krizhevsky",
+            "year": "2009"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2014.81"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MSP.2012.2205597"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/nature21056"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.13140/RG.2.2.18893.74727"
+          },
+          {
+            "key": "ref6",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/BDCloud-SocialCom-SustainCom.2016.76"
+          },
+          {
+            "issue": "9",
+            "key": "ref7",
+            "first-page": "620",
+            "article-title": "Recherches quantitatives sur l’excitation electrique des nerfs traitee comme une polarization",
+            "volume": "9",
+            "author": "Lapicque",
+            "year": "1907",
+            "journal-title": "J. Physiol Pathol Générale"
+          },
+          {
+            "key": "ref8",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1017/CBO9781107447615"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MSP.2019.2931595"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2017.00682"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2018.00774"
+          },
+          {
+            "key": "ref12",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MM.2018.112130359"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/science.1254642"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JPROC.2014.2304638"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISCAS.2010.5536970"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JPROC.2014.2313565"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/BIOCAS.2017.8325230"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISCAS.2017.8050527"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISCAS.2018.8351295"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBCAS.2017.2759700"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISSCC.2014.6757323"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1152/physrev.00030.2005"
+          },
+          {
+            "key": "ref23",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neucom.2018.11.014"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/jproc.2023.3308088"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2018.12.002"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3304103"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.5391/IJFIS.2021.21.4.317"
+          },
+          {
+            "key": "ref28",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41586-019-1677-2"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1113/jphysiol.1952.sp004764"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNN.2003.820440"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2018.00331"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11063-021-10562-2"
+          },
+          {
+            "key": "ref33",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s42256-021-00311-4"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2017.2726060"
+          },
+          {
+            "key": "ref35",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2015.7280696"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2019.00095"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11263-014-0788-3"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR42600.2020.01357"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-030-58607-2_23"
+          },
+          {
+            "key": "ref40",
+            "first-page": "1",
+            "article-title": "Optimal ANN-SNN conversion for high-accuracy and ultra-low-latency spiking neural networks",
+            "volume-title": "Proc. Int. Conf. Learn. Represent.",
+            "author": "Bu"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.23919/DATE51398.2021.9473964"
+          },
+          {
+            "key": "ref42",
+            "article-title": "Neural networks for machine learning, Coursera",
+            "author": "Hinton",
+            "year": "2012"
+          },
+          {
+            "key": "ref43",
+            "article-title": "Estimating or propagating gradients through stochastic neurons for conditional computation",
+            "author": "Bengio",
+            "year": "2013",
+            "journal-title": "arXiv:1308.3432"
+          },
+          {
+            "key": "ref44",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2016.00508"
+          },
+          {
+            "key": "ref45",
+            "article-title": "SpikeGrad: An ANN-equivalent computation model for implementing backpropagation with spikes",
+            "author": "Thiele",
+            "year": "2019",
+            "journal-title": "arXiv:1906.00851"
+          },
+          {
+            "key": "ref46",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2019.8852380"
+          },
+          {
+            "key": "ref47",
+            "first-page": "1",
+            "article-title": "SLAYER: Spike layer error reassignment in time",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "31",
+            "author": "Shrestha"
+          },
+          {
+            "key": "ref48",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco_a_01086"
+          },
+          {
+            "key": "ref49",
+            "first-page": "7005",
+            "article-title": "Hybrid macro/micro level backpropagation for training deep spiking neural networks",
+            "volume-title": "Proc. 32nd Int. Conf. Neural Inf. Process. Syst.",
+            "author": "Jin"
+          },
+          {
+            "key": "ref50",
+            "article-title": "Long short-term memory and learning-to-learn in networks of spiking neurons",
+            "author": "Bellec",
+            "year": "2018",
+            "journal-title": "arXiv:1803.09574"
+          },
+          {
+            "key": "ref51",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v33i01.33011311"
+          },
+          {
+            "key": "ref52",
+            "first-page": "1",
+            "article-title": "Spike-train level backpropagation for training deep recurrent spiking neural networks",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "32",
+            "author": "Zhang"
+          },
+          {
+            "key": "ref53",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2020.00119"
+          },
+          {
+            "key": "ref54",
+            "first-page": "12022",
+            "article-title": "Temporal spike sequence learning via backpropagation for deep spiking neural networks",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "33",
+            "author": "Zhang"
+          },
+          {
+            "key": "ref55",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2020/388"
+          },
+          {
+            "key": "ref56",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV48922.2021.00266"
+          },
+          {
+            "key": "ref57",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v35i12.17320"
+          },
+          {
+            "key": "ref58",
+            "article-title": "Training deep spiking neural networks",
+            "author": "Ledinauskas",
+            "year": "2020",
+            "journal-title": "arXiv:2006.04436"
+          },
+          {
+            "key": "ref59",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2021.3071976"
+          },
+          {
+            "key": "ref60",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3381755.3381770"
+          },
+          {
+            "key": "ref61",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/tnnls.2021.3110991"
+          },
+          {
+            "key": "ref62",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2021.3095068"
+          },
+          {
+            "key": "ref63",
+            "article-title": "S4NN: Temporal backpropagation for spiking neural networks with one spike per neuron",
+            "author": "Kheradpisheh",
+            "year": "2019",
+            "journal-title": "arXiv:1910.09495"
+          },
+          {
+            "key": "ref64",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v35i12.17329"
+          },
+          {
+            "key": "ref65",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0925-2312(01)00658-0"
+          },
+          {
+            "key": "ref66",
+            "article-title": "Enabling deep spiking neural networks with hybrid conversion and spike timing dependent backpropagation",
+            "author": "Rathi",
+            "year": "2020",
+            "journal-title": "arXiv:2005.01807"
+          },
+          {
+            "key": "ref67",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2021.773954"
+          },
+          {
+            "key": "ref68",
+            "first-page": "21056",
+            "article-title": "Deep residual learning in spiking neural networks",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "34",
+            "author": "Fang"
+          },
+          {
+            "issue": "1",
+            "key": "ref69",
+            "first-page": "1929",
+            "article-title": "Dropout: A simple way to prevent neural networks from overfitting",
+            "volume": "15",
+            "author": "Srivastava",
+            "year": "2014",
+            "journal-title": "J. Mach. Learn. Res."
+          },
+          {
+            "key": "ref70",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/tnnls.2021.3111897"
+          },
+          {
+            "key": "ref71",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.5555/3045118.3045167"
+          },
+          {
+            "key": "ref72",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2016.90"
+          },
+          {
+            "key": "ref73",
+            "volume-title": "Pytorch Torchvision Models",
+            "year": "2019"
+          },
+          {
+            "key": "ref74",
+            "article-title": "DCT-SNN: Using DCT to distribute spatial information over time for learning low-latency spiking neural networks",
+            "author": "Garg",
+            "year": "2020",
+            "journal-title": "arXiv:2010.01795"
+          },
+          {
+            "key": "ref75",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2019.09.005"
+          },
+          {
+            "key": "ref76",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2021.3095724"
+          },
+          {
+            "key": "ref77",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICASSP43922.2022.9747906"
+          },
+          {
+            "key": "ref78",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2020.00653"
+          },
+          {
+            "key": "ref79",
+            "article-title": "WRPN: Wide reduced-precision networks",
+            "author": "Mishra",
+            "year": "2017",
+            "journal-title": "arXiv:1709.01134"
+          },
+          {
+            "key": "ref80",
+            "first-page": "1135",
+            "article-title": "Learning both weights and connections for efficient neural networks",
+            "volume-title": "Proc. 28th Int. Conf. Neural Inf. Process. Syst. (NIPS)",
+            "volume": "1",
+            "author": "Han"
+          },
+          {
+            "key": "ref81",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco_a_01367"
+          },
+          {
+            "key": "ref82",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-031-20053-3_3"
+          },
+          {
+            "key": "ref83",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2020.00199"
+          },
+          {
+            "key": "ref84",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2014.01.006"
+          },
+          {
+            "key": "ref85",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ACCESS.2020.2978163"
+          },
+          {
+            "key": "ref86",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2020.00637"
+          },
+          {
+            "key": "ref87",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TBCAS.2020.3036081"
+          },
+          {
+            "key": "ref88",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/BCI51272.2021.9385361"
+          },
+          {
+            "key": "ref89",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41598-021-81805-4"
+          },
+          {
+            "key": "ref90",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-030-58526-6_24"
+          },
+          {
+            "key": "ref91",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41598-021-98448-0"
+          },
+          {
+            "key": "ref92",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v36i1.20005"
+          },
+          {
+            "key": "ref93",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICASSP40776.2020.9053861"
+          },
+          {
+            "key": "ref94",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TSP.2021.3121632"
+          },
+          {
+            "key": "ref95",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MNANO.2022.3141443"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Neural Networks and Learning Systems"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx7/5962385/10663876/10097504.pdf?arnumber=10097504",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2024,
+              9,
+              4
+            ]
+          ],
+          "date-time": "2024-09-04T08:14:22Z",
+          "timestamp": 1725437662000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/10097504/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              9
+            ]
+          ]
+        },
+        "references-count": 95,
+        "journal-issue": {
+          "issue": "9"
+        },
+        "URL": "https://doi.org/10.1109/tnnls.2023.3263008",
+        "relation": {},
+        "ISSN": [
+          "2162-237X",
+          "2162-2388"
+        ],
+        "issn-type": [
+          {
+            "value": "2162-237X",
+            "type": "print"
+          },
+          {
+            "value": "2162-2388",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              9
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "doi": "10.1109/ACCESS.2022.3179968",
+      "record": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              11,
+              3
+            ]
+          ],
+          "date-time": "2026-11-03T22:12:19Z",
+          "timestamp": 1793743939589,
+          "version": "4.6.1"
+        },
+        "reference-count": 171,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2022,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2022-01-01T00:00:00Z",
+              "timestamp": 1640995200000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://creativecommons.org/licenses/by/4.0/legalcode"
+          }
+        ],
+        "funder": [
+          {
+            "DOI": "10.13039/501100008530",
+            "name": "European Regional Development Fund",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "POCI-01-0247-FEDER-047264"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "POCI-01-0247-FEDER-047264"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100008530",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Access"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "DOI": "10.1109/access.2022.3179968",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              3
+            ]
+          ],
+          "date-time": "2022-06-03T15:44:12Z",
+          "timestamp": 1654271052000
+        },
+        "page": "60738-60764",
+        "source": "Crossref",
+        "is-referenced-by-count": 236,
+        "title": [
+          "Spiking Neural Networks: A Survey"
+        ],
+        "prefix": "10.1109",
+        "volume": "10",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-8003-7126",
+            "authenticated-orcid": false,
+            "given": "Joao D.",
+            "family": "Nunes",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Faculty of Engineering, University of Porto, Porto, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2819-7955",
+            "authenticated-orcid": false,
+            "given": "Marcelo",
+            "family": "Carvalho",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Faculty of Engineering, University of Porto, Porto, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9465-2485",
+            "authenticated-orcid": false,
+            "given": "Diogo",
+            "family": "Carneiro",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Bosch Car Multimedia, S.A., Braga, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3760-2473",
+            "authenticated-orcid": false,
+            "given": "Jaime S.",
+            "family": "Cardoso",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Faculty of Engineering, University of Porto, Porto, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref1",
+            "first-page": "1",
+            "article-title": "ImageNet classification with deep convolutional neural networks",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "25",
+            "author": "Krizhevsky"
+          },
+          {
+            "key": "ref2",
+            "first-page": "1",
+            "article-title": "Very deep convolutional networks for large-scale image recognition",
+            "volume-title": "Proc. 3rd Int. Conf. Learn. Represent., (ICLR) Conf. Track",
+            "author": "Simonyan"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2016.90"
+          },
+          {
+            "key": "ref4",
+            "first-page": "1",
+            "article-title": "GPipe: Efficient training of giant neural networks using pipeline parallelism",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "32",
+            "author": "Huang"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.48550/arXiv.1810.04805"
+          },
+          {
+            "key": "ref6",
+            "first-page": "1877",
+            "article-title": "Language models are few-shot learners",
+            "volume-title": "Proc. Adv. Neur. Inf. Process. Sys.",
+            "volume": "33",
+            "author": "Brown"
+          },
+          {
+            "key": "ref7",
+            "article-title": "Carbon emissions and large neural network training",
+            "volume": "abs/2104.10350",
+            "author": "Patterson",
+            "year": "2021",
+            "journal-title": "ArXiv"
+          },
+          {
+            "key": "ref8",
+            "volume-title": "Deep Learning’s Diminishing Returns",
+            "author": "Thompson",
+            "year": "2021"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3578938"
+          },
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1017/CBO9780511815706"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/5.726791"
+          },
+          {
+            "key": "ref12",
+            "volume-title": "Learning multiple layers of features from tiny images",
+            "author": "Krizhevsky",
+            "year": "2009"
+          },
+          {
+            "key": "ref13",
+            "article-title": "Fashion-MNIST: A novel image dataset for benchmarking machine learning algorithms",
+            "volume": "abs/1708.07747",
+            "author": "Xiao",
+            "year": "2017",
+            "journal-title": "ArXiv"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s12530-013-9074-9"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2018.00774"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/jlpea11020023"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2019.09.036"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/bdcc5040067"
+          },
+          {
+            "issue": "l",
+            "key": "ref19",
+            "doi-asserted-by": "crossref",
+            "first-page": "99",
+            "DOI": "10.1016/S0092-8240(05)80006-0",
+            "article-title": "A logical calculus nervous activity",
+            "volume": "52",
+            "author": "Mcculloch",
+            "year": "1990",
+            "journal-title": "Bull. Math. Biol."
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNN.2003.820440"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41598-017-07418-y"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2016.00508"
+          },
+          {
+            "key": "ref23",
+            "volume-title": "The Organization of Behavior; A Neuropsychological Theory",
+            "author": "Hebb",
+            "year": "1949"
+          },
+          {
+            "key": "ref24",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1113/jphysiol.1973.sp010273"
+          },
+          {
+            "key": "ref25",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1371/journal.pone.0001377"
+          },
+          {
+            "key": "ref26",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1523/JNEUROSCI.18-24-10464.1998"
+          },
+          {
+            "key": "ref27",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/MSP.2020.2985815"
+          },
+          {
+            "key": "ref28",
+            "first-page": "1",
+            "article-title": "Bipolar cell pathways in the vertebrate retina. Different glutamate receptor types for on and off bipolar cells",
+            "volume-title": "Webvision: The organization of the retina and visual system",
+            "author": "Nelson",
+            "year": "2020"
+          },
+          {
+            "key": "ref29",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1117/12.205366"
+          },
+          {
+            "key": "ref30",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fncom.2018.00042"
+          },
+          {
+            "key": "ref31",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.18122/td.1782.boisestate"
+          },
+          {
+            "key": "ref32",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.5220/0003682402300235"
+          },
+          {
+            "key": "ref33",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neucom.2020.07.109"
+          },
+          {
+            "key": "ref34",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fneur.2021.661938"
+          },
+          {
+            "key": "ref35",
+            "first-page": "1",
+            "article-title": "Visual responses of ganglion cells history of electrical recordings",
+            "volume-title": "Webvision: The Organization of the Retina and Visual System [Internet]",
+            "author": "Nelson",
+            "year": "2007"
+          },
+          {
+            "key": "ref36",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.eng.2020.02.004"
+          },
+          {
+            "key": "ref37",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/science.abg7285"
+          },
+          {
+            "key": "ref38",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neuron.2011.09.027"
+          },
+          {
+            "key": "ref39",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neuropharm.2014.09.011"
+          },
+          {
+            "key": "ref40",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/SMC.2019.8914566"
+          },
+          {
+            "key": "ref41",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1088/0954-898X_6_2_001"
+          },
+          {
+            "key": "ref42",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/science.274.5293.1724"
+          },
+          {
+            "key": "ref43",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.7554/eLife.16039"
+          },
+          {
+            "key": "ref44",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/11829898_3"
+          },
+          {
+            "key": "ref45",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fncom.2015.00099"
+          },
+          {
+            "key": "ref46",
+            "article-title": "BackEISNN: A deep spiking neural network with adaptive self-feedback and balanced excitatory-inhibitory neurons",
+            "volume": "abs/2105.13004",
+            "author": "Zhao",
+            "year": "2021",
+            "journal-title": "ArXiv"
+          },
+          {
+            "key": "ref47",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fncom.2020.576841"
+          },
+          {
+            "key": "ref48",
+            "article-title": "Training feedback spiking neural networks by implicit differentiation on the equilibrium state",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "34",
+            "author": "Xiao"
+          },
+          {
+            "key": "ref49",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.cobeha.2020.07.002"
+          },
+          {
+            "key": "ref50",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neuron.2014.07.035"
+          },
+          {
+            "key": "ref51",
+            "first-page": "1",
+            "article-title": "Recurrent neural networks learn robust representations by dynamically balancing compression and expansion",
+            "author": "Farrell",
+            "year": "2019",
+            "journal-title": "BioRxiv"
+          },
+          {
+            "key": "ref52",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2019.8852472"
+          },
+          {
+            "key": "ref53",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2019.00686"
+          },
+          {
+            "key": "ref54",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICPR.2014.739"
+          },
+          {
+            "key": "ref55",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2022.819063"
+          },
+          {
+            "key": "ref56",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2015.00437"
+          },
+          {
+            "key": "ref57",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.preteyeres.2018.06.003"
+          },
+          {
+            "key": "ref58",
+            "volume-title": "Vision: Central Processing Foundations of Neuroscience",
+            "author": "Henley",
+            "year": "2021"
+          },
+          {
+            "key": "ref59",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/B978-0-7506-9076-8.50011-3"
+          },
+          {
+            "issue": "7",
+            "key": "ref60",
+            "doi-asserted-by": "crossref",
+            "DOI": "10.4249/scholarpedia.12105",
+            "article-title": "Area v1",
+            "volume": "7",
+            "author": "Carandini",
+            "year": "2012",
+            "journal-title": "Scholarpedia"
+          },
+          {
+            "issue": "2",
+            "key": "ref61",
+            "doi-asserted-by": "crossref",
+            "first-page": "83",
+            "DOI": "10.1023/A:1012460413855",
+            "article-title": "Saliency, scale and image description",
+            "volume": "45",
+            "author": "Kadir",
+            "year": "2001",
+            "journal-title": "Int. J. Comput. Vis."
+          },
+          {
+            "key": "ref62",
+            "article-title": "Object component models using Gabor filters for visual recognition",
+            "author": "López",
+            "year": "2008"
+          },
+          {
+            "key": "ref63",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/02564602.1996.11416611"
+          },
+          {
+            "key": "ref64",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco_a_00997"
+          },
+          {
+            "key": "ref65",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-1-4614-7320-6_345-1"
+          },
+          {
+            "key": "ref66",
+            "article-title": "Locally scale-invariant convolutional neural networks",
+            "author": "Kanazawa",
+            "year": "2014",
+            "journal-title": "arXiv:1412.5104"
+          },
+          {
+            "key": "ref67",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR42600.2020.01428"
+          },
+          {
+            "key": "ref68",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/app8091561"
+          },
+          {
+            "key": "ref69",
+            "article-title": "Sci-Net: A scale invariant model for buildings segmentation from aerial images",
+            "author": "Nasrallah",
+            "year": "2021",
+            "journal-title": "arXiv:2111.06812"
+          },
+          {
+            "key": "ref70",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-642-15825-4_10"
+          },
+          {
+            "key": "ref71",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3195106.3195115"
+          },
+          {
+            "key": "ref72",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neucom.2016.04.029"
+          },
+          {
+            "key": "ref73",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1371/journal.pcbi.0030031"
+          },
+          {
+            "key": "ref74",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2016.7727213"
+          },
+          {
+            "key": "ref75",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2014.2362542"
+          },
+          {
+            "key": "ref76",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2017.12.005"
+          },
+          {
+            "key": "ref77",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neunet.2019.06.001"
+          },
+          {
+            "key": "ref78",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11063-021-10562-2"
+          },
+          {
+            "key": "ref79",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1113/jphysiol.1926.sp002308"
+          },
+          {
+            "key": "ref80",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1101/cshperspect.a029702"
+          },
+          {
+            "key": "ref81",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s12559-019-09643-1"
+          },
+          {
+            "key": "ref82",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1017/CBO9781107447615"
+          },
+          {
+            "key": "ref83",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1371/journal.pone.0007600"
+          },
+          {
+            "key": "ref84",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.7554/eLife.47027"
+          },
+          {
+            "key": "ref85",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/972"
+          },
+          {
+            "key": "ref86",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fncom.2014.00058"
+          },
+          {
+            "key": "ref87",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/381520a0"
+          },
+          {
+            "key": "ref88",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1126/science.1149639"
+          },
+          {
+            "key": "ref89",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.visres.2006.07.026"
+          },
+          {
+            "key": "ref90",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.7554/eLife.34044"
+          },
+          {
+            "key": "ref91",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1523/ENEURO.0134-15.2016"
+          },
+          {
+            "key": "ref92",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.cub.2008.02.023"
+          },
+          {
+            "key": "ref93",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1073/pnas.1217012109"
+          },
+          {
+            "key": "ref94",
+            "article-title": "Phase-of-firing code",
+            "author": "Cattani",
+            "year": "2015",
+            "journal-title": "arXiv:1504.03954"
+          },
+          {
+            "key": "ref95",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fncom.2018.00048"
+          },
+          {
+            "key": "ref96",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/DAC18072.2020.9218689"
+          },
+          {
+            "key": "ref97",
+            "first-page": "1",
+            "article-title": "Fast and efficient information transmission with burst spikes in deep spiking neural networks",
+            "volume-title": "Proc. 56th Annu. Design Autom. Conf.",
+            "author": "Park"
+          },
+          {
+            "key": "ref98",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/323533a0"
+          },
+          {
+            "key": "ref99",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.7551/mitpress/7503.003.0024"
+          },
+          {
+            "key": "ref100",
+            "first-page": "1765",
+            "article-title": "What kind of a graphical model is the brain?",
+            "volume-title": "Proc. Int. Joint Conf. Artif. Intell. (IJCAI)",
+            "author": "Hinton"
+          },
+          {
+            "key": "ref101",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco.2006.18.7.1527"
+          },
+          {
+            "key": "ref102",
+            "first-page": "1137",
+            "article-title": "Efficient learning of sparse representations with an energy-based model",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "author": "Poultney"
+          },
+          {
+            "key": "ref103",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/nature14539"
+          },
+          {
+            "key": "ref104",
+            "article-title": "Towards biologically plausible deep learning",
+            "author": "Bengio",
+            "year": "2015",
+            "journal-title": "arXiv:1502.04156"
+          },
+          {
+            "key": "ref105",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/ncomms13276"
+          },
+          {
+            "key": "ref106",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/nn1470"
+          },
+          {
+            "key": "ref107",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0893-6080(99)00046-5"
+          },
+          {
+            "key": "ref108",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0006-8993(00)03142-5"
+          },
+          {
+            "key": "ref109",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/417322a"
+          },
+          {
+            "key": "ref110",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/NECO_a_00396"
+          },
+          {
+            "key": "ref111",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2015.7280696"
+          },
+          {
+            "key": "ref112",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2017.00682"
+          },
+          {
+            "key": "ref113",
+            "article-title": "Optimal conversion of conventional artificial neural networks to spiking neural networks",
+            "volume": "abs/2103.00476",
+            "author": "Deng",
+            "year": "2021",
+            "journal-title": "ArXiv"
+          },
+          {
+            "key": "ref114",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.24963/ijcai.2021/321"
+          },
+          {
+            "key": "ref115",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ISCAS.2018.8351295"
+          },
+          {
+            "key": "ref116",
+            "first-page": "1",
+            "article-title": "SLAYER: Spike layer error reassignment in time",
+            "volume-title": "Proc. NeurIPS",
+            "author": "Shrestha"
+          },
+          {
+            "key": "ref117",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/B978-0-12-397267-5.00029-7"
+          },
+          {
+            "key": "ref118",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco.2007.19.6.1437"
+          },
+          {
+            "key": "ref119",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1371/journal.pcbi.1003037"
+          },
+          {
+            "key": "ref120",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNANO.2013.2250995"
+          },
+          {
+            "key": "ref121",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1523/JNEUROSCI.1425-06.2006"
+          },
+          {
+            "key": "ref122",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2018.8489673"
+          },
+          {
+            "key": "ref123",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/BF00337288"
+          },
+          {
+            "key": "ref124",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco.2007.19.11.2881"
+          },
+          {
+            "key": "ref125",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3266229"
+          },
+          {
+            "key": "ref126",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2017.7966096"
+          },
+          {
+            "key": "ref127",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2019.8852346"
+          },
+          {
+            "key": "ref128",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN.2017.7966099"
+          },
+          {
+            "key": "ref129",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2009.5206848"
+          },
+          {
+            "key": "ref130",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2020.00119"
+          },
+          {
+            "key": "ref131",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2017.2726060"
+          },
+          {
+            "key": "ref132",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JPROC.2014.2313565"
+          },
+          {
+            "key": "ref133",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2015.00141"
+          },
+          {
+            "key": "ref134",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2020.00424"
+          },
+          {
+            "key": "ref135",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2017.781"
+          },
+          {
+            "key": "ref136",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s42256-021-00388-x"
+          },
+          {
+            "key": "ref137",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICASSP40776.2020.9053856"
+          },
+          {
+            "key": "ref138",
+            "doi-asserted-by": "crossref",
+            "first-page": "172",
+            "DOI": "10.1017/CBO9780511975899.008",
+            "article-title": "The synapse",
+            "volume-title": "Principles of Computational Modelling in Neuroscience",
+            "author": "Sterratt",
+            "year": "2011"
+          },
+          {
+            "key": "ref139",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v35i12.17329"
+          },
+          {
+            "key": "ref140",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1142/s0129065720500276"
+          },
+          {
+            "key": "ref141",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/s41598-021-91786-z"
+          },
+          {
+            "key": "ref142",
+            "volume-title": "A theoretical framework for back-propagation",
+            "author": "LeCun",
+            "year": "1988"
+          },
+          {
+            "key": "ref143",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV48922.2021.00266"
+          },
+          {
+            "key": "ref144",
+            "article-title": "Structure-aware network for lane marker extraction with dynamic vision sensor",
+            "author": "Cheng",
+            "year": "2020",
+            "journal-title": "arXiv:2008.06204"
+          },
+          {
+            "key": "ref145",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2021.3111897"
+          },
+          {
+            "key": "ref146",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TNNLS.2021.3119238"
+          },
+          {
+            "key": "ref147",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fnins.2019.00095"
+          },
+          {
+            "key": "ref148",
+            "first-page": "21056",
+            "article-title": "Deep residual learning in spiking neural networks",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "34",
+            "author": "Fang"
+          },
+          {
+            "key": "ref149",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco_a_01238"
+          },
+          {
+            "key": "ref150",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/SYNASC.2005.13"
+          },
+          {
+            "key": "ref151",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.7554/eLife.53262"
+          },
+          {
+            "key": "ref152",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/nature09588"
+          },
+          {
+            "key": "ref153",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1038/nrn1406"
+          },
+          {
+            "key": "ref154",
+            "article-title": "Optimal conversion of conventional artificial neural networks to spiking neural networks",
+            "author": "Deng",
+            "year": "2021",
+            "journal-title": "arXiv:2103.00476"
+          },
+          {
+            "key": "ref155",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.neucom.2018.11.014"
+          },
+          {
+            "key": "ref156",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/fninf.2018.00089"
+          },
+          {
+            "key": "ref157",
+            "first-page": "1929",
+            "article-title": "Dropout: A simple way to prevent neural networks from overfitting",
+            "volume": "15",
+            "author": "Srivastava",
+            "year": "2014",
+            "journal-title": "J. Mach. Learn. Res."
+          },
+          {
+            "key": "ref158",
+            "article-title": "PyTorch: An imperative style, high-performance deep learning library",
+            "volume-title": "Proc. NeurIPS",
+            "author": "Paszke"
+          },
+          {
+            "key": "ref159",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3389/neuro.11.005.2008"
+          },
+          {
+            "key": "ref160",
+            "first-page": "281",
+            "article-title": "Random search for hyper-parameter optimization",
+            "volume": "13",
+            "author": "Bergstra",
+            "year": "2012",
+            "journal-title": "J. Mach. Learn. Res."
+          },
+          {
+            "key": "ref161",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JPROC.2023.3308088"
+          },
+          {
+            "key": "ref162",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1162/neco_a_01086"
+          },
+          {
+            "key": "ref163",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.5220/0007469400002108"
+          },
+          {
+            "key": "ref164",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/IJCNN52387.2021.9533738"
+          },
+          {
+            "key": "ref165",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2018.00186"
+          },
+          {
+            "key": "ref166",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/JETCAS.2020.3032058"
+          },
+          {
+            "key": "ref167",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICPR48806.2021.9412302"
+          },
+          {
+            "key": "ref168",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1609/aaai.v34i07.6787"
+          },
+          {
+            "key": "ref169",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CBMI50038.2021.9461880"
+          },
+          {
+            "key": "ref170",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2012.6248092"
+          },
+          {
+            "key": "ref171",
+            "first-page": "16398",
+            "article-title": "A meta-learning approach to (re)discover plasticity rules that carve a desired function into a neural network",
+            "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+            "volume": "33",
+            "author": "Confavreux"
+          }
+        ],
+        "container-title": [
+          "IEEE Access"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx7/6287639/9668973/09787485.pdf?arnumber=9787485",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2024,
+              1,
+              31
+            ]
+          ],
+          "date-time": "2024-01-31T22:08:19Z",
+          "timestamp": 1706738899000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/9787485/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "references-count": 171,
+        "URL": "https://doi.org/10.1109/access.2022.3179968",
+        "relation": {},
+        "ISSN": [
+          "2169-3536"
+        ],
+        "issn-type": [
+          {
+            "value": "2169-3536",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

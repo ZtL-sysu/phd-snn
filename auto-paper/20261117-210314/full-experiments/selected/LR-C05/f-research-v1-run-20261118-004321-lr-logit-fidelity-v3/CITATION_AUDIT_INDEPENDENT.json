@@ -1,0 +1,440 @@
+{
+  "audit_skill": "citation-audit-independent",
+  "verdict": "WARN",
+  "reason_code": "metadata_drift",
+  "summary": "All 41 works exist and all 44 uses are context-appropriate; 28 KEEP and 13 metadata/version FIX items prevent PASS. No REPLACE, REMOVE, or duplicate versions.",
+  "final_pass_eligible": false,
+  "review_role": "fresh independent citation-audit reviewer",
+  "review_trace": "independent-citation-audit-20261118-lr-c05",
+  "trace_path": "CITATION_AUDIT_INDEPENDENT.md",
+  "generated_at": "2026-11-17T23:49:59Z",
+  "audited_input_hashes": {
+    "references.bib": "sha256:df08f7de89314ff3aa29bbeba4460dfd1ee03ff8b39bda8915b153c95e755e30",
+    "writing/p12/paper-with-verified-references.md": "sha256:8a433c73f85c8ae69f7fec1dea3929e330e1e64238e8e389d36a3281f705a33b",
+    "results/p12-reference-probe.json": "sha256:ee1029bbc2ea8765b69dd2165802ab720acc55558e4378ca4f8fc794392b654a",
+    "results/p12-openalex-probe.json": "sha256:411ae8c870bb19b039fd4bcb7abd29eabd4a8ccafb5b6b0292130d77dea99687",
+    "results/p12-doi-probe.json": "sha256:2055c9cd53b997108972005ffc2ad84e5efeb7e60f0de78225485a405f9b96c3",
+    "results/p12-official-page-probe.json": "sha256:f40737c9696d01915ae7235d31d1c27ff836ee953fae6b41871e4f08f3ce380e"
+  },
+  "details": {
+    "total_entries": 41,
+    "total_citation_occurrences": 44,
+    "counts": {
+      "KEEP": 28,
+      "FIX": 13,
+      "REPLACE": 0,
+      "REMOVE": 0
+    },
+    "axis_summary": {
+      "existence_verified": 41,
+      "metadata_clean": 28,
+      "metadata_fix_required": 13,
+      "all_contexts_support": true,
+      "wrong_context_occurrences": 0
+    },
+    "duplicate_check": {
+      "duplicate_dois": [],
+      "duplicate_arxiv_ids": [],
+      "duplicate_normalized_titles": [],
+      "duplicate_preprint_published_pairs": [],
+      "duplicate_versions_remain": false,
+      "note": "Repeated use of one-spike is intentional key reuse, not a duplicate entry."
+    },
+    "per_entry": [
+      {
+        "key": "kipf2017gcn",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://arxiv.org/abs/1609.02907"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "Graph convolution."}]
+      },
+      {
+        "key": "hamilton2018graphsage",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://arxiv.org/abs/1706.02216"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "Neighborhood sampling and inductive graph representation."}]
+      },
+      {
+        "key": "velickovic2018gat",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://arxiv.org/abs/1710.10903"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "Graph attention."}]
+      },
+      {
+        "key": "xu2019gin",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://arxiv.org/abs/1810.00826"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "Expressive graph neural networks."}]
+      },
+      {
+        "key": "li2019deepgcn",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "wrong_authors",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://openaccess.thecvf.com/content_ICCV_2019/html/Li_DeepGCNs_Can_GCNs_Go_As_Deep_As_CNNs_ICCV_2019_paper.html", "https://doi.org/10.1109/ICCV.2019.00936"],
+        "action": "Correct Muller, Matthias to M{\\\"u}ller, Matthias and Thabet, Ali to Thabet, Ali Kassem (also indexed as Ali K. Thabet).",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "Deep GCNs."}]
+      },
+      {
+        "key": "abu2019mixhop",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://arxiv.org/abs/1905.00067"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "Higher-order neighborhood mixing."}]
+      },
+      {
+        "key": "chen2020gcnii",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://arxiv.org/abs/2007.02133"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "Simple and deep graph convolutional networks."}]
+      },
+      {
+        "key": "li2018deeper",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://doi.org/10.1609/aaai.v32i1.11604"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "GCN depth and over-smoothing."}]
+      },
+      {
+        "key": "wu2021gnnsurvey",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://doi.org/10.1109/TNNLS.2020.2978386"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS", "note": "Broad GNN survey."}]
+      },
+      {
+        "key": "tailor2021degreequant",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://arxiv.org/abs/2008.05000"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS", "note": "GNN quantization-aware training."}]
+      },
+      {
+        "key": "ding2021vqgnn",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://arxiv.org/abs/2110.14363"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS", "note": "Vector-quantized node representations."}]
+      },
+      {
+        "key": "wang2022qgtc",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://ppopp22.sigplan.org/details/PPoPP-2022-main-conference/10/QGTC-Accelerating-Quantized-Graph-Neural-Networks-via-GPU-Tensor-Core", "https://doi.org/10.1145/3503221.3508408"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS", "note": "Tensor-core quantized GNN execution."}]
+      },
+      {
+        "key": "zhu2023a2q",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "outdated_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://dblp.org/rec/conf/iclr/ZhuLMH0LL023.html", "https://arxiv.org/abs/2302.00193"],
+        "action": "Use @inproceedings with booktitle International Conference on Learning Representations, year 2023; arXiv:2302.00193 may remain secondary.",
+        "uses": [
+          {"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS", "note": "Aggregation-aware mixed precision."},
+          {"file": "writing/p12/paper-with-verified-references.md", "line": 87, "verdict": "SUPPORTS", "note": "Graph-aware node-budget adaptation is explicitly not a direct reproduction."}
+        ]
+      },
+      {
+        "key": "wan2023adaqp",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://proceedings.mlsys.org/paper_files/paper/2023/hash/420bcf98bb3615a21468f1efb426e96d-Abstract-mlsys2023.html"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS", "note": "Distributed message quantization."}]
+      },
+      {
+        "key": "hu2023fast",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "outdated_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://doi.org/10.1109/TPAMI.2023.3275769", "https://openalex.org/W4386825396"],
+        "action": "Use IEEE Transactions on Pattern Analysis and Machine Intelligence 45(12):14546-14562, 2023, DOI 10.1109/TPAMI.2023.3275769.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS", "note": "Quantized ANN conversion to SNN."}]
+      },
+      {
+        "key": "gholami2022quantization",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://doi.org/10.1201/9781003162810-13", "https://openalex.org/W3137147200"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS", "note": "General neural-network quantization survey."}]
+      },
+      {
+        "key": "cherukuri2025lowrank",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "wrong_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://doi.org/10.1109/ICMLT65785.2025.11193154", "https://openalex.org/W4415124484"],
+        "action": "Correct venue to International Conference on Machine Learning Technologies (ICMLT); add pages 166-170. This is not ICML.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS", "note": "Low-rank neural-network compression."}]
+      },
+      {
+        "key": "one-spike",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://doi.org/10.1109/TETC.2024.3386893"],
+        "uses": [
+          {"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "ANN-to-SNN accuracy/latency context."},
+          {"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Single-spike output-code context."},
+          {"file": "writing/p12/paper-with-verified-references.md", "line": 88, "verdict": "SUPPORTS", "note": "Coefficient-coding adaptation is explicitly not a direct reproduction."}
+        ]
+      },
+      {
+        "key": "hao2023offset",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "outdated_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://dblp.org/rec/conf/iclr/HaoDB0Y23.html", "https://arxiv.org/abs/2302.10685"],
+        "action": "Use @inproceedings, International Conference on Learning Representations, 2023; arXiv may remain secondary.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Offset-spike calibration."}]
+      },
+      {
+        "key": "lv2024group",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "outdated_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://doi.org/10.1109/ICASSP48485.2024.10448202", "https://openalex.org/W4392904454"],
+        "action": "Use ICASSP 2024 proceedings, pages 6475-6479, DOI 10.1109/ICASSP48485.2024.10448202.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Group-neuron correction."}]
+      },
+      {
+        "key": "bu2023optimal",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "wrong_year_and_outdated_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://yuzhaofei.github.io/papers/22-ICLR-Optimal%20ANN-SNN%20Conversion%20for%20High-accuracy%20and%20Ultra-low-latency%20Spiking%20Neural%20Networks.pdf", "https://arxiv.org/abs/2303.04347"],
+        "action": "Use @inproceedings, International Conference on Learning Representations, year 2022; the arXiv posting year 2023 is not the conference year.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "High-accuracy and ultra-low-latency conversion."}]
+      },
+      {
+        "key": "li2023seenn",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://proceedings.neurips.cc/paper_files/paper/2023/hash/c801e68207da477bbc44182b9fac1129-Abstract-Conference.html"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Temporal spiking early exit."}]
+      },
+      {
+        "key": "you2024spikezip",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://proceedings.mlr.press/v235/you24b.html"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Transformer SNN conversion."}]
+      },
+      {
+        "key": "zhao2025ttfs",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://proceedings.mlr.press/v267/zhao25n.html"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "TTFS-based Transformer conversion."}]
+      },
+      {
+        "key": "huang2025ecmt",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "wrong_year_and_outdated_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://doi.org/10.1145/3664647.3680620", "https://openalex.org/W4403792244"],
+        "action": "Use Proceedings of the 32nd ACM International Conference on Multimedia, pages 10688-10697, year 2024, DOI 10.1145/3664647.3680620.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Transformer ANN-to-SNN conversion."}]
+      },
+      {
+        "key": "li2024erroraware",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://doi.org/10.1007/s11263-024-02046-2"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Post-training parameter calibration."}]
+      },
+      {
+        "key": "spikinggcn",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://ijcai.org/proceedings/2022/338"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Spiking graph convolution."}]
+      },
+      {
+        "key": "spikenet",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://ojs.aaai.org/index.php/AAAI/article/view/26034", "https://arxiv.org/abs/2208.10364"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Dynamic graph representation via SNNs."}]
+      },
+      {
+        "key": "dy-sign",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://ojs.aaai.org/index.php/AAAI/article/view/29587"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Dynamic spiking graph neural networks."}]
+      },
+      {
+        "key": "delay-dsgn",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "wrong_title_and_author",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://proceedings.mlr.press/v267/wang25dm.html"],
+        "action": "Use singular Evolving Graph and author Liang, Jianqing; PMLR 267:64880-64894, ICML 2025.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Delay mechanisms for evolving dynamic graphs."}]
+      },
+      {
+        "key": "signnn",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://www.sciencedirect.com/science/article/pii/S0031320324007775", "https://doi.org/10.1016/j.patcog.2024.111026"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Dynamic graph representation learning."}]
+      },
+      {
+        "key": "msg",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://proceedings.neurips.cc/paper_files/paper/2024/hash/3ba7560b4c3e66d760fbdd472cf4a5a9-Abstract-Conference.html"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Riemannian-manifold spiking graph network."}]
+      },
+      {
+        "key": "negative-spike",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://ijcai.org/proceedings/2025/719"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Negative-spike/signed conversion."}]
+      },
+      {
+        "key": "sun2024spikegraphormer",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "wrong_author_and_outdated_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://doi.org/10.1016/j.ins.2026.123828", "https://openalex.org/W4393212224"],
+        "action": "Use Information Sciences 755:123828, 2026, DOI 10.1016/j.ins.2026.123828; correct O'Hared, Gregory to O'Hare, Gregory M. P.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Spiking graph attention."}]
+      },
+      {
+        "key": "zhang2025sgnnbench",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "outdated_title_authors_year_and_venue",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://neurips.cc/virtual/2026/poster/139238", "https://arxiv.org/abs/2509.21342", "https://chenliang.tech/publications"],
+        "action": "Use the accepted NeurIPS 2026 title SGNNBench: A Holistic Evaluation of Spiking Graph Neural Networks on Large-scale Graphs and accepted authors Huizhe Zhang, Jintang Li, Yuchang Zhu, Huazhen Zhong, Liang Chen; add Zhong, Huazhen and remove preprint-only Kuang, Li.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Large-scale SGNN evaluation."}]
+      },
+      {
+        "key": "li2023graph1bit",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://proceedings.iclr.cc/paper_files/paper/2024/hash/abb4847bbd60f38b1b7649d26c7a0067-Abstract-Conference.html", "https://arxiv.org/abs/2305.19306"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Graph contrastive learning with 1-bit spikes; valid arXiv citation."}]
+      },
+      {
+        "key": "chaurasia2026sgspose",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://doi.org/10.1109/ACCESS.2026.3651795"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Geometric spiking-graph application."}]
+      },
+      {
+        "key": "asgcn",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://ojs.aaai.org/index.php/AAAI/article/view/32154"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS", "note": "Asynchronous event-based visual processing."}]
+      },
+      {
+        "key": "dampfhoffer2023snnlearning",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "incomplete_final_publication_metadata",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://ieeexplore.ieee.org/document/10097504/", "https://openalex.org/W4362691888"],
+        "action": "Use final publication year 2024 with volume 35, issue 9, pages 11906-11921; alternatively retain an explicitly online-first 2023 record without final 2024 issue metadata.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Survey distinguishes conversion from direct training."}]
+      },
+      {
+        "key": "nunes2022snnsurvey",
+        "verdict": "FIX",
+        "existence": "YES",
+        "metadata": "wrong_pages",
+        "axis_failures": ["METADATA"],
+        "verification_urls": ["https://doi.org/10.1109/ACCESS.2022.3179968", "https://sigarra.up.pt/ffup/en/pub_geral.pub_view?pi_pub_base_id=578876"],
+        "action": "Correct pages 60764-60783 to 60738-60764.",
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "Broad SNN survey."}]
+      },
+      {
+        "key": "wang2022taxonomicsnn",
+        "verdict": "KEEP",
+        "existence": "YES",
+        "metadata": "correct",
+        "axis_failures": [],
+        "verification_urls": ["https://doi.org/10.1007/s12293-022-00373-w", "https://openalex.org/W4284959078"],
+        "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS", "note": "SNN taxonomy, training, and hardware survey."}]
+      }
+    ]
+  },
+  "constraints": {
+    "references_modified": false,
+    "manuscript_modified": false,
+    "metadata_invented": false
+  }
+}

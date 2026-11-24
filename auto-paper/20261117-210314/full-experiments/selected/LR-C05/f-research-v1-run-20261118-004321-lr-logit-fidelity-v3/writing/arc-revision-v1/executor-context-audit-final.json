@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "stage": "P10/AutoResearchClaw-19-PAPER_REVISION",
+  "status": "passed",
+  "base_execution_audit": {
+    "path": "writing/arc-revision-v1/executor-context-audit.json",
+    "sha256": "77c9cad2ef2911ad6df183e08899c3f835b82bb7bec3ea6d0897fb585bccd986",
+    "note": "The base audit retained the initial two formatting-validation failures."
+  },
+  "post_revision_correction": {
+    "path": "audits/p10-post-revision-correction.md",
+    "sha256": "29ff7530b67a5ab2f47d79250de820487da456a18a1899001388942d47c17175"
+  },
+  "context_isolation": {
+    "status": "verified-clean-external-boundary",
+    "provider": "acp",
+    "agent": "codex",
+    "agent_cli_version": "0.169.0-alpha.11.1",
+    "arc_internal_prompt_sent_to_model": false,
+    "raw_execution_logs_sent_to_model": false,
+    "reviews_sent_to_model": false,
+    "external_input": "writing/request-p10-revision.json messages only"
+  },
+  "validation": {
+    "problems": [],
+    "source_words": 2156,
+    "revised_words": 2621,
+    "expected_sections": [
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "4 Experiments and Results",
+      "5 Discussion",
+      "6 Conclusion"
+    ],
+    "revised_sha256": "2a418d00f6f1f509b0e43c9770d95ee2539086cbc76620240d567c1e33ccd6ca",
+    "writing_adapter_response_validation": "format-checked; semantic-review-required",
+    "manuscript_lint": {
+      "path": "writing/arc-revision-v1/manuscript-lint-v3.json",
+      "sha256": "c2bf65753d6d8fa6d741c0df0592045373e88b72470dda94a43b9f881f817b64",
+      "integrity_errors": 0,
+      "candidate_disposition": "writing/p10-lint-disposition.md"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "draft": {
+    "path": "writing\\p8\\paper-data-figures.md",
+    "sha256": "e35047b6ed4e6ae0bdcc9470fb754d6fd398f8d6f2f8aaf2e20e574e9726b8cb"
+  },
+  "evidence_digest": {
+    "path": "writing\\p9-evidence-digest.json",
+    "sha256": "435748abc9f5621f15f674b9c76968d9749f8c21a377942958098cd8f16ff8c6"
+  },
+  "requests": [
+    {
+      "path": "writing\\request-p9-reviewer-a.json",
+      "sha256": "5656b49b67a217abccc03954efc69054ab6d9279b8dbd423e54fbaf7c5cc929b"
+    },
+    {
+      "path": "writing\\request-p9-reviewer-b.json",
+      "sha256": "85936bfffd580f78e23f27b7f782c417c963f326adf5d2faae475f724487f688"
+    }
+  ]
+}

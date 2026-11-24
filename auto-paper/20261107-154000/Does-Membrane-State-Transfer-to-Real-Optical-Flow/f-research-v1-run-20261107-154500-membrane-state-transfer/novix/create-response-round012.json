@@ -1,0 +1,21 @@
+{
+  "id": "18533",
+  "chatSessionId": "005445c57cbb058aa667f9b55ae45ff7",
+  "rc": 0,
+  "platform_status": "processing",
+  "platform_steps": 27,
+  "errorCode": null,
+  "finalReply": null,
+  "createdBy": "637",
+  "createdAt": "2026-11-08 23:58:44",
+  "query_file": "C:\\code\\phd-snn\\auto-paper\\20261107-154000\\Does-Membrane-State-Transfer-to-Real-Optical-Flow\\f-research-v1-run-20261107-154500-membrane-state-transfer\\novix\\query-round012-attempt7.txt",
+  "query_bytes": 31721,
+  "guard": "no --max-turns/--timeout/--watch; argv-list submission",
+  "expected_strong_not_lowered": true,
+  "minimum_not_lowered": true,
+  "real_ceiling_threshold_unchanged": 0.7,
+  "merged_query": true,
+  "round": "012",
+  "attempt": 7,
+  "submission_note": "First create returned rc=4 (POST /api/chat_session/create read timeout) leaving an ORPHAN chat_session b6631769bf9e23a51a4b29237580ca14 with NO task. Per playbook rc=4 transport rule, retried ONCE; second call returned rc=4 at POST /api/task/create_task but the server DID create task 18533 (confirmed via task get rc=0 + debug ls workspace + tracking). NO third submission. Exactly ONE task in flight."
+}

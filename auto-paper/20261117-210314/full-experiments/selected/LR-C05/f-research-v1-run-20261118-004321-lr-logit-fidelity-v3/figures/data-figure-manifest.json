@@ -1,0 +1,82 @@
+{
+  "schema_version": 2,
+  "backend": "Python/matplotlib",
+  "repair": "P10 task-loss comparator/aggregation correction",
+  "artifacts": [
+    {
+      "path": "figures\\source-data\\figure2-main-logit-mse.csv",
+      "sha256": "26e673cf72ee87d6429b3f99e9d7e3b32f42e295d973bbf7880508b9eeccb13a",
+      "bytes": 1027
+    },
+    {
+      "path": "figures\\source-data\\figure3-budget-sensitivity.csv",
+      "sha256": "d8a44d0e011450fff0025ed170058d149ec087bd623b513218d83d147221a783",
+      "bytes": 630
+    },
+    {
+      "path": "figures\\source-data\\figure4-tradeoff-and-runtime.csv",
+      "sha256": "3087c020c1e6c35576035ce32c5de2b4fe672fdea6edcc60462472e2908d067f",
+      "bytes": 1433
+    },
+    {
+      "path": "figures\\data\\figure2-main-logit-mse.pdf",
+      "sha256": "2f783319ecc0db2c71155602a71a29e812cdf53c703fd53aa329ce83f597b5b0",
+      "bytes": 39062
+    },
+    {
+      "path": "figures\\data\\figure2-main-logit-mse.png",
+      "sha256": "4e6ca000b8e60720662b5d2ab7d63cf2b8b88b41e02f3d46a06f69ad3c82382a",
+      "bytes": 51678
+    },
+    {
+      "path": "figures\\data\\figure2-main-logit-mse.svg",
+      "sha256": "91908ded511b5b3d76f9e9b398e2f77980d86a96f0cf32cfda3a00159b72f0ec",
+      "bytes": 20389
+    },
+    {
+      "path": "figures\\data\\figure2-main-logit-mse.tiff",
+      "sha256": "a8d525e0bb48678d25b498604d93903aa114635c37d3364c935fdaf7809821e7",
+      "bytes": 33075806
+    },
+    {
+      "path": "figures\\data\\figure3-budget-sensitivity.pdf",
+      "sha256": "398e2b8a3319d7394a71f190a36220d36963f3e3c608de8425e9d22cad0676aa",
+      "bytes": 26800
+    },
+    {
+      "path": "figures\\data\\figure3-budget-sensitivity.png",
+      "sha256": "c7d0bd40d90d2357966e2946958366fddffd8d875536cd1c1728ac334eebcff6",
+      "bytes": 103348
+    },
+    {
+      "path": "figures\\data\\figure3-budget-sensitivity.svg",
+      "sha256": "a41bfd6faf9f4c17ffa30dd4774ea9dcabff3275c74c70955693892724b21579",
+      "bytes": 12598
+    },
+    {
+      "path": "figures\\data\\figure3-budget-sensitivity.tiff",
+      "sha256": "d5cdaf5658494ad35d90c8988f6d91c563481116ad1944f2e4f130b18fb85075",
+      "bytes": 32450222
+    },
+    {
+      "path": "figures\\data\\figure4-tradeoff-and-runtime.pdf",
+      "sha256": "159527e48fd66f28c3125ade09cc49df70595d0edd004d14004d7c33ecaa85c8",
+      "bytes": 38373
+    },
+    {
+      "path": "figures\\data\\figure4-tradeoff-and-runtime.png",
+      "sha256": "559ae18d28099d4089d9f62800d4b9f88763c43a3582409cb3e5edf83c7969ba",
+      "bytes": 82346
+    },
+    {
+      "path": "figures\\data\\figure4-tradeoff-and-runtime.svg",
+      "sha256": "20a14f58cf493e98ff55c469f0ebbf261f465825420719d9c5caabdcff52464d",
+      "bytes": 21020
+    },
+    {
+      "path": "figures\\data\\figure4-tradeoff-and-runtime.tiff",
+      "sha256": "5963dd4d4e303560d6f38b7fd127fbabcd3521428d41d9e84dd101d68f0c801b",
+      "bytes": 31748362
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "candidate": "TRANS-C15-v1",
+  "frozen_at": "2026-11-17T23:15:00+08:00",
+  "asset": "MaleCNS soma coordinates",
+  "translation": [1200, -700, 350],
+  "levels": 8,
+  "translation_error_max": 1e-10,
+  "relative_quantization_error_max": 0.10
+}

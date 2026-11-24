@@ -1,0 +1,54 @@
+project:
+  name: "lr-lowrank-event-conversion"
+  mode: "full-auto"
+research:
+  topic: "Operator-Aligned Low-Rank Residual Event Coding for GNN-to-SNN Conversion"
+  domains: ["graph-neural-networks", "spiking-neural-networks", "model-compression"]
+  daily_paper_count: 5
+  quality_threshold: 4.0
+runtime:
+  timezone: "Asia/Shanghai"
+  max_parallel_tasks: 1
+  approval_timeout_hours: 1
+  retry_limit: 2
+notifications:
+  channel: "console"
+  target: ""
+  on_stage_start: true
+  on_stage_fail: true
+  on_gate_required: true
+knowledge_base:
+  backend: "markdown"
+  root: "writing/kb"
+openclaw_bridge:
+  use_cron: false
+  use_message: false
+  use_memory: false
+  use_sessions_spawn: false
+  use_web_fetch: false
+  use_browser: false
+llm:
+  provider: "openai-compatible"
+  base_url: "https://api.deepseek.com/v1"
+  wire_api: "chat_completions"
+  api_key_env: "DEEPSEEK_API_KEY"
+  primary_model: "deepseek-v4-pro"
+  fallback_models: []
+security:
+  hitl_required_stages: []
+  allow_publish_without_approval: false
+  redact_sensitive_logs: true
+experiment:
+  mode: "sandbox"
+  time_budget_sec: 1800
+  max_iterations: 12
+  metric_key: "teacher_agreement"
+  metric_direction: "maximize"
+  sandbox:
+    python_path: "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe"
+    gpu_required: true
+    max_memory_mb: 12288
+prompts:
+  custom_file: ""
+figure_agent:
+  enabled: false

@@ -1,0 +1,340 @@
+{
+  "summary": {
+    "total": 41,
+    "verified": 28,
+    "suspicious": 1,
+    "hallucinated": 4,
+    "skipped": 8,
+    "integrity_score": 0.848
+  },
+  "results": [
+    {
+      "cite_key": "kipf2017gcn",
+      "title": "Semi-supervised classification with graph convolutional networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Semi-Supervised Classification with Graph Convolutional Networks'"
+    },
+    {
+      "cite_key": "hamilton2018graphsage",
+      "title": "Inductive representation learning on large graphs",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Inductive Representation Learning on Large Graphs'"
+    },
+    {
+      "cite_key": "velickovic2018gat",
+      "title": "Graph Attention Networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "arxiv_id",
+      "details": "Confirmed via arXiv: 'Graph Attention Networks'"
+    },
+    {
+      "cite_key": "xu2019gin",
+      "title": "How Powerful are Graph Neural Networks?",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "arxiv_id",
+      "details": "Confirmed via arXiv: 'How Powerful are Graph Neural Networks?'"
+    },
+    {
+      "cite_key": "li2019deepgcn",
+      "title": "DeepGCNs: Can GCNs Go As Deep As CNNs?",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "doi",
+      "details": "Confirmed via CrossRef: 'DeepGCNs: Can GCNs Go As Deep As CNNs?'"
+    },
+    {
+      "cite_key": "abu2019mixhop",
+      "title": "MixHop: Higher-Order Graph Convolutional Architectures via Sparsified Neighborhood Mixing",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "arxiv_id",
+      "details": "Confirmed via arXiv: 'MixHop: Higher-Order Graph Convolutional Architectures via Sparsified Neighborhood Mixing'"
+    },
+    {
+      "cite_key": "chen2020gcnii",
+      "title": "Simple and Deep Graph Convolutional Networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Simple and Deep Graph Convolutional Networks'"
+    },
+    {
+      "cite_key": "li2018deeper",
+      "title": "Deeper Insights into Graph Convolutional Networks for Semi-Supervised Learning",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "doi",
+      "details": "Confirmed via CrossRef: 'Deeper Insights Into Graph Convolutional Networks for Semi-Supervised Learning'"
+    },
+    {
+      "cite_key": "wu2021gnnsurvey",
+      "title": "A comprehensive survey on graph neural networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'A Comprehensive Survey on Graph Neural Networks'"
+    },
+    {
+      "cite_key": "tailor2021degreequant",
+      "title": "Degree-Quant: Quantization-Aware Training for Graph Neural Networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "arxiv_id",
+      "details": "Confirmed via arXiv: 'Degree-Quant: Quantization-Aware Training for Graph Neural Networks'"
+    },
+    {
+      "cite_key": "ding2021vqgnn",
+      "title": "VQ-GNN: A Universal Framework to Scale up Graph Neural Networks using Vector Quantization",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'VQ-GNN: A Universal Framework to Scale up Graph Neural Networks using Vector Quantization'"
+    },
+    {
+      "cite_key": "wang2022qgtc",
+      "title": "QGTC: Accelerating Quantized Graph Neural Networks via GPU Tensor Core",
+      "status": "suspicious",
+      "confidence": 0.1,
+      "method": "doi",
+      "details": "DOI resolves but title mismatch (sim=0.10): 'QGTC'"
+    },
+    {
+      "cite_key": "zhu2023a2q",
+      "title": "{A$^2$Q}: Aggregation-Aware Quantization for Graph Neural Networks",
+      "status": "verified",
+      "confidence": 0.875,
+      "method": "arxiv_id",
+      "details": "Confirmed via arXiv: '$\\rm A^2Q$: Aggregation-Aware Quantization for Graph Neural Networks'"
+    },
+    {
+      "cite_key": "wan2023adaqp",
+      "title": "Adaptive Message Quantization and Parallelization for Distributed Full-graph GNN Training",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Adaptive Message Quantization and Parallelization for Distributed Full-graph GNN Training'"
+    },
+    {
+      "cite_key": "hu2023fast",
+      "title": "Fast-SNN: Fast Spiking Neural Network by Converting Quantized ANN",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "doi",
+      "details": "Confirmed via CrossRef: 'Fast-SNN: Fast Spiking Neural Network by Converting Quantized ANN'"
+    },
+    {
+      "cite_key": "gholami2022quantization",
+      "title": "A survey of quantization methods for efficient neural network inference",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'A Survey of Quantization Methods for Efficient Neural Network Inference'"
+    },
+    {
+      "cite_key": "cherukuri2025lowrank",
+      "title": "Low-Rank Matrix Approximation for Neural Network Compression",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "doi",
+      "details": "Confirmed via CrossRef: 'Low-Rank Matrix Approximation for Neural Network Compression'"
+    },
+    {
+      "cite_key": "one-spike",
+      "title": "One-Spike SNN: Single-Spike Phase Coding with Base Manipulation for ANN-to-SNN Conversion Loss Minimization",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "arxiv_id",
+      "details": "Confirmed via arXiv: 'One-Spike SNN: Single-Spike Phase Coding with Base Manipulation for ANN-to-SNN Conversion Loss Minimization'"
+    },
+    {
+      "cite_key": "hao2023offset",
+      "title": "Bridging the Gap between ANNs and SNNs by Calibrating Offset Spikes",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Bridging the Gap between ANNs and SNNs by Calibrating Offset Spikes'"
+    },
+    {
+      "cite_key": "lv2024group",
+      "title": "Optimal ANN-SNN Conversion with Group Neurons",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "doi",
+      "details": "Confirmed via CrossRef: 'Optimal ANN-SNN Conversion with Group Neurons'"
+    },
+    {
+      "cite_key": "bu2023optimal",
+      "title": "Optimal ANN-SNN Conversion for High-accuracy and Ultra-low-latency Spiking Neural Networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "arxiv_id",
+      "details": "Confirmed via arXiv: 'Optimal ANN-SNN Conversion for High-accuracy and Ultra-low-latency Spiking Neural Networks'"
+    },
+    {
+      "cite_key": "li2023seenn",
+      "title": "{SEENN}: Towards Temporal Spiking Early Exit Neural Networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'SEENN: Towards Temporal Spiking Early Exit Neural Networks'"
+    },
+    {
+      "cite_key": "you2024spikezip",
+      "title": "SpikeZIP-TF: Conversion is All You Need for Transformer-based SNN",
+      "status": "hallucinated",
+      "confidence": 0.7,
+      "method": "title_search",
+      "details": "No results found via Semantic Scholar + arXiv"
+    },
+    {
+      "cite_key": "zhao2025ttfs",
+      "title": "TTFSFormer: A TTFS-based Lossless Conversion of Spiking Transformer",
+      "status": "hallucinated",
+      "confidence": 0.7,
+      "method": "openalex",
+      "details": "No results found via OpenAlex"
+    },
+    {
+      "cite_key": "huang2025ecmt",
+      "title": "Towards High-performance Spiking Transformers from ANN to SNN Conversion",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "doi",
+      "details": "Confirmed via CrossRef: 'Towards High-performance Spiking Transformers from ANN to SNN Conversion'"
+    },
+    {
+      "cite_key": "li2024erroraware",
+      "title": "Error-Aware Conversion from ANN to SNN via Post-training Parameter Calibration",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "doi",
+      "details": "Confirmed via CrossRef: 'Error-Aware Conversion from ANN to SNN via Post-training Parameter Calibration'"
+    },
+    {
+      "cite_key": "spikinggcn",
+      "title": "Spiking graph convolutional networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Spiking Graph Convolutional Networks'"
+    },
+    {
+      "cite_key": "spikenet",
+      "title": "Scaling up dynamic graph representation learning via spiking neural networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Scaling Up Dynamic Graph Representation Learning via Spiking Neural Networks'"
+    },
+    {
+      "cite_key": "dy-sign",
+      "title": "Dynamic spiking graph neural networks",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Dynamic Spiking Graph Neural Networks'"
+    },
+    {
+      "cite_key": "delay-dsgn",
+      "title": "Delay-DSGN: A Dynamic Spiking Graph Neural Network with Delay Mechanisms for Evolving Graph",
+      "status": "hallucinated",
+      "confidence": 0.7,
+      "method": "openalex",
+      "details": "No results found via OpenAlex"
+    },
+    {
+      "cite_key": "signnn",
+      "title": "{SiGNN}: A spike-induced graph neural network for dynamic graph representation learning",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "doi",
+      "details": "Confirmed via CrossRef: 'SiGNN: A spike-induced graph neural network for dynamic graph representation learning'"
+    },
+    {
+      "cite_key": "msg",
+      "title": "Spiking graph neural network on Riemannian manifolds",
+      "status": "verified",
+      "confidence": 1.0,
+      "method": "openalex",
+      "details": "Confirmed via OpenAlex: 'Spiking Graph Neural Network on Riemannian Manifolds'"
+    },
+    {
+      "cite_key": "negative-spike",
+      "title": "A Fast and Accurate ANN-SNN Conversion Algorithm with Negative Spikes",
+      "status": "hallucinated",
+      "confidence": 0.7,
+      "method": "title_search",
+      "details": "No results found via Semantic Scholar + arXiv"
+    },
+    {
+      "cite_key": "sun2024spikegraphormer",
+      "title": "SpikeGraphormer: A High-Performance Graph Transformer with Spiking Graph Attention",
+      "status": "skipped",
+      "confidence": 0.0,
+      "method": "skipped",
+      "details": "Verification timeout exceeded"
+    },
+    {
+      "cite_key": "zhang2025sgnnbench",
+      "title": "{SGNNBench}: A Holistic Evaluation of Spiking Graph Neural Networks on Large-scale Graphs",
+      "status": "skipped",
+      "confidence": 0.0,
+      "method": "skipped",
+      "details": "Verification timeout exceeded"
+    },
+    {
+      "cite_key": "li2023graph1bit",
+      "title": "A Graph is Worth 1-bit Spikes: When Graph Contrastive Learning Meets Spiking Neural Networks",
+      "status": "skipped",
+      "confidence": 0.0,
+      "method": "skipped",
+      "details": "Verification timeout exceeded"
+    },
+    {
+      "cite_key": "chaurasia2026sgspose",
+      "title": "{SGSPose}: Neuromorphic-Geometric 6D Pose Estimation Through Spiking Graph Neural Networks and SE(3)-Equivariant Learning",
+      "status": "skipped",
+      "confidence": 0.0,
+      "method": "skipped",
+      "details": "Verification timeout exceeded"
+    },
+    {
+      "cite_key": "asgcn",
+      "title": "Leveraging Asynchronous Spiking Neural Networks for Ultra Efficient Event-Based Visual Processing",
+      "status": "skipped",
+      "confidence": 0.0,
+      "method": "skipped",
+      "details": "Verification timeout exceeded"
+    },
+    {
+      "cite_key": "dampfhoffer2023snnlearning",
+      "title": "Backpropagation-Based Learning Techniques for Deep Spiking Neural Networks: A Survey",
+      "status": "skipped",
+      "confidence": 0.0,
+      "method": "skipped",
+      "details": "Verification timeout exceeded"
+    },
+    {
+      "cite_key": "nunes2022snnsurvey",
+      "title": "Spiking Neural Networks: A Survey",
+      "status": "skipped",
+      "confidence": 0.0,
+      "method": "skipped",
+      "details": "Verification timeout exceeded"
+    },
+    {
+      "cite_key": "wang2022taxonomicsnn",
+      "title": "A hierarchical taxonomic survey of spiking neural networks",
+      "status": "skipped",
+      "confidence": 0.0,
+      "method": "skipped",
+      "details": "Verification timeout exceeded"
+    }
+  ]
+}

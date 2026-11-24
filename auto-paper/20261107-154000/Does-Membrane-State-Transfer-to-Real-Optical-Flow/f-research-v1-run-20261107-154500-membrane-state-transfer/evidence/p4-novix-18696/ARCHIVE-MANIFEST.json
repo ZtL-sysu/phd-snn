@@ -1,0 +1,113 @@
+{
+ "archive": "evidence/p4-novix-18696",
+ "task_id": "18696",
+ "attempt": "#8",
+ "round": "round-015 recovered (submitted round-014)",
+ "platform_status": "finish",
+ "platform_steps": 507,
+ "createdBy": "637",
+ "recovered_at": "2026-11-09T05:5x+08:00",
+ "pull_path_short": "C:/code/phd-snn/_nv18696",
+ "pull_method": "novix debug pull task:18696 --sub <path> (short path; long run-root triggers WinError 206)",
+ "declared_sha256_matches": 9,
+ "declared_sha256_total": 9,
+ "all_declared_sha256_match": true,
+ "double_snapshot_byte_identical": {
+  "result.json_vs_snapshot_a": true,
+  "result.json_vs_snapshot_b": true,
+  "config_snapshot_a_vs_b": true
+ },
+ "config_json_note": "project/config.json ABSENT from remote project root (fifth delivery defect). Its byte-identical content is verified through snapshots/config.snapshot-a.json and -b.json (16,885 B, sha256 03128444…) which EXACTLY equals the config.json hash declared in finalReply. Recorded honestly, not fabricated.",
+ "files": [
+  {
+   "file": "MANIFEST.txt",
+   "bytes": 78873,
+   "sha256": "b1c0daec70ec963f7d17b741b70b4da43138b2ed2af496fe25ed3f85fb120b3a",
+   "declared_match": true
+  },
+  {
+   "file": "config.snapshot-a.json",
+   "bytes": 16885,
+   "sha256": "0312844449ece8222defd0f239a2f7b81a7dad2603bc93051cb8d6d2c17aebc8",
+   "declared_match": true
+  },
+  {
+   "file": "config.snapshot-b.json",
+   "bytes": 16885,
+   "sha256": "0312844449ece8222defd0f239a2f7b81a7dad2603bc93051cb8d6d2c17aebc8",
+   "declared_match": null
+  },
+  {
+   "file": "config_preregistered.json",
+   "bytes": 11988,
+   "sha256": "5bf618d5c21a8a880a1695396eaccfb635309c89f3d37915ef417f22cfc4c3ee",
+   "declared_match": true
+  },
+  {
+   "file": "entrypoint.sh",
+   "bytes": 1253,
+   "sha256": "d8b1e42230821f36ba27dc8da037c93aa45ce2a095f74b69ef60b517f1730719",
+   "declared_match": true
+  },
+  {
+   "file": "execution_lock.json",
+   "bytes": 1273,
+   "sha256": "3308644514fbcc65502125b4a7446b0aee20f4bea1ec22db3882aa2524de3034",
+   "declared_match": true
+  },
+  {
+   "file": "experiment.py",
+   "bytes": 64898,
+   "sha256": "e6f398fa98c1b81e79ed5e1a3e6eb8a7718c41895ec1f6aa08ce45d4baf0d180",
+   "declared_match": true
+  },
+  {
+   "file": "final_self_check.json",
+   "bytes": 1706,
+   "sha256": "2be393b3df457f7c9520447b5a3e5fe1b6bee525efc279c22e760cc12d2cb550",
+   "declared_match": true
+  },
+  {
+   "file": "platform-terminal-get.json",
+   "bytes": 4693757,
+   "sha256": "a21bf9264f40ff55e523b992d96d179726ae3f9eb4b0483a41b0fe840ad9a485",
+   "declared_match": null
+  },
+  {
+   "file": "platform-terminal-result.err",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "declared_match": null
+  },
+  {
+   "file": "platform-terminal-result.json",
+   "bytes": 13934,
+   "sha256": "96ed7c33a7f393121b60bceb1958a277021454afd510d819e710560dea685622",
+   "declared_match": null
+  },
+  {
+   "file": "result.json",
+   "bytes": 3726536,
+   "sha256": "ffc4a000b8042b91305a509a3ce78d2f8629b4b831c7fe3858686b57bb4a277f",
+   "declared_match": true
+  },
+  {
+   "file": "result.snapshot-a.json",
+   "bytes": 3726536,
+   "sha256": "ffc4a000b8042b91305a509a3ce78d2f8629b4b831c7fe3858686b57bb4a277f",
+   "declared_match": null
+  },
+  {
+   "file": "result.snapshot-b.json",
+   "bytes": 3726536,
+   "sha256": "ffc4a000b8042b91305a509a3ce78d2f8629b4b831c7fe3858686b57bb4a277f",
+   "declared_match": null
+  },
+  {
+   "file": "validation_report.json",
+   "bytes": 23306,
+   "sha256": "747c33b2cef512d5641e0cec605a9adfaafdfc288bc5ca84937d19b6dc45b063",
+   "declared_match": true
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+  "config": {
+    "datasets": [
+      "MNIST",
+      "CIFAR10"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "subset_train": 2000,
+    "val": 1000,
+    "test": 2000,
+    "epochs": 800,
+    "hidden": 128,
+    "lr": 0.01,
+    "wd": 0.0005,
+    "device": "cuda",
+    "pool": "sum",
+    "full_train": {
+      "MNIST": 55000,
+      "CIFAR10": 45000
+    },
+    "paper_points": {
+      "MNIST": {
+        "margin_coef": 0.4,
+        "keep_frac": 0.08,
+        "theta": 1.5,
+        "T": 3
+      },
+      "CIFAR10": {
+        "margin_coef": 0.2,
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      }
+    }
+  },
+  "config_hash": "4238b0dc8d31"
+}

@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v2",
+  "delivery_mode": "preparation",
+  "readiness": [],
+  "citation_gate": [],
+  "contract": [
+    {
+      "path": "contract-snapshots/experiment-traceability-frozen-v2.md",
+      "sha256": "dafea5c70e9cf4cc0aa8a845fa7ef8a01988005e23ebf22d2714a000d2358ba0"
+    },
+    {
+      "path": "novix/query.txt",
+      "sha256": "03e202b57ba6aafd22cfe53f5232edcb4feed8f4771de5fad8df8e5744215b02"
+    },
+    {
+      "path": "inputs/dataset-access-log.md",
+      "sha256": "77803bdf09a267477628d795d0c8307e1284c1c0fec2c5e3cec2c0211fabf6e2"
+    },
+    {
+      "path": "inputs/execution-contract-v1.md",
+      "sha256": "9b44cbc24b5581bdfea01fac0d9a0b12c0ae7cc22b527fc0382d36283ced9b14"
+    },
+    {
+      "path": "inputs/feasibility-contract.json",
+      "sha256": "51348e2ed913b2e172e02672869b0264a1739914e08906a7f357d12da0b5afa4"
+    },
+    {
+      "path": "inputs/guidance-pipeline-state.md",
+      "sha256": "a4bfa6c84aae98b301298dd88377857916a36fbe351f5ca78068b037088f622f"
+    },
+    {
+      "path": "inputs/guidance.md",
+      "sha256": "80cd860d861b4f37ec4b61abedeae570e27bea3e09e75be1c74d9a134db13c95"
+    },
+    {
+      "path": "inputs/hardware-profile.md",
+      "sha256": "abb9f272835ebfcf57136416b3783e1d48a42b551efeb27ae61f7f75326716c1"
+    },
+    {
+      "path": "inputs/startup-decision.md",
+      "sha256": "4192a1dd40421b7f4fb546e6ae91f815b26875dc98123760c06174ba99fc1628"
+    },
+    {
+      "path": "inputs/strong-result-feasibility-contract.md",
+      "sha256": "9a2c7cbb2bb613a2759d5de65d8a56ab568e7a3806efe428a409bef7f87b57cb"
+    },
+    {
+      "path": "execution-contract-v2.md",
+      "sha256": "f41cf3a05805965bc8287b603b869335bb450330690be8ee600b8dd97d07e941"
+    }
+  ],
+  "history": [
+    {
+      "action": "reopen",
+      "stage": "P0",
+      "reason": "round-023 contract v1->v2: replace immutable hash binding of mutable append-only experiment-traceability.md with frozen versioned snapshot contract-snapshots/experiment-traceability-frozen-v2.md; original stale-hash failure evidence preserved; no scientific stage advanced."
+    }
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P1",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P1A",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P1B",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P2",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P3",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P3A",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P4",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P5",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P5A",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P6",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P7",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P8",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P9",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P10",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P11",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P12",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P13",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P14",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P15",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P16",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P17",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P18",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P19",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P20",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P21",
+      "status": "pending",
+      "contract_version": "v2",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    }
+  ]
+}

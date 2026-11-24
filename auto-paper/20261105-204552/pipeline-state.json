@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-guidance-builder-v1",
+  "contract_version": "v1",
+  "delivery_mode": "preparation",
+  "readiness": [],
+  "contract": [],
+  "history": [],
+  "stages": [
+    {
+      "id": "CCFA-startup",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G0",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G1",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G2",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G3",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G4",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G5",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G6",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G7",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G8",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "validation",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "handoff",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    }
+  ]
+}

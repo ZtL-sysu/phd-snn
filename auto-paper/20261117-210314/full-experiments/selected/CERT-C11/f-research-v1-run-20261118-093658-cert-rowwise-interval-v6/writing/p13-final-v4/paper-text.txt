@@ -1,0 +1,471 @@
+                                                Abstract
+    Finite-precision message transport can change the final logits of a frozen graph neural network along
+a conversion path. We study a narrow but auditable certificate for one exact frozen two-layer graph-
+convolution chain. A rowwise uniform quantizer assigns each node a deterministic half-step error radius;
+these radii are propagated through two normalized-adjacency operations, a non-expansive ReLU, and the
+frozen downstream weight matrix. The resulting interval is compared with a valid norm upper bound
+and a matched global-radius outputwise ablation. Across Cora, Chameleon and Squirrel, three frozen
+checkpoint seeds, 4/8 quantization levels, and global/rowwise uniform quantizers, all 36 measured final-
+logit errors are contained and all proposed bounds are analytically no looser than the norm comparator.
+The 18 global-uniform cells provide an equality control. In the 18 rowwise cells, the proposed interval
+reduces median bound width relative to the matched global-radius ablation by 74.26% to 82.12%, with
+a standard median tightening of 79.65%. Absolute width relative to realized RMS error remains large,
+with a median of 30.68 and a maximum of 36.91. The supported contribution is therefore deterministic
+final-logit containment plus relative tightening over a matched radius-granularity ablation, not statistical
+coverage, broad SNN superiority, robustness, or an absolute-width guarantee.
+
+
+
+
+                                                     1
+ Rowwise Layerwise Interval Certificates for Quantized Messages in
+          Frozen Two-Layer GNN-to-SNN Conversion
+                                               Anonymous
+                                           November 18, 2026
+
+
+1    Introduction
+Finite-precision conversion of a frozen graph neural network changes the numerical path from input features
+to output logits. Quantized messages are aggregated by the graph operator, passed through nonlinearities,
+aggregated again, and transformed by frozen downstream weights. A small elementwise message error can
+therefore be amplified by graph connectivity and weight magnitude. Generic quantization metrics such as
+bit count, message error, or average task accuracy do not tell a user whether the final logits remain inside a
+computable worst-case envelope.
+    Interval and norm bounds offer a natural certificate language, but their usefulness depends on preserving
+the structure of the actual operator chain. A scalar global norm bound is easy to state but can merge all
+nodes, hidden channels, and output classes into a single loose radius. Conversely, a bound estimated from
+observed errors can become tautological if the same errors are used to construct the certificate. For frozen
+conversion, a useful target is a deterministic bound whose radius comes from the quantizer definition, not
+labels, logits, or realized residuals.
+    This paper examines the exact chain
+
+             M = XW0 ,        c = Qrow (M ),
+                              M                    H = relu(AM + b0 ),      Z = AHW1 + bout ,
+    and its quantized counterpart. Each row of M is quantized with a rowwise uniform lattice. The quantizer
+step determines a half-step radius before any actual error is inspected. ReLU non-expansiveness and two
+applications of the normalized adjacency operator yield a componentwise interval for the final logits.
+    The main question is: can this rowwise deterministic interval contain every measured final-logit error
+while materially tightening a matched global-radius ablation? We answer this question within a fixed frozen
+two-layer GCN scope. The empirical contribution is relative tightening under deterministic containment.
+We explicitly do not claim that the absolute worst-case width is small.
+    The remainder of the paper is organized as follows. Section 2 relates the study to graph-message quan-
+tization, frozen ANN-to-SNN conversion, and interval certificates. Section 3 defines the exact computation,
+quantizer, bounds and numerical policy. Section 4 reports the complete 36-cell matrix and its negative
+width evidence. Section 5 separates analytic validity from empirical utility and states limitations. Section 6
+concludes.
+
+
+2    Related Work
+Frozen ANN-to-SNN conversion studies accuracy-latency trade-offs, offset correction, grouped neurons, early
+exit, quantized conversion, transformer conversion and post-training calibration Hwang and Kung [2025],
+Hao et al. [2023], Lv et al. [2024], Bu et al. [2022], Li et al. [2023c], Hu et al. [2023], You et al. [2024],
+Zhao et al. [2025], Huang et al. [2024], Li et al. [2024]. These works address temporal rate conversion or
+output representation, but they do not provide the rowwise final-logit interval studied here. Broader SNN
+learning surveys distinguish conversion from direct spike-based training and clarify temporal assumptions
+Dampfhoffer et al. [2024], Nunes et al. [2022], Wang et al. [2022a].
+
+
+
+                                                      2
+    Graph-model compression changes what message is communicated or stored. Degree-aware and graph-
+aware quantization, vector-quantized node representations, tensor-oriented quantized execution, generic low-
+rank neural compression, and mixed-precision message compression provide important cost and codebook
+baselines Tailor et al. [2021], Ding et al. [2021], Wang et al. [2022b], Zhu et al. [2023], Wan et al. [2023],
+Cherukuri and Lala [2025], Gholami et al. [2022], Jacob et al. [2018], Nagel et al. [2021]. These methods
+optimize quantization or execution; the present work instead certifies the final-logit effect of a fixed rowwise
+lattice.
+    Spiking graph models directly address spiking graph convolution, dynamic graphs, delayed evolution,
+compact graph representations and graph attention Zhu et al. [2022], Li et al. [2023a], Yin et al. [2024],
+Wang et al. [2025], Chen et al. [2025], Sun et al. [2024], Li et al. [2023b], Chaurasia et al. [2026], Sun et al.
+[2026], Zhang et al. [2026]. Asynchronous event-based processing provides additional context Zeng et al.
+[2025]. Their published outcomes are not direct matched comparisons for the exact frozen two-layer chain
+used in this paper. We therefore treat them as domain context rather than state-of-the-art baselines.
+    Interval bound propagation and ReLU network verification supply the mathematical ingredients Gowal
+et al. [2018], Wong and Kolter [2018], Mirman et al. [2018], Katz et al. [2017]. Componentwise ReLU is non-
+expansive, and interval arithmetic propagates local coordinate radii through affine maps. The application-
+specific step here is to retain the two graph-operator magnitudes and the rowwise message radius before
+applying the frozen output weight. Nearby conversion-error work studies corrections and temporal/output
+behavior Li et al. [2024], Huang et al. [2024]; it does not establish the deterministic finite-precision message
+certificate evaluated here.
+    The differentiation is therefore narrow: interval propagation itself is standard; the application-specific
+contribution is retaining rowwise message radii through two graph operators and isolating their effect with a
+matched global-radius ablation. We do not claim a new general interval theorem or broad SNN robustness.
+
+
+3     Method
+3.1    Frozen graph computation
+Let X ∈ RN ×F be the node-feature matrix and A ∈ RN ×N the normalized adjacency matrix. The frozen
+first-layer matrix and bias are W0 ∈ RF ×H and b0 ∈ RH . The hidden-width message is M = XW0 ∈ RN ×H .
+The frozen output matrix and bias are W1 ∈ RH×C and bout ∈ RC . All nine frozen model snapshots have
+H = 16; their tensor shapes are recorded in results/model-shapes.json and linked to model hashes in
+the run provenance. The reference logits are
+
+                                       Z = A relu(AM + b0 )W1 + bout .
+    Stored graph and model snapshots are float32, but all quantized values, dequantized values, reconstruc-
+tions and certificate arithmetic are evaluated in float64. This removes an unmodelled float32 reconstruction
+term from the radius.
+
+3.2    Rowwise uniform quantizer
+For node i, let mi = minh Mih and ri = maxh Mih . For L ∈ {4, 8} levels, the step is
+                                                        ri − mi
+                                                 si =           .
+                                                         L−1
+    Rounding uses ⌊(Mih − mi )/si + 0.5⌋, so ties move upward. Minima and maxima are represented exactly.
+If si = 0, row i is copied exactly and receives zero radius. Endpoint clipping is only a safeguard; an
+out-of-range source value beyond tolerance fails the cell. The deterministic radius matrix is
+
+                                                  ∆ih = si /2.
+    It is computed from the quantizer range before actual errors are inspected. No label, logits, realized
+residual or held-out error is used to set ∆.
+
+
+
+                                                         3
+3.3    Layerwise interval certificate
+Let E = M − M
+            c. Componentwise ReLU satisfies
+
+                                        | relu(x) − relu(y)| ≤ |x − y|.
+    Because |E| ≤ ∆, the first aggregation and nonlinearity give
+
+                                                   b ≤ |A|∆.
+                                              |H − H|
+    The second aggregation and frozen weight give the proposed absolute interval
+
+                                            Babs = |A||A|∆|W1 |.
+                                       b ≤ Babs if the implementation and quantizer radius are correct.
+   Every measured error satisfies |Z − Z|
+Containment is therefore a theorem/implementation audit, not an estimated coverage probability.
+
+3.4    Comparators and numerical policy
+Let G = |A||A|, c = G1, and ∆i,: denote row i of the radius matrix. We report three additional quantities:
+                                                               !
+                                               X
+                                Bmink [i, k] =     Giq ∥∆q,: ∥2 ∥W1,:,k ∥2 ,
+                                                   q
+
+
+                                     Bglobal [i, k] = ci max(∆)∥W1,:,k ∥1 ,
+   and a collapsed full-matrix scalar reference. Bmink is a valid norm upper comparator; its ordering relative
+to Babs is analytic and is not counted as an empirical improvement. Bglobal is a matched global-radius
+ablation, not a state-of-the-art compression baseline. Global-uniform quantization makes ∆ constant and
+therefore yields Babs = Bglobal as a structural equality control.
+   For each cell, actual RMS is computed over all N × C final-logit errors. Width/RMS is the median of all
+bound entries divided by this RMS. Per-cell tightening is
+
+                                               median(Babs )/RMS
+                                         1−                        .
+                                              median(Bglobal )/RMS
+    Elementwise comparisons use v ≤ b + 10−10 + 10−12 |b|. NaN or infinity fails the row. If RMS is zero,
+zero ratio is allowed only when the corresponding median bound is also zero. All rows and diagnostics are
+retained.
+    Figure 1. Exact rowwise interval certificate chain. Rowwise uniform radii are set before error inspection,
+propagated through both normalized-adjacency operations and ReLU, and transformed by the frozen output
+weight.
+
+
+4     Experiments and Results
+4.1    Experimental matrix
+We evaluate Cora, Chameleon and Squirrel with frozen two-layer hidden-16 GCN checkpoints at seeds 0, 1
+and 2 Yang et al. [2016], Pei et al. [2020], Platonov et al. [2023]. The fixed matrix contains three graphs,
+three seeds, two levels and two quantizers, for 36 cells. Global-uniform quantization is the constant-radius
+control; rowwise uniform quantization supplies the proposed variable-radius condition. The certificate uses
+no labels or data splits. Dataset and model snapshots, code and outputs are hash-tracked.
+   Table 1. Bounds and roles. Analytic ordering is separated from empirical tightening.
+
+
+
+
+                                                       4
+                              Figure 1: Exact rowwise interval certificate chain
+
+
+                                  Table 1: Bound definitions and roles
+ Bound or control         Exact definition                                                 Role
+                          P      P
+ Babs                      q Giq  h ∆qh |W1,hk |, where G = |A||A|                         proposed determin-
+                          P                                                              istic interval
+ Bmink                        q Giq ∥∆q,: ∥2       ∥W1,:,k ∥2                              valid analytic up-
+                                                                    P                      per comparator
+ Bglobal                  ci max(∆)∥W1,:,k ∥1 , where ci =          q Giq                  matched      global-
+                                                                                           radius ablation
+ Scalar reference         ci max(∆)∥W1 ∥1,1                                                deliberately loose
+                                                                                           context
+
+
+4.2     Deterministic containment and comparator validity
+All 36 measured final-logit errors lie within Babs , and all 36 proposed bounds satisfy Babs ≤ Bmink under
+the fixed tolerance. No cell contains NaN or infinity. The largest actual-minus-proposed excess is negative in
+every row, so no observed error crosses the certificate. These findings validate the deterministic derivation
+and its implementation; they are not statistical coverage estimates.
+
+4.3     Radius-granularity ablation
+The 18 global-uniform cells satisfy the expected equality control: Babs = Bglobal within tolerance, and
+tightening is zero up to numerical precision. This result is important because it shows that the rowwise gain
+is not produced by comparing different formulas under constant radius.
+    In all 18 rowwise cells, the proposed interval is tighter than the matched global-radius ablation. Tighten-
+ing ranges from 74.26% to 82.12%, with a standard median of 79.65%. The effect is consistent across graph,
+checkpoint seed and 4/8-level conditions. Figure 2 shows per-cell width/RMS and tightening; Figure 3 uses
+the same frozen rows to show the global equality control and rowwise tightening distribution.
+    Figure 2. Descriptive width/RMS and relative tightening across all cells. Lower width/RMS is visually
+better, but no absolute width threshold is claimed.
+    Figure 3. Global-uniform equality control and rowwise tightening distribution. The plotted values are
+exported directly from the frozen 36-row result.
+
+
+
+
+                                                                5
+                          Figure 2: Width and tightening across the 36-cell matrix
+
+
+4.4    Absolute width is a negative result
+Worst-case interval width relative to realized RMS is large. For rowwise quantization, width/RMS has a
+standard median of 30.68 and a maximum of 36.91. The global-uniform condition also ranges above ten
+in several cells. This negative evidence rejects an absolute-width claim. The result is instead a relative
+one: rowwise radii substantially tighten a matched global-radius envelope while retaining deterministic
+containment.
+
+4.5    Failure audit
+The run contains zero clipping events and zero non-finite rows. Constant rows receive identity reconstruction
+and zero radius. Every row records dataset, seed, level, quantizer and radius hash. The complete raw table is
+retained; no failed or unfavorable cell is omitted. The main empirical improvement is the rowwise tightening
+distribution, while absolute width remains an explicit limitation.
+    Table 2. Complete 36-cell certificate summary. Yes denotes deterministic containment or analytic
+comparator ordering. Global equality is a structural control; rowwise tightening is versus the matched
+global-radius ablation.
+
+
+5     Discussion
+The experiment separates three logically different statements. First, the interval derivation and implemen-
+tation yield deterministic containment for the specified chain. Second, the inequality Babs ≤ Bmink follows
+from norm ordering and serves as a validity check. Third, rowwise radius granularity produces an empirical
+74.26% to 82.12% tightening over the matched global-radius ablation. Combining these statements into a
+generic “certified SNN improvement” would overstate the evidence.
+    The rowwise choice is appropriate for the tested message matrices because the quantizer range varies
+substantially across nodes. It is not claimed to dominate per-channel, learned, vector, or codebook quantizers.
+
+
+                                                      6
+                              Figure 3: Global equality and rowwise tightening
+
+
+Those alternatives can reduce reconstruction error or adapt to data distributions, but they require different
+radius and cost assumptions. The present study holds the lattice family fixed to isolate the certificate effect
+of radius granularity.
+    The high absolute width/RMS is not hidden. It arises because a worst-case independent-coordinate
+interval allows all local errors to align adversarially, whereas realized quantization errors and graph paths
+partially cancel. A smaller absolute certificate may require distributional assumptions, calibration with
+independent data, correlation-aware bounds, or a multilayer abstraction. Such extensions would no longer
+be the deterministic unconditional certificate studied here.
+    The scope is limited to frozen two-layer hidden-16 GCN checkpoints on three static graphs and three
+seeds. The work does not measure temporal spikes, hardware energy, adversarial robustness, uncertainty
+calibration, learned quantizers, dynamic graphs, or multilayer nonlinear conversion. The global comparator
+is a matched radius-granularity ablation rather than a broad state-of-the-art baseline. Accordingly, the
+results support a narrow verification method and a controlled radius-granularity finding.
+
+
+6    Conclusion
+For the exact frozen two-layer chain studied in this paper, rowwise uniform message radii can be propagated
+through two normalized-adjacency operations, ReLU and the frozen output weight to form a deterministic
+final-logit interval. All 36 tested graph/seed/level/quantizer cells are contained, and the proposed interval is
+analytically no looser than a valid norm comparator. Global-uniform quantization provides an exact equality
+control. Rowwise radii tighten the matched global-radius ablation by 74.26% to 82.12%, with a median of
+79.65%.
+    The result does not establish small absolute certificate width: rowwise width/RMS has a median of 30.68
+and a maximum of 36.91. The supported contribution is therefore deterministic final-logit containment plus
+relative tightening over a matched global-radius ablation. Future work must address correlation-aware or
+multilayer bounds before claiming smaller absolute error envelopes or broader GNN-to-SNN robustness.
+
+
+References
+BibTeX source: references.bib.
+
+
+
+
+                                                       7
+                    Table 2: Comparison of Graph across Seed, Levels, Quantizer, Contained
+ Graph       Seed   Levels   Quantizer   Contained   Babs ≤ Bmink   Global equality   Width/RMS    Tightening (%)
+ chameleon      0        4   global      Yes         Yes            Yes                    19.73             0.00
+ chameleon      0        4   rowwise     Yes         Yes            N/A                    27.66            81.36
+ chameleon      0        8   global      Yes         Yes            Yes                    23.30             0.00
+ chameleon      0        8   rowwise     Yes         Yes            N/A                    30.91            81.36
+ chameleon      1        4   global      Yes         Yes            Yes                    20.33             0.00
+ chameleon      1        4   rowwise     Yes         Yes            N/A                    30.65            78.55
+ chameleon      1        8   global      Yes         Yes            Yes                    27.41             0.00
+ chameleon      1        8   rowwise     Yes         Yes            N/A                    33.55            78.55
+ chameleon      2        4   global      Yes         Yes            Yes                    19.42             0.00
+ chameleon      2        4   rowwise     Yes         Yes            N/A                    30.71            79.65
+ chameleon      2        8   global      Yes         Yes            Yes                    25.39             0.00
+ chameleon      2        8   rowwise     Yes         Yes            N/A                    36.52            79.65
+ cora           0        4   global      Yes         Yes            Yes                     9.99             0.00
+ cora           0        4   rowwise     Yes         Yes            N/A                    15.84            80.97
+ cora           0        8   global      Yes         Yes            Yes                    14.49             0.00
+ cora           0        8   rowwise     Yes         Yes            N/A                    16.55            80.97
+ cora           1        4   global      Yes         Yes            Yes                     7.26             0.00
+ cora           1        4   rowwise     Yes         Yes            N/A                    15.49            74.26
+ cora           1        8   global      Yes         Yes            Yes                    14.21             0.00
+ cora           1        8   rowwise     Yes         Yes            N/A                    16.83            74.26
+ cora           2        4   global      Yes         Yes            Yes                     8.43             0.00
+ cora           2        4   rowwise     Yes         Yes            N/A                    15.44            82.12
+ cora           2        8   global      Yes         Yes            Yes                    12.45             0.00
+ cora           2        8   rowwise     Yes         Yes            N/A                    16.77            82.12
+ squirrel       0        4   global      Yes         Yes            Yes                    12.53             0.00
+ squirrel       0        4   rowwise     Yes         Yes            N/A                    34.89            78.38
+ squirrel       0        8   global      Yes         Yes            Yes                    28.30             0.00
+ squirrel       0        8   rowwise     Yes         Yes            N/A                    36.91            78.38
+ squirrel       1        4   global      Yes         Yes            Yes                    21.75             0.00
+ squirrel       1        4   rowwise     Yes         Yes            N/A                    36.28            76.14
+ squirrel       1        8   global      Yes         Yes            Yes                    29.05             0.00
+ squirrel       1        8   rowwise     Yes         Yes            N/A                    36.76            76.14
+ squirrel       2        4   global      Yes         Yes            Yes                    20.81             0.00
+ squirrel       2        4   rowwise     Yes         Yes            N/A                    30.61            79.96
+ squirrel       2        8   global      Yes         Yes            Yes                    33.85             0.00
+ squirrel       2        8   rowwise     Yes         Yes            N/A                    34.07            79.96
+
+
+
+References
+Tong Bu, Wei Fang, Jianhao Ding, Penglin Dai, Zhaofei Yu, and Tiejun Huang. Optimal ann-snn conversion
+  for high-accuracy and ultra-low-latency spiking neural networks. In International Conference on Learning
+  Representations, 2022.
+
+Janhavi Chaurasia, Eshaan Rithesh Adyanthaya, and Manas Ranjan Prusty. SGSPose: Neuromorphic-
+  geometric 6d pose estimation through spiking graph neural networks and se(3)-equivariant learning. IEEE
+  Access, 14:7130–7136, 2026. doi: 10.1109/ACCESS.2026.3651795.
+Dong Chen, Shuai Zheng, Muhao Xu, Zhenfeng Zhu, and Yao Zhao. SiGNN: A spike-induced graph neural
+ network for dynamic graph representation learning. Pattern Recognition, 158:111026, 2025. doi: 10.1016/
+ j.patcog.2024.111026.
+Kalyan Cherukuri and Aarav Lala. Low-rank matrix approximation for neural network compression. In Inter-
+ national Conference on Machine Learning Technologies, pages 166–170, 2025. doi: 10.1109/ICMLT65785.
+ 2025.11193154.
+
+Manon Dampfhoffer, Thomas Mesquida, Alexandre Valentian, and Lorena Anghel. Backpropagation-based
+ learning techniques for deep spiking neural networks: A survey. IEEE Transactions on Neural Networks
+ and Learning Systems, 35(9):11906–11921, 2024. doi: 10.1109/TNNLS.2023.3263008.
+
+
+
+                                                           8
+Mucong Ding, Kezhi Kong, Jingling Li, Chen Zhu, John P. Dickerson, Furong Huang, and Tom Goldstein.
+ Vq-gnn: A universal framework to scale up graph neural networks using vector quantization. In Advances
+ in Neural Information Processing Systems, 2021.
+Amir Gholami, Sehoon Kim, Zhen Dong, Zhewei Yao, Michael W. Mahoney, and Kurt Keutzer. A survey
+ of quantization methods for efficient neural network inference. In Low-Power Computer Vision. Chapman
+ and Hall/CRC, 2022. doi: 10.1201/9781003162810-13.
+Sven Gowal, Krishnamurthy Dvijotham, Robert Stanforth, Relja Arandjelovic, Rudy Bunel, Chongli Qin,
+  Jonathan Uesato, Timothy Mann, and Pushmeet Kohli. On the effectiveness of interval bound propagation
+  for training verifiably robust models. In NeurIPS Workshop on Uncertainty and Robustness in Deep
+  Learning, 2018. arXiv:1810.12715.
+
+Zecheng Hao, Jianhao Ding, Tong Bu, Tiejun Huang, and Zhaofei Yu. Bridging the gap between anns and
+  snns by calibrating offset spikes. In International Conference on Learning Representations, 2023.
+Yangfan Hu, Qian Zheng, Xudong Jiang, and Gang Pan. Fast-snn: Fast spiking neural network by converting
+  quantized ann. IEEE Transactions on Pattern Analysis and Machine Intelligence, 45(12):14546–14562,
+  2023. doi: 10.1109/TPAMI.2023.3275769.
+
+Zihan Huang, Xinyu Shi, Zecheng Hao, Tong Bu, Jianhao Ding, Zhaofei Yu, and Tiejun Huang. Towards
+  high-performance spiking transformers from ann to snn conversion. In Proceedings of the 32nd ACM
+  International Conference on Multimedia, pages 10688–10697, 2024. doi: 10.1145/3664647.3680620.
+Sangwoo Hwang and Jaeha Kung. One-spike snn: Single-spike phase coding with base manipulation for
+  ann-to-snn conversion loss minimization. IEEE Transactions on Emerging Topics in Computing, 13(1):
+  162–172, 2025. doi: 10.1109/TETC.2024.3386893.
+Benoit Jacob, Skirmantas Kligys, Bo Chen, Menglong Zhu, Matthew Tang, Andrew Howard, Hartwig Adam,
+  and Dmitry Kalenichenko. Quantization and training of neural networks for efficient integer-arithmetic-
+  only inference. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 2704–2713,
+  2018.
+Guy Katz, Clark Barrett, David L. Dill, Kyle Julian, and Mykel J. Kochenderfer. Reluplex: An efficient smt
+ solver for verifying deep neural networks. In International Conference on Computer Aided Verification,
+ pages 97–117. Springer, 2017.
+Jintang Li, Zhouxin Yu, Zulun Zhu, Liang Chen, Qi Yu, Zibin Zheng, Sheng Tian, Ruofan Wu, and Changhua
+  Meng. Scaling up dynamic graph representation learning via spiking neural networks. In AAAI Conference
+  on Artificial Intelligence, 2023a.
+Jintang Li, Huizhe Zhang, Ruofan Wu, Zulun Zhu, Baokun Wang, Changhua Meng, Zibin Zheng, and Liang
+  Chen. A graph is worth 1-bit spikes: When graph contrastive learning meets spiking neural networks.
+  arXiv preprint, 2023b.
+
+Yuhang Li, Tamar Geller, Youngeun Kim, and Priyadarshini Panda. SEENN: Towards temporal spiking
+  early exit neural networks. In Advances in Neural Information Processing Systems, 2023c.
+Yuhang Li, Shikuang Deng, Xin Dong, and Shi Gu. Error-aware conversion from ann to snn via post-
+  training parameter calibration. International Journal of Computer Vision, 132(9):3586–3609, 2024. doi:
+  10.1007/s11263-024-02046-2.
+
+Liuzhenghao Lv, Wei Fang, Li Yuan, and Yonghong Tian. Optimal ann-snn conversion with group neu-
+  rons. In ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing
+  (ICASSP), pages 6475–6479, 2024. doi: 10.1109/ICASSP48485.2024.10448202.
+Matthew Mirman, Timon Gehr, and Martin Vechev. Differentiable abstract interpretation for provably
+ robust neural networks. In International Conference on Machine Learning, pages 3578–3586, 2018.
+
+
+
+                                                    9
+Markus Nagel, Marios Fournarakis, Rana Ali Amjad, Yelysei Bondarenko, Mart van Baalen, and Tijmen
+ Blankevoort. A white paper on neural network quantization. arXiv preprint arXiv:2106.08295, 2021.
+João D. Nunes, Marcelo Carvalho, Diogo Carneiro, and Jaime S. Cardoso. Spiking neural networks: A
+  survey. IEEE Access, 10:60738–60764, 2022. doi: 10.1109/ACCESS.2022.3179968.
+
+Hongbin Pei, Bingzhe Wei, Yu-Chao Chang, Yu Lei, and Bo Yang. Geom-gcn: Geometric graph convolutional
+  networks. In International Conference on Learning Representations, 2020.
+Oleg Platonov, Denis Kuznedelev, Michael Diskin, Artem Babenko, and Liudmila Prokhorenkova. A critical
+  look at the evaluation of gnns under heterophily: Are we really making progress? In International
+  Conference on Learning Representations, 2023. arXiv:2302.11640.
+
+Li Sun, Zhenhao Huang, Qiqi Wan, Hao Peng, and Philip S. Yu. Spiking graph neural network on riemannian
+  manifolds. In Advances in Neural Information Processing Systems, 2024.
+Yundong Sun, Dongjie Zhu, Yansong Wang, Zhaoshuo Tian, Ning Cao, and Gregory M. P. O’Hare.
+  Spikegraphormer: A high-performance graph transformer with spiking graph attention. Information Sci-
+  ences, 755:123828, 2026. doi: 10.1016/j.ins.2026.123828.
+
+Shyam A. Tailor, Javier Fernández-Marqués, and Nicholas D. Lane. Degree-quant: Quantization-aware
+  training for graph neural networks. In International Conference on Learning Representations, 2021.
+Borui Wan, Juntao Zhao, and Chuan Wu. Adaptive message quantization and parallelization for distributed
+  full-graph gnn training. In Proceedings of Machine Learning and Systems, volume 5, 2023.
+
+Siqi Wang, Tee Hiang Cheng, and Meng Hiot Lim. A hierarchical taxonomic survey of spiking neural
+  networks. Memetic Computing, 2022a. doi: 10.1007/s12293-022-00373-w.
+Yuke Wang, Boyuan Feng, and Yufei Ding. Qgtc: Accelerating quantized graph neural networks via gpu
+  tensor core. In Proceedings of the 27th ACM SIGPLAN Symposium on Principles and Practice of Parallel
+  Programming, pages 107–119, 2022b. doi: 10.1145/3503221.3508408.
+
+Zhiqiang Wang, Jianghao Wen, and Jianqing Liang. Delay-dsgn: A dynamic spiking graph neural network
+  with delay mechanisms for evolving graph. In International Conference on Machine Learning, 2025.
+Eric Wong and J. Zico Kolter. Provable defenses against adversarial examples via the convex outer adversarial
+  polytope. In International Conference on Machine Learning, pages 5286–5295, 2018.
+
+Zhilin Yang, William W. Cohen, and Ruslan Salakhutdinov. Revisiting semi-supervised learning with graph
+  embeddings. In International Conference on Machine Learning, pages 40–48, 2016.
+Nan Yin, Mengzhu Wang, Zhenghan Chen, Giulia De Masi, Huan Xiong, and Bin Gu. Dynamic spiking
+  graph neural networks. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages
+  16495–16503, 2024. doi: 10.1609/aaai.v38i15.29587.
+
+Kang You, Zekai Xu, Chen Nie, Zhijie Deng, Qinghai Guo, Xiang Wang, and Zhezhi He. Spikezip-tf:
+ Conversion is all you need for transformer-based snn. In International Conference on Machine Learning,
+ 2024.
+DingYi Zeng, Yuchen Wang, Honglin Cao, Wanlong Liu, Yichen Xiao, Chengzhuo Lu, Wenyu Chen, Malu
+  Zhang, Guoqing Wang, and Yang Yang. Leveraging asynchronous spiking neural networks for ultra efficient
+  event-based visual processing. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39,
+  pages 1620–1628, 2025. doi: 10.1609/aaai.v39i2.32154.
+Huizhe Zhang, Jintang Li, Yuchang Zhu, Huazhen Zhong, and Liang Chen. SGNNBench: A holistic evalua-
+ tion of spiking graph neural networks on large-scale graphs. In Advances in Neural Information Processing
+ Systems, 2026.
+
+
+
+
+                                                     10
+Lusen Zhao, Zihan Huang, Jianhao Ding, and Zhaofei Yu. Ttfsformer: A ttfs-based lossless conversion of
+  spiking transformer. In International Conference on Machine Learning, 2025.
+Zeyu Zhu, Fanrong Li, Zitao Mo, Qinghao Hu, Gang Li, Zejian Liu, Xiaoyao Liang, and Jian Cheng.
+  A2 Q: Aggregation-aware quantization for graph neural networks. In International Conference on Learning
+  Representations, 2023.
+
+Zulun Zhu, Jiaying Peng, Jintang Li, Liang Chen, Qi Yu, and Siqiang Luo. Spiking graph convolutional
+  networks. In Proceedings of the International Joint Conference on Artificial Intelligence, pages 2473–2479,
+  2022. doi: 10.24963/ijcai.2022/338.
+
+
+
+
+                                                     11
+

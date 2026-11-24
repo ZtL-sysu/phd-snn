@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v1",
+  "contract": [
+    {"path": "inputs/guidance.md", "sha256": "7526529e39c4d5d101572e2b2ca57870cbf05bfd8ce37d412c25f824521d973d"},
+    {"path": "inputs/literature-baseline-matrix.md", "sha256": "a6882f48667278ed502fce06735a512c0a573cf86c82c9aae1b167ba8c34a512"},
+    {"path": "inputs/prior-experiment-traceability.md", "sha256": "9d97356f4a70214967e363d8c21b3296d2a9e8e5a8a9be695a76b70c029ce384"},
+    {"path": "inputs/prior-independent-review.md", "sha256": "8e1189f618873ebafb26bca21cdad694d8364de04489ffd72a4fefd5ea157dd2"},
+    {"path": "inputs/prior-LR-screen.json", "sha256": "466643cb282d163e3a7adc2c4a8e8ba0b8a440c18c3e452c56365aa1b1123992"}
+  ],
+  "history": [
+    {"action": "pass", "stage": "P0"},
+    {"action": "pass", "stage": "P1"},
+    {"action": "pass", "stage": "P1A"},
+    {"action": "pass", "stage": "P1B"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "reopen", "stage": "P2", "reason": "complete baseline/method driver and additional storage helpers were finalized after the first setup check"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "reopen", "stage": "P2", "reason": "one-bit signed residual quantizer divided by zero during baseline start; shared primitive repair requires P2 reacceptance"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "pass", "stage": "P3"},
+    {"action": "pass", "stage": "P3A"},
+    {"action": "reopen", "stage": "P2", "reason": "CUDA peak-memory accounting was missing from the driver and required outputs"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "pass", "stage": "P3"},
+    {"action": "pass", "stage": "P3A"},
+    {"action": "pass", "stage": "P4"},
+    {"action": "pass", "stage": "P5"}
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "inputs/guidance.md", "sha256": "7526529e39c4d5d101572e2b2ca57870cbf05bfd8ce37d412c25f824521d973d"},
+        {"path": "input-manifest.json", "sha256": "6552598892f1a7f2e52bf3381de6b59e1d55697e290e250156737757b36ea950"}
+      ],
+      "evidence": [
+        {"path": "audits/p0-gate-report.md", "sha256": "6425eb16fcef4e8f0a49198f0917c6fc11b5e36e6555a9d0b862c37591c9fa87"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "inputs/guidance.md", "sha256": "7526529e39c4d5d101572e2b2ca57870cbf05bfd8ce37d412c25f824521d973d"},
+        {"path": "contract-extraction.yaml", "sha256": "bbdfc23a4d77c3866f212ace724071f4e9eb753acaddb8a8ab3fcb4a0c5ea52b"}
+      ],
+      "evidence": [
+        {"path": "audits/p1-guidance-validation.md", "sha256": "b54a9f4c1481a4bb4c88d4c5bd9d87f76446456f24dcc2bf0239191de995e3b1"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "contract-extraction.yaml", "sha256": "bbdfc23a4d77c3866f212ace724071f4e9eb753acaddb8a8ab3fcb4a0c5ea52b"},
+        {"path": "claim-evidence-matrix.md", "sha256": "a8775608f8445e7b8fdce4ff5219531c8d9650c96efce1d273cc5798851d83bc"}
+      ],
+      "evidence": [
+        {"path": "strong-result-feasibility-lock.md", "sha256": "2b72966bcc92e2134c976e9f377a41ffbf554f5cdf020ace655702f10e7b055d"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1B",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "claim-evidence-matrix.md", "sha256": "a8775608f8445e7b8fdce4ff5219531c8d9650c96efce1d273cc5798851d83bc"},
+        {"path": "strong-result-feasibility-lock.md", "sha256": "2b72966bcc92e2134c976e9f377a41ffbf554f5cdf020ace655702f10e7b055d"}
+      ],
+      "evidence": [
+        {"path": "ccfa-pre-experiment-review.md", "sha256": "95155d3faabc0480cc3697dc191d764bd82a5168031c0ea2aed811a6f94e73ba"},
+        {"path": "ccfa-pre-experiment-integrity.md", "sha256": "697d36667eadb35d1947dc4756c6a081211e102d6bde111fb3f3358f1be12c34"},
+        {"path": "concern-to-action-ledger.md", "sha256": "591a2dc23fe53685bee2c4d7dd59d784f95de57bf35d390d6b6397ab13fc6041"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "config.arc.yaml", "sha256": "47006eb443f6dfcbf60ddda9728208b567ec334626ec975af8e75a3e24768507"},
+        {"path": "protocols/arc-stage-map.md", "sha256": "2951f96be114abd20c5a94636282d9aaaf0b5055ad0f31a081595a264f066fab"},
+        {"path": "research/lr_core.py", "sha256": "fd1ba933ac8efca371dc4c80357f8183a38a92682cc8a85a484b599dd03376dc"},
+        {"path": "research/run_lr_experiments.py", "sha256": "8a90775654cfe9c59ded103756024e09a97de158a9a3c9a623f4d530152e45e3"},
+        {"path": "protocols/experiment-commands.md", "sha256": "766b4184b30ca704f0d34e1f55144e7b332c5844ba7b7be7d9dee794f5bccd91"}
+      ],
+      "evidence": [
+        {"path": "audits/p2-setup-check.md", "sha256": "8162e83fda91c3231ffd463ca807e2f1d8ad85c9c9e480c93564e25e2140552a"},
+        {"path": "corrections/p2-driver-finalization-v1.md", "sha256": "78dbc70ba716f5076653fe1426018393ffaf36733d3339e14b9b591c27329a50"},
+        {"path": "corrections/p2-one-bit-residual-v1.md", "sha256": "54a11f082a15011fff3e06156339a365c3f8fed196157cc111285397baabecd9"},
+        {"path": "corrections/p2-memory-accounting-v1.md", "sha256": "f1ca54076e8b1808af7d8e28c84a45b459914749336a9d2e939cf37ecfbbe7d5"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "results/baseline.json", "sha256": "3688c4d9681d0040cf13f4872a4be357b42ca5d69d146ad691c05ef2a38c4a44"}
+      ],
+      "evidence": [
+        {"path": "audits/p3-baseline-gate.md", "sha256": "3b8a8c6c3a740569ae45b6c824fe3797f4e3f0140977131852674c6c581f398d"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "results/baseline.json", "sha256": "3688c4d9681d0040cf13f4872a4be357b42ca5d69d146ad691c05ef2a38c4a44"},
+        {"path": "audits/p3-baseline-gate.md", "sha256": "3b8a8c6c3a740569ae45b6c824fe3797f4e3f0140977131852674c6c581f398d"}
+      ],
+      "evidence": [
+        {"path": "ccfa-baseline-numeric-audit.md", "sha256": "cac6d9dbffbdedbbed14733da677a95e73e905d25c3b342220811db50e832759"},
+        {"path": "ccfa-baseline-evidence-review.md", "sha256": "8a0450b2b58702bc55d9bf4c39080fcce67fd6a69601dbf5cd687a06c082c64c"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P4",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "results/method.json", "sha256": "4cef3c22ab464176e6bc4d9465759b8d24bc58597784c668d3780d398feb6b3b"},
+        {"path": "experiment-traceability.md", "sha256": "b73aa3081d431bae87c878d692d5dc1a8c23d3713f186adbe89cd4c5f690f005"}
+      ],
+      "evidence": [
+        {"path": "audits/p4-experiment-gate.md", "sha256": "a4cee95cd2ca01d5f0904c597fbac097ecfbd357277589e2e25794866417cdb6"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P5",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "experiment-traceability.md", "sha256": "b73aa3081d431bae87c878d692d5dc1a8c23d3713f186adbe89cd4c5f690f005"},
+        {"path": "experiment-completion-lock.md", "sha256": "4e17731b33145945c9c7946d68a225f18e13ec35a87478ccd8e7718e397d68df"}
+      ],
+      "evidence": [
+        {"path": "results/summary.json", "sha256": "692941940d2fc68e953cd3c9349fdeeda60ffdc819f29dc1f59153fbdad30417"},
+        {"path": "strong-result-lock.md", "sha256": "f2a4eb17045b5e814ee5d63923840ddfcacc04b8b53f175fbb63144feeb4ab03"},
+        {"path": "ccfa-full-numeric-audit.md", "sha256": "5934d4a6f9c822625f0e1400762249c7bd0b5c1a9b5c7a3b0784d68f934c3b42"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P5A",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P6",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P7",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P8",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P9",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P10",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P11",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P12",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P13",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P14",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P15",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P16",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P17",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P18",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P19",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P20",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P21",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage": "P14/AutoResearchClaw-23-CITATION_VERIFY",
+  "status": "failed-validation",
+  "context": {
+    "paper_sha256": "8a433c73f85c8ae69f7fec1dea3929e330e1e64238e8e389d36a3281f705a33b",
+    "bib_sha256": "6486042a1f0e45745fe955e92658265c5a26dc299f754da4b936343736776508",
+    "independent_audit": "CITATION_AUDIT_INDEPENDENT_FINAL.md"
+  },
+  "verification_summary": {
+    "total": 41,
+    "verified": 28,
+    "suspicious": 1,
+    "hallucinated": 4,
+    "skipped": 8,
+    "integrity_score": 0.848
+  },
+  "bibliography_entries": 37,
+  "problems": [
+    "hallucinated citations: 4",
+    "verified bibliography count is 37, expected 41",
+    "suspicious citations remain: 1"
+  ],
+  "arc_stage_result": {
+    "stage": "23",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "verification_report.json",
+      "references_verified.bib",
+      "paper_final_verified.md"
+    ],
+    "evidence_refs": [
+      "stage-23/verification_report.json",
+      "stage-23/references_verified.bib",
+      "stage-23/paper_final_verified.md"
+    ]
+  }
+}

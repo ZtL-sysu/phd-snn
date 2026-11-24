@@ -1,0 +1,912 @@
+{
+  "check_count": 97,
+  "checks": [
+    {
+      "expected": "f182d79e6810175c7f422ce8279167b9cf19ef72bf3cc7add76b2877a42c14f5",
+      "name": "preregistered_sha256",
+      "observed": "f182d79e6810175c7f422ce8279167b9cf19ef72bf3cc7add76b2877a42c14f5",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": "f182d79e6810175c7f422ce8279167b9cf19ef72bf3cc7add76b2877a42c14f5",
+      "name": "result_embeds_preregistered_hash",
+      "observed": "f182d79e6810175c7f422ce8279167b9cf19ef72bf3cc7add76b2877a42c14f5",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": "f182d79e6810175c7f422ce8279167b9cf19ef72bf3cc7add76b2877a42c14f5",
+      "name": "realized_config_embeds_preregistered_hash",
+      "observed": "f182d79e6810175c7f422ce8279167b9cf19ef72bf3cc7add76b2877a42c14f5",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "realized_config_embeds_exact_preregistered_object",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "name": "registered_seed_set",
+      "observed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 2000,
+      "name": "bootstrap_replicates",
+      "observed": 2000,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 0.01,
+      "name": "ridge_l2",
+      "observed": 0.01,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "minimum_exact_p_declared",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "completion_not_acceptance_guardrail",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "A0_guardrail",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 178853187,
+      "name": "full_connectome_bytes",
+      "observed": 178853187,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 15091983,
+      "name": "coalesced_directed_pairs",
+      "observed": 15091983,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 16847997,
+      "name": "source_rows_reported",
+      "observed": 16847997,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 1756014,
+      "name": "duplicate_rows_coalesced",
+      "observed": 1756014,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": {
+        "1": 0,
+        "2": 15,
+        "3": 2544,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "name": "first_reached_exact_hops",
+      "observed": {
+        "1": 0,
+        "2": 15,
+        "3": 2544,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 3,
+      "name": "frozen_K",
+      "observed": 3,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 2544,
+      "name": "resolved_KCs",
+      "observed": 2544,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_all_exact",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_per_node_in_degree_exact",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_per_node_out_degree_exact",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_weight_multiset_exact",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_nnz_preserved",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_reciprocal_pair_count_exact",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_self_loop_count_exact",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_edge_count",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "degree_null_reciprocal_count",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "spectral_radius_measured_not_prior_copied",
+      "observed": {
+        "converged": true,
+        "edge_weighting": "binary_directed_connection",
+        "estimate": 292.41506239264993,
+        "iterations": 67,
+        "method": "positive_power_Rayleigh",
+        "tolerance": 1e-08
+      },
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 178853187,
+      "name": "connectome_full_bytes",
+      "observed": 178853187,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": "402fa0e61198e6f26b2ef4fd18e0123cc2edff0bb1edca9dd31b29b8171580bc",
+      "name": "connectome_sha256",
+      "observed": "402fa0e61198e6f26b2ef4fd18e0123cc2edff0bb1edca9dd31b29b8171580bc",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "connectome_archive_integrity",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 3,
+      "name": "connectome_range_ledger_contiguous",
+      "observed": 3,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 832766765,
+      "name": "davis_full_bytes",
+      "observed": 832766765,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": "e3d0b5b77c3d031b000a19e0e25e3e2cac65d183755601bc2cf066df1a2aa492",
+      "name": "davis_sha256",
+      "observed": "e3d0b5b77c3d031b000a19e0e25e3e2cac65d183755601bc2cf066df1a2aa492",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "davis_archive_integrity",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 13,
+      "name": "davis_range_ledger_contiguous",
+      "observed": 13,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 5627783629,
+      "name": "sintel_full_bytes",
+      "observed": 5627783629,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": "bdc80abbe6ae13f96f6aa02e04d98a251c017c025408066a00204cd2c7104c5f",
+      "name": "sintel_sha256",
+      "observed": "bdc80abbe6ae13f96f6aa02e04d98a251c017c025408066a00204cd2c7104c5f",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "sintel_archive_integrity",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 84,
+      "name": "sintel_range_ledger_contiguous",
+      "observed": 84,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 400,
+      "name": "synthetic_n",
+      "observed": 400,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": [
+        400,
+        8,
+        32,
+        32
+      ],
+      "name": "synthetic_shape",
+      "observed": [
+        400,
+        8,
+        32,
+        32
+      ],
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "synthetic_balance",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "synthetic_ceiling_five_seeds",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": ">=0.90",
+      "name": "synthetic_ceiling_ge_0.90",
+      "observed": 0.9766666666666666,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          8.0
+        ],
+        [
+          0.0,
+          32.0
+        ],
+        [
+          0.01,
+          1.0
+        ],
+        [
+          0.01,
+          8.0
+        ],
+        [
+          0.01,
+          32.0
+        ],
+        [
+          0.05,
+          1.0
+        ],
+        [
+          0.05,
+          8.0
+        ],
+        [
+          0.05,
+          32.0
+        ],
+        [
+          0.15,
+          1.0
+        ],
+        [
+          0.15,
+          8.0
+        ],
+        [
+          0.15,
+          32.0
+        ],
+        [
+          0.3,
+          1.0
+        ],
+        [
+          0.3,
+          8.0
+        ],
+        [
+          0.3,
+          32.0
+        ]
+      ],
+      "name": "gate_grid_15_exact_cells",
+      "observed": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          8.0
+        ],
+        [
+          0.0,
+          32.0
+        ],
+        [
+          0.01,
+          1.0
+        ],
+        [
+          0.01,
+          8.0
+        ],
+        [
+          0.01,
+          32.0
+        ],
+        [
+          0.05,
+          1.0
+        ],
+        [
+          0.05,
+          8.0
+        ],
+        [
+          0.05,
+          32.0
+        ],
+        [
+          0.15,
+          1.0
+        ],
+        [
+          0.15,
+          8.0
+        ],
+        [
+          0.15,
+          32.0
+        ],
+        [
+          0.3,
+          1.0
+        ],
+        [
+          0.3,
+          8.0
+        ],
+        [
+          0.3,
+          32.0
+        ]
+      ],
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "gate_grid_five_seeds_each",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "gate_grid_hop_voltage_stats",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "yoked_2x4x2x5_shape",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "yoked_training_only_calibration",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "variance_information_controls",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "variance_matched_target_0.2075",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": [
+        "hard_spike",
+        "random_projection",
+        "soft_sigmoid",
+        "spike_count",
+        "threshold_crossing_time",
+        "v_raw"
+      ],
+      "name": "readout_six_controls",
+      "observed": [
+        "hard_spike",
+        "random_projection",
+        "soft_sigmoid",
+        "spike_count",
+        "threshold_crossing_time",
+        "v_raw"
+      ],
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "readout_five_seeds_each",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "condition_seed_rows_embedded",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "condition_seed_rows_unique",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "condition_rows_include_delta_vs_stateless",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "all_condition_summaries_embedded",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "all_condition_contrasts_embedded",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "per_hop_probe_and_fisher_embedded",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "variance_trajectory_embedded",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "three_one_factor_ablations",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "two_gate_recalibrations",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "six_negative_controls",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "both_real_domains_reported",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "DAVIS_availability_threshold_consistent",
+      "observed": {
+        "available": false,
+        "mean": 0.6916666666666667
+      },
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "DAVIS_method_gate_consistent",
+      "observed": "unavailable",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "SINTEL_availability_threshold_consistent",
+      "observed": {
+        "available": false,
+        "mean": 0.4357142857142858
+      },
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "SINTEL_method_gate_consistent",
+      "observed": "unavailable",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": "NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE",
+      "name": "migration_verdict_consistent",
+      "observed": "NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE",
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "table_exists_main_table.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "top_level_table_alias_main_table.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "table_exists_gate_operating_point.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "top_level_table_alias_gate_operating_point.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "table_exists_yoked_firing_rate_2x2.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "top_level_table_alias_yoked_firing_rate_2x2.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "table_exists_variance_vs_information.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "top_level_table_alias_variance_vs_information.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "table_exists_readout_state_variables.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "top_level_table_alias_readout_state_variables.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "table_exists_probe_vs_hop.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "top_level_table_alias_probe_vs_hop.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "table_exists_variance_trajectory.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "top_level_table_alias_variance_trajectory.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "table_exists_experiment-traceability.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "top_level_table_alias_experiment-traceability.csv",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 75,
+      "name": "gate_csv_75_rows",
+      "observed": 75,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 80,
+      "name": "yoked_csv_80_rows",
+      "observed": 80,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "yoked_csv_heldout_not_selection",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 30,
+      "name": "readout_csv_30_rows",
+      "observed": 30,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 280,
+      "name": "raw_declared_count",
+      "observed": 280,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 280,
+      "name": "raw_paths_unique",
+      "observed": 280,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": 280,
+      "name": "raw_actual_exact_set",
+      "observed": 280,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": [],
+      "name": "all_raw_npz_loadable_and_complete",
+      "observed": [],
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "all_contrasts_paired_bootstrap_signflip_BH",
+      "observed": 91,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "grind_block_exact_four_keys",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": null,
+      "name": "expected_signal_separate_from_design_validity",
+      "observed": null,
+      "passed": true,
+      "severity": "error"
+    },
+    {
+      "expected": [
+        "at_least_one_real_ceiling_ge_0_70",
+        "fisher_agrees_with_probe",
+        "some_biological_gate_cell_feature_std_gt_zero",
+        "some_biological_gate_cell_hard_spike_rate_gt_zero",
+        "v_raw_or_hard_spike_probe_above_soft_sigmoid_with_ci_lower_gt_zero",
+        "variance_matched_noise_does_not_recover_a0_probe",
+        "yoked_2x2_pairwise_delta_ci_crosses_zero"
+      ],
+      "name": "all_preregistered_expected_signal_checks_realized",
+      "observed": [
+        "at_least_one_real_ceiling_ge_0_70",
+        "fisher_agrees_with_probe",
+        "some_biological_gate_cell_feature_std_gt_zero",
+        "some_biological_gate_cell_hard_spike_rate_gt_zero",
+        "v_raw_or_hard_spike_probe_above_soft_sigmoid_with_ci_lower_gt_zero",
+        "variance_matched_noise_does_not_recover_a0_probe",
+        "yoked_2x2_pairwise_delta_ci_crosses_zero"
+      ],
+      "passed": true,
+      "severity": "error"
+    }
+  ],
+  "design_valid": true,
+  "failed_error_count": 0,
+  "failed_warning_count": 0,
+  "failures": [],
+  "passed_count": 97,
+  "raw_npz_count": 280,
+  "schema_version": "f-research-v1.p4.c1.attempt4.validation.v1",
+  "scientific_acceptance_is_not_validation": true,
+  "scientific_expected_signal_met": false,
+  "table_row_counts": {
+    "experiment-traceability.csv": 9,
+    "gate_operating_point.csv": 75,
+    "main_table.csv": 280,
+    "probe_vs_hop.csv": 880,
+    "readout_state_variables.csv": 30,
+    "variance_trajectory.csv": 880,
+    "variance_vs_information.csv": 880,
+    "yoked_firing_rate_2x2.csv": 80
+  },
+  "validated_config": "evidence/config_working.json",
+  "validated_config_sha256": "4b921cb3ee34215f2a5fddac59e139828a442ca4f092044071fb406b473255da",
+  "validated_result": "evidence/result_working.json",
+  "validated_result_sha256": "0345f0dd3abca7ec588b5b0cbfca5f341492a62896a50791c24bdbd22fcb31be"
+}

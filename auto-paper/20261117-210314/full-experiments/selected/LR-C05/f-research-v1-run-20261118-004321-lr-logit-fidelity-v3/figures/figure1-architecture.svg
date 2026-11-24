@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,7 L9,3.5 z" fill="#222222"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="1600" height="900" fill="#FFFFFF"/>
+<rect x="30" y="105" width="260" height="525" rx="18" fill="#F7F7F7" stroke="#B8B8B8" stroke-width="1.5"/>
+<text x="160.0" y="139.0" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#30343B">INPUT + FROZEN GCN</text>
+<rect x="330" y="105" width="270" height="525" rx="18" fill="#F3F7FC" stroke="#AFC4DF" stroke-width="1.5"/>
+<text x="465.0" y="139.0" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#30343B">LOW-RANK TRANSPORT</text>
+<rect x="640" y="105" width="280" height="525" rx="18" fill="#F7F2FA" stroke="#C8B4D6" stroke-width="1.5"/>
+<text x="780.0" y="139.0" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#30343B">OUTPUT-SENSITIVE RESIDUALS</text>
+<rect x="960" y="105" width="300" height="525" rx="18" fill="#FCF5EC" stroke="#DCC1A3" stroke-width="1.5"/>
+<text x="1110.0" y="139.0" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#30343B">EXACT-COST CONVERSION</text>
+<rect x="1300" y="105" width="270" height="525" rx="18" fill="#F0F8F6" stroke="#A8CECA" stroke-width="1.5"/>
+<text x="1435.0" y="139.0" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#30343B">EVALUATION</text>
+<polyline points="160.0,233.0 160.0,295.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="160.0,377.0 160.0,455.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="255.0,505.0 315.0,505.0 315.0,201.0 365.0,201.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="465.0,247.0 465.0,325.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="520.0,247.0 600.0,247.0 600.0,516.0 565.0,516.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="565.0,516.0 620.0,516.0 620.0,214.0 675.0,214.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="575" y="201" width="90" height="24" rx="7" fill="#FFFFFF" opacity="0.92"/><text x="620" y="218" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="13" fill="#444444">R</text>
+<polyline points="160.0,560.0 160.0,610.0 650.0,610.0 650.0,273.0 675.0,273.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<rect x="605" y="597" width="90" height="24" rx="7" fill="#FFFFFF" opacity="0.92"/><text x="650" y="614" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="13" fill="#444444">frozen logits z</text>
+<polyline points="780.0,273.0 780.0,405.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="565.0,361.0 925.0,361.0 925.0,211.0 995.0,211.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="885.0,464.0 950.0,464.0 950.0,270.0 995.0,270.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1110.0,267.0 1110.0,335.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1110.0,447.0 1110.0,515.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1225.0,556.0 1280.0,556.0 1280.0,190.0 1335.0,190.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1435.0,225.0 1435.0,285.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1480.0,225.0 1510.0,225.0 1510.0,437.0 1535.0,437.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1505.0,225.0 1570.0,225.0 1570.0,556.0 1535.0,556.0" fill="none" stroke="#222222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="65" y="155" width="190" height="78" rx="14" fill="#ECEFF1" stroke="#6B7280" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="19" fill="#222222"><tspan x="160.0" y="188.5">Graph G = (V, E)</tspan><tspan x="160.0" y="212.5">Node features X</tspan></text>
+<rect x="65" y="295" width="190" height="82" rx="14" fill="#ECEFF1" stroke="#6B7280" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="160.0" y="330.6">Normalized message</tspan><tspan x="160.0" y="353.6">M = A_hat X</tspan></text>
+<rect x="65" y="455" width="190" height="105" rx="14" fill="#E8EEF5" stroke="#5B7897" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" fill="#222222"><tspan x="160.0" y="491.3">Frozen two-layer GCN</tspan><tspan x="160.0" y="513.3">hidden width 16</tspan><tspan x="160.0" y="535.3">seeds 0 / 1 / 2</tspan></text>
+<rect x="365" y="155" width="200" height="92" rx="14" fill="#DCEAF7" stroke="#6F96BF" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="465.0" y="195.6">SVD rank-128 transport</tspan><tspan x="465.0" y="218.6">M ≈ M_128</tspan></text>
+<rect x="365" y="325" width="200" height="72" rx="14" fill="#E8F1FB" stroke="#7899BD" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="465.0" y="355.6">Operator-aligned basis</tspan><tspan x="465.0" y="378.6">M_128</tspan></text>
+<rect x="365" y="475" width="200" height="82" rx="14" fill="#EFE8F5" stroke="#9A7DB2" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="465.0" y="510.6">Residual</tspan><tspan x="465.0" y="533.6">R = M - M_128</tspan></text>
+<rect x="675" y="155" width="210" height="118" rx="14" fill="#EDE3F4" stroke="#9A78B5" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" fill="#222222"><tspan x="780.0" y="197.8">Magnitude-weighted score</tspan><tspan x="780.0" y="219.8">s_i = r_i² ||dz / dr_i||²</tspan><tspan x="780.0" y="241.8">score residual candidates</tspan></text>
+<rect x="675" y="405" width="210" height="118" rx="14" fill="#F1E8F6" stroke="#A486BC" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" fill="#222222"><tspan x="780.0" y="447.8">Select top-B coefficients</tspan><tspan x="780.0" y="469.8">explicit indices + values</tspan><tspan x="780.0" y="491.8">2% residual budget</tspan></text>
+<rect x="995" y="155" width="230" height="112" rx="14" fill="#F8E9D7" stroke="#C79565" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="1110.0" y="194.1">Serialized transport</tspan><tspan x="1110.0" y="217.1">basis + sparse residual</tspan><tspan x="1110.0" y="240.1">records</tspan></text>
+<rect x="995" y="335" width="230" height="112" rx="14" fill="#FCEEDF" stroke="#C99B70" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="17" fill="#222222"><tspan x="1110.0" y="374.8">Exact padded serialized-bit ledger</tspan><tspan x="1110.0" y="396.8">matched total padded</tspan><tspan x="1110.0" y="418.8">serialized-bit budget</tspan></text>
+<rect x="995" y="515" width="230" height="82" rx="14" fill="#DFF1EE" stroke="#6FAAA4" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="1110.0" y="550.6">Rate-coded frozen conversion</tspan><tspan x="1110.0" y="573.6">T = 2 and T = 4</tspan></text>
+<rect x="1335" y="155" width="200" height="70" rx="14" fill="#F6D9BF" stroke="#C77B3A" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="19" fill="#222222"><tspan x="1435.0" y="196.5">Converted logits z_s</tspan></text>
+<rect x="1335" y="285" width="200" height="72" rx="14" fill="#F9E6D7" stroke="#C98C5E" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="1435.0" y="315.6">Split-specific</tspan><tspan x="1435.0" y="338.6">logit MSE</tspan></text>
+<rect x="1335" y="405" width="200" height="64" rx="14" fill="#F9E6D7" stroke="#C98C5E" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="1435.0" y="443.1">Hidden-state MSE</tspan></text>
+<rect x="1335" y="515" width="200" height="82" rx="14" fill="#F9E6D7" stroke="#C98C5E" stroke-width="1.7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#222222"><tspan x="1435.0" y="550.6">T = 2 / 4 accuracy</tspan><tspan x="1435.0" y="573.6">teacher agreement</tspan></text>
+<rect x="55" y="680" width="1490" height="68" rx="14" fill="#FDECEC" stroke="#B64342" stroke-width="1.8" stroke-dasharray="10 7"/>
+<text text-anchor="middle" dominant-baseline="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="18" fill="#7A2E2E"><tspan x="800.0" y="720.1">Evidence scope: validation-grid sensitivity and held-out confirmation after validation exposure</tspan></text>
+<rect x="115" y="797" width="26" height="22" rx="5" fill="#ECEFF1" stroke="#666666" stroke-width="1"/>
+<text x="150" y="814" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#333333">Inputs / frozen model</text>
+<rect x="360" y="797" width="26" height="22" rx="5" fill="#DCEAF7" stroke="#666666" stroke-width="1"/>
+<text x="395" y="814" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#333333">Low-rank transport</text>
+<rect x="605" y="797" width="26" height="22" rx="5" fill="#EDE3F4" stroke="#666666" stroke-width="1"/>
+<text x="640" y="814" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#333333">Output-sensitive selection</text>
+<rect x="850" y="797" width="26" height="22" rx="5" fill="#FCEEDF" stroke="#666666" stroke-width="1"/>
+<text x="885" y="814" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#333333">Exact-cost serialization</text>
+<rect x="1095" y="797" width="26" height="22" rx="5" fill="#DFF1EE" stroke="#666666" stroke-width="1"/>
+<text x="1130" y="814" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#333333">Rate-coded conversion</text>
+<rect x="1340" y="797" width="26" height="22" rx="5" fill="#F6D9BF" stroke="#666666" stroke-width="1"/>
+<text x="1375" y="814" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#333333">Evaluation</text>
+</svg>

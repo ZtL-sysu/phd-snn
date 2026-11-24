@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "stage": "P7/AutoResearchClaw-17-PAPER_DRAFT",
+  "status": "failed-validation",
+  "arc_checkout": "C:\\code\\AutoResearchClaw",
+  "arc_version": "0.3.1",
+  "arc_stage_source": "C:\\code\\AutoResearchClaw\\researchclaw\\pipeline\\stage_impls\\_paper_writing.py",
+  "arc_stage_source_sha256": "aa1a84ff85691fed8a6691d0ab1839e5b6e449347840458ed10535432b559321",
+  "executor_identity": {
+    "provider": "openai-compatible",
+    "base_url": "https://api.deepseek.com/v1",
+    "wire_api": "chat_completions",
+    "configured_model": "deepseek-v4-pro",
+    "response_models": [
+      "deepseek-v4-pro"
+    ],
+    "researchclaw_version": "0.3.1"
+  },
+  "context_isolation": {
+    "status": "verified-clean-external-boundary",
+    "clean_request_files": [
+      "writing\\request-p7-part-1-title-abstract-introduction-related-work.json",
+      "writing\\request-p7-part-2-method-experiments-setup.json",
+      "writing\\request-p7-part-3-results-discussion-conclusion.json"
+    ],
+    "clean_request_hashes": [
+      "ae3f136f95441c5ae87fda88366de8e74be6debabd4a6c2f6d86166d417f2757",
+      "4082ee80cd594bc57e384158f7e014cb82870b6f259e2bfbc3142d8d1364f883",
+      "c4aa5dcaa034a9d22385c48c5b424a687fc390e305a079de48e4a0c246d3e538"
+    ],
+    "arc_internal_prompt_sent_to_model": false,
+    "raw_execution_logs_sent_to_model": false,
+    "compatibility_fixture_used_as_model_context": false,
+    "internal_arc_calls": 5,
+    "external_model_calls": 4,
+    "note": "The installed ARC Stage 17 control flow was executed. Its three historical writing calls were replaced at the external model boundary by the three bounded writing_adapter requests. The ARC anti-simulation fixture was used only to pass its internal guard and was never sent to the model."
+  },
+  "responses": [
+    {
+      "model": "deepseek-v4-pro",
+      "prompt_tokens": 15319,
+      "completion_tokens": 12641,
+      "total_tokens": 27960,
+      "finish_reason": "stop",
+      "truncated": false
+    }
+  ],
+  "validation": {
+    "valid": false,
+    "problems": [
+      "top-level sections are ['1 Introduction', '2 Related Work'], expected ['1 Introduction', '2 Related Work', '3 Method', '4 Experiments and Results', '5 Discussion', '6 Conclusion']",
+      "draft has fewer than 2800 words",
+      "forbidden top-level section present: ## Results",
+      "forbidden top-level section present: ## Experiments",
+      "forbidden top-level section present: ## Limitations",
+      "draft contains a placeholder",
+      "Conclusion is missing or incomplete"
+    ],
+    "expected_sections": [
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "4 Experiments and Results",
+      "5 Discussion",
+      "6 Conclusion"
+    ],
+    "actual_sections": [
+      "1 Introduction",
+      "2 Related Work"
+    ],
+    "word_count": 798,
+    "draft_sha256": "173be5a3a3c8ad178421c8b68a99e2b2e396eb0b20f7594f4c519f95742cb2f3",
+    "reverse_outline_sha256": "692be4e137f8f7e1124102d002c31f905d5ffabc3cd43671cd7d7dcd6d8d266d"
+  },
+  "arc_stage_result": {
+    "stage": "17",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "paper_draft.md"
+    ],
+    "evidence_refs": [
+      "stage-17/paper_draft.md"
+    ]
+  }
+}

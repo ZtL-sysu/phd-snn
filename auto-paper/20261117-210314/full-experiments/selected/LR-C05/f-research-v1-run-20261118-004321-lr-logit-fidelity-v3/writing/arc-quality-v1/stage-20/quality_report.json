@@ -1,0 +1,66 @@
+{
+  "score_1_to_10": 8.7,
+  "verdict": "proceed",
+  "criteria": {
+    "exactly_six_canonical_numbered_sections": "pass",
+    "claim_evidence_alignment_and_no_unsupported_strength": "pass",
+    "result_strength_appropriate_to_narrow_logit_fidelity_scope": "pass",
+    "figure_table_placement_and_captions_support_argument": "pass",
+    "paragraph_reverse_outline_roles_are_distinct": "pass",
+    "whole_paper_continuity_from_question_to_conclusion": "pass",
+    "results_reports_evidence_while_discussion_interprets_it": "pass"
+  },
+  "strengths": [
+    "The manuscript has exactly six canonical numbered sections and a coherent progression from the narrow research question to conclusions.",
+    "Main numerical claims consistently specify the rank, residual budget, aggregation, comparator, dataset, and matched padded-bit scope.",
+    "Task results are appropriately limited to descriptive observed degradation maxima rather than equivalence, preservation bounds, or superiority claims.",
+    "Validation exposure and held-out confirmation chronology are disclosed consistently across the Abstract, Experiments, Discussion, and Conclusion.",
+    "The composite selector is correctly described as a heuristic without claiming that the Jacobian term causally explains the gains.",
+    "Figures are placed near the evidence they support, and their captions distinguish reference rows, secondary runtime conditions, and non-observed thresholds.",
+    "Results primarily report measurements, while Discussion supplies bounded interpretation and explicitly lists unresolved mechanisms and scope limits."
+  ],
+  "weaknesses": [
+    "Figure 4 combines test logit-fidelity results with task-degradation maxima and a secondary rank128/1% runtime benchmark; its caption discloses these differences, but the multi-scope panel remains cognitively demanding.",
+    "The hidden-state MSE paragraph combines a focal rank128/2% result with a statement that it arose in validation-grid analysis before held-out confirmation; the chronology is disclosed but could be more immediately explicit in the evidence sentence.",
+    "The strongest-control comparator is post hoc and defined by the observed three-seed mean; this is disclosed, but the headline percentages remain dependent on that comparator-selection convention."
+  ],
+  "required_actions": [],
+  "checks": [
+    {
+      "name": "exactly six canonical numbered sections",
+      "status": "pass",
+      "evidence": "The manuscript contains Abstract followed by exactly Sections 1 through 6: Introduction, Related Work, Method, Experiments and Results, Discussion, and Conclusion."
+    },
+    {
+      "name": "claim/evidence alignment and no unsupported strength",
+      "status": "pass",
+      "evidence": "The 26.23%, 33.99%, and 25.83% logit-MSE reductions, 9/9 positive comparisons, cost totals, task maxima, and runtime ratios are consistently accompanied by comparator, aggregation, condition, and scope qualifications; unsupported causal and generality claims are expressly excluded."
+    },
+    {
+      "name": "result strength is appropriate to the narrow logit-fidelity scope",
+      "status": "pass",
+      "evidence": "The contribution is repeatedly restricted to coding M0=A_hat X for frozen two-layer hidden-16 GCNs on three static graphs, with explicit exclusions for task superiority, equivalence, energy, temporal-event behavior, broad GNN generality, and focal 2% timing."
+    },
+    {
+      "name": "figure/table placement and captions support the argument",
+      "status": "pass",
+      "evidence": "Figure 1 follows the method, Figures 2-3 accompany the principal fidelity and sensitivity evidence, Figure 4 accompanies task/runtime trade-offs, and the method table clearly separates matched-budget controls from full-float and SVD-only references."
+    },
+    {
+      "name": "paragraph/reverse-outline roles are distinct",
+      "status": "pass",
+      "evidence": "Introduction frames the question and scope; Method defines representation, score, and ledger; Results separates experimental scope, controls, main findings, sensitivity, and trade-offs; Discussion interprets mechanisms and limitations; Conclusion restates only supported findings."
+    },
+    {
+      "name": "whole-paper continuity from question to conclusion",
+      "status": "pass",
+      "evidence": "The fixed-budget residual-allocation question introduced in the Abstract and Introduction is operationalized in Section 3, tested in Section 4, bounded in Section 5, and answered narrowly in Section 6."
+    },
+    {
+      "name": "Results reports evidence while Discussion interprets it",
+      "status": "pass",
+      "evidence": "Section 4 reports numerical observations and measurement conventions without asserting causal mechanism; Section 5 interprets squared-Jacobian allocation as a hypothesis and consolidates limitations that are not presented as new results."
+    }
+  ],
+  "generated": "2026-11-17T23:19:18+00:00"
+}

@@ -1,0 +1,76 @@
+{
+  "experiment_id": "f-research-v1-P4-correction-loop",
+  "protocol_version": "P4-full-v2",
+  "seeds": [1, 2, 3, 4, 5],
+  "split": {
+    "train_fraction": 0.7,
+    "stratified": true,
+    "per_seed_random_state": true
+  },
+  "graph": {
+    "edge_url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content",
+    "annotation_url": "https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content",
+    "eye_url": "https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content",
+    "license": "CC BY 4.0",
+    "edge_range_bytes": 8388608,
+    "weight_transform": "log1p(syn_count)",
+    "matrix_orientation": "A[post,pre]",
+    "spectral_target": 0.95,
+    "power_iterations": 40,
+    "row_normalization": false,
+    "eye_coordinate_columns": ["x_axis", "y_axis"],
+    "readout_cell_type_prefix": "KC",
+    "null_successful_swaps_per_mutable_edge": 2,
+    "protect_original_reciprocal_edges": true
+  },
+  "stimulus": {
+    "height": 32,
+    "width": 32,
+    "frames": 8,
+    "synthetic_samples": 400,
+    "direction_circle_radius_inclusive": [3, 5],
+    "direction_start_x_inclusive": [8, 24],
+    "direction_speed_pixels_per_frame": 2,
+    "flash_pulse_frames": 2,
+    "per_frame_receptor_contrast_max": 1.0
+  },
+  "models": {
+    "conditions": ["stateless", "lif_homeostasis", "lif_combo", "degree_null_lif", "A=0"],
+    "stateless_steps_per_frame": 3,
+    "membrane_decay": 0.6,
+    "base_threshold": 0.15,
+    "soft_spike_slope": 20.0,
+    "synaptic_gain_a": 8.0,
+    "synaptic_gain_b": 8.0,
+    "adaptive_increment": 0.05,
+    "adaptive_decay": 0.85,
+    "refractory_steps": 2,
+    "inhibitory_top_nt": ["gaba", "glutamate", "glycine"],
+    "gpu_batch_size": 16
+  },
+  "readout": {
+    "ridge_l2": 0.01,
+    "pca_trigger_dimensions": 2000,
+    "pca_components": 32,
+    "pca_fit": "training split only",
+    "ceiling_representation": "8x32x32 flattened = 8192 dimensions",
+    "spec_note": "The request says 4096, but 8*32*32 is mathematically 8192; no lossy unstated projection is applied."
+  },
+  "davis": {
+    "url": "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip",
+    "expected_content_length": 832766765,
+    "download_timeout_seconds": 600,
+    "clip_frames": 8,
+    "clip_stride": 8,
+    "label_source_preference": "foreground annotation centroid linear displacement",
+    "fallback_label_source": "motion-energy centroid displacement from consecutive grayscale frame differences",
+    "minimum_abs_centroid_displacement_pixels": 1.0
+  },
+  "statistics": {
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261107,
+    "fdr": "Benjamini-Hochberg",
+    "fdr_q": 0.05,
+    "paired_by_seed": true
+  }
+}

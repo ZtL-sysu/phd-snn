@@ -1,0 +1,30 @@
+{
+  "cora": {
+    "ann_mean": 0.806,
+    "ann_frozen": 0.806,
+    "d_ann_pp": 0.0,
+    "conv8_mean": 0.8025714285714286,
+    "conv8_frozen": 0.8026,
+    "d_conv_pp": -0.0028571428571377844,
+    "conv8_std": 0.007816779440173956,
+    "ann_std": 0.007615773105863893,
+    "spikes_mean": 83392.0,
+    "train_seconds_mean": 6.375707428578088,
+    "pass": true,
+    "trace_id": "content:99d1956d870af23b"
+  },
+  "pubmed": {
+    "ann_mean": 0.7757142857142857,
+    "ann_frozen": 0.7757,
+    "d_ann_pp": 0.0014285714285744433,
+    "conv8_mean": 0.774,
+    "conv8_frozen": 0.774,
+    "d_conv_pp": 0.0,
+    "conv8_std": 0.014000000000000012,
+    "ann_std": 0.01571818133531346,
+    "spikes_mean": 429103.0,
+    "train_seconds_mean": 14.580195157144251,
+    "pass": true,
+    "trace_id": "content:e533ccab41942626"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "dataset": "chameleon",
+    "nodes": 2277,
+    "T": 2,
+    "zero_node_fraction": 0.0,
+    "message_slot_reduction": 0.0,
+    "pruned_vs_original_logit_max_error": 0.0,
+    "gate": {
+      "zero_fraction_pass": false,
+      "exact_pass": true
+    }
+  },
+  {
+    "dataset": "squirrel",
+    "nodes": 5201,
+    "T": 2,
+    "zero_node_fraction": 0.0005768121515093252,
+    "message_slot_reduction": 0.0005768121515093252,
+    "pruned_vs_original_logit_max_error": 0.0,
+    "gate": {
+      "zero_fraction_pass": false,
+      "exact_pass": true
+    }
+  }
+]

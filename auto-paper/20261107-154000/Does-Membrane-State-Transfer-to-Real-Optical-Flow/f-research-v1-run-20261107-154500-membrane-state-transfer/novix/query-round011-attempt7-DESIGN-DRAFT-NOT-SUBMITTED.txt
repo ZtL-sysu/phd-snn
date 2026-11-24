@@ -1,0 +1,226 @@
+任务：C1 死磕第 7 次尝试（correction loop v3, attempt #7）的**设计预案**。
+
+================================================================================
+【状态声明 · 本文件 NOT SUBMITTED，不是实验 query，不得被直接提交】
+================================================================================
+round-011（2026-11-08 21:28–22:xx GMT+8）Step 0 权威复核：在途任务 `18489`
+（attempt #6，query-round010-attempt6.txt）= `processing`、steps=null/0、
+`errorCode=None`、`errorInfo=None`、顶层 `finalReply=None`；
+`novix debug task 18489 --logs` 显示 `task.status=provisioning`、
+"creating sandbox claim"、placement `reserved` / `dispatch_paused=false` /
+`eligible_nodes=1`、diagnosis `ALLOCATION_EVIDENCE_UNAVAILABLE`，并明确
+"保留任务记录，不要直接重新派发"。
+→ 按 §3.6(2) 与「同一 idea 在途不重复提交」：**本轮不提交任何 novix 任务、
+不等待、不动流水线、不标任何 stage passed**。`18489` 无结果，
+**不得推断、不得抢占、不得预先判定**，其结果由 round-012 Step 0 异步回收。
+
+本文件只交付 v3 §3.6(3) 要求的**一次实质优化**（四要素 + 与上一版 query 的
+机制级 diff），作为 round-012 的预案。**round-012 Step 0 必须先读 `18489` 的正式
+`acceptance-verdict-18489.md` 与三项必修诊断的实测结论，再决定本预案
+启用 / 改写 / 作废，严禁原样启用。** 本预案是假设，不是实测结论。
+
+================================================================================
+【上一轮失败点（只引用已落盘实测，不推断在途任务）】
+================================================================================
+最近一次**有正式判定**的任务是 `18448`（attempt #5），正式判定
+`acceptance-verdict-18448.md` = `REJECT_FAILURE`（round-009 收尾复核）。
+证据 `evidence/p4-novix-18448/result.json`（575,285 B，SHA-256
+`74a186458c202f03…` 已核验 MATCH）、`config.json`、`config_preregistered.json`。
+
+- `design_valid=true`、146/146 validation、32/32 测试、326 raw NPZ、11 paired seeds、
+  五个公开数据文件逐字节哈希验证。不是 design_invalid、不是平台故障、不是达标。
+- 首次 `DOMAIN_USABLE`（SINTEL ceiling **0.700000** 恰达冻结门槛）、
+  首次算出 real-domain delta：**`delta(lif_homeostasis − stateless) = 0.000000`**
+  （5/11 seeds 同值、CI `[0,0]`、三检验族 p 全 = 1.0、两条件 accuracy 全
+  **0.466667**、**11 个 paired differences 全 0**）→ `c1_guidance.verdict=failure`、
+  `minimum(+0.15)` / `expected_strong(+0.25)` 均未达、`transfer_claim_made=false`。
+- DAVIS `INPUT_BOTTLENECK`：current 0.613333 vs **oracle 1.000000**、
+  gap `+0.386667` → 标签完全可分，信息在输入编码侧丢失。
+- **阴性对照校准失败（未解决有效性隐患，原样保留）**：
+  `label_permutation − lif_combo` 11-seed delta `−0.115909`、
+  p `0.0009765625` → `negative_controls_calibrated_nonsignificant=false`。
+- 跨实现 `single_factor_flip_localized=false`（7 单因子 + 2 端点全部完成、
+  无任一单因子达到冻结的 exact-zero flip 判据）。
+- 统计效力修复 5→11 seeds 有效，但平台明确「仅反映检验力增加，
+  **不作为机制成立证据**」。
+- SYNTHETIC 锚点：`A=0` 0.975000 为输入信息上界；
+  `degree_null_lif` 0.886667 仍高于全部真实图 LIF 条件 →
+  **「保度零模型从未输给真实生物接线」继续成立**，禁止宣称生物接线优势。
+
+前 6 次远程尝试（18156 / 18228 / 18273 / 18390 / 18448 / 18489）全部
+从未让 real-domain delta 达到 `minimum(+0.15)`；`18489` 正在检验
+「梯度路径（冻结探针 → surrogate-gradient 端到端）」是否为未被检验的自变量，
+结果未出。
+
+================================================================================
+【本轮假设 · 机制级不同于 attempt #6】
+================================================================================
+attempt #6（`18489`）的假设是「膜状态递推从未接收梯度，梯度路径才是
+未被检验的自变量」，其三项必修分别针对：阴性对照校准（统计检验层）、
+DAVIS 输入编码（表示层）、SINTEL delta≡0 的两条件实现分支（代码路径层）。
+**三者共同默认了一件事：读出与决策规则本身是「可辨识的」**——即若存在
+真实效应，现用的 train-only ridge + argmax 流水线能够把它表达成一个非零 delta。
+
+本轮假设（新，机制级不同；是假设不是结论）：
+前 6 次实验反复出现的「两条件 accuracy 完全相同 / paired differences 全 0 /
+delta 恒 0」与「阴性对照却显著非 0」这一**组合**，可能不是膜状态的性质，
+而是**测量装置不可辨识（measurement-apparatus non-identifiability）**：
+  ① 决策规则退化：两条件在真实域上塌成同一个常数/多数类预测器
+     （0.466667 与类别边际、混淆矩阵、logit margin 的结构未被报告），
+     此时 `delta≡0` 是**测量产物**，既不是负结果也不是正结果，
+     而是**不可解释（uninformative）**；
+  ② 缺少**阳性对照灵敏度**：历轮只有阴性对照（标签置换 / 零效应注入 /
+     打乱帧序 / flash / 冻结 gain），**从未在真实域特征流水线上注入一个
+     已知强度的信号并检验读出能否单调恢复它**。没有灵敏度传递函数，
+     就无法排除「即使真实存在 +0.25 的膜状态增益，本装置也测不出来」。
+  ③ 18448 的阴性对照显著非 0（`−0.115909`, p=0.0009765625）与主对比
+     恰好全 0 并存，暗示**条件身份 / 标签边际 / 归一化统计量的作用方式**
+     可能在不同对照间不一致；attempt #6 的必修①只查置换构造与经验 I 类错误率，
+     **不查决策规则本身是否退化**。
+
+可证伪推论（全部训练前冻结、可落盘判定）：
+  (i) 若装置可辨识：混淆矩阵非常数、`predicted_class_marginal` 非退化、
+      logit margin 分布有非零方差，且**已知信号注入阶梯**的恢复斜率 > 0
+      且 bootstrap CI 下界 > 0；
+  (ii) 若装置不可辨识：两条件塌成常数/多数类预测器，或注入已知 +0.25 强信号
+      后读出恢复量仍 ≈ 0 → 则**18448/18390/18489 一切 `delta≈0` 的判定
+      必须改标 `UNINFORMATIVE_MEASUREMENT`**，不得作为「膜状态无增益」的
+      科学结论，也不得作为「有增益」的结论；
+  (iii) 该重分类**不会把任何失败改写成成功**：`c1_guidance` 仍是 failure、
+      `transfer_claim_made` 仍为 false、文章仍不合格、仍继续死磕同一 C1。
+
+**与 attempt #6 的关系**：不是否定梯度路径假设（`18489` 结果未出），
+而是在其上**新增一个更前置的硬门**——若 `18489` 的 e2e delta 仍 ≈0，
+必须先证明「装置能测出已知效应」，那个 0 才有资格被解释。
+`expected_strong(+0.25)`、`minimum(+0.15)`、真实域 ceiling 0.70 **均不下调**。
+
+================================================================================
+【具体改动 · 相对 `query-round010-attempt6.txt` 的机制级 diff】
+================================================================================
+1.【核心转向·新增主门】`measurement_identifiability_gate` 升为**训练前第一硬门**：
+   在看到任何主 contrast 结果之前，对**每个真实域 / 每个条件**落盘
+   混淆矩阵、`predicted_class_marginal`、类别边际、`logit_margin` 的
+   min/max/mean/std/非常数维、常数预测器指示、`majority_baseline_acc`，
+   并给出 `decision_rule_identifiable: true|false` 与判定依据。
+   attempt #6 完全没有这一层（其训练前 6 项自检是 KC 可达 / SYNTHETIC ceiling /
+   real ceiling / 梯度分支可区分 / 阴性对照校准 / 数据完整性）。
+2.【核心新增·决定性阳性对照】`known_signal_injection_ladder`：
+   在**同一条真实域特征流水线**（同一图 / 复眼 / K / 归一化 / PCA / ridge /
+   split / seeds）上，训练前一次性冻结并哈希锁定一组**已知强度的方向信号注入**
+   （SNR/效应量阶梯 {0, 0.05, 0.10, 0.15, 0.25, 0.40}，注入位置与作用维度
+   写死、注入后不触碰标签与 split），逐档落盘 `recovered_delta` +
+   bootstrap 95% CI + 单调性检验 + 拟合斜率与 CI 下界。
+   预注册读出 = `sensitivity_slope` 与 `recover_known_plus_0_25` 布尔值。
+   **历轮 6 次实验从未做过任何阳性对照**，这是全新的证据轴；
+   与 attempt #6 必修①的「零效应注入蒙特卡洛」（阴性对照）方向相反、互补。
+3.【新增·历史证据重分析，不需新 GPU 主张】用 (1)(2) 的同一套判据
+   **重分析已哈希核验归档的 `evidence/p4-novix-18448/result.json` 与
+   18390/18448 的 raw NPZ**，输出 `historical_delta_interpretability` 表：
+   逐任务标注 `INFORMATIVE_NEGATIVE / UNINFORMATIVE_MEASUREMENT / INSUFFICIENT_RAW`。
+   这是**对已落盘证据的重新审计**，不是新实验结论、不编造数值、
+   不删改原始档位；若 raw NPZ 不足以判定则如实标 `INSUFFICIENT_RAW`。
+4.【新增·条件身份 / 标签边际阶梯】`label_marginal ∈ {平衡, 0.6/0.4, 0.75/0.25}`
+   × `condition_dispatch ∈ {独立拟合, 共享 scaler, 共享 PCA}` 的受控小阶梯，
+   逐格落盘 (1) 的退指纹；目的**不是调类别权重凑显著**，而是定位
+   18448 阴性对照显著非 0 与主对比恒 0 并存的来源。
+   与 attempt #6 必修①的「置换构造审计」不同：本项改的是**边际与统计共享域**，
+   不是置换规则；与 L5（归一化统计量估计域候选）方向相近但本预案是
+   **C1 同一 idea 的测量有效性前置门**，不是新 idea，且不重复其跨 split 泄漏阳性对照。
+5.【保留·降级为主门之后的次级实验】attempt #6 的梯度路径 2×2
+   `{frozen+ridge, surrogate_gradient_e2e} × {stateless, LIF}` +
+   `stateless_trained_identically` 与三项必修诊断**全部保留为可执行条件矩阵**
+   （不删失败证据、不静默下调门槛），但**只在主门通过后其数值才允许被解释**；
+   主门未过则全部 contrast 标 `uninterpretable_measurement`，数值仍原样落盘。
+6.【新增·主读出重分类契约】`result.json` 的 `c1_guidance` 增加第四态
+   `UNINFORMATIVE_MEASUREMENT`（与既有 `failure` / 达标 并列）；
+   `transfer_claim_made` 在该态下**强制 false**；
+   `migration_verdict` 增加 `NO_CLAIM_MEASUREMENT_NOT_IDENTIFIABLE`。
+   明确：该态**不是**达标、**不是**机制否证、**不是**把负结果改写为正结果。
+7.【沿用·测试集暴露台账】exposed 显式标注 + 冻结一组新的不相交 holdout
+   （DAVIS 按序列 ID、Sintel 按 scene 哈希锁定），
+   exposed / unexposed 两套数值分别全部报告，最终选择只在未暴露 holdout 评估一次。
+8.【沿用·禁退化】完整边表 178,853,187 B（`prefix=false`、HTTP Range 分块拼接
+   + gzip 校验）、eye→KC exact-hop 自检 K=3 / 2,544 KC、训练前 invariant、
+   2000 次 paired bootstrap 95% CI、BH-FDR q=0.05、train-only PCA/scaler/ridge/MI；
+   `A=0` 明确为**输入信息上界（不得写成生物接线优势）**、精确保度零模型
+   （in/out 度、权重多重集、nnz、互反边对、自环精确相等）、identity 图、
+   三机制一因子移除消融、打乱帧序 / flash / 冻结 gain / 标签置换阴性对照、
+   每条件每 seed 一个 raw NPZ；「保度零模型从未输给真实接线」继续成立。
+9.【沿用·已验证有效的产物持久化】最后一步用 Python 直接写
+   `project/result.json` 与 `project/config.json` 两个主文件 +
+   byte-identical 双 snapshot + `project/MANIFEST.txt`，立即
+   `os.path.exists` / `getsize` / `sha256` 自检并把**实测输出**贴进最终回复；
+   `project/result.json` 必须落在可 pull 的 workspace 内；
+   任何提前终止前先落盘 `experiment.py` 与阶段性 `result.json`。
+   18390 / 18448 已修好该缺陷，不得退化。
+10.【不变】`minimum` / `expected_strong` 一律沿用 C1 `guidance.md`
+    §Expected Results（real delta `>= +0.15` / `>= +0.25` + 迁移裁决 +
+    一因子消融），**不静默下调**；真实域 ceiling 冻结门槛 0.70 **不下调**；
+    两域都 unavailable 时不得作迁移主张；`runtime_hours` 只是可行性估算，
+    **不是超时参数**；提交命令不带 `--max-turns` / `--timeout` / 阻塞 `watch`。
+
+================================================================================
+【预期信号 / 若失败下一步】
+================================================================================
+· 预期：`decision_rule_identifiable=true`（混淆矩阵非常数、logit margin 非零方差）；
+  `known_signal_injection_ladder` 的 `sensitivity_slope > 0` 且 CI 下界 > 0、
+  `recover_known_plus_0_25=true`；历史重分析表给出每个既往 delta 的可解释性标签；
+  主门通过后，attempt #6 的 e2e / 冻结 2×2 数值才进入 C1 §Expected Results 判定。
+· 若主门失败（决策规则退化 / 注入 +0.25 仍测不出）：
+  **如实把相关历史的 `delta≈0` 重分类为 `UNINFORMATIVE_MEASUREMENT`**，
+  明确指出此前 6 次「诊断型负结果」中哪些其实不可解释；
+  **不是达标、不是机制否证、不是方法优越、不是把负结果写成正结果**；
+  保留全部失败证据，继续死磕同一 C1（`abandon_allowed=False`），
+  下一步按 `research-recovery.md` 修装置（换可辨识读出 / 修条件分派 / 修标签边际），
+  重跑同一主表后再判定，门槛与 `expected_strong` 仍不下调。
+· 若主门通过而 e2e delta 仍 ≈0：则回到 attempt #6 的假设被否证分支，
+  如实收窄为「连接组约束协议下无可训练膜状态增益」的诊断型负结果，
+  转 I4 逐跳信息预算 / 残差修复并结合测试集暴露台账。
+· 若 `18489` 已终态且三项必修诊断给出明确结论，round-012 **必须据实改写本预案**
+  （尤其是决策规则指纹与注入阶梯的档位），不得原样启用。
+· 任何情况：不把「实验跑完 / design_valid / 方差恢复 / 首次 DOMAIN_USABLE /
+  装置通过主门」写成「结果达标」；不删失败证据；不把负结果改写成正结果；
+  不把 `A=0` 高于图条件写成生物接线优势；不编造任何数值。
+
+================================================================================
+【若 round-012 决定启用，query 仍需自带的最小要素（提醒，不是本文件内容）】
+================================================================================
+公开数据 URL（Zenodo 21549559 CC BY 4.0 / DAVIS-2017 / MPI-Sintel 官方直链）、
+SYNTHETIC 显式标注、依赖清单（干净环境缺 scipy/sklearn 需自行安装）、
+全部条件与 seeds、硬件自检、训练前 `config_preregistered.json` 冻结 + 哈希锁定、
+全档全部落盘全部报告、拿不到数据标 `unavailable` 不许编造、
+最终回复必须给实际数值、主文件必须在可 pull workspace 内。
+提交命令：`novix task create --json "<自包含全量实验 query>" --provider novixlet
+--resource-pool exp-4090 --gpu --gpu-count 1`（**无** `--max-turns` / `--timeout` / `--watch`）。
+
+================================================================================
+【收尾复核追加（同轮 21:34–21:37，覆盖上方「待读 verdict」字样）】
+================================================================================
+本文件写就后的**收尾复核**发现 `18489` 已于本轮执行期间跃迁为平台终态
+`error`（`errorCode="1"`、`updatedAt 21:34:21`、`steps=0`、
+`errorInfo = "stale task auto-reconciled: sandbox became unhealthy before
+completion callback (novixlet claim failed: node release allocation identity
+is missing or changed; final synchronization not proven)"`）；
+`debug task --logs` 显示 `task.status=failed`、`runtime_logs` 全空、
+`dispatch_phase` 仍停在 `preparing`；`debug ls task:18489` 返回
+`no session matches` —— **远端工作区不存在、零产物、远程 agent 从未跑实验**。
+完整证据见同目录 `failure-diagnostics.md` 的 round-011 附录。
+
+因此**更正上方两处措辞**（不改动其余设计内容）：
+  · 上方「round-012 必须先读 `18489` 的正式 `acceptance-verdict-18489.md`
+    与三项必修诊断的实测结论」**不可能执行** —— 本次没有 verdict、
+    三项必修诊断一项都没跑、没有 `result.json`。
+  · 正确交接是：round-012 Step 0 **先查平台健康**（`/track-ops/healthz`、
+    `pool_status`、`debug ls` 可读性，参照 round-003 四信号流程），
+    并幂等确认 `18489` = `FAILED` / `RECORD_FAILURE`；
+    平台健康后，把本预案的**测量可辨识性前置门 + 已知信号注入阳性对照阶梯**
+    与 attempt #6 的梯度路径 2×2 / 三项必修诊断**合并成一份新的自包含 query**
+    （不得原样重提 `query-round010-attempt6.txt`），无预算参数重提。
+    平台仍 unhealthy → 只如实记录收尾，不刷额度、不绕行。
+  · attempt #6 的梯度路径假设**仍未被检验**（不是被否证），
+    故本预案第 5 条「保留其全部条件矩阵」的优先级**上调**：
+    主门通过后必须真的跑完梯度路径 2×2，不能只做诊断而丢掉主命题检验。
+
+`expected_strong(+0.25)` / `minimum(+0.15)` / ceiling 0.70 门槛**仍不下调**；
+本轮**仍不提交**、不等待、不动流水线、不标任何 stage passed；
+平台故障按 §3.6(4) 明文**不构成放弃理由**，`abandon_allowed=False` 不变。

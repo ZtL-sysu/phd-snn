@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "stage": "P13/generic-export-repair",
+  "status": "passed",
+  "source": "writing\\arc-export-v3\\stage-22",
+  "destination": "writing\\p13-final-v3\\stage-22",
+  "geometry_removed": true,
+  "labels_removed": 21,
+  "latexmk_returncode": 0,
+  "problems": [],
+  "tex_sha256": "431174d276435a61e8626dbca8078439a1b31c8b53e867cb79818cc465f6542b",
+  "pdf_sha256": "f684e410a4b824cfc43e2b93df9d76e6c7c69ef30535bd46817e688e55015ece",
+  "bib_sha256": "be176ede7327203c59bbb3ceaf0482853863064406964a0d744a73fdc4f0e6bb"
+}

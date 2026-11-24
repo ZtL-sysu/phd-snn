@@ -1,0 +1,52 @@
+[
+  {
+    "dataset": "MNIST",
+    "fit": {
+      "threshold": 1.2299020737409592,
+      "coverage": 0.88671875,
+      "risk": 0.048458149779735726,
+      "status": "calibrated"
+    },
+    "validation": {
+      "coverage": 0.849609375,
+      "selective_error": 0.04367816091954023,
+      "accepted": 435
+    },
+    "random_error_percentiles": {
+      "p5": 0.07142857142857142,
+      "p50": 0.08045977011494253,
+      "p95": 0.08775981524249422
+    },
+    "random_win_fraction": 1.0,
+    "gate": {
+      "coverage_pass": true,
+      "risk_pass": true,
+      "random_win_pass": true
+    }
+  },
+  {
+    "dataset": "CIFAR10",
+    "fit": {
+      "threshold": 0.2261197417974472,
+      "coverage": 0.083984375,
+      "risk": 0.046511627906976716,
+      "status": "calibrated"
+    },
+    "validation": {
+      "coverage": 0.091796875,
+      "selective_error": 0.0425531914893617,
+      "accepted": 47
+    },
+    "random_error_percentiles": {
+      "p5": 0.2972972972972973,
+      "p50": 0.41304347826086957,
+      "p95": 0.5263157894736842
+    },
+    "random_win_fraction": 1.0,
+    "gate": {
+      "coverage_pass": false,
+      "risk_pass": true,
+      "random_win_pass": true
+    }
+  }
+]

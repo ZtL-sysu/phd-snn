@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "stage": "P21/final-delivery-consistency",
+  "package": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\POS-C13\\f-research-v1-run-20261118-113346-pos-hop-event-controls-v3\\deliverables\\POS-C13-final-v2",
+  "source_consistency": {
+    "paper.tex": {
+      "accepted": "48b2be0bbcb774e4418d1a5d273d6423f97628a20dacfbdeb8e7b713ddc7c37a",
+      "package": "48b2be0bbcb774e4418d1a5d273d6423f97628a20dacfbdeb8e7b713ddc7c37a",
+      "extracted": "48b2be0bbcb774e4418d1a5d273d6423f97628a20dacfbdeb8e7b713ddc7c37a",
+      "archive": "48b2be0bbcb774e4418d1a5d273d6423f97628a20dacfbdeb8e7b713ddc7c37a",
+      "match": true
+    },
+    "references.bib": {
+      "accepted": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5",
+      "package": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5",
+      "extracted": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5",
+      "archive": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5",
+      "match": true
+    },
+    "figures/data/figure1-hop-coding.png": {
+      "accepted": "67e9b0648ffc2537312f48cfa20cdc6130cc2f6486cf829a32dbbfe2a2ea8475",
+      "package": "67e9b0648ffc2537312f48cfa20cdc6130cc2f6486cf829a32dbbfe2a2ea8475",
+      "extracted": "67e9b0648ffc2537312f48cfa20cdc6130cc2f6486cf829a32dbbfe2a2ea8475",
+      "archive": "67e9b0648ffc2537312f48cfa20cdc6130cc2f6486cf829a32dbbfe2a2ea8475",
+      "match": true
+    },
+    "figures/data/figure2-method-tradeoff.png": {
+      "accepted": "44a8ddce5d7163edcba875efe2452b06968c2ac6d4cb0644f2d071408407cc00",
+      "package": "44a8ddce5d7163edcba875efe2452b06968c2ac6d4cb0644f2d071408407cc00",
+      "extracted": "44a8ddce5d7163edcba875efe2452b06968c2ac6d4cb0644f2d071408407cc00",
+      "archive": "44a8ddce5d7163edcba875efe2452b06968c2ac6d4cb0644f2d071408407cc00",
+      "match": true
+    },
+    "figures/data/figure3-order-controls.png": {
+      "accepted": "30a4fd9dca685668800b284622bee5d3c96e046bfd1bf8382fb67f0f472dfcad",
+      "package": "30a4fd9dca685668800b284622bee5d3c96e046bfd1bf8382fb67f0f472dfcad",
+      "extracted": "30a4fd9dca685668800b284622bee5d3c96e046bfd1bf8382fb67f0f472dfcad",
+      "archive": "30a4fd9dca685668800b284622bee5d3c96e046bfd1bf8382fb67f0f472dfcad",
+      "match": true
+    }
+  },
+  "accepted_pdf": {
+    "sha256": "bc59185a9ebc4ceef6b76aeee5b53f48fc49f44cb8e01cc6fea73197ff50ecdf",
+    "package_sha256": "bc59185a9ebc4ceef6b76aeee5b53f48fc49f44cb8e01cc6fea73197ff50ecdf",
+    "package_copy_match": true,
+    "pages": 8,
+    "embedded_font_failures": []
+  },
+  "clean_recompile": {
+    "latexmk_returncode": 0,
+    "sha256": "5e2c037bd228050ecee9fac03a3e9c8652b74d85216af8b3d31dc5d9879f060b",
+    "pages": 8,
+    "normalized_text_match": true,
+    "accepted_normalized_text_sha256": "176fb1d7621b32be5229f971c38dfe0ab8f2ca4adc1aca42de128ca4f0ed999c",
+    "clean_normalized_text_sha256": "176fb1d7621b32be5229f971c38dfe0ab8f2ca4adc1aca42de128ca4f0ed999c"
+  },
+  "bibliography": {
+    "entry_count": 32,
+    "citation_key_count": 32,
+    "missing_keys": [],
+    "uncited_entries": []
+  },
+  "pdf_text_checks": {
+    "question_mark_placeholders": false,
+    "six_body_sections": true
+  },
+  "package_pdf_count": 1,
+  "required_files": {
+    "paper.tex": true,
+    "paper.pdf": true,
+    "references.bib": true,
+    "source-archive.zip": true,
+    "pipeline-state.md": true,
+    "pipeline-state.json": true,
+    "paper-guidance-audit.md": true,
+    "figure-table-insertion-audit.md": true,
+    "reference-dedup-audit.md": true,
+    "page-count-audit.md": true,
+    "submission-constraints.md": true,
+    "manuscript-metadata.md": true,
+    "experiment-traceability.md": true,
+    "citation-audit.md": true
+  },
+  "path_containment": true,
+  "pass": true
+}

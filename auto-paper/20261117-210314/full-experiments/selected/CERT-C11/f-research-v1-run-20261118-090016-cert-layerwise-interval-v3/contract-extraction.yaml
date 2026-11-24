@@ -1,0 +1,37 @@
+schema_version: 2
+guidance: inputs/guidance-v3.md
+title: Layerwise Interval Certificates for Quantized Messages in Frozen Two-Layer GNN-to-SNN Conversion
+target_tier: Q2+
+sections:
+  - Introduction
+  - Related Work
+  - Method
+  - Experiments and Results
+  - Discussion
+  - Conclusion
+exact_chain:
+  M: X @ W0
+  quantized: M_hat = Q(M)
+  hidden: H = relu(A @ M + b0)
+  hidden_hat: H_hat = relu(A @ M_hat + b0)
+  logits: Z = A @ H @ W1 + b_out
+  logits_hat: Z_hat = A @ H_hat @ W1 + b_out
+bounds:
+  proposed: abs(A) @ abs(A) @ Delta @ abs(W1)
+  euclidean: sqrt(sum_j(((abs(A) @ abs(A))[i,j] * Delta[j])**2)) * norm(W1[:,k], 2)
+  global_scalar: rowsum(abs(A) @ abs(A))[i] * max(Delta) * sum(abs(W1))
+numerical_policy:
+  model_precision: float32
+  bound_precision: float64
+  atol: 1e-10
+  rtol: 1e-12
+  quantizer_ties: upward
+  clipping_outside_declared_range: fail_cell
+  actual_error_in_bound_construction: forbidden
+binding_strong_gate:
+  deterministic_containment_cells: 36
+  median_width_over_rms_max: 10.0
+  per_cell_width_over_rms_max: 15.0
+  per_cell_min_tightening_vs_global: 0.25
+  proposed_no_looser_than_euclidean: true
+interpretation: deterministic theorem/implementation containment, not statistical coverage

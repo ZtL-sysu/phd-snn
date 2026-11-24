@@ -1,0 +1,229 @@
+{
+  "schema_version": "f-research-v1.p4.c1.attempt4.preregistered.v4",
+  "frozen_utc": "2026-11-08T06:30:00Z",
+  "pretraining_correction": "v1-v3 were superseded before any ceiling or formal registered-seed model fit. Explicit task scale 15,091,983 denotes coalesced directed pairs; exact-hop means first-reached hop (excluding 15 KCs reached at hop 2); hard-spike index_add is edge-binary; fan_in is the complete-graph incoming edge count rather than path-resolved count; and intermediate-hop ridge probes use a label-independent deterministic cap of the resolved KC width (2,544) so graph variants have equal readout parameter budgets. Development smoke tests exposed implementation mismatches; no registered accuracy, calibration, ceiling, or acceptance result had been computed.",
+  "supersedes_sha256": "26dbfe79d26674e3643754ca0ea1ebb66838b872b861a398f4afc60eb1bbbca6",
+  "task": {
+    "project": "f-research-v1",
+    "phase": "P4 full batch",
+    "target": "C1 correction loop v3 attempt #4",
+    "abandon_allowed": false,
+    "claim_policy": {
+      "synthetic_is_diagnostic_only": true,
+      "real_transfer_claim_requires_available_domain": true,
+      "both_real_unavailable_means_no_transfer_claim": true,
+      "a0_interpretation": "input-information upper bound, never biological-wiring advantage",
+      "completion_is_not_acceptance": true
+    }
+  },
+  "reproducibility": {
+    "seeds": [1, 2, 3, 4, 5],
+    "stimulus_seed": 20261108,
+    "degree_null_seed": 24004,
+    "noise_seeds": [9101, 9102, 9103, 9104, 9105],
+    "label_permutation_seeds": [9201, 9202, 9203, 9204, 9205],
+    "random_projection_seeds": [9301, 9302, 9303, 9304, 9305],
+    "deterministic_torch": true,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 9404,
+    "paired_sign_flip_two_sided": true,
+    "minimum_two_sided_p_with_5_pairs": 0.0625,
+    "bh_fdr_alpha": 0.05,
+    "ridge_l2": 0.01
+  },
+  "data": {
+    "connectome": {
+      "url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content",
+      "expected_bytes": 178853187,
+      "expected_sha256": "402fa0e61198e6f26b2ef4fd18e0123cc2edff0bb1edca9dd31b29b8171580bc",
+      "range_chunk_bytes": 67108864,
+      "require_full_file": true,
+      "gzip_integrity_check": true,
+      "columns": ["pre_root_id", "post_root_id", "syn_count"],
+      "annotation_url": "https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content",
+      "annotation_expected_bytes": 7740866,
+      "annotation_sha256": "c68615fea6699908a3e13bad2b17917a77b1a2865d861f70373fd2714db2f43d",
+      "retina_url": "https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content",
+      "retina_expected_bytes": 629193,
+      "retina_sha256": "fbbd0c2ab83719cc4eff3df9a90e4a6dffe1b2ff9144db64709049c6567cd932",
+      "eye_definition": "all rows in right_visual_positions_all_neurons.csv; root_id unique; x_axis/y_axis min-max mapped to the 32x32 stimulus plane",
+      "kc_definition": "annotation cell_type starts with literal 'KC'; restrict to root_ids present in the complete biological graph; the resolved K=3 readout excludes KCs first reached at earlier hops",
+      "edge_weight": "binary directed connection for index_add dynamics; syn_count retained unchanged for degree-null weight-multiset preservation and audit",
+      "fan_in": "complete-graph incoming directed connection-edge count of each postsynaptic node; the denominator is computed before exact-hop path resolution"
+    },
+    "synthetic": {
+      "name": "SYNTHETIC_direction_diagnostic",
+      "n": 400,
+      "frames": 8,
+      "height": 32,
+      "width": 32,
+      "classes": ["left", "right"],
+      "class_balance": "exactly 200/200 before splitting",
+      "radius_integer_range_inclusive": [3, 5],
+      "start_x_integer_range_inclusive": [8, 24],
+      "start_y_integer_range_inclusive": [8, 24],
+      "speed_pixels_per_frame": 2,
+      "render_rule": "binary filled circle; horizontal coordinates wrap modulo 32 so both directions have identical support statistics",
+      "label_rule": "0=left, 1=right",
+      "split": "70/30 StratifiedShuffleSplit, separately frozen by each registered seed",
+      "flash_control": "same circle geometry and per-frame Bernoulli visibility with p=0.5; direction labels retained but motion removed",
+      "ceiling": "ridge on all 8x32x32 pixels flattened",
+      "ceiling_minimum": 0.9
+    },
+    "davis": {
+      "url": "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip",
+      "archive": "DAVIS-2017-trainval-480p.zip",
+      "protocol_name": "preregistered_GT_centroid_v1_only",
+      "allowed_posthoc_protocol": false,
+      "frames": 8,
+      "clip_stride": 4,
+      "mask_rule": "read official 480p indexed PNG masks; foreground is pixel value >0; union all foreground objects",
+      "centroid_rule": "for every frame compute the x centroid of all foreground pixels; require foreground in all eight frames; label 1 when least-squares x-centroid slope is positive and 0 when negative",
+      "motion_margin_rule": "discard a clip when absolute first-to-last fitted centroid displacement is below max(2 pixels, 0.005*frame_width)",
+      "roi_rule": "take the union foreground bounding box over the eight masks, expand each side by 10% of box size, clip to image, and use this one fixed ROI for all eight frames",
+      "pixel_rule": "multiply RGB JPEG by the frame foreground mask, crop the fixed union ROI, convert to ITU-R BT.601 grayscale, bilinear resize to 32x32, scale to [0,1]; no test-derived normalization",
+      "balance_rule": "after deterministic SHA-256 ordering of (sequence,start), retain equal left/right counts up to 400 total; never rebalance after seeing ceiling scores",
+      "split_rule": "70/30 sequence-group split selected using each registered seed, with both classes required in both folds; no overlapping sequence across folds",
+      "ceiling": "ridge on all eight processed frames flattened; five registered seeds",
+      "availability_threshold_mean": 0.7
+    },
+    "sintel": {
+      "url": "http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+      "https_fallback_url": "https://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+      "archive": "MPI-Sintel-complete.zip",
+      "download_rule": "HTTP Range 64 MiB chunks with resumable .part files, Content-Range validation, per-chunk SHA-256 ledger, byte-exact concatenation, ZIP integrity test",
+      "protocol_name": "preregistered_GT_flow_direction_v1_only",
+      "allowed_posthoc_protocol": false,
+      "frames": 8,
+      "clip_stride": 4,
+      "flow_rule": "read official training/flow .flo for each of seven adjacent frame pairs; within the fixed central ROI, pool all finite horizontal-flow values and use their median",
+      "flow_margin_rule": "discard a clip when absolute pooled median horizontal flow is below 0.25 pixel/frame",
+      "roi_rule": "full frame with a fixed 5% border removed on each side; no label-dependent or test-derived crop",
+      "pixel_rule": "use official training/clean RGB frames, crop the fixed ROI, convert to ITU-R BT.601 grayscale, bilinear resize to 32x32, scale to [0,1]; no test-derived normalization",
+      "label_rule": "0 when pooled median horizontal flow < -0.25, 1 when > +0.25",
+      "balance_rule": "after deterministic SHA-256 ordering of (sequence,start), retain equal left/right counts up to 400 total; never rebalance after seeing ceiling scores",
+      "split_rule": "70/30 sequence-group split selected using each registered seed, with both classes required in both folds; no overlapping sequence across folds",
+      "ceiling": "ridge on all eight processed frames flattened; five registered seeds",
+      "availability_threshold_mean": 0.7
+    }
+  },
+  "graph": {
+    "exact_hop_counts_to_report": [1, 2, 3, 4, 5, 6, 7, 8],
+    "primary_K": 3,
+    "fallback_rule": "use K=3 when at least one annotated KC is exact-hop reachable; otherwise choose the smallest K in 4..8 with nonzero annotated KC reachability; if all are zero use the nonzero hop among 2 then 3 with the largest reachable annotated-KC count; record the realized choice",
+    "resolved_readout": "all annotated KC root_ids exact-hop reachable at realized K, ordered by root_id",
+    "spectral_radius_method": "deterministic unweighted/binary connection-adjacency sparse power iteration, 100 iterations or relative change <1e-8",
+    "exact_hop_definition": "first-reached directed hop: remove all nodes reached at any shorter hop before counting the current frontier",
+    "degree_null": {
+      "scope": "complete edge table before exact-hop resolution",
+      "algorithm": "directed double-edge swaps; reciprocal directed pairs are swapped as undirected pairs and unilateral edges are swapped while rejecting self-loops, duplicate edges, or new reciprocal pairs",
+      "attempts_per_edge": 2,
+      "must_preserve": ["per-node in-degree", "per-node out-degree", "syn_count multiset", "edge-row nnz", "reciprocal directed-edge-pair count"],
+      "audit_exact": true
+    },
+    "identity": "fixed information-preserving tiled identity from the 32x32 input plane to the resolved KC width; repeated unchanged at each hop",
+    "a0": "no graph propagation; fixed input-plane-to-KC tiled readout; explicitly an input-information upper bound"
+  },
+  "model": {
+    "frames": 8,
+    "leak": 0.6,
+    "base_threshold": 0.15,
+    "soft_slope": 20.0,
+    "synaptic_scale": 8.0,
+    "base_fan_in_gain": 8.0,
+    "synapse_equation": "syn_h = fan_in_gain * synaptic_scale * index_add(presyn_signal once per resolved directed connection edge) / complete_graph_binary_fan_in(post); syn_count is not multiplied into dynamics",
+    "lif_equation": "v_h[t] = 0.6*v_h[t-1] + syn_h[t] + drive_h[t]; hard=1[v>=theta]; v_h[t] -= theta*hard",
+    "theta_zero_rule": "theta=0 is the preregistered no-gate analog upper bound: propagation uses v_raw rather than hard; hard-spike-rate diagnostic remains fraction(v_raw>0)",
+    "soft_readout": "mean over eight frames of sigmoid((v_raw-theta)*20)",
+    "stateless": "each frame independently applies K resolved operators with tanh after every hop, then averages over eight frames",
+    "drive_every_frame": true,
+    "combo": {
+      "adaptive_threshold_decay": 0.9,
+      "adaptive_threshold_increment": 0.05,
+      "refractory_steps": 2,
+      "ei_sign_rule": "presynaptic top_nt acetylcholine=+1; gaba or glutamate=-1; all missing/other=+1"
+    }
+  },
+  "condition_matrix": {
+    "base": ["stateless", "lif_homeostasis", "lif_combo", "degree_null_lif", "A0"],
+    "gate_grid": {
+      "theta": [0.0, 0.01, 0.05, 0.15, 0.3],
+      "fan_in_gain": [1.0, 8.0, 32.0]
+    },
+    "yoked_firing_rate": {
+      "targets": [0.02, 0.1],
+      "graphs": ["biological", "degree_null", "identity", "A0"],
+      "dynamics": ["stateless", "LIF"],
+      "calibration_data": "training split only",
+      "calibration_rule": "for each graph and seed, run deterministic coarse-to-fine threshold search over [0,64] using only training examples and choose theta minimizing absolute KC hard-spike-rate error; ties choose larger theta; apply that theta unchanged to its stateless and LIF held-out evaluations",
+      "tolerance": "max(0.01, 0.25*target)",
+      "test_selection_forbidden": true
+    },
+    "variance_information": {
+      "per_hop_metrics": ["feature_std", "nonconstant_dimensions", "S_B", "S_W", "Fisher_ratio", "class_conditional_mean_distance", "mutual_information", "ridge_probe_accuracy"],
+      "mutual_information_estimator": "mean per-dimension plug-in discrete mutual information with 8 train-quantile bins; train-derived bin edges applied unchanged to held-out examples",
+      "mi_bins": 8,
+      "variance_matched_noise_target_std": 0.2075,
+      "variance_mismatched_noise_target_std": 0.10375,
+      "noise_distribution": "isotropic Gaussian generated by preregistered noise seed, centered per feature and globally rescaled on training data only",
+      "negative_controls": ["variance_matched_noise", "variance_mismatched_noise", "training_label_permutation"]
+    },
+    "readout_states": {
+      "states": ["v_raw", "hard_spike", "soft_sigmoid", "spike_count", "threshold_crossing_time"],
+      "temporal_reduction": {
+        "v_raw": "mean over frames",
+        "hard_spike": "mean over frames",
+        "soft_sigmoid": "mean over frames",
+        "spike_count": "sum over frames divided by 8",
+        "threshold_crossing_time": "first crossing index divided by 8; no crossing encoded as 1.125"
+      },
+      "pca_components": 64,
+      "pca_fit": "training split only, deterministic full SVD, dimension min(64,n_train-1,n_features)",
+      "equal_parameter_rule": "every state is reduced to the same realized component count before the identical ridge",
+      "random_projection_control": "Gaussian projection to the same realized component count with preregistered seed and 1/sqrt(d) scaling"
+    },
+    "ablations": ["combo_minus_adaptive_threshold", "combo_minus_refractory", "combo_minus_ei_sign", "fixed_theta_recalibrate_gain", "fixed_gain_recalibrate_theta"],
+    "negative_controls": ["shuffled_frame_order", "flash_control", "frozen_gain", "training_label_permutation", "degree_null", "identity"]
+  },
+  "metrics": {
+    "feature_std": "mean across dimensions of sample standard deviation (ddof=1)",
+    "nonconstant_threshold": 1e-12,
+    "intermediate_hop_probe_dimension_rule": "use all dimensions when <= resolved KC width; otherwise take 2,544 root-id-ordered evenly spaced dimensions, independent of labels/features, before StandardScaler+ridge; unsupervised full-layer dispersion remains computed on all dimensions",
+    "fisher": "S_B/S_W where S_B is class-count-weighted squared distance of class means to global mean and S_W is total squared within-class deviation; zero denominator yields null unless numerator is positive, then infinity",
+    "class_mean_distance": "Euclidean distance between class means divided by sqrt(feature dimension)",
+    "probe": "StandardScaler fit on training features followed by RidgeClassifier(alpha=0.01) fit on training labels; held-out accuracy only",
+    "ci": "paired-seed nonparametric bootstrap percentile 95% interval with 2000 resamples",
+    "exact_p": "two-sided exact paired sign-flip test across five registered seeds",
+    "multiple_testing": "Benjamini-Hochberg FDR q=0.05 over the preregistered contrast family"
+  },
+  "invariants": {
+    "kc_reachable_count": "must report hops 1..8; fallback is allowed only by the frozen rule",
+    "kc_feature_std": "never early-terminate; run all B/C/D/E/F/G diagnostics and classify one of COLLAPSE_UPSTREAM_OF_GATE, VARIANCE_RESTORED_INFO_LOST, or VARIANCE_AND_INFORMATION_RESTORED without turning the class into a superiority claim",
+    "synthetic_ceiling_minimum": 0.9,
+    "real_domain_ceiling_minimum": 0.7
+  },
+  "acceptance": {
+    "minimum_and_expected_strong_source": "C1 guidance.md Expected Results; unchanged from attempts 1-3",
+    "real_domain_delta_minimum": 0.15,
+    "real_domain_delta_expected_strong": 0.25,
+    "one_factor_ablation_required": true,
+    "thresholds_must_not_be_lowered": true,
+    "expected_mechanistic_signal": {
+      "some_biological_gate_cell_feature_std_gt_zero": true,
+      "some_biological_gate_cell_hard_spike_rate_gt_zero": true,
+      "yoked_2x2_pairwise_delta_ci_crosses_zero": true,
+      "v_raw_or_hard_spike_probe_above_soft_sigmoid_with_ci_lower_gt_zero": true,
+      "fisher_agrees_with_probe": true,
+      "variance_matched_noise_does_not_recover_a0_probe": true,
+      "at_least_one_real_ceiling_ge_0_70": true
+    }
+  },
+  "output_contract": {
+    "main_files": ["result.json", "config.json"],
+    "snapshots_byte_identical": true,
+    "raw_npz_per_condition_seed": true,
+    "persist_via_python_binary_write": true,
+    "manifest_after_main_files": true,
+    "final_ls_and_sha_self_check": true
+  }
+}

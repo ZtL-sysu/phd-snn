@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "stage": "P7/AutoResearchClaw-17-PAPER_DRAFT",
+  "status": "failed-validation",
+  "arc_checkout": "C:\\code\\AutoResearchClaw",
+  "arc_version": "0.3.1",
+  "arc_stage_source": "C:\\code\\AutoResearchClaw\\researchclaw\\pipeline\\stage_impls\\_paper_writing.py",
+  "arc_stage_source_sha256": "aa1a84ff85691fed8a6691d0ab1839e5b6e449347840458ed10535432b559321",
+  "executor_identity": {
+    "provider": "acp",
+    "agent": "claude",
+    "agent_cli_version": "2.1.325 (Claude Code)",
+    "acpx_version": "0.19.2",
+    "response_models": [],
+    "researchclaw_version": "0.3.1"
+  },
+  "context_isolation": {
+    "status": "verified-clean-external-boundary",
+    "clean_request_files": [
+      "writing\\request-p7-part-1-title-abstract-introduction-related-work.json",
+      "writing\\request-p7-part-2-method-experiments-setup.json",
+      "writing\\request-p7-part-3-results-discussion-conclusion.json"
+    ],
+    "clean_request_hashes": [
+      "ae3f136f95441c5ae87fda88366de8e74be6debabd4a6c2f6d86166d417f2757",
+      "4082ee80cd594bc57e384158f7e014cb82870b6f259e2bfbc3142d8d1364f883",
+      "c4aa5dcaa034a9d22385c48c5b424a687fc390e305a079de48e4a0c246d3e538"
+    ],
+    "arc_internal_prompt_sent_to_model": false,
+    "raw_execution_logs_sent_to_model": false,
+    "compatibility_fixture_used_as_model_context": false,
+    "internal_arc_calls": 6,
+    "external_model_calls": 3,
+    "note": "The installed ARC Stage 17 control flow was executed. Its three historical writing calls were replaced at the external model boundary by the three bounded writing_adapter requests. The ARC anti-simulation fixture was used only to pass its internal guard and was never sent to the model."
+  },
+  "responses": [],
+  "validation": {
+    "valid": false,
+    "problems": [
+      "top-level sections are [], expected ['1 Introduction', '2 Related Work', '3 Method', '4 Experiments and Results', '5 Discussion', '6 Conclusion']",
+      "draft has fewer than 2800 words",
+      "forbidden top-level section present: ## Results",
+      "forbidden top-level section present: ## Experiments",
+      "forbidden top-level section present: ## Limitations",
+      "missing required phrase or value: matched total padded serialized-bit budget",
+      "missing required phrase or value: held-out confirmation after validation exposure",
+      "missing required phrase or value: 1.86",
+      "missing required phrase or value: 2.85",
+      "missing required phrase or value: 1.020",
+      "missing required phrase or value: 1.124",
+      "missing required phrase or value: 218.23",
+      "missing required phrase or value: our matched-budget adaptations",
+      "draft contains a placeholder",
+      "Conclusion is missing or incomplete"
+    ],
+    "expected_sections": [
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "4 Experiments and Results",
+      "5 Discussion",
+      "6 Conclusion"
+    ],
+    "actual_sections": [],
+    "word_count": 65,
+    "draft_sha256": "e9c9645dc978857a99c13754c7702be5b1d3245c0591dc22d5f86d953735620f",
+    "reverse_outline_sha256": "51100680bc2cad5deb7c978e91d22662a5578041cd51e9f986c4ea029f7118c0"
+  },
+  "arc_stage_result": {
+    "stage": "17",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "paper_draft.md"
+    ],
+    "evidence_refs": [
+      "stage-17/paper_draft.md"
+    ]
+  }
+}

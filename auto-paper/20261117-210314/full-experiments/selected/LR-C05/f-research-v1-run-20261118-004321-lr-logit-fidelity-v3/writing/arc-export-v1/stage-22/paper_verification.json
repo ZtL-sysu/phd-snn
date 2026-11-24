@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "severity": "WARN",
+  "total_checked": 93,
+  "total_verified": 78,
+  "strict_violations": 0,
+  "lenient_violations": 15,
+  "fabrication_rate": 0.1613,
+  "unverified_numbers": [
+    {
+      "value": 2708.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 1433.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 2277.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 2325.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 5201.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 2089.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 28.93,
+      "line": 160,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": false
+    },
+    {
+      "value": 36.19,
+      "line": 160,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": false
+    },
+    {
+      "value": 35.24,
+      "line": 160,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": false
+    },
+    {
+      "value": 0.53,
+      "line": 196,
+      "section": "Task and Runtime Trade-offs",
+      "in_table": false
+    },
+    {
+      "value": 1.17,
+      "line": 196,
+      "section": "Task and Runtime Trade-offs",
+      "in_table": false
+    },
+    {
+      "value": 1.86,
+      "line": 196,
+      "section": "Task and Runtime Trade-offs",
+      "in_table": false
+    },
+    {
+      "value": 2.85,
+      "line": 196,
+      "section": "Task and Runtime Trade-offs",
+      "in_table": false
+    },
+    {
+      "value": 28.0,
+      "line": 198,
+      "section": "Task and Runtime Trade-offs",
+      "in_table": false
+    },
+    {
+      "value": 28.0,
+      "line": 207,
+      "section": "Task and Runtime Trade-offs",
+      "in_table": false
+    }
+  ],
+  "fabricated_conditions": [],
+  "config_warnings": [],
+  "summary": "severity=WARN; checked=93, verified=78, unverified=15"
+}

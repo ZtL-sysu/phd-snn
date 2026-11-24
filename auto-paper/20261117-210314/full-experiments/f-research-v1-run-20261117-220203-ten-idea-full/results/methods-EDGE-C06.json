@@ -1,0 +1,113 @@
+{
+  "asset": "FlyWire syn_count",
+  "weights": 385946,
+  "device": "cuda",
+  "rows": [
+    {
+      "bits": 2,
+      "levels": 4,
+      "float_bits": 32,
+      "storage_reduction": 16.0,
+      "uniform": {
+        "relative_error": 0.8114054169792058,
+        "aggregate_relative_error": 0.7527838657427902,
+        "mass_relative_error": 0.7480265119143162
+      },
+      "log": {
+        "relative_error": 0.7232554557108165,
+        "aggregate_relative_error": 0.27297736332043143,
+        "mass_relative_error": 0.1816734284295342
+      },
+      "quantile": {
+        "relative_error": 0.8565343431001887,
+        "aggregate_relative_error": 0.24438172167045755,
+        "mass_relative_error": 0.0
+      }
+    },
+    {
+      "bits": 3,
+      "levels": 8,
+      "float_bits": 32,
+      "storage_reduction": 10.666666666666666,
+      "uniform": {
+        "relative_error": 0.5975065365228646,
+        "aggregate_relative_error": 0.593084302923108,
+        "mass_relative_error": 0.5923509855112857
+      },
+      "log": {
+        "relative_error": 0.27581790276199925,
+        "aggregate_relative_error": 0.08240419364053458,
+        "mass_relative_error": 0.015930224178988463
+      },
+      "quantile": {
+        "relative_error": 0.764263832103133,
+        "aggregate_relative_error": 0.22157859959939613,
+        "mass_relative_error": 0.0
+      }
+    },
+    {
+      "bits": 4,
+      "levels": 16,
+      "float_bits": 32,
+      "storage_reduction": 8.0,
+      "uniform": {
+        "relative_error": 0.41630678953566336,
+        "aggregate_relative_error": 0.43003157089824706,
+        "mass_relative_error": 0.430315571315517
+      },
+      "log": {
+        "relative_error": 0.12398479675428485,
+        "aggregate_relative_error": 0.040697670736909254,
+        "mass_relative_error": 0.01846895744709179
+      },
+      "quantile": {
+        "relative_error": 0.6760070327367811,
+        "aggregate_relative_error": 0.1970082337242904,
+        "mass_relative_error": 0.0
+      }
+    },
+    {
+      "bits": 5,
+      "levels": 32,
+      "float_bits": 32,
+      "storage_reduction": 6.4,
+      "uniform": {
+        "relative_error": 0.27035889123477774,
+        "aggregate_relative_error": 0.2818938960822464,
+        "mass_relative_error": 0.28168283915794506
+      },
+      "log": {
+        "relative_error": 0.05960012621272613,
+        "aggregate_relative_error": 0.01814267780827325,
+        "mass_relative_error": 0.005638939447952295
+      },
+      "quantile": {
+        "relative_error": 0.5877073491947007,
+        "aggregate_relative_error": 0.17291802261692613,
+        "mass_relative_error": 0.0
+      }
+    },
+    {
+      "bits": 6,
+      "levels": 64,
+      "float_bits": 32,
+      "storage_reduction": 5.333333333333333,
+      "uniform": {
+        "relative_error": 0.16723050543432222,
+        "aggregate_relative_error": 0.16136709476101205,
+        "mass_relative_error": 0.1602019246641822
+      },
+      "log": {
+        "relative_error": 0.02816270286179642,
+        "aggregate_relative_error": 0.008700510282977407,
+        "mass_relative_error": 0.0026847248451238336
+      },
+      "quantile": {
+        "relative_error": 0.492891883274236,
+        "aggregate_relative_error": 0.14507767650103096,
+        "mass_relative_error": 0.0
+      }
+    }
+  ],
+  "elapsed_sec": 0.3940057000145316
+}

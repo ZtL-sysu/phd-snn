@@ -1,0 +1,51 @@
+{
+  "CERT-C11-v1": {
+    "rows": [
+      {
+        "dataset": "chameleon",
+        "coverage": 1.0,
+        "certificate_width_over_rms": 7.818820862135143,
+        "quantization_step": 1.4019442285810197
+      },
+      {
+        "dataset": "squirrel",
+        "coverage": 1.0,
+        "certificate_width_over_rms": 7.4234579713889035,
+        "quantization_step": 1.2658873966761999
+      }
+    ],
+    "gate_pass": true
+  },
+  "EDGEPRUNE-C12-v1": {
+    "rows": [
+      {
+        "dataset": "chameleon",
+        "kept_fraction": 0.6000092280717944,
+        "removed_edges": 26007,
+        "message_relative_error": 0.23263577826774395
+      },
+      {
+        "dataset": "squirrel",
+        "kept_fraction": 0.6000019905102424,
+        "removed_edges": 160762,
+        "message_relative_error": 0.09157930215508651
+      }
+    ],
+    "gate_pass": false
+  },
+  "POS-C13-v1": {
+    "nodes": 512,
+    "relative_error": 0.021878270816994443,
+    "permutation_error": 5.551115123125783e-17,
+    "storage_reduction_factor": 5.333333333333333,
+    "quantization_step": 0.14285714285714285,
+    "gate_pass": true
+  },
+  "DLY-C14-v1": {
+    "clips": 728,
+    "reconstruction_error": 0.0,
+    "future_prefix_error": 0.0,
+    "event_reduction": 0.20523456052790467,
+    "gate_pass": true
+  }
+}

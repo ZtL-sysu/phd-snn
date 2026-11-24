@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "stage": "P20/final-template-conversion-and-metadata",
+  "status": "passed",
+  "source": {
+    "path": "writing\\p17\\paper-guidance-complete.md",
+    "sha256": "e411d0692420f25fde23d1eb0978fdb8e5e3b0ef7fbbf429ab7edd3ee76ff1fe"
+  },
+  "export": {
+    "arc_stage": "22",
+    "arc_status": "StageStatus.DONE",
+    "template": "generic",
+    "tex": "writing\\p20-final-v2\\stage-22\\paper.tex",
+    "pdf": "writing\\p20-final-v2\\stage-22\\paper.pdf",
+    "bib": "writing\\p20-final-v2\\stage-22\\references.bib"
+  },
+  "validation": {
+    "problems": [],
+    "latex_returncode": 0,
+    "latex_errors": [],
+    "pages": 11,
+    "font_embedding_failures": [],
+    "tex_sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf",
+    "pdf_sha256": "1b492d599edb67314af1fa6369e95d06e2fecc9ffade67fe6cdd920cc9461d73",
+    "bib_sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"
+  },
+  "unresolved_metadata": [
+    "exact target journal",
+    "authors and affiliations",
+    "abstract/keyword/highlight limits",
+    "funding, data/code, declarations and portal fields"
+  ],
+  "paper_verifier_adapter": "P12/P17 independent audited-value reconciliation; ARC local registry was incomplete for the full tables"
+}

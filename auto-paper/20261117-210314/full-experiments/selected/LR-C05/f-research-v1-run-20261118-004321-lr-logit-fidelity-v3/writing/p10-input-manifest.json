@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "packet": {
+    "path": "writing\\packet-p10.json",
+    "sha256": "a04c22be1c46da79cfc701f5be34b531b199ae0b63e04b15f63954648022b6ca"
+  },
+  "source_draft": {
+    "path": "writing\\p8\\paper-data-figures.md",
+    "sha256": "e35047b6ed4e6ae0bdcc9470fb754d6fd398f8d6f2f8aaf2e20e574e9726b8cb"
+  },
+  "decisions": {
+    "path": "writing\\p10-edit-decisions.json",
+    "sha256": "69cc0089f248069f02afa8c104523f8de7993b06608a864c93cd6a35b012ae9a"
+  },
+  "request": {
+    "path": "writing\\request-p10-revision.json",
+    "sha256": "710ec4f213ce00473222b324ebabb8b3e1e4dc15269b89ccf91cd6f715e3d67c"
+  },
+  "evidence_manifest": {
+    "path": "results/p10-evidence-manifest.json",
+    "sha256": "42fa9a593851a345ad9136506bb7e9931a8c716a29d5962ea2440e0f3fde7ff9"
+  }
+}

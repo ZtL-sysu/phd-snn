@@ -1,0 +1,68 @@
+{
+  "DYN-C01": {
+    "decoded_delta_pp": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "direct_probe_delta_pp": [0.0, -7.5342465753, -2.0547945205, -4.1095890411, 10.9589041096],
+    "event_reduction": 0.2052336454,
+    "wrong_delay_error": 0.0432668477,
+    "strong_gate": "pass-after-lossless-decoding-repair"
+  },
+  "EQ-C02": {
+    "raw_balanced_accuracy": 0.2435,
+    "component_balanced_accuracy": 0.244875,
+    "radial_balanced_accuracy": 0.259875,
+    "radial_relative_error": 0.0377968377,
+    "rotation_max_error": 2.9103830457e-11,
+    "strong_gate": "pass"
+  },
+  "PERM-C03": {
+    "deterministic_max_error": 1.1102230246e-16,
+    "naive_max_error_by_dataset": {"cora": 0.4999999702, "chameleon": 0.9021466374, "squirrel": 0.9486832619},
+    "strong_gate": "pass"
+  },
+  "SIGN-C04": {
+    "balanced_accuracy": {
+      "chameleon": {"signed": 0.5885809842, "absolute": 0.5839544513, "positive_only": 0.5752349100},
+      "squirrel": {"signed": 0.4099558336, "absolute": 0.3935774752, "positive_only": 0.4051159367},
+      "cora": {"signed": 0.6891096125, "absolute": 0.6893148978, "positive_only": 0.6929813597}
+    },
+    "strong_gate": "fail: heterophilic advantage is below 2 pp"
+  },
+  "LR-C05": {
+    "rank128": {
+      "cora": {"compression": 7.3211558199, "svd_logit_error": 0.0913227867, "random_logit_error": 0.5660093082},
+      "chameleon": {"compression": 8.9873034143, "svd_logit_error": 0.1818764275, "random_logit_error": 0.9345799466},
+      "squirrel": {"compression": 11.6436138975, "svd_logit_error": 0.3301416701, "random_logit_error": 1.2508320328}
+    },
+    "strong_gate": "pass"
+  },
+  "EDGE-C06": {
+    "six_bit_log_relative_error": 0.0281627029,
+    "six_bit_uniform_relative_error": 0.1672305054,
+    "storage_reduction": 5.3333333333,
+    "relative_error_improvement": 0.8315935075,
+    "strong_gate": "pass"
+  },
+  "CERT-C11": {
+    "coverage": 1.0,
+    "width_over_rms_min": 3.0617449101,
+    "width_over_rms_max": 6.7232666710,
+    "minimum_tightening": 0.7968522991,
+    "strong_gate": "pass"
+  },
+  "POS-C13": {
+    "chameleon": {"relative_error": 0.0245863351, "storage_reduction": 10.1748807631, "balanced_accuracy_delta": 0.0213290333},
+    "squirrel": {"relative_error": 0.0305673728, "storage_reduction": 10.1748807631, "balanced_accuracy_delta": 0.0219543614},
+    "strong_gate": "pass"
+  },
+  "DLY-C14": {
+    "decoded_delta_pp": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "event_reduction": 0.2052336454,
+    "wrong_delay_error": 0.0432668477,
+    "strong_gate": "pass-after-lossless-decoding-repair"
+  },
+  "READ-C18": {
+    "top2_preservation": 1.0,
+    "median_output_slot_reduction": 0.6333333333,
+    "strong_gate": "pass"
+  }
+}

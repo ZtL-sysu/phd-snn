@@ -1,0 +1,45 @@
+{
+  "dataset": "NTU RGB+D 60 skeleton point CSV (MIT HF mirror)",
+  "sequences_sampled": 1,
+  "frames_sampled": 39,
+  "sample_shape": [
+    39,
+    1,
+    2
+  ],
+  "result": [
+    {
+      "eps_pixels": 0.5,
+      "delta_density": 0.9743589743589743,
+      "inactive_fraction": 0.02564102564102566,
+      "mean_changed_frames_per_sequence": 38.0
+    },
+    {
+      "eps_pixels": 1.0,
+      "delta_density": 0.9743589743589743,
+      "inactive_fraction": 0.02564102564102566,
+      "mean_changed_frames_per_sequence": 38.0
+    },
+    {
+      "eps_pixels": 2.0,
+      "delta_density": 0.9743589743589743,
+      "inactive_fraction": 0.02564102564102566,
+      "mean_changed_frames_per_sequence": 38.0
+    },
+    {
+      "eps_pixels": 5.0,
+      "delta_density": 0.9743589743589743,
+      "inactive_fraction": 0.02564102564102566,
+      "mean_changed_frames_per_sequence": 38.0
+    },
+    {
+      "eps_pixels": 10.0,
+      "delta_density": 0.7948717948717948,
+      "inactive_fraction": 0.20512820512820518,
+      "mean_changed_frames_per_sequence": 31.0
+    }
+  ],
+  "gate": "pass if inactive_fraction>=0.80 at an operating point with task loss<=0.5pp; task loss not yet measured",
+  "status": "stage-1-census-only",
+  "parser_note": "The CSV stores NumPy-style arrays truncated by ellipsis; this census parses all explicit [x y] pairs and reshapes by total_frames. It is descriptive only and not suitable for model training."
+}

@@ -1,0 +1,7 @@
+dataset,control_mode,proposed_three_seed_mean_logit_mse,control_three_seed_mean_logit_mse,reduction_percent,derivation,source
+cora,a2q_node_budget,0.005665604490786791,0.00797188359623154,28.930165344297944,1 - mean(proposed across three seeds) / mean(control across three seeds),results/confirmation-test-v2.json via results/p10-control-summary.csv
+cora,one_spike,0.005665604490786791,0.009909780696034431,42.82815468303976,1 - mean(proposed across three seeds) / mean(control across three seeds),results/confirmation-test-v2.json via results/p10-control-summary.csv
+chameleon,a2q_node_budget,0.03372506921490034,0.052852146327495575,36.18978308671761,1 - mean(proposed across three seeds) / mean(control across three seeds),results/confirmation-test-v2.json via results/p10-control-summary.csv
+chameleon,one_spike,0.03372506921490034,0.06437583764394124,47.61222463398208,1 - mean(proposed across three seeds) / mean(control across three seeds),results/confirmation-test-v2.json via results/p10-control-summary.csv
+squirrel,a2q_node_budget,0.03264450654387474,0.05040984973311424,35.24180945449128,1 - mean(proposed across three seeds) / mean(control across three seeds),results/confirmation-test-v2.json via results/p10-control-summary.csv
+squirrel,one_spike,0.03264450654387474,0.049481636534134545,34.027027336989626,1 - mean(proposed across three seeds) / mean(control across three seeds),results/confirmation-test-v2.json via results/p10-control-summary.csv

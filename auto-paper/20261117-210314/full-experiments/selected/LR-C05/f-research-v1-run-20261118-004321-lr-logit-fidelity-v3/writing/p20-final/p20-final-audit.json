@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "stage": "P20/final-template-conversion-and-metadata",
+  "status": "passed",
+  "source": {
+    "path": "writing\\p17\\paper-guidance-complete.md",
+    "sha256": "e411d0692420f25fde23d1eb0978fdb8e5e3b0ef7fbbf429ab7edd3ee76ff1fe"
+  },
+  "export": {
+    "arc_stage": "22",
+    "arc_status": "StageStatus.DONE",
+    "template": "generic",
+    "tex": "writing\\p20-final\\stage-22\\paper.tex",
+    "pdf": "writing\\p20-final\\stage-22\\paper.pdf",
+    "bib": "writing\\p20-final\\stage-22\\references.bib"
+  },
+  "validation": {
+    "problems": [],
+    "latex_returncode": 0,
+    "latex_errors": [],
+    "pages": 11,
+    "font_embedding_failures": [],
+    "tex_sha256": "dc19df547bdc07eeb4d92918d671640459c02f19b281310c5db7decb71388c3a",
+    "pdf_sha256": "3ae078042287ab405e7dc9157ca95ff6302453e96a3f22f5a42f552bd9e849e7",
+    "bib_sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"
+  },
+  "unresolved_metadata": [
+    "exact target journal",
+    "authors and affiliations",
+    "abstract/keyword/highlight limits",
+    "funding, data/code, declarations and portal fields"
+  ]
+}

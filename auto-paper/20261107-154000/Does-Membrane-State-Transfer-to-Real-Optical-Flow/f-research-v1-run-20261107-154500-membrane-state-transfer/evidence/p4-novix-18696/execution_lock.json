@@ -1,0 +1,16 @@
+{
+  "status_at_lock": "PRE_MAIN_OUTCOME_SUPPLEMENT",
+  "reason": "Operational choices that instantiate, but do not alter, config_preregistered.json",
+  "observed_main_contrasts_before_lock": false,
+  "real_window": {"frames": 8, "stride": 8, "SINTEL_flow_frames": 7, "SINTEL_flow_quadrature_stride": 2},
+  "scene_hash_usage": {"readout_train_folds": [0, 1, 2], "exposed_evaluation_fold": 3, "unexposed_final_fold": 4},
+  "primary_label_family_index": 0,
+  "primary_readout_scope": "ommatidial_subregions",
+  "all_reported_readout_scopes": ["global_pool", "ommatidial_subregions", "hybrid"],
+  "gain_training": {"domain": "SYNTHETIC only", "epochs": 80, "learning_rate": 0.03, "optimizer": "Adam", "gradient_clip_norm": 5.0},
+  "real_readout_training": "train-only StandardScaler + train-only PCA(max 128, full SVD) + RidgeClassifier; alpha train-only stratified CV",
+  "real_label_family_policy": "report all frozen families; do not select by held-out performance; family index 0 is primary",
+  "coherence_policy": "run every preregistered stratum; empty/one-class cells remain unavailable without threshold changes",
+  "archive_processing": "read official ZIP members directly; no extraction-time alteration",
+  "frozen_before_any_condition_0_to_12_model_outcome": true
+}

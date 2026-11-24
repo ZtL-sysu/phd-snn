@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "brief": {
+    "question": "Can output-Jacobian-selected sparse residual coefficients improve logit fidelity at a matched total padded serialized-bit budget while bounding task degradation in frozen GNN-to-SNN compression?",
+    "answer": "On the reported test split, rank-128 SVD transport with a 2% output-Jacobian-selected sparse residual budget reduced the ratio of three-seed mean split-specific logit MSE by 26.23%, 33.99%, and 25.83% versus the strongest evaluated matched-budget control on Cora, Chameleon, and Squirrel; maximum three-seed-mean task degradation was 1.86 pp and maximum seed-level degradation was 2.85 pp.",
+    "audience": "Graph-compression and neuromorphic-conversion researchers evaluating fidelity/resource trade-offs of frozen ANN/GNN-to-SNN conversion.",
+    "domain_bridge": "Repeated high-dimensional A X messages dominate transport; retain an operator-aligned rank-128 basis and spend a 2% sparse residual budget on coefficients with high output-Jacobian sensitivity; matched-budget tests show lower logit MSE with bounded task loss.",
+    "priorities": {
+      "main": ["logit-MSE improvement at matched padded bits", "bounded task degradation"],
+      "supporting": ["exact cost accounting", "warmed runtime/memory", "prior-art adaptations"],
+      "diagnostic": ["hidden MSE", "rank/budget sensitivity", "negative task superiority evidence"]
+    },
+    "terminology": {
+      "sparse residual coefficients": "selected exact message residual values with explicit indices; not temporal spikes",
+      "matched padded bits": "identical total_padded_bits within a dataset/seed/rank/budget comparison, allowing different payload lengths",
+      "held-out confirmation": "test run after validation-exposed reframing, not preregistered independent replication"
+    },
+    "paragraph_plan": [
+      {"id": "P1", "section": "Introduction", "point": "Low-rank graph-message transport can preserve the wrong output-sensitive directions under a fixed serialization budget.", "fact_ids": ["F1", "F3"], "adds": "problem and contribution"},
+      {"id": "P2", "section": "Method", "point": "Output-Jacobian squared sensitivity selects sparse residual coefficients after SVD transport.", "fact_ids": ["F1", "F3"], "adds": "mechanism and cost model"},
+      {"id": "P3", "section": "Experiments and Results", "point": "The held-out test run confirms logit-MSE reductions on all three graphs at matched padded bits.", "fact_ids": ["F1", "F3"], "adds": "main comparison"},
+      {"id": "P4", "section": "Experiments and Results", "point": "Task degradation remains bounded and runtime overhead is modest.", "fact_ids": ["F2", "F4"], "adds": "secondary trade-off"},
+      {"id": "P5", "section": "Discussion", "point": "The result is a local fidelity/resource contribution, not task superiority, temporal-event conversion, or energy evidence.", "fact_ids": ["F5"], "adds": "scope and limitations"},
+      {"id": "P6", "section": "Conclusion", "point": "Output-Jacobian residual allocation is a promising exact-budget fidelity mechanism within the tested frozen-GCN scope.", "fact_ids": ["F1", "F2"], "adds": "bounded conclusion"}
+    ],
+    "qualification_placement": [
+      {"fact_id": "F5", "home": "Methods—Experimental scope", "repeat_when": "any statement of generality, novelty, energy, or event semantics"},
+      {"fact_id": "F2", "home": "Experiments and Results—Task trade-off", "repeat_when": "local task claims"}
+    ],
+    "section_jobs": {
+      "Introduction": "Open from output-sensitive information loss in compressed graph messages; state the bounded logit-fidelity question and contribution.",
+      "Methods": "Define SVD transport, exact padded-bit ledger, output-Jacobian score, sparse coefficient encoding, rate-coded conversion and evaluation scope.",
+      "Experiments and Results": "Report matched-budget logit MSE, bounded task loss, prior-art adaptations and warmed cost without table-cell narration.",
+      "Discussion": "Interpret fidelity gains and task trade-offs; distinguish observed results from mechanism hypotheses; state limits.",
+      "Conclusion": "Answer the question with the three-graph result and no new promise."
+    },
+    "author_constraints": {
+      "edit_scope": ["structural", "prose-only"],
+      "protected_sections": [],
+      "protected_artifacts": [],
+      "declaration_mode": "preserve",
+      "allow_new_experiments": false,
+      "editing_round_budget": 3
+    },
+    "journal_requirements": {
+      "source": "none verified",
+      "length": "content-led; no numeric page target",
+      "explicit_author_requirements": ["English manuscript", "one final PDF", "six numbered sections"]
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "result",
+      "statement": "At rank 128 and a 2% sparse residual budget on the reported test split, output-Jacobian selection reduced the ratio of three-seed mean split-specific logit MSE versus the strongest evaluated matched-budget control by 26.23% on Cora, 33.99% on Chameleon, and 25.83% on Squirrel; all nine dataset-seed comparisons improved.",
+      "status": "observed_verified",
+      "model": "frozen two-layer hidden-16 GCN checkpoint seeds 0/1/2",
+      "condition": "SVD rank 128 plus 2% output-Jacobian-selected sparse residual coefficients",
+      "metric": "split-specific logit MSE reduction",
+      "value": [26.23, 33.99, 25.83],
+      "unit": "percent reduction",
+      "aggregation": "ratio of three-seed mean per dataset",
+      "uncertainty": "all nine dataset-seed paired comparisons positive; no formal CI claimed",
+      "measurement_scope": "reported test split; validation-exposed reframing preceded the run",
+      "evidence": [{"path": "results/confirmation-summary.json", "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"}]
+    },
+    {
+      "id": "F2",
+      "kind": "result",
+      "statement": "The maximum three-seed-mean degradation across T=2/4 accuracy and teacher agreement was 1.86 percentage points; the largest seed-level degradation was 2.85 percentage points.",
+      "status": "observed_verified",
+      "model": "frozen two-layer hidden-16 GCN checkpoint seeds 0/1/2",
+      "condition": "same rank-128/2% matched-budget comparison",
+      "metric": "task degradation relative to strongest control",
+      "value": [1.86, 2.85],
+      "unit": "percentage points",
+      "aggregation": "maximum three-seed-mean and maximum seed-level",
+      "uncertainty": "bounded observation, not equivalence proof",
+      "measurement_scope": "reported test split",
+      "evidence": [{"path": "results/confirmation-summary.json", "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"}]
+    },
+    {
+      "id": "F3",
+      "kind": "result",
+      "statement": "All compared rank-128/2% methods used identical total padded serialized bits within each dataset, although payload lengths and coefficient counts could differ.",
+      "status": "observed_verified",
+      "model": "exact serialized-cost ledger",
+      "condition": "rank 128 and 2% residual budget",
+      "metric": "total padded serialized bits",
+      "value": "matched within each dataset",
+      "unit": "bits",
+      "aggregation": "row-level equality",
+      "uncertainty": "not applicable",
+      "measurement_scope": "serialized transport, excluding energy",
+      "evidence": [{"path": "results/confirmation-test-v2.json", "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166"}]
+    },
+    {
+      "id": "F4",
+      "kind": "result",
+      "statement": "Across nine dataset-seed pairs, paired p95 full-pipeline runtime ratios versus SVD-only ranged from 1.020 to 1.124, and peak CUDA allocation was 218.23 MB.",
+      "status": "observed_verified",
+      "model": "RTX3060 warmed benchmark with three warmups and seven measured repeats",
+      "condition": "rank128/1% full encode/selection/decode/conversion timing",
+      "metric": "runtime ratio and peak memory",
+      "value": [1.020, 1.124, 218.23],
+      "unit": "ratio and MB",
+      "aggregation": "p95 range across dataset-seed pairs; maximum memory",
+      "uncertainty": "timing variance retained in raw repeats",
+      "measurement_scope": "wall-clock pipeline; not hardware energy",
+      "evidence": [{"path": "inputs/v2-timing.json", "sha256": "bd77cd5b8d688380fe7485bb6d20a31fd853189d7ff9354559978f38fcd32dc0"}]
+    },
+    {
+      "id": "F5",
+      "kind": "limitation",
+      "statement": "The focal setting and logit-fidelity reframing were fixed after validation exposure and before the test run; the test run is held-out confirmation, not preregistered or independent replication. Sparse residual coefficients are not temporal SNN events, and no energy or broad GNN-generality claim is supported.",
+      "status": "observed_verified",
+      "attribution": "run contract and independent pre-draft review",
+      "evidence": [{"path": "ccfa-pre-draft-scientific-review.md", "sha256": "32082761fe52e40b726efbc7806657a72795e8ed91dac730c19aec5266958324"}]
+    }
+  ],
+  "internal": {"note": "External process records and reviewer wording remain outside writer context. A²Q/One-Spike are matched-budget adaptations and require the later 36-reference audit before novelty language."}
+}

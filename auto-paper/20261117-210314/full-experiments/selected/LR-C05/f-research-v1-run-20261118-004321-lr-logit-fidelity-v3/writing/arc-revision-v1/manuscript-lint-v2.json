@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "status": "integrity-failed",
+  "errors": [
+    "fact relationship missing/changed: transport-scope",
+    "fact relationship missing/changed: magnitude-jacobian-score",
+    "fact relationship missing/changed: task-maxima",
+    "fact relationship missing/changed: timing-scope",
+    "fact relationship missing/changed: test-provenance"
+  ],
+  "findings": [
+    {
+      "rule_id": "W001",
+      "file": "writing\\arc-revision-v1\\stage-19\\paper_revised.md",
+      "line": 5,
+      "original": "Frozen GNN-to-SNN conversion can require repeated transport of the first-layer input message \\(M_0=\\hat{A}X\\). Under a fixed serialization budget, low-rank coding may omit residual directions that matter to the frozen model's logits. We therefore ask whether magnitude-weighted output-Jacobian allocation of sparse exact residual coefficients improves logit fidelity at matched total padded serialized bits while limiting observed task degradation. On the reported test split, rank-128 transport with a 2% residual budget reduced the ratio of three-seed mean split-specific logit MSE relative to the strongest evaluated matched-budget residual control by 26.23%, 33.99%, and 25.83% on Cora, Chameleon, and Squirrel; all nine dataset-seed comparisons improved. Against our matched-budget A2Q-style and One-Spike-style adaptations, the reductions were 28.93%, 36.19%, and 35.24%, and 42.83%, 47.61%, and 34.03%, respectively. Across \\(T=2/4\\) accuracy and teacher agreement, the maximum observed three-seed-mean degradation was 1.86 percentage points and the maximum seed-level degradation was 2.85 percentage points relative to the best matched-budget non-proposed control for each dataset and task metric. These are descriptive maxima, not equivalence results or population bounds. Compared methods used identical total padded serialized bits within each dataset at rank 128 and 2%. A separate rank128/1% warmed benchmark measured paired p95 full-pipeline runtime ratios of 1.020-1.124 versus SVD-only and peak CUDA allocation of 218.23 MB; it measures wall-clock cost, not energy or focal 2% timing. The evidence is held-out confirmation after validation-exposed setting selection, not preregistered or independent replication, and the contribution is limited to logit-fidelity coding of \\(M_0=\\hat{A}X\\).",
+      "type": "possible production marker",
+      "suggested_action": "REMOVE_NONSCIENTIFIC or KEEP if research object",
+      "status": "needs-human-judgment",
+      "confidence": "candidate"
+    },
+    {
+      "rule_id": "W004",
+      "file": "writing\\arc-revision-v1\\stage-19\\paper_revised.md",
+      "line": 110,
+      "original": "The matched-budget control set further shows that the result is not specific to comparison with a single encoding rule. The proposed composite selector outperformed top-absolute residual selection in all nine dataset-seed logit-MSE comparisons and was also compared with random indices, dense uniform residual quantization, and our A2Q-style and One-Spike-style adaptations. These comparisons evaluate the complete allocation rule against alternative rules; because no Jacobian-only or interaction ablation was performed, they do not isolate the causal contribution of the Jacobian factor.",
+      "type": "claim-strength check",
+      "suggested_action": "VERIFY against comparison/interval/design; no automatic deletion",
+      "status": "needs-human-judgment",
+      "confidence": "candidate"
+    },
+    {
+      "rule_id": "W001",
+      "file": "writing\\arc-revision-v1\\stage-19\\paper_revised.md",
+      "line": 118,
+      "original": "A separate secondary benchmark measures warmed full variant construction and evaluation cost at rank128/1%, not the focal 2% condition. The timed operation includes basis construction, residual construction and selection, reconstruction, rate conversion, and evaluation, while the frozen model, adjacency, and features are precomputed. Each method-dataset-seed p95 is the 0.95 quantile of seven measured elapsed times after three warmups, with CUDA synchronization before and after each call. Across nine dataset-seed pairs, paired p95 full-pipeline runtime ratios versus SVD-only ranged from 1.020 to 1.124, and the maximum recorded peak CUDA allocation was 218.23 MB. This is a wall-clock pipeline measurement and does not measure hardware energy.",
+      "type": "possible production marker",
+      "suggested_action": "REMOVE_NONSCIENTIFIC or KEEP if research object",
+      "status": "needs-human-judgment",
+      "confidence": "candidate"
+    },
+    {
+      "rule_id": "W001",
+      "file": "writing\\arc-revision-v1\\stage-19\\paper_revised.md",
+      "line": 122,
+      "original": "**Figure 4.** Observed task trade-off and warmed runtime overhead. Panel a reports reported-test logit-fidelity gains against the maximum observed three-seed-mean task degradation relative to the per-metric matched-budget control; its dashed line is the earlier 3 pp task-loss reference, not an observed equivalence threshold. Panel b reports paired p95 full-pipeline runtime ratios at rank128/1% and does not represent focal 2% timing or energy.",
+      "type": "possible production marker",
+      "suggested_action": "REMOVE_NONSCIENTIFIC or KEEP if research object",
+      "status": "needs-human-judgment",
+      "confidence": "candidate"
+    },
+    {
+      "rule_id": "W001",
+      "file": "writing\\p10-visible-labels.json",
+      "line": 8,
+      "original": "Figure 4b: rank128/1% paired p95 runtime ratio",
+      "type": "figure-label: possible production marker",
+      "suggested_action": "REMOVE_NONSCIENTIFIC or KEEP if research object",
+      "status": "needs-visual-and-human-review",
+      "confidence": "candidate"
+    }
+  ],
+  "checker_versions": {
+    "scripts/manuscript_lint.py": "1da3429448970adf1b3c75fffe902ad363be1876ab41d8a494e66ac87d8ca134",
+    "scripts/writing_adapter.py": "849cc9c4359720879214015f0a5f35c034b12b501f19caca9dcc5c80100c7187",
+    "references/scientific-writing-contract.md": "5ea84114722267e6e81689f75ebeb3dbb098bd01830d1efcd7d4041d20912f5e"
+  },
+  "dependencies": [
+    {
+      "path": "writing\\arc-revision-v1\\stage-19\\paper_revised.md",
+      "sha256": "2a418d00f6f1f509b0e43c9770d95ee2539086cbc76620240d567c1e33ccd6ca"
+    },
+    {
+      "path": "writing\\p10-visible-labels.json",
+      "sha256": "cdd0a7dea83d891ae48b4fecdce1e4b88b8aac11d1ad63e39c8d86b2a2ec539b"
+    },
+    {
+      "path": "results\\confirmation-test-v2.json",
+      "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166"
+    },
+    {
+      "path": "results\\p10-control-summary.csv",
+      "sha256": "19b6da00627b44aadd19bb4493e3965210a4006ff3d94cd45ae6c24c106bb33e"
+    },
+    {
+      "path": "results\\p10-task-loss-three-seed-audit.csv",
+      "sha256": "06967d8ab9bd6ab77770c050c6c6eed4fa21507901f9e30f3e79b2d458884b9d"
+    },
+    {
+      "path": "figures\\source-data\\figure4-tradeoff-and-runtime.csv",
+      "sha256": "3087c020c1e6c35576035ce32c5de2b4fe672fdea6edcc60462472e2908d067f"
+    },
+    {
+      "path": "writing\\p10-lint-policy.json",
+      "sha256": "eca898dfccc52e30a2f436693657c54550826621c945466fb8ae731442863e60"
+    }
+  ],
+  "parser_limits": "Not a TeX engine: no macro expansion, conditional evaluation, bibliography rendering or OCR. Inspect rendered PDF and figures; provided labels are not proof of pixels.",
+  "semantic_checks": [
+    "facts/model-condition-direction/CI-vs-SD",
+    "observed-vs-planned",
+    "negative findings",
+    "paragraph reverse outline",
+    "Introduction-Conclusion scope",
+    "Results-Discussion roles",
+    "declaration routing",
+    "rendered captions/labels"
+  ]
+}

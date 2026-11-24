@@ -1,0 +1,58 @@
+{
+  "task_id": "18448",
+  "round": "009",
+  "archived_at": "2026-11-08T18:38:48+08:00",
+  "verdict": "REJECT_FAILURE",
+  "design_valid": true,
+  "expected_signal_met": false,
+  "result_sha256": "74a186458c202f032d94f58383ecd4baad10d47955588e70e044257bdc1f1009",
+  "config_sha256": "94b5e738de07e13015c4f99fa65c8c37dbaf5fce0c3376ab35762d6b18ec5191",
+  "prereg_sha256": "9acf32dee230f5b75fc824f92a5bd11de0c004b83a8da336145987b2dc543c50",
+  "files": [
+    {
+      "path": "MANIFEST.txt",
+      "bytes": 44644,
+      "sha256": "802a9bc59486df6e6e5e675136f347d9ba807498d28251dbf5263d23f043c64a"
+    },
+    {
+      "path": "config.json",
+      "bytes": 20955,
+      "sha256": "94b5e738de07e13015c4f99fa65c8c37dbaf5fce0c3376ab35762d6b18ec5191"
+    },
+    {
+      "path": "config_preregistered.json",
+      "bytes": 18448,
+      "sha256": "9acf32dee230f5b75fc824f92a5bd11de0c004b83a8da336145987b2dc543c50"
+    },
+    {
+      "path": "config_preregistered.sha256",
+      "bytes": 92,
+      "sha256": "8dc323062bc08610f63388303306726cde4ecbdaf3818abc7ee078f274e7e7fd"
+    },
+    {
+      "path": "entrypoint.sh",
+      "bytes": 2169,
+      "sha256": "f640b093d64a599db00c1b02cf728d64afa22fdf855162e2a4586cbb25692d55"
+    },
+    {
+      "path": "experiment.py",
+      "bytes": 47594,
+      "sha256": "07f522fa97b3c51fd150dfdc300e07dc0d1dc642f9242fe4677712a54a2d6b8a"
+    },
+    {
+      "path": "platform-result-18448.json",
+      "bytes": 6506,
+      "sha256": "f0e19789536af55625be55acd62fd6bd366e66c68a4b42823f77ea9a26ed9dbf"
+    },
+    {
+      "path": "result.json",
+      "bytes": 575285,
+      "sha256": "74a186458c202f032d94f58383ecd4baad10d47955588e70e044257bdc1f1009"
+    },
+    {
+      "path": "validate_results.py",
+      "bytes": 15241,
+      "sha256": "89f339c53ba2cf949ec77dd22e0a16ff0ff1e4fcf8f1c99675db8197ad449cbb"
+    }
+  ]
+}

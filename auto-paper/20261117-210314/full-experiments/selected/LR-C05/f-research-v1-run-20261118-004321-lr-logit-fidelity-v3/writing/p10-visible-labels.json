@@ -1,0 +1,10 @@
+[
+  "Magnitude-weighted score s_i = r_i^2 ||dz/dr_i||^2",
+  "Exact padded serialized-bit ledger",
+  "matched total padded serialized-bit budget",
+  "validation-grid sensitivity and held-out confirmation after validation exposure",
+  "Figure 2: lower logit MSE is better; n=3; sample SD",
+  "Figure 3: validation grid at 0.5%, 1%, and 2%",
+  "Figure 4a: 3 pp task-loss reference, not an equivalence threshold",
+  "Figure 4b: rank128/1% paired p95 runtime ratio"
+]

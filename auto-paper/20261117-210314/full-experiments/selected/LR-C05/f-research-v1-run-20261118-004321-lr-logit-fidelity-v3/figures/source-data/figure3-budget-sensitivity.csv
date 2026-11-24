@@ -1,0 +1,10 @@
+dataset,budget,logit_mse_reduction_percent,n_seeds,evidence_scope
+cora,0.005,2.978118505713545,3,validation-grid sensitivity
+cora,0.01,15.189456698793757,3,validation-grid sensitivity
+cora,0.02,28.182424634138336,3,validation-grid sensitivity
+chameleon,0.005,6.892600513743197,3,validation-grid sensitivity
+chameleon,0.01,25.974658250976248,3,validation-grid sensitivity
+chameleon,0.02,30.40283614886734,3,validation-grid sensitivity
+squirrel,0.005,8.332379630764407,3,validation-grid sensitivity
+squirrel,0.01,16.130486214814,3,validation-grid sensitivity
+squirrel,0.02,25.852794161113657,3,validation-grid sensitivity

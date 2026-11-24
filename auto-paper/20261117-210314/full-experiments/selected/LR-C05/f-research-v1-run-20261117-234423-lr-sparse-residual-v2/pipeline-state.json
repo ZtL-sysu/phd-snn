@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v1",
+  "contract": [
+    {"path": "inputs/guidance-v2.md", "sha256": "18b08d0324b965cfaba3dbccf2524c0551e8bd759606f3b6af46ae0cbfa0e55b"},
+    {"path": "inputs/literature-baseline-matrix.md", "sha256": "a6882f48667278ed502fce06735a512c0a573cf86c82c9aae1b167ba8c34a512"},
+    {"path": "inputs/v1-baseline.json", "sha256": "3688c4d9681d0040cf13f4872a4be357b42ca5d69d146ad691c05ef2a38c4a44"},
+    {"path": "inputs/v1-independent-review.md", "sha256": "529083a00196e9818d39bf4fd56e2c44efd9bcf286beea286185fba1da5bc4d1"},
+    {"path": "inputs/v1-lr-core.py", "sha256": "fd1ba933ac8efca371dc4c80357f8183a38a92682cc8a85a484b599dd03376dc"},
+    {"path": "inputs/v1-method.json", "sha256": "4cef3c22ab464176e6bc4d9465759b8d24bc58597784c668d3780d398feb6b3b"}
+  ],
+  "history": [
+    {"action": "pass", "stage": "P0"},
+    {"action": "pass", "stage": "P1"},
+    {"action": "pass", "stage": "P1A"},
+    {"action": "pass", "stage": "P1B"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "reopen", "stage": "P2", "reason": "cache basis decompositions across fixed-grid variants to keep the full matrix within the frozen runtime budget"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "pass", "stage": "P3"},
+    {"action": "pass", "stage": "P3A"},
+    {"action": "pass", "stage": "P4"}
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "inputs/guidance-v2.md", "sha256": "18b08d0324b965cfaba3dbccf2524c0551e8bd759606f3b6af46ae0cbfa0e55b"},
+        {"path": "input-manifest.json", "sha256": "2504943569e90f8f38bb715fff376acc153f4a944730919d532edf2b21b9e9d2"}
+      ],
+      "evidence": [{"path": "audits/p0-gate-report.md", "sha256": "b904cdc5ac04249d169eb3ee0c11c7820f4909a8388fbe88a56bbe913aed43c4"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "inputs/guidance-v2.md", "sha256": "18b08d0324b965cfaba3dbccf2524c0551e8bd759606f3b6af46ae0cbfa0e55b"},
+        {"path": "contract-extraction.yaml", "sha256": "ea9a99c259e052210dee826652813bef530cb4c5a58f8806dff8a9b16979993d"}
+      ],
+      "evidence": [{"path": "audits/p1-guidance-validation.md", "sha256": "fb9e3f1729cf783db629559e47d834e0ac47e6cade023a7d578bc5c96c9cadb2"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "contract-extraction.yaml", "sha256": "ea9a99c259e052210dee826652813bef530cb4c5a58f8806dff8a9b16979993d"},
+        {"path": "claim-evidence-matrix.md", "sha256": "765eae4af670100bb8cff8b4e5f9e086199a2700da98491f137a5624aca4614e"}
+      ],
+      "evidence": [{"path": "strong-result-feasibility-lock.md", "sha256": "38e8517983d44e8ec93c9449f822f9829f06d264ded620648abd08c3a5b6a1c7"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1B",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "claim-evidence-matrix.md", "sha256": "765eae4af670100bb8cff8b4e5f9e086199a2700da98491f137a5624aca4614e"},
+        {"path": "strong-result-feasibility-lock.md", "sha256": "38e8517983d44e8ec93c9449f822f9829f06d264ded620648abd08c3a5b6a1c7"}
+      ],
+      "evidence": [
+        {"path": "ccfa-pre-experiment-review.md", "sha256": "754252d3c685ce271108a8532c5f18a48dce0515181c5bde98e610190b4b9f50"},
+        {"path": "ccfa-pre-experiment-integrity.md", "sha256": "3097de156476332c6b17ad569cf71e91fce5a8e27b532685b2e8d22ae3288a06"},
+        {"path": "concern-to-action-ledger.md", "sha256": "6dc42bfdbfc1eeed2edebffc9446c829c1c698f25e61975b3755b1b0091c96d9"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "config.arc.yaml", "sha256": "3f4428cc27eab3c15fa8e513e9d94eed74fa519629a956c2432bb92796761106"},
+        {"path": "protocols/experiment-commands.md", "sha256": "7c8976b3eab79981c5e94f13679194b63b855bab143c87f0c98aa1af40be8a62"},
+        {"path": "research/lr_v2_core.py", "sha256": "44dd3141261c52d8afceb04ecd95aa87c44c5f80444666abfc4027b424c49f64"},
+        {"path": "research/run_lr_v2.py", "sha256": "083a4262da0f575408a2b8017c74998b0f66b0817f28b9ef580f2649fa3079de"}
+      ],
+      "evidence": [{"path": "audits/p2-setup-check.md", "sha256": "7102400465b5eb1b0fc97937f4501017d187ae1de69bc12d4ac13f321ce557f0"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [{"path": "results/baseline.json", "sha256": "44e1a3124a0608a0ddadff6ff7d3bbd06e35adb0c5e801094778cdb3ba396fff"}],
+      "evidence": [{"path": "audits/p3-baseline-gate.md", "sha256": "6493637cc210dd845fd4ada2cf612e5d4b1010fba018b7983389d001d041a7f7"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [{"path": "results/baseline.json", "sha256": "44e1a3124a0608a0ddadff6ff7d3bbd06e35adb0c5e801094778cdb3ba396fff"}],
+      "evidence": [
+        {"path": "ccfa-baseline-numeric-audit.md", "sha256": "e8ba0fd41cb3a7c10678b1174e35bb552d8be426760a3cd3831b943624763923"},
+        {"path": "ccfa-baseline-evidence-review.md", "sha256": "4ad65e5cdc83e0e394dcf9ee1d45c16d6c5e626ceb071b1afc5f6d9907f41c02"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P4",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "results/method-v3-jacobian-exact.json", "sha256": "8e54f3c0a5b19e6f3299ad7f511a8c7313343bffd2739ecd0a139458aa2f3579"},
+        {"path": "results/timing.json", "sha256": "bd77cd5b8d688380fe7485bb6d20a31fd853189d7ff9354559978f38fcd32dc0"}
+      ],
+      "evidence": [{"path": "audits/p4-experiment-gate.md", "sha256": "fcbce6f85803c54d866129bead2d165f563fd29d857690eba3ff4a27ccae6964"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P5",
+      "status": "blocked",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "results/summary-v2.json", "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"},
+        {"path": "corrections/p5-guidance-v3-reframe.md", "sha256": "1dd671285f959a4620f64d5ca1df1fc4cac3ee66d955a36e0500e802aeec5c2f"}
+      ],
+      "evidence": [{"path": "p5-v2-negative-lock.md", "sha256": "d4a3111292c0c4730f5b1b324a79800b923deb4dfb7d2b01655243375d02d080"}],
+      "gate_verdict": "blocked"
+    },
+    {
+      "id": "P5A",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P6",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P7",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P8",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P9",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P10",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P11",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P12",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P13",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P14",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P15",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P16",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P17",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P18",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P19",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P20",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P21",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    }
+  ]
+}

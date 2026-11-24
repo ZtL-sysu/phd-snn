@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "stage": "P15-reacceptance",
+  "latexmk_returncode": 0,
+  "pages": 8,
+  "normalized_text_match": true,
+  "font_embedding_failures": [],
+  "pdf_question_placeholders": false,
+  "accepted_pdf_sha256": "bc59185a9ebc4ceef6b76aeee5b53f48fc49f44cb8e01cc6fea73197ff50ecdf",
+  "clean_pdf_sha256": "90f46419a6952cc9ad67f590ea5356a3f896eeeba1bd435b137cbdcb3a78668f",
+  "pass": true
+}

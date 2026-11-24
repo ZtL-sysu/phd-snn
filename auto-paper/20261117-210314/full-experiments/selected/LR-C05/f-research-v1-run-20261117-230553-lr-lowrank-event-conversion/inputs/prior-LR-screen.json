@@ -1,0 +1,153 @@
+{
+  "device": "cuda",
+  "rows": [
+    {
+      "dataset": "cora",
+      "shape": [
+        2708,
+        1433
+      ],
+      "curves": [
+        {
+          "rank": 8,
+          "svd_relative_error": 0.8482912298945079,
+          "random_relative_error": 14.299191446132754,
+          "svd_logit_error": 0.3502395379268721,
+          "random_logit_error": 3.1361356834275167,
+          "compression": 117.13849311760444
+        },
+        {
+          "rank": 16,
+          "svd_relative_error": 0.8059053843726625,
+          "random_relative_error": 9.675332834233163,
+          "svd_logit_error": 0.25451621705754085,
+          "random_logit_error": 1.5635564675269105,
+          "compression": 58.56924655880222
+        },
+        {
+          "rank": 32,
+          "svd_relative_error": 0.7455187789661132,
+          "random_relative_error": 6.666606975297991,
+          "svd_logit_error": 0.1924862677785932,
+          "random_logit_error": 1.2699313138982222,
+          "compression": 29.28462327940111
+        },
+        {
+          "rank": 64,
+          "svd_relative_error": 0.6599929027656968,
+          "random_relative_error": 4.794766332997491,
+          "svd_logit_error": 0.13820413787914373,
+          "random_logit_error": 0.780575421148123,
+          "compression": 14.642311639700555
+        },
+        {
+          "rank": 128,
+          "svd_relative_error": 0.5437135610836374,
+          "random_relative_error": 3.3275942401691605,
+          "svd_logit_error": 0.09132278665865574,
+          "random_logit_error": 0.5660093082380642,
+          "compression": 7.3211558198502775
+        }
+      ]
+    },
+    {
+      "dataset": "chameleon",
+      "shape": [
+        2277,
+        2325
+      ],
+      "curves": [
+        {
+          "rank": 8,
+          "svd_relative_error": 0.8130884639599433,
+          "random_relative_error": 17.065316450715024,
+          "svd_logit_error": 0.48484824980810665,
+          "random_logit_error": 4.840515840323352,
+          "compression": 143.79685462842244
+        },
+        {
+          "rank": 16,
+          "svd_relative_error": 0.7603189861180251,
+          "random_relative_error": 11.765416169168509,
+          "svd_logit_error": 0.4445804646238027,
+          "random_logit_error": 2.5546783481591113,
+          "compression": 71.89842731421122
+        },
+        {
+          "rank": 32,
+          "svd_relative_error": 0.6860499128313642,
+          "random_relative_error": 8.416339366822136,
+          "svd_logit_error": 0.36391570032792075,
+          "random_logit_error": 1.8770249529938277,
+          "compression": 35.94921365710561
+        },
+        {
+          "rank": 64,
+          "svd_relative_error": 0.5847006906450782,
+          "random_relative_error": 6.144401867197421,
+          "svd_logit_error": 0.2859106683155048,
+          "random_logit_error": 1.3732559786930008,
+          "compression": 17.974606828552805
+        },
+        {
+          "rank": 128,
+          "svd_relative_error": 0.4563909764329776,
+          "random_relative_error": 4.250333308210524,
+          "svd_logit_error": 0.1818764275418094,
+          "random_logit_error": 0.934579946579543,
+          "compression": 8.987303414276402
+        }
+      ]
+    },
+    {
+      "dataset": "squirrel",
+      "shape": [
+        5201,
+        2089
+      ],
+      "curves": [
+        {
+          "rank": 8,
+          "svd_relative_error": 0.8133986011074347,
+          "random_relative_error": 17.337792824449714,
+          "svd_logit_error": 0.5304630648194575,
+          "random_logit_error": 6.018172442115342,
+          "compression": 186.29782235939643
+        },
+        {
+          "rank": 16,
+          "svd_relative_error": 0.786177250563581,
+          "random_relative_error": 10.677688621053857,
+          "svd_logit_error": 0.5025096442815844,
+          "random_logit_error": 3.5243823305233244,
+          "compression": 93.14891117969822
+        },
+        {
+          "rank": 32,
+          "svd_relative_error": 0.7425688313685451,
+          "random_relative_error": 7.890456584534522,
+          "svd_logit_error": 0.47139992385789736,
+          "random_logit_error": 2.938697619184673,
+          "compression": 46.57445558984911
+        },
+        {
+          "rank": 64,
+          "svd_relative_error": 0.674432935445901,
+          "random_relative_error": 6.018258153352456,
+          "svd_logit_error": 0.4108167784434181,
+          "random_logit_error": 1.7587414219813051,
+          "compression": 23.287227794924554
+        },
+        {
+          "rank": 128,
+          "svd_relative_error": 0.5730417986732481,
+          "random_relative_error": 3.9881699865635496,
+          "svd_logit_error": 0.33014167005142075,
+          "random_logit_error": 1.2508320327916782,
+          "compression": 11.643613897462277
+        }
+      ]
+    }
+  ],
+  "elapsed_sec": 22.660279700066894
+}

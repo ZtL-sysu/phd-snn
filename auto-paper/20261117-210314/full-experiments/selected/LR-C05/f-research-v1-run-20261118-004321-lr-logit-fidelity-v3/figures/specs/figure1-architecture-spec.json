@@ -1,0 +1,643 @@
+{
+  "schema_version": 1,
+  "kind": "architecture",
+  "canvas": {
+    "width": 1600,
+    "height": 900
+  },
+  "style": {
+    "font_family": "Arial, DejaVu Sans, sans-serif",
+    "background": "#FFFFFF",
+    "arrow": "#222222"
+  },
+  "groups": [
+    {
+      "id": "g1",
+      "label": "INPUT + FROZEN GCN",
+      "x": 30,
+      "y": 105,
+      "width": 260,
+      "height": 525,
+      "fill": "#F7F7F7",
+      "stroke": "#B8B8B8"
+    },
+    {
+      "id": "g2",
+      "label": "LOW-RANK TRANSPORT",
+      "x": 330,
+      "y": 105,
+      "width": 270,
+      "height": 525,
+      "fill": "#F3F7FC",
+      "stroke": "#AFC4DF"
+    },
+    {
+      "id": "g3",
+      "label": "OUTPUT-SENSITIVE RESIDUALS",
+      "x": 640,
+      "y": 105,
+      "width": 280,
+      "height": 525,
+      "fill": "#F7F2FA",
+      "stroke": "#C8B4D6"
+    },
+    {
+      "id": "g4",
+      "label": "EXACT-COST CONVERSION",
+      "x": 960,
+      "y": 105,
+      "width": 300,
+      "height": 525,
+      "fill": "#FCF5EC",
+      "stroke": "#DCC1A3"
+    },
+    {
+      "id": "g5",
+      "label": "EVALUATION",
+      "x": 1300,
+      "y": 105,
+      "width": 270,
+      "height": 525,
+      "fill": "#F0F8F6",
+      "stroke": "#A8CECA"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "graph",
+      "label": [
+        "Graph G = (V, E)",
+        "Node features X"
+      ],
+      "x": 65,
+      "y": 155,
+      "width": 190,
+      "height": 78,
+      "fill": "#ECEFF1",
+      "stroke": "#6B7280",
+      "font_size": 19
+    },
+    {
+      "id": "message",
+      "label": [
+        "Normalized message",
+        "M = A_hat X"
+      ],
+      "x": 65,
+      "y": 295,
+      "width": 190,
+      "height": 82,
+      "fill": "#ECEFF1",
+      "stroke": "#6B7280",
+      "font_size": 18
+    },
+    {
+      "id": "frozen",
+      "label": [
+        "Frozen two-layer GCN",
+        "hidden width 16",
+        "seeds 0 / 1 / 2"
+      ],
+      "x": 65,
+      "y": 455,
+      "width": 190,
+      "height": 105,
+      "fill": "#E8EEF5",
+      "stroke": "#5B7897",
+      "font_size": 17
+    },
+    {
+      "id": "svd",
+      "label": [
+        "SVD rank-128 transport",
+        "M ≈ M_128"
+      ],
+      "x": 365,
+      "y": 155,
+      "width": 200,
+      "height": 92,
+      "fill": "#DCEAF7",
+      "stroke": "#6F96BF",
+      "font_size": 18
+    },
+    {
+      "id": "basis",
+      "label": [
+        "Operator-aligned basis",
+        "M_128"
+      ],
+      "x": 365,
+      "y": 325,
+      "width": 200,
+      "height": 72,
+      "fill": "#E8F1FB",
+      "stroke": "#7899BD",
+      "font_size": 18
+    },
+    {
+      "id": "residual",
+      "label": [
+        "Residual",
+        "R = M - M_128"
+      ],
+      "x": 365,
+      "y": 475,
+      "width": 200,
+      "height": 82,
+      "fill": "#EFE8F5",
+      "stroke": "#9A7DB2",
+      "font_size": 18
+    },
+    {
+      "id": "jacobian",
+      "label": [
+        "Magnitude-weighted score",
+        "s_i = r_i² ||dz / dr_i||²",
+        "score residual candidates"
+      ],
+      "x": 675,
+      "y": 155,
+      "width": 210,
+      "height": 118,
+      "fill": "#EDE3F4",
+      "stroke": "#9A78B5",
+      "font_size": 17
+    },
+    {
+      "id": "topb",
+      "label": [
+        "Select top-B coefficients",
+        "explicit indices + values",
+        "2% residual budget"
+      ],
+      "x": 675,
+      "y": 405,
+      "width": 210,
+      "height": 118,
+      "fill": "#F1E8F6",
+      "stroke": "#A486BC",
+      "font_size": 17
+    },
+    {
+      "id": "merge",
+      "label": [
+        "Serialized transport",
+        "basis + sparse residual",
+        "records"
+      ],
+      "x": 995,
+      "y": 155,
+      "width": 230,
+      "height": 112,
+      "fill": "#F8E9D7",
+      "stroke": "#C79565",
+      "font_size": 18
+    },
+    {
+      "id": "ledger",
+      "label": [
+        "Exact padded serialized-bit ledger",
+        "matched total padded",
+        "serialized-bit budget"
+      ],
+      "x": 995,
+      "y": 335,
+      "width": 230,
+      "height": 112,
+      "fill": "#FCEEDF",
+      "stroke": "#C99B70",
+      "font_size": 17
+    },
+    {
+      "id": "rate",
+      "label": [
+        "Rate-coded frozen conversion",
+        "T = 2 and T = 4"
+      ],
+      "x": 995,
+      "y": 515,
+      "width": 230,
+      "height": 82,
+      "fill": "#DFF1EE",
+      "stroke": "#6FAAA4",
+      "font_size": 18
+    },
+    {
+      "id": "logits",
+      "label": [
+        "Converted logits z_s"
+      ],
+      "x": 1335,
+      "y": 155,
+      "width": 200,
+      "height": 70,
+      "fill": "#F6D9BF",
+      "stroke": "#C77B3A",
+      "font_size": 19
+    },
+    {
+      "id": "logit_mse",
+      "label": [
+        "Split-specific",
+        "logit MSE"
+      ],
+      "x": 1335,
+      "y": 285,
+      "width": 200,
+      "height": 72,
+      "fill": "#F9E6D7",
+      "stroke": "#C98C5E",
+      "font_size": 18
+    },
+    {
+      "id": "hidden_mse",
+      "label": [
+        "Hidden-state MSE"
+      ],
+      "x": 1335,
+      "y": 405,
+      "width": 200,
+      "height": 64,
+      "fill": "#F9E6D7",
+      "stroke": "#C98C5E",
+      "font_size": 18
+    },
+    {
+      "id": "task",
+      "label": [
+        "T = 2 / 4 accuracy",
+        "teacher agreement"
+      ],
+      "x": 1335,
+      "y": 515,
+      "width": 200,
+      "height": 82,
+      "fill": "#F9E6D7",
+      "stroke": "#C98C5E",
+      "font_size": 18
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "from": "graph",
+      "to": "message",
+      "points": [
+        [
+          160,
+          233
+        ],
+        [
+          160,
+          295
+        ]
+      ]
+    },
+    {
+      "id": "e2",
+      "from": "message",
+      "to": "frozen",
+      "points": [
+        [
+          160,
+          377
+        ],
+        [
+          160,
+          455
+        ]
+      ]
+    },
+    {
+      "id": "e3",
+      "from": "frozen",
+      "to": "svd",
+      "points": [
+        [
+          255,
+          505
+        ],
+        [
+          315,
+          505
+        ],
+        [
+          315,
+          201
+        ],
+        [
+          365,
+          201
+        ]
+      ]
+    },
+    {
+      "id": "e4",
+      "from": "svd",
+      "to": "basis",
+      "points": [
+        [
+          465,
+          247
+        ],
+        [
+          465,
+          325
+        ]
+      ]
+    },
+    {
+      "id": "e5",
+      "from": "svd",
+      "to": "residual",
+      "points": [
+        [
+          520,
+          247
+        ],
+        [
+          600,
+          247
+        ],
+        [
+          600,
+          516
+        ],
+        [
+          565,
+          516
+        ]
+      ]
+    },
+    {
+      "id": "e6",
+      "from": "residual",
+      "to": "jacobian",
+      "points": [
+        [
+          565,
+          516
+        ],
+        [
+          620,
+          516
+        ],
+        [
+          620,
+          214
+        ],
+        [
+          675,
+          214
+        ]
+      ],
+      "label": "R"
+    },
+    {
+      "id": "e7",
+      "from": "frozen",
+      "to": "jacobian",
+      "points": [
+        [
+          160,
+          560
+        ],
+        [
+          160,
+          610
+        ],
+        [
+          650,
+          610
+        ],
+        [
+          650,
+          273
+        ],
+        [
+          675,
+          273
+        ]
+      ],
+      "label": "frozen logits z",
+      "style": "dashed"
+    },
+    {
+      "id": "e8",
+      "from": "jacobian",
+      "to": "topb",
+      "points": [
+        [
+          780,
+          273
+        ],
+        [
+          780,
+          405
+        ]
+      ]
+    },
+    {
+      "id": "e9",
+      "from": "basis",
+      "to": "merge",
+      "points": [
+        [
+          565,
+          361
+        ],
+        [
+          925,
+          361
+        ],
+        [
+          925,
+          211
+        ],
+        [
+          995,
+          211
+        ]
+      ]
+    },
+    {
+      "id": "e10",
+      "from": "topb",
+      "to": "merge",
+      "points": [
+        [
+          885,
+          464
+        ],
+        [
+          950,
+          464
+        ],
+        [
+          950,
+          270
+        ],
+        [
+          995,
+          270
+        ]
+      ]
+    },
+    {
+      "id": "e11",
+      "from": "merge",
+      "to": "ledger",
+      "points": [
+        [
+          1110,
+          267
+        ],
+        [
+          1110,
+          335
+        ]
+      ]
+    },
+    {
+      "id": "e12",
+      "from": "ledger",
+      "to": "rate",
+      "points": [
+        [
+          1110,
+          447
+        ],
+        [
+          1110,
+          515
+        ]
+      ]
+    },
+    {
+      "id": "e13",
+      "from": "rate",
+      "to": "logits",
+      "points": [
+        [
+          1225,
+          556
+        ],
+        [
+          1280,
+          556
+        ],
+        [
+          1280,
+          190
+        ],
+        [
+          1335,
+          190
+        ]
+      ]
+    },
+    {
+      "id": "e14",
+      "from": "logits",
+      "to": "logit_mse",
+      "points": [
+        [
+          1435,
+          225
+        ],
+        [
+          1435,
+          285
+        ]
+      ]
+    },
+    {
+      "id": "e15",
+      "from": "logits",
+      "to": "hidden_mse",
+      "points": [
+        [
+          1480,
+          225
+        ],
+        [
+          1510,
+          225
+        ],
+        [
+          1510,
+          437
+        ],
+        [
+          1535,
+          437
+        ]
+      ]
+    },
+    {
+      "id": "e16",
+      "from": "logits",
+      "to": "task",
+      "points": [
+        [
+          1505,
+          225
+        ],
+        [
+          1570,
+          225
+        ],
+        [
+          1570,
+          556
+        ],
+        [
+          1535,
+          556
+        ]
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "id": "diagnostic",
+      "label": [
+        "Evidence scope: validation-grid sensitivity and held-out confirmation after validation exposure"
+      ],
+      "x": 55,
+      "y": 680,
+      "width": 1490,
+      "height": 68,
+      "fill": "#FDECEC",
+      "stroke": "#B64342",
+      "style": "dashed",
+      "font_size": 18
+    }
+  ],
+  "legend": [
+    {
+      "label": "Inputs / frozen model",
+      "color": "#ECEFF1"
+    },
+    {
+      "label": "Low-rank transport",
+      "color": "#DCEAF7"
+    },
+    {
+      "label": "Output-sensitive selection",
+      "color": "#EDE3F4"
+    },
+    {
+      "label": "Exact-cost serialization",
+      "color": "#FCEEDF"
+    },
+    {
+      "label": "Rate-coded conversion",
+      "color": "#DFF1EE"
+    },
+    {
+      "label": "Evaluation",
+      "color": "#F6D9BF"
+    }
+  ]
+}

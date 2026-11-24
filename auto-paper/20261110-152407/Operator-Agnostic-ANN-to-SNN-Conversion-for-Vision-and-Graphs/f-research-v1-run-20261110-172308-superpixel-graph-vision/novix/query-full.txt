@@ -1,0 +1,96 @@
+# Novix 4090 全量实验任务（f-research-v1 P3/P4）
+
+你在本任务的 4090 GPU 沙箱中执行一次**可复现的全量 ANN→SNN 转换对比实验**。这是一个科研流水线的实验阶段，不是写作任务。所有数值必须由真实运行产生，**严禁编造、估算、插值或引用文献数值冒充实验结果**。
+
+## 0. 输出契约（最高优先级，历史踩坑）
+
+在工作区**根目录**下建立 `project/`，最终必须存在以下文件且可被 `novix debug pull` 拉回：
+
+```
+project/config.json          实验配置与环境快照
+project/result.json          全部真实数值（下节结构）
+project/experiment.py        你实际执行的自包含脚本副本
+project/README.md            运行方法、数据 SHA/字节数、口径说明
+project/protocols/vision_pipeline.py   原样保存的库脚本
+project/protocols/run_experiments.py   原样保存的运行脚本
+project/logs/run.log         完整 stdout/stderr
+```
+
+**关键**：`result.json` 与 `config.json` 必须直接位于 `project/`，不要写到 `/tmp`、隐藏目录、或只有 `config.json` 骨架的空目录。**在任务提前终止、超时或任何失败之前，也必须先把脚本与阶段性结果落盘到 `project/`**。每个 seed 完成后立即追加写 `project/result.json`（不要只在最后一次性写）。最终回复里给出实际数值摘要与 `project/` 文件清单。
+
+## 1. 环境
+
+检查 `python -c "import torch, torch_geometric, scipy, numpy; print(torch.__version__, torch.cuda.is_available())"`。缺失则 `pip install` 对应包（torch 保持 CUDA 版）。记录 torch / CUDA / GPU 型号 / 显存到 `config.json`。
+
+## 2. 数据（官方、公开、无需审批）
+
+```
+https://data.pyg.org/datasets/benchmarking-gnns/MNIST_v2.zip     -> data/pyg_bench/MNIST/raw/MNIST_v2.zip     期望 192378381 字节
+https://data.pyg.org/datasets/benchmarking-gnns/CIFAR10_v2.zip   -> data/pyg_bench/CIFAR10/raw/CIFAR10_v2.zip 期望 316368127 字节
+```
+用 `curl -L -k --retry 3` 下载，校验字节数并写入 `README.md`。用 `torch_geometric.datasets.GNNBenchmarkDataset(root="data/pyg_bench", name="MNIST"/"CIFAR10", split="train"/"val"/"test")`，这是官方 SuperPixel 图视觉数据集（SLIC 超像素为节点、8-NN 带权邻接、10 类图分类、官方 split 55k/5k/10k 与 45k/5k/10k）。**不要重新造图、不要改 split**。
+
+## 3. 原样落盘两个已本机验证的脚本
+
+下面两个 Python 文件是本机 3060 上已实跑通过的完整实现，**逐字保存**到 `protocols/vision_pipeline.py` 与 `protocols/run_experiments.py`，禁止改写其核心逻辑（恒等式、β*、膜电位解码、两阶段、基线口径）。若必须调整，只能在 `project/README.md` 记录差异与理由。
+
+`vision_pipeline.py` 提供：`load_vision`、`batch_graphs`（块对角邻接 A + 线性池化 R）、`train_ann`、`ann_logits`、`convert`（naive/qcfs/ftbc/tpp/parallel/ours 六种转换）、`check_identity`、`energy_accounting`、`summarize`。
+`run_experiments.py` 提供：`run_one(dataset, seed, n_train, n_val, n_test, epochs, device, hidden, lr, pool)`，返回含 ANN、六方法×T 网格、消融、能耗、恒等式、环境信息的 dict。
+
+## 4. 全量实验矩阵
+
+写 `protocols/run_full.py` 循环调用 `run_one`：
+
+- 数据集 `MNIST`、`CIFAR10`
+- 冻结 seeds `0,1,2,3,4`
+- `n_train=5000, n_val=1000, n_test=2000`
+- `epochs=1000, hidden=128, lr=0.01, device="cuda", pool="sum"`
+- T 网格保持 `{1,2,4,8,16}`；六种转换方法 + 4 项消融全部跑完
+- 每个 seed 结束立即把该 seed 的完整 dict 追加进 `project/result.json` 的 `runs` 列表，并写 `project/logs/run.log`
+
+`result.json` 顶层结构：`{"meta": {...}, "runs": [ run_one 返回的 dict, ... ], "summary": {...}}`。`summary` 由脚本从 `runs` 计算：每个 (dataset, method, T) 的 5-seed 均值±std 与 95% CI、相对 ANN 的 conversion loss、以及每个 T 的 ANN/SNN 理论能耗比均值。**summary 只能从 runs 实算，不得手填**。
+
+## 5. 进入 P2/P3 前必须闭合的三项条件（本机 P1B 独立评审的准 fatal 条件）
+
+本机 smoke（单 seed、MNIST 子集 2000 图）已给出真实信号：ANN 68.8%，ours T=16 达 66.8%（conversion loss 2.0pp），T=8 为 60.2%；理论能耗比 ANN/SNN 随 T 单调下降：T=1 为 1.605×、T=2 为 1.296×、T=4 为 0.863×、T=8 为 0.508×、T=16 为 0.277×；恒等式残差 3.24e-05；对称归一化下 `rho_mean≈0.9987`。这些是**预实验 smoke 数值，不是正式结果**，不得写进 `result.json` 冒充全量结果。
+
+**H1 · 能耗口径统一**：`energy_accounting` 当前主口径把脉冲触发的突触操作按 AC 计（45nm：MAC 4.6 pJ、AC 0.9 pJ）。请在结果中**同时**报告两套口径并明确标注，禁止只挑有利的一套：
+  - `primary`（事件驱动）：SNN AC = Σ_t nnz(s_t)×(H + deg_mean×C)；ANN MAC = E×F + N×F×H + E×H + N×H×C + N×C
+  - `conservative`（把 A 传播的实值累加也按 MAC 计）：SNN 能量 = (Σ_t nnz(s_t)×H)×0.9 pJ + (T×E×C)×4.6 pJ
+  两套都报 `energy_ratio_ann_over_snn` 与 `spike_density`。**若任一口径下都不存在优势，如实报告负结果，不得调口径凑 5×**。所有能耗明确标注「45nm 理论算术能耗估算，非硬件实测」。
+
+**H2 · ρ_n 算子类对应**：对称归一化下 ρ≈1，与「非行随机聚合」的机制叙述不匹配。除主实验（sym_norm=True）外，对两个数据集各跑一个 `sym_norm=False`（原始带权邻接）臂，记录 `rho_mean/rho_max/rho_std` 与六方法 conversion loss，用于检验 ρ_n 加权系统项。**不要**把 ρ≈1 的结果包装成 ρ≠1 的证据。
+
+**H3 · 恒等式精度与 teacher 门槛**：把 `convert` 的膜电位累加与 `B`/`B̂` 重算统一到 float64，报告每个 T 的 `max_abs_identity_residual`，目标是浮点精度内（<1e-10）；若仍为 1e-5 量级，如实记录并分析来源，不要改成「已精确验证」。teacher 若 test acc <70%，把 epochs 提到 1200 或 n_train 提到 8000（记录到 config），并在 README 说明。
+
+## 6. 额外诊断（本机 smoke 发现的真实现象，必须在全量中复核）
+
+- 消融显示 `ours_no_beta` 与 `ours_naive_if` 在 T=8 达 66.2%，高于完整 ours 的 60.2%：`β*=θ/(2T)` 与确定性两阶段可能存在冗余或相互作用。请在全量中按 seed 报告四项消融的配对差值与 CI，**不得删除这些负结果**，并在 README 给出机制层面的解释假设（不要求定论）。
+- 膜电位解码贡献巨大（计数读出仅 14.8%），请保留该对照。
+- 报告 `argmax_agreement` 随 T 的曲线与 `sum_n_hit_rate`。
+
+## 7. 纪律
+
+- 5 个冻结 seed；FTBC 的 β 只在 val 上校准；test 只在最终评测用一次；用于选择的切分之后不得称 unseen。
+- 所有 trial 记 config / 环境 / 时间；CUDA 稀疏归约非确定，必须报 5-seed std 与 CI，不报单 seed 最好值。
+- 保留全部失败与负结果；不挑 seed、不调参到显著、不改写负结果。
+- 不提交、不发布、不写入任何凭据；`config.json` 中不得出现 token/密码。
+- 最终回复给出：两个数据集的 ANN test acc、ours 在 T=1/2/4/8/16 的 5-seed 均值、最强单点基线对比、两套能耗口径在 T=1 与 T=8 的比值、恒等式残差量级、以及 `project/` 文件清单。
+
+## 8. 脚本全文（逐字保存）
+
+## 8. 脚本还原（必须先做，再执行）
+
+上面的两个实现脚本与 `run_full.py` 已打包为一个 gzip 压缩 zip 的 base64 载荷，**避免命令行长度限制**。请在工作区根目录执行以下还原命令，得到 `protocols/vision_pipeline.py`、`protocols/run_experiments.py`、`protocols/run_full.py`：
+
+```
+python -c "import base64,io,zipfile,pathlib; pathlib.Path('payload.b64').write_text('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'); zipfile.ZipFile(io.BytesIO(base64.b64decode(pathlib.Path('payload.b64').read_text()))).extractall('.')"
+python -c "import shutil,pathlib; p=pathlib.Path('project/protocols'); p.mkdir(parents=True,exist_ok=True); [shutil.copy(f,p/f.name) for f in pathlib.Path('protocols').glob('*.py')]"
+```
+
+还原后先做语法检查 `python -m py_compile protocols/*.py`，再按第 4 节跑 `python protocols/run_full.py 2>&1 | tee project/logs/run.log`（先建 `project/logs/`）。把 `payload.b64` 也复制一份到 `project/` 作为可复现附件。
+
+**载荷已内嵌在上一条还原命令中，无需另行替换**。
+
+
+按第 0 节的输出契约交付，最终回复给出实际数值摘要。

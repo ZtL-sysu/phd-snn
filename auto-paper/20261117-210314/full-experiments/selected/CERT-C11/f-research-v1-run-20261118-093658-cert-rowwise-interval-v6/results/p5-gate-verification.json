@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "stage": "P5",
+  "tests_passed": 9,
+  "containment_pass": true,
+  "minkowski_pass": true,
+  "global_equality_pass": true,
+  "rowwise_min_tightening": 0.7426478701715937,
+  "rowwise_tightening_pass": true,
+  "clipping_pass": true,
+  "nonfinite_pass": true,
+  "strong_gate_pass": true
+}

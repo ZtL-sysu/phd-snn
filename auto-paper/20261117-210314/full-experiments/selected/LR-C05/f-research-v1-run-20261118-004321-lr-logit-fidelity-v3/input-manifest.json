@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "files": [
+    {"path": "inputs/guidance-v3.md", "sha256": "0dd3778603ecdfb959012a27076e42472c21fb2d96102e0fc5908e76d4546593"},
+    {"path": "inputs/literature-baseline-matrix.md", "sha256": "a6882f48667278ed502fce06735a512c0a573cf86c82c9aae1b167ba8c34a512"},
+    {"path": "inputs/v2-baseline.json", "sha256": "44e1a3124a0608a0ddadff6ff7d3bbd06e35adb0c5e801094778cdb3ba396fff"},
+    {"path": "inputs/v2-lr-core.py", "sha256": "deac99194727c4f36aecd100730be47d3a10fc562d44b5eaf669553c4f7fee83"},
+    {"path": "inputs/v2-method-jacobian.json", "sha256": "8e54f3c0a5b19e6f3299ad7f511a8c7313343bffd2739ecd0a139458aa2f3579"},
+    {"path": "inputs/v2-negative-lock.md", "sha256": "d4a3111292c0c4730f5b1b324a79800b923deb4dfb7d2b01655243375d02d080"},
+    {"path": "inputs/v2-summary.json", "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"},
+    {"path": "inputs/v2-timing.json", "sha256": "bd77cd5b8d688380fe7485bb6d20a31fd853189d7ff9354559978f38fcd32dc0"}
+  ]
+}

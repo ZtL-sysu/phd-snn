@@ -1,0 +1,23 @@
+{
+  "cited_keys": 32,
+  "bib_entries": 43,
+  "missing_keys": [],
+  "uncited_entries": [
+    "cherukuri2025lowrank",
+    "dampfhoffer2023snnlearning",
+    "gowal2018ibp",
+    "katz2017reluplex",
+    "mirman2018diffai",
+    "msg",
+    "nunes2022snnsurvey",
+    "wang2022taxonomicsnn",
+    "wong2018provable",
+    "yang2016planetoid",
+    "you2024spikezip"
+  ],
+  "title": "Permutation-Equivariant Hybrid Hop-Message Coding for Frozen Graph Positional Representations",
+  "task_provenance_present": true,
+  "event_scope_present": true,
+  "noncausal_fixed_probe_present": true,
+  "six_sections": true
+}

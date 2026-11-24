@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "stage": "P13/generic-export-repair",
+  "status": "passed",
+  "latexmk_returncode": 0,
+  "problems": [],
+  "tex_sha256": "2c3604d18b21ff6ecc8964253e16911f7ede44d3a67ffe33a9d6291a08386050",
+  "pdf_sha256": "666af61e71ef21b67e7f727c832e3aaf60bc71e5389c6cad217d6364be8cb259",
+  "bib_sha256": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5"
+}

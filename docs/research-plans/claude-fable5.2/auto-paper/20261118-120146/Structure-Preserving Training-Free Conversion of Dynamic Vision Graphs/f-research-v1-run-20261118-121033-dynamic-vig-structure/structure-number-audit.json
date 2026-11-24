@@ -1,0 +1,150 @@
+{
+  "purpose": "Reconcile frozen-test structure metrics with P4 oracle metrics.",
+  "split": "Fashion-MNIST official test, first 2000 examples; read-only re-analysis",
+  "features": "teacher learned embeddings and raw 4x4 patches",
+  "jaccard_definition": "mean |N_t \u2229 N_e| / |N_t \u222a N_e| per node",
+  "overlap_at_k_definition": "mean |N_t \u2229 N_e| / k per node; this is the P4 oracle script's value labeled neighbor_jaccard",
+  "strict_frozen_reproduction": [
+    {
+      "seed": 41,
+      "method": "signed_uniform",
+      "jaccard": 0.8015389606941677,
+      "overlap_at_k": 0.8755498866213152,
+      "winner_agreement": 0.6431035995483398,
+      "events": 1921691
+    },
+    {
+      "seed": 41,
+      "method": "signed_multilevel",
+      "jaccard": 0.7206591378159656,
+      "overlap_at_k": 0.8121757369614512,
+      "winner_agreement": 0.5758599638938904,
+      "events": 2874102
+    },
+    {
+      "seed": 42,
+      "method": "signed_uniform",
+      "jaccard": 0.8181568977840887,
+      "overlap_at_k": 0.8869421768707483,
+      "winner_agreement": 0.6887582540512085,
+      "events": 1804026
+    },
+    {
+      "seed": 42,
+      "method": "signed_multilevel",
+      "jaccard": 0.7078187237882166,
+      "overlap_at_k": 0.8051519274376417,
+      "winner_agreement": 0.619022786617279,
+      "events": 2738098
+    },
+    {
+      "seed": 43,
+      "method": "signed_uniform",
+      "jaccard": 0.7952482253790627,
+      "overlap_at_k": 0.8715068027210885,
+      "winner_agreement": 0.6491090059280396,
+      "events": 1803910
+    },
+    {
+      "seed": 43,
+      "method": "signed_multilevel",
+      "jaccard": 0.7006107631863935,
+      "overlap_at_k": 0.801297052154195,
+      "winner_agreement": 0.5743095874786377,
+      "events": 2785403
+    }
+  ],
+  "rows": [
+    {
+      "source": "learned_embedding_scale9",
+      "seed": 41,
+      "scale": 9.0,
+      "jaccard": 0.7841264445638395,
+      "overlap_at_k": 0.8642358276643991,
+      "winner_agreement": 0.6154958605766296,
+      "teacher_neighbors_nonzero_fraction": 0.45824456214904785,
+      "encoded_zero_fraction": 0.0
+    },
+    {
+      "source": "learned_pre_norm_scale9",
+      "seed": 41,
+      "scale": 9.0,
+      "jaccard": 0.7253853932831874,
+      "overlap_at_k": 0.8153662131519275,
+      "winner_agreement": 0.5959577560424805,
+      "teacher_neighbors_nonzero_fraction": 0.45824456214904785,
+      "encoded_zero_fraction": 0.0
+    },
+    {
+      "source": "raw_patch_scale15",
+      "seed": 41,
+      "scale": 15.0,
+      "jaccard": 0.5419133500802918,
+      "overlap_at_k": 0.6065351473922903,
+      "winner_agreement": 0.31720152497291565,
+      "teacher_neighbors_nonzero_fraction": 0.5004062056541443,
+      "encoded_zero_fraction": 0.0
+    },
+    {
+      "source": "learned_embedding_scale9",
+      "seed": 42,
+      "scale": 9.0,
+      "jaccard": 0.7827449310293548,
+      "overlap_at_k": 0.860797052154195,
+      "winner_agreement": 0.6587115526199341,
+      "teacher_neighbors_nonzero_fraction": 0.43656009435653687,
+      "encoded_zero_fraction": 0.0
+    },
+    {
+      "source": "learned_pre_norm_scale9",
+      "seed": 42,
+      "scale": 9.0,
+      "jaccard": 0.7241988039871293,
+      "overlap_at_k": 0.8147369614512472,
+      "winner_agreement": 0.6435086131095886,
+      "teacher_neighbors_nonzero_fraction": 0.43656009435653687,
+      "encoded_zero_fraction": 0.0
+    },
+    {
+      "source": "raw_patch_scale15",
+      "seed": 42,
+      "scale": 15.0,
+      "jaccard": 0.5419133500802918,
+      "overlap_at_k": 0.6065351473922903,
+      "winner_agreement": 0.31720152497291565,
+      "teacher_neighbors_nonzero_fraction": 0.5004062056541443,
+      "encoded_zero_fraction": 0.0
+    },
+    {
+      "source": "learned_embedding_scale9",
+      "seed": 43,
+      "scale": 9.0,
+      "jaccard": 0.8033946092173132,
+      "overlap_at_k": 0.8751507936507937,
+      "winner_agreement": 0.6171597242355347,
+      "teacher_neighbors_nonzero_fraction": 0.4441026747226715,
+      "encoded_zero_fraction": 0.0
+    },
+    {
+      "source": "learned_pre_norm_scale9",
+      "seed": 43,
+      "scale": 9.0,
+      "jaccard": 0.7470880854289768,
+      "overlap_at_k": 0.8304183673469387,
+      "winner_agreement": 0.6013131141662598,
+      "teacher_neighbors_nonzero_fraction": 0.4441026747226715,
+      "encoded_zero_fraction": 0.0
+    },
+    {
+      "source": "raw_patch_scale15",
+      "seed": 43,
+      "scale": 15.0,
+      "jaccard": 0.5419133500802918,
+      "overlap_at_k": 0.6065351473922903,
+      "winner_agreement": 0.31720152497291565,
+      "teacher_neighbors_nonzero_fraction": 0.5004062056541443,
+      "encoded_zero_fraction": 0.0
+    }
+  ],
+  "wall_seconds": 182.3055076599121
+}

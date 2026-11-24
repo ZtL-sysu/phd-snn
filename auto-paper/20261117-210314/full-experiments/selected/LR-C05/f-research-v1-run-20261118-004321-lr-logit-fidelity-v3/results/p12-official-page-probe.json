@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "key": "one-spike",
+      "requested_url": "https://doi.org/10.1109/TETC.2024.3386893",
+      "final_url": "https://ieeexplore.ieee.org/document/10502282/",
+      "title": "",
+      "authors": [],
+      "dates": [],
+      "identifiers": [],
+      "venues": [],
+      "meta_keys": []
+    },
+    {
+      "key": "asgcn",
+      "requested_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32154",
+      "final_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32154",
+      "title": "Making sure you're not a bot!",
+      "authors": [],
+      "dates": [],
+      "identifiers": [],
+      "venues": [],
+      "meta_keys": [
+        "robots",
+        "viewport"
+      ]
+    },
+    {
+      "key": "spikinggcn",
+      "requested_url": "https://www.ijcai.org/proceedings/2022/338",
+      "final_url": "https://ijcai.org/proceedings/2022/338",
+      "title": "Spiking Graph Convolutional Networks",
+      "authors": [
+        "Zhu, Zulun",
+        "Peng, Jiaying",
+        "Li, Jintang",
+        "Chen, Liang",
+        "Yu, Qi",
+        "Luo, Siqiang"
+      ],
+      "dates": [
+        "2022"
+      ],
+      "identifiers": [
+        "10.24963/ijcai.2022/338"
+      ],
+      "venues": [
+        "Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence"
+      ],
+      "meta_keys": [
+        "citation_abstract_html_url",
+        "citation_author",
+        "citation_author_institution",
+        "citation_conference_title",
+        "citation_doi",
+        "citation_firstpage",
+        "citation_lastpage",
+        "citation_pdf_url",
+        "citation_publication_date",
+        "citation_publisher",
+        "citation_title",
+        "generator",
+        "robots",
+        "viewport"
+      ]
+    },
+    {
+      "key": "spikenet",
+      "requested_url": "https://ojs.aaai.org/index.php/AAAI/article/view/26034",
+      "final_url": "https://ojs.aaai.org/index.php/AAAI/article/view/26034",
+      "title": "Making sure you're not a bot!",
+      "authors": [],
+      "dates": [],
+      "identifiers": [],
+      "venues": [],
+      "meta_keys": [
+        "robots",
+        "viewport"
+      ]
+    },
+    {
+      "key": "dy-sign",
+      "requested_url": "https://doi.org/10.1609/aaai.v38i15.29587",
+      "final_url": "https://ojs.aaai.org/index.php/AAAI/article/view/29587",
+      "title": "Making sure you're not a bot!",
+      "authors": [],
+      "dates": [],
+      "identifiers": [],
+      "venues": [],
+      "meta_keys": [
+        "robots",
+        "viewport"
+      ]
+    },
+    {
+      "key": "delay-dsgn",
+      "requested_url": "https://proceedings.mlr.press/v267/wang25dm.html",
+      "final_url": "https://proceedings.mlr.press/v267/wang25dm.html",
+      "title": "Delay-DSGN: A Dynamic Spiking Graph Neural Network with Delay Mechanisms for Evolving Graph",
+      "authors": [
+        "Zhiqiang Wang",
+        "Jianghao Wen",
+        "Jianqing Liang"
+      ],
+      "dates": [
+        "2025/10/06"
+      ],
+      "identifiers": [],
+      "venues": [
+        "International Conference on Machine Learning"
+      ],
+      "meta_keys": [
+        "article:published_time",
+        "citation_abstract_html_url",
+        "citation_author",
+        "citation_conference_title",
+        "citation_firstpage",
+        "citation_inbook_title",
+        "citation_issn",
+        "citation_language",
+        "citation_lastpage",
+        "citation_pdf_url",
+        "citation_publication_date",
+        "citation_publisher",
+        "citation_title",
+        "description",
+        "og:description",
+        "og:image",
+        "og:site_name",
+        "og:title",
+        "og:type",
+        "og:url",
+        "twitter:card",
+        "twitter:description",
+        "twitter:image",
+        "twitter:image:alt",
+        "twitter:site",
+        "twitter:title",
+        "viewport"
+      ]
+    },
+    {
+      "key": "signnn",
+      "requested_url": "https://doi.org/10.1016/j.patcog.2024.111026",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S0031320324007775",
+      "title": "Redirecting",
+      "authors": [],
+      "dates": [],
+      "identifiers": [],
+      "venues": [],
+      "meta_keys": [
+        "tdm-policy",
+        "tdm-reservation"
+      ]
+    },
+    {
+      "key": "msg",
+      "requested_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/3ba7560b4c3e66d760fbdd472cf4a5a9-Abstract-Conference.html",
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/3ba7560b4c3e66d760fbdd472cf4a5a9-Abstract-Conference.html",
+      "title": "Spiking Graph Neural Network on Riemannian Manifolds",
+      "authors": [
+        "Sun, Li",
+        "Huang, Zhenhao",
+        "Wan, Qiqi",
+        "Peng, Hao",
+        "Yu, Philip S."
+      ],
+      "dates": [
+        "2024-12-16"
+      ],
+      "identifiers": [
+        "10.52202/079017-1071"
+      ],
+      "venues": [
+        "Advances in Neural Information Processing Systems"
+      ],
+      "meta_keys": [
+        "citation_author",
+        "citation_doi",
+        "citation_firstpage",
+        "citation_journal_title",
+        "citation_lastpage",
+        "citation_pdf_url",
+        "citation_publication_date",
+        "citation_title",
+        "citation_volume",
+        "viewport"
+      ]
+    },
+    {
+      "key": "negative-spike",
+      "requested_url": "https://www.ijcai.org/proceedings/2025/719",
+      "final_url": "https://ijcai.org/proceedings/2025/719",
+      "title": "A Fast and Accurate ANN-SNN Conversion Algorithm with Negative Spikes",
+      "authors": [
+        "Wang, Xu",
+        "Zhu, Dongchen",
+        "Li, Jiamao"
+      ],
+      "dates": [
+        "2025"
+      ],
+      "identifiers": [
+        "10.24963/ijcai.2025/719"
+      ],
+      "venues": [
+        "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence"
+      ],
+      "meta_keys": [
+        "citation_abstract_html_url",
+        "citation_author",
+        "citation_author_institution",
+        "citation_conference_title",
+        "citation_doi",
+        "citation_firstpage",
+        "citation_lastpage",
+        "citation_pdf_url",
+        "citation_publication_date",
+        "citation_publisher",
+        "citation_title",
+        "generator",
+        "robots",
+        "viewport"
+      ]
+    },
+    {
+      "key": "adaqp",
+      "requested_url": "https://proceedings.mlsys.org/paper_files/paper/2023/hash/420bcf98bb3615a21468f1efb426e96d-Abstract-mlsys2023.html",
+      "final_url": "https://proceedings.mlsys.org/paper_files/paper/2023/hash/420bcf98bb3615a21468f1efb426e96d-Abstract-mlsys2023.html",
+      "title": "Adaptive Message Quantization and Parallelization for Distributed Full-graph GNN Training",
+      "authors": [
+        "Wan, Borui",
+        "Zhao, Juntao",
+        "Wu, Chuan"
+      ],
+      "dates": [
+        "2023-03-18"
+      ],
+      "identifiers": [],
+      "venues": [
+        "Proceedings of Machine Learning and Systems"
+      ],
+      "meta_keys": [
+        "citation_author",
+        "citation_firstpage",
+        "citation_journal_title",
+        "citation_lastpage",
+        "citation_pdf_url",
+        "citation_publication_date",
+        "citation_title",
+        "citation_volume",
+        "viewport"
+      ]
+    },
+    {
+      "key": "seenn",
+      "requested_url": "https://papers.neurips.cc/paper_files/paper/2023/hash/c801e68207da477bbc44182b9fac1129-Abstract-Conference.html",
+      "final_url": "https://papers.neurips.cc/paper_files/paper/2023/hash/c801e68207da477bbc44182b9fac1129-Abstract-Conference.html",
+      "title": "SEENN: Towards Temporal Spiking Early Exit Neural Networks",
+      "authors": [
+        "Li, Yuhang",
+        "Geller, Tamar",
+        "Kim, Youngeun",
+        "Panda, Priyadarshini"
+      ],
+      "dates": [
+        "2023-12-15"
+      ],
+      "identifiers": [
+        "10.52202/075280-2764"
+      ],
+      "venues": [
+        "Advances in Neural Information Processing Systems"
+      ],
+      "meta_keys": [
+        "citation_author",
+        "citation_doi",
+        "citation_firstpage",
+        "citation_journal_title",
+        "citation_lastpage",
+        "citation_pdf_url",
+        "citation_publication_date",
+        "citation_title",
+        "citation_volume",
+        "viewport"
+      ]
+    },
+    {
+      "key": "spikezip",
+      "requested_url": "https://proceedings.mlr.press/v235/you24b.html",
+      "final_url": "https://proceedings.mlr.press/v235/you24b.html",
+      "title": "SpikeZIP-TF: Conversion is All You Need for Transformer-based SNN",
+      "authors": [
+        "Kang You",
+        "Zekai Xu",
+        "Chen Nie",
+        "Zhijie Deng",
+        "Qinghai Guo",
+        "Xiang Wang",
+        "Zhezhi He"
+      ],
+      "dates": [
+        "2024/07/08"
+      ],
+      "identifiers": [],
+      "venues": [
+        "International Conference on Machine Learning"
+      ],
+      "meta_keys": [
+        "article:published_time",
+        "citation_abstract_html_url",
+        "citation_author",
+        "citation_conference_title",
+        "citation_firstpage",
+        "citation_inbook_title",
+        "citation_issn",
+        "citation_language",
+        "citation_lastpage",
+        "citation_pdf_url",
+        "citation_publication_date",
+        "citation_publisher",
+        "citation_title",
+        "description",
+        "og:description",
+        "og:image",
+        "og:site_name",
+        "og:title",
+        "og:type",
+        "og:url",
+        "twitter:card",
+        "twitter:description",
+        "twitter:image",
+        "twitter:image:alt",
+        "twitter:site",
+        "twitter:title",
+        "viewport"
+      ]
+    },
+    {
+      "key": "ttfsformer",
+      "requested_url": "https://proceedings.mlr.press/v267/zhao25n.html",
+      "final_url": "https://proceedings.mlr.press/v267/zhao25n.html",
+      "title": "TTFSFormer: A TTFS-based Lossless Conversion of Spiking Transformer",
+      "authors": [
+        "Lusen Zhao",
+        "Zihan Huang",
+        "Jianhao Ding",
+        "Zhaofei Yu"
+      ],
+      "dates": [
+        "2025/10/06"
+      ],
+      "identifiers": [],
+      "venues": [
+        "International Conference on Machine Learning"
+      ],
+      "meta_keys": [
+        "article:published_time",
+        "citation_abstract_html_url",
+        "citation_author",
+        "citation_conference_title",
+        "citation_firstpage",
+        "citation_inbook_title",
+        "citation_issn",
+        "citation_language",
+        "citation_lastpage",
+        "citation_pdf_url",
+        "citation_publication_date",
+        "citation_publisher",
+        "citation_title",
+        "description",
+        "og:description",
+        "og:image",
+        "og:site_name",
+        "og:title",
+        "og:type",
+        "og:url",
+        "twitter:card",
+        "twitter:description",
+        "twitter:image",
+        "twitter:image:alt",
+        "twitter:site",
+        "twitter:title",
+        "viewport"
+      ]
+    },
+    {
+      "key": "sight",
+      "requested_url": "https://doi.org/10.1145/3774904.3793044",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "key": "sgspose",
+      "requested_url": "https://doi.org/10.1109/ACCESS.2026.3651795",
+      "final_url": "https://ieeexplore.ieee.org/document/11338761/",
+      "title": "",
+      "authors": [],
+      "dates": [],
+      "identifiers": [],
+      "venues": [],
+      "meta_keys": []
+    }
+  ]
+}

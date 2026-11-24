@@ -1,0 +1,383 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-guidance-builder-v1",
+  "contract_version": "v1",
+  "contract": [
+    {
+      "path": "execution-contract-v1.md",
+      "sha256": "95aa59651d26f4b6213582591f02e07d5c20ddc38756d48c67646b12d27d01cb"
+    },
+    {
+      "path": "input-STATE.md",
+      "sha256": "9627a43efca112ae5b3d9adae1ae942e07d0218a74e506f2c434586f2ccb9c54"
+    },
+    {
+      "path": "input-TASKS.md",
+      "sha256": "76f5e9440ae3b10029a30994bd69ed74444ab28bbeb3da8cd643f7939b6b1d2b"
+    },
+    {
+      "path": "input-codex-score5-full-pipeline-20261117.md",
+      "sha256": "f4e115c5fce61d8a5caa1a0ea80177bb352d637125242c1b9df80cc1668758f1"
+    },
+    {
+      "path": "input-codex-claude-fable5.2-import-20261118.md",
+      "sha256": "cefe02d4ece33a8f10c6fd3d40c4b54db318827bc32c5733a8a7dc8d5df4258e"
+    },
+    {
+      "path": "input-README.md",
+      "sha256": "3701725700c1dc40c414a03f60e6c95c09e2537fa4610b7c70e1a8cb2cd46c38"
+    },
+    {
+      "path": "input-source-manifest.json",
+      "sha256": "3a2ea1035c5243348cee0cac7b4efa5459fd93b4f44250ef718673389ff2026e"
+    },
+    {
+      "path": "input-AGENTS.md",
+      "sha256": "ddd6df266590b49c1e9ccae0c933da8c733dd389c2c640a3ada66393ff8749a3"
+    },
+    {
+      "path": "input-09-paper-ideas.md",
+      "sha256": "148c399a9c842eb4f50abb41c0aa6c0f6bb5a2deeedbcf3569aa2962723b7b63"
+    },
+    {
+      "path": "input-08-difficulty-map.md",
+      "sha256": "a6c45653a4e44ea4c65f9cff35cb85517e742fd0a9a46e10b6dad04ff765e9a1"
+    },
+    {
+      "path": "input-06-partial-computation.md",
+      "sha256": "fdd3062d0f8feed8a680d9d57d93c34c698f818541e67b4aad6d16a83bc77296"
+    },
+    {
+      "path": "input-07-energy-accounting.md",
+      "sha256": "c2ecf68e34c557a2a4d77136ac8465e47d5ee2cecdaa54d46a7c8b5b06ab8444"
+    }
+  ],
+  "history": [
+    {
+      "action": "pass",
+      "stage": "CCFA-startup"
+    },
+    {
+      "action": "pass",
+      "stage": "G0"
+    },
+    {
+      "action": "pass",
+      "stage": "G1"
+    },
+    {
+      "action": "pass",
+      "stage": "G2"
+    },
+    {
+      "action": "pass",
+      "stage": "G3"
+    },
+    {
+      "action": "pass",
+      "stage": "G4"
+    },
+    {
+      "action": "pass",
+      "stage": "G5"
+    },
+    {
+      "action": "pass",
+      "stage": "G6"
+    },
+    {
+      "action": "pass",
+      "stage": "G7"
+    },
+    {
+      "action": "pass",
+      "stage": "G8"
+    },
+    {
+      "action": "pass",
+      "stage": "validation"
+    },
+    {
+      "action": "pass",
+      "stage": "handoff"
+    }
+  ],
+  "stages": [
+    {
+      "id": "CCFA-startup",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "execution-contract-v1.md",
+          "sha256": "95aa59651d26f4b6213582591f02e07d5c20ddc38756d48c67646b12d27d01cb"
+        },
+        {
+          "path": "input-09-paper-ideas.md",
+          "sha256": "148c399a9c842eb4f50abb41c0aa6c0f6bb5a2deeedbcf3569aa2962723b7b63"
+        },
+        {
+          "path": "input-08-difficulty-map.md",
+          "sha256": "a6c45653a4e44ea4c65f9cff35cb85517e742fd0a9a46e10b6dad04ff765e9a1"
+        },
+        {
+          "path": "input-06-partial-computation.md",
+          "sha256": "fdd3062d0f8feed8a680d9d57d93c34c698f818541e67b4aad6d16a83bc77296"
+        },
+        {
+          "path": "input-07-energy-accounting.md",
+          "sha256": "c2ecf68e34c557a2a4d77136ac8465e47d5ee2cecdaa54d46a7c8b5b06ab8444"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "ccfa-startup-packet/startup-stage-plan.md",
+          "sha256": "8e243f9642719f8fa838d4fab32410a723c312b0e6e413a5c9bfe25f5718d03b"
+        },
+        {
+          "path": "ccfa-startup-packet/idea-cards.md",
+          "sha256": "c7f8d30b2b651a582d8e9960d7ecd61315696f0a6a222b0ef1e7beec40f73d53"
+        },
+        {
+          "path": "ccfa-startup-packet/prior-art-opportunity-map.md",
+          "sha256": "a4c9ff6dafb7b009c18f076c6e717127b97da0469f1c99381c39e088d67c2c69"
+        },
+        {
+          "path": "ccfa-startup-packet/idea-red-team-review.md",
+          "sha256": "a9cee55e73dd69e423674a97c7942e15cc1b735f6fefb836423e6c19c0b43895"
+        },
+        {
+          "path": "ccfa-startup-packet/claim-evidence-matrix.md",
+          "sha256": "5b0a253904163d71e9a25e2c1fec3f18b5a5ad5904e041e59c23784122011df8"
+        },
+        {
+          "path": "ccfa-startup-packet/strong-result-feasibility-contract.md",
+          "sha256": "b63fc3f284eb8b278ad804091202d06c877ca467b009432d338d530af8fce98f"
+        },
+        {
+          "path": "ccfa-startup-packet/startup-decision.md",
+          "sha256": "cd7d37244e99ddf8d9c3ed5b81d74a6e368ba4be96df700bdb9adb0a8559976e"
+        },
+        {
+          "path": "ccfa-startup-packet/feasibility-contract.json",
+          "sha256": "3e40a0355d340b363dc61b75da4ae2418654e3b0c8ca1aeee081ba4575ae22bd"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/prior-art-opportunity-map.md",
+          "sha256": "a4c9ff6dafb7b009c18f076c6e717127b97da0469f1c99381c39e088d67c2c69"
+        },
+        {
+          "path": "ccfa-startup-packet/idea-cards.md",
+          "sha256": "c7f8d30b2b651a582d8e9960d7ecd61315696f0a6a222b0ef1e7beec40f73d53"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "g0-literature-baseline-map.md",
+          "sha256": "fdd91c54cdd8d127d3f7128c6bce2e0b4c64e2616c87a1b1455fa9f2cf2f57ce"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g0-literature-baseline-map.md",
+          "sha256": "fdd91c54cdd8d127d3f7128c6bce2e0b4c64e2616c87a1b1455fa9f2cf2f57ce"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "g1-dataset-access.md",
+          "sha256": "bfe84621f3511f0fa851223b06932838a6ee80023e1a22be7ae92fa0ca3ced84"
+        },
+        {
+          "path": "dataset-access-log.md",
+          "sha256": "6c91784e87ad604d738aea7e0c2c893da91351a5c7009c68fbbe5b1137138353"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "dataset-access-log.md",
+          "sha256": "6c91784e87ad604d738aea7e0c2c893da91351a5c7009c68fbbe5b1137138353"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "g2-task-evaluation-validity.md",
+          "sha256": "9710b47b8c3ebe8d98c33d0d9950d76fb581ec379ae991a3f1fb215bfbbb7ace"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G3",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g2-task-evaluation-validity.md",
+          "sha256": "9710b47b8c3ebe8d98c33d0d9950d76fb581ec379ae991a3f1fb215bfbbb7ace"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "theoretical-feasibility-audit.md",
+          "sha256": "8b0456ec6f039e8fbb11d091d03a129e99ce4aef737dc01fceb9c79efcfa50a8"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G4",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g0-literature-baseline-map.md",
+          "sha256": "fdd91c54cdd8d127d3f7128c6bce2e0b4c64e2616c87a1b1455fa9f2cf2f57ce"
+        },
+        {
+          "path": "theoretical-feasibility-audit.md",
+          "sha256": "8b0456ec6f039e8fbb11d091d03a129e99ce4aef737dc01fceb9c79efcfa50a8"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "g4-novelty-audit.md",
+          "sha256": "cd71a692ed72732dc7b94a2b5eaf4566d13e09cf7703cf29df883e2d58b7e179"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G5",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g4-novelty-audit.md",
+          "sha256": "cd71a692ed72732dc7b94a2b5eaf4566d13e09cf7703cf29df883e2d58b7e179"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "local-dataset-availability.md",
+          "sha256": "fcf1dfcaeaf8f88a12df218d87cd61ffb01db771b3631ce64c9bc968013bfa7d"
+        },
+        {
+          "path": "hardware-profile.md",
+          "sha256": "f1ff1159466eae52cabcc42188853dd1919f0624bd8ad83c4839d08654c427f1"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G6",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g5-none-placeholder.md",
+          "sha256": "d116d972668fb351c7214c59cb073bc7102c75966f4fc896aef0cadad098f42a"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "g6-baseline-ablation-feasibility.md",
+          "sha256": "f78a84b29893297768fb8f2278edd0f5bdd7840b9c81e638e78bbea5dd3e95ac"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G7",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g6-baseline-ablation-feasibility.md",
+          "sha256": "f78a84b29893297768fb8f2278edd0f5bdd7840b9c81e638e78bbea5dd3e95ac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "g7-strong-result-feasibility.md",
+          "sha256": "1809e510befd41e3cd2b54ba0129d3e68e4ce3ce0d2453491800fc5c569fb809"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G8",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g7-strong-result-feasibility.md",
+          "sha256": "1809e510befd41e3cd2b54ba0129d3e68e4ce3ce0d2453491800fc5c569fb809"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "g8-story-strength-audit.md",
+          "sha256": "b17f5e78e4b20ab7be7a15b37f2e39136107328e8225a9e0d4ccbe0bd52dd488"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "validation",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g8-story-strength-audit.md",
+          "sha256": "b17f5e78e4b20ab7be7a15b37f2e39136107328e8225a9e0d4ccbe0bd52dd488"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "guidance.md",
+          "sha256": "0e14702697ff833c966944dce532615df47e58edeb4410aac82ee694d8087a90"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "handoff",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "g8-story-strength-audit.md",
+          "sha256": "b17f5e78e4b20ab7be7a15b37f2e39136107328e8225a9e0d4ccbe0bd52dd488"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "guidance.md",
+          "sha256": "0e14702697ff833c966944dce532615df47e58edeb4410aac82ee694d8087a90"
+        }
+      ],
+      "gate_verdict": "pass"
+    }
+  ]
+}

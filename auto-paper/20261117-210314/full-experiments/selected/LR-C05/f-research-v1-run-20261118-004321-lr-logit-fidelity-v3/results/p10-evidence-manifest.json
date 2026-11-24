@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "path": "results\\p10-control-summary.csv",
+      "sha256": "19b6da00627b44aadd19bb4493e3965210a4006ff3d94cd45ae6c24c106bb33e",
+      "bytes": 4854
+    },
+    {
+      "path": "results\\p10-per-seed-control-comparison.csv",
+      "sha256": "6b08db8bf5a6a73a829c92b410bd80984f7052629da2edcc935fbf26b34ab026",
+      "bytes": 5398
+    },
+    {
+      "path": "results\\p10-bit-ledger.csv",
+      "sha256": "8b7f675e565fa2c108edf1eb19ad8dbcdd97c282fb955f8e3c7c4ecb6f68e0ce",
+      "bytes": 767
+    },
+    {
+      "path": "results\\p10-task-loss-audit.csv",
+      "sha256": "16aa32a54ac82b74022d3e3ff77346495057dc11154e19352b7383701f3c4f38",
+      "bytes": 5478
+    },
+    {
+      "path": "results\\p10-task-loss-three-seed-audit.csv",
+      "sha256": "06967d8ab9bd6ab77770c050c6c6eed4fa21507901f9e30f3e79b2d458884b9d",
+      "bytes": 2238
+    },
+    {
+      "path": "results\\p10-f8-derivation.csv",
+      "sha256": "f2bf86cd235eceeaba53f98a529489d2dc424738cdde5e4d8bdaa86dac872f1e",
+      "bytes": 1472
+    },
+    {
+      "path": "results\\p10-validation-grid.csv",
+      "sha256": "caa7553b20ca4ac9af1b05cf5af23c188e0a39b74d78865e30f1c91c91a20e5e",
+      "bytes": 1559
+    },
+    {
+      "path": "results\\p10-timing-summary.csv",
+      "sha256": "898131aa7b498b050dd70a5809ffaaa50f54cccb5c648bace6f82615b469719a",
+      "bytes": 2341
+    },
+    {
+      "path": "results\\p10-implementation-spec.json",
+      "sha256": "117af1c76c41184f3b81d33afdba10c3f26892f1ae81b5c2a561da1304191691",
+      "bytes": 3797
+    }
+  ]
+}

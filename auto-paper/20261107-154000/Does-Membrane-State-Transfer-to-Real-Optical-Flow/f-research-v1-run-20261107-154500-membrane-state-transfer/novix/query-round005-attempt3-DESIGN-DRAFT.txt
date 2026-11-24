@@ -1,0 +1,160 @@
+【状态：PREPLANNED / NOT SUBMITTED】
+本文件是 round-005（2026-11-08 08:1x GMT+8）按 WORKFLOW-PLAYBOOK.md v3 §3.6(3)
+「每轮必须做一次实质优化、不许原地踏步」设计的 **C1 死磕 attempt #3 预案**。
+**本轮没有、也不会把它提交给 novix**：主攻 C1 的最新任务 `18228` 于本轮 Step 0 实查仍为
+`processing`（steps 163→167，`task get` 顶层无 `finalReply`，末步仍为 `Edit` 工具调用），
+按「同一 idea 在途不重复提交」「没好就只更新文档、不重提交、不等待」的硬约束，
+预案只落盘、不派发。待某一轮 Step 0 回收 `18228` 的 `result.json` 并按 C1 guidance §6
+判定后，由那一轮依据**实测结果**决定：启用本预案 / 改写本预案 / 判定达标后转 P5。
+严禁把本预案当成已提交任务、已跑实验或已得结果。
+
+=====================================================================
+四要素（同时写进 GRIND-LEDGER.md 与 rounds/round-005.md）
+=====================================================================
+- 上一轮失败点（可复核、非推断）：`18156` 判 `REJECT_FAILURE`，
+  ① eye→KC exact-hop 可达数 hop1=0/2=0/3=0、hop4=8、hop5=714 → 3 步传播到不了 KC，
+     KC 读出 feature std=0、spike rate=0；
+  ② DAVIS ceiling 0.5215 < 0.70，真实域三图条件恒 0.5205479452、delta=0；
+  ③ SYNTHETIC 三图条件全 0.5，而 **`A=0` = 0.8917** —— 标签在输入层已线性可分，
+     **图传播反而把信息抹平**（acceptance-verdict.md 明确记为「设计缺陷信号」）；
+  ④ 远程只用 8 MB edge 前缀（717 active eye roots）与本机协议不一致；
+  ⑤ `result.json` 不在可 pull 的 workspace 内。
+  `18228`（attempt #2）只修了 ①④⑤（K≥5 / 完整边 / result.json 落 workspace / ceiling 自检 /
+  invariant checks），**没有处理 ③ 这个根本机制问题**：即使把 K 提上去让 KC 可达，
+  谱半径归一化的多步 `tanh(Ax)` 仍在反复低通平滑，可能继续把输入信息抹平。
+- 本轮假设（可证伪）：`A=0` 高于所有图条件不是偶然，而是**多步空间传播造成的
+  oversmoothing / 信息抹平**；本机 `+0.2817` 之所以出现，是 LIF 膜状态提供了跨帧的
+  时间残差通道，绕过了单帧的空间平滑。若把「输入层残差」显式并联进读出，并逐跳
+  测量方向可分性，就能把「图传播抹平信息」与「膜状态恢复时间信息」拆成两个
+  独立、可归因的机制；若逐跳探针曲线平坦或 A=0 不显著高于图条件，该假设即被否证。
+- 具体改动（相对 `query-round004.txt` / `18228` 的 diff，均为机制/协议/测量层变化，非调超参）：
+  1. 【新增·核心】**逐跳线性可分性探针**：在 hop 0..K 每一跳各挂一个只在训练集拟合的
+     ridge 探针，报告 `probe_acc(hop)` 曲线 + 5 seeds + bootstrap 95% CI，直接定位信息
+     在哪一跳被抹平。这是新的机制测量，`18228` 完全没有。
+  2. 【新增·核心】**输入层残差并联（input skip）**：把原始 eye drive（即 `A=0` 特征）
+     与传播特征在读出前拼接，**等维数、等参数量**对照（拼接组用 PCA 降到与不拼接组同维，
+     PCA 只在训练集拟合）。条件矩阵新增 `stateless+skip` / `lif+skip` / `A=0`（skip 恒等对照），
+     用于判定「恢复的输入可分性」是否必须与「膜状态」共同存在才产生增益。
+  3. 【新增】**谱半径系数 λ ∈ {0.3, 0.6, 0.95, 1.1} × 跳数 K ∈ {1,2,3,5,8} 的
+     信息保留相图**，每格报告 `probe_acc` 与 `delta(LIF−stateless)`。带预注册的结构预测：
+     抹平拐点应落在 λ×K 越过某阈值的等高线上；若相图无结构 → 该预测被否证。
+     （这不是「只调超参凑显著」：λ×K 是**被检验的自变量**，带方向预注册、等预算对照与
+     可证伪的结构预测，且每个新增机制各有一因子消融。）
+  4. 【升级】把 `A=0` 从「退化下界」**重新定义为输入信息上界**，并预注册 design signal：
+     若任意 hop 的 `A=0` probe ≥ 图条件 probe + 0.15，判「图传播抹平信息」，
+     该结论只作协议诊断，**不得写成任何方法的优越**（遵守 8 轮「保度零模型从未输给
+     真实接线」的硬约束）。
+  5. 【沿用，不再改动】`18228` 已加固项全部保留：完整可读边表 + 本机构图协议一致、
+     eye→KC exact-hop 自检且选定 K 下可达 KC 数 >0、真实域 ceiling 自检 ≥0.70
+     否则标 `unavailable` 并尝试 Sintel、`project/result.json` 落在可 pull 的 workspace 内并
+     给字节数与 sha256、训练前 4 项 invariant checks 失败即落盘 `design_invalid`、
+     自适应阈值/不应期/E-I 各一因子消融、≥5 seeds + bootstrap 95% CI + BH-FDR、
+     打乱帧序阴性对照、完整原始日志与每 seed 数值。
+  6. 【不变】`expected_strong` / `minimum` 一律沿用 C1 `guidance.md` §Expected Results，
+     **不静默下调**；命令不带 `--max-turns` / `--timeout`，不阻塞 `watch`。
+- 预期信号 / 若失败下一步：
+  · 预期：`probe_acc(hop)` 随 hop 单调下降且 `A=0` 高于所有 hop；`lif+skip − stateless+skip
+    ≥ +0.15` 且 CI 下界 > 0；λ×K 相图出现与预注册方向一致的抹平等高线。
+  · 若失败（探针曲线平坦 / skip 未恢复增益 / `A=0` 不高于图条件）：把贡献轴收窄为
+    「固定图 SNN 的输入—读出协议诊断型负结果」，如实报告 + 保留全部失败证据，
+    按 §3.6(4) 继续死磕同一 C1（当前 abandon_allowed=False），**不换题、不放弃**。
+
+=====================================================================
+以下为预案的完整 query 正文（若未来某轮决定启用，直接作为 --json 参数）
+=====================================================================
+任务：执行 f-research-v1 的 P4 全量实验批次 —— **C1 死磕第 3 次尝试（correction loop v3）**。
+检验「多步空间传播是否抹平输入层可分信息，以及膜状态提供的跨帧时间残差能否恢复它」。
+只跑代码和出结果，不写论文、不做文献检索、不提交任何子任务。必须留下可复现脚本与原始数值。
+
+【为什么这次和上次不同 · 必须读】
+上一个已完成并判定的任务 `18156`（317 步、5 seeds、DAVIS 真实下载）判 `REJECT_FAILURE`：
+3 步传播在拓扑上到不了 KC（hop1–3 可达 KC 数 0）→ KC 特征恒零；DAVIS ceiling 0.5215 < 0.70；
+SYNTHETIC 三个图条件全 0.5，而 `A=0` 反而 0.8917 —— 标签在输入层已线性可分，
+图传播把信息抹平。`18228` 已把 K 提到 ≥5、改用完整边表、修好 result.json 落盘与 ceiling 自检，
+但**没有检验「图传播抹平信息」这一机制**。本轮不是重提 `18228` 的 query，而是新增逐跳探针、
+输入残差并联与 λ×K 信息保留相图，把两个机制拆开。禁止把上一版配置原样再跑一遍。
+
+【本轮四要素 · 写进 result.json 的 grind_block】见本文件顶部「四要素」段，逐字写入。
+
+【硬件报告】先运行 nvidia-smi 与 torch.cuda.is_available()，记录 GPU 型号、显存、torch/CUDA 版本。
+
+【公开数据，CC BY 4.0 / 官方公开基准，无需鉴权】
+- 连接组边表（下载完整文件，不要只用 8 MB 前缀）：
+  https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content
+  （完整约 178,853,187 B；列 pre_root_id,post_root_id,syn_count）
+  若 120 秒内拿不到完整文件，改用 HTTP Range 取前 64 MB 并**明确记录实际字节数、行数与
+  prefix=true**，绝不把前缀伪装成全图。
+- 注释表 https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content
+- 复眼坐标 https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content
+- DAVIS-2017 https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip （832,766,765 B）
+- 可选第二真实域 Sintel http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip （约 5.6 GB，
+  带宽不足则标 unavailable 并说明原因，不要编造）
+任一文件 120 秒内拿不到 → 标 `unavailable` + 原因，跳过依赖它的条件，绝不编造数据。
+
+【依赖】远程干净环境先 pip 安装 numpy scipy scikit-learn pandas pyarrow
+opencv-python-headless tqdm；记录实际安装版本。若 CUDA 版 torch 与 scipy 不兼容，
+改用 CPU 版 scipy 做统计，图传播仍走 GPU。
+
+【图与编码 · 与本机协议一致，逐项报告实测数字】
+- 用出现的 root_id 建索引；A[post, pre] = log1p(syn_count)；COO→CSR，sum_duplicates，
+  eliminate_zeros；谱半径归一化 A *= λ / spectral_radius(A)（幂迭代 ≥40 步）；不做行归一化。
+- 复眼采样：32×32 帧像素反相成稀疏墨迹（1 - pixel/255），用 `x_axis`/`y_axis`
+  （不要用 3D x/y/z）做 cKDTree 最近邻 Voronoi 映射；每帧 receptor drive 按最大值归一化到 1。
+- Kenyon 读出：注释表 cell_type 以 KC 开头的神经元；注释不可用时退化为
+  「从 eye 出发 BFS 第 K 跳节点中固定随机 1024 个」并标注 fallback。
+- 特征维 >2000 时先做 PCA(32)，只在训练集拟合。
+
+【训练前强制自检 · 任一失败立即写 result.json 并标 design_invalid】
+1. `kc_reachable_count`：eye→KC exact-hop 可达数（hop 1..8 全报）；选定 K 下 ==0 则自动
+   把 K 增大到 ≥5（最多 8）或把读出层改到 hop-2/3，把最终 K/读出层定义/各跳可达数写进 config。
+2. `kc_feature_std > 0`：任一方法条件在 KC 读出的特征标准差必须 >0，否则 design_invalid。
+3. `synthetic_ceiling >= 0.90`：8 帧展平 ridge 的 5-seed 天花板均值。
+4. `real_domain_ceiling >= 0.70`：真实域 5-seed 天花板均值，<0.70 标 unavailable 并尝试 Sintel；
+   两个真实域都 <0.70 则都标 unavailable，**不得据此作迁移主张**。
+
+【刺激，明确标注 SYNTHETIC】T=8 帧、32×32、n=400、二分类 direction：
+半径 3–5 的圆点，起始 x 随机 8–24，逐帧 speed=2 向左或向右，标签=方向。
+另做 flash control（闪烁检测）作为负对照。固定 70/30 stratified split，seeds=[1,2,3,4,5]。
+真实域：DAVIS-2017 连续 8 帧 clips，用动态前景质心时间斜率或帧差运动能量生成左右标签，
+类别需平衡；若用 Sintel 则用 GT 光流主方向的左右符号。
+
+【条件矩阵 · 每个 5 seeds = [1,2,3,4,5]，同一批刺激与同一 split，等参数量】
+A. 基座五条件（与 18156/18228 可比对）：
+   1 stateless：每帧独立 K 步 x = tanh(A@x)，8 帧特征取均值（K 与下面一致，等预算）
+   2 lif_homeostasis：LIF，v = 0.6*v + syn + drive；syn = 边级 index_add(上一帧硬脉冲)*8/fan_in*8；
+     硬阈值 0.15，发放后 v -= 0.15；软脉冲 sigmoid((v-0.15)*20) 累积后 8 帧取均值
+   3 lif_combo = lif_homeostasis + 自适应阈值 + 不应期 2 步 + 真实 E/I 符号
+   4 degree_null_lif：同 2，但图用保度重连（保 in/out 度序列、权重集合、nnz、互反边对）
+   5 A=0：无图传播，仅输入层读出 —— **本轮把它明确定义为「输入信息上界」**
+B. 【新增】输入残差并联（input skip），每个都带与 A 组一一对应的等维数/等参数量对照：
+   6 stateless+skip  7 lif_homeostasis+skip  8 lif_combo+skip  9 degree_null+skip
+   （拼接前把两组特征各做只在训练集拟合的 PCA 对齐到同维数，报告对齐前后的维数与方差保留率）
+C. 【新增·核心机制测量】逐跳线性可分性探针：
+   对每个条件、每个 hop h ∈ {0,1,2,3,5,8}（h 不超过实际 K），在该跳特征上挂一个只在训练集
+   拟合的 ridge 探针，报告 `probe_acc(h)`、5 seeds、bootstrap 95% CI、以及
+   `gap(h) = A=0 probe − 图条件 probe`。**必须画出并落盘 probe_acc 与 gap 随 hop 的曲线数据**。
+D. 【新增】λ×K 信息保留相图：λ ∈ {0.3,0.6,0.95,1.1} × K ∈ {1,2,3,5,8}，
+   每格报告 stateless / lif_homeostasis 的 probe_acc 与 delta，5 seeds + CI。
+   预注册结构预测：抹平拐点落在 λ×K 的等高线上；若相图无结构则该预测被否证，如实报告。
+E. 一因子消融：从 lif_combo 分别移除自适应阈值 / 不应期 / E/I 符号，各 5 seeds；
+   并对 skip 通路单独做「只拼接输入 / 只拼接传播特征」的移除消融。
+F. 阴性对照：打乱帧序、flash control、冻结 gain、保度零模型。
+统一 ridge 读出（L2=1e-2）。每条件记录 spike rate、KC/读出 spike rate、feature std、
+每层 probe_acc、peak GPU MiB、耗时。所有统计：2000 次 bootstrap 95% CI、
+exact paired sign-flip p、BH-FDR q=0.05，并如实说明 5 paired seeds 下最小双侧 p = 0.0625 的效力限制。
+
+【输出 · 必须在任何提前终止前落盘】
+- `experiment.py`、`entrypoint.sh`、`config.json`、`validate_results.py`、`test_pipeline.py`
+  写在 `project/` 目录内（相对于 workspace 根）。
+- **`project/result.json`**：含每条件每 seed 准确率、mean、delta vs stateless、bootstrap 95% CI、
+  exact p、BH q、两个域 ceiling、KC 各跳可达数、实际 K、读出层定义、feature std、spike rate、
+  **逐跳 probe_acc(h) 与 gap(h) 曲线**、**λ×K 相图全格数值**、skip 对齐维数与方差保留率、
+  GPU 信息、耗时、显存峰值、实际用到的每个数据文件与字节数、unavailable 条件及原因、
+  4 项 invariant checks 结果、grind_block（四要素）、以及与 `18228` 的配置 diff 清单。
+  **这个文件必须在 workspace 根下的 project/ 目录内**，最终回复给出字节数与 sha256 前 16 位。
+- `project/evidence/main_table.csv`、`probe_vs_hop.csv`、`lambda_K_phase.csv`、
+  `experiment-traceability.csv`、`raw/*.npz`（每条件每 seed 一个）、`validation.json`、
+  `command_history.log`。
+- 最终回复必须给**实际数值**和简短结论，严格区分「实测」与「推断」；
+  不得编造任何数值，不得把 1-seed 或不可学结果写成发现，不得把 design_invalid 写成方法优越，
+  不得把「实验跑完」写成「结果达标」，不得把 `A=0` 高于图条件写成生物接线优势。

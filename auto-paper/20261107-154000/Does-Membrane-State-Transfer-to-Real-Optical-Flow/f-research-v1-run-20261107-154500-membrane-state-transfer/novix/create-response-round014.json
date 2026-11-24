@@ -1,0 +1,24 @@
+{
+  "id": "18696",
+  "chatSessionId": "7327ca85034c4a0b3d92213f59c467d9",
+  "rc": 0,
+  "attempts": [
+    {
+      "n": 1,
+      "rc": 0,
+      "stdout_tail": "{\"id\": \"18696\", \"chatSessionId\": \"7327ca85034c4a0b3d92213f59c467d9\"}\n",
+      "stderr_tail": ""
+    }
+  ],
+  "query_file": "C:\\code\\phd-snn\\auto-paper\\20261107-154000\\Does-Membrane-State-Transfer-to-Real-Optical-Flow\\f-research-v1-run-20261107-154500-membrane-state-transfer\\novix\\query-round014-attempt8.txt",
+  "query_bytes": 30279,
+  "guard": "no --max-turns/--timeout/--watch; argv-list submission",
+  "expected_strong_not_lowered": true,
+  "minimum_not_lowered": true,
+  "real_ceiling_threshold_unchanged": 0.7,
+  "revised_query": true,
+  "mechanism_level_diff_count": 8,
+  "round": "014",
+  "attempt": 8,
+  "submission_note": "rc=4 treated as transport error, retried at most ONCE; if both rc=4, main session verifies server-side task creation and MUST NOT submit a third time."
+}

@@ -1,0 +1,222 @@
+{
+  "generated": "2026-11-10T22:10:24.541180",
+  "v1_runs": 10,
+  "v2_runs": 10,
+  "note": "v1 = ours_beta=star (original 1028 combination); v2 = ours_beta=zero (redundant beta removed). All values are real local 3060 CUDA runs, NOT the novix 20049 result.",
+  "datasets": {
+    "MNIST": {
+      "n_v1": 5,
+      "n_v2": 5,
+      "n_paired": 5,
+      "ann_mean": 68.28999999999999,
+      "by_T": {
+        "T1": {
+          "v1_loss_mean": 52.32,
+          "v2_loss_mean": 43.57,
+          "v2_loss_std": 7.798,
+          "v2_loss_ci95": 6.835,
+          "paired_gain_pp": 8.75,
+          "paired_gain_ci95": 6.521
+        },
+        "T2": {
+          "v1_loss_mean": 45.23,
+          "v2_loss_mean": 21.77,
+          "v2_loss_std": 7.493,
+          "v2_loss_ci95": 6.568,
+          "paired_gain_pp": 23.46,
+          "paired_gain_ci95": 4.008
+        },
+        "T4": {
+          "v1_loss_mean": 32.44,
+          "v2_loss_mean": 6.29,
+          "v2_loss_std": 1.439,
+          "v2_loss_ci95": 1.261,
+          "paired_gain_pp": 26.15,
+          "paired_gain_ci95": 3.176
+        },
+        "T8": {
+          "v1_loss_mean": 14.64,
+          "v2_loss_mean": 3.1,
+          "v2_loss_std": 1.556,
+          "v2_loss_ci95": 1.364,
+          "paired_gain_pp": 11.54,
+          "paired_gain_ci95": 3.411
+        },
+        "T16": {
+          "v1_loss_mean": 5.75,
+          "v2_loss_mean": 2.0,
+          "v2_loss_std": 1.444,
+          "v2_loss_ci95": 1.266,
+          "paired_gain_pp": 3.75,
+          "paired_gain_ci95": 2.655
+        }
+      },
+      "baseline_margin": {
+        "T4": {
+          "margin_pp_mean": 43.67,
+          "margin_pp_ci95": 2.002
+        },
+        "T8": {
+          "margin_pp_mean": 46.48,
+          "margin_pp_ci95": 1.921
+        }
+      },
+      "paired_beta": {},
+      "energy": {
+        "T1": {
+          "v1_mean": 1.89,
+          "v2_mean": 8.558
+        },
+        "T2": {
+          "v1_mean": 1.538,
+          "v2_mean": 3.204
+        },
+        "T4": {
+          "v1_mean": 1.039,
+          "v2_mean": 1.511
+        },
+        "T8": {
+          "v1_mean": 0.615,
+          "v2_mean": 0.743
+        },
+        "T16": {
+          "v1_mean": 0.336,
+          "v2_mean": 0.371
+        }
+      },
+      "verdict": {
+        "accuracy_1_5pp_at_Tle8": {
+          "target": "<=1.5pp at any T<=8",
+          "observed": 3.1,
+          "passed": false
+        },
+        "baseline_margin_1pp_at_T4": {
+          "target": ">=1.0pp",
+          "observed": 43.67,
+          "passed": true
+        },
+        "energy_5x_within_band": {
+          "target": ">=5x at a T inside the 1.5pp band",
+          "observed": null,
+          "passed": false
+        },
+        "energy_max_any_T_reference_only": {
+          "target": "reference only; NOT an acceptance criterion",
+          "observed": 8.558,
+          "passed": false
+        },
+        "identity_residual": {
+          "target": "<1e-10",
+          "status": "pending float64 recheck (H3 on novix 20049)"
+        }
+      }
+    },
+    "CIFAR10": {
+      "n_v1": 5,
+      "n_v2": 5,
+      "n_paired": 5,
+      "ann_mean": 36.77,
+      "by_T": {
+        "T1": {
+          "v1_loss_mean": 26.22,
+          "v2_loss_mean": 20.74,
+          "v2_loss_std": 2.107,
+          "v2_loss_ci95": 1.846,
+          "paired_gain_pp": 5.48,
+          "paired_gain_ci95": 2.057
+        },
+        "T2": {
+          "v1_loss_mean": 25.13,
+          "v2_loss_mean": 9.65,
+          "v2_loss_std": 1.358,
+          "v2_loss_ci95": 1.191,
+          "paired_gain_pp": 15.48,
+          "paired_gain_ci95": 1.432
+        },
+        "T4": {
+          "v1_loss_mean": 20.47,
+          "v2_loss_mean": 3.47,
+          "v2_loss_std": 2.109,
+          "v2_loss_ci95": 1.848,
+          "paired_gain_pp": 17.0,
+          "paired_gain_ci95": 2.658
+        },
+        "T8": {
+          "v1_loss_mean": 13.31,
+          "v2_loss_mean": 2.13,
+          "v2_loss_std": 1.633,
+          "v2_loss_ci95": 1.431,
+          "paired_gain_pp": 11.18,
+          "paired_gain_ci95": 2.667
+        },
+        "T16": {
+          "v1_loss_mean": 7.08,
+          "v2_loss_mean": 1.95,
+          "v2_loss_std": 1.713,
+          "v2_loss_ci95": 1.501,
+          "paired_gain_pp": 5.13,
+          "paired_gain_ci95": 2.123
+        }
+      },
+      "baseline_margin": {
+        "T4": {
+          "margin_pp_mean": 19.85,
+          "margin_pp_ci95": 2.316
+        },
+        "T8": {
+          "margin_pp_mean": 21.85,
+          "margin_pp_ci95": 2.023
+        }
+      },
+      "paired_beta": {},
+      "energy": {
+        "T1": {
+          "v1_mean": 3.058,
+          "v2_mean": 16.471
+        },
+        "T2": {
+          "v1_mean": 2.569,
+          "v2_mean": 5.717
+        },
+        "T4": {
+          "v1_mean": 1.776,
+          "v2_mean": 2.651
+        },
+        "T8": {
+          "v1_mean": 1.066,
+          "v2_mean": 1.301
+        },
+        "T16": {
+          "v1_mean": 0.588,
+          "v2_mean": 0.647
+        }
+      },
+      "verdict": {
+        "accuracy_1_5pp_at_Tle8": {
+          "target": "<=1.5pp at any T<=8",
+          "observed": 2.13,
+          "passed": false
+        },
+        "baseline_margin_1pp_at_T4": {
+          "target": ">=1.0pp",
+          "observed": 19.85,
+          "passed": true
+        },
+        "energy_5x_within_band": {
+          "target": ">=5x at a T inside the 1.5pp band",
+          "observed": null,
+          "passed": false
+        },
+        "energy_max_any_T_reference_only": {
+          "target": "reference only; NOT an acceptance criterion",
+          "observed": 16.471,
+          "passed": false
+        },
+        "identity_residual": {
+          "target": "<1e-10",
+          "status": "pending float64 recheck (H3 on novix 20049)"
+        }
+      }
+    }
+  }
+}

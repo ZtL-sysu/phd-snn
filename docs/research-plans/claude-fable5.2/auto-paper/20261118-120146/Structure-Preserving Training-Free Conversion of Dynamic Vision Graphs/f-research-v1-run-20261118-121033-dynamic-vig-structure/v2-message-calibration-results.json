@@ -1,0 +1,51 @@
+{
+  "contract": "v2-message-exact",
+  "wall_seconds": 11.479765892028809,
+  "rows": [
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "v1_accuracy": 0.49550002813339233,
+      "v2_accuracy": 0.784000039100647,
+      "v1_message_mse": 0.008178807861950932,
+      "v2_message_mse": 0.001437072179755386,
+      "calibration": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "message_mse": 0.0014177641654501156
+      },
+      "v1_events": 6272000,
+      "v2_events": 6272000
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "v1_accuracy": 0.5485000014305115,
+      "v2_accuracy": 0.7835000157356262,
+      "v1_message_mse": 0.007270480642513353,
+      "v2_message_mse": 0.0013744796052271007,
+      "calibration": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "message_mse": 0.0013666372571672712
+      },
+      "v1_events": 6272000,
+      "v2_events": 6272000
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "v1_accuracy": 0.46300002932548523,
+      "v2_accuracy": 0.7975000143051147,
+      "v1_message_mse": 0.008317803752665618,
+      "v2_message_mse": 0.0014221671941329023,
+      "calibration": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "message_mse": 0.001416618962190589
+      },
+      "v1_events": 6272000,
+      "v2_events": 6272000
+    }
+  ]
+}

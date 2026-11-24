@@ -1,0 +1,990 @@
+{
+  "checks": [
+    {
+      "detail": "/mnt/novix-k8s-workspace-root/session_7327ca85034c4a0b3d92213f59c467d9/workspace/project/result.json",
+      "name": "result_exists",
+      "passed": true
+    },
+    {
+      "detail": "p4-c1-attempt8-v1",
+      "name": "schema",
+      "passed": true
+    },
+    {
+      "detail": "FINISHED",
+      "name": "finished",
+      "passed": true
+    },
+    {
+      "detail": true,
+      "name": "design_valid",
+      "passed": true
+    },
+    {
+      "detail": {
+        "branch_localization": "complete",
+        "conditions_0_to_12": "complete",
+        "connectome_preflight": "complete",
+        "data_integrity": "complete",
+        "data_preparation": "complete",
+        "environment_and_evidence_discovery": "complete",
+        "gain_training": "complete",
+        "preflight": "complete",
+        "real_domain_conditions": "complete",
+        "retinal_drive_transfer_function": "complete",
+        "stage_0_persistence": "complete",
+        "synthetic_conditions": "complete",
+        "validation_and_manifest": "complete"
+      },
+      "name": "stages_complete",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "scientific_results",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "frozen_before_outcomes",
+      "passed": true
+    },
+    {
+      "detail": [
+        "current_hypothesis_verbatim",
+        "expected_signal_and_failure_next_step_verbatim",
+        "mechanism_level_diffs_verbatim",
+        "previous_failure_points_verbatim"
+      ],
+      "name": "grind_block_four_elements",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "grind_block_previous_failure",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "grind_block_hypothesis",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "grind_block_diffs",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "grind_block_next",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "data_integrity_all",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "no_real_substitution",
+      "passed": true
+    },
+    {
+      "detail": {
+        "bytes": 178853187,
+        "sha256": "402fa0e61198e6f26b2ef4fd18e0123cc2edff0bb1edca9dd31b29b8171580bc"
+      },
+      "name": "asset_connectome_available",
+      "passed": true
+    },
+    {
+      "detail": {
+        "bytes": 7740866,
+        "sha256": "c68615fea6699908a3e13bad2b17917a77b1a2865d861f70373fd2714db2f43d"
+      },
+      "name": "asset_annotations_available",
+      "passed": true
+    },
+    {
+      "detail": {
+        "bytes": 629193,
+        "sha256": "fbbd0c2ab83719cc4eff3df9a90e4a6dffe1b2ff9144db64709049c6567cd932"
+      },
+      "name": "asset_eye_positions_available",
+      "passed": true
+    },
+    {
+      "detail": {
+        "bytes": 832766765,
+        "sha256": "e3d0b5b77c3d031b000a19e0e25e3e2cac65d183755601bc2cf066df1a2aa492"
+      },
+      "name": "asset_davis_available",
+      "passed": true
+    },
+    {
+      "detail": {
+        "bytes": 5627783629,
+        "sha256": "bdc80abbe6ae13f96f6aa02e04d98a251c017c025408066a00204cd2c7104c5f"
+      },
+      "name": "asset_sintel_available",
+      "passed": true
+    },
+    {
+      "detail": 16847997,
+      "name": "connectome_complete_edge_count",
+      "passed": true
+    },
+    {
+      "detail": "edge-level index_add_ with incoming-weight normalization in both arms",
+      "name": "connectome_sparse_index_add",
+      "passed": true
+    },
+    {
+      "detail": {
+        "edge_rows": true,
+        "endpoint_multiplicity_multiset_sha256": true,
+        "in_degree_sha256": true,
+        "nnz": true,
+        "out_degree_sha256": true,
+        "reciprocal_directed_edge_rows": true,
+        "reciprocal_pair_multiplicity": true,
+        "reciprocal_unique_pairs": true,
+        "self_loops": true,
+        "weight_multiset_sha256": true
+      },
+      "name": "degree_null_exact_invariants",
+      "passed": true
+    },
+    {
+      "detail": 1368018,
+      "name": "degree_null_nonidentity",
+      "passed": true
+    },
+    {
+      "detail": "input-information upper bound only; not a biological-wiring advantage",
+      "name": "A_zero_interpretation",
+      "passed": true
+    },
+    {
+      "detail": [
+        "DAVIS",
+        "SINTEL"
+      ],
+      "name": "condition0_two_domains",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "gate_DAVIS_three_families",
+      "passed": true
+    },
+    {
+      "detail": {
+        "ceiling": 0.42424242424242425,
+        "ceiling_ci95": [
+          0.3409090909090909,
+          0.5151515151515151
+        ],
+        "decidability_state": "INPUT_BOTTLENECK",
+        "gt_oracle_upper_bound": 1.0,
+        "interpretation_allowed": false
+      },
+      "name": "gate_DAVIS_state",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "gate_SINTEL_three_families",
+      "passed": true
+    },
+    {
+      "detail": {
+        "ceiling": 0.4,
+        "ceiling_ci95": [
+          0.2,
+          0.6
+        ],
+        "decidability_state": "INPUT_BOTTLENECK",
+        "gt_oracle_upper_bound": 1.0,
+        "interpretation_allowed": false
+      },
+      "name": "gate_SINTEL_state",
+      "passed": true
+    },
+    {
+      "detail": [
+        "DAVIS",
+        "SINTEL"
+      ],
+      "name": "condition1_two_domains",
+      "passed": true
+    },
+    {
+      "detail": "raw_32x32_luminance_before_4x4_compound_eye_sampling",
+      "name": "H_DAVIS_true_pre_sampling_injection",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_conditions",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed1_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed10_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed11_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed2_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed3_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed4_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed5_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed6_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed7_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed8_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_LIF_seed9_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed1_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed10_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed11_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed2_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed3_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed4_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed5_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed6_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed7_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed8_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_DAVIS_stateless_seed9_ladder",
+      "passed": true
+    },
+    {
+      "detail": "raw_32x32_luminance_before_4x4_compound_eye_sampling",
+      "name": "H_SINTEL_true_pre_sampling_injection",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_conditions",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed1_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed10_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed11_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed2_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed3_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed4_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed5_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed6_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed7_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed8_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_LIF_seed9_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed1_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed10_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed11_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed2_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed3_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed4_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed5_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed6_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed7_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed8_ladder",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "H_SINTEL_stateless_seed9_ladder",
+      "passed": true
+    },
+    {
+      "detail": [
+        "DAVIS",
+        "SINTEL"
+      ],
+      "name": "real_two_domains",
+      "passed": true
+    },
+    {
+      "detail": [
+        "high",
+        "low",
+        "medium"
+      ],
+      "name": "condition2_DAVIS_strata",
+      "passed": true
+    },
+    {
+      "detail": [
+        "global_pool",
+        "hybrid",
+        "ommatidial_subregions"
+      ],
+      "name": "condition2_DAVIS_high_scopes",
+      "passed": true
+    },
+    {
+      "detail": [
+        "global_pool",
+        "hybrid",
+        "ommatidial_subregions"
+      ],
+      "name": "condition2_DAVIS_low_scopes",
+      "passed": true
+    },
+    {
+      "detail": [
+        "global_pool",
+        "hybrid",
+        "ommatidial_subregions"
+      ],
+      "name": "condition2_DAVIS_medium_scopes",
+      "passed": true
+    },
+    {
+      "detail": [
+        "high",
+        "low",
+        "medium"
+      ],
+      "name": "condition2_SINTEL_strata",
+      "passed": true
+    },
+    {
+      "detail": [
+        "global_pool",
+        "hybrid",
+        "ommatidial_subregions"
+      ],
+      "name": "condition2_SINTEL_high_scopes",
+      "passed": true
+    },
+    {
+      "detail": [
+        "global_pool",
+        "hybrid",
+        "ommatidial_subregions"
+      ],
+      "name": "condition2_SINTEL_low_scopes",
+      "passed": true
+    },
+    {
+      "detail": [
+        "global_pool",
+        "hybrid",
+        "ommatidial_subregions"
+      ],
+      "name": "condition2_SINTEL_medium_scopes",
+      "passed": true
+    },
+    {
+      "detail": "SYMMETRIC",
+      "name": "condition3_symmetry_boolean",
+      "passed": true
+    },
+    {
+      "detail": "actual fitted, outcome-independent preflight sklearn pipelines plus copied graph tensors",
+      "name": "condition3_preflight_registry_actual_fitted",
+      "passed": true
+    },
+    {
+      "detail": true,
+      "name": "condition3_live_main_readout_audit",
+      "passed": true
+    },
+    {
+      "detail": "unavailable",
+      "name": "condition4_reference_file_table",
+      "passed": true
+    },
+    {
+      "detail": "syn",
+      "name": "condition5_branch_units",
+      "passed": true
+    },
+    {
+      "detail": "full forward re-propagation from intervened unit through all downstream state updates",
+      "name": "condition5_drive_counterfactual_repropagated",
+      "passed": true
+    },
+    {
+      "detail": "full forward re-propagation from intervened unit through all downstream state updates",
+      "name": "condition5_syn_counterfactual_repropagated",
+      "passed": true
+    },
+    {
+      "detail": "full forward re-propagation from intervened unit through all downstream state updates",
+      "name": "condition5_v_counterfactual_repropagated",
+      "passed": true
+    },
+    {
+      "detail": "full forward re-propagation from intervened unit through all downstream state updates",
+      "name": "condition5_spike_counterfactual_repropagated",
+      "passed": true
+    },
+    {
+      "detail": "full forward re-propagation from intervened unit through all downstream state updates",
+      "name": "condition5_KC_counterfactual_repropagated",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition6_three_calibration_families",
+      "passed": true
+    },
+    {
+      "detail": 1000,
+      "name": "calibration_redefined_permutation_family_n",
+      "passed": true
+    },
+    {
+      "detail": 0.058,
+      "name": "calibration_redefined_permutation_family_actual_rate",
+      "passed": true
+    },
+    {
+      "detail": 1000,
+      "name": "calibration_stratified_paired_bootstrap_n",
+      "passed": true
+    },
+    {
+      "detail": 0.149,
+      "name": "calibration_stratified_paired_bootstrap_actual_rate",
+      "passed": true
+    },
+    {
+      "detail": 1000,
+      "name": "calibration_studentized_bootstrap_n",
+      "passed": true
+    },
+    {
+      "detail": 0.051,
+      "name": "calibration_studentized_bootstrap_actual_rate",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition7_historical_DAVIS_ladder",
+      "passed": true
+    },
+    {
+      "detail": [
+        "DAVIS",
+        "SINTEL"
+      ],
+      "name": "condition8_holdout_two_domains",
+      "passed": true
+    },
+    {
+      "detail": {
+        "candidate_class_counts": [
+          104,
+          77
+        ],
+        "candidate_n": 181,
+        "constructible": true,
+        "domain": "DAVIS",
+        "label_family": "foreground_mask_centroid_dx_sign",
+        "matched_class_counts": [
+          77,
+          77
+        ],
+        "matched_n": 154,
+        "partition_modified_after_results": false,
+        "scene_count": 22,
+        "scene_hash_definition": "sha256(scene UTF-8) first 8 bytes big-endian modulo 5",
+        "scenes": [
+          "camel",
+          "car-turn",
+          "cat-girl",
+          "cows",
+          "dance-jump",
+          "dog-agility",
+          "dogs-scale",
+          "goat",
+          "hockey",
+          "horsejump-high",
+          "horsejump-low",
+          "kid-football",
+          "kite-walk",
+          "lab-coat",
+          "libby",
+          "longboard",
+          "paragliding-launch",
+          "scooter-gray",
+          "snowboard",
+          "surf",
+          "swing",
+          "varanus-cage"
+        ],
+        "state": "CONSTRUCTIBLE",
+        "unexposed_fold": 4
+      },
+      "name": "holdout_DAVIS_proof",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "holdout_DAVIS_partition_frozen",
+      "passed": true
+    },
+    {
+      "detail": {
+        "candidate_class_counts": [
+          16,
+          12
+        ],
+        "candidate_n": 28,
+        "constructible": true,
+        "domain": "SINTEL",
+        "label_family": "scene_frame_global_median_flow_x_sign",
+        "matched_class_counts": [
+          12,
+          12
+        ],
+        "matched_n": 24,
+        "partition_modified_after_results": false,
+        "scene_count": 5,
+        "scene_hash_definition": "sha256(scene UTF-8) first 8 bytes big-endian modulo 5",
+        "scenes": [
+          "alley_2",
+          "ambush_4",
+          "bandage_1",
+          "cave_2",
+          "temple_2"
+        ],
+        "state": "CONSTRUCTIBLE",
+        "unexposed_fold": 4
+      },
+      "name": "holdout_SINTEL_proof",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "holdout_SINTEL_partition_frozen",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition9_anchor_stateless_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition9_anchor_lif_homeostasis_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition9_anchor_lif_combo_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition9_anchor_degree_null_lif_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition9_anchor_A=0_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition10_DAVIS_main_delta",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition10_DAVIS_stateless_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition10_DAVIS_lif_combo_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition10_SINTEL_main_delta",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition10_SINTEL_stateless_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition10_SINTEL_lif_combo_11seeds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition11_exposure_ledger",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_ablation_lif_combo_minus_adaptive_threshold",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_ablation_lif_combo_minus_refractory",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_ablation_lif_combo_minus_EI_sign",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_control_flash",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_control_label_permutation",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_control_degree_null_lif",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_control_identity_graph",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_control_frozen_gain",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "condition12_control_shuffled_frame_order",
+      "passed": true
+    },
+    {
+      "detail": "failure",
+      "name": "guidance_four_state",
+      "passed": true
+    },
+    {
+      "detail": false,
+      "name": "transfer_boolean",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "failure_forces_no_transfer",
+      "passed": true
+    },
+    {
+      "detail": "NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE",
+      "name": "migration_verdict",
+      "passed": true
+    },
+    {
+      "detail": {
+        "family_scope": "all attempt-8 contrast test-family p-values",
+        "q": 0.05,
+        "test_count": 192
+      },
+      "name": "BH_applied",
+      "passed": true
+    },
+    {
+      "detail": 165,
+      "name": "raw_npz_count",
+      "passed": true
+    },
+    {
+      "detail": "/mnt/novix-k8s-workspace-root/session_7327ca85034c4a0b3d92213f59c467d9/workspace/project/config.json",
+      "name": "config_exists",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "manifest_exists",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "self_check_exists",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "all_final_snapshots_exist",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "result_snapshots_byte_identical",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "config_snapshots_byte_identical",
+      "passed": true
+    },
+    {
+      "detail": {
+        "all_passed": true,
+        "checked_at_utc": "2026-11-08T21:19:04.551853+00:00",
+        "manifest": {
+          "entries": 614,
+          "listed_bytes": 7221388458,
+          "manifest_bytes": 78873,
+          "manifest_sha256": "b1c0daec70ec963f7d17b741b70b4da43138b2ed2af496fe25ed3f85fb120b3a",
+          "path": "MANIFEST.txt"
+        },
+        "manifest_verification": {
+          "checked": 614,
+          "failures": [],
+          "passed": true
+        },
+        "schema_version": 1,
+        "snapshot_checks": {
+          "all_byte_identical": true,
+          "config": {
+            "copies": [
+              {
+                "byte_identical": true,
+                "bytes": 16885,
+                "path": "snapshots/config.snapshot-a.json",
+                "sha256": "0312844449ece8222defd0f239a2f7b81a7dad2603bc93051cb8d6d2c17aebc8"
+              },
+              {
+                "byte_identical": true,
+                "bytes": 16885,
+                "path": "snapshots/config.snapshot-b.json",
+                "sha256": "0312844449ece8222defd0f239a2f7b81a7dad2603bc93051cb8d6d2c17aebc8"
+              }
+            ],
+            "source_bytes": 16885,
+            "source_sha256": "0312844449ece8222defd0f239a2f7b81a7dad2603bc93051cb8d6d2c17aebc8"
+          },
+          "result": {
+            "copies": [
+              {
+                "byte_identical": true,
+                "bytes": 3726536,
+                "path": "snapshots/result.snapshot-a.json",
+                "sha256": "ffc4a000b8042b91305a509a3ce78d2f8629b4b831c7fe3858686b57bb4a277f"
+              },
+              {
+                "byte_identical": true,
+                "bytes": 3726536,
+                "path": "snapshots/result.snapshot-b.json",
+                "sha256": "ffc4a000b8042b91305a509a3ce78d2f8629b4b831c7fe3858686b57bb4a277f"
+              }
+            ],
+            "source_bytes": 3726536,
+            "source_sha256": "ffc4a000b8042b91305a509a3ce78d2f8629b4b831c7fe3858686b57bb4a277f"
+          }
+        }
+      },
+      "name": "self_check_all_passed",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "failed": 0,
+    "passed": 148,
+    "total": 148
+  },
+  "mode": "final",
+  "passed": true,
+  "result_bytes": 3726536,
+  "result_sha256": "ffc4a000b8042b91305a509a3ce78d2f8629b4b831c7fe3858686b57bb4a277f",
+  "schema_version": 1,
+  "validated_at_utc": "2026-11-08T21:19:05.130006+00:00"
+}

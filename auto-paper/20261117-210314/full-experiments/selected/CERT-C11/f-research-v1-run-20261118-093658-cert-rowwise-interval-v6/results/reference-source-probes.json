@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "probe_date": "2026-11-18",
+  "method": "official publisher, PMLR, DOI, or arXiv landing-page checks",
+  "rows": [
+    {"key": "gowal2018ibp", "url": "https://arxiv.org/abs/1810.12715", "http_status": 200, "metadata_status": "title/authors/year consistent"},
+    {"key": "wong2018provable", "url": "https://proceedings.mlr.press/v80/wong18a.html", "http_status": 200, "metadata_status": "title/authors/year consistent"},
+    {"key": "mirman2018diffai", "url": "https://proceedings.mlr.press/v80/mirman18b.html", "http_status": 200, "metadata_status": "title/authors/year consistent"},
+    {"key": "katz2017reluplex", "url": "https://doi.org/10.1007/978-3-319-63387-9_5", "http_status": 200, "metadata_status": "title/authors/year/venue consistent"},
+    {"key": "jacob2018quantization", "url": "https://doi.org/10.1109/CVPR.2018.00286", "http_status": 202, "metadata_status": "title/authors/year/venue consistent"},
+    {"key": "nagel2021white", "url": "https://arxiv.org/abs/2106.08295", "http_status": 200, "metadata_status": "title/authors/year corrected from arXiv metadata"},
+    {"key": "yang2016planetoid", "url": "https://proceedings.mlr.press/v48/yanga16.html", "http_status": 200, "metadata_status": "title/authors/year/venue consistent"},
+    {"key": "pei2020geomgnn", "url": "https://arxiv.org/abs/2002.05287", "http_status": 200, "metadata_status": "title/authors/year consistent"},
+    {"key": "platonov2023heterophily", "url": "https://arxiv.org/abs/2302.11640", "http_status": 200, "metadata_status": "title/authors/year/ICLR venue consistent"}
+  ]
+}

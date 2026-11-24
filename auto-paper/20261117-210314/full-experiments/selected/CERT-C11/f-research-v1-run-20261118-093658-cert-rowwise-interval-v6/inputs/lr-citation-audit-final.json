@@ -1,0 +1,152 @@
+{
+  "audit_skill": "citation-audit-independent-final",
+  "verdict": "PASS",
+  "reason_code": "all_entries_keep",
+  "summary": "All 13 prior FIX items are resolved; 41/41 entries are clean and all 44 uses remain context-appropriate with no duplicate versions.",
+  "final_pass_eligible": true,
+  "last_metadata_recheck": "2026-11-17T23:59:53Z",
+  "review_role": "fresh independent citation-audit reviewer",
+  "review_trace": "independent-citation-audit-final-20261118-lr-c05",
+  "trace_path": "CITATION_AUDIT_INDEPENDENT_FINAL.md",
+  "generated_at": "2026-11-17T23:55:41Z",
+  "audited_input_hashes": {
+    "references.bib": "sha256:6486042a1f0e45745fe955e92658265c5a26dc299f754da4b936343736776508",
+    "writing/p12/paper-with-verified-references.md": "sha256:8a433c73f85c8ae69f7fec1dea3929e330e1e64238e8e389d36a3281f705a33b",
+    "results/p12-reference-probe.json": "sha256:ee1029bbc2ea8765b69dd2165802ab720acc55558e4378ca4f8fc794392b654a",
+    "results/p12-openalex-probe.json": "sha256:411ae8c870bb19b039fd4bcb7abd29eabd4a8ccafb5b6b0292130d77dea99687",
+    "results/p12-doi-probe.json": "sha256:2055c9cd53b997108972005ffc2ad84e5efeb7e60f0de78225485a405f9b96c3",
+    "results/p12-official-page-probe.json": "sha256:f40737c9696d01915ae7235d31d1c27ff836ee953fae6b41871e4f08f3ce380e"
+  },
+  "details": {
+    "total_entries": 41,
+    "total_citation_occurrences": 44,
+    "metadata_warning_cleanup_recheck": {
+      "status": "verified",
+      "verdict_remains": "PASS",
+      "items": [
+        {
+          "key": "gholami2022quantization",
+          "status": "verified",
+          "container": "Low-Power Computer Vision",
+          "publisher": "Chapman and Hall/CRC",
+          "doi": "10.1201/9781003162810-13"
+        },
+        {
+          "key": "dy-sign",
+          "status": "verified",
+          "style_cleanup": "conference issue 15 omitted from BibTeX number field",
+          "canonical_identity_remaining": "AAAI proceedings 38, pages 16495-16503, DOI 10.1609/aaai.v38i15.29587"
+        },
+        {
+          "key": "asgcn",
+          "status": "verified",
+          "style_cleanup": "conference issue 2 omitted from BibTeX number field",
+          "canonical_identity_remaining": "AAAI proceedings 39, pages 1620-1628, DOI 10.1609/aaai.v39i2.32154"
+        }
+      ]
+    },
+    "counts": {
+      "KEEP": 41,
+      "FIX": 0,
+      "REPLACE": 0,
+      "REMOVE": 0
+    },
+    "previous_fix_audit": {
+      "source": "CITATION_AUDIT_INDEPENDENT.json",
+      "previous_fix_count": 13,
+      "resolved_count": 13,
+      "unresolved_count": 0,
+      "resolved_keys": [
+        "li2019deepgcn",
+        "zhu2023a2q",
+        "hu2023fast",
+        "cherukuri2025lowrank",
+        "hao2023offset",
+        "lv2024group",
+        "bu2023optimal",
+        "huang2025ecmt",
+        "delay-dsgn",
+        "sun2024spikegraphormer",
+        "zhang2025sgnnbench",
+        "dampfhoffer2023snnlearning",
+        "nunes2022snnsurvey"
+      ]
+    },
+    "mapping_check": {
+      "bib_entry_count": 41,
+      "cited_unique_key_count": 41,
+      "citation_occurrence_count": 44,
+      "bib_keys_equal_cited_keys": true,
+      "undefined_citations": [],
+      "uncited_residual": [],
+      "previous_per_key_line_mapping_unchanged": true
+    },
+    "axis_summary": {
+      "existence_verified": 41,
+      "metadata_clean": 41,
+      "metadata_fix_required": 0,
+      "all_contexts_support": true,
+      "wrong_context_occurrences": 0
+    },
+    "duplicate_check": {
+      "unique_dois": 20,
+      "duplicate_dois": [],
+      "unique_arxiv_ids": 13,
+      "duplicate_arxiv_ids": [],
+      "unique_normalized_titles": 41,
+      "duplicate_normalized_titles": [],
+      "duplicate_preprint_published_pairs": [],
+      "duplicate_versions_remain": false,
+      "note": "Repeated one-spike citation sites at manuscript line 21 and the use at line 88 reference one valid bibliography entry; this is key reuse, not duplicate records."
+    },
+    "per_entry": [
+      {"key": "kipf2017gcn", "bib_line": 1, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "hamilton2018graphsage", "bib_line": 10, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "velickovic2018gat", "bib_line": 19, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "xu2019gin", "bib_line": 28, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "li2019deepgcn", "bib_line": 37, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "abu2019mixhop", "bib_line": 46, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "chen2020gcnii", "bib_line": 55, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "li2018deeper", "bib_line": 64, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "wu2021gnnsurvey", "bib_line": 74, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 17, "verdict": "SUPPORTS"}]},
+      {"key": "tailor2021degreequant", "bib_line": 85, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS"}]},
+      {"key": "ding2021vqgnn", "bib_line": 94, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS"}]},
+      {"key": "wang2022qgtc", "bib_line": 103, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS"}]},
+      {"key": "zhu2023a2q", "bib_line": 112, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS"}, {"file": "writing/p12/paper-with-verified-references.md", "line": 87, "verdict": "SUPPORTS"}]},
+      {"key": "wan2023adaqp", "bib_line": 121, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS"}]},
+      {"key": "hu2023fast", "bib_line": 129, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS"}]},
+      {"key": "gholami2022quantization", "bib_line": 140, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS"}]},
+      {"key": "cherukuri2025lowrank", "bib_line": 148, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 19, "verdict": "SUPPORTS"}]},
+      {"key": "one-spike", "bib_line": 157, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}, {"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}, {"file": "writing/p12/paper-with-verified-references.md", "line": 88, "verdict": "SUPPORTS"}]},
+      {"key": "hao2023offset", "bib_line": 168, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "lv2024group", "bib_line": 177, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "bu2023optimal", "bib_line": 186, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "li2023seenn", "bib_line": 195, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "you2024spikezip", "bib_line": 202, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "zhao2025ttfs", "bib_line": 209, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "huang2025ecmt", "bib_line": 216, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "li2024erroraware", "bib_line": 225, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "spikinggcn", "bib_line": 236, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "spikenet", "bib_line": 245, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "dy-sign", "bib_line": 254, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "delay-dsgn", "bib_line": 265, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "signnn", "bib_line": 272, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "msg", "bib_line": 282, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "negative-spike", "bib_line": 289, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "sun2024spikegraphormer", "bib_line": 296, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "zhang2025sgnnbench", "bib_line": 306, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "li2023graph1bit", "bib_line": 313, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "chaurasia2026sgspose", "bib_line": 322, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "asgcn", "bib_line": 332, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 23, "verdict": "SUPPORTS"}]},
+      {"key": "dampfhoffer2023snnlearning", "bib_line": 343, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "nunes2022snnsurvey", "bib_line": 354, "verdict": "KEEP", "axis_failures": [], "prior_issue_resolved": true, "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]},
+      {"key": "wang2022taxonomicsnn", "bib_line": 364, "verdict": "KEEP", "axis_failures": [], "uses": [{"file": "writing/p12/paper-with-verified-references.md", "line": 21, "verdict": "SUPPORTS"}]}
+    ]
+  },
+  "constraints": {
+    "references_modified_during_reaudit": false,
+    "manuscript_modified_during_reaudit": false,
+    "probe_files_modified_during_reaudit": false,
+    "metadata_invented": false
+  }
+}

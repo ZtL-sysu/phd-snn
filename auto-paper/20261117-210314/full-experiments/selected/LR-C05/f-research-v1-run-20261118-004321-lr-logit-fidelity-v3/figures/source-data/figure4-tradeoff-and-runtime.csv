@@ -1,0 +1,13 @@
+dataset,logit_mse_reduction_percent,worst_three_seed_mean_task_loss_pp,split,task_comparator,seed,proposed_p95_sec,svd_only_p95_sec,paired_p95_ratio,rank,budget,warmups,timed_repeats
+cora,26.23240871,0.5333333333333301,official_test,"best matched-budget non-proposed control per dataset/metric, then maximum across four task metrics",,,,,,,,
+chameleon,33.98668714,1.1695906432748648,official_test,"best matched-budget non-proposed control per dataset/metric, then maximum across four task metrics",,,,,,,,
+squirrel,25.82841138,1.8571886007044403,official_test,"best matched-budget non-proposed control per dataset/metric, then maximum across four task metrics",,,,,,,,
+cora,,,,,0,0.4224148300709203,0.37588131995871665,1.1237984109380972,128,0.01,3,7
+cora,,,,,1,0.4202509200200438,0.3744617999531329,1.1222798161859016,128,0.01,3,7
+cora,,,,,2,0.4200291700195521,0.3756131200119853,1.118249463719876,128,0.01,3,7
+chameleon,,,,,0,2.2335493098711594,2.160685999970883,1.0337223038892547,128,0.01,3,7
+chameleon,,,,,1,2.232280130009167,2.187667150073685,1.020392946858474,128,0.01,3,7
+chameleon,,,,,2,2.2368156700395048,2.172325650160201,1.0296870866826748,128,0.01,3,7
+squirrel,,,,,0,1.7021493000676855,1.5702088901540265,1.0840272977315244,128,0.01,3,7
+squirrel,,,,,1,1.6879474800312892,1.5748795099789277,1.0717946797427533,128,0.01,3,7
+squirrel,,,,,2,1.6826673300703987,1.5710031099850312,1.0710782934646332,128,0.01,3,7

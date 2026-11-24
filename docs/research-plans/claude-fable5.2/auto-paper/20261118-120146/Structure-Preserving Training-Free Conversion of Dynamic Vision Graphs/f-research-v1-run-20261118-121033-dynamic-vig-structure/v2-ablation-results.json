@@ -1,0 +1,87 @@
+{
+  "contract": "v2-ablation",
+  "wall_seconds": 11.98174524307251,
+  "rows": [
+    {
+      "seed": 41,
+      "variant": "scale_only",
+      "accuracy": 0.49550002813339233,
+      "message_mse": 0.008178807861950932,
+      "scale": 9.0,
+      "offset": 0.0,
+      "events": 6272000
+    },
+    {
+      "seed": 41,
+      "variant": "offset_only",
+      "accuracy": 0.40800002217292786,
+      "message_mse": 0.002178016000864457,
+      "scale": 15.0,
+      "offset": 0.0,
+      "events": 6272000
+    },
+    {
+      "seed": 41,
+      "variant": "message_full",
+      "accuracy": 0.784000039100647,
+      "message_mse": 0.001437072179755386,
+      "scale": 15.0,
+      "offset": 0.05,
+      "events": 6272000
+    },
+    {
+      "seed": 42,
+      "variant": "scale_only",
+      "accuracy": 0.5485000014305115,
+      "message_mse": 0.007270480642513353,
+      "scale": 9.0,
+      "offset": 0.0,
+      "events": 6272000
+    },
+    {
+      "seed": 42,
+      "variant": "offset_only",
+      "accuracy": 0.31850001215934753,
+      "message_mse": 0.0019463688013504963,
+      "scale": 15.0,
+      "offset": 0.0,
+      "events": 6272000
+    },
+    {
+      "seed": 42,
+      "variant": "message_full",
+      "accuracy": 0.7835000157356262,
+      "message_mse": 0.0013744796052271007,
+      "scale": 15.0,
+      "offset": 0.05,
+      "events": 6272000
+    },
+    {
+      "seed": 43,
+      "variant": "scale_only",
+      "accuracy": 0.46300002932548523,
+      "message_mse": 0.008317803752665618,
+      "scale": 9.0,
+      "offset": 0.0,
+      "events": 6272000
+    },
+    {
+      "seed": 43,
+      "variant": "offset_only",
+      "accuracy": 0.4390000104904175,
+      "message_mse": 0.0020787213578516124,
+      "scale": 15.0,
+      "offset": 0.0,
+      "events": 6272000
+    },
+    {
+      "seed": 43,
+      "variant": "message_full",
+      "accuracy": 0.7975000143051147,
+      "message_mse": 0.0014221671941329023,
+      "scale": 15.0,
+      "offset": 0.05,
+      "events": 6272000
+    }
+  ]
+}

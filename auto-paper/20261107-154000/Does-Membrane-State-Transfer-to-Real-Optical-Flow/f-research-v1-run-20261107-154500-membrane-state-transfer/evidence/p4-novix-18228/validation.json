@@ -1,0 +1,616 @@
+{
+  "validated_at_utc": "2026-11-08T00:35:37.805643+00:00",
+  "validator": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/validate_results.py",
+  "project_dir": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project",
+  "result_json_bytes": 63003,
+  "result_json_sha256": "feecf369ae3ce9c2ddbdf62207e59736ecffe879b3f61eb6cab36b5fb45173ca",
+  "result_json_sha256_prefix16": "feecf369ae3ce9c2",
+  "passed": true,
+  "checks": [
+    {
+      "name": "required_file:experiment.py",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/experiment.py",
+        "bytes": 2338
+      }
+    },
+    {
+      "name": "required_file:entrypoint.sh",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/entrypoint.sh",
+        "bytes": 2247
+      }
+    },
+    {
+      "name": "required_file:config.json",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/config.json",
+        "bytes": 11240
+      }
+    },
+    {
+      "name": "required_file:validate_results.py",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/validate_results.py",
+        "bytes": 21971
+      }
+    },
+    {
+      "name": "required_file:test_pipeline.py",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/test_pipeline.py",
+        "bytes": 7205
+      }
+    },
+    {
+      "name": "required_file:result.json",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/result.json",
+        "bytes": 63003
+      }
+    },
+    {
+      "name": "required_file:main_table.csv",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/main_table.csv",
+        "bytes": 853
+      }
+    },
+    {
+      "name": "required_file:experiment-traceability.csv",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/experiment-traceability.csv",
+        "bytes": 20526
+      }
+    },
+    {
+      "name": "required_file:command_history.log",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/command_history.log",
+        "bytes": 2313
+      }
+    },
+    {
+      "name": "status_design_invalid",
+      "passed": true,
+      "detail": "design_invalid"
+    },
+    {
+      "name": "design_valid_false",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "design_invalid_reason_present",
+      "passed": true,
+      "detail": "kc_feature_std: zero/nonfinite synthetic KC feature std in conditions ['lif_homeostasis', 'lif_combo', 'lif_combo_no_adaptive', 'lif_combo_no_refractory', 'lif_combo_no_ei']"
+    },
+    {
+      "name": "fail_fast_final_phase",
+      "passed": true,
+      "detail": "design_invalid_final"
+    },
+    {
+      "name": "result_path_exact",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/result.json"
+    },
+    {
+      "name": "at_least_one_invariant_failed",
+      "passed": true,
+      "detail": [
+        "kc_feature_std"
+      ]
+    },
+    {
+      "name": "reason_names_failed_invariant",
+      "passed": true,
+      "detail": {
+        "prefix": "kc_feature_std",
+        "failed": [
+          "kc_feature_std"
+        ]
+      }
+    },
+    {
+      "name": "edge_full_not_prefix",
+      "passed": true,
+      "detail": {
+        "key": "connectome_edges",
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/data/connections_biological.csv.gz",
+        "url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content",
+        "role": "connectome_edges",
+        "bytes": 178853187,
+        "sha256": "402fa0e61198e6f26b2ef4fd18e0123cc2edff0bb1edca9dd31b29b8171580bc",
+        "prefix": false,
+        "available": true,
+        "download_mode": "cached_verified_full",
+        "unavailable_reason": null
+      }
+    },
+    {
+      "name": "all_hops_1_to_8_reported",
+      "passed": true,
+      "detail": {
+        "1": 0,
+        "2": 15,
+        "3": 2559,
+        "4": 2559,
+        "5": 2559,
+        "6": 2559,
+        "7": 2559,
+        "8": 2559
+      }
+    },
+    {
+      "name": "actual_k_at_least_5",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "config_actual_k_matches_result",
+      "passed": true,
+      "detail": {
+        "config": 5,
+        "result": 5
+      }
+    },
+    {
+      "name": "ceiling_five_seeds:synthetic",
+      "passed": true,
+      "detail": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "ceiling_mean_recomputes:synthetic",
+      "passed": true,
+      "detail": {
+        "values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:synthetic:seed1",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed1.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:synthetic:seed1",
+      "passed": true,
+      "detail": {
+        "raw": 1.0,
+        "json": 1.0
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:synthetic:seed2",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed2.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:synthetic:seed2",
+      "passed": true,
+      "detail": {
+        "raw": 1.0,
+        "json": 1.0
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:synthetic:seed3",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed3.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:synthetic:seed3",
+      "passed": true,
+      "detail": {
+        "raw": 1.0,
+        "json": 1.0
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:synthetic:seed4",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed4.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:synthetic:seed4",
+      "passed": true,
+      "detail": {
+        "raw": 1.0,
+        "json": 1.0
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:synthetic:seed5",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed5.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:synthetic:seed5",
+      "passed": true,
+      "detail": {
+        "raw": 1.0,
+        "json": 1.0
+      }
+    },
+    {
+      "name": "ceiling_five_seeds:davis_2017",
+      "passed": true,
+      "detail": [
+        0.6416666666666667,
+        0.7583333333333333,
+        0.7666666666666667,
+        0.7166666666666667,
+        0.7166666666666667
+      ]
+    },
+    {
+      "name": "ceiling_mean_recomputes:davis_2017",
+      "passed": true,
+      "detail": {
+        "values": [
+          0.6416666666666667,
+          0.7583333333333333,
+          0.7666666666666667,
+          0.7166666666666667,
+          0.7166666666666667
+        ],
+        "mean": 0.72
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:davis_2017:seed1",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed1.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:davis_2017:seed1",
+      "passed": true,
+      "detail": {
+        "raw": 0.6416666666666667,
+        "json": 0.6416666666666667
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:davis_2017:seed2",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed2.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:davis_2017:seed2",
+      "passed": true,
+      "detail": {
+        "raw": 0.7583333333333333,
+        "json": 0.7583333333333333
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:davis_2017:seed3",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed3.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:davis_2017:seed3",
+      "passed": true,
+      "detail": {
+        "raw": 0.7666666666666667,
+        "json": 0.7666666666666667
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:davis_2017:seed4",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed4.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:davis_2017:seed4",
+      "passed": true,
+      "detail": {
+        "raw": 0.7166666666666667,
+        "json": 0.7166666666666667
+      }
+    },
+    {
+      "name": "ceiling_raw_exists:davis_2017:seed5",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/raw/REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed5.npz"
+    },
+    {
+      "name": "ceiling_raw_accuracy_match:davis_2017:seed5",
+      "passed": true,
+      "detail": {
+        "raw": 0.7166666666666667,
+        "json": 0.7166666666666667
+      }
+    },
+    {
+      "name": "all_eight_conditions_feature_checked",
+      "passed": true,
+      "detail": [
+        "stateless",
+        "lif_homeostasis",
+        "lif_combo",
+        "degree_null_lif",
+        "A0",
+        "lif_combo_no_adaptive",
+        "lif_combo_no_refractory",
+        "lif_combo_no_ei"
+      ]
+    },
+    {
+      "name": "feature_cache_exists:stateless",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/features/SYNTHETIC_direction__stateless.npz"
+    },
+    {
+      "name": "feature_std_cache_matches_result:stateless",
+      "passed": true,
+      "detail": {
+        "recomputed": 3.233602379551713e-08,
+        "cache_diagnostics": 3.233602379551713e-08,
+        "result": 3.233602379551713e-08
+      }
+    },
+    {
+      "name": "feature_cache_exists:lif_homeostasis",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/features/SYNTHETIC_direction__lif_homeostasis.npz"
+    },
+    {
+      "name": "feature_std_cache_matches_result:lif_homeostasis",
+      "passed": true,
+      "detail": {
+        "recomputed": 0.0,
+        "cache_diagnostics": 0.0,
+        "result": 0.0
+      }
+    },
+    {
+      "name": "feature_cache_exists:lif_combo",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/features/SYNTHETIC_direction__lif_combo.npz"
+    },
+    {
+      "name": "feature_std_cache_matches_result:lif_combo",
+      "passed": true,
+      "detail": {
+        "recomputed": 0.0,
+        "cache_diagnostics": 0.0,
+        "result": 0.0
+      }
+    },
+    {
+      "name": "feature_cache_exists:degree_null_lif",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/features/SYNTHETIC_direction__degree_null_lif.npz"
+    },
+    {
+      "name": "feature_std_cache_matches_result:degree_null_lif",
+      "passed": true,
+      "detail": {
+        "recomputed": 1.0940825987779166e-06,
+        "cache_diagnostics": 1.0940825987779166e-06,
+        "result": 1.0940825987779166e-06
+      }
+    },
+    {
+      "name": "feature_cache_exists:A0",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/features/SYNTHETIC_direction__A0.npz"
+    },
+    {
+      "name": "feature_std_cache_matches_result:A0",
+      "passed": true,
+      "detail": {
+        "recomputed": 0.10334160100319024,
+        "cache_diagnostics": 0.10334160100319024,
+        "result": 0.10334160100319024
+      }
+    },
+    {
+      "name": "feature_cache_exists:lif_combo_no_adaptive",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/features/SYNTHETIC_direction__lif_combo_no_adaptive.npz"
+    },
+    {
+      "name": "feature_std_cache_matches_result:lif_combo_no_adaptive",
+      "passed": true,
+      "detail": {
+        "recomputed": 0.0,
+        "cache_diagnostics": 0.0,
+        "result": 0.0
+      }
+    },
+    {
+      "name": "feature_cache_exists:lif_combo_no_refractory",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/features/SYNTHETIC_direction__lif_combo_no_refractory.npz"
+    },
+    {
+      "name": "feature_std_cache_matches_result:lif_combo_no_refractory",
+      "passed": true,
+      "detail": {
+        "recomputed": 0.0,
+        "cache_diagnostics": 0.0,
+        "result": 0.0
+      }
+    },
+    {
+      "name": "feature_cache_exists:lif_combo_no_ei",
+      "passed": true,
+      "detail": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/features/SYNTHETIC_direction__lif_combo_no_ei.npz"
+    },
+    {
+      "name": "feature_std_cache_matches_result:lif_combo_no_ei",
+      "passed": true,
+      "detail": {
+        "recomputed": 0.0,
+        "cache_diagnostics": 0.0,
+        "result": 0.0
+      }
+    },
+    {
+      "name": "no_method_readout_raw_after_feature_failure",
+      "passed": true,
+      "detail": [
+        "REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed1.npz",
+        "REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed2.npz",
+        "REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed3.npz",
+        "REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed4.npz",
+        "REAL_DAVIS_2017__foreground_centroid_horizontal_direction__flattened_8frame_ceiling__seed5.npz",
+        "SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed1.npz",
+        "SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed2.npz",
+        "SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed3.npz",
+        "SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed4.npz",
+        "SYNTHETIC__left_right_direction__flattened_8frame_ceiling__seed5.npz"
+      ]
+    },
+    {
+      "name": "degree_null_constraints_verified_before_feature_check",
+      "passed": true,
+      "detail": {
+        "nnz_equal": true,
+        "out_degree_sequence_exact": true,
+        "in_degree_sequence_exact": true,
+        "weight_multiset_exact_by_storage": true,
+        "no_duplicate_edges": true,
+        "protected_reciprocal_edges_unchanged": true,
+        "reciprocal_directed_edge_count_before": 4014518,
+        "reciprocal_directed_edge_count_after": 4014518,
+        "reciprocal_count_exact": true,
+        "protected_edges_still_reciprocal": true,
+        "all_passed": true
+      }
+    },
+    {
+      "name": "no_unregistered_experiment_groups",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "partial_main_table_recorded",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/main_table.csv",
+        "bytes": 853,
+        "sha256": "9582438fa40efcd35479ed6b065e54948a763d71f30de5430e604450f601cf09",
+        "rows": 2,
+        "scope": "partial_ceiling_evidence",
+        "fabricated_unrun_method_rows": false
+      }
+    },
+    {
+      "name": "partial_table_has_only_ceiling_rows",
+      "passed": true,
+      "detail": {
+        "rows": 2,
+        "columns": [
+          "record_type",
+          "dataset_key",
+          "domain",
+          "task",
+          "condition",
+          "accuracies",
+          "mean_accuracy",
+          "n_seeds",
+          "threshold",
+          "passed",
+          "terminal_status",
+          "design_invalid_reason"
+        ]
+      }
+    },
+    {
+      "name": "no_fabricated_unrun_rows",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/evidence/main_table.csv",
+        "bytes": 853,
+        "sha256": "9582438fa40efcd35479ed6b065e54948a763d71f30de5430e604450f601cf09",
+        "rows": 2,
+        "scope": "partial_ceiling_evidence",
+        "fabricated_unrun_method_rows": false
+      }
+    },
+    {
+      "name": "traceability_recorded",
+      "passed": true,
+      "detail": {
+        "path": "/mnt/novix-k8s-workspace-root/session_f93cc512a6dbb8f70b7524dc148aadf3/workspace/project/experiment-traceability.csv",
+        "bytes": 20526,
+        "sha256": "2b8c20381d06cba4e0cda11b55f612fbd5252191b77d947e3ec60583bf3711fc"
+      }
+    },
+    {
+      "name": "downstream_training_stopped",
+      "passed": true,
+      "detail": {
+        "trigger": "kc_feature_std: zero/nonfinite synthetic KC feature std in conditions ['lif_homeostasis', 'lif_combo', 'lif_combo_no_adaptive', 'lif_combo_no_refractory', 'lif_combo_no_ei']",
+        "downstream_readout_training_stopped": true,
+        "experiment_groups_completed_before_stop": [],
+        "note": "Feature encoding needed for the feature-std invariant is not Ridge readout training; no unrun method accuracies are synthesized."
+      }
+    },
+    {
+      "name": "posthoc_real_protocol_revision_disclosed",
+      "passed": true,
+      "detail": {
+        "measurement_status": "measured before the registered v2 full batch; retained to prevent silent protocol replacement",
+        "davis_full_frame_v1_ceiling_accuracy_by_seed": [
+          0.675,
+          0.6833333333333333,
+          0.6666666666666666,
+          0.6916666666666667,
+          0.7083333333333334
+        ],
+        "davis_full_frame_v1_ceiling_mean": 0.685,
+        "davis_full_frame_v1_disposition": "unavailable: mean below 0.70",
+        "sintel_download_attempt": {
+          "url": "http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+          "timeout_s": 120,
+          "bytes_received_before_timeout": 423001855,
+          "curl_return_code": 28,
+          "disposition": "unavailable: archive incomplete at timeout"
+        },
+        "v2_revision_rationale": "The v1 full-frame 32x32 downsample made the labeled foreground too small. The registered v2 uses a single union-foreground ROI for all eight frames while retaining unmasked grayscale pixels. A separate exploratory probe motivated this choice; only the clean rerun below is eligible as the v2 batch result.",
+        "post_hoc_revision": true
+      }
+    },
+    {
+      "name": "five_seed_power_limit_disclosed",
+      "passed": true,
+      "detail": "The exact paired two-sided sign-flip test over five seeds enumerates 2^5=32 patterns; its minimum nonzero/tie-free two-sided p is 2/32=0.0625, so no five-seed comparison can reach p<0.05."
+    },
+    {
+      "name": "invalid_not_claimed_as_verdict_accept",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "summary": {
+    "total": 72,
+    "passed": 72,
+    "failed": 0
+  }
+}

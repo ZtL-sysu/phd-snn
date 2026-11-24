@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "files": [
+    {"path": "results/baseline-CERT-C11.json", "sha256": "2d131174db7763d2ee62b5f208a31531fec5be31bf1161976e0bdb70bddd8c87"},
+    {"path": "results/baseline-DLY-C14.json", "sha256": "d320c0cd846400caf3af8b0a84b56c8159eccf4beb033419f068e2faddd34f56"},
+    {"path": "results/baseline-DYN-C01.json", "sha256": "11f0c320afb8d4f17a3e5a2a816639d3f08141b9b6a134436d82c85ad9d1320a"},
+    {"path": "results/baseline-EDGE-C06.json", "sha256": "034e96643b553d9c57abc7be2f6b3938921e7468f669bcfbe6a8344139ecf046"},
+    {"path": "results/baseline-EQ-C02.json", "sha256": "79a4f39b55f4f093080ab578e738d7cb6606afd13fda67e069588ae04caafe21"},
+    {"path": "results/baseline-LR-C05.json", "sha256": "b2d0f973fb8f2987a38fa53ae7625679d5bbe39c049c90de5e47bc72f8426d4d"},
+    {"path": "results/baseline-PERM-C03.json", "sha256": "8952b1a28996cc4bacd490606d245ac2726ee28ea36381fdeeb5adc95c9c4062"},
+    {"path": "results/baseline-POS-C13.json", "sha256": "81cf0beb3035148acbbe9f5a65035fb5ef015710900b3fdae35ae9a041be56a3"},
+    {"path": "results/baseline-READ-C18.json", "sha256": "036c9ffaf5b1dfec7242eca2cf81f918d07b3024d688cfa10b9b1aa7a94e31cc"},
+    {"path": "results/baseline-SIGN-C04.json", "sha256": "e3952786e6a90a364b4fdbb1e6b7944b6519e4b0c0949ea9d31f8a4452405c8f"}
+  ]
+}

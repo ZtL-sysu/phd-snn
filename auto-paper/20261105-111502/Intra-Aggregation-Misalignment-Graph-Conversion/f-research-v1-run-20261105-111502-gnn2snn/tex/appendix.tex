@@ -1,0 +1,102 @@
+\section{Proof of Theorem~\ref{thm:g1}}
+\label{app:proof}
+
+\paragraph{Symbol table.} $X$: node features; $\Ahat$: symmetric normalised adjacency with
+self-loops; $\rhon=\max_i\sum_j\Ahat_{ij}$; $M_l,b_l$: layer-$l$ weight and bias;
+$B_l=\Ahat H_{l-1}M_l+b_l$: ANN pre-activation; $H_l=\relu(B_l)$; $s_{l,t}\in\{0,1\}^{\hdim}$:
+spike vector at step $t$; $c_l=\sum_t s_{l,t}$: emitted count;
+$\Emat_l=c_l/T-\relu(B_l)$: rate error; $\theta$: threshold; $T$: timesteps;
+$\beta$: forward bias; $u$: residual membrane; $\epsPP$: target error;
+$G_L=\prod_l\|M_l\|_2$: cumulative spectral gain; $\mathrm{margin}$: median absolute logit gap.
+
+\paragraph{(a) Exact identity.} The instantaneous input to layer $l\ge 2$ at step $t$ is
+$\mathrm{inst}_{l,t}=\Ahat(s_{l-1,t}M_l)+b_l$. Summing over $t=1,\dots,T$ and dividing by $T$,
+\begin{align}
+\frac{1}{T}\sum_t \mathrm{inst}_{l,t}
+&= \Ahat\!\left(\frac{c_{l-1}}{T}M_l\right)+b_l \notag\\
+&= \Ahat\!\left[(\relu(B_{l-1})+\Emat_{l-1})M_l\right]+b_l \notag\\
+&= B_l + \Ahat(\Emat_{l-1}M_l).
+\end{align}
+Identifying the left-hand side with the converted pre-activation $\hat{B}_l$ gives
+$\hat{B}_l-B_l=\Ahat(\Emat_{l-1}M_l)$. For $l=1$ the input is the constant current
+$\mathrm{inst}_{1}=\Ahat(XM_1)+b_1+\beta$, which contains no spike-dependent term, hence
+$\Emat_0=0$ and $\hat{B}_1-B_1=\beta$. With $\beta=\betastar=\theta/(2T)$ the first-layer rate
+error is a centred quantisation residual. The equality is exact; no expectation, independence or
+activation-distribution assumption is used. This is the graph counterpart of the expectation
+identity of \cite{tpp2025}, with $\Ahat$ entering as a multiplicative operator.
+
+\paragraph{(b) Membrane identity.} The output unit accumulates without reset, so after $T$ steps
+$\mathrm{mem}=\sum_{t=1}^T \mathrm{inst}_t = c_{\mathrm{out}}\theta+u$, where $c_{\mathrm{out}}$
+is the number of threshold crossings and $u\in[0,\theta)$ the residual. The sum contains no
+index $t$ inside its terms, hence it is invariant under any permutation $\pi$ of
+$\{1,\dots,T\}$:
+$\sum_t \mathrm{inst}_{\pi(t)}=\sum_t\mathrm{inst}_t$. A count-based readout is not invariant once
+a reset is applied at an intermediate layer, because the reset couples the emission time to the
+running membrane; this is exactly why the $L=3$ closed form fails.
+
+\paragraph{(c) Reachability.} For a constant current $B+\beta$, IF emission satisfies
+$c=\lfloor T(B+\beta)/\theta\rfloor$. If $B+\beta=k\theta/T$ for integer $k$, then
+$c/T=(B+\beta)$ exactly and the converted activation is bit-exact. Otherwise
+$c/T\in[B+\beta-\theta/T,\,B+\beta]$ and the residual lies on one of two adjacent grid points.
+With $\beta=\theta/(2T)$ the quantisation residual is centred and uniformly bounded by
+$\theta/(2T)$.
+
+\paragraph{(d) Propagation bound.} From (a) and sub-multiplicativity,
+$\|\Emat_l\|\le \|\Ahat\|\,\|M_l\|_2\,\|\Emat_{l-1}\|$. Unrolling,
+$\|\Emat_L\|\le \rhon\, G_L\,\|\Emat_1\|$, and by (c)
+$\|\Emat_1\|\le \theta\sqrt{\hdim}/(2T)$ when the centred bias is applied. Without it the
+systematic component is $|\beta-\theta/(2T)|$ amplified by $\rhon$ at every hop, which we write
+as the factor $(1+\gamma_\beta)$ with $\gamma_\beta$ linear in $\rhon$. Rearranging
+$\|\Emat_L\|\le\epsPP$ gives the stated $T_L$. The bound's multiplier is the neighbourhood
+geometry $\rhon$ and the cumulative gain $G_L$, not a per-layer weight norm alone; reducing
+$\|W\|_\infty$ without changing $\rhon$ therefore cannot control graph conversion error.
+
+\paragraph{Failure depth.} At $L\ge3$ an intermediate layer's \emph{count} depends on the
+arrival order of its input once a reset is applied, so (c) no longer determines $\Emat_l$
+for $l\ge2$. The bound (d) remains valid as a statement about the output membrane, but its
+conservatism grows with depth. We report the empirical $L=3$ failure and the conservatism
+table in the registry rather than extrapolating the two-layer closed form.
+
+\section{Protocol and Reproducibility}
+\label{app:protocol}
+
+\begin{table}[h]
+\centering\small
+\caption{Frozen protocol. All cells use one trained ANN per (graph, seed).}
+\label{tab:protocol}
+\begin{tabular}{ll}
+\toprule
+Split & Planetoid public: 140/500/1000, 120/500/1000, 60/500/1000 \\
+Held-out & ogbn-arxiv official temporal split; chameleon, squirrel (Geom-GCN version) \\
+Seeds & 0--6, fixed, never extended \\
+Timesteps & $\{2,4,8,16,32\}$ for every method \\
+Backbone & 2-layer GCN, hidden width 16, ReLU, dropout 0.5 \\
+Optimiser & Adam, lr $0.01$, weight decay $5\times10^{-4}$, 400 epochs, patience 30 \\
+Accuracy ceiling & source ANN, listed but never ranked \\
+Statistics & mean, standard deviation, paired bootstrap 95\% interval \\
+Noise floor & 0.4 pp at $T\ge8$; $2\times$ rule = 0.8 pp \\
+Efficiency & spikes/node, $T\times|E|\times\hdim$ SynOps proxy, wall clock, retrain count \\
+Device & CPU frozen for paired arms; GPU only after a shared-cell identity check \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ogbn-arxiv model uses 150 epochs for all seven seeds as a runtime-budget repair; seeds,
+splits, timestep grid, target and pass conditions are unchanged. Heterophily graphs use the
+Geom-GCN version with the duplicate-node caveat of \cite{heterophily2023}; any cell exceeding its
+budget is marked \texttt{infeasible-with-evidence}, excluded from claims and retained in the
+registry. Every run stores its command line, seed, device, environment, and the SHA-256 of its
+code and input data.
+
+\section{Per-Seed Standard Deviations}
+\label{app:std}
+\input{tables/table_std}
+
+\section{Negative Controls}
+\label{app:negative}
+Spectral-norm-constrained training drives the weight gain towards one but shrinks activations,
+so the absolute quantisation floor dominates. An adaptive threshold set from the $99.9$th
+percentile of activation magnitude exceeds the unit ceiling by a factor of two to five and pushes
+most units into saturation. Multi-view averaging over thresholds and initial potentials does not
+beat the source ANN, while an ensemble of independently trained ANNs does. All three failures are
+reported with their mechanisms and remain in the result registry.

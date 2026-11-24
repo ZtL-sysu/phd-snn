@@ -1,0 +1,27 @@
+任务：在真实果蝇连接组图上跑一次可复现的 GPU 实验，检验「脉冲状态机制（单处与多处组合）对时序运动方向判别的增益」。这是探索性实验，只跑代码和出结果，不写论文、不做文献检索、不提交任何子任务。
+
+【硬件报告】先运行 nvidia-smi 与 torch.cuda.is_available()，记录 GPU 型号、显存、torch 版本、CUDA 版本。
+
+【公开数据，全部 CC BY 4.0，无需鉴权】
+- 连接组边表 https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content （178MB gz CSV，列 pre_root_id,post_root_id,syn_count）。用 HTTP Range 只取前 8MB，流式 gzip 解压并忽略截断尾，得到约 80 万行真实边即可，不要等完整下载。
+- 注释表 https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content （含 cell_type, top_nt）。
+- 复眼坐标 https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content （root_id, x_axis, y_axis）。
+某个文件 60 秒内拿不到就跳过依赖它的条件并在 result.json 里标 unavailable+原因，绝不编造数据。
+
+【图与编码】
+- 用出现的 root_id 建索引，A[post,pre]=log1p(syn_count)，COO→CSR，sum_duplicates；谱半径归一化 A *= 0.95/spectral_radius(A)（幂迭代 40 步）。
+- 复眼采样：32×32 帧像素归一化到 [0,1]，cKDTree 找最近复眼坐标对应 root_id（Voronoi）；每图对比度归一化使最亮感受器驱动为 1。
+- 读出：cell_type 以 KC 开头的神经元；注释不可用时退化为「复眼 BFS 第 2 跳节点中固定随机 1024 个」并标注。
+- 特征维 >2000 时先做 PCA(32)，只在训练集拟合。
+
+【刺激，明确标注 SYNTHETIC】T=8 帧、32×32、n=400、二分类 direction：半径 3–5 的圆点，起始 x 随机 8–24，逐帧以 speed=2 向左或向右移动，标签=方向。天花板 = 8 帧展平成 4096 维做 ridge 分类，报告准确率（应 >0.9）。
+
+【条件，每个 5 seeds = [1,2,3,4,5]，同一批刺激与同一 split】
+1 stateless：基座，每帧独立 3 步 x=tanh(A@x)，8 帧特征取均值。
+2 lif_homeostasis：LIF，v=0.6*v+syn+drive；syn=边级 index_add(上一帧硬脉冲)*8/fan_in*8；硬阈值 0.15，发放后 v-=0.15；软脉冲 sigmoid((v-0.15)*20) 累积后 8 帧取均值。
+3 lif_combo（体现多处机制叠加）= lif_homeostasis + 自适应阈值(thr=0.15+0.05*spike+0.85*(thr-0.15)) + 不应期 2 步 + 真实 E/I 符号（top_nt 属于 gaba/glutamate/glycine 的突触前神经元，其出边权重取负）。
+4 degree_null_lif：同 2，但图用保度重连（保 in/out 度序列、权重与 nnz，保护互反边对），检验增益是否为生物接线特有。
+5 A=0：无图传播，仅输入层读出，退化下界。
+统一 ridge 读出（L2=1e-2，70/30 固定划分）。每个条件都记录 spike rate 与读出特征 std。
+
+【输出】脚本存为 experiment.py；结果存为 result.json，含每条件 per-seed 准确率、mean、delta vs stateless、95% bootstrap CI(2000 次)、天花板、spike rate、feature std、GPU 信息、耗时、显存峰值、实际用到的数据文件、unavailable 条件及原因。最后回复里给简短结论，严格区分「实测」与「推断」，不得编造任何数值，不得把 1-seed 或不可学结果写成发现。

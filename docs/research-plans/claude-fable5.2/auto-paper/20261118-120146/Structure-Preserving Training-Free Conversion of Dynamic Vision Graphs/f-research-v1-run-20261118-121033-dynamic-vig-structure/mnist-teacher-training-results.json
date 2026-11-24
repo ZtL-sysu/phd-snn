@@ -1,0 +1,121 @@
+{
+  "dataset": "MNIST",
+  "device": "cuda",
+  "wall_seconds": 68.06175541877747,
+  "results": [
+    {
+      "seed": 41,
+      "best_val_acc": 0.8172,
+      "history": [
+        {
+          "epoch": 1,
+          "val_acc": 0.602
+        },
+        {
+          "epoch": 2,
+          "val_acc": 0.6926
+        },
+        {
+          "epoch": 3,
+          "val_acc": 0.7442
+        },
+        {
+          "epoch": 4,
+          "val_acc": 0.7764
+        },
+        {
+          "epoch": 5,
+          "val_acc": 0.8052
+        },
+        {
+          "epoch": 6,
+          "val_acc": 0.806
+        },
+        {
+          "epoch": 7,
+          "val_acc": 0.8132
+        },
+        {
+          "epoch": 8,
+          "val_acc": 0.8172
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "best_val_acc": 0.8312,
+      "history": [
+        {
+          "epoch": 1,
+          "val_acc": 0.6486
+        },
+        {
+          "epoch": 2,
+          "val_acc": 0.7218
+        },
+        {
+          "epoch": 3,
+          "val_acc": 0.7922
+        },
+        {
+          "epoch": 4,
+          "val_acc": 0.8046
+        },
+        {
+          "epoch": 5,
+          "val_acc": 0.8146
+        },
+        {
+          "epoch": 6,
+          "val_acc": 0.8274
+        },
+        {
+          "epoch": 7,
+          "val_acc": 0.8298
+        },
+        {
+          "epoch": 8,
+          "val_acc": 0.8312
+        }
+      ]
+    },
+    {
+      "seed": 43,
+      "best_val_acc": 0.8196,
+      "history": [
+        {
+          "epoch": 1,
+          "val_acc": 0.5204
+        },
+        {
+          "epoch": 2,
+          "val_acc": 0.7092
+        },
+        {
+          "epoch": 3,
+          "val_acc": 0.7734
+        },
+        {
+          "epoch": 4,
+          "val_acc": 0.7954
+        },
+        {
+          "epoch": 5,
+          "val_acc": 0.8056
+        },
+        {
+          "epoch": 6,
+          "val_acc": 0.8138
+        },
+        {
+          "epoch": 7,
+          "val_acc": 0.8184
+        },
+        {
+          "epoch": 8,
+          "val_acc": 0.8196
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v5",
+  "delivery_mode": "preparation",
+  "readiness": [
+    {
+      "path": "delivery-readiness.json",
+      "sha256": "7ac4f9053566c9ef64e19c7416991a1cfd178c6535093f3789a183dfeb2566f3"
+    }
+  ],
+  "citation_gate": [
+    {
+      "path": "audits/citation-gate-report.json",
+      "sha256": "512e25374d65ccb2f293978bd78ef5fd831e1079ea5f0c983a8576498a20430f"
+    }
+  ],
+  "contract": [
+    {
+      "path": "execution-contract-v2.md",
+      "sha256": "9d9b33cb54700cb192dc84324a3f498e8111a82196f97ba97162c78ddc1705be"
+    },
+    {
+      "path": "contracts/precision-claim-authorization.md",
+      "sha256": "45a71d0298e212a4521616dce2e22910d450a012c0dcf9d617dfd6b7cbe17827"
+    },
+    {
+      "path": "contracts/guidance-v3.snapshot.md",
+      "sha256": "7df18837aa9e87af86128fd8e77ff5b960e9f51aab0998ddb8c83cbe21ffc7bb"
+    },
+    {
+      "path": "contracts/submission-constraints.md",
+      "sha256": "2499c930df260930710a29584c93e2948758cf3f4caa1f9f6ea7e4462e7f4dd5"
+    },
+    {
+      "path": "takeover_20261112/execution-contract-v3.md",
+      "sha256": "9bf37617ae26144040cc84167e701afcb596e74d9af3fd7be19a8ee9cc9db946"
+    },
+    {
+      "path": "takeover_20261112/execution-contract-v4.md",
+      "sha256": "9f0370f4e6fdbadbcd2f20beff15686455b5ccaf27bbc6241add13b97c60ef82"
+    },
+    {
+      "path": "takeover_20261112/execution-contract-v5.md",
+      "sha256": "0a4ca9fce03929e34fb5607c3f6d76098421821f757d7a15afbe725909322889"
+    }
+  ],
+  "history": [
+    {
+      "action": "pass",
+      "stage": "P0"
+    },
+    {
+      "action": "pass",
+      "stage": "P1"
+    },
+    {
+      "action": "pass",
+      "stage": "P1A"
+    },
+    {
+      "action": "pass",
+      "stage": "P1B"
+    },
+    {
+      "action": "pass",
+      "stage": "P2"
+    },
+    {
+      "action": "pass",
+      "stage": "P3"
+    },
+    {
+      "action": "reopen",
+      "stage": "P0",
+      "reason": "versioned contract change v1->v2 (guidance-v3 precision statement, user authorized 2026-11-10)"
+    },
+    {
+      "action": "pass",
+      "stage": "P0"
+    },
+    {
+      "action": "pass",
+      "stage": "P1"
+    },
+    {
+      "action": "pass",
+      "stage": "P1A"
+    },
+    {
+      "action": "pass",
+      "stage": "P1B"
+    },
+    {
+      "action": "pass",
+      "stage": "P2"
+    },
+    {
+      "action": "pass",
+      "stage": "P3"
+    },
+    {
+      "action": "pass",
+      "stage": "P3A"
+    },
+    {
+      "action": "pass",
+      "stage": "P4"
+    },
+    {
+      "action": "pass",
+      "stage": "P5"
+    },
+    {
+      "action": "pass",
+      "stage": "P5A"
+    },
+    {
+      "action": "pass",
+      "stage": "P6"
+    },
+    {
+      "action": "pass",
+      "stage": "P7"
+    },
+    {
+      "action": "pass",
+      "stage": "P8"
+    },
+    {
+      "action": "pass",
+      "stage": "P9"
+    },
+    {
+      "action": "pass",
+      "stage": "P10"
+    },
+    {
+      "action": "pass",
+      "stage": "P11"
+    },
+    {
+      "action": "pass",
+      "stage": "P12"
+    },
+    {
+      "action": "pass",
+      "stage": "P13"
+    },
+    {
+      "action": "pass",
+      "stage": "P14"
+    },
+    {
+      "action": "pass",
+      "stage": "P15"
+    },
+    {
+      "action": "pass",
+      "stage": "P16"
+    },
+    {
+      "action": "pass",
+      "stage": "P17"
+    },
+    {
+      "action": "pass",
+      "stage": "P18"
+    },
+    {
+      "action": "pass",
+      "stage": "P19"
+    },
+    {
+      "action": "pass",
+      "stage": "P20"
+    },
+    {
+      "action": "pass",
+      "stage": "P21"
+    },
+    {
+      "action": "reopen",
+      "stage": "P0",
+      "reason": "2026-11-12 user continuation and v3 contract; new implementation and baseline audit evidence"
+    },
+    {
+      "action": "pass",
+      "stage": "P0"
+    },
+    {
+      "action": "reopen",
+      "stage": "P0",
+      "reason": "User clarified full-data strong-teacher primary track on 2026-11-12"
+    },
+    {
+      "action": "pass",
+      "stage": "P0"
+    },
+    {
+      "action": "reopen",
+      "stage": "P0",
+      "reason": "User explicitly changed independent final CCFA score target from8 to>=7; versionv5, unchanged scientific scope, preserve prior evidence."
+    },
+    {
+      "action": "pass",
+      "stage": "P0"
+    }
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "passed",
+      "contract_version": "v5",
+      "inputs": [
+        {
+          "path": "takeover_20261112/execution-contract-v5.md",
+          "sha256": "0a4ca9fce03929e34fb5607c3f6d76098421821f757d7a15afbe725909322889"
+        },
+        {
+          "path": "takeover_20261112/guidance-v4-draft.md",
+          "sha256": "6a8e9f6fd694975b4d7a5eb9730bd1d106c23ec133922d816f3a144ce8ceb521"
+        },
+        {
+          "path": "contracts/path-containment-manifest.md",
+          "sha256": "c8af2f15cf2396f22ada8035db108928b4b605313478d07cee6d8f40ab9a581a"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "takeover_20261112/p0-intake-v5.md",
+          "sha256": "8fcfab19859ba824043ce76bc0d51248ba41e1706a3fabdce9adb893eb7fb6d2"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P1A",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P1B",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P2",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P3",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P3A",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P4",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P5",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P5A",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P6",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P7",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P8",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P9",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P10",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P11",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P12",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P13",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P14",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P15",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P16",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P17",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P18",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P19",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P20",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "P21",
+      "status": "pending",
+      "contract_version": "v5",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    }
+  ]
+}

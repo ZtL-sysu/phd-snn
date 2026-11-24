@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "stage": "P13-final-style-repair",
+  "latexmk_returncode": 0,
+  "pages": 8,
+  "tex_sha256": "48b2be0bbcb774e4418d1a5d273d6423f97628a20dacfbdeb8e7b713ddc7c37a",
+  "pdf_sha256": "bc59185a9ebc4ceef6b76aeee5b53f48fc49f44cb8e01cc6fea73197ff50ecdf",
+  "bib_sha256": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5",
+  "manual_caption_paragraphs": 0,
+  "pass": true
+}

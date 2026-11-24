@@ -1,0 +1,208 @@
+任务：执行 f-research-v1 的 P4 全量实验批次 —— **C1 死磕第 4 次尝试（correction loop v3, attempt #4）**。
+检验「严格零方差塌缩是否是 biological-graph × hard-spike 门控工作点（阈值 θ / 扇入增益）
+与图谱尺度失配的产物，并把它与标签信息丢失分开测量」。
+只跑代码和出结果，不写论文、不做文献检索、不提交任何子任务。必须留下可复现脚本与原始数值。
+
+【为什么这次和上一版不同 · 必须读】
+上一版 attempt #3 = novix task `18273`，已在本轮 round-007 完成 pull + SHA-256 核验 +
+正式判定 `REJECT_FAILURE`（`acceptance-verdict-18273.md`）。它是**有效跑完全量**的设计
+（`design_valid=true`、18/18 测试、440/440 validator、685 raw NPZ、真实方法数值），
+但 `expected_signal_met=false`：
+- 两真实域 unavailable（DAVIS full-frame v1 ceiling 0.4769 < 0.70；Sintel 单次 curl
+  119342 ms 只拿到 350,551,807 / 5,627,783,629 B）→ 不做 SYNTHETIC→REAL 迁移主张；
+- 预注册强对比 `lif_homeostasis_skip − stateless_skip = +0.011667`
+  （CI [0.00333,0.02000]、exact p=0.25、BH q=0.25）远低于固定门槛 +0.15；
+- `lif_homeostasis − stateless = −0.375`；一因子消融全部差值 0 / p=1 / q=1；
+- biological LIF 的 KC 特征跨样本 std **严格 0**、非常数维 0、KC hard-spike rate 0；
+  `drive_every_frame=true` 未恢复；residual skip 只恢复 composite（绕过图的输入分支）；
+  λ×K 20/20 格 biological LIF 全格 KC std=0；
+- **2×2 结构×动力学实测**：identity LIF std **0.2075**、A=0 LIF std **0.00156**
+  （均非零）但准确率 ≈chance（0.5067）；只有 biological graph + LIF → resolved KC readout
+  严格零方差。
+- **round-006 的「LIF 分支 v≡0 被整体旁路」假设被这批 2×2 实测部分否证**：
+  identity / A=0 图上 LIF 在跑，不是整体旁路。
+- 平台「有限推断」#4：「严格零方差」与「标签信息丢失」**不是同一现象**；
+  #5：不能证明唯一数学固定点，也不能简单归因「只有图结构」或「只有膜动力学」。
+- 另有**第三次协议缺陷**：finalReply 声称写了 `project/result.json`（1,322,902 B）
+  与 `project/config.json`（16,314 B），但远端 `debug ls` 权威确认**两者都不存在**；
+  真实数据只在 `project/evidence/result_snapshot.json`（1,322,902 B，sha256
+  `2c15f8466687d7ef…`，与声称的 result.json 逐字节一致）里。18156 / 18228 同类问题。
+
+**本轮不是重提 `18273` 的 query，不是继续调 λ / K 凑显著，也不是启用 round-006 那份
+被部分否证的 NOT-SUBMITTED 预案。禁止把上一版配置原样再跑一遍。**
+
+【本轮四要素 · 必须写进 `project/result.json` 的 `grind_block`，逐字写】
+- 上一轮失败点：18273 有效跑完全量、有真实方法数值，但两真实域 unavailable、
+  预注册强信号 +0.0117 << +0.15、一因子消融全 0；biological LIF KC 方差严格 0，
+  identity/A=0 LIF 方差非零 → round-006「整体旁路」假设被部分否证；
+  且 `project/result.json` / `config.json` 第三次未落在可 pull workspace。
+- 本轮假设（**新，机制级不同；是假设不是结论**）：
+  塌缩不是整体旁路、也不必是唯一动力学不动点，而是 **hard-spike 门控工作点失配**：
+  在 15,091,983 边、谱半径 504.30 的 biological graph 上，`syn = index_add · 8/fan_in · 8`
+  的扇入归一化把 hop-3 resolved KC 的膜电位分布整体压到固定阈值 θ=0.15 之下，
+  于是 KC 从不发放（KC hard-spike rate = 0），soft feature 退化为常量
+  `sigmoid(−θ·slope)`；identity / A=0 图的有效增益不同所以能发放（方差非零）。
+  可证伪推论：(i) 若把 θ 降到 0（无门控纯模拟态）或按训练集标定到目标发放率，
+  biological KC std 应恢复 >0；(ii) 若 θ=0 下仍严格 0，则塌缩在门控**之前**
+  （drive→syn→v），本假设被否证，转向逐环节 instrumentation + 两室状态拆解；
+  (iii) 即便方差恢复，若 probe_acc 仍 ≈chance 而 A=0=1.0，则「方差塌缩」与
+  「标签信息丢失」是可分离的两个现象，必须分别报告，不得混为一谈。
+- 具体改动（相对 `query-round005-attempt3.txt` 的 diff，均为机制/测量/协议/实现层）：
+  1.【新增·核心】**等发放率 yoked 标定**：在**仅训练集**上把 biological / degree-null /
+     identity / A=0 四类图的 θ 分别标定到同一预注册目标 KC hard-spike rate
+     `r* ∈ {0.02, 0.10}`，再在**发放率相等**条件下重跑 4 图 × {stateless, LIF} 的 2×2。
+     attempt #3 的 2×2 用固定 θ=0.15、没有 yoked 标定，无法把「结构」与「工作点」解耦。
+  2.【新增·核心】**门控工作点网格 + 逐跳膜电位分布**：固定其余一切，扫
+     `θ ∈ {0, 0.01, 0.05, 0.15, 0.3}` × `fan_in_gain ∈ {1, 8, 32}`，
+     每格逐跳落盘膜电位的 min/max/mean/std、超过 θ 的比例、hard-spike rate、
+     KC 特征跨样本 std / 非常数维 / probe_acc(h)。θ=0 是「无门控上界」决定性对照。
+     attempt #3 的 λ×K 相图扫的是传播算子缩放与步数，**从未扫脉冲门控 θ / 扇入增益**。
+  3.【新增·核心】**方差塌缩与标签信息丢失分开测量**：每个条件每 hop 分别落盘
+     (a) `feature_std` / 非常数维，(b) 类间/类内散度 Fisher 比 `S_B/S_W` 与类条件均值距离，
+     (c) 只在训练集拟合的 ridge `probe_acc(h)` + 5-seed bootstrap CI，
+     (d) **方差匹配噪声注入**：对塌缩成常量的 KC 特征注入各向同性高斯噪声，
+     使 `feature_std` 数值等于 identity-LIF 实测的 0.2075（噪声 seed 预注册），
+     再看 probe_acc 是否从 chance 回升；另加标签置换阴性对照。
+     attempt #3 只测了 feature_std 轨迹与 probe_acc(h)，**从未把二者分开、也从未注入 yoked 噪声**。
+  4.【新增】**读出状态变量选择**：等维数 / 等参数量、同一 split、同一 5 seeds，
+     只换送进同一个 ridge 的内部量：`v_raw` / `hard_spike` / `soft_sigmoid`（现口径）/
+     `spike_count` / `threshold_crossing_time`。检验常量塌缩是否只是「读错了内部量」。
+     另加 yoked 等维随机投影对照（排除「只是维数变了」）。
+     attempt #3 只读 8 帧 soft-sigmoid 均值。
+  5.【新增·协议修复】**真实域预注册协议更换（训练前写死，禁止 post-hoc）**：
+     DAVIS 改用 trainval-480p ZIP 内**官方 GT 分割 mask 的质心逐帧位移方向**作标签
+     （不是 full-frame 帧差运动能量；18228 的 post-hoc v2 教训），
+     Sintel 改用 **HTTP Range 分块 + 断点续传 + 每块校验**（18228 已验证该策略可拿全
+     178,853,187 B 边表），并把 ROI / margin / 像素处理规则 / 类别平衡规则
+     在 `config_preregistered.json` 里**训练前冻结并哈希锁定**。
+     仍维持：任一真实域 5-seed ceiling < 0.70 即标 `unavailable`；
+     两个真实域都 unavailable 时**不得作迁移主张**，只报告 SYNTHETIC 侧机制结果。
+     **不许在看到 v1 结果后再注册 v2**。
+  6.【新增·实现修复，针对第三次缺陷】产物持久化**不依赖 git commit**：
+     在全部计算结束的最后一步，用 Python 直接 `open(path,'wb').write(...)` 写出
+     **`project/result.json` 与 `project/config.json` 两个主文件**，
+     再写 byte-identical 的 `project/evidence/result_snapshot.json` 与
+     `project/evidence/config_snapshot.json`；随后立即执行
+     `os.path.exists` / `os.path.getsize` / `sha256` 自检并把**实测输出原样**贴进最终回复；
+     另写 `project/MANIFEST.txt` 列出每个预期文件的存在性与字节数。
+     最终回复还必须给出 `ls -l project/result.json project/config.json` 的**真实命令输出**。
+     **不许只在回复里声称写了却没有文件**；不许只写 snapshot 而漏掉主文件。
+  7.【沿用·已验证有效】完整边表 178,853,187 B（`prefix=false`、Range 分块拼接 +
+     gzip 校验）、eye→KC exact-hop 自检并按冻结回退规则取 K=3 / 2,544 annotated KC、
+     SYNTHETIC ceiling 1.0、训练前 invariant checks、5 固定 seeds [1,2,3,4,5]、
+     2000 次 paired-seed bootstrap 95% CI、exact paired sign-flip p、BH-FDR q=0.05、
+     自适应阈值 / 不应期 / E-I 符号各一因子移除消融、打乱帧序 + flash 阴性对照、
+     A=0（明确定义为输入信息上界，不得写成生物接线优势）、保度零模型（保 in/out 度序列 /
+     权重集合 / nnz / 互反边对）、identity 图、每条件每 seed 一个 raw NPZ、
+     完整原始日志与硬件报告。
+  8.【不变】`minimum` / `expected_strong` 一律沿用 C1 `guidance.md` §Expected Results
+     （real-domain `delta >= +0.15` / `>= +0.25` + 迁移裁决 + 一因子消融），
+     **不静默下调**；`runtime_hours` 只是可行性估算，**不是超时参数**；
+     提交命令不带 `--max-turns` / `--timeout`、不阻塞 `watch`。
+- 预期信号 / 若失败下一步：
+  · 预期：存在 (θ, gain) 使 biological KC std > 0 且 KC hard-spike rate > 0；
+    等发放率 yoked 2×2 下四图 `delta` 两两 CI 跨 0（结构效应可由工作点解释）；
+    `v_raw` 或 `hard_spike` 读出的 probe_acc 高于 `soft_sigmoid` 且 CI 下界 > 0；
+    Fisher 比与 probe_acc 一致，方差匹配噪声注入**不能**让 probe_acc 回到 A=0 水平
+    （证明方差与信息可分离）；两真实域至少一个 ceiling >= 0.70。
+  · 若失败（θ=0 下仍严格 0 / 五种读出全 ≈chance / yoked 后四图仍可区分）：
+    本假设被否证，塌缩位于门控之前；下一步转向逐环节
+    drive→syn→v 全张量 instrumentation 与两室（树突/胞体）状态拆解，
+    继续死磕同一 C1，按 §3.6(4) 保留全部失败证据，**不换题、不放弃**
+    （当前 `abandon_allowed=False`）。
+  · 两真实域仍 unavailable：如实标 unavailable、不做迁移主张，
+    **不把「实验跑完」写成「结果达标」**。
+
+【硬件报告】先运行 `nvidia-smi` 与 `torch.cuda.is_available()`，记录 GPU 型号、显存、
+torch/CUDA 版本。
+
+【公开数据，CC BY 4.0 / 官方公开基准，无需鉴权】
+- 连接组边表（下载**完整文件**，不要只用 8 MB 前缀）：
+  https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content
+  （约 178,853,187 B；列 pre_root_id, post_root_id, syn_count）
+  18228/18273 实测单请求 120 秒只到约 112 MB，随后用 HTTP Range
+  64 MiB + 64 MiB + 44,635,459 B 字节级拼接并通过 gzip 完整性校验，直接复用该策略。
+- DAVIS-2017 trainval-480p（官方直链，含 480p JPEG 与 GT 分割 mask）：
+  https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip
+- MPI-Sintel complete（官方直链，含 GT 光流 .flo）：
+  http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip
+- 拿不到数据 / 下载不完整：必须标 `unavailable` 并写清原因与实测字节数，
+  **不许编造、不许用 toy 数据冒充真实域**。
+
+【刺激，明确标注 SYNTHETIC】T=8 帧、32×32、n=400、二分类 direction：
+半径 3–5 的圆点，起始 x 随机 8–24，逐帧 speed=2 向左或向右，标签=方向。
+另做 flash control（闪烁检测）作为负对照。固定 70/30 stratified split，seeds=[1,2,3,4,5]。
+真实域标签构造规则见上面第 5 点，**训练前预注册写死、哈希锁定**；类别需平衡。
+SYNTHETIC 只是受控诊断域，**所有迁移结论只在真实域 ceiling 达标时才可下**。
+
+【条件矩阵 · 每个 5 seeds = [1,2,3,4,5]，同一批刺激与同一 split，等参数量】
+A. 基座五条件（与 18156/18228/18273 可比对）：
+   1 stateless：每帧独立 K 步 x = tanh(A@x)，8 帧特征取均值（等预算）
+   2 lif_homeostasis：LIF，v = 0.6*v + syn + drive；syn = 边级 index_add(上一帧硬脉冲)*8/fan_in*8；
+     硬阈值 0.15，发放后 v -= 0.15；软脉冲 sigmoid((v-0.15)*20) 累积后 8 帧取均值
+   3 lif_combo = lif_homeostasis + 自适应阈值 + 不应期 2 步 + 真实 E/I 符号
+   4 degree_null_lif：同 2，但图用保度重连（保 in/out 度序列、权重集合、nnz、互反边对）
+   5 A=0：无图传播，仅输入层读出 —— **明确定义为「输入信息上界」**
+B. 【新增】门控工作点网格：θ ∈ {0, 0.01, 0.05, 0.15, 0.3} × fan_in_gain ∈ {1, 8, 32}，
+   共 15 格 × 5 seeds，每格落盘逐跳膜电位分布 + KC hard-spike rate + KC std + probe_acc(h)。
+C. 【新增·核心】等发放率 yoked 2×2：r* ∈ {0.02, 0.10}，
+   图 ∈ {biological, degree-null, identity, A=0} × 动力学 ∈ {stateless, LIF}，
+   θ 只在训练集标定、写进 config；每格报告实测发放率（验证 yoked 是否成立）、
+   KC std、Fisher 比、probe_acc、delta vs biological stateless、5-seed CI。
+D. 【新增·核心】方差—信息分离：每个条件每 hop 落盘 feature_std / 非常数维 /
+   S_B, S_W, Fisher 比 / 类条件均值距离 / 类条件互信息估计（报 bin 数与估计量）/
+   train-only ridge probe_acc(h)；并对塌缩条件做方差匹配噪声注入
+   （目标 std = identity-LIF 实测 0.2075）+ 方差不匹配噪声 + 标签置换三组阴性对照。
+E. 【新增】读出状态变量：v_raw / hard_spike / soft_sigmoid / spike_count /
+   threshold_crossing_time 五种，等维数（PCA 只在训练集拟合，报维数与方差保留率）、
+   等参数量、同一 ridge；另加 yoked 等维随机投影对照。
+F. 一因子消融：从 lif_combo 分别移除自适应阈值 / 不应期 / E/I 符号，各 5 seeds；
+   并对门控网格做「阈值固定但增益重标定」「增益固定但阈值重标定」两档，
+   把「阈值」与「扇入增益」拆开。
+G. 阴性对照：打乱帧序、flash control、冻结 gain、标签置换、保度零模型、identity 图。
+统一 ridge 读出（L2=1e-2）。每条件记录 spike rate、KC/读出 spike rate、feature std、
+每层 probe_acc、Fisher 比、peak GPU MiB、耗时。所有统计：2000 次 bootstrap 95% CI、
+exact paired sign-flip p、BH-FDR q=0.05，并如实说明 5 paired seeds 下最小双侧 p = 0.0625
+的效力限制。**不许用 held-out test 表现去选择 θ / gain / 读出状态变量**。
+
+【训练前强制自检 · 任一失败先完成诊断再落盘，不得零信息终止】
+1. `kc_reachable_count`：eye→KC exact-hop 可达数（hop 1..8 全报）；按冻结回退规则取 K，
+   K 下 ==0 则自动增大 K 或把读出层改到 hop-2/3，把最终 K / 读出层定义 / 各跳可达数写进 config。
+2. `kc_feature_std`：本轮**不得**因该检查失败立即终止；必须先把 B/C/D/E/F/G 全部
+   诊断与对照跑完并落盘，再给结论。三态分流：
+   (a) 所有 θ/gain 格 KC std 全 0 → 记 `COLLAPSE_UPSTREAM_OF_GATE`；
+   (b) 某格 KC std > 0 但 probe_acc ≈chance → 记 `VARIANCE_RESTORED_INFO_LOST`；
+   (c) 某格 KC std > 0 且 probe_acc > chance + CI → 正常继续拟合 readout。
+   三种状态都必须落盘全部曲线与对照，禁止把任一状态写成「方法优越 / 机制否证 / 结果达标」。
+3. `synthetic_ceiling >= 0.90`：8 帧展平 ridge 的 5-seed 天花板均值。
+4. `real_domain_ceiling >= 0.70`：真实域 5-seed 天花板均值，<0.70 标 unavailable；
+   两个真实域都 <0.70 则都标 unavailable，**不得据此作迁移主张**。
+
+【输出 · 必须在任何提前终止前落盘】
+- `experiment.py`、`entrypoint.sh`、`config.json`、`validate_results.py`、`test_pipeline.py`
+  写在 `project/` 目录内（相对于 workspace 根）。
+- **`project/result.json`**（主文件，不可省略）：含每条件每 seed 准确率、mean、
+  delta vs stateless、bootstrap 95% CI、exact p、BH q、两个域 ceiling、KC 各跳可达数、
+  实际 K、读出层定义、feature std、spike rate、逐跳 probe_acc(h) 与 Fisher 比、
+  门控网格 15 格全数值、等发放率 yoked 2×2 全格数值、方差—信息分离全表、
+  五种读出状态变量全表、GPU 信息、耗时、显存峰值、实际用到的每个数据文件与字节数、
+  unavailable 条件及原因、4 项 invariant checks 结果、`grind_block`（四要素）、
+  以及与 `18273` 的配置 diff 清单。
+- **`project/config.json`**（主文件，不可省略）：预注册的真实域构造规则与哈希锁定、
+  θ/gain 网格、r* 目标发放率、seeds、split、所有超参。
+- `project/evidence/result_snapshot.json`（与 result.json byte-identical）、
+  `project/evidence/config_snapshot.json`、
+  `project/evidence/main_table.csv`、`gate_operating_point.csv`、
+  `yoked_firing_rate_2x2.csv`、`variance_vs_information.csv`、
+  `readout_state_variables.csv`、`probe_vs_hop.csv`、`variance_trajectory.csv`、
+  `experiment-traceability.csv`、`validation.json`、`raw/*.npz`（每条件每 seed 一个）、
+  `command_history.log`、`project/MANIFEST.txt`（每个预期文件的存在性与字节数）。
+- **最后一个动作**必须是：写出上面两个主文件 + 两个 snapshot + MANIFEST，
+  然后执行 `ls -l project/result.json project/config.json` 与
+  `python -c "import os,hashlib; ..."` 的自检，把**实测输出**贴进最终回复
+  （字节数 + sha256 前 16 位）。**不许只写 snapshot、不许只声称写了文件**。
+- 最终回复必须给**实际数值**和简短结论，严格区分「实测」与「推断」；
+  不得编造任何数值，不得把 1-seed 或不可学结果写成发现，
+  不得把 design_invalid / 强信号未达写成方法优越，
+  不得把「实验跑完」写成「结果达标」，不得把 `A=0` 高于图条件写成生物接线优势，
+  不得把 post-hoc 协议当成预注册达标。

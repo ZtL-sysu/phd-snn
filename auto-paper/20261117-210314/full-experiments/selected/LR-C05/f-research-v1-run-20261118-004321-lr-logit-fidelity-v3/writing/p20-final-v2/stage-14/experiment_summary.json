@@ -1,0 +1,29 @@
+{
+  "metrics_summary": {
+    "logit_mse_reduction_cora": {
+      "mean": 0.2623240871,
+      "min": 0.2623240871,
+      "max": 0.2623240871,
+      "count": 3
+    },
+    "logit_mse_reduction_chameleon": {
+      "mean": 0.3398668714,
+      "min": 0.3398668714,
+      "max": 0.3398668714,
+      "count": 3
+    },
+    "logit_mse_reduction_squirrel": {
+      "mean": 0.2582841138,
+      "min": 0.2582841138,
+      "max": 0.2582841138,
+      "count": 3
+    }
+  },
+  "datasets": [
+    "cora",
+    "chameleon",
+    "squirrel"
+  ],
+  "total_conditions": 9,
+  "total_metric_keys": 5
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "verdict": "pass",
+  "errors": [],
+  "policy": {
+    "min_unique": 36,
+    "projectquota": null,
+    "as_of": "2026-11-05",
+    "recent_window_years": 4,
+    "recent_years_inclusive": [
+      2023,
+      2026
+    ],
+    "require_recent_majority": true,
+    "window_rationale": "Spiking-GNN and low-latency ANN-SNN conversion literature becomes substantive from 2023; a four-year inclusive window (2023-2026) is frozen before final counting, per f-research-v1 citation-requirements.md."
+  },
+  "checks": {
+    "bib_entry_records": 55,
+    "bib_unique_keys": 55,
+    "duplicate_bib_keys": 0,
+    "inventory_records": 55,
+    "inventory_unique_keys": 55,
+    "cited_keys": 55,
+    "unknown_cited_keys": 0,
+    "uncited_bib_keys": 0,
+    "bib_keys_missing_inventory": 0,
+    "inventory_keys_missing_bib": 0,
+    "eligible_distinct_sources": 55,
+    "recent_eligible_sources": 46,
+    "undated_inventory_records": 0,
+    "future_year_records": 0,
+    "duplicate_identity_conflicts": 0,
+    "field_mismatches": 0
+  },
+  "inputs": {
+    "bib": {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\tex\\refs.bib",
+      "sha256": "dd986a9e0bbea27e3f257ed1eaf59a9a70aa3a85f6d30ac0df267d92a7d41c6f"
+    },
+    "manuscript": {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\tex\\main.tex",
+      "sha256": "2e2407c2fd71b0545122cb0af9e46bbea8871d355bd5cd416883165bdf131854"
+    },
+    "inventory": {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\contracts\\citation-inventory.json",
+      "sha256": "4b063a7cb42524ea91024b7923936954336dcac3691e1f1483b641aefb7e4a59"
+    },
+    "policy": {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\contracts\\citation-policy.json",
+      "sha256": "41d404d79d4fe9c3e59b31ace57fce99acf78394bcc6c678d52e25d1e4b764be"
+    }
+  },
+  "binding_inputs": {
+    "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\tex\\refs.bib": {
+      "sha256": "dd986a9e0bbea27e3f257ed1eaf59a9a70aa3a85f6d30ac0df267d92a7d41c6f",
+      "bytes": 24219
+    },
+    "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\tex\\main.tex": {
+      "sha256": "2e2407c2fd71b0545122cb0af9e46bbea8871d355bd5cd416883165bdf131854",
+      "bytes": 26295
+    },
+    "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\contracts\\citation-inventory.json": {
+      "sha256": "4b063a7cb42524ea91024b7923936954336dcac3691e1f1483b641aefb7e4a59",
+      "bytes": 24623
+    },
+    "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\contracts\\citation-policy.json": {
+      "sha256": "41d404d79d4fe9c3e59b31ace57fce99acf78394bcc6c678d52e25d1e4b764be",
+      "bytes": 374
+    }
+  },
+  "assertions_are_human_supplied": true,
+  "limitation": "The inventory verification, relevance, support locations, and source URLs are human-supplied assertions. This deterministic gate checks their presence and internal consistency; it does not independently verify that a source exists, supports a claim, or is relevant."
+}

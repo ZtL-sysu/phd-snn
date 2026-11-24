@@ -1,0 +1,43 @@
+# Output-Jacobian Sparse Residual Allocation for Matched-Budget Logit Fidelity in Frozen GCN-to-SNN Conversion
+
+## Abstract
+
+Low-rank graph-message transport can preserve reconstruction-dominated directions while spending scarce serialized bits away from directions that affect downstream logits. We evaluate whether output-Jacobian-selected sparse residual coefficients improve logit fidelity under a matched total padded serialized-bit budget while bounding task degradation in frozen two-layer GCN-to-SNN conversion. Rank-128 SVD transport is combined with a 2% sparse residual budget selected by output-Jacobian sensitivity, and every compared rank-128/2% method has identical total padded serialized bits within each dataset. On the reported test split, three-seed mean split-specific logit MSE fell by 26.23% on Cora, 33.99% on Chameleon, and 25.83% on Squirrel relative to the strongest evaluated matched-budget control; all nine dataset-seed comparisons improved. Maximum three-seed-mean task degradation was 1.86 percentage points and maximum seed-level degradation was 2.85 percentage points. Paired p95 full-pipeline runtime ratios in the measured rank-128/1% timing benchmark ranged from 1.020x to 1.124x across nine dataset-seed pairs. This held-out confirmation after validation exposure supports bounded logit-fidelity improvement without establishing task superiority or broad GNN generality.
+
+## 1 Introduction
+
+In frozen GCN-to-SNN conversion, high-dimensional graph messages are compressed before an event-driven representation is formed. A rank-constrained SVD transport can preserve the directions that dominate message reconstruction, but under a fixed serialization budget it can still discard smaller directions that materially affect the downstream logits. The resulting failure is output-sensitive: a small message-error improvement does not guarantee that the serialized approximation preserves the directions needed for logit fidelity.
+
+The question addressed here is whether output-Jacobian-selected sparse residual coefficients can improve logit fidelity at a matched total padded serialized-bit budget while bounding task degradation. This is not a question of whether low-rank graph messages can be compressed, but whether a fixed serialized budget can be allocated toward output-sensitive residual directions and what task degradation results.
+
+We evaluate one mechanism in a frozen two-layer hidden-16 GCN checkpoint setting with seeds 0, 1, and 2. Rank-128 SVD transport is followed by a 2% sparse residual budget whose coefficients are selected by output-Jacobian sensitivity. All compared rank-128/2% methods use identical total padded serialized bits within each dataset, although payload lengths and coefficient counts can differ. Sparse residual coefficients are serialized exact message residual values with explicit indices; they are not temporal SNN events.
+
+On the reported test split, the selector reduced three-seed mean split-specific logit MSE relative to the strongest evaluated matched-budget control by 26.23% on Cora, 33.99% on Chameleon, and 25.83% on Squirrel; all nine dataset-seed comparisons improved. Maximum task degradation remained bounded at 1.86 pp mean and 2.85 pp seed-level task loss. Relative to our matched-budget adaptations of A2Q~\cite{a2q} and One-Spike~\cite{one-spike}, three-seed mean logit MSE was lower by 28.93%, 36.19%, and 35.24% for the A2Q adaptation and by 42.83%, 47.61%, and 34.03% for the One-Spike adaptation on Cora, Chameleon, and Squirrel. In the measured rank-128/1% timing benchmark, paired p95 full-pipeline runtime ratios versus SVD-only ranged from 1.020x to 1.124x, and peak CUDA allocation was 218.23 MB. The test run is a held-out confirmation after validation exposure, not an independent preregistered replication; these results do not establish task superiority, temporal-event equivalence, or broad GNN generality.
+
+## 2 Related Work
+
+The first line of related work concerns graph-to-spiking conversion. Direct and dynamic spiking GNNs operate under different temporal graph dynamics, including direct spiking GCNs, dynamic spiking graph networks, delayed dynamic formulations, and temporal spiking graph networks \cite{spikinggcn,spikenet,dy-sign,delay-dsgn,signnn}. Asynchronous event-graph conversion maps ANN graph computation into asynchronous event graphs \cite{asgcn}. These approaches differ mainly in temporal graph assumptions and conversion mechanisms; their serialized-cost treatment is not the primary comparison axis.
+
+The second line of related work concerns graph-message compression. Graph-aware learned quantization \cite{a2q} and graph-message quantization/communication \cite{adaqp} compress transmitted messages with learned or constrained codebooks. Converted-SNN acceleration context appears in \cite{fast-snn}, and qualitative low-rank graph-communication context appears in \cite{dcgs}. These settings trade off reconstruction quality against codebook complexity, acceleration, or rank; the present evaluation instead fixes total padded serialized bits and varies output-sensitive residual allocation.
+
+The third line of related work concerns output-sensitive coding. Output-sensitive coding allocates a scarce coefficient budget according to downstream sensitivity rather than message reconstruction alone. This evaluation compares output-Jacobian-selected sparse residual coefficients after rank-128 SVD transport under an exact padded serialized-bit ledger. Our matched-budget adaptations of A2Q~\cite{a2q} and One-Spike~\cite{one-spike} place graph-aware quantization and output-code behavior into the same total padded bit comparison. Sparse residual coefficients are serialized exact residual values with explicit indices, not temporal SNN events.
+
+The unresolved gap is therefore whether output-Jacobian-selected sparse residuals improve logit fidelity at a matched total padded serialized-bit budget while bounding task degradation in frozen GCN-to-SNN conversion.
+
+## Method
+[PLACEHOLDER — LLM call failed. Please regenerate this stage.]
+
+## Experiments
+[PLACEHOLDER]
+
+## Results
+[PLACEHOLDER — LLM call failed. Please regenerate this stage.]
+
+## Discussion
+[PLACEHOLDER]
+
+## Limitations
+[PLACEHOLDER]
+
+## Conclusion
+[PLACEHOLDER]

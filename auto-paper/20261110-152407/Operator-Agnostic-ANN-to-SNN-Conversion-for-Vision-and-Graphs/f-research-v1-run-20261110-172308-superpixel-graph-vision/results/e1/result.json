@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "note": "E1/E4 real local 3060 CUDA runs; val-selected, test once",
+    "started": "2026-11-10T22:31:42.674235",
+    "config": {
+      "n_train": 2000,
+      "n_val": 500,
+      "n_test": 500,
+      "epochs": 800,
+      "hidden": 128,
+      "lr": 0.01,
+      "device": "cuda",
+      "pool": "sum"
+    },
+    "finished": "2026-11-10T22:38:15.977294",
+    "total_sec": 393.3
+  },
+  "runs": [
+    {
+      "dataset": "MNIST",
+      "seed": 0,
+      "ann_val": 68.0,
+      "ann_test": 70.6,
+      "selected": {
+        "scale": 1.0,
+        "theta": 1.0,
+        "T": 8,
+        "val_loss_pp": 1.4
+      },
+      "test_acc": 69.0,
+      "test_loss_pp": 1.6,
+      "energy_primary": 0.6074,
+      "energy_conservative": 0.851,
+      "spikes": 3916206,
+      "identity_f64_residual": 1.1129985821867194e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 33.5
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 1,
+      "ann_val": 64.8,
+      "ann_test": 66.8,
+      "selected": {
+        "scale": 0.5,
+        "theta": 2.0,
+        "T": 8,
+        "val_loss_pp": 0.6
+      },
+      "test_acc": 64.0,
+      "test_loss_pp": 2.8,
+      "energy_primary": 0.7323,
+      "energy_conservative": 0.9783,
+      "spikes": 3265493,
+      "identity_f64_residual": 1.0658141036401503e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 28.9
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 2,
+      "ann_val": 70.8,
+      "ann_test": 65.6,
+      "selected": {
+        "scale": 1.0,
+        "theta": 1.0,
+        "T": 8,
+        "val_loss_pp": 0.4
+      },
+      "test_acc": 62.0,
+      "test_loss_pp": 3.6,
+      "energy_primary": 0.7161,
+      "energy_conservative": 0.9623,
+      "spikes": 3326957,
+      "identity_f64_residual": 9.617306950815419e-15,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 29.2
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 3,
+      "ann_val": 65.6,
+      "ann_test": 61.0,
+      "selected": {
+        "scale": 1.0,
+        "theta": 1.0,
+        "T": 8,
+        "val_loss_pp": -0.2
+      },
+      "test_acc": 61.2,
+      "test_loss_pp": -0.2,
+      "energy_primary": 0.7689,
+      "energy_conservative": 1.0135,
+      "spikes": 3136950,
+      "identity_f64_residual": 1.1678158440275865e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 29.1
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 4,
+      "ann_val": 67.4,
+      "ann_test": 63.8,
+      "selected": {
+        "scale": 1.0,
+        "theta": 1.0,
+        "T": 8,
+        "val_loss_pp": 3.8
+      },
+      "test_acc": 61.8,
+      "test_loss_pp": 2.0,
+      "energy_primary": 0.7551,
+      "energy_conservative": 1.0003,
+      "spikes": 3159980,
+      "identity_f64_residual": 1.0436096431476471e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 29.1
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 0,
+      "ann_val": 33.8,
+      "ann_test": 31.4,
+      "selected": {
+        "scale": 0.5,
+        "theta": 2.0,
+        "T": 4,
+        "val_loss_pp": -0.8
+      },
+      "test_acc": 31.4,
+      "test_loss_pp": 0.0,
+      "energy_primary": 2.2463,
+      "energy_conservative": 2.6993,
+      "spikes": 1927283,
+      "identity_f64_residual": 2.1316282072803006e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 48.5
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 1,
+      "ann_val": 32.8,
+      "ann_test": 37.2,
+      "selected": {
+        "scale": 1.0,
+        "theta": 2.0,
+        "T": 8,
+        "val_loss_pp": 0.2
+      },
+      "test_acc": 32.4,
+      "test_loss_pp": 4.8,
+      "energy_primary": 3.096,
+      "energy_conservative": 2.3222,
+      "spikes": 1421441,
+      "identity_f64_residual": 1.1546319456101628e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 49.5
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 2,
+      "ann_val": 32.8,
+      "ann_test": 32.0,
+      "selected": {
+        "scale": 0.5,
+        "theta": 2.0,
+        "T": 8,
+        "val_loss_pp": -1.4
+      },
+      "test_acc": 30.8,
+      "test_loss_pp": 1.2,
+      "energy_primary": 1.3353,
+      "energy_conservative": 1.5071,
+      "spikes": 3246079,
+      "identity_f64_residual": 1.0658141036401503e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 48.9
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 3,
+      "ann_val": 35.0,
+      "ann_test": 36.2,
+      "selected": {
+        "scale": 1.0,
+        "theta": 1.0,
+        "T": 4,
+        "val_loss_pp": -0.6
+      },
+      "test_acc": 35.0,
+      "test_loss_pp": 1.2,
+      "energy_primary": 2.8831,
+      "energy_conservative": 3.1577,
+      "spikes": 1504628,
+      "identity_f64_residual": 1.4876988529977098e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 47.9
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 4,
+      "ann_val": 34.0,
+      "ann_test": 33.8,
+      "selected": {
+        "scale": 1.0,
+        "theta": 1.0,
+        "T": 8,
+        "val_loss_pp": 0.4
+      },
+      "test_acc": 31.8,
+      "test_loss_pp": 2.0,
+      "energy_primary": 1.3468,
+      "energy_conservative": 1.515,
+      "spikes": 3217387,
+      "identity_f64_residual": 1.2656542480726785e-14,
+      "ann_logit_drift": 0.0,
+      "wall_sec": 48.8
+    }
+  ],
+  "summary": {
+    "MNIST": {
+      "n": 5,
+      "ann_mean": 65.56,
+      "loss_mean": 1.96,
+      "loss_std": 1.28,
+      "loss_ci95": 1.122,
+      "energy_primary_mean": 0.716,
+      "energy_conservative_mean": 0.9611,
+      "identity_max": 1.1678158440275865e-14,
+      "selected_counts": {
+        "(1.0, 1.0, 8)": 4,
+        "(0.5, 2.0, 8)": 1
+      }
+    },
+    "CIFAR10": {
+      "n": 5,
+      "ann_mean": 34.12,
+      "loss_mean": 1.84,
+      "loss_std": 1.612,
+      "loss_ci95": 1.413,
+      "energy_primary_mean": 2.1815,
+      "energy_conservative_mean": 2.2403,
+      "identity_max": 2.1316282072803006e-14,
+      "selected_counts": {
+        "(0.5, 2.0, 4)": 1,
+        "(1.0, 2.0, 8)": 1,
+        "(0.5, 2.0, 8)": 1,
+        "(1.0, 1.0, 4)": 1,
+        "(1.0, 1.0, 8)": 1
+      }
+    }
+  }
+}

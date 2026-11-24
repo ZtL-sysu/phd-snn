@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "references": 41,
+  "recent_2022_2026": 30,
+  "artifacts": {
+    "paper": {
+      "path": "writing\\p12\\paper-with-verified-references.md",
+      "sha256": "8a433c73f85c8ae69f7fec1dea3929e330e1e64238e8e389d36a3281f705a33b"
+    },
+    "bib": {
+      "path": "references.bib",
+      "sha256": "6486042a1f0e45745fe955e92658265c5a26dc299f754da4b936343736776508"
+    },
+    "coverage": {
+      "path": "reference-coverage.csv",
+      "sha256": "0c971ba27fc45d8d884f31e699c98159918e47d9eabdfac6c5d63965b6aa1ee4"
+    },
+    "dedup": {
+      "path": "reference-dedup-audit.md",
+      "sha256": "7f0664188e005e61835046db410b39956d27a726856380c9dc87439032a636f3"
+    },
+    "citation_audit_json": {
+      "path": "CITATION_AUDIT.json",
+      "sha256": "83ca09ff0a20fe0a35189b83564326607a62e1d25c89b9bf7ff142f021aab024"
+    },
+    "citation_audit_md": {
+      "path": "CITATION_AUDIT.md",
+      "sha256": "a35a41cfcd7bde1128e9b2499729a2c7f38d532645a918d537a72ccb82f8e5c0"
+    }
+  }
+}

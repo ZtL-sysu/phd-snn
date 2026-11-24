@@ -1,0 +1,613 @@
+{
+  "protocol": {
+    "dataset": "Fashion-MNIST",
+    "split": "official test, first 2000 examples per seed",
+    "calibration": "official train, first 5000 examples per seed",
+    "checkpoints": [
+      "teacher_seed41.pt",
+      "teacher_seed42.pt",
+      "teacher_seed43.pt"
+    ],
+    "seeds": [
+      41,
+      42,
+      43
+    ],
+    "levels": 16,
+    "uniform_search_grid": {
+      "scales": [
+        5.0,
+        7.0,
+        9.0,
+        11.0,
+        15.0
+      ],
+      "offsets": [
+        0.0,
+        0.05,
+        0.1
+      ],
+      "candidates": 15
+    },
+    "dcgs_search_grid": {
+      "threshold_scales": [
+        0.5,
+        0.75,
+        1.0,
+        1.25
+      ],
+      "candidates": 4
+    },
+    "dcgs_budget_search_grid": {
+      "threshold_scales": [
+        1.4,
+        1.6,
+        1.8,
+        2.0,
+        2.25,
+        2.5,
+        3.0,
+        4.0
+      ],
+      "candidates": 8,
+      "target": "uniform-code event rate"
+    },
+    "dcgs_gamma_search_grid": {
+      "gammas": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "candidates": 8
+    },
+    "forward": "unchanged teacher weights; converted codes drive kNN, winners, message, update, and readout"
+  },
+  "adaptation_labels": {
+    "faithful_adaptation": "Algorithm transferred to the local Grapher; not the full external implementation.",
+    "proxy": "External idea approximated with this benchmark's encoder/search; not a claim of reproducing published DCGS.",
+    "internal_control": "Existing v1/v2 protocol recalculated for a like-for-like reference."
+  },
+  "summary": {
+    "activation_feature_mse_uniform": {
+      "accuracy_mean": 0.7883333563804626,
+      "accuracy_sd": 0.007942494505637509,
+      "message_mse_mean": 0.0014112396597051296,
+      "message_mse_sd": 3.2695807881475515e-05,
+      "events_mean": 6272000.0,
+      "levels": 16
+    },
+    "dcgs_signed_multilevel_budget_matched": {
+      "accuracy_mean": 0.1913333386182785,
+      "accuracy_sd": 0.05678982167408485,
+      "message_mse_mean": 0.008272383553641183,
+      "message_mse_sd": 0.0003073224837509256,
+      "events_mean": 2799193.6666666665,
+      "levels": 16
+    },
+    "dcgs_signed_multilevel_feature_mse_gamma": {
+      "accuracy_mean": 0.1853333463271459,
+      "accuracy_sd": 0.0665137944229852,
+      "message_mse_mean": 0.008290107623249495,
+      "message_mse_sd": 0.0003116258130874389,
+      "events_mean": 2799201.0,
+      "levels": 16
+    },
+    "dcgs_signed_multilevel_fixed": {
+      "accuracy_mean": 0.1853333463271459,
+      "accuracy_sd": 0.0665137944229852,
+      "message_mse_mean": 0.008290107623249495,
+      "message_mse_sd": 0.0003116258130874389,
+      "events_mean": 2799201.0,
+      "levels": 16
+    },
+    "dcgs_signed_multilevel_logit_mse_gamma": {
+      "accuracy_mean": 0.1853333463271459,
+      "accuracy_sd": 0.0665137944229852,
+      "message_mse_mean": 0.008290107623249495,
+      "message_mse_sd": 0.0003116258130874389,
+      "events_mean": 2799201.0,
+      "levels": 16
+    },
+    "dcgs_signed_multilevel_message_mse_gamma": {
+      "accuracy_mean": 0.1853333463271459,
+      "accuracy_sd": 0.0665137944229852,
+      "message_mse_mean": 0.008290107623249495,
+      "message_mse_sd": 0.0003116258130874389,
+      "events_mean": 2799201.0,
+      "levels": 16
+    },
+    "dcgs_signed_multilevel_message_selected": {
+      "accuracy_mean": 0.18266667425632477,
+      "accuracy_sd": 0.05313269111029757,
+      "message_mse_mean": 0.008258774296767047,
+      "message_mse_sd": 0.00030922404535760215,
+      "events_mean": 2799196.6666666665,
+      "levels": 16
+    },
+    "logit_mse_uniform": {
+      "accuracy_mean": 0.7883333563804626,
+      "accuracy_sd": 0.007942494505637509,
+      "message_mse_mean": 0.0014112396597051296,
+      "message_mse_sd": 3.2695807881475515e-05,
+      "events_mean": 6272000.0,
+      "levels": 16
+    },
+    "v1_scale_uniform_reference": {
+      "accuracy_mean": 0.5023333529631296,
+      "accuracy_sd": 0.04315764189180863,
+      "message_mse_mean": 0.007922364085709968,
+      "message_mse_sd": 0.0005688092668410896,
+      "events_mean": 6272000.0,
+      "levels": 16
+    },
+    "v2_message_mse_uniform_reference": {
+      "accuracy_mean": 0.7883333563804626,
+      "accuracy_sd": 0.007942494505637509,
+      "message_mse_mean": 0.0014112396597051296,
+      "message_mse_sd": 3.2695807881475515e-05,
+      "events_mean": 6272000.0,
+      "levels": 16
+    }
+  },
+  "rows": [
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "v1_scale_uniform_reference",
+      "adaptation_label": "internal_control",
+      "accuracy": 0.49550002813339233,
+      "message_mse": 0.008178807861950932,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 9.0,
+        "offset": 0.0,
+        "selection": "fixed_v1_protocol"
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "v2_message_mse_uniform_reference",
+      "adaptation_label": "internal_control",
+      "accuracy": 0.784000039100647,
+      "message_mse": 0.001437072179755386,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 0.0014177641654501156
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "activation_feature_mse_uniform",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.784000039100647,
+      "message_mse": 0.001437072179755386,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 0.0007447990356013179
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "logit_mse_uniform",
+      "adaptation_label": "proxy",
+      "accuracy": 0.784000039100647,
+      "message_mse": 0.001437072179755386,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 1.5250983129882814
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "dcgs_signed_multilevel_fixed",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.1785000115633011,
+      "message_mse": 0.008308943767936863,
+      "events": 2874102,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 0.75,
+        "unit_from_calibration": null,
+        "selection": "fixed_dcgs_style_threshold"
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "dcgs_signed_multilevel_message_selected",
+      "adaptation_label": "proxy",
+      "accuracy": 0.18700000643730164,
+      "message_mse": 0.00829303570182956,
+      "events": 2874096,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 1.0,
+        "unit": 0.05099917948246002,
+        "loss": 0.00817788468964246
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "dcgs_signed_multilevel_budget_matched",
+      "adaptation_label": "proxy",
+      "accuracy": 0.20650000870227814,
+      "message_mse": 0.008309405424156967,
+      "events": 2874092,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 1.4,
+        "unit": 0.05099917948246002,
+        "event_rate": 0.45978839285714285,
+        "gap": 0.5402116071428571
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "dcgs_signed_multilevel_feature_mse_gamma",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.1785000115633011,
+      "message_mse": 0.008308943767936863,
+      "events": 2874102,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 0.010090572759509087
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "dcgs_signed_multilevel_logit_mse_gamma",
+      "adaptation_label": "proxy",
+      "accuracy": 0.1785000115633011,
+      "message_mse": 0.008308943767936863,
+      "events": 2874102,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 50.88954984375
+      }
+    },
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.830500066280365,
+      "method": "dcgs_signed_multilevel_message_mse_gamma",
+      "adaptation_label": "proxy",
+      "accuracy": 0.1785000115633011,
+      "message_mse": 0.008308943767936863,
+      "events": 2874102,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 0.008194990446129624
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "v1_scale_uniform_reference",
+      "adaptation_label": "internal_control",
+      "accuracy": 0.5485000014305115,
+      "message_mse": 0.007270480642513353,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 9.0,
+        "offset": 0.0,
+        "selection": "fixed_v1_protocol"
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "v2_message_mse_uniform_reference",
+      "adaptation_label": "internal_control",
+      "accuracy": 0.7835000157356262,
+      "message_mse": 0.0013744796052271007,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 0.0013666372571672712
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "activation_feature_mse_uniform",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.7835000157356262,
+      "message_mse": 0.0013744796052271007,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 0.0007450814009644091
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "logit_mse_uniform",
+      "adaptation_label": "proxy",
+      "accuracy": 0.7835000157356262,
+      "message_mse": 0.0013744796052271007,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 1.5472806005859374
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "dcgs_signed_multilevel_fixed",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.12250000238418579,
+      "message_mse": 0.008591888116330517,
+      "events": 2738098,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 0.75,
+        "unit_from_calibration": null,
+        "selection": "fixed_dcgs_style_threshold"
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "dcgs_signed_multilevel_message_selected",
+      "adaptation_label": "proxy",
+      "accuracy": 0.1275000125169754,
+      "message_mse": 0.008549440812091438,
+      "events": 2738092,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 1.25,
+        "unit": 0.0503646582365036,
+        "loss": 0.008560401418257733
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "dcgs_signed_multilevel_budget_matched",
+      "adaptation_label": "proxy",
+      "accuracy": 0.12849999964237213,
+      "message_mse": 0.00855951807450275,
+      "events": 2738091,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 1.4,
+        "unit": 0.0503646582365036,
+        "event_rate": 0.43829126275510205,
+        "gap": 0.5617087372448979
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "dcgs_signed_multilevel_feature_mse_gamma",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.12250000238418579,
+      "message_mse": 0.008591888116330517,
+      "events": 2738098,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 0.010194582864642143
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "dcgs_signed_multilevel_logit_mse_gamma",
+      "adaptation_label": "proxy",
+      "accuracy": 0.12250000238418579,
+      "message_mse": 0.008591888116330517,
+      "events": 2738098,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 83.96921421875
+      }
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.8400000333786011,
+      "method": "dcgs_signed_multilevel_message_mse_gamma",
+      "adaptation_label": "proxy",
+      "accuracy": 0.12250000238418579,
+      "message_mse": 0.008591888116330517,
+      "events": 2738098,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 0.008615963682836417
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "v1_scale_uniform_reference",
+      "adaptation_label": "internal_control",
+      "accuracy": 0.46300002932548523,
+      "message_mse": 0.008317803752665618,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 9.0,
+        "offset": 0.0,
+        "selection": "fixed_v1_protocol"
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "v2_message_mse_uniform_reference",
+      "adaptation_label": "internal_control",
+      "accuracy": 0.7975000143051147,
+      "message_mse": 0.0014221671941329023,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 0.001416618962190589
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "activation_feature_mse_uniform",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.7975000143051147,
+      "message_mse": 0.0014221671941329023,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 0.000718428345862776
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "logit_mse_uniform",
+      "adaptation_label": "proxy",
+      "accuracy": 0.7975000143051147,
+      "message_mse": 0.0014221671941329023,
+      "events": 6272000,
+      "levels": 16,
+      "parameters": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "loss": 1.6882966430664061
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "dcgs_signed_multilevel_fixed",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.2550000250339508,
+      "message_mse": 0.007969490985481106,
+      "events": 2785403,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 0.75,
+        "unit_from_calibration": null,
+        "selection": "fixed_dcgs_style_threshold"
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "dcgs_signed_multilevel_message_selected",
+      "adaptation_label": "proxy",
+      "accuracy": 0.23350000381469727,
+      "message_mse": 0.007933846376380142,
+      "events": 2785402,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 1.0,
+        "unit": 0.048619311302900314,
+        "loss": 0.007846509069325972
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "dcgs_signed_multilevel_budget_matched",
+      "adaptation_label": "proxy",
+      "accuracy": 0.23900000751018524,
+      "message_mse": 0.007948227162263831,
+      "events": 2785398,
+      "levels": 16,
+      "parameters": {
+        "threshold_scale": 1.4,
+        "unit": 0.048619311302900314,
+        "event_rate": 0.44544789540816326,
+        "gap": 0.5545521045918367
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "dcgs_signed_multilevel_feature_mse_gamma",
+      "adaptation_label": "faithful_adaptation",
+      "accuracy": 0.2550000250339508,
+      "message_mse": 0.007969490985481106,
+      "events": 2785403,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 0.010429381392896175
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "dcgs_signed_multilevel_logit_mse_gamma",
+      "adaptation_label": "proxy",
+      "accuracy": 0.2550000250339508,
+      "message_mse": 0.007969490985481106,
+      "events": 2785403,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 40.651508046875
+      }
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.8375000357627869,
+      "method": "dcgs_signed_multilevel_message_mse_gamma",
+      "adaptation_label": "proxy",
+      "accuracy": 0.2550000250339508,
+      "message_mse": 0.007969490985481106,
+      "events": 2785403,
+      "levels": 16,
+      "parameters": {
+        "gamma": 1.0,
+        "threshold_scale": 0.75,
+        "loss": 0.007880815404775192
+      }
+    }
+  ],
+  "wall_seconds": 23.057647943496704
+}

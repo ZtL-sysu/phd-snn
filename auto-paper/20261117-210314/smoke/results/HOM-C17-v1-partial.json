@@ -1,0 +1,24 @@
+{
+  "status": "incomplete",
+  "reason": "seed 6 Squirrel H1_mean checkpoint absent; frozen three-seed gate cannot be completed without changing the model family",
+  "completed_rows": [
+    {
+      "seed": 4,
+      "deltas_pp": {"cora": 7.0, "citeseer": 11.4, "pubmed": 0.0, "chameleon": 1.3717421124828544, "squirrel": -0.12019230769231282},
+      "high_mean_pp": 6.1333333333333355,
+      "low_mean_pp": 0.6257749023952708,
+      "difference_pp": 5.507558430938065,
+      "seed_pass": true
+    },
+    {
+      "seed": 5,
+      "deltas_pp": {"cora": 2.2, "citeseer": 16.6, "pubmed": 3.6, "chameleon": 1.2345679012345623, "squirrel": 0.0},
+      "high_mean_pp": 7.466666666666666,
+      "low_mean_pp": 0.6172839506172811,
+      "difference_pp": 6.8493827160493845,
+      "seed_pass": true
+    }
+  ],
+  "missing": [{"seed": 6, "dataset": "squirrel", "checkpoint": "squirrel__H1_mean__s6.npz"}],
+  "gate_verdict": "inconclusive"
+}

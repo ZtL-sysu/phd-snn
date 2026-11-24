@@ -1,0 +1,54 @@
+{
+  "purpose": "Seed-aware difference analysis for v2 minus v1 on Fashion-MNIST",
+  "source": "fm_v1_predictions_seed*.pt, fm_v2_predictions_seed*.pt, data/fashion_mnist_test.parquet labels",
+  "label_source_correction": "fm_predictions_seed*.pt stores teacher predictions, not ground-truth labels; the first run was invalid and is superseded.",
+  "difference": "per-example correctness(v2) - correctness(v1)",
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "per_seed": {
+    "41": {
+      "n": 2000,
+      "mean": 0.2885,
+      "v1_accuracy": 0.4955,
+      "v2_accuracy": 0.784
+    },
+    "42": {
+      "n": 2000,
+      "mean": 0.235,
+      "v1_accuracy": 0.5485,
+      "v2_accuracy": 0.7835
+    },
+    "43": {
+      "n": 2000,
+      "mean": 0.3345,
+      "v1_accuracy": 0.463,
+      "v2_accuracy": 0.7975
+    }
+  },
+  "pooled_example_bootstrap": {
+    "n": 6000,
+    "mean": 0.286,
+    "se": 0.007340048550165485,
+    "ci95": [
+      0.27166666666666667,
+      0.30033333333333334
+    ],
+    "warning": "Treats seeds as exchangeable examples and ignores seed clustering."
+  },
+  "hierarchical_seed_bootstrap": {
+    "n_seeds": 3,
+    "mean": 0.286,
+    "sd": 0.04979708826829137,
+    "se": 0.02875036231655758,
+    "ci95": [
+      0.235,
+      0.3345
+    ],
+    "warning": "Only three seed units; interval is coarse and should not be presented as a precise frequentist confidence interval."
+  },
+  "bootstrap_replicates": 20000,
+  "random_seed": 20261118
+}

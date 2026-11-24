@@ -1,0 +1,57 @@
+{
+  "DYN-C01": {
+    "asset": "DAVIS-2017 processed motion clips",
+    "clips": 728,
+    "frames_per_clip": 8,
+    "prefix_reconstruction_max_error": 0.0,
+    "future_change_prefix_error": 0.0,
+    "nonzero_residual_fraction": 0.7947654394720953,
+    "reduction_vs_raw_nonzero": 0.20523456052790467
+  },
+  "EQ-C02": {
+    "asset": "MaleCNS soma coordinates",
+    "coordinates": 3982,
+    "dimension": 3,
+    "equivariance_max_abs_error": 0.0,
+    "quantization_relative_error": 0.07076148647706851,
+    "event_levels": 8
+  },
+  "PERM-C03": {
+    "asset": "Chameleon graph",
+    "nodes": 2277,
+    "edges_nnz": 65019,
+    "permutation_equivariance_max_abs_error": 0.0
+  },
+  "SIGN-C04": {
+    "asset": "Squirrel graph messages",
+    "message_shape": [
+      5201,
+      16
+    ],
+    "positive_events": 54316,
+    "negative_events": 28900,
+    "reconstruction_max_abs_error": 0.0,
+    "negative_message_fraction": 0.34728898288790616
+  },
+  "LR-C05": {
+    "asset": "Chameleon graph messages",
+    "input_shape": [
+      2277,
+      2325
+    ],
+    "rank": 128,
+    "compressed_dimension": 589056,
+    "input_dimension": 5294025,
+    "relative_error": 0.4557411248196049
+  },
+  "EDGE-C06": {
+    "asset": "FlyWire biological edge-weight messages",
+    "edges": 385946,
+    "quantization_levels": 64,
+    "bits_per_weight": 6,
+    "float32_bits_per_weight": 32,
+    "storage_reduction_factor": 5.333333333333333,
+    "quantization_relative_error": 0.18918063839846933,
+    "weighted_synapse_mass": 2266503.0
+  }
+}

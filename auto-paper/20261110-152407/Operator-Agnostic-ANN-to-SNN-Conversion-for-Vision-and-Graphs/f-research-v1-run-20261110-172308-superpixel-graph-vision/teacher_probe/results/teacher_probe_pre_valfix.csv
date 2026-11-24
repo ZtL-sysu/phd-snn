@@ -1,0 +1,4 @@
+exp_id,dataset,seed,train_size,width_k,edge_feat,teacher_full,teacher_at_working_point,wall_clock_s,snapshot
+T0,MNIST,0,subset,0.08,0,68.200,33.450,64.2,snapshots\T0_MNIST_seed0.npz
+T0,MNIST,1,subset,0.08,0,62.950,32.550,61.5,snapshots\T0_MNIST_seed1.npz
+T0,MNIST,2,subset,0.08,0,65.750,40.250,58.7,snapshots\T0_MNIST_seed2.npz

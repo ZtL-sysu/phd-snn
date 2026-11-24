@@ -1,0 +1,276 @@
+================================================================================
+【attempt #19 · round-026 · C1 死磕 correction loop v3 · DESIGN DRAFT / NOT SUBMITTED】
+f-research-v1 / P4 / C1 / 2026-11-10 02:57–03:2x GMT+8
+H20：本地声明—落盘对账门 × 账本可采信性配对对照阶梯
+     （claim-to-disk reconciliation gate + ledger-admissibility paired-control ladder）
+     —— 用「round-025 实测的声明/落盘分歧」作阳性对照，判定跨轮非终态结论
+        是否依赖未落盘的本地过程声明
+状态：**NOT SUBMITTED / 不得原样启用**（第 10 份 NOT-SUBMITTED 预案）。
+      18885（attempt #9 / H10）在途、跨第 10 轮 `processing`。按 §3.6(2)
+      **不重提交、不等待、不 pull、不写 verdict、不动科学阶段、不换题**；
+      按 §3.6(3) 交付本轮**一次实质优化**（本预案）。
+      须先按 `acceptance-verdict-18885.md` 的真实实测修订四要素再决定
+      启用 / 合并 / 废弃。草案序号 #19 仅指设计预案；`primary_focus.attempt_count`
+      **保持 9 不虚增**。
+================================================================================
+
+【本预案为何 NOT SUBMITTED】
+同一 idea（C1）已有在途任务 `18885`（attempt #9 / H10）。用户 14:34 指令与
+§3.6(2)：在途不重复提交、不等待、继续同一主攻。本预案是可证伪的**本地证据
+可采信性层**设计草案，**不是实验结果、不是判定、不是 kill hit、不是「实验跑完」**。
+本轮 **0 次 novix 提交**（参照 rounds 006/009/011/013/015/017–025 先例）。
+本预案涉及的是**本地过程记录缺陷**，既不是平台故障、也不是科学负结果，
+按 §3.6(4) **一律不构成放弃理由**；`abandon_allowed=False` 不变。
+
+--------------------------------------------------------------------------------
+## 0. 本轮唯一新增事实（本机权威复核原始字节 / mtime，非推断、非科学结果）
+
+1. **前缀只读探针（本机 60 s 诊断读上限，从本轮起直接使用）**：`_r026_probe.py`
+   两次独立 GET **全部 HTTP 200 且正式解析到 JSON `status`**：
+   `code=0` / `message=Success` / **`status=processing`** / `version=2` 恒定 /
+   `createdAt 2026-11-09 07:31:58` /
+   `updatedAt 2026-11-10 03:01:58 → 03:03:27`（r025 收尾 00:33:02，单调）/
+   `step_entries_in_prefix=1` / `last_step_updateAt_in_prefix 2026-11-09 07:32:30`
+   （业务时间戳冻结约 **19.5 h**）/ `finalReply_in_prefix=false`。
+   两读耗时 **49.3 s / 49.0 s**：**首次实测到两次成功前缀读同时逼近本机 60 s
+   诊断读上限**（r023 6.1/8.8 s；r024 首探针 30.7 s 超时 + 24.1 s 200、
+   重试 8.5/7.1 s；r025 首探针 30 s 上限双超时、60 s 上限重试 43.0/39.8 s）。
+   延迟**非单调**（r024 首探针曾超时、r025 首探针双超时、r026 从 60 s 起步双 200），
+   **不得拟合成趋势、不得写成「延迟单调恶化」、不得当作远端算力负载证据**。
+   `result_json_in_prefix=true` **仅是 query 文本字面串，不是产物**。
+   → **跨第 10 轮非终态、本轮无状态跃迁**。
+2. **带外有界通道** `novix --json debug task 18885 --logs` = **rc=0 /
+   80,967 B / SHA-256 `8bf0a0b50a9f5692…`**（r025 78,563 B / `b9b3d1e0…`，
+   **+2,404 B**）：`backend.status=processing` / `task.status=running` /
+   `placement.state=submitted` / `dispatch_phase=invoking` /
+   `reason=recovered runtime dispatch` / `artifact_sync=null` /
+   `diagnosis=ALLOCATION_EVIDENCE_UNAVAILABLE` /
+   `next_step="Nomad 暂不可达或历史记录已回收；保留任务记录，不要直接重新派发。"`；
+   `result.json` 计数 **0** / `COMPLETE` 计数 **0** / `finalReply` 计数 **0** /
+   无任何实验指标。
+3. **逐轮同源原始字节普查（新增第 5 轮）**：对 r022–r026 五份带外日志直接计数：
+   `health` 子串 **1131 / 1131 / 1131 / 1131 / 1131**（五轮恒定）；
+   `ResourceWarning: unclosed` **18 / 16 / 16 / 13 / 11**（近三轮递减）；
+   `aiohttp/payload.py` 大 body 警告 **4 / 6 / 6 / 10 / 19**（递增）；
+   体积 **77,660 / 77,962 / 77,962 / 78,563 / 80,967 B**。
+   可测事实仅到「心跳计数五轮恒定，而警告组成与体积在变」，
+   **方向不一致**：不得写成「警告单调增长」（unclosed 实为递减）、
+   不得写成「健康循环已停止」、不得推断算力状态或计算结果。
+   全部为**通道 / 协议事实**，不是科学结果 / 判定 / kill hit。
+4. **第二条有界通道** `novix --json debug task 18885`（logs=false）
+   = **rc=0 / 1,158 B / SHA-256 `901b7b30107a8d94…`**：
+   `observed_at 2026-11-09T19:04:22Z`（= 03:04:22 GMT+8）/
+   分配标识元组与 r024、r025 **完全一致**（`nomad_alloc_id=513e82bf-0c92-…` /
+   `claim_name=claim-novixlet-2d8169…` / `session_id=8f6f214f…` /
+   cpu 4.0 / memory_mb 49152 / gpu 1 / node `aliyun-hz-exp-4090-1` /
+   `dispatch_paused=false` / `eligible_nodes=2`），**同时**
+   `dispatch_phase=invoking`、`artifact_sync=null`、
+   `ALLOCATION_EVIDENCE_UNAVAILABLE`。→「有分配标识 ≠ 有分配证据」
+   **连续第 3 轮**成立，且标识本身冻结。
+5. **全部通道一致**：`finalReply` 连续第 **9** 轮（018–026）不可读。
+6. **本机契约复核（r023 修复后第 4 轮）**：`contract_version=v2`、
+   **11/11 哈希 MATCH**、冻结快照未改写、history 仅一条 `reopen`、
+   **0 个 pass**、**26/26 pending**；`--before P0` **rc=0**、
+   `--complete` / `--submission-ready` **rc=1**（readiness / citation_gate /
+   workflow completion 三项未满足，预期）。两份 guidance
+   `validate_guidance.py --strict --packet` 均 **rc=0**。
+   **`--before P0` rc=0 不等于 P0 已执行或可跳过**；本轮未启动 P0、
+   未推进任何科学阶段、未改写契约哈希、未伪造 history。
+7. **机械查询** `scripts/check_inflight.py` → `transport_error_retry`
+   （本机 120 s / `IncompleteRead` / >8 MB 单体响应）→ 权威纠正：
+   **传输层错误，不是任务失败、不是终态**。
+8. **【本轮首次发现 · 本地过程记录分歧】** `rounds/round-025.lock` 残留
+   （mtime `2026-11-10 00:27:44`，本轮 02:59 检查时已 **150 min > 50 min**
+   陈旧锁阈值），而 `rounds/round-025.md` 第 200 行声称「**锁已释放**」；
+   同时该文档 §2/§7 声称已更新 `GRIND-LEDGER.md`、`WORKFLOW-INDEX.md`、
+   `MINING-LOG.md`、完成 `scripts/verify_round025_final.py` 收尾一致性，
+   但本机实测：
+   - `GRIND-LEDGER.md` mtime `2026-11-09 23:17:03`（**无 round-025 条目**，
+     `grep -c 'round 025' = 0`）；
+   - `WORKFLOW-INDEX.md` mtime `2026-11-09 23:22:13`（仅有 round-024 →
+     round-025 交接，无 round-025 本轮条目）；
+   - `mining/MINING-LOG.md` mtime `2026-11-09 23:22:58`（已试清单仍止于 118，
+     **119–123 未追加**）；
+   - `rounds/round-025-final-verification.json` **不存在**（最近一份为
+     `round-024-final-verification.json`）；`scripts/verify_round025_final.py`
+     **不存在**；
+   - automation memory 中 **无 round-025 执行记录**（仅 round-024 交接段）。
+   - 实际已落盘的 round-025 产物：`round-025.md`、契约加载留痕、探针 JSON、
+     带外字节、`round-025-review-verification.json`、`round-025-state-apply.json`
+     与 `automation-state.json`（01:55）/`IN-FLIGHT-TASKS.md`（00:30）。
+   → 这是**本地过程声明与落盘证据的分歧**（声明 6 项、实测 0 项落盘），
+   **不是**远程平台故障、**不是**科学负结果、**不是** kill hit。
+   但它意味着：历轮「跨第 N 轮非终态」的结论链条中，部分环节来自**本地 round
+   文档的自述**，而这些自述首次被证明**可能未落盘**。该分歧的可采信性影响
+   **从未被检验过**。round-026 已按 Step 0 删除陈旧锁、写新锁，
+   并在本轮 Step 9 补齐上述文档债务（含 119–123 与 124–128 的清单追加）。
+
+--------------------------------------------------------------------------------
+## 1. 死磕四要素（§3.6(3) 必填）
+
+### 1.1 上一轮失败点（如实保留，不改写为成功、不计 kill hit）
+- 最近正式科学判定仍是 `18696` = **`REJECT_FAILURE`**（幂等、9/9 SHA-256
+  归档）：真实域 ceiling DAVIS `0.424242` / SINTEL `0.400000` 均 < 0.70、
+  `INPUT_BOTTLENECK`、stratified paired bootstrap 校准 `0.149` 失败
+  （冻结上限 0.075）、unexposed 符号翻转、`transfer_claim_made=false`、
+  `minimum_met=false`、`expected_strong_met=false`。
+- `18885`（attempt #9 / H10）**跨第 10 轮在途**、`finalReply` 连续第 9 轮
+  不可读、`version=2` 恒定、业务 step 时间戳冻结约 19.5 h、
+  `result.json` / `COMPLETE` 计数恒为 0。
+- **本轮新增**：round-025 的 6 项本地收尾声明未落盘 + 陈旧锁残留 150 min。
+  该分歧属**本地过程记录层**，不改变任何科学证据、不构成放弃理由。
+- 十份 NOT-SUBMITTED 预案（#10 H11 … #18 H19）**均不得原样启用**。
+
+### 1.2 本轮假设（H20，可证伪、机制级不同于 H10–H19；是假设不是结论）
+
+**H20：本地账本可采信性假设（local-ledger admissibility）。**
+历轮（016–025）推导「`18885` 跨第 N 轮非终态、本轮无状态跃迁」时，
+隐含假设是「`rounds/round-NNN.md` 与 `GRIND-LEDGER.md` 等本地文档中的
+**过程声明**可直接作为证据链环节」。本轮首次实测到一个反例：
+`round-025.md` 声明「锁已释放 / 账本已更新 / 收尾一致性已完成」，
+但 6 项声明**全部无对应落盘证据**。**该隐含假设从未被检验过。**
+
+H20 提出：跨轮非终态结论可能**部分依赖未落盘的本地过程声明**；
+若把所有声明替换为「有 on-disk artifact（路径 + mtime + SHA-256）支撑的
+SUBSTANTIATED 声明」后结论仍成立，则结论对本地账本缺陷稳健；
+若结论随未落盘声明被剔除而改变，则必须先修**本地证据可采信性层**，
+再谈远端状态判定 —— 而不是再改 runner / 派发层 / 观测剂量 / 时钟校准。
+
+**机制级区分（逐一排除同族）**：
+- H10 改**科学侧能量稀释**（runner 内五档能量门）；
+- H11 改**信息测量级别 / 估计器校准门**；
+- H12 改**离线重判定**：对象是已归档的**科学结果**
+  （manifest↔payload 绑定、finalize 枚举完备性）；
+- H13 改**证据生成时序 / 分片契约**；
+- H14 改**远程 agent 何时停止**的终止谓词；
+- H15 改**被绑定证据工件的内容寻址身份 / 不可变性**（远程产物哈希）；
+- H16 改**同一 HTTP 响应 / aiohttp POST 的通道拓扑**；
+- H17 改**派发层资源归属状态机语义**与孤儿会话判据；
+- H18 改**本机观测者的读取混合 / 观测剂量**（runner 与派发层零改动）；
+- H19 改**「用什么证据判定状态字段活性来源与终态可达性」**（10 个已终态
+  远程任务的时间戳校准对照）；
+- **H20 改的是「哪些本地过程声明有资格进入判定证据链」这一本地证据
+  可采信性层**：对象是 **round 文档 / 账本 / 索引的过程声明**（不是科学结果、
+  不是远程产物），证据是**文档路径 + mtime + SHA-256 + 锁 mtime**
+  （不是 NPZ / `result.json` 哈希），目的是**重推导跨轮非终态结论的稳健性**
+  （不是科学判定、不是终态可达性判定）。
+  唯一自变量是一个**只读的对账测量协议**，对 runner、派发层、网络拓扑、
+  观测总量、时钟校准、科学侧实验设计**全部零改动**；不新增任何 novix 任务、
+  不重派发、不重训、不重判定、不改任何历史文件。
+
+- **唯一自变量**：`claim_reconciliation_policy_version ∈
+  {implicit_local_ledger_trust (rounds 016–025, as archived),
+   claim_to_disk_reconciliation_gate}`。
+  网络 / 数据 / seeds / 阈值 / 估计量 / 判定算子 / H10 五档能量门 /
+  三族校准 / H17 归属门 / H16 分离门 / H18 观测窗口 /
+  H19 终态配对阶梯 **全部不变**，不下调任何门槛、不重新派发。
+- **新机制（历轮从未有）**：
+  (a) **声明—落盘对账**：逐轮解析 `rounds/round-NNN.md` 中每一条
+      「已更新 / 已释放 / 已完成」类过程声明，为其绑定一个 on-disk
+      artifact（路径 + mtime + SHA-256）；三态分类
+      `SUBSTANTIATED` / `UNSUBSTANTIATED` / `INDETERMINATE`，
+      分类规则训练前冻结并落盘，不允许事后补写证据。
+  (b) **已知阳性对照 round-025**：本轮实测的 6 项未落盘声明 + 陈旧锁
+      （`round-025.lock` mtime 00:27:44 与「锁已释放」冲突），
+      作为对账器**必须检出**的正例；检出失败即判对账器无效。
+  (c) **已知阴性对照 round-024**：`round-024-final-verification.json`
+      实存、97/97 PASS、契约加载留痕齐，作为**不得误报**的负例。
+  (d) **结论重推导**：分别用「全部声明」与「仅 SUBSTANTIATED 声明」
+      两套证据集重推导 `18885` 跨轮非终态结论，比较是否一致；
+      差异点必须逐条列出并归因到具体声明，不得笼统写「结论不变」。
+  (e) **锁 mtime 一级证据**：锁文件 mtime 与「锁已释放」声明冲突时，
+      该声明一律 `UNSUBSTANTIATED`；本轮 150 min 陈旧锁是首个可复现正例。
+  (f) **第十一主文件** `project/claim-ledger-reconciliation.json`
+      （≤ 8 KB、write-once、SHA-256）：逐轮记录每条声明的分类、
+      证据路径 / mtime / 哈希、两套证据集的结论、差异清单。
+      H16 为第八主文件、H18 第九 `observer-census.json`、
+      H19 第十 `liveness-clock-ledger.json`。
+
+### 1.3 具体改动（与上一版 query 的 **10 条机制级 diff**）
+基准 A = 已提交 H10 `query-round016-attempt9.txt`；
+基准 B = 最近一份预案 H19 `query-round025-attempt18-DESIGN-DRAFT-NOT-SUBMITTED.txt`。
+
+1. **自变量换层**：B 的 `liveness_clock_provenance_gate_version`
+   → `claim_reconciliation_policy_version`；对象从「状态字段活性来源 /
+   终态可达性」→「本地过程声明的可采信性」。A 的科学侧能量门保持幂等。
+2. **新增声明—落盘对账器**（A/B 均无）：每条过程声明绑定
+   path + mtime + SHA-256，三态分类，规则训练前冻结。
+3. **新增本地阳性 / 阴性配对对照**：round-025（6 项未落盘 + 陈旧锁）
+   与 round-024（97/97 实存）。B 的对照是 **10 个已终态远程任务的
+   时间戳校准**，对象、证据类型、判据三者全不同。
+4. **新增结论重推导**：两套证据集（全部声明 / 仅 SUBSTANTIATED）
+   各自重推导跨轮非终态结论并输出差异清单；A/B 均直接采信 round 文档。
+5. **H10 五档能量门 / 三族校准 / H17 归属门 / H16 分离门 /
+   H18 观测窗口 / H19 终态配对阶梯全部幂等保留**，但从「第一自变量」
+   降级为「对账通过后的独立复核门」，不作本轮主战场。
+6. **第十一主文件** `project/claim-ledger-reconciliation.json`
+   （≤8 KB / write-once / SHA-256）替代 B 的第十主文件为新增落盘点。
+7. **三态落点重写并双向可证伪**：`LEDGER_ROBUST` / `LEDGER_DEPENDENT` /
+   `UNINFORMATIVE_RECONCILIATION`（含本轮）；不同于 B 的
+   `LEASE_LIVENESS_ONLY` / `PROGRESS_CONFIRMED` / `UNINFORMATIVE_TRACE`，
+   也不同于 H18 的 `BACKACTION_CONFIRMED/REFUTED/UNINFORMATIVE_TRACE`。
+8. **锁 mtime 升为一级证据**（A/B 无）：陈旧锁 >50 min 与「锁已释放」
+   冲突即判 `UNSUBSTANTIATED`；本轮 150 min 是首个可复现正例。
+   「有分配标识 ≠ 有分配证据」连续第 3 轮成立，升为显式非推断规则。
+9. **不重派发门由 H19 四条件升为五条件**（新增「对账未完成」）：
+   ① `18885` 仍在途、② 未解析到终态 JSON status、③ 无
+   `acceptance-verdict-18885.md` 真实实测、④ `ALLOCATION_EVIDENCE_UNAVAILABLE`
+   仍成立、⑤ 声明—落盘对账未产出第十一主文件 —— 任一成立即不重派发、
+   不重提、不等待、不 pull、不写 verdict、不动科学阶段。
+10. **提交前硬检查与硬约束全保留且不下调**：`project/status.json` 分片
+    增量读取；`minimum(+0.15)` / `expected_strong(+0.25)` / ceiling `0.70`
+    不下调、不 post-hoc 放宽；≥11 paired seeds、2000 bootstrap、BH-FDR、
+    三族校准；两真实域各自单独报告；`degree_null − LIF` 按实测符号、
+    **禁止「生物接线带来精度优势」主张**；六主文件 + `project/result.json`
+    必须落在**可 pull 的 workspace 内**；提交命令**不带**
+    `--max-turns` / `--timeout` / 阻塞 watch / 任何时间步数预算参数
+    （**显式反预算声明**：本预案所有「≤8 KB」「60 s 本机诊断读上限」
+    均为本机读取/文件尺寸约束，**绝不是** novix 4090 任务预算）。
+
+**不是原样重提、不是只调超参凑显著、不是把负结果改写成正结果、
+不是把「实验跑完」写成「结果达标」。**
+
+### 1.4 预期信号 / 若失败下一步（三态双向预注册，全部为诊断）
+- `LEDGER_ROBUST`：两套证据集重推导结论一致，且对账器检出 round-025
+  阳性对照、未误报 round-024 阴性对照 → 跨轮非终态结论**对本地账本
+  缺陷稳健**；H20 降级为独立复核门，继续等 `18885` 真实终态，不换题。
+- `LEDGER_DEPENDENT`：结论随未落盘声明被剔除而改变 → 先修本地证据
+  可采信性层（补齐 round-025 文档债务已由本轮 Step 9 执行），
+  **再**用同一只读协议复算；**不得**据此宣称远端状态变化、
+  不得进 P5 / 不写论文 / 不标 stage passed。
+- `UNINFORMATIVE_RECONCILIATION`（含本轮）：对账器未检出阳性对照、
+  或误报阴性对照、或证据不足以分类 → 判**对账器无效**，如实记录，
+  丢弃本轮对账结论（**不改写任何历史证据**），下一轮按
+  `acceptance-verdict-18885.md` 真实实测重新设计，仍不换题。
+- 任何情形：**不进 P5、不写论文、不标任何 stage passed、不重新派发、
+  不改写负结果、不编造数值、不把「实验跑完」写成「结果达标」**。
+- 十份 NOT-SUBMITTED 预案（r017 #10 H11 … r025 #18 H19 / **r026 #19 H20**）
+  **均不得原样启用**；须先按 `acceptance-verdict-18885.md` 真实实测修订
+  四要素再决定启用 / 合并 / 废弃。若 `18885` 支持 H10，十者降级为
+  独立复核门；**若出现第三次独立干净失败必须重新评估 (b)**。
+
+--------------------------------------------------------------------------------
+## 2. 诚实性声明（本轮自我约束）
+
+- 本预案**全部为只读对账 / 设计草案**；不新增 novix 任务、不重派发、
+  不重训、不重判定、不改任何历史证据文件、不改任何 `pipeline-state.json`。
+- 本轮新事实中的延迟（49.3 / 49.0 s）是**本机诊断读观测值**，
+  非单调、**不得**拟合成趋势；带外日志 +2,404 B **不得**写成「警告单调增长」
+  （`unclosed` 实为 18→16→16→13→11 递减）；`health` 五轮恒定 1131
+  **不得**写成「健康循环已停止」。
+- round-025 的声明/落盘分歧是**本地过程记录缺陷**，如实记录、
+  **不计 kill hit、不构成放弃理由、不改写成科学结果**。
+- `primary_focus=C1` 锁定、`attempt_count=9` 不虚增、
+  `abandon_allowed=False`（(a) 7/7、(b) 0/2、(c) 0/2）、
+  `qualified=false`、`final_paper_overall=null`；无成稿 / 无 P5 / 无 P5A /
+  无 P9 / 无 full review、无 P21 / 无 manifest。
+- **唯一合格线**：成稿经 `ccf-paper-reviewer full` 落盘
+  `**Overall:** X >= 8.0` 且 P21 完成；本轮**未达到、未宣称达到**。
+- 提交命令无预算参数；有效期 2026-11-14 23:59:59 GMT+8 不延长；
+  不创建 / 修改定时任务；不投稿、不 commit/push、不发布。
+
+================================================================================
+【结论】本轮实质优化 = H20 本地声明—落盘对账门（NOT SUBMITTED，第 10 份预案）。
+因 `18885` 在途，**0 次 novix 提交**、`attempt_count` 保持 9、
+主攻 C1 不换、不放弃、不动流水线。
+================================================================================

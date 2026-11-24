@@ -1,0 +1,29 @@
+topic: Operator-aligned low-rank residual event coding for GNN-to-SNN conversion
+target_venue: Q2+ journal; IEEE TNNLS-style systems-method working assumption
+main_claim: operator-aligned low-rank plus sparse residual events improves end-to-end frozen conversion at matched budget
+method: SVD of A X; downstream-scored sparse exact residual events; reconstructed hidden preactivation; rate/event conversion
+datasets: Cora, Chameleon, Squirrel local public graphs
+baselines: full float; SVD-only; random projection plus residual; uniform quantization; SVD plus uniform residual
+primary_metric: validation teacher agreement and accuracy at T=2/4
+secondary_metrics: message/hidden/logit MSE, average bits, residual events, runtime, peak memory
+expected_minimum: complete equal-budget curves and one no-runtime-regression fidelity gain
+expected_strong: LR-A/B/C binding targets in guidance
+strong_result_entry_gate: all required rows complete and strong targets met before writing
+must_run_experiments: LR-A, LR-B, LR-C, LR-D
+must_have_ablations: no residual, random residual, downstream residual, matched bits, matched rank
+figure_table_decision_rules: architecture Figure 1; rank-budget table; Pareto figure; ablation table
+experiment_traceability: results/<batch>.json plus protocols plus code/config hashes
+citation_requirements: One-Spike, ASGCN, A2Q, AdaQP, Fast-SNN, DCGS, QCFS/FTBC, graph low-rank/quantization
+citation_dedup_requirements: DOI/arXiv/normalized-title duplicate scan
+local_artifact_policy: all artifacts under this run root
+page_length_policy: proportionate; no numeric target
+single_final_pdf_template_policy: one final paper.pdf
+central_question: can operator-aligned residual events preserve frozen conversion accuracy at lower message budget
+intended_reader: neuromorphic graph and GNN compression researchers
+domain_design_bridge: repeated A X traffic -> operator-aligned rank and sensitivity-scored residuals -> end-to-end conversion
+planned_claim: equal-budget superiority over strong low-rank/quantization baselines
+observed_finding: pending
+writing_preferences_and_source: English manuscript, user complete-pipeline request
+protected_scope_and_source: historical evidence immutable; negative results preserved
+venue_length_requirements_and_source: none verified
+open_assumptions: local frozen two-layer GCN scope; CPU reference core conversion; no hardware-energy claim

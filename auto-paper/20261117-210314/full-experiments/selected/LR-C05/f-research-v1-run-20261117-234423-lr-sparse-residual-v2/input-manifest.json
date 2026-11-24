@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "files": [
+    {"path": "inputs/guidance-v2.md", "sha256": "18b08d0324b965cfaba3dbccf2524c0551e8bd759606f3b6af46ae0cbfa0e55b"},
+    {"path": "inputs/literature-baseline-matrix.md", "sha256": "a6882f48667278ed502fce06735a512c0a573cf86c82c9aae1b167ba8c34a512"},
+    {"path": "inputs/v1-baseline.json", "sha256": "3688c4d9681d0040cf13f4872a4be357b42ca5d69d146ad691c05ef2a38c4a44"},
+    {"path": "inputs/v1-independent-review.md", "sha256": "529083a00196e9818d39bf4fd56e2c44efd9bcf286beea286185fba1da5bc4d1"},
+    {"path": "inputs/v1-lr-core.py", "sha256": "fd1ba933ac8efca371dc4c80357f8183a38a92682cc8a85a484b599dd03376dc"},
+    {"path": "inputs/v1-method.json", "sha256": "4cef3c22ab464176e6bc4d9465759b8d24bc58597784c668d3780d398feb6b3b"}
+  ]
+}

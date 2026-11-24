@@ -1,0 +1,133 @@
+================================================================================
+状态：DESIGN DRAFT — **NOT SUBMITTED**（round-006 / 2026-11-08 10:2x GMT+8）
+原因：同一 idea（C1）的 attempt #3 = novix task `18273` 仍 `processing` 在途
+      （Step 0 实查 finalReply=None、steps 322→333 实时增长、末步 10:26:56 正在
+       `git commit` 提交五-seed 证据）。按 WORKFLOW-PLAYBOOK.md §3.6(2)/Step 6
+       「同一 idea 在途不重复提交」+ 无预算异步跨轮契约，本轮**不提交、不等待**。
+用途：待 `18273` 终态回收、按 C1 guidance §Expected Results 出 acceptance-verdict 后，
+      由下一轮 Step 0 依据**实测结果**决定：启用 / 改写 / 作废本预案。
+本文件不是任务、不是 query、不含任何新实验结果，不含任何编造数值。
+================================================================================
+
+【四要素 · round-006 死磕实质优化（v3 §3.6(3)）】
+
+上一轮失败点（18228，已落盘实测，见 acceptance-verdict-18228.md）：
+  修好 18156 的两个协议缺陷（完整边表 178,853,187 B / prefix=false、自动 K=5、
+  KC 可达 2559、SYNTHETIC ceiling 1.0）后，biological-graph 上的 LIF 五条件
+  （lif_homeostasis / lif_combo / 三个一因子消融）KC 特征**跨样本方差严格 0**：
+  soft feature 恒等于 0.04742586985230446、非常数维 0、hard-spike rate 0；
+  而 stateless 3.2336e-08、degree_null_lif 1.0941e-06、A=0 0.10334 均非零。
+  触发预注册 invariant #2 → design_invalid，readout 未拟合，无任何方法数值。
+  另：result.json / config.json 第二次未落在可 pull workspace；DAVIS v2 为 post-hoc。
+  18273（attempt #3）是针对该失败点的在途修复尝试，尚无结果。
+
+本轮假设（**新，机制级不同；是推导/假设，不是实测结论**）：
+  round-006 在本机 conda `dyg-cold` 对已落盘的 18228 实测常数做了解析复核：
+    `sigmoid((v - thr) * slope)` 在 `thr=0.15, slope=20`（query 预注册值）下，
+    若 `v ≡ 0`，则 `sigmoid(-3) = 0.04742587317756678`（float64）/ 
+    `0.04742587357759476`（float32）。
+    18228 实测恒值 `0.04742586985230446` 与之相差 `3.3e-9`（float32 精度内一致）。
+  → 由此**推导**（未实验验证）：LIF 分支的膜电位很可能是 **v ≡ 0**，
+    即「输入注入 / 突触电流 / 膜状态递推」这条链路在 biological-graph 的 LIF 条件下
+    被整体旁路或恒零，soft feature 退化为常量广播 `sigmoid(-thr*slope)`。
+  这与 attempt #3 的核心假设**直接不同**：attempt #3 假定「LIF 在高度数真实图上
+  收敛到一个与输入无关的**非零**不动点」，因而用每帧重注入 drive + 输入残差 skip
+  去打破它；若本假设成立，则不动点根本不是动力学吸引子，而是**实现/协议层零通路**，
+  每帧重注入与 skip 都不足以修复（因为 LIF 递推本身没在跑）。
+  若本假设被否证（v 非零且 soft ≠ sigmoid(-3)），则回到 attempt #3 的动力学解释，
+  如实记录否证，不改写成正结果。
+  另有一条与 C1 主命题相关的收窄：就算 LIF 被修好并恢复方差，A=0 的 0.10334
+  与 SYNTHETIC ceiling 1.0 仍提示「输入层已线性可分，图传播+膜状态抹平信息」，
+  必须保留为协议诊断，不得写成任何方法优越或生物接线优势。
+
+具体改动（相对 `query-round005-attempt3.txt` 的 diff，机制/测量/协议层，非原样重提、非只调超参）：
+  1. 【新增·核心】**解析指纹预注册检验**：训练前写死
+     `expected_soft_if_v_zero = sigmoid(-thr*slope)`；对每个方法条件逐帧比较
+     实测 soft feature 与该解析值，输出 `abs_diff`、`v_zero_fingerprint = (abs_diff < 1e-6)`。
+     这是 attempt #3 完全没有的、可零成本证伪的判据。
+  2. 【新增·核心】**逐帧/逐跳全张量 instrumentation**：不再只报 feature std，
+     而是每条件每帧每跳落盘 `drive_nonzero_frac, drive_absmax, syn_nonzero_frac,
+     syn_absmax, v_min, v_max, v_mean, v_std, v_nonzero_frac, spike_count,
+     soft_feature_min/max` 的**完整曲线**，定位「首次归零」发生在哪个环节/哪一跳/哪一帧。
+     attempt #3 只测了跨样本方差轨迹与 probe_acc(h)，没有测 v 与 syn 的绝对值。
+  3. 【新增·核心】**三态自动分流的 invariant #2**：把单一 fail-fast 改为
+     (a) `v_zero_fingerprint=true` → 判 `IMPLEMENTATION_BYPASS`（实现/协议层零通路）；
+     (b) v 非零但跨样本方差 0 → 判 `DYNAMICAL_FIXED_POINT`（attempt #3 的假设）；
+     (c) 方差 >0 → 正常继续拟合 readout。
+     三种状态都必须先把全部诊断/对照跑完并落盘，再给出结论，禁止零信息终止。
+  4. 【新增·核心】**单位级反事实注入（unit-level counterfactual）**：
+     在训练前给 eye drive 注入一个已知的非零脉冲（单帧全 1 / 单 receptor 热点），
+     验证 biological-graph 的 LIF 分支 `v` 是否响应；完全不响应 → 确证旁路；
+     响应但后续归零 → 定位到图传播或稳态除法。
+     对照：stateless 同注入、A=0 同注入、identity 图同注入、保度零模型同注入。
+  5. 【新增】**硬脉冲门控一因子解耦**：把「hard-spike rate = 0」与「soft 特征常量化」
+     拆开：`soft_only`（禁用硬脉冲门控、保留 soft 累积）/
+     `hard_only` / `both`（现口径）/ `thr` 与 `slope` 的等参数量分位扫描，
+     检验是否仅因无硬脉冲而使 syn 恒 0。每个单独 5 seeds。
+  6. 【新增】**同代码路径逐帧 v 轨迹对照**：stateless / lif_homeostasis /
+     degree_null_lif / A=0 在同一 instrumented 代码路径下逐帧输出 v，
+     排除「不同条件走了不同实现分支」这一最朴素解释。
+  7. 【沿用·不削弱】attempt #3 全部有效加固：完整可读边表（prefix=false）、
+     eye→KC exact-hop 自检并自动调 K、identity 图与图结构×动力学 2×2 拆解、
+     逐跳可分性探针、A=0 定义为输入信息上界、λ×K 相图、
+     `project/result.json` + `project/config.json` 必须真实落在可 pull workspace
+     且给实测 `ls -l` / 字节数 / sha256 前 16 位 / `git check-ignore`、
+     真实域构造训练前预注册写死（禁 post-hoc v2）、≥5 seeds + bootstrap 95% CI +
+     BH-FDR、一因子消融、打乱帧序阴性对照、完整原始日志与每 seed 数值。
+  8. 【不变】`minimum` / `expected_strong` / `failure` 一律沿用 C1 guidance
+     §Expected Results，**不静默下调**；提交命令不带 `--max-turns` / `--timeout`、
+     不阻塞 `watch`、不给 4090 任何预算参数。
+
+预期信号 / 若失败下一步：
+  · 预期（若本假设成立）：`v_zero_fingerprint=true` 且逐帧 instrumentation 显示
+    `drive / syn / v` 在 biological-graph LIF 条件下至少一处恒零；
+    单位级反事实注入下 v 不响应；`soft_only` 条件恢复非零方差。
+    → 该失败点被定位为**实现/协议缺陷而非科学结论**，修复后重跑同一 C1 主表，
+      仍按 guidance §Expected Results 判定，不得把「修好实现」写成「结果达标」。
+  · 若本假设被否证（v 非零、soft ≠ sigmoid(-3)、注入有响应）：
+    如实记录否证，回到 attempt #3 的动力学不动点解释或第三种情形，
+    继续死磕同一 C1，不换题、不放弃（abandon_allowed=False）。
+  · 任何情况下都不把 design_invalid 写成方法优越、不把负结果写成正结果、
+    不删失败证据、不编造数值、不把 A=0 高于图条件写成生物接线优势。
+
+================================================================================
+诚实性声明：本预案是 round-006 的「实质优化」落盘证据，满足 v3 §3.6(3)
+「每轮必须有一次实质优化、不许原地踏步」；它**不是** novix 提交、
+**不是**实验执行、**不是**结果。解析指纹数值来自本机 conda 对 18228 已归档
+实测常数的复核，属数学推导，需 `18273` 终态回收后用实测数据验证或否证。
+本轮没有生成 guidance、没有调用 pipeline_state.py、没有把任何 stage 标 passed。
+================================================================================
+
+================================================================================
+【round-006 收尾复核追加 · 2026-11-08 11:4x GMT+8 · 假设被实测部分否证】
+================================================================================
+
+本预案写于 10:2x（当时 `18273` 在途、`finalReply=None`）。本轮收尾复核时
+`18273` 已跃迁为平台终态 `finish`/steps 355 并给出完整 `finalReply`。
+其 2×2「结构 × 动力学」实测数据对本预案的核心假设构成**部分否证**：
+
+- `identity` 图 LIF：std **0.2075**（非零）、accuracy 0.5067；
+- `A=0` LIF：std **0.00156**（非零）、accuracy 0.5067；
+- 只有 biological-graph + hard-spike → resolved KC readout 路径严格零方差。
+
+→ LIF 代码在 identity / A=0 图上**是在跑的**，不是「输入/突触/膜状态递推被整体旁路」。
+本预案由 18228 恒值 ≈ sigmoid(-3) 推导的「v≡0 整体旁路」解释**不成立**；
+严格零方差是 **biological-graph × hard-spike 门控 → KC 读出** 的特异现象。
+平台终态「有限推断」同时明确：
+  #2 每帧重注入输入**没有恢复** biological KC / membrane 的跨样本方差；
+  #3 residual skip 保留的是**绕过图传播**的输入信息，没有修复 graph-KC 分支；
+  #4 「严格零方差」与「标签信息丢失」**不是同一现象**（identity/A=0 方差非零但准确率 ≈chance）；
+  #5 不能证明唯一数学固定点，也不能简单归因「只有图结构」或「只有膜动力学」。
+
+**结论：本预案不得原样启用。** 若下一轮要提交，必须先按以下方向**修订假设**：
+  1. 把「整体旁路」收窄为「biological-graph × hard-spike 门控 → KC 读出的特异塌缩」；
+  2. **把方差塌缩与标签信息丢失分开测量**（二者在 identity/A=0 上可分离）；
+  3. 决定性对照定位门控环节（硬阈值 / 权重尺度 / 谱归一化 / fan-in 稳态），
+     每个一因子移除消融，等参数量；
+  4. 保留本预案的解析指纹检验与全张量 instrumentation 作为**诊断工具**，
+     但不再把 `v_zero_fingerprint=true` 直接解释为「实现层旁路」；
+  5. 沿用 `18273` 全部加固、不下调 `expected_strong`、不带任何预算参数。
+另：`finalReply` 声称的 `project/result.json`（1,322,902 B）与 `config.json`（16,314 B）
+仍需 round-007 Step 0 **实拉核验**（前两次都出现过声称存在、实拉没有）。
+
+本段是 append-only 更正，不删改上方任何原文。该文件状态仍为 **NOT SUBMITTED**。

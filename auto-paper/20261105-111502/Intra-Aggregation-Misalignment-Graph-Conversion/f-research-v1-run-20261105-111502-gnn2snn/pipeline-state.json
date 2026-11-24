@@ -1,0 +1,723 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v1",
+  "delivery_mode": "preparation",
+  "readiness": [
+    {
+      "path": "contracts/delivery-readiness.snapshot.json",
+      "sha256": "3be58a7c9265309036bb84856ed1c1a895e6632b29c5efce33f260bd4b3c0aed"
+    }
+  ],
+  "citation_gate": [
+    {
+      "path": "audits/citation-gate-report.json",
+      "sha256": "73c6bf3f65b6627f665f6f1dcd9b4f9ef9f61a9c96ef004303058c168794a93e"
+    }
+  ],
+  "contract": [
+    {
+      "path": "contracts/execution-contract-v1.md",
+      "sha256": "34be606d692fe8db050d2ded0fa538c5a1f9937de85107ba1ec7dacc8ce54a7b"
+    },
+    {
+      "path": "contracts/guidance.snapshot.md",
+      "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+    },
+    {
+      "path": "contracts/parent-execution-contract-v1.md",
+      "sha256": "da64714b2c08d8b86e45c2d1c31fd2d666b69bb3fb14e6739271dd0d2a77bb2f"
+    },
+    {
+      "path": "contracts/parent-execution-contract-v1-addendum-C8.md",
+      "sha256": "56dd17ae2c93ac22cc15511248861b2972b15b2f34f2a583f3f479a974f83298"
+    },
+    {
+      "path": "contracts/agent_prompt_v2_ICML25.snapshot.md",
+      "sha256": "3a8a4887cd93bef0acad79fc149b3edf145223b44d169048ecc77b7313363a47"
+    }
+  ],
+  "history": [
+    {
+      "action": "reopen",
+      "stage": "P0",
+      "reason": "registry/results.csv gained the S1/Table1/C3 rows and pipeline-state.md was updated to reflect progress; both were accepted as P0/P2 evidence, so every downstream gate is reaccepted against the final artifacts with current hashes."
+    },
+    {
+      "action": "pass",
+      "stage": "P0"
+    },
+    {
+      "action": "pass",
+      "stage": "P1"
+    },
+    {
+      "action": "pass",
+      "stage": "P1A"
+    },
+    {
+      "action": "pass",
+      "stage": "P1B"
+    },
+    {
+      "action": "pass",
+      "stage": "P2"
+    },
+    {
+      "action": "pass",
+      "stage": "P3"
+    },
+    {
+      "action": "pass",
+      "stage": "P3A"
+    },
+    {
+      "action": "pass",
+      "stage": "P4"
+    },
+    {
+      "action": "pass",
+      "stage": "P5"
+    },
+    {
+      "action": "pass",
+      "stage": "P5A"
+    },
+    {
+      "action": "pass",
+      "stage": "P6"
+    },
+    {
+      "action": "pass",
+      "stage": "P7"
+    },
+    {
+      "action": "pass",
+      "stage": "P8"
+    },
+    {
+      "action": "pass",
+      "stage": "P9"
+    },
+    {
+      "action": "pass",
+      "stage": "P10"
+    },
+    {
+      "action": "pass",
+      "stage": "P11"
+    },
+    {
+      "action": "pass",
+      "stage": "P12"
+    },
+    {
+      "action": "pass",
+      "stage": "P13"
+    },
+    {
+      "action": "pass",
+      "stage": "P14"
+    },
+    {
+      "action": "pass",
+      "stage": "P15"
+    },
+    {
+      "action": "pass",
+      "stage": "P16"
+    },
+    {
+      "action": "pass",
+      "stage": "P17"
+    },
+    {
+      "action": "pass",
+      "stage": "P18"
+    },
+    {
+      "action": "pass",
+      "stage": "P19"
+    },
+    {
+      "action": "pass",
+      "stage": "P20"
+    },
+    {
+      "action": "pass",
+      "stage": "P21"
+    }
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "contracts/guidance.snapshot.md",
+          "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "pipeline-state.md",
+          "sha256": "5a87de4edf88c07b1e13fc77ac85fd95d5d1118d3f285661567dacea34bee813"
+        },
+        {
+          "path": "audits/path-manifest.md",
+          "sha256": "c8c027c35a4de3e74534ed328f185f7f8df0c81f5bbd0f4ea9d7a247ad84447e"
+        },
+        {
+          "path": "contracts/execution-contract-v1.md",
+          "sha256": "34be606d692fe8db050d2ded0fa538c5a1f9937de85107ba1ec7dacc8ce54a7b"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in pipeline-state.md"
+    },
+    {
+      "id": "P1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "contracts/guidance.snapshot.md",
+          "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/guidance-validation.md",
+          "sha256": "48d07d9699428ee627aa47493ee6bafc54c2356774f696f6e4131a4fdd264a98"
+        },
+        {
+          "path": "contracts/guidance.snapshot.md",
+          "sha256": "7cab14be1b028e308a9de560e629d826905894aca518b91c6119aa26e46584f3"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/guidance-validation.md"
+    },
+    {
+      "id": "P1A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "contracts/ccfa-startup-packet/feasibility-contract.json",
+          "sha256": "7eb233a9eef45c70e8d48c061db7211ecdde233a9264de51a3ee610f54021ca3"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/strong-result-feasibility-lock.md",
+          "sha256": "5998b94d19be79bedf8f2a6c2ce29e82013d1ef50136c14050f5d34de8f8b714"
+        },
+        {
+          "path": "contracts/ccfa-startup-packet/strong-result-feasibility-contract.md",
+          "sha256": "f99cd6ecea36259b446cd599f81ab93398037a3d93501a9550bb709a0e2a1e73"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/strong-result-feasibility-lock.md"
+    },
+    {
+      "id": "P1B",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "contracts/ccfa-startup-packet/idea-red-team-review.md",
+          "sha256": "5341342b90dc05564d89c9396739b91b688fe3432d3c6f61dca3546ec70042a5"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/ccfa-pre-experiment-review.md",
+          "sha256": "c4c9680808fb486526f4f3d5fdb5a47a1d29024cdf72f5498d09244d19e7b8a4"
+        },
+        {
+          "path": "audits/ccfa-pre-experiment-integrity.md",
+          "sha256": "4cac6be5cc0bb8dee677542d773fd6f0944d894e920f7ebabc79afa74e217ee7"
+        },
+        {
+          "path": "audits/concern-to-action-ledger.md",
+          "sha256": "3c61f0635e5bd8a07f39f3d857e4b0a51008d400e9e3670b2463f0014edbaeb3"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/ccfa-pre-experiment-review.md"
+    },
+    {
+      "id": "P2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "protocols/protocol.md",
+          "sha256": "ef6fe77a7ac09db789ee3c123288adda5957a13d7180ef0a46556529758560c7"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/protocol.md",
+          "sha256": "ef6fe77a7ac09db789ee3c123288adda5957a13d7180ef0a46556529758560c7"
+        },
+        {
+          "path": "audits/p2-environment-check.md",
+          "sha256": "5a3fc7b127ac9576251ff1df39fdf5aa6b50aa79c708fdfa6cd5be1b7a09bfe6"
+        },
+        {
+          "path": "notes/S0_foundation.md",
+          "sha256": "e97f65cd44ac2d1b627e26b8b1e42fe110fb7ecf1d8e72d0e9b9a2946ae8ca0d"
+        },
+        {
+          "path": "results/wp0_repro.json",
+          "sha256": "135e8c6c4147ad611b8ba327ca3af8b4bdd8fec00dd168c7fb8df5920bda4ebf"
+        },
+        {
+          "path": "registry/results.csv",
+          "sha256": "36d6636b74363818279c6e0934bd9dc8ed35c49339de60f257a91941513dfe0a"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in protocols/protocol.md"
+    },
+    {
+      "id": "P3",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/p3-baseline-first.md",
+          "sha256": "0f6b7bcb8e12fef06967f496de1f4386ba70b75c23882ff95f95ee47dd5ca61d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/p3-baseline-first.md",
+          "sha256": "0f6b7bcb8e12fef06967f496de1f4386ba70b75c23882ff95f95ee47dd5ca61d"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/p3-baseline-first.md"
+    },
+    {
+      "id": "P3A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/p3-baseline-first.md",
+          "sha256": "0f6b7bcb8e12fef06967f496de1f4386ba70b75c23882ff95f95ee47dd5ca61d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/p3-baseline-first.md",
+          "sha256": "0f6b7bcb8e12fef06967f496de1f4386ba70b75c23882ff95f95ee47dd5ca61d"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/p3-baseline-first.md"
+    },
+    {
+      "id": "P4",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/p4-experiment-completion.md",
+          "sha256": "b40e30d9111e15ddcc67a9cdbebe6d86fae1c0c0aa66c455b4d7db812fe44f87"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/p4-experiment-completion.md",
+          "sha256": "b40e30d9111e15ddcc67a9cdbebe6d86fae1c0c0aa66c455b4d7db812fe44f87"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/p4-experiment-completion.md"
+    },
+    {
+      "id": "P5",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/p5-strong-result-lock.md",
+          "sha256": "7e5dd7b8d46730e4c6817c63a1bccf1eb82016dd264688c11f9db01c5cec2a84"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/p5-strong-result-lock.md",
+          "sha256": "7e5dd7b8d46730e4c6817c63a1bccf1eb82016dd264688c11f9db01c5cec2a84"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/p5-strong-result-lock.md"
+    },
+    {
+      "id": "P5A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/ccfa-pre-draft-scientific-review.md",
+          "sha256": "63c9e137a400ec7a97d26e1e340213dccc903259ddb27d9e31219fe960f54473"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/ccfa-pre-draft-scientific-review.md",
+          "sha256": "63c9e137a400ec7a97d26e1e340213dccc903259ddb27d9e31219fe960f54473"
+        },
+        {
+          "path": "audits/ccfa-pre-draft-integrity-audit.md",
+          "sha256": "530cee921ce23db1da33b95f63da647445ab34f37db246a0780a4abc45b19ae5"
+        },
+        {
+          "path": "audits/ccfa-pre-draft-action-ledger.md",
+          "sha256": "b8f1b262d8d50851ea448224c092efd3ad1c8b04d182e2d1798b19a9162916ca"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/ccfa-pre-draft-scientific-review.md"
+    },
+    {
+      "id": "P6",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "paper/outline.md",
+          "sha256": "aa0d0785420bccb38341e61d3c01becf4f78e4d89f8cd8b4114f1b924af418d1"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "paper/outline.md",
+          "sha256": "aa0d0785420bccb38341e61d3c01becf4f78e4d89f8cd8b4114f1b924af418d1"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in paper/outline.md"
+    },
+    {
+      "id": "P7",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "tex/main.tex",
+          "sha256": "2e2407c2fd71b0545122cb0af9e46bbea8871d355bd5cd416883165bdf131854"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "tex/main.tex",
+          "sha256": "2e2407c2fd71b0545122cb0af9e46bbea8871d355bd5cd416883165bdf131854"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in tex/main.tex"
+    },
+    {
+      "id": "P8",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "figure-table-audit.md",
+          "sha256": "a28c0610e9c89501ed09ac7384cac84d31eaa43e77e1c3469471701b2731669d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "figure-table-audit.md",
+          "sha256": "a28c0610e9c89501ed09ac7384cac84d31eaa43e77e1c3469471701b2731669d"
+        },
+        {
+          "path": "tex/figures/fig_s1.pdf",
+          "sha256": "e8468dd12585a7e81ddf28e7bb6ad2748f3da4fe1de7d8e2866201e0c178e726"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in figure-table-audit.md"
+    },
+    {
+      "id": "P9",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-review-reports/ccfa-skill-review-terminal-full.md",
+          "sha256": "ad02b01cf742eeb22f79a20bee463f3fc38a3736c263f51f8c03ae52cc494f34"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "ccfa-review-reports/ccfa-skill-review-terminal-full.md",
+          "sha256": "ad02b01cf742eeb22f79a20bee463f3fc38a3736c263f51f8c03ae52cc494f34"
+        },
+        {
+          "path": "ccfa-review-reports/ccfa-integrity-review-full.md",
+          "sha256": "88fa4b082a2474b2c397e5b6b36c98f9a25163240f8093d49b5c7b26329f97c9"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in ccfa-review-reports/ccfa-skill-review-terminal-full.md"
+    },
+    {
+      "id": "P10",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/p10-revision-log.md",
+          "sha256": "4cd3a05de5e0b4325d5ad3c259ef6f1f84e77af243ec2970e09c2f3792618bec"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/p10-revision-log.md",
+          "sha256": "4cd3a05de5e0b4325d5ad3c259ef6f1f84e77af243ec2970e09c2f3792618bec"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/p10-revision-log.md"
+    },
+    {
+      "id": "P11",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/p11-quality-gate.md",
+          "sha256": "e089690cb4d52ccb60898749189addd6cb0524da7a6187439c2299a4f6bb0ab9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/p11-quality-gate.md",
+          "sha256": "e089690cb4d52ccb60898749189addd6cb0524da7a6187439c2299a4f6bb0ab9"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/p11-quality-gate.md"
+    },
+    {
+      "id": "P12",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "reference-dedup-audit.md",
+          "sha256": "62ccee7005e4c0a858ef222059d0108e08bca65ef8d2caee824df74181935124"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reference-dedup-audit.md",
+          "sha256": "62ccee7005e4c0a858ef222059d0108e08bca65ef8d2caee824df74181935124"
+        },
+        {
+          "path": "tex/refs.bib",
+          "sha256": "dd986a9e0bbea27e3f257ed1eaf59a9a70aa3a85f6d30ac0df267d92a7d41c6f"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in reference-dedup-audit.md"
+    },
+    {
+      "id": "P13",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "tex/main.tex",
+          "sha256": "2e2407c2fd71b0545122cb0af9e46bbea8871d355bd5cd416883165bdf131854"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "tex/main.tex",
+          "sha256": "2e2407c2fd71b0545122cb0af9e46bbea8871d355bd5cd416883165bdf131854"
+        },
+        {
+          "path": "tex/tables/table1.tex",
+          "sha256": "e58b1740de8f58ba706d16fe3456aa99e1aa219864b169a123cedcaf6b7cbfd2"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in tex/main.tex"
+    },
+    {
+      "id": "P14",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "reference-dedup-audit.md",
+          "sha256": "62ccee7005e4c0a858ef222059d0108e08bca65ef8d2caee824df74181935124"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reference-dedup-audit.md",
+          "sha256": "62ccee7005e4c0a858ef222059d0108e08bca65ef8d2caee824df74181935124"
+        },
+        {
+          "path": "contracts/check_citations.py",
+          "sha256": "aedaca160a552a704f1b155390ae1ebd9322d538983ea122ba15b828d0dfed0b"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in reference-dedup-audit.md"
+    },
+    {
+      "id": "P15",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "deliverables/paper.pdf",
+          "sha256": "70b414117f29e4d87f960a97a13b53cdb3dc159caea9dae57952d915ec5dce02"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "deliverables/paper.pdf",
+          "sha256": "70b414117f29e4d87f960a97a13b53cdb3dc159caea9dae57952d915ec5dce02"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in deliverables/paper.pdf"
+    },
+    {
+      "id": "P16",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/p16-length-policy.md",
+          "sha256": "4c7473add060240a9b6d79ece940a6896b65aab3ead20e95cf75864d56e3c9c8"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/p16-length-policy.md",
+          "sha256": "4c7473add060240a9b6d79ece940a6896b65aab3ead20e95cf75864d56e3c9c8"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/p16-length-policy.md"
+    },
+    {
+      "id": "P17",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "paper-guidance-audit.md",
+          "sha256": "11e1cb562b84c8515c7b5b19ad7d8d548419749cec3dc678d2fe1301f42ed102"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "paper-guidance-audit.md",
+          "sha256": "11e1cb562b84c8515c7b5b19ad7d8d548419749cec3dc678d2fe1301f42ed102"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in paper-guidance-audit.md"
+    },
+    {
+      "id": "P18",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "figure-table-audit.md",
+          "sha256": "a28c0610e9c89501ed09ac7384cac84d31eaa43e77e1c3469471701b2731669d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "figure-table-audit.md",
+          "sha256": "a28c0610e9c89501ed09ac7384cac84d31eaa43e77e1c3469471701b2731669d"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in figure-table-audit.md"
+    },
+    {
+      "id": "P19",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "audits/p19-polish-audit.md",
+          "sha256": "5174de4c4e8a0d05057c5ed1dd0ec6a35289eb73545ec76fc124fac575666e84"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "audits/p19-polish-audit.md",
+          "sha256": "5174de4c4e8a0d05057c5ed1dd0ec6a35289eb73545ec76fc124fac575666e84"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in audits/p19-polish-audit.md"
+    },
+    {
+      "id": "P20",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "submission-constraints.md",
+          "sha256": "ca098c69b53305d6fd22b2e5865530fed1fd2382940bec53e319d66a6187357b"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "submission-constraints.md",
+          "sha256": "ca098c69b53305d6fd22b2e5865530fed1fd2382940bec53e319d66a6187357b"
+        },
+        {
+          "path": "manuscript-metadata.md",
+          "sha256": "153a0a0467176217ca5186b86a980e0bc07fe097ee119af27ccddeb46786ca52"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in submission-constraints.md"
+    },
+    {
+      "id": "P21",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "deliverables/README.md",
+          "sha256": "18b15c377434649fa020bf54fda9f61c46bc959f1ea7c27a4fe1487700a57eb5"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "deliverables/README.md",
+          "sha256": "18b15c377434649fa020bf54fda9f61c46bc959f1ea7c27a4fe1487700a57eb5"
+        },
+        {
+          "path": "experiment-traceability.md",
+          "sha256": "94eef371b3ba520242f7218f838eb4f49a0c5c4ff9d8d59d359f7d12561eebf1"
+        }
+      ],
+      "gate_verdict": "pass",
+      "gate_report": "Recorded in deliverables/README.md"
+    }
+  ]
+}

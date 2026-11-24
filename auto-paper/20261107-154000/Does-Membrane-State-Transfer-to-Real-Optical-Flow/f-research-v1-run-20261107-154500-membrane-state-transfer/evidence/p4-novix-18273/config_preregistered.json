@@ -1,0 +1,238 @@
+{
+  "schema_version": "f-research-v1.p4.c1.v3.1",
+  "run_id": "p4-c1-correction-loop-v3-attempt-3",
+  "protocol_locked_utc": "2026-11-08T01:28:00Z",
+  "protocol_locked_before_data_inspection": true,
+  "task_goal": "Test whether LIF membrane-state dynamics on the full biological graph converge to an input-independent fixed point and whether per-frame drive reinjection or an input residual path breaks the collapse.",
+  "workspace": "/home/novix/workspace/project",
+  "guidance_provenance": {
+    "prior_artifacts_present_in_workspace": false,
+    "guidance_md_present_in_workspace": false,
+    "source_for_attempt_2_facts": "verbatim user-supplied task protocol",
+    "threshold_policy": "Do not lower any C1 threshold. The only numeric Expected Results threshold available in this workspace is lif+skip - stateless+skip >= 0.15 with CI lower > 0; absent guidance.md fields remain explicitly unavailable rather than invented."
+  },
+  "hardware_required": {
+    "cuda_preferred": true,
+    "cpu_statistics_allowed": true
+  },
+  "dependencies": [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "pandas",
+    "pyarrow",
+    "opencv-python-headless",
+    "tqdm",
+    "torch"
+  ],
+  "reproducibility": {
+    "stimulus_seed": 20261108,
+    "graph_seed": 20261109,
+    "seeds": [1, 2, 3, 4, 5],
+    "deterministic_algorithms": true,
+    "same_stimuli_and_seedwise_splits_for_all_conditions": true,
+    "split": {
+      "train_fraction": 0.7,
+      "test_fraction": 0.3,
+      "stratified": true
+    }
+  },
+  "public_data": {
+    "connectome": {
+      "url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content",
+      "expected_bytes": 178853187,
+      "columns": ["pre_root_id", "post_root_id", "syn_count"],
+      "must_be_full": true,
+      "range_parts": [[0, 67108863], [67108864, 134217727], [134217728, 178853186]],
+      "availability_guard_seconds_per_request": 120
+    },
+    "annotations": {
+      "url": "https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content",
+      "expected_bytes": 7740866,
+      "kc_rule": "cell_type string starts with 'KC'"
+    },
+    "eye_positions": {
+      "url": "https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content",
+      "expected_bytes": 629193,
+      "required_coordinate_columns": ["x_axis", "y_axis"]
+    },
+    "davis": {
+      "url": "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip",
+      "expected_bytes": 832766765,
+      "availability_guard_seconds": 120
+    },
+    "sintel": {
+      "url": "http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+      "availability_guard_seconds": 120,
+      "optional": true
+    }
+  },
+  "synthetic": {
+    "domain_label": "SYNTHETIC",
+    "n_samples": 400,
+    "frames": 8,
+    "height": 32,
+    "width": 32,
+    "task": "binary direction",
+    "dot_radius_integer_range_inclusive": [3, 5],
+    "start_x_integer_range_inclusive": [8, 24],
+    "start_y_integer_range_inclusive": [7, 24],
+    "speed_pixels_per_frame": 2,
+    "labels": {"0": "left", "1": "right"},
+    "pixel_transform": "sparse ink = 1 - uint8_pixel/255; black dot on white background",
+    "per_frame_receptor_drive_normalization": "divide by frame maximum when positive",
+    "flash_control": "same static centered dot with independently randomized temporal on/off pattern; direction labels retained only as a preregistered negative control"
+  },
+  "real_domain_preregistration": {
+    "locked_before_any_ceiling_result": true,
+    "post_hoc_revisions_forbidden": true,
+    "davis_v1_only": {
+      "name": "DAVIS-2017 full-frame v1",
+      "archive_member_roots": ["DAVIS/JPEGImages/480p", "DAVIS/Annotations/480p"],
+      "clip_length": 8,
+      "clip_stride": 8,
+      "frame_selection": "all complete consecutive non-overlapping 8-frame windows, sorted lexicographically within each sequence",
+      "roi": "none; entire decoded frame",
+      "margin_or_crop": "none",
+      "pixel_processing": "BGR decode -> grayscale using OpenCV COLOR_BGR2GRAY -> INTER_AREA resize to 32x32 -> float32/255; flatten all 8 frames in temporal order",
+      "label_source": "official full-frame foreground annotation masks",
+      "label_rule": "For every frame with nonempty foreground, compute full-resolution foreground x centroid. Fit OLS x_centroid = intercept + slope*frame_index across all 8 frames. right iff slope > +0.25 original pixels/frame; left iff slope < -0.25; discard otherwise or if any mask is empty.",
+      "balance_rule": "deterministically downsample the majority class without replacement using seed 20261108 after all clips are labeled",
+      "split_rule": "70/30 sequence-group-disjoint GroupShuffleSplit for each seed; retry deterministic offsets up to 100 until both classes occur in train and test; no frame/clip leakage across a sequence",
+      "ceiling_model": "fold-fitted StandardScaler + PCA(32 if required by >2000 raw dimensions) + RidgeClassifier(alpha=1e-2)",
+      "availability_rule": "mean five-seed full-frame ceiling < 0.70 => unavailable",
+      "no_v2": true
+    },
+    "sintel_v1": {
+      "name": "MPI-Sintel GT-flow full-frame v1",
+      "clip_length": 8,
+      "roi": "none",
+      "margin_or_crop": "none",
+      "pixel_processing": "clean pass full frame -> grayscale -> INTER_AREA 32x32 -> float32/255; flatten temporal order",
+      "label_rule": "median finite ground-truth horizontal optical flow over all pixels and all available adjacent frame pairs; right iff > +0.25 px/frame, left iff < -0.25, discard otherwise",
+      "balance_rule": "deterministic majority downsample with seed 20261108",
+      "split_rule": "70/30 sequence-group-disjoint splits using the same deterministic policy as DAVIS",
+      "availability_rule": "archive not fully acquired and validated in one 120-second guarded request, or mean five-seed ceiling < 0.70 => unavailable"
+    },
+    "migration_claim_rule": "If both real domains are unavailable, report SYNTHETIC mechanism results only and make no SYNTHETIC-to-REAL transfer claim."
+  },
+  "graph": {
+    "node_index": "sorted union of root IDs appearing in full edge table",
+    "adjacency_definition": "A[post, pre] = log1p(sum syn_count for duplicate nonzero edges)",
+    "storage": "COO to CSR; sum_duplicates; eliminate_zeros; float32",
+    "normalization": "A *= lambda / spectral_radius(A); no row normalization",
+    "spectral_radius_power_iterations": 80,
+    "spectral_lambdas": [0.3, 0.6, 0.95, 1.1],
+    "default_lambda": 0.95,
+    "candidate_K": [1, 2, 3, 5, 8],
+    "requested_K": 5,
+    "K_auto_rule": "Report shortest-path exact-hop eye-to-KC counts for 1..8. If requested K has zero KC, choose the first K in 5..8 with >0; if none, use fixed random 1024 nodes from exact hop 2 or 3 and mark fallback.",
+    "resolved_K": null,
+    "resolved_readout_definition": null,
+    "kc_reachable_by_hop": null,
+    "eye_mapping": "Normalize x_axis/y_axis ranges to the 32x32 pixel-grid range; build cKDTree on eye coordinates; assign every pixel to its nearest eye neuron (Voronoi); aggregate colliding pixels by maximum.",
+    "degree_null": "Keep reciprocal directed edges and self loops fixed. Pair the remaining nonreciprocal edges once under seed 20261109 and perform collision-free directed endpoint swaps (u->v,x->y to u->y,x->v), rejecting self edges, existing edges, duplicate proposals, and proposal/reverse-proposal pairs. This preserves each node's in/out degree, nnz, weight multiset, and reciprocal directed-pair count exactly; report rewire fraction and assert every invariant.",
+    "identity": "A=I at identical lambda-scaled identity dynamics, same K, tanh/LIF settings",
+    "a_zero": "No graph propagation; temporally ordered raw input-drive feature; explicitly an input-information upper bound, never evidence of biological-wiring superiority."
+  },
+  "dynamics": {
+    "stateless": "For each frame independently, x_0=eye drive and x_h=tanh(A_lambda @ x_(h-1)) for h=1..K; readout uses temporal mean at selected KC/readout nodes.",
+    "lif_homeostasis": {
+      "equation": "v = 0.6*v + syn + drive; hard=(v>=0.15); v -= 0.15*hard; soft=sigmoid((v-0.15)*20)",
+      "decay": 0.6,
+      "threshold": 0.15,
+      "soft_slope": 20.0,
+      "synapse": "edge index-add from previous hop hard spikes, with edge weight * 8/fan_in * 8",
+      "baseline_drive_policy": "inject receptor drive at hop 0 of frame 0 only",
+      "drive_every_frame_intervention": "inject each frame's receptor drive at hop 0 of every frame",
+      "spatial_steps_per_frame": "resolved K; membrane state persists across hops and frames",
+      "readout": "mean KC soft spikes over 8 frames at resolved K"
+    },
+    "lif_combo": {
+      "base": "lif_homeostasis",
+      "adaptive_threshold": "threshold_i = 0.15 + 0.10*a_i; a=0.9*a+hard",
+      "refractory_steps": 2,
+      "ei_sign": "presynaptic sign from annotation neurotransmitter class when available; inhibitory for GABA/glutamate, excitatory otherwise; unresolved signs default excitatory and are counted"
+    },
+    "frozen_gain_control": "replace 8/fan_in*8 by its graph-wide mean finite value while holding all other settings fixed"
+  },
+  "conditions": {
+    "base": ["stateless", "lif_homeostasis", "lif_combo", "degree_null_lif", "a_zero"],
+    "interventions": ["stateless_skip", "lif_homeostasis_skip", "lif_combo_skip", "degree_null_skip", "lif_drive_every_frame", "lif_drive_every_frame_skip"],
+    "structure_dynamics_2x2": {
+      "graphs": ["biological", "degree_null", "identity", "a_zero"],
+      "dynamics": ["stateless", "lif"]
+    },
+    "ablations": ["lif_combo_no_adaptive", "lif_combo_no_refractory", "lif_combo_no_ei", "skip_input_only", "skip_propagated_only", "lif_drive_once", "lif_drive_every_frame"],
+    "negative_controls": ["shuffled_frame_order", "flash_control", "frozen_gain", "degree_null"]
+  },
+  "feature_and_readout": {
+    "ridge_alpha": 0.01,
+    "max_raw_dimension_before_pca": 2000,
+    "pca_components": 32,
+    "pca_fit_scope": "training fold only, independently for every seed and feature branch",
+    "standardization_fit_scope": "training fold only",
+    "skip_alignment": "fit PCA(32) separately to propagated and raw temporally flattened input branches on train only, concatenate, then fit train-only PCA to final 32 dimensions so every ridge readout has equal feature count and parameter count; record dimensions and explained-variance retention",
+    "non_skip_alignment": "train-only PCA to final 32 dimensions whenever raw dimension >32; all readouts receive <=32 features",
+    "a_zero_skip_identity_assertion": true
+  },
+  "diagnostics": {
+    "probe_hops": [0, 1, 2, 3, 5, 8],
+    "variance_trajectory": {
+      "hops": "0..resolved K for main conditions; 0..K for every phase-map cell",
+      "frames": "0..7",
+      "metrics": ["kc_feature_std", "nonconstant_dimensions", "soft_feature_min", "soft_feature_max", "hard_spike_rate"]
+    },
+    "probe_metrics": ["probe_acc", "a_zero_minus_graph_gap"],
+    "phase_map": {
+      "lambda": [0.3, 0.6, 0.95, 1.1],
+      "K": [1, 2, 3, 5, 8],
+      "methods": ["stateless", "lif_homeostasis"],
+      "per_cell": ["five_seed_probe_acc", "bootstrap_95_ci", "kc_feature_std", "delta_lif_minus_stateless"]
+    }
+  },
+  "invariants": {
+    "1_kc_reachable": "selected-K exact-hop KC/readout count > 0",
+    "2_kc_feature_std": "at least one biological-graph LIF intervention condition has KC feature std > 0; if not, finish all mechanism diagnostics before design_invalid",
+    "3_synthetic_ceiling": "five-seed mean >= 0.90",
+    "4_real_domain_ceiling": "per-domain five-seed mean >= 0.70 or mark that domain unavailable"
+  },
+  "design_signal": {
+    "information_erasure": "If any hop has A=0 probe >= graph-condition probe + 0.15, label only as protocol diagnostic: graph propagation plus membrane state erases input information.",
+    "fixed_point_prediction": "Variance should monotonically approach zero in the high-lambda/high-K region and strongly interact with drive_every_frame. If the phase map has no such structure, mark the prediction falsified.",
+    "expected_intervention": "drive_every_frame=true or +skip yields kc_feature_std > 0",
+    "expected_strong": "lif_homeostasis+skip - stateless+skip >= +0.15 and bootstrap CI lower bound > 0",
+    "minimum": "Unavailable because guidance.md section Expected Results is absent from this clean workspace; intentionally not fabricated or lowered.",
+    "failure_next_step": "Narrow to an input-readout protocol-diagnostic negative result; retain all failure evidence; continue the same C1 because abandon_allowed=False."
+  },
+  "statistics": {
+    "bootstrap_iterations": 2000,
+    "bootstrap_confidence": 0.95,
+    "bootstrap_unit": "paired seed",
+    "paired_test": "exact two-sided sign-flip over five paired seed deltas",
+    "minimum_two_sided_p_with_five_pairs": 0.0625,
+    "multiple_testing": "Benjamini-Hochberg FDR q=0.05"
+  },
+  "resource_logging": ["wall_seconds", "peak_gpu_mib", "feature_std", "spike_rate", "kc_spike_rate"],
+  "output_contract": {
+    "result": "project/result.json",
+    "snapshot": "project/evidence/result_snapshot.json",
+    "tables": ["main_table.csv", "probe_vs_hop.csv", "variance_trajectory.csv", "lambda_K_phase.csv", "structure_dynamics_2x2.csv", "experiment-traceability.csv"],
+    "raw_pattern": "project/evidence/raw/<condition>__seed_<seed>.npz",
+    "validation": "project/evidence/validation.json",
+    "result_and_config_must_not_be_ignored": true
+  },
+  "attempt_2_diff": [
+    "add hop-by-frame cross-sample variance trajectories",
+    "add drive_every_frame on/off intervention",
+    "add equal-parameter input residual skip",
+    "add lambda by K information-retention phase map",
+    "add identity graph control",
+    "add graph-only versus LIF-only structure-dynamics decomposition",
+    "add per-hop train-only ridge probes and A=0 gaps",
+    "define A=0 only as input-information upper bound",
+    "persist result/config plus redundant snapshot in pullable project workspace",
+    "freeze all real-domain rules before ceiling evaluation and prohibit DAVIS v2 post-hoc registration",
+    "complete all mechanism diagnostics before invariant-2 design_invalid termination"
+  ]
+}

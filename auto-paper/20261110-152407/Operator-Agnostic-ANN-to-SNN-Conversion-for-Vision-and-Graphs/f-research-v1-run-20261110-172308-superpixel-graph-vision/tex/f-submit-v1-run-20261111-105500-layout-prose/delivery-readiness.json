@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "delivery_mode": "preparation",
+  "submission_ready": false,
+  "workflow_complete": false,
+  "deferred_items": [
+    {
+      "id": "DR1",
+      "category": "author-fact",
+      "status": "pending",
+      "owner": "作者",
+      "requirement": "作者姓名、单位、通讯作者与贡献声明",
+      "source": "用户本轮未指定",
+      "unblock_action": "由作者提供后写入稿件元数据",
+      "affected_surfaces": [
+        "title page",
+        "metadata"
+      ],
+      "scientific_effect": "none"
+    },
+    {
+      "id": "DR2",
+      "category": "author-approval",
+      "status": "pending",
+      "owner": "作者",
+      "requirement": "确认新篇与已成稿 GNN2SNN 分开投稿及两篇引用关系",
+      "source": "用户明确成稿先不动",
+      "unblock_action": "由作者确认两篇关系与投稿时序",
+      "affected_surfaces": [
+        "related work",
+        "cover letter"
+      ],
+      "scientific_effect": "none"
+    },
+    {
+      "id": "DR3",
+      "category": "author-fact",
+      "status": "pending",
+      "owner": "作者",
+      "requirement": "具体目标 venue 与 tier，当前按 IEEE TNNLS / Q1–Q2 档设计",
+      "source": "P1B 独立评审标为 must-know，官方当年规则未核验",
+      "unblock_action": "作者确认 venue 后核验官方当年规则",
+      "affected_surfaces": [
+        "length",
+        "figure rules",
+        "artifact policy"
+      ],
+      "scientific_effect": "none"
+    },
+    {
+      "id": "DR4",
+      "category": "access-route",
+      "status": "pending",
+      "owner": "作者",
+      "requirement": "代码、teacher 权重与冻结图文件的发布或审稿访问安排",
+      "source": "用户本轮未指定",
+      "unblock_action": "由作者决定公开范围与时机",
+      "affected_surfaces": [
+        "artifact",
+        "reproduction package"
+      ],
+      "scientific_effect": "none"
+    },
+    {
+      "id": "DR5",
+      "category": "production",
+      "status": "pending",
+      "owner": "作者",
+      "requirement": "LaTeX 模板、页限与图表规则",
+      "source": "目标 venue 官方当年规则未核验",
+      "unblock_action": "venue 确认后由官方页核验",
+      "affected_surfaces": [
+        "typesetting",
+        "appendix"
+      ],
+      "scientific_effect": "none"
+    },
+    {
+      "id": "DR6",
+      "category": "portal",
+      "status": "pending",
+      "owner": "作者",
+      "requirement": "投稿系统账号、ORCID、基金与利益冲突声明",
+      "source": "用户本轮未指定",
+      "unblock_action": "由作者在投稿前填写",
+      "affected_surfaces": [
+        "submission form",
+        "declarations"
+      ],
+      "scientific_effect": "none"
+    },
+    {
+      "id": "DR7",
+      "category": "author-approval",
+      "status": "pending",
+      "owner": "作者",
+      "requirement": "最终稿审批与全体作者同意投稿",
+      "source": "用户本轮未授权投稿",
+      "unblock_action": "由作者显式批准",
+      "affected_surfaces": [
+        "submission action"
+      ],
+      "scientific_effect": "none"
+    }
+  ]
+}

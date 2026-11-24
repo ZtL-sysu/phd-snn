@@ -1,0 +1,15 @@
+{
+  "task_id": "17682",
+  "final_status": "error",
+  "pulled_ok": false,
+  "poll_log": [
+    {
+      "ts": "2026-11-07 14:20:43",
+      "status": "error",
+      "steps": null,
+      "rc": 4
+    }
+  ],
+  "pulled_files": [],
+  "note": "No result is inferred here. Acceptance verdict must be computed from the pulled result.json."
+}

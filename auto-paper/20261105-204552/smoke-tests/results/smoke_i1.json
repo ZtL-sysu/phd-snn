@@ -1,0 +1,73 @@
+{
+  "device": "cuda",
+  "torch": "2.11.0+cu128",
+  "steps": 40,
+  "seed": 42,
+  "disclaimer": "single-seed fixed-weight short smoke run; NOT a paper result",
+  "n_images": 204,
+  "graph_info": {
+    "biological": {
+      "nodes": 87564,
+      "nnz": 196373,
+      "shuffled": false,
+      "n_photoreceptor_nodes": 580,
+      "n_kenyon_nodes": 2393
+    },
+    "shuffled": {
+      "nodes": 87564,
+      "nnz": 198613,
+      "shuffled": true,
+      "n_photoreceptor_nodes": 580,
+      "n_kenyon_nodes": 2393
+    }
+  },
+  "conditions": [
+    {
+      "dynamics": "stateless",
+      "loss_first": NaN,
+      "loss_last": NaN,
+      "test_acc": 0.5686,
+      "spike_rate": 0.0,
+      "peak_gpu_MB": 93.8,
+      "seconds": 0.21,
+      "graph": "biological"
+    },
+    {
+      "dynamics": "lif",
+      "loss_first": 0.7788,
+      "loss_last": 0.7213,
+      "test_acc": 0.4314,
+      "spike_rate": 6.7e-05,
+      "peak_gpu_MB": 169.3,
+      "seconds": 0.27,
+      "graph": "biological"
+    },
+    {
+      "dynamics": "stateless",
+      "loss_first": NaN,
+      "loss_last": NaN,
+      "test_acc": 0.5686,
+      "spike_rate": 0.0,
+      "peak_gpu_MB": 94.6,
+      "seconds": 0.07,
+      "graph": "shuffled"
+    },
+    {
+      "dynamics": "lif",
+      "loss_first": 0.7788,
+      "loss_last": 0.7213,
+      "test_acc": 0.4314,
+      "spike_rate": 6.7e-05,
+      "peak_gpu_MB": 170.1,
+      "seconds": 0.25,
+      "graph": "shuffled"
+    }
+  ],
+  "interaction_acc": 0.0,
+  "failure_signals": {
+    "oom_or_too_slow": false,
+    "no_learnable_signal": false,
+    "no_interaction": true
+  },
+  "verdict": "DROP_OR_REVISE"
+}

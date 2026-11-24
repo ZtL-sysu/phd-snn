@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage": "P13/AutoResearchClaw-22-EXPORT_PUBLISH",
+  "status": "passed",
+  "template": "generic",
+  "context": {
+    "input_paper": "writing\\p13\\paper-export-input-v3.md",
+    "input_paper_sha256": "2dc73596c9a1c4d3f7edba45dafedb0c693f217e9d697f74aff87ef830e4d247",
+    "bib_sha256": "be176ede7327203c59bbb3ceaf0482853863064406964a0d744a73fdc4f0e6bb",
+    "figure_inputs": [
+      "figures/data/figure1-certificate-chain.png",
+      "figures/data/figure2-width-tightening.png",
+      "figures/data/figure3-equality-tightening.png"
+    ]
+  },
+  "validation": {
+    "problems": [],
+    "paper_tex_sha256": "3b8727f2660a63ca1cdefa5f77f7c6669b8ce5cb5a9c5d5aa878ffd3f6f18832",
+    "paper_pdf_sha256": "f4c228c3219065449fefecb98c1dfe4d4e3c8fe7536fc31614db9b592dc0f11e",
+    "references_sha256": "be176ede7327203c59bbb3ceaf0482853863064406964a0d744a73fdc4f0e6bb"
+  },
+  "arc_stage_result": {
+    "stage": "22",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "paper_final.md",
+      "paper_final_latex.md",
+      "references.bib",
+      "paper.tex"
+    ],
+    "evidence_refs": [
+      "stage-22/paper_final.md",
+      "stage-22/paper_final_latex.md",
+      "stage-22/references.bib",
+      "stage-22/paper.tex"
+    ]
+  }
+}

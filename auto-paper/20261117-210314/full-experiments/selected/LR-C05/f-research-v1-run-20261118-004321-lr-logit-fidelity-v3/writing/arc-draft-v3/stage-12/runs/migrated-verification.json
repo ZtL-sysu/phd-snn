@@ -1,0 +1,16 @@
+{
+  "status": "verified-migrated",
+  "metrics": {
+    "logit_mse_reduction_cora": 0.2623240871,
+    "logit_mse_reduction_chameleon": 0.3398668714,
+    "logit_mse_reduction_squirrel": 0.2582841138,
+    "max_three_seed_mean_task_loss_pp": 1.8571886007,
+    "max_seed_level_task_loss_pp": 2.85
+  },
+  "evidence_paths": [
+    "results/confirmation-summary.json",
+    "results/confirmation-test-v2.json",
+    "inputs/v2-summary.json"
+  ],
+  "note": "Truthful ARC anti-simulation compatibility fixture; no experiment was rerun or fabricated."
+}

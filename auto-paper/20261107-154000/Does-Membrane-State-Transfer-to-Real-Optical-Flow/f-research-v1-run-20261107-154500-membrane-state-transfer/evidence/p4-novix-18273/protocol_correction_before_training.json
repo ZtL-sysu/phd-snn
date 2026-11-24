@@ -1,0 +1,19 @@
+{
+  "timestamp_utc": "2026-11-08T02:00:00Z",
+  "training_or_ceiling_run_before_correction": false,
+  "reason": "Implementation audit found that the initial local config incorrectly allowed a random exact-hop readout even though KC annotations loaded successfully. The user protocol permits random 1024-node fallback only when annotation fails. This correction is mandatory protocol compliance, not result-conditioned tuning.",
+  "graph_support_inspected": {
+    "kc_annotation_roots_in_graph": 2559,
+    "kc_reachable_exact_hop_2": 15,
+    "kc_reachable_exact_hop_3": 2544,
+    "kc_reachable_exact_hops_5_to_8": [0, 0, 0, 0]
+  },
+  "old_rule": "If requested K has zero KC, choose first positive K in 5..8; if none, use fixed random 1024 nodes from exact hop 2 or 3.",
+  "corrected_rule": "If requested K and 5..8 have zero annotated KC while annotations loaded, select the hop in {2,3} with the largest positive annotated-KC count (tie: smaller hop). Random 1024-node fallback is legal only if annotation loading fails.",
+  "deterministic_resolution": {
+    "resolved_K": 3,
+    "readout": "2544 annotated KCs at exact shortest hop 3"
+  },
+  "additional_missing_preregistered_measurement_corrected": "The lambda-by-K phase map now includes lif_drive_every_frame in every cell because the user explicitly required a drive_every_frame interaction test; this was omitted from the first local serialization but added before any ceiling/training run.",
+  "post_hoc_outcome_or_accuracy_seen": false
+}

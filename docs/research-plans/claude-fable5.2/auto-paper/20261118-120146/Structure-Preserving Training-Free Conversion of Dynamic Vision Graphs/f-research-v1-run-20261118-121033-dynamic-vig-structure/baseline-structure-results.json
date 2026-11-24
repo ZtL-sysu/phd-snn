@@ -1,0 +1,90 @@
+{
+  "stage": "P3",
+  "role": "baseline-first exact structure metric on the unexposed calibration subset",
+  "dataset": "Fashion-MNIST train subset",
+  "seed_policy": "teacher seeds 41/42/43; no test exposure",
+  "wall_seconds": 2.8699610233306885,
+  "rows": [
+    {
+      "seed": 41,
+      "method": "unsigned_uniform",
+      "neighbor_jaccard": 0.3563816544350008,
+      "winner_agreement": 0.15132865613947313,
+      "events": null,
+      "levels": 16,
+      "samples": 240
+    },
+    {
+      "seed": 41,
+      "method": "signed_uniform",
+      "neighbor_jaccard": 0.6462670973734148,
+      "winner_agreement": 0.22455888527135054,
+      "events": null,
+      "levels": 16,
+      "samples": 240
+    },
+    {
+      "seed": 41,
+      "method": "signed_multilevel",
+      "neighbor_jaccard": 0.46450003927644984,
+      "winner_agreement": 0.10925807813182473,
+      "events": 188160,
+      "levels": 16,
+      "samples": 240
+    },
+    {
+      "seed": 42,
+      "method": "unsigned_uniform",
+      "neighbor_jaccard": 0.35383074371107087,
+      "winner_agreement": 0.15202487219745914,
+      "events": null,
+      "levels": 16,
+      "samples": 240
+    },
+    {
+      "seed": 42,
+      "method": "signed_uniform",
+      "neighbor_jaccard": 0.6482423702497982,
+      "winner_agreement": 0.2229219810416301,
+      "events": null,
+      "levels": 16,
+      "samples": 240
+    },
+    {
+      "seed": 42,
+      "method": "signed_multilevel",
+      "neighbor_jaccard": 0.46317230013883676,
+      "winner_agreement": 0.11105973630522688,
+      "events": 188159,
+      "levels": 16,
+      "samples": 240
+    },
+    {
+      "seed": 43,
+      "method": "unsigned_uniform",
+      "neighbor_jaccard": 0.3528921283798235,
+      "winner_agreement": 0.1539487668933968,
+      "events": null,
+      "levels": 16,
+      "samples": 240
+    },
+    {
+      "seed": 43,
+      "method": "signed_uniform",
+      "neighbor_jaccard": 0.6481416556382793,
+      "winner_agreement": 0.2277848637352387,
+      "events": null,
+      "levels": 16,
+      "samples": 240
+    },
+    {
+      "seed": 43,
+      "method": "signed_multilevel",
+      "neighbor_jaccard": 0.4648546576472747,
+      "winner_agreement": 0.11015624965851506,
+      "events": 188158,
+      "levels": 16,
+      "samples": 240
+    }
+  ]
+}

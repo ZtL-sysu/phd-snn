@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "accepted_count": 10,
+  "rejected_or_inconclusive_count": 9,
+  "files": [
+    {"path": "execution-contract-v1.md", "sha256": "3F52A0D2273F4F6B86B8B332E89D0032507F4CA0143E37BC0437621AE5A3F10F"},
+    {"path": "hardware-profile.md", "sha256": "2300951DF54C1745762C0C35B898268819BE88EF2C4CC6DF276BD16206891C99"},
+    {"path": "novelty-feasibility-report.md", "sha256": "346D4281B62E9121422F98272A9BAAFC147039C39A2BE046E3BEBAACA57CA366"},
+    {"path": "literature-baseline-matrix.md", "sha256": "A6882F48667278ED502FCE06735A512C0A573CF86C82C9AAE1B167BA8C34A512"},
+    {"path": "idea-portfolio.md", "sha256": "CF7D990A5BBC85BE46A0A7A93FA5E32CA8D969386FF8C348EB70781B776D6430"},
+    {"path": "rejection-summary.md", "sha256": "AE977186BF1DD58B94489B5F7EEF157096E87B6896F3F2722614000199760513"},
+    {"path": "smoke/results/mechanism-smoke.json", "sha256": "1C1F056A2638EBC144AACF89065330D88F389BCF8FE696FE120C0F35340100B2"},
+    {"path": "smoke/results/more-mechanisms.json", "sha256": "360D4432E9DD16EC92631542AE883563E28424D0615FD6F9656D6B04E95ADABA"},
+    {"path": "smoke/results/READ-C18-v1.json", "sha256": "33AD15602D3E2C9A8F044B00633AF3DD7D8CE44A53F2CF00FBD49958BA7E143B"},
+    {"path": "smoke/results/C09-v1.json", "sha256": "CCB8C88F3B4241F0E0CA43D948D5D0DAC0D2D7C4E2C9303C6869450197C056D9"},
+    {"path": "smoke/results/C10-v1.json", "sha256": "073A20331EBB93B4D6094A1F2740C5EA768D9054A78FA42FEE18281FB9F547F0"},
+    {"path": "smoke/results/LAW-C07-v1.json", "sha256": "8EF072B12EA8C5051278F34EDA7E8A73CA9391C8E7363413306C0C7B35E447FC"},
+    {"path": "smoke/results/CONF-C09-v1.json", "sha256": "CD1DA8B01B71C82145FDC51E8960F028B16B970C2AA7934B2E478D59C8F2864E"},
+    {"path": "smoke/results/ZERO-C10-v1.json", "sha256": "378F1417E3CA36A31846646F0651F394C3371C76679956BC9C58DFFA77C65B1D"},
+    {"path": "smoke/results/TRANS-C15-v1.json", "sha256": "516CDDF2827E14071190167706D3621F00B858F5C795466266F42091638E14F3"},
+    {"path": "smoke/results/NM-C16-v1.json", "sha256": "5E19A080B419D357CCCF9FB13F94463A3C90950DC18CDA30D1A0276CFA840E22"}
+  ],
+  "note": "HOM-C17-v1-partial.json is intentionally excluded from immutable evidence hashes until its transcription is independently verified; it is recorded as incomplete, not as a pass."
+}

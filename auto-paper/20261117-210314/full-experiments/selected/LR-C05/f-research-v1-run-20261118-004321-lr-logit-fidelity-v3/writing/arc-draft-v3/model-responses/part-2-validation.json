@@ -1,0 +1,76 @@
+{
+  "manuscript": "## 3 Method\n\nWe consider a frozen two-layer hidden-16 GCN checkpoint. For layer \\(l\\), the graph message is \\(M^{(l)} = A H^{(l-1)}\\), where \\(A\\) is the normalized adjacency operator and \\(H^{(0)} = X\\). The checkpoint computes\n\n$$H^{(1)} = \\sigma\\left(\\widetilde{D}^{-1/2}\\widetilde{A}\\widetilde{D}^{-1/2} X W^{(1)}\\right), \\qquad Z = \\widetilde{D}^{-1/2}\\widetilde{A}\\widetilde{D}^{-1/2} H^{(1)} W^{(2)},$$\n\nwith hidden width 16 and frozen parameters. Results use checkpoint seeds 0, 1, and 2.\n\nFor each message matrix \\(M = A X\\), transport retains an operator-aligned rank-128 SVD representation,\n\n$$M_{128} = U_{128}\\Sigma_{128}V_{128}^{T}, \\qquad R = M - M_{128}.$$\n\nThe residual is encoded as selected exact coefficients rather than as temporal spikes. For residual coefficient \\(r_i\\) at serialized position \\(i\\), let \\(z = f_{\\theta}(M_{128} + e_i r_i)\\) be the frozen model output and define the output-Jacobian squared sensitivity\n\n$$J_i = \\frac{\\partial z}{\\partial r_i}, \\qquad s_i = \\lVert J_i \\rVert_2^2.$$\n\nGiven a residual budget \\(B\\), the selector chooses the highest-scoring coefficient set \\(S = \\operatorname{TopB}(s_i)\\) and transmits explicit pairs \\((i,r_i)\\). The exact serialized-cost ledger is\n\n$$C(S) = \\sum_{q \\in \\operatorname{records}(S)} \\operatorname{padded\\_serialized\\_bits}(q),$$\n\nwhere each record includes its payload and explicit indices. Comparisons therefore use a matched total padded serialized-bit budget within each dataset, seed, rank, and budget condition. All compared rank-128/2% methods used identical total padded serialized bits within each dataset, although payload lengths and coefficient counts could differ.\n\nRate-coded conversion represents each nonnegative post-activation value as a finite firing rate over \\(T \\in \\{2,4\\}\\) bins; the decoded scalar is the spike count divided by \\(T\\). The frozen weights, graph message, and serialized-cost condition are held fixed across conversion comparisons. Sparse residual coefficients are exact message residual values with explicit indices and are not temporal SNN events. The measurement scope excludes hardware energy and does not establish temporal-event equivalence or broad GNN generality.\n\n## 4 Experiments and Results\n\n### 4.1 Experimental Scope\n\nWe evaluate Cora, Chameleon, and Squirrel using the reported split protocol and frozen two-layer hidden-16 GCN checkpoints with seeds 0, 1, and 2. Validation was used for setting selection, and the focal setting and logit-fidelity reframing were fixed after validation exposure and before the test run. The reported test run is therefore held-out confirmation after validation exposure, not preregistered or independent replication.\n\nWe report split-specific logit MSE, hidden-state MSE, \\(T=2/4\\) accuracy, and teacher agreement. For logits \\(z_s\\) on split \\(s\\), the split-specific metric is\n\n$$\\operatorname{MSE}_{\\operatorname{logit}}(s) = \\frac{1}{|s|C}\\sum_{n \\in s}\\lVert z_{n}^{\\operatorname{converted}} - z_{n}^{\\operatorname{frozen}}\\rVert_2^2,$$\n\nand hidden-state MSE is defined analogously on the hidden representation. Accuracy is measured at \\(T=2\\) and \\(T=4\\); teacher agreement is the fraction of converted predictions matching the frozen GCN prediction. Task comparisons are descriptive and do not establish equivalence.\n\n### 4.2 Compared Methods and Exact Cost\n\nThe compared methods share the rank-128 transport and exact padded serialized-bit ledger. The strongest evaluated matched-budget control is the best-performing non-selector control for the corresponding comparison.\n\n| Method | Representation and allocation | Role | Citation |\n|---|---|---|---|\n| SVD-only | Rank-128 basis; no residual coefficients | Matched-budget baseline | — |\n| Output-Jacobian sparse residual | Rank-128 basis plus top-\\(B\\) exact residual pairs | Evaluated selector | — |\n| Our matched-budget adaptations of A2Q | Graph-aware coefficient quantization under the same ledger | Adapted control | \\cite{a2q} |\n| Our matched-budget adaptations of One-Spike | Output-code coefficient allocation under the same ledger | Adapted control | \\cite{one-spike} |\n\nAt rank 128 and a 2% sparse residual budget on the reported test split, output-Jacobian selection reduced the ratio of three-seed mean split-specific logit MSE versus the strongest evaluated matched-budget control by 26.23% on Cora, 33.99% on Chameleon, and 25.83% on Squirrel; all nine dataset-seed comparisons improved. Relative to our matched-budget adaptations of A2Q and One-Spike, the selector reduced three-seed mean logit MSE by 28.93%, 36.19%, and 35.24%, and by 42.83%, 47.61%, and 34.03%, respectively, on Cora, Chameleon, and Squirrel.\n\nAt rank 128 and the 2% residual budget, hidden-state MSE fell by 16.88%, 12.86%, and 10.63% relative to the strongest matched-budget control on Cora, Chameleon, and Squirrel. Across the evaluated 0.5%, 1%, and 2% residual budgets and three graphs, logit MSE was below the strongest corresponding control in all nine dataset-budget cells, with reductions from 2.98% to 30.40%. These hidden-state and budget-grid observations are validation-grid sensitivity results; the focal 2% setting subsequently received held-out confirmation after validation exposure.\n\nAcross \\(T=2/4\\) accuracy and teacher agreement, the observed task loss was bounded at both 1.86 pp mean and 2.85 pp seed-level task loss. Task superiority was not established: the task deltas were mixed across budgets, and the earlier task-superiority target failed. The accepted claim is bounded task degradation rather than universal task gain. In the rank128/1% timing condition, the timing range 1.020-1.124x represents paired p95 full-pipeline runtime ratios versus SVD-only across nine dataset-seed pairs on an RTX3060 with three warmups and seven measured repeats; peak CUDA allocation was 218.23 MB. This wall-clock measurement excludes hardware energy.",
+  "notes": "Reverse outline:\n- Method paragraph 1: defines the frozen two-layer hidden-16 GCN, graph-message computation, hidden width, and seeds.\n- Method paragraph 2: defines rank-128 SVD transport and the message residual.\n- Method paragraph 3: defines output-Jacobian squared sensitivity, sparse coefficient encoding, and the exact padded serialized-bit ledger, including F3.\n- Method paragraph 4: defines rate-coded conversion and preserves the temporal-event, energy, and generality boundaries from F5.\n- Experimental Scope paragraph 1: specifies datasets, reported splits, seeds, and the validation-exposed/held-out status from F5.\n- Experimental Scope paragraph 2: defines logit MSE, hidden-state MSE, \\(T=2/4\\) accuracy, teacher agreement, and descriptive uncertainty handling.\n- Compared Methods paragraph 1: introduces the compact compared-method table and the strongest evaluated matched-budget control.\n- Compared Methods paragraph 2: reports the focal rank-128/2% logit-MSE reductions from F1 and the matched-budget adaptation comparisons from F8.\n- Compared Methods paragraph 3: reports hidden-state sensitivity from F6 and the 0.5%-2% budget-grid result from F7.\n- Compared Methods paragraph 4: reports bounded task degradation from F2, retains the negative task-superiority finding from F9, and reports the warmed runtime and memory scope from F4.\n\nRationale: The requested headings are used exactly. Equations define the frozen GCN, SVD residual, sensitivity score, sparse encoding, cost ledger, and rate-coded decoding. The table is limited to comparison roles and exact-cost assumptions. No claim of novelty, state of the art, energy efficiency, temporal-event equivalence, task superiority, or broad GNN generality is made. Exact split-file identifiers were not supplied, so the manuscript retains the reported split protocol rather than inventing indices.",
+  "provenance": {
+    "adapter": "writing_adapter.build/v1",
+    "contract_sha256": "5ea84114722267e6e81689f75ebeb3dbb098bd01830d1efcd7d4041d20912f5e",
+    "dependency": {
+      "name": "ml-paper-writing",
+      "path": "C:\\Users\\xhf\\.codex\\skills\\ml-paper-writing\\SKILL.md",
+      "sha256": "96733e6d758642d792ed15b7c08eb90548d4775099368cd72a8312127f2fe911"
+    },
+    "evidence_manifest": [
+      {
+        "fact_id": "F1",
+        "path": "results/confirmation-summary.json",
+        "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"
+      },
+      {
+        "fact_id": "F2",
+        "path": "results/confirmation-summary.json",
+        "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"
+      },
+      {
+        "fact_id": "F3",
+        "path": "results/confirmation-test-v2.json",
+        "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166"
+      },
+      {
+        "fact_id": "F4",
+        "path": "inputs/v2-timing.json",
+        "sha256": "bd77cd5b8d688380fe7485bb6d20a31fd853189d7ff9354559978f38fcd32dc0"
+      },
+      {
+        "fact_id": "F5",
+        "path": "ccfa-pre-draft-scientific-review.md",
+        "sha256": "32082761fe52e40b726efbc7806657a72795e8ed91dac730c19aec5266958324"
+      },
+      {
+        "fact_id": "F6",
+        "path": "inputs/v2-summary.json",
+        "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+      },
+      {
+        "fact_id": "F7",
+        "path": "inputs/v2-summary.json",
+        "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+      },
+      {
+        "fact_id": "F8",
+        "path": "results/confirmation-test-v2.json",
+        "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166"
+      },
+      {
+        "fact_id": "F9",
+        "path": "inputs/v2-summary.json",
+        "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+      }
+    ],
+    "verification_notes": [],
+    "revision_checks": [],
+    "model": "unknown",
+    "tool_version": "unknown",
+    "execution": "input-built-only; no model invoked",
+    "inputs": [
+      {
+        "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\writing\\packet-p7.json",
+        "sha256": "8e4d35abfcf574b9058151518802486db74f2f474e48b3c9a4ba70dc3bb1aa4f"
+      },
+      {
+        "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\writing\\arc-draft-v3\\model-responses\\part-2-attempt-2.json",
+        "sha256": "14b34bce85207b6a8f03f073d17b8d97c9366f8c6c60dc7dff4ea3141f494e2f"
+      }
+    ]
+  },
+  "status": "format-checked; semantic-review-required"
+}

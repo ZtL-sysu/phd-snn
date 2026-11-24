@@ -1,0 +1,117 @@
+{
+  "chance": 10.0,
+  "min_ann_val": 20.0,
+  "rule": "teacher must exceed 2x chance AND loss<=1.5pp AND both energy ratios>=5 AND non-zero spikes",
+  "datasets": {
+    "MNIST": {
+      "naive_qualifying": 3,
+      "strict_qualifying": 0,
+      "rows_with_teacher_above_2x_chance": 6,
+      "best_with_valid_teacher": [
+        {
+          "prune": 0.0,
+          "kept_frac": 1.0,
+          "theta": 1.0,
+          "T": 8,
+          "ann_val": 66.2,
+          "val_loss_pp": 0.8,
+          "energy_primary": 0.6103,
+          "energy_conservative": 0.854,
+          "spikes": 3908260,
+          "zero_spike": false
+        },
+        {
+          "prune": 0.0,
+          "kept_frac": 1.0,
+          "theta": 2.0,
+          "T": 8,
+          "ann_val": 66.2,
+          "val_loss_pp": 4.0,
+          "energy_primary": 1.2314,
+          "energy_conservative": 1.3876,
+          "spikes": 1949322,
+          "zero_spike": false
+        },
+        {
+          "prune": 0.0,
+          "kept_frac": 1.0,
+          "theta": 1.0,
+          "T": 4,
+          "ann_val": 66.2,
+          "val_loss_pp": 4.4,
+          "energy_primary": 1.2371,
+          "energy_conservative": 1.7257,
+          "spikes": 1926925,
+          "zero_spike": false
+        },
+        {
+          "prune": 0.0,
+          "kept_frac": 1.0,
+          "theta": 4.0,
+          "T": 8,
+          "ann_val": 66.2,
+          "val_loss_pp": 15.8,
+          "energy_primary": 2.6027,
+          "energy_conservative": 2.051,
+          "spikes": 923400,
+          "zero_spike": false
+        }
+      ]
+    },
+    "CIFAR10": {
+      "naive_qualifying": 5,
+      "strict_qualifying": 0,
+      "rows_with_teacher_above_2x_chance": 6,
+      "best_with_valid_teacher": [
+        {
+          "prune": 0.0,
+          "kept_frac": 1.0,
+          "theta": 1.0,
+          "T": 8,
+          "ann_val": 35.4,
+          "val_loss_pp": 0.6,
+          "energy_primary": 1.1213,
+          "energy_conservative": 1.3482,
+          "spikes": 3868528,
+          "zero_spike": false
+        },
+        {
+          "prune": 0.0,
+          "kept_frac": 1.0,
+          "theta": 1.0,
+          "T": 4,
+          "ann_val": 35.4,
+          "val_loss_pp": 0.8,
+          "energy_primary": 2.268,
+          "energy_conservative": 2.7164,
+          "spikes": 1912593,
+          "zero_spike": false
+        },
+        {
+          "prune": 0.0,
+          "kept_frac": 1.0,
+          "theta": 2.0,
+          "T": 8,
+          "ann_val": 35.4,
+          "val_loss_pp": 1.0,
+          "energy_primary": 2.2458,
+          "energy_conservative": 2.0101,
+          "spikes": 1945750,
+          "zero_spike": false
+        },
+        {
+          "prune": 0.0,
+          "kept_frac": 1.0,
+          "theta": 2.0,
+          "T": 4,
+          "ann_val": 35.4,
+          "val_loss_pp": 9.2,
+          "energy_primary": 4.7531,
+          "energy_conservative": 4.1315,
+          "spikes": 916501,
+          "zero_spike": false
+        }
+      ]
+    }
+  }
+}

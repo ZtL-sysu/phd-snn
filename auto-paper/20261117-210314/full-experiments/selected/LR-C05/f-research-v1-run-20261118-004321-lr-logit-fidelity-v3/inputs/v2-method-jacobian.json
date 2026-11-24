@@ -1,0 +1,6054 @@
+{
+  "phase": "method",
+  "device": "NVIDIA GeForce RTX 3060",
+  "rows": [
+    {
+      "message_mse": 6.435859578240972e-06,
+      "hidden_mse": 0.0012199158197177937,
+      "logit_mse": 0.0592147521674633,
+      "basis_bits": 2120704,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 3362496,
+      "coefficient_count": 19403,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.746,
+        "teacher_agreement": 0.866,
+        "logit_mse": 0.4086211919784546
+      },
+      "T4": {
+        "accuracy": 0.75,
+        "teacher_agreement": 0.886,
+        "logit_mse": 0.09618964791297913
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.944414101666564e-06,
+      "hidden_mse": 0.002065768487869154,
+      "logit_mse": 0.1232794001698494,
+      "basis_bits": 2120192,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 3361984,
+      "coefficient_count": 19403,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.722,
+        "teacher_agreement": 0.828,
+        "logit_mse": 0.30350759625434875
+      },
+      "T4": {
+        "accuracy": 0.692,
+        "teacher_agreement": 0.804,
+        "logit_mse": 0.1464313566684723
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.174242876460779e-06,
+      "hidden_mse": 0.0009033993992440624,
+      "logit_mse": 0.0429467111825943,
+      "basis_bits": 2120704,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 4604288,
+      "coefficient_count": 38806,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.76,
+        "teacher_agreement": 0.87,
+        "logit_mse": 0.3809269070625305
+      },
+      "T4": {
+        "accuracy": 0.756,
+        "teacher_agreement": 0.902,
+        "logit_mse": 0.0848146304488182
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.627227698891294e-06,
+      "hidden_mse": 0.0008612292769986111,
+      "logit_mse": 0.045642074197530746,
+      "basis_bits": 2120192,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 4603776,
+      "coefficient_count": 38806,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.762,
+        "teacher_agreement": 0.878,
+        "logit_mse": 0.30108392238616943
+      },
+      "T4": {
+        "accuracy": 0.744,
+        "teacher_agreement": 0.888,
+        "logit_mse": 0.06700025498867035
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.8194956393979754e-06,
+      "hidden_mse": 0.0005617053558568117,
+      "logit_mse": 0.02498764358460903,
+      "basis_bits": 2120704,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 7087808,
+      "coefficient_count": 77611,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.768,
+        "teacher_agreement": 0.866,
+        "logit_mse": 0.35033294558525085
+      },
+      "T4": {
+        "accuracy": 0.764,
+        "teacher_agreement": 0.92,
+        "logit_mse": 0.0675065889954567
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.074316100167784e-06,
+      "hidden_mse": 0.0002146123303896798,
+      "logit_mse": 0.00960678793489933,
+      "basis_bits": 2120192,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 7087296,
+      "coefficient_count": 77611,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.776,
+        "teacher_agreement": 0.888,
+        "logit_mse": 0.3062537610530853
+      },
+      "T4": {
+        "accuracy": 0.762,
+        "teacher_agreement": 0.924,
+        "logit_mse": 0.04489710181951523
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.96653314301065e-06,
+      "hidden_mse": 0.0008769823308889781,
+      "logit_mse": 0.03963863104581833,
+      "basis_bits": 4241408,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 5483200,
+      "coefficient_count": 19403,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.768,
+        "teacher_agreement": 0.868,
+        "logit_mse": 0.37378355860710144
+      },
+      "T4": {
+        "accuracy": 0.764,
+        "teacher_agreement": 0.902,
+        "logit_mse": 0.07986417412757874
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.95358251373206e-06,
+      "hidden_mse": 0.0020431630089803323,
+      "logit_mse": 0.12036550045013428,
+      "basis_bits": 4240384,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 5482176,
+      "coefficient_count": 19403,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.722,
+        "teacher_agreement": 0.816,
+        "logit_mse": 0.3095038831233978
+      },
+      "T4": {
+        "accuracy": 0.684,
+        "teacher_agreement": 0.798,
+        "logit_mse": 0.14492420852184296
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.901302967099441e-06,
+      "hidden_mse": 0.0006979722983337845,
+      "logit_mse": 0.03054034896194935,
+      "basis_bits": 4241408,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 6724992,
+      "coefficient_count": 38806,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.768,
+        "teacher_agreement": 0.882,
+        "logit_mse": 0.35938894748687744
+      },
+      "T4": {
+        "accuracy": 0.768,
+        "teacher_agreement": 0.908,
+        "logit_mse": 0.0732235312461853
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.681418438454891e-06,
+      "hidden_mse": 0.0008598626989329153,
+      "logit_mse": 0.044907476752996445,
+      "basis_bits": 4240384,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 6723968,
+      "coefficient_count": 38806,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.762,
+        "teacher_agreement": 0.894,
+        "logit_mse": 0.2900809347629547
+      },
+      "T4": {
+        "accuracy": 0.74,
+        "teacher_agreement": 0.87,
+        "logit_mse": 0.0685790404677391
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.7167369735557935e-06,
+      "hidden_mse": 0.0004720384488920882,
+      "logit_mse": 0.019273970276117325,
+      "basis_bits": 4241408,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 9208512,
+      "coefficient_count": 77611,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.786,
+        "teacher_agreement": 0.896,
+        "logit_mse": 0.346686452627182
+      },
+      "T4": {
+        "accuracy": 0.768,
+        "teacher_agreement": 0.916,
+        "logit_mse": 0.06258825957775116
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.172495574466775e-06,
+      "hidden_mse": 0.0002231167264959681,
+      "logit_mse": 0.009885971434414387,
+      "basis_bits": 4240384,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 9207488,
+      "coefficient_count": 77611,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.772,
+        "teacher_agreement": 0.898,
+        "logit_mse": 0.3027675449848175
+      },
+      "T4": {
+        "accuracy": 0.76,
+        "teacher_agreement": 0.924,
+        "logit_mse": 0.04536495357751846
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.130978676668494e-06,
+      "hidden_mse": 0.0004920320928905417,
+      "logit_mse": 0.02082899771630764,
+      "basis_bits": 8482816,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 9724608,
+      "coefficient_count": 19403,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.786,
+        "teacher_agreement": 0.888,
+        "logit_mse": 0.34428104758262634
+      },
+      "T4": {
+        "accuracy": 0.768,
+        "teacher_agreement": 0.918,
+        "logit_mse": 0.06885657459497452
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.950517466920142e-06,
+      "hidden_mse": 0.0019637711566055766,
+      "logit_mse": 0.1162591427564621,
+      "basis_bits": 8480768,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 9722560,
+      "coefficient_count": 19403,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.714,
+        "teacher_agreement": 0.82,
+        "logit_mse": 0.3100792467594147
+      },
+      "T4": {
+        "accuracy": 0.704,
+        "teacher_agreement": 0.816,
+        "logit_mse": 0.13786345720291138
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.344188537966119e-06,
+      "hidden_mse": 0.00040788692392012627,
+      "logit_mse": 0.016568951308727264,
+      "basis_bits": 8482816,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 10966400,
+      "coefficient_count": 38806,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.78,
+        "teacher_agreement": 0.9,
+        "logit_mse": 0.3297645151615143
+      },
+      "T4": {
+        "accuracy": 0.764,
+        "teacher_agreement": 0.918,
+        "logit_mse": 0.06448876857757568
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.781945441052164e-06,
+      "hidden_mse": 0.0008313464063775688,
+      "logit_mse": 0.04333881661295891,
+      "basis_bits": 8480768,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 10964352,
+      "coefficient_count": 38806,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.756,
+        "teacher_agreement": 0.868,
+        "logit_mse": 0.3131151497364044
+      },
+      "T4": {
+        "accuracy": 0.744,
+        "teacher_agreement": 0.89,
+        "logit_mse": 0.06417612731456757
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.407445346314032e-06,
+      "hidden_mse": 0.00029976020822234056,
+      "logit_mse": 0.011353312991559505,
+      "basis_bits": 8482816,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 13449920,
+      "coefficient_count": 77611,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.78,
+        "teacher_agreement": 0.896,
+        "logit_mse": 0.32130518555641174
+      },
+      "T4": {
+        "accuracy": 0.762,
+        "teacher_agreement": 0.928,
+        "logit_mse": 0.06038885936141014
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.4124551419140804e-06,
+      "hidden_mse": 0.00022789583150471305,
+      "logit_mse": 0.010094708763062954,
+      "basis_bits": 8480768,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 13447872,
+      "coefficient_count": 77611,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.772,
+        "teacher_agreement": 0.898,
+        "logit_mse": 0.3107883632183075
+      },
+      "T4": {
+        "accuracy": 0.764,
+        "teacher_agreement": 0.93,
+        "logit_mse": 0.043948110193014145
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.721040206183729e-06,
+      "hidden_mse": 0.00024196544740072974,
+      "logit_mse": 0.009747273288667202,
+      "basis_bits": 16965632,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 18207424,
+      "coefficient_count": 19403,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.776,
+        "teacher_agreement": 0.894,
+        "logit_mse": 0.3150903880596161
+      },
+      "T4": {
+        "accuracy": 0.768,
+        "teacher_agreement": 0.934,
+        "logit_mse": 0.05540202558040619
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.932593097344555e-06,
+      "hidden_mse": 0.001835648017718269,
+      "logit_mse": 0.10812177509069443,
+      "basis_bits": 16961536,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 18203328,
+      "coefficient_count": 19403,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.724,
+        "teacher_agreement": 0.836,
+        "logit_mse": 0.29765498638153076
+      },
+      "T4": {
+        "accuracy": 0.706,
+        "teacher_agreement": 0.824,
+        "logit_mse": 0.1285189688205719
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.264354665640543e-06,
+      "hidden_mse": 0.00021358489101404714,
+      "logit_mse": 0.008239137008786201,
+      "basis_bits": 16965632,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 19449216,
+      "coefficient_count": 38806,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.782,
+        "teacher_agreement": 0.906,
+        "logit_mse": 0.3208194673061371
+      },
+      "T4": {
+        "accuracy": 0.764,
+        "teacher_agreement": 0.926,
+        "logit_mse": 0.05546584725379944
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.94625392020991e-06,
+      "hidden_mse": 0.0008129112037345072,
+      "logit_mse": 0.04313326254487038,
+      "basis_bits": 16961536,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 19445120,
+      "coefficient_count": 38806,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.774,
+        "teacher_agreement": 0.878,
+        "logit_mse": 0.30281075835227966
+      },
+      "T4": {
+        "accuracy": 0.74,
+        "teacher_agreement": 0.896,
+        "logit_mse": 0.0636034607887268
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 2.688135488640492e-06,
+      "hidden_mse": 0.00017569549255897559,
+      "logit_mse": 0.0064873057417571545,
+      "basis_bits": 16965632,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 21932736,
+      "coefficient_count": 77611,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.78,
+        "teacher_agreement": 0.896,
+        "logit_mse": 0.3206510841846466
+      },
+      "T4": {
+        "accuracy": 0.764,
+        "teacher_agreement": 0.926,
+        "logit_mse": 0.0547817200422287
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.866378858467139e-06,
+      "hidden_mse": 0.00027497735514233333,
+      "logit_mse": 0.012962214648723602,
+      "basis_bits": 16961536,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 21928640,
+      "coefficient_count": 77611,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.772,
+        "teacher_agreement": 0.88,
+        "logit_mse": 0.304246723651886
+      },
+      "T4": {
+        "accuracy": 0.762,
+        "teacher_agreement": 0.918,
+        "logit_mse": 0.045100610703229904
+      },
+      "dataset": "cora",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.9076302970427244e-06,
+      "hidden_mse": 0.0012720536151477535,
+      "logit_mse": 0.02361694537103176,
+      "basis_bits": 2120704,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 3362496,
+      "coefficient_count": 19403,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.726,
+        "teacher_agreement": 0.85,
+        "logit_mse": 0.20361705124378204
+      },
+      "T4": {
+        "accuracy": 0.722,
+        "teacher_agreement": 0.866,
+        "logit_mse": 0.043399691581726074
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.398425940728994e-06,
+      "hidden_mse": 0.0023090618129685465,
+      "logit_mse": 0.05401398614048958,
+      "basis_bits": 2120192,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 3361984,
+      "coefficient_count": 19403,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.716,
+        "teacher_agreement": 0.812,
+        "logit_mse": 0.092656709253788
+      },
+      "T4": {
+        "accuracy": 0.654,
+        "teacher_agreement": 0.752,
+        "logit_mse": 0.07088617235422134
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.6193119171710014e-06,
+      "hidden_mse": 0.0009767135815520207,
+      "logit_mse": 0.01755381189286709,
+      "basis_bits": 2120704,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 4604288,
+      "coefficient_count": 38806,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.734,
+        "teacher_agreement": 0.86,
+        "logit_mse": 0.182917058467865
+      },
+      "T4": {
+        "accuracy": 0.746,
+        "teacher_agreement": 0.886,
+        "logit_mse": 0.03547629714012146
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.1056416535304875e-06,
+      "hidden_mse": 0.00106468850944557,
+      "logit_mse": 0.023127298802137375,
+      "basis_bits": 2120192,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 4603776,
+      "coefficient_count": 38806,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.726,
+        "teacher_agreement": 0.852,
+        "logit_mse": 0.11787565052509308
+      },
+      "T4": {
+        "accuracy": 0.712,
+        "teacher_agreement": 0.842,
+        "logit_mse": 0.038408778607845306
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.264836336445678e-06,
+      "hidden_mse": 0.0006639153521509805,
+      "logit_mse": 0.011630505323410034,
+      "basis_bits": 2120704,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 7087808,
+      "coefficient_count": 77611,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.73,
+        "teacher_agreement": 0.872,
+        "logit_mse": 0.1766529679298401
+      },
+      "T4": {
+        "accuracy": 0.76,
+        "teacher_agreement": 0.88,
+        "logit_mse": 0.030682511627674103
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 2.779197399250552e-06,
+      "hidden_mse": 0.0002947184970703718,
+      "logit_mse": 0.005670102778822184,
+      "basis_bits": 2120192,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 7087296,
+      "coefficient_count": 77611,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.744,
+        "teacher_agreement": 0.88,
+        "logit_mse": 0.1212361603975296
+      },
+      "T4": {
+        "accuracy": 0.744,
+        "teacher_agreement": 0.898,
+        "logit_mse": 0.018112121149897575
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.478067776073428e-06,
+      "hidden_mse": 0.0009599732925340697,
+      "logit_mse": 0.01722247526049614,
+      "basis_bits": 4241408,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 5483200,
+      "coefficient_count": 19403,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.756,
+        "teacher_agreement": 0.884,
+        "logit_mse": 0.16277103126049042
+      },
+      "T4": {
+        "accuracy": 0.756,
+        "teacher_agreement": 0.904,
+        "logit_mse": 0.03464807569980621
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.4265267262605945e-06,
+      "hidden_mse": 0.0023030749427267266,
+      "logit_mse": 0.0538288913667202,
+      "basis_bits": 4240384,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 5482176,
+      "coefficient_count": 19403,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.704,
+        "teacher_agreement": 0.81,
+        "logit_mse": 0.09534326195716858
+      },
+      "T4": {
+        "accuracy": 0.672,
+        "teacher_agreement": 0.756,
+        "logit_mse": 0.07145223021507263
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.407238347152044e-06,
+      "hidden_mse": 0.0007882197535122985,
+      "logit_mse": 0.013918616808950901,
+      "basis_bits": 4241408,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 6724992,
+      "coefficient_count": 38806,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.748,
+        "teacher_agreement": 0.864,
+        "logit_mse": 0.15946444869041443
+      },
+      "T4": {
+        "accuracy": 0.758,
+        "teacher_agreement": 0.916,
+        "logit_mse": 0.03116767480969429
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.16661059263764e-06,
+      "hidden_mse": 0.001065529927328417,
+      "logit_mse": 0.023231100291013718,
+      "basis_bits": 4240384,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 6723968,
+      "coefficient_count": 38806,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.732,
+        "teacher_agreement": 0.864,
+        "logit_mse": 0.11809882521629333
+      },
+      "T4": {
+        "accuracy": 0.702,
+        "teacher_agreement": 0.84,
+        "logit_mse": 0.039408039301633835
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.233661691092589e-06,
+      "hidden_mse": 0.0005803229340369275,
+      "logit_mse": 0.009976118803024292,
+      "basis_bits": 4241408,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 9208512,
+      "coefficient_count": 77611,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.734,
+        "teacher_agreement": 0.846,
+        "logit_mse": 0.15137293934822083
+      },
+      "T4": {
+        "accuracy": 0.76,
+        "teacher_agreement": 0.916,
+        "logit_mse": 0.027520708739757538
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 2.87926834346997e-06,
+      "hidden_mse": 0.0003038442892445598,
+      "logit_mse": 0.005952601786702871,
+      "basis_bits": 4240384,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 9207488,
+      "coefficient_count": 77611,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.738,
+        "teacher_agreement": 0.882,
+        "logit_mse": 0.12282735854387283
+      },
+      "T4": {
+        "accuracy": 0.742,
+        "teacher_agreement": 0.888,
+        "logit_mse": 0.018583832308650017
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.7403658170728215e-06,
+      "hidden_mse": 0.0005647282225037308,
+      "logit_mse": 0.00958185363560915,
+      "basis_bits": 8482816,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 9724608,
+      "coefficient_count": 19403,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.732,
+        "teacher_agreement": 0.876,
+        "logit_mse": 0.1639575958251953
+      },
+      "T4": {
+        "accuracy": 0.758,
+        "teacher_agreement": 0.888,
+        "logit_mse": 0.027558114379644394
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.44298340489944e-06,
+      "hidden_mse": 0.0022342156118048346,
+      "logit_mse": 0.052489809691905975,
+      "basis_bits": 8480768,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 9722560,
+      "coefficient_count": 19403,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.698,
+        "teacher_agreement": 0.81,
+        "logit_mse": 0.09914848953485489
+      },
+      "T4": {
+        "accuracy": 0.674,
+        "teacher_agreement": 0.758,
+        "logit_mse": 0.07143546640872955
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.92804107210554e-06,
+      "hidden_mse": 0.0004804601017124469,
+      "logit_mse": 0.007946229539811611,
+      "basis_bits": 8482816,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 10966400,
+      "coefficient_count": 38806,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.726,
+        "teacher_agreement": 0.858,
+        "logit_mse": 0.16116879880428314
+      },
+      "T4": {
+        "accuracy": 0.76,
+        "teacher_agreement": 0.906,
+        "logit_mse": 0.02595509961247444
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.288657578775119e-06,
+      "hidden_mse": 0.0010538476933893688,
+      "logit_mse": 0.023129146546125412,
+      "basis_bits": 8480768,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 10964352,
+      "coefficient_count": 38806,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.714,
+        "teacher_agreement": 0.838,
+        "logit_mse": 0.1239585280418396
+      },
+      "T4": {
+        "accuracy": 0.704,
+        "teacher_agreement": 0.834,
+        "logit_mse": 0.03994714096188545
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.011540198146891e-06,
+      "hidden_mse": 0.0003733472715300893,
+      "logit_mse": 0.006023706868290901,
+      "basis_bits": 8482816,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 13449920,
+      "coefficient_count": 77611,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.714,
+        "teacher_agreement": 0.84,
+        "logit_mse": 0.1602175235748291
+      },
+      "T4": {
+        "accuracy": 0.772,
+        "teacher_agreement": 0.91,
+        "logit_mse": 0.024033518508076668
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.116883928105304e-06,
+      "hidden_mse": 0.0003128663191506755,
+      "logit_mse": 0.006161503028124571,
+      "basis_bits": 8480768,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 13447872,
+      "coefficient_count": 77611,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.734,
+        "teacher_agreement": 0.854,
+        "logit_mse": 0.12537935376167297
+      },
+      "T4": {
+        "accuracy": 0.728,
+        "teacher_agreement": 0.89,
+        "logit_mse": 0.018548212945461273
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.491638815020459e-06,
+      "hidden_mse": 0.00027737658243699346,
+      "logit_mse": 0.0044939760118722916,
+      "basis_bits": 16965632,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 18207424,
+      "coefficient_count": 19403,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.738,
+        "teacher_agreement": 0.858,
+        "logit_mse": 0.1568259447813034
+      },
+      "T4": {
+        "accuracy": 0.766,
+        "teacher_agreement": 0.894,
+        "logit_mse": 0.02071751095354557
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.465721660981638e-06,
+      "hidden_mse": 0.002079798531285672,
+      "logit_mse": 0.04873399809002876,
+      "basis_bits": 16961536,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 18203328,
+      "coefficient_count": 19403,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.694,
+        "teacher_agreement": 0.786,
+        "logit_mse": 0.1117512583732605
+      },
+      "T4": {
+        "accuracy": 0.668,
+        "teacher_agreement": 0.754,
+        "logit_mse": 0.0695730522274971
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.0065218102904553e-06,
+      "hidden_mse": 0.0002526985929249708,
+      "logit_mse": 0.004009379539638758,
+      "basis_bits": 16965632,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 19449216,
+      "coefficient_count": 38806,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.744,
+        "teacher_agreement": 0.868,
+        "logit_mse": 0.15682144463062286
+      },
+      "T4": {
+        "accuracy": 0.766,
+        "teacher_agreement": 0.898,
+        "logit_mse": 0.02107902802526951
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.5020062494534524e-06,
+      "hidden_mse": 0.0010110462931414172,
+      "logit_mse": 0.022258369252085686,
+      "basis_bits": 16961536,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 19445120,
+      "coefficient_count": 38806,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.7,
+        "teacher_agreement": 0.838,
+        "logit_mse": 0.12976562976837158
+      },
+      "T4": {
+        "accuracy": 0.714,
+        "teacher_agreement": 0.84,
+        "logit_mse": 0.03899899125099182
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 2.449807211240378e-06,
+      "hidden_mse": 0.0002152663977510646,
+      "logit_mse": 0.0033516339026391506,
+      "basis_bits": 16965632,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 21932736,
+      "coefficient_count": 77611,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.742,
+        "teacher_agreement": 0.874,
+        "logit_mse": 0.15484601259231567
+      },
+      "T4": {
+        "accuracy": 0.764,
+        "teacher_agreement": 0.904,
+        "logit_mse": 0.02020162157714367
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.5532705842438387e-06,
+      "hidden_mse": 0.0003490107805422617,
+      "logit_mse": 0.007018490694463253,
+      "basis_bits": 16961536,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 21928640,
+      "coefficient_count": 77611,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.732,
+        "teacher_agreement": 0.872,
+        "logit_mse": 0.13091203570365906
+      },
+      "T4": {
+        "accuracy": 0.73,
+        "teacher_agreement": 0.882,
+        "logit_mse": 0.01938270404934883
+      },
+      "dataset": "cora",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.418581743343935e-06,
+      "hidden_mse": 0.001182871343954341,
+      "logit_mse": 0.058265093713998795,
+      "basis_bits": 2120704,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 3362496,
+      "coefficient_count": 19403,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.672,
+        "teacher_agreement": 0.784,
+        "logit_mse": 0.4790395200252533
+      },
+      "T4": {
+        "accuracy": 0.76,
+        "teacher_agreement": 0.888,
+        "logit_mse": 0.10557904839515686
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.927218491868987e-06,
+      "hidden_mse": 0.002053464613914851,
+      "logit_mse": 0.12434837222099304,
+      "basis_bits": 2120192,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 3361984,
+      "coefficient_count": 19403,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.66,
+        "teacher_agreement": 0.764,
+        "logit_mse": 0.41639572381973267
+      },
+      "T4": {
+        "accuracy": 0.73,
+        "teacher_agreement": 0.828,
+        "logit_mse": 0.1416952759027481
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.192482933845405e-06,
+      "hidden_mse": 0.00087375074103704,
+      "logit_mse": 0.041578780859708786,
+      "basis_bits": 2120704,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 4604288,
+      "coefficient_count": 38806,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.668,
+        "teacher_agreement": 0.798,
+        "logit_mse": 0.4236380159854889
+      },
+      "T4": {
+        "accuracy": 0.77,
+        "teacher_agreement": 0.914,
+        "logit_mse": 0.08593703806400299
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.596123159631898e-06,
+      "hidden_mse": 0.0008582473867384545,
+      "logit_mse": 0.047342509031295776,
+      "basis_bits": 2120192,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 4603776,
+      "coefficient_count": 38806,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.686,
+        "teacher_agreement": 0.804,
+        "logit_mse": 0.3555712401866913
+      },
+      "T4": {
+        "accuracy": 0.76,
+        "teacher_agreement": 0.898,
+        "logit_mse": 0.07630863040685654
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.7751876286978593e-06,
+      "hidden_mse": 0.0005450944978224055,
+      "logit_mse": 0.02479293942451477,
+      "basis_bits": 2120704,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 7087808,
+      "coefficient_count": 77611,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.684,
+        "teacher_agreement": 0.822,
+        "logit_mse": 0.38978397846221924
+      },
+      "T4": {
+        "accuracy": 0.774,
+        "teacher_agreement": 0.908,
+        "logit_mse": 0.07364048808813095
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.0029326920100717e-06,
+      "hidden_mse": 0.00021448418204636803,
+      "logit_mse": 0.010377286933362484,
+      "basis_bits": 2120192,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 7087296,
+      "coefficient_count": 77611,
+      "dimension_compression": 58.56924655880222,
+      "T2": {
+        "accuracy": 0.694,
+        "teacher_agreement": 0.828,
+        "logit_mse": 0.32562360167503357
+      },
+      "T4": {
+        "accuracy": 0.772,
+        "teacher_agreement": 0.908,
+        "logit_mse": 0.04769055172801018
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.957543100326382e-06,
+      "hidden_mse": 0.0008612372943009385,
+      "logit_mse": 0.04000910371541977,
+      "basis_bits": 4241408,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 5483200,
+      "coefficient_count": 19403,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.708,
+        "teacher_agreement": 0.828,
+        "logit_mse": 0.42680656909942627
+      },
+      "T4": {
+        "accuracy": 0.78,
+        "teacher_agreement": 0.912,
+        "logit_mse": 0.08921210467815399
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.943588570279353e-06,
+      "hidden_mse": 0.0020273036379866408,
+      "logit_mse": 0.12196913361549377,
+      "basis_bits": 4240384,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 5482176,
+      "coefficient_count": 19403,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.642,
+        "teacher_agreement": 0.734,
+        "logit_mse": 0.42471495270729065
+      },
+      "T4": {
+        "accuracy": 0.712,
+        "teacher_agreement": 0.812,
+        "logit_mse": 0.13759064674377441
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.914851043464238e-06,
+      "hidden_mse": 0.0006808913620158291,
+      "logit_mse": 0.030858654528856277,
+      "basis_bits": 4241408,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 6724992,
+      "coefficient_count": 38806,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.708,
+        "teacher_agreement": 0.834,
+        "logit_mse": 0.4011116623878479
+      },
+      "T4": {
+        "accuracy": 0.786,
+        "teacher_agreement": 0.922,
+        "logit_mse": 0.07925978302955627
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.655961315206738e-06,
+      "hidden_mse": 0.0008543820540166401,
+      "logit_mse": 0.04689614474773407,
+      "basis_bits": 4240384,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 6723968,
+      "coefficient_count": 38806,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.68,
+        "teacher_agreement": 0.794,
+        "logit_mse": 0.3617487847805023
+      },
+      "T4": {
+        "accuracy": 0.758,
+        "teacher_agreement": 0.884,
+        "logit_mse": 0.07486166059970856
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.6773791013896072e-06,
+      "hidden_mse": 0.00045996946274670365,
+      "logit_mse": 0.01988947205245495,
+      "basis_bits": 4241408,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 9208512,
+      "coefficient_count": 77611,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.716,
+        "teacher_agreement": 0.84,
+        "logit_mse": 0.37750300765037537
+      },
+      "T4": {
+        "accuracy": 0.786,
+        "teacher_agreement": 0.92,
+        "logit_mse": 0.07134048640727997
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.1020375594801623e-06,
+      "hidden_mse": 0.00021882406733687114,
+      "logit_mse": 0.010712787508964539,
+      "basis_bits": 4240384,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 9207488,
+      "coefficient_count": 77611,
+      "dimension_compression": 29.28462327940111,
+      "T2": {
+        "accuracy": 0.692,
+        "teacher_agreement": 0.826,
+        "logit_mse": 0.3264828026294708
+      },
+      "T4": {
+        "accuracy": 0.776,
+        "teacher_agreement": 0.91,
+        "logit_mse": 0.049992114305496216
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.122013070506757e-06,
+      "hidden_mse": 0.0004914129578927281,
+      "logit_mse": 0.02098720148205757,
+      "basis_bits": 8482816,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 9724608,
+      "coefficient_count": 19403,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.708,
+        "teacher_agreement": 0.826,
+        "logit_mse": 0.3804680407047272
+      },
+      "T4": {
+        "accuracy": 0.782,
+        "teacher_agreement": 0.924,
+        "logit_mse": 0.07222217321395874
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.937297666454294e-06,
+      "hidden_mse": 0.0019688208212629323,
+      "logit_mse": 0.12017753720283508,
+      "basis_bits": 8480768,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 9722560,
+      "coefficient_count": 19403,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.636,
+        "teacher_agreement": 0.734,
+        "logit_mse": 0.41861245036125183
+      },
+      "T4": {
+        "accuracy": 0.726,
+        "teacher_agreement": 0.818,
+        "logit_mse": 0.13566628098487854
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.3229570462463225e-06,
+      "hidden_mse": 0.0004048079713582887,
+      "logit_mse": 0.016639288514852524,
+      "basis_bits": 8482816,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 10966400,
+      "coefficient_count": 38806,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.714,
+        "teacher_agreement": 0.848,
+        "logit_mse": 0.3792027533054352
+      },
+      "T4": {
+        "accuracy": 0.784,
+        "teacher_agreement": 0.912,
+        "logit_mse": 0.0678335502743721
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.7491879489094295e-06,
+      "hidden_mse": 0.0008344795742697879,
+      "logit_mse": 0.046647537499666214,
+      "basis_bits": 8480768,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 10964352,
+      "coefficient_count": 38806,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.682,
+        "teacher_agreement": 0.804,
+        "logit_mse": 0.36823660135269165
+      },
+      "T4": {
+        "accuracy": 0.764,
+        "teacher_agreement": 0.9,
+        "logit_mse": 0.07342696189880371
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.3773511985506843e-06,
+      "hidden_mse": 0.0003030342151240466,
+      "logit_mse": 0.012149909511208534,
+      "basis_bits": 8482816,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 13449920,
+      "coefficient_count": 77611,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.706,
+        "teacher_agreement": 0.838,
+        "logit_mse": 0.36539390683174133
+      },
+      "T4": {
+        "accuracy": 0.782,
+        "teacher_agreement": 0.934,
+        "logit_mse": 0.06580924987792969
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.3531207907593065e-06,
+      "hidden_mse": 0.00023082965315998285,
+      "logit_mse": 0.011536492966115475,
+      "basis_bits": 8480768,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 13447872,
+      "coefficient_count": 77611,
+      "dimension_compression": 14.642311639700555,
+      "T2": {
+        "accuracy": 0.692,
+        "teacher_agreement": 0.82,
+        "logit_mse": 0.3254232108592987
+      },
+      "T4": {
+        "accuracy": 0.782,
+        "teacher_agreement": 0.922,
+        "logit_mse": 0.04988184943795204
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.7120176703333076e-06,
+      "hidden_mse": 0.0002442878488508589,
+      "logit_mse": 0.009937046095728874,
+      "basis_bits": 16965632,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 18207424,
+      "coefficient_count": 19403,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.704,
+        "teacher_agreement": 0.844,
+        "logit_mse": 0.36318546533584595
+      },
+      "T4": {
+        "accuracy": 0.788,
+        "teacher_agreement": 0.92,
+        "logit_mse": 0.06335959583520889
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 7.911603789221399e-06,
+      "hidden_mse": 0.0018595345460071526,
+      "logit_mse": 0.11218475550413132,
+      "basis_bits": 16961536,
+      "residual_target_bits": 1241792,
+      "residual_payload_bits": 1241792,
+      "residual_padded_bits": 1241792,
+      "total_padded_bits": 18203328,
+      "coefficient_count": 19403,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.64,
+        "teacher_agreement": 0.762,
+        "logit_mse": 0.38661181926727295
+      },
+      "T4": {
+        "accuracy": 0.74,
+        "teacher_agreement": 0.834,
+        "logit_mse": 0.1291274130344391
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.2478359514908866e-06,
+      "hidden_mse": 0.00021554422076901773,
+      "logit_mse": 0.008469205349683762,
+      "basis_bits": 16965632,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 19449216,
+      "coefficient_count": 38806,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.696,
+        "teacher_agreement": 0.836,
+        "logit_mse": 0.35853180289268494
+      },
+      "T4": {
+        "accuracy": 0.786,
+        "teacher_agreement": 0.924,
+        "logit_mse": 0.06287087500095367
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.9240056830947185e-06,
+      "hidden_mse": 0.000823606050834229,
+      "logit_mse": 0.04563307389616966,
+      "basis_bits": 16961536,
+      "residual_target_bits": 2483584,
+      "residual_payload_bits": 2483584,
+      "residual_padded_bits": 2483584,
+      "total_padded_bits": 19445120,
+      "coefficient_count": 38806,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.674,
+        "teacher_agreement": 0.792,
+        "logit_mse": 0.3677833378314972
+      },
+      "T4": {
+        "accuracy": 0.756,
+        "teacher_agreement": 0.878,
+        "logit_mse": 0.07610521465539932
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 2.6727615274516244e-06,
+      "hidden_mse": 0.00017852083261059654,
+      "logit_mse": 0.006746096070855856,
+      "basis_bits": 16965632,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 21932736,
+      "coefficient_count": 77611,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.708,
+        "teacher_agreement": 0.838,
+        "logit_mse": 0.3475590944290161
+      },
+      "T4": {
+        "accuracy": 0.796,
+        "teacher_agreement": 0.924,
+        "logit_mse": 0.06196020916104317
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.820953221995961e-06,
+      "hidden_mse": 0.00028094531791171063,
+      "logit_mse": 0.014032009989023209,
+      "basis_bits": 16961536,
+      "residual_target_bits": 4967104,
+      "residual_payload_bits": 4967104,
+      "residual_padded_bits": 4967104,
+      "total_padded_bits": 21928640,
+      "coefficient_count": 77611,
+      "dimension_compression": 7.3211558198502775,
+      "T2": {
+        "accuracy": 0.7,
+        "teacher_agreement": 0.83,
+        "logit_mse": 0.3553040623664856
+      },
+      "T4": {
+        "accuracy": 0.776,
+        "teacher_agreement": 0.908,
+        "logit_mse": 0.052922021597623825
+      },
+      "dataset": "cora",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00012291777771177777,
+      "hidden_mse": 0.028292660791102434,
+      "logit_mse": 0.35317525267601013,
+      "basis_bits": 2356736,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 4050816,
+      "coefficient_count": 26470,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.5171467764060357,
+        "teacher_agreement": 0.6474622770919067,
+        "logit_mse": 0.3512283265590668
+      },
+      "T4": {
+        "accuracy": 0.5034293552812071,
+        "teacher_agreement": 0.6063100137174211,
+        "logit_mse": 0.4163181185722351
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023143504209452556,
+      "hidden_mse": 0.08951524849314774,
+      "logit_mse": 1.7262839078903198,
+      "basis_bits": 2356224,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 4050304,
+      "coefficient_count": 26470,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.31824417009602196,
+        "teacher_agreement": 0.40329218106995884,
+        "logit_mse": 2.007652759552002
+      },
+      "T4": {
+        "accuracy": 0.4170096021947874,
+        "teacher_agreement": 0.5157750342935528,
+        "logit_mse": 2.046072244644165
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 9.117422756100715e-05,
+      "hidden_mse": 0.024456586493295105,
+      "logit_mse": 0.3384818732738495,
+      "basis_bits": 2356736,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 5744896,
+      "coefficient_count": 52940,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.5486968449931413,
+        "teacher_agreement": 0.710562414266118,
+        "logit_mse": 0.25467032194137573
+      },
+      "T4": {
+        "accuracy": 0.5212620027434842,
+        "teacher_agreement": 0.663923182441701,
+        "logit_mse": 0.36839044094085693
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001530892448832969,
+      "hidden_mse": 0.05117944929016114,
+      "logit_mse": 1.068135380744934,
+      "basis_bits": 2356224,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 5744384,
+      "coefficient_count": 52940,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.3662551440329218,
+        "teacher_agreement": 0.45267489711934156,
+        "logit_mse": 1.3918970823287964
+      },
+      "T4": {
+        "accuracy": 0.48559670781893005,
+        "teacher_agreement": 0.6172839506172839,
+        "logit_mse": 1.2614284753799438
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.458551035450835e-05,
+      "hidden_mse": 0.019175334447966645,
+      "logit_mse": 0.2907021641731262,
+      "basis_bits": 2356736,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 9133056,
+      "coefficient_count": 105880,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.5253772290809328,
+        "teacher_agreement": 0.6776406035665294,
+        "logit_mse": 0.22709119319915771
+      },
+      "T4": {
+        "accuracy": 0.5363511659807956,
+        "teacher_agreement": 0.6954732510288066,
+        "logit_mse": 0.3142538070678711
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.42234382906897e-05,
+      "hidden_mse": 0.021853687943844645,
+      "logit_mse": 0.49106040596961975,
+      "basis_bits": 2356224,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 9132544,
+      "coefficient_count": 105880,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.45267489711934156,
+        "teacher_agreement": 0.5651577503429356,
+        "logit_mse": 0.814969539642334
+      },
+      "T4": {
+        "accuracy": 0.5624142661179699,
+        "teacher_agreement": 0.7187928669410151,
+        "logit_mse": 0.647063136100769
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00010873638434608267,
+      "hidden_mse": 0.01878234714219519,
+      "logit_mse": 0.1947374790906906,
+      "basis_bits": 4713472,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 6407552,
+      "coefficient_count": 26470,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.4993141289437586,
+        "teacher_agreement": 0.6337448559670782,
+        "logit_mse": 0.2935066521167755
+      },
+      "T4": {
+        "accuracy": 0.522633744855967,
+        "teacher_agreement": 0.6433470507544582,
+        "logit_mse": 0.31350812315940857
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023120722605170688,
+      "hidden_mse": 0.08766855277795878,
+      "logit_mse": 1.6787381172180176,
+      "basis_bits": 4712448,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 6406528,
+      "coefficient_count": 26470,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.32373113854595337,
+        "teacher_agreement": 0.4046639231824417,
+        "logit_mse": 1.9282569885253906
+      },
+      "T4": {
+        "accuracy": 0.40877914951989025,
+        "teacher_agreement": 0.5130315500685871,
+        "logit_mse": 1.9791158437728882
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.342478152073882e-05,
+      "hidden_mse": 0.0162261765587528,
+      "logit_mse": 0.1833043247461319,
+      "basis_bits": 4713472,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 8101632,
+      "coefficient_count": 52940,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.51440329218107,
+        "teacher_agreement": 0.663923182441701,
+        "logit_mse": 0.2530793845653534
+      },
+      "T4": {
+        "accuracy": 0.5432098765432098,
+        "teacher_agreement": 0.6831275720164609,
+        "logit_mse": 0.2867923676967621
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00015383984713555603,
+      "hidden_mse": 0.049797138960452014,
+      "logit_mse": 1.0346136093139648,
+      "basis_bits": 4712448,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 8100608,
+      "coefficient_count": 52940,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.3662551440329218,
+        "teacher_agreement": 0.46227709190672156,
+        "logit_mse": 1.360628366470337
+      },
+      "T4": {
+        "accuracy": 0.4993141289437586,
+        "teacher_agreement": 0.635116598079561,
+        "logit_mse": 1.2286484241485596
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.079727323873349e-05,
+      "hidden_mse": 0.012689640338876072,
+      "logit_mse": 0.15443971753120422,
+      "basis_bits": 4713472,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 11489792,
+      "coefficient_count": 105880,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.5473251028806584,
+        "teacher_agreement": 0.6968449931412894,
+        "logit_mse": 0.22475150227546692
+      },
+      "T4": {
+        "accuracy": 0.5541838134430727,
+        "teacher_agreement": 0.7311385459533608,
+        "logit_mse": 0.24133789539337158
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.672813816827536e-05,
+      "hidden_mse": 0.021716980639157397,
+      "logit_mse": 0.48565375804901123,
+      "basis_bits": 4712448,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 11488768,
+      "coefficient_count": 105880,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.4458161865569273,
+        "teacher_agreement": 0.5624142661179699,
+        "logit_mse": 0.7932038307189941
+      },
+      "T4": {
+        "accuracy": 0.5569272976680384,
+        "teacher_agreement": 0.7174211248285323,
+        "logit_mse": 0.644936203956604
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.597047346113918e-05,
+      "hidden_mse": 0.011910193094846396,
+      "logit_mse": 0.09953375160694122,
+      "basis_bits": 9426944,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 11121024,
+      "coefficient_count": 26470,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.5185185185185185,
+        "teacher_agreement": 0.6790123456790124,
+        "logit_mse": 0.2559110224246979
+      },
+      "T4": {
+        "accuracy": 0.5582990397805213,
+        "teacher_agreement": 0.7517146776406035,
+        "logit_mse": 0.1844136118888855
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002320493880716574,
+      "hidden_mse": 0.08717589811003282,
+      "logit_mse": 1.668650507926941,
+      "basis_bits": 9424896,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 11118976,
+      "coefficient_count": 26470,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.34156378600823045,
+        "teacher_agreement": 0.4252400548696845,
+        "logit_mse": 1.972590446472168
+      },
+      "T4": {
+        "accuracy": 0.4060356652949246,
+        "teacher_agreement": 0.5102880658436214,
+        "logit_mse": 1.9549036026000977
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.843427782698249e-05,
+      "hidden_mse": 0.010002207639724819,
+      "logit_mse": 0.08915442228317261,
+      "basis_bits": 9426944,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 12815104,
+      "coefficient_count": 52940,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.5034293552812071,
+        "teacher_agreement": 0.6502057613168725,
+        "logit_mse": 0.2270558774471283
+      },
+      "T4": {
+        "accuracy": 0.5582990397805213,
+        "teacher_agreement": 0.7654320987654321,
+        "logit_mse": 0.17438951134681702
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00015686083147878018,
+      "hidden_mse": 0.049374336612230424,
+      "logit_mse": 1.0207529067993164,
+      "basis_bits": 9424896,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 12813056,
+      "coefficient_count": 52940,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.3662551440329218,
+        "teacher_agreement": 0.4499314128943759,
+        "logit_mse": 1.3426692485809326
+      },
+      "T4": {
+        "accuracy": 0.5020576131687243,
+        "teacher_agreement": 0.6378600823045267,
+        "logit_mse": 1.235331416130066
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.163787449866857e-05,
+      "hidden_mse": 0.007720675530147204,
+      "logit_mse": 0.0729571133852005,
+      "basis_bits": 9426944,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 16203264,
+      "coefficient_count": 105880,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.49794238683127573,
+        "teacher_agreement": 0.6598079561042524,
+        "logit_mse": 0.21306785941123962
+      },
+      "T4": {
+        "accuracy": 0.5569272976680384,
+        "teacher_agreement": 0.7777777777777778,
+        "logit_mse": 0.1472363919019699
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 9.205011824503207e-05,
+      "hidden_mse": 0.022051162923424624,
+      "logit_mse": 0.4879346191883087,
+      "basis_bits": 9424896,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 16201216,
+      "coefficient_count": 105880,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.4513031550068587,
+        "teacher_agreement": 0.5637860082304527,
+        "logit_mse": 0.806107223033905
+      },
+      "T4": {
+        "accuracy": 0.5459533607681756,
+        "teacher_agreement": 0.7119341563786008,
+        "logit_mse": 0.6443673968315125
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.916482998842732e-05,
+      "hidden_mse": 0.005356186642213908,
+      "logit_mse": 0.033634353429079056,
+      "basis_bits": 18853888,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 20547968,
+      "coefficient_count": 26470,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.5281207133058985,
+        "teacher_agreement": 0.7119341563786008,
+        "logit_mse": 0.29132500290870667
+      },
+      "T4": {
+        "accuracy": 0.5610425240054869,
+        "teacher_agreement": 0.803840877914952,
+        "logit_mse": 0.1319177895784378
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002302989769505857,
+      "hidden_mse": 0.08229971028436059,
+      "logit_mse": 1.5645352602005005,
+      "basis_bits": 18849792,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 20543872,
+      "coefficient_count": 26470,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.3333333333333333,
+        "teacher_agreement": 0.41289437585733885,
+        "logit_mse": 1.9074596166610718
+      },
+      "T4": {
+        "accuracy": 0.4170096021947874,
+        "teacher_agreement": 0.5308641975308642,
+        "logit_mse": 1.7784191370010376
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.9034431880061666e-05,
+      "hidden_mse": 0.004551339367854143,
+      "logit_mse": 0.02945474348962307,
+      "basis_bits": 18853888,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 22242048,
+      "coefficient_count": 52940,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.5267489711934157,
+        "teacher_agreement": 0.7064471879286695,
+        "logit_mse": 0.26451072096824646
+      },
+      "T4": {
+        "accuracy": 0.5637860082304527,
+        "teacher_agreement": 0.7942386831275721,
+        "logit_mse": 0.12063229084014893
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00016076409081712027,
+      "hidden_mse": 0.04759330309078322,
+      "logit_mse": 0.9751104116439819,
+      "basis_bits": 18849792,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 22237952,
+      "coefficient_count": 52940,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.38271604938271603,
+        "teacher_agreement": 0.47599451303155005,
+        "logit_mse": 1.3381775617599487
+      },
+      "T4": {
+        "accuracy": 0.4924554183813443,
+        "teacher_agreement": 0.6255144032921811,
+        "logit_mse": 1.126060962677002
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.848460359994101e-05,
+      "hidden_mse": 0.003535309411557134,
+      "logit_mse": 0.023159166797995567,
+      "basis_bits": 18853888,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 25630208,
+      "coefficient_count": 105880,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.522633744855967,
+        "teacher_agreement": 0.6872427983539094,
+        "logit_mse": 0.23584070801734924
+      },
+      "T4": {
+        "accuracy": 0.5733882030178327,
+        "teacher_agreement": 0.8244170096021948,
+        "logit_mse": 0.11254638433456421
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00010244178162908804,
+      "hidden_mse": 0.02244384908044549,
+      "logit_mse": 0.492646187543869,
+      "basis_bits": 18849792,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 25626112,
+      "coefficient_count": 105880,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.5061728395061729,
+        "teacher_agreement": 0.6310013717421125,
+        "logit_mse": 0.8416106104850769
+      },
+      "T4": {
+        "accuracy": 0.5294924554183813,
+        "teacher_agreement": 0.6927297668038409,
+        "logit_mse": 0.6413664817810059
+      },
+      "dataset": "chameleon",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001244095632366831,
+      "hidden_mse": 0.02575745589193702,
+      "logit_mse": 0.5177836418151855,
+      "basis_bits": 2356736,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 4050816,
+      "coefficient_count": 26470,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.47050754458161864,
+        "teacher_agreement": 0.6035665294924554,
+        "logit_mse": 0.7347960472106934
+      },
+      "T4": {
+        "accuracy": 0.5404663923182441,
+        "teacher_agreement": 0.6803840877914952,
+        "logit_mse": 0.6407233476638794
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023277875708519074,
+      "hidden_mse": 0.07320357243143619,
+      "logit_mse": 2.5885331630706787,
+      "basis_bits": 2356224,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 4050304,
+      "coefficient_count": 26470,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.3347050754458162,
+        "teacher_agreement": 0.42112482853223593,
+        "logit_mse": 4.325160980224609
+      },
+      "T4": {
+        "accuracy": 0.3443072702331962,
+        "teacher_agreement": 0.448559670781893,
+        "logit_mse": 2.813598394393921
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 9.229192882854565e-05,
+      "hidden_mse": 0.021708466060598404,
+      "logit_mse": 0.49057868123054504,
+      "basis_bits": 2356736,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 5744896,
+      "coefficient_count": 52940,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.47462277091906724,
+        "teacher_agreement": 0.6008230452674898,
+        "logit_mse": 0.585922360420227
+      },
+      "T4": {
+        "accuracy": 0.5569272976680384,
+        "teacher_agreement": 0.6817558299039781,
+        "logit_mse": 0.5176876187324524
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001569631086771465,
+      "hidden_mse": 0.043722162556851435,
+      "logit_mse": 1.6333321332931519,
+      "basis_bits": 2356224,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 5744384,
+      "coefficient_count": 52940,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.35253772290809327,
+        "teacher_agreement": 0.4540466392318244,
+        "logit_mse": 2.8575844764709473
+      },
+      "T4": {
+        "accuracy": 0.4348422496570645,
+        "teacher_agreement": 0.5459533607681756,
+        "logit_mse": 1.9486098289489746
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.557045477268174e-05,
+      "hidden_mse": 0.016476872999559855,
+      "logit_mse": 0.4036604166030884,
+      "basis_bits": 2356736,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 9133056,
+      "coefficient_count": 105880,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.4842249657064472,
+        "teacher_agreement": 0.6035665294924554,
+        "logit_mse": 0.48936954140663147
+      },
+      "T4": {
+        "accuracy": 0.5555555555555556,
+        "teacher_agreement": 0.7146776406035665,
+        "logit_mse": 0.3874660134315491
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.680728952569591e-05,
+      "hidden_mse": 0.018552856202911496,
+      "logit_mse": 0.7364581823348999,
+      "basis_bits": 2356224,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 9132544,
+      "coefficient_count": 105880,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.4444444444444444,
+        "teacher_agreement": 0.5445816186556928,
+        "logit_mse": 1.6788185834884644
+      },
+      "T4": {
+        "accuracy": 0.5212620027434842,
+        "teacher_agreement": 0.6858710562414266,
+        "logit_mse": 1.0401222705841064
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00011007320602446367,
+      "hidden_mse": 0.01785980511854789,
+      "logit_mse": 0.2886084318161011,
+      "basis_bits": 4713472,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 6407552,
+      "coefficient_count": 26470,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.4513031550068587,
+        "teacher_agreement": 0.5775034293552812,
+        "logit_mse": 0.6103787422180176
+      },
+      "T4": {
+        "accuracy": 0.5843621399176955,
+        "teacher_agreement": 0.766803840877915,
+        "logit_mse": 0.39821553230285645
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023213009549367898,
+      "hidden_mse": 0.07193321123572015,
+      "logit_mse": 2.538214683532715,
+      "basis_bits": 4712448,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 6406528,
+      "coefficient_count": 26470,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.3333333333333333,
+        "teacher_agreement": 0.41838134430727025,
+        "logit_mse": 4.3091206550598145
+      },
+      "T4": {
+        "accuracy": 0.35802469135802467,
+        "teacher_agreement": 0.46227709190672156,
+        "logit_mse": 2.797717332839966
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.43054473199756e-05,
+      "hidden_mse": 0.01510834971110834,
+      "logit_mse": 0.26896655559539795,
+      "basis_bits": 4713472,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 8101632,
+      "coefficient_count": 52940,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.4718792866941015,
+        "teacher_agreement": 0.5871056241426612,
+        "logit_mse": 0.5510144829750061
+      },
+      "T4": {
+        "accuracy": 0.5802469135802469,
+        "teacher_agreement": 0.7928669410150891,
+        "logit_mse": 0.3204852342605591
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001581320127445103,
+      "hidden_mse": 0.04311386672158683,
+      "logit_mse": 1.6074327230453491,
+      "basis_bits": 4712448,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 8100608,
+      "coefficient_count": 52940,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.345679012345679,
+        "teacher_agreement": 0.4499314128943759,
+        "logit_mse": 3.002851963043213
+      },
+      "T4": {
+        "accuracy": 0.4224965706447188,
+        "teacher_agreement": 0.541838134430727,
+        "logit_mse": 1.9227813482284546
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.131885690056262e-05,
+      "hidden_mse": 0.011516130213710467,
+      "logit_mse": 0.2168131321668625,
+      "basis_bits": 4713472,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 11489792,
+      "coefficient_count": 105880,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.49382716049382713,
+        "teacher_agreement": 0.6227709190672154,
+        "logit_mse": 0.5147950053215027
+      },
+      "T4": {
+        "accuracy": 0.5871056241426612,
+        "teacher_agreement": 0.8065843621399177,
+        "logit_mse": 0.24922806024551392
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.933763701624988e-05,
+      "hidden_mse": 0.01860493834896523,
+      "logit_mse": 0.7367270588874817,
+      "basis_bits": 4712448,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 11488768,
+      "coefficient_count": 105880,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.44718792866941015,
+        "teacher_agreement": 0.5459533607681756,
+        "logit_mse": 1.6486977338790894
+      },
+      "T4": {
+        "accuracy": 0.5171467764060357,
+        "teacher_agreement": 0.6831275720164609,
+        "logit_mse": 1.0413446426391602
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.664417737630984e-05,
+      "hidden_mse": 0.011554198605654804,
+      "logit_mse": 0.14316903054714203,
+      "basis_bits": 9426944,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 11121024,
+      "coefficient_count": 26470,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.46364883401920437,
+        "teacher_agreement": 0.5994513031550068,
+        "logit_mse": 0.6258894801139832
+      },
+      "T4": {
+        "accuracy": 0.551440329218107,
+        "teacher_agreement": 0.7791495198902606,
+        "logit_mse": 0.24176394939422607
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023326316753936445,
+      "hidden_mse": 0.07143956913949712,
+      "logit_mse": 2.5171875953674316,
+      "basis_bits": 9424896,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 11118976,
+      "coefficient_count": 26470,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.30315500685871055,
+        "teacher_agreement": 0.3895747599451303,
+        "logit_mse": 4.06234884262085
+      },
+      "T4": {
+        "accuracy": 0.2908093278463649,
+        "teacher_agreement": 0.40329218106995884,
+        "logit_mse": 2.797356605529785
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.904110909872619e-05,
+      "hidden_mse": 0.009544026860222377,
+      "logit_mse": 0.12665337324142456,
+      "basis_bits": 9426944,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 12815104,
+      "coefficient_count": 52940,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.47462277091906724,
+        "teacher_agreement": 0.6159122085048011,
+        "logit_mse": 0.579452395439148
+      },
+      "T4": {
+        "accuracy": 0.522633744855967,
+        "teacher_agreement": 0.7736625514403292,
+        "logit_mse": 0.22870300710201263
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00016050244539130405,
+      "hidden_mse": 0.042237088265498844,
+      "logit_mse": 1.5624481439590454,
+      "basis_bits": 9424896,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 12813056,
+      "coefficient_count": 52940,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.37585733882030176,
+        "teacher_agreement": 0.4663923182441701,
+        "logit_mse": 2.7376034259796143
+      },
+      "T4": {
+        "accuracy": 0.44718792866941015,
+        "teacher_agreement": 0.5720164609053497,
+        "logit_mse": 1.9304909706115723
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.2026150427010806e-05,
+      "hidden_mse": 0.0072101831821188,
+      "logit_mse": 0.09976387768983841,
+      "basis_bits": 9426944,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 16203264,
+      "coefficient_count": 105880,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.4718792866941015,
+        "teacher_agreement": 0.6227709190672154,
+        "logit_mse": 0.5169687867164612
+      },
+      "T4": {
+        "accuracy": 0.578875171467764,
+        "teacher_agreement": 0.8491083676268861,
+        "logit_mse": 0.17372681200504303
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 9.506757017342863e-05,
+      "hidden_mse": 0.018989683006041667,
+      "logit_mse": 0.7436119914054871,
+      "basis_bits": 9424896,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 16201216,
+      "coefficient_count": 105880,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.42935528120713307,
+        "teacher_agreement": 0.532235939643347,
+        "logit_mse": 1.726902723312378
+      },
+      "T4": {
+        "accuracy": 0.5212620027434842,
+        "teacher_agreement": 0.6817558299039781,
+        "logit_mse": 1.0554338693618774
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.9518845965093124e-05,
+      "hidden_mse": 0.0054848951249475576,
+      "logit_mse": 0.05104078724980354,
+      "basis_bits": 18853888,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 20547968,
+      "coefficient_count": 26470,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.4773662551440329,
+        "teacher_agreement": 0.6200274348422496,
+        "logit_mse": 0.6212625503540039
+      },
+      "T4": {
+        "accuracy": 0.541838134430727,
+        "teacher_agreement": 0.7777777777777778,
+        "logit_mse": 0.20004937052726746
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023168447393229173,
+      "hidden_mse": 0.06748488518623079,
+      "logit_mse": 2.373835563659668,
+      "basis_bits": 18849792,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 20543872,
+      "coefficient_count": 26470,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.345679012345679,
+        "teacher_agreement": 0.4375857338820302,
+        "logit_mse": 4.255667209625244
+      },
+      "T4": {
+        "accuracy": 0.39231824417009603,
+        "teacher_agreement": 0.4993141289437586,
+        "logit_mse": 2.7515881061553955
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.932376901115787e-05,
+      "hidden_mse": 0.0045832541896988965,
+      "logit_mse": 0.0437019057571888,
+      "basis_bits": 18853888,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 22242048,
+      "coefficient_count": 52940,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.4718792866941015,
+        "teacher_agreement": 0.6200274348422496,
+        "logit_mse": 0.5927545428276062
+      },
+      "T4": {
+        "accuracy": 0.5692729766803841,
+        "teacher_agreement": 0.8161865569272977,
+        "logit_mse": 0.18229049444198608
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00016471376672117045,
+      "hidden_mse": 0.04075170034552085,
+      "logit_mse": 1.5122544765472412,
+      "basis_bits": 18849792,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 22237952,
+      "coefficient_count": 52940,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.37997256515775035,
+        "teacher_agreement": 0.4691358024691358,
+        "logit_mse": 2.7345340251922607
+      },
+      "T4": {
+        "accuracy": 0.4773662551440329,
+        "teacher_agreement": 0.6063100137174211,
+        "logit_mse": 1.8656649589538574
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.872451214571158e-05,
+      "hidden_mse": 0.003479668233389114,
+      "logit_mse": 0.033747006207704544,
+      "basis_bits": 18853888,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 25630208,
+      "coefficient_count": 105880,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.4691358024691358,
+        "teacher_agreement": 0.6255144032921811,
+        "logit_mse": 0.5768222212791443
+      },
+      "T4": {
+        "accuracy": 0.5692729766803841,
+        "teacher_agreement": 0.8244170096021948,
+        "logit_mse": 0.1628146916627884
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00010568152109359513,
+      "hidden_mse": 0.019400494386697383,
+      "logit_mse": 0.761404275894165,
+      "basis_bits": 18849792,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 25626112,
+      "coefficient_count": 105880,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.45816186556927296,
+        "teacher_agreement": 0.5473251028806584,
+        "logit_mse": 1.5920565128326416
+      },
+      "T4": {
+        "accuracy": 0.5349794238683128,
+        "teacher_agreement": 0.6995884773662552,
+        "logit_mse": 1.0761996507644653
+      },
+      "dataset": "chameleon",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001246199958028369,
+      "hidden_mse": 0.02527428044268916,
+      "logit_mse": 0.4709383249282837,
+      "basis_bits": 2356736,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 4050816,
+      "coefficient_count": 26470,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.5089163237311386,
+        "teacher_agreement": 0.6392318244170097,
+        "logit_mse": 0.47130072116851807
+      },
+      "T4": {
+        "accuracy": 0.51440329218107,
+        "teacher_agreement": 0.6529492455418381,
+        "logit_mse": 0.5781417489051819
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023598756366546966,
+      "hidden_mse": 0.07934850817198062,
+      "logit_mse": 2.4648630619049072,
+      "basis_bits": 2356224,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 4050304,
+      "coefficient_count": 26470,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.3607681755829904,
+        "teacher_agreement": 0.4732510288065844,
+        "logit_mse": 2.822482109069824
+      },
+      "T4": {
+        "accuracy": 0.41289437585733885,
+        "teacher_agreement": 0.5377229080932785,
+        "logit_mse": 2.973844289779663
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 9.256174909783907e-05,
+      "hidden_mse": 0.02174936737541163,
+      "logit_mse": 0.4507741332054138,
+      "basis_bits": 2356736,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 5744896,
+      "coefficient_count": 52940,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.5432098765432098,
+        "teacher_agreement": 0.691358024691358,
+        "logit_mse": 0.39008426666259766
+      },
+      "T4": {
+        "accuracy": 0.5185185185185185,
+        "teacher_agreement": 0.6858710562414266,
+        "logit_mse": 0.4973456561565399
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001598849635819437,
+      "hidden_mse": 0.04795838840138037,
+      "logit_mse": 1.5541316270828247,
+      "basis_bits": 2356224,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 5744384,
+      "coefficient_count": 52940,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.37448559670781895,
+        "teacher_agreement": 0.5061728395061729,
+        "logit_mse": 2.1329269409179688
+      },
+      "T4": {
+        "accuracy": 0.46502057613168724,
+        "teacher_agreement": 0.6200274348422496,
+        "logit_mse": 1.9579724073410034
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.573720414759031e-05,
+      "hidden_mse": 0.016819928649802775,
+      "logit_mse": 0.3783048391342163,
+      "basis_bits": 2356736,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 9133056,
+      "coefficient_count": 105880,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.5541838134430727,
+        "teacher_agreement": 0.7146776406035665,
+        "logit_mse": 0.33078810572624207
+      },
+      "T4": {
+        "accuracy": 0.5390946502057613,
+        "teacher_agreement": 0.7242798353909465,
+        "logit_mse": 0.3953505754470825
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.83150555924238e-05,
+      "hidden_mse": 0.021286855061847534,
+      "logit_mse": 0.7285332679748535,
+      "basis_bits": 2356224,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 9132544,
+      "coefficient_count": 105880,
+      "dimension_compression": 71.89842731421122,
+      "T2": {
+        "accuracy": 0.49794238683127573,
+        "teacher_agreement": 0.6159122085048011,
+        "logit_mse": 1.3224570751190186
+      },
+      "T4": {
+        "accuracy": 0.5486968449931413,
+        "teacher_agreement": 0.7160493827160493,
+        "logit_mse": 1.021589756011963
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00011014850807354929,
+      "hidden_mse": 0.017797479659901878,
+      "logit_mse": 0.2755580544471741,
+      "basis_bits": 4713472,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 6407552,
+      "coefficient_count": 26470,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.5651577503429356,
+        "teacher_agreement": 0.7242798353909465,
+        "logit_mse": 0.3981161117553711
+      },
+      "T4": {
+        "accuracy": 0.5486968449931413,
+        "teacher_agreement": 0.7215363511659808,
+        "logit_mse": 0.4070951044559479
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023536178825686358,
+      "hidden_mse": 0.07776838093887571,
+      "logit_mse": 2.405416965484619,
+      "basis_bits": 4712448,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 6406528,
+      "coefficient_count": 26470,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.38545953360768176,
+        "teacher_agreement": 0.49108367626886146,
+        "logit_mse": 2.8547046184539795
+      },
+      "T4": {
+        "accuracy": 0.3991769547325103,
+        "teacher_agreement": 0.5267489711934157,
+        "logit_mse": 2.9955081939697266
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.455720712814498e-05,
+      "hidden_mse": 0.014962088216509007,
+      "logit_mse": 0.25334158539772034,
+      "basis_bits": 4713472,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 8101632,
+      "coefficient_count": 52940,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.5610425240054869,
+        "teacher_agreement": 0.7229080932784636,
+        "logit_mse": 0.3860328793525696
+      },
+      "T4": {
+        "accuracy": 0.5555555555555556,
+        "teacher_agreement": 0.7448559670781894,
+        "logit_mse": 0.3458143472671509
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00016074313874760057,
+      "hidden_mse": 0.046900440476953076,
+      "logit_mse": 1.5144755840301514,
+      "basis_bits": 4712448,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 8100608,
+      "coefficient_count": 52940,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.39780521262002744,
+        "teacher_agreement": 0.5253772290809328,
+        "logit_mse": 2.0991997718811035
+      },
+      "T4": {
+        "accuracy": 0.4869684499314129,
+        "teacher_agreement": 0.6474622770919067,
+        "logit_mse": 1.9307276010513306
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.147573560609806e-05,
+      "hidden_mse": 0.011502111717750734,
+      "logit_mse": 0.20773330330848694,
+      "basis_bits": 4713472,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 11489792,
+      "coefficient_count": 105880,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.5637860082304527,
+        "teacher_agreement": 0.7229080932784636,
+        "logit_mse": 0.3622892200946808
+      },
+      "T4": {
+        "accuracy": 0.5596707818930041,
+        "teacher_agreement": 0.7942386831275721,
+        "logit_mse": 0.2702511250972748
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 9.088294504927708e-05,
+      "hidden_mse": 0.0214030400076288,
+      "logit_mse": 0.7291271090507507,
+      "basis_bits": 4712448,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 11488768,
+      "coefficient_count": 105880,
+      "dimension_compression": 35.94921365710561,
+      "T2": {
+        "accuracy": 0.5102880658436214,
+        "teacher_agreement": 0.6310013717421125,
+        "logit_mse": 1.294198989868164
+      },
+      "T4": {
+        "accuracy": 0.5349794238683128,
+        "teacher_agreement": 0.7023319615912208,
+        "logit_mse": 1.013425350189209
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 8.690456345914883e-05,
+      "hidden_mse": 0.011472148424778504,
+      "logit_mse": 0.13952592015266418,
+      "basis_bits": 9426944,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 11121024,
+      "coefficient_count": 26470,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.5377229080932785,
+        "teacher_agreement": 0.6735253772290809,
+        "logit_mse": 0.4142208397388458
+      },
+      "T4": {
+        "accuracy": 0.5281207133058985,
+        "teacher_agreement": 0.7558299039780522,
+        "logit_mse": 0.3354097604751587
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00023597747281522448,
+      "hidden_mse": 0.07714107384460948,
+      "logit_mse": 2.3763105869293213,
+      "basis_bits": 9424896,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 11118976,
+      "coefficient_count": 26470,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.32373113854595337,
+        "teacher_agreement": 0.42112482853223593,
+        "logit_mse": 2.8955905437469482
+      },
+      "T4": {
+        "accuracy": 0.40877914951989025,
+        "teacher_agreement": 0.5253772290809328,
+        "logit_mse": 2.9313838481903076
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 6.921983999309119e-05,
+      "hidden_mse": 0.009576665812960364,
+      "logit_mse": 0.12375476211309433,
+      "basis_bits": 9426944,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 12815104,
+      "coefficient_count": 52940,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.5404663923182441,
+        "teacher_agreement": 0.6872427983539094,
+        "logit_mse": 0.37316110730171204
+      },
+      "T4": {
+        "accuracy": 0.5555555555555556,
+        "teacher_agreement": 0.7818930041152263,
+        "logit_mse": 0.2928978204727173
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00016347025690632115,
+      "hidden_mse": 0.0461672141465538,
+      "logit_mse": 1.468267560005188,
+      "basis_bits": 9424896,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 12813056,
+      "coefficient_count": 52940,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.40054869684499317,
+        "teacher_agreement": 0.52400548696845,
+        "logit_mse": 2.0889182090759277
+      },
+      "T4": {
+        "accuracy": 0.49108367626886146,
+        "teacher_agreement": 0.644718792866941,
+        "logit_mse": 1.776924967765808
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.207672731755591e-05,
+      "hidden_mse": 0.007163895425459328,
+      "logit_mse": 0.09735560417175293,
+      "basis_bits": 9426944,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 16203264,
+      "coefficient_count": 105880,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.551440329218107,
+        "teacher_agreement": 0.6844993141289437,
+        "logit_mse": 0.3686353266239166
+      },
+      "T4": {
+        "accuracy": 0.5596707818930041,
+        "teacher_agreement": 0.803840877914952,
+        "logit_mse": 0.24576520919799805
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 9.672070009272328e-05,
+      "hidden_mse": 0.021470775606619343,
+      "logit_mse": 0.7129719257354736,
+      "basis_bits": 9424896,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 16201216,
+      "coefficient_count": 105880,
+      "dimension_compression": 17.974606828552805,
+      "T2": {
+        "accuracy": 0.4842249657064472,
+        "teacher_agreement": 0.5994513031550068,
+        "logit_mse": 1.3165771961212158
+      },
+      "T4": {
+        "accuracy": 0.5528120713305898,
+        "teacher_agreement": 0.7215363511659808,
+        "logit_mse": 0.9713980555534363
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 5.964914410257635e-05,
+      "hidden_mse": 0.005524833351048841,
+      "logit_mse": 0.05325735732913017,
+      "basis_bits": 18853888,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 20547968,
+      "coefficient_count": 26470,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.5377229080932785,
+        "teacher_agreement": 0.6968449931412894,
+        "logit_mse": 0.42555031180381775
+      },
+      "T4": {
+        "accuracy": 0.5500685871056241,
+        "teacher_agreement": 0.823045267489712,
+        "logit_mse": 0.2070712298154831
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002346110735635873,
+      "hidden_mse": 0.07284976949444193,
+      "logit_mse": 2.239039421081543,
+      "basis_bits": 18849792,
+      "residual_target_bits": 1694080,
+      "residual_payload_bits": 1694080,
+      "residual_padded_bits": 1694080,
+      "total_padded_bits": 20543872,
+      "coefficient_count": 26470,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.38271604938271603,
+        "teacher_agreement": 0.48559670781893005,
+        "logit_mse": 2.8088419437408447
+      },
+      "T4": {
+        "accuracy": 0.4060356652949246,
+        "teacher_agreement": 0.5212620027434842,
+        "logit_mse": 2.829843759536743
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 4.949557732963399e-05,
+      "hidden_mse": 0.004637599675220167,
+      "logit_mse": 0.04614663124084473,
+      "basis_bits": 18853888,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 22242048,
+      "coefficient_count": 52940,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.5349794238683128,
+        "teacher_agreement": 0.6858710562414266,
+        "logit_mse": 0.4153617322444916
+      },
+      "T4": {
+        "accuracy": 0.551440329218107,
+        "teacher_agreement": 0.8326474622770919,
+        "logit_mse": 0.19562000036239624
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00016752198533201076,
+      "hidden_mse": 0.04427773928412778,
+      "logit_mse": 1.418465256690979,
+      "basis_bits": 18849792,
+      "residual_target_bits": 3388160,
+      "residual_payload_bits": 3388160,
+      "residual_padded_bits": 3388160,
+      "total_padded_bits": 22237952,
+      "coefficient_count": 52940,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.4101508916323731,
+        "teacher_agreement": 0.5267489711934157,
+        "logit_mse": 2.1014485359191895
+      },
+      "T4": {
+        "accuracy": 0.47599451303155005,
+        "teacher_agreement": 0.6186556927297668,
+        "logit_mse": 1.73186457157135
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 3.878230393996473e-05,
+      "hidden_mse": 0.0034972154247960422,
+      "logit_mse": 0.03539519011974335,
+      "basis_bits": 18853888,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 25630208,
+      "coefficient_count": 105880,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.541838134430727,
+        "teacher_agreement": 0.700960219478738,
+        "logit_mse": 0.41330093145370483
+      },
+      "T4": {
+        "accuracy": 0.5747599451303155,
+        "teacher_agreement": 0.8545953360768176,
+        "logit_mse": 0.17097626626491547
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00010736177778506895,
+      "hidden_mse": 0.02204503519803995,
+      "logit_mse": 0.7386528253555298,
+      "basis_bits": 18849792,
+      "residual_target_bits": 6776320,
+      "residual_payload_bits": 6776320,
+      "residual_padded_bits": 6776320,
+      "total_padded_bits": 25626112,
+      "coefficient_count": 105880,
+      "dimension_compression": 8.987303414276402,
+      "T2": {
+        "accuracy": 0.5116598079561042,
+        "teacher_agreement": 0.6213991769547325,
+        "logit_mse": 1.370750069618225
+      },
+      "T4": {
+        "accuracy": 0.5528120713305898,
+        "teacher_agreement": 0.7160493827160493,
+        "logit_mse": 1.0069963932037354
+      },
+      "dataset": "chameleon",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00027279220065647635,
+      "hidden_mse": 0.01898964093203191,
+      "logit_mse": 0.19381055235862732,
+      "basis_bits": 3732992,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 7209728,
+      "coefficient_count": 54324,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.34435096153846156,
+        "teacher_agreement": 0.4885817307692308,
+        "logit_mse": 0.29336804151535034
+      },
+      "T4": {
+        "accuracy": 0.3701923076923077,
+        "teacher_agreement": 0.6700721153846154,
+        "logit_mse": 0.22266694903373718
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0004643129099140114,
+      "hidden_mse": 0.05866459439585792,
+      "logit_mse": 0.9755353331565857,
+      "basis_bits": 3732480,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 7209216,
+      "coefficient_count": 54324,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.2734375,
+        "teacher_agreement": 0.3876201923076923,
+        "logit_mse": 0.9727000594139099
+      },
+      "T4": {
+        "accuracy": 0.2722355769230769,
+        "teacher_agreement": 0.390625,
+        "logit_mse": 1.1617664098739624
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002157390471940131,
+      "hidden_mse": 0.01634901584581905,
+      "logit_mse": 0.18407025933265686,
+      "basis_bits": 3732992,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 10686528,
+      "coefficient_count": 108649,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.359375,
+        "teacher_agreement": 0.5270432692307693,
+        "logit_mse": 0.28256940841674805
+      },
+      "T4": {
+        "accuracy": 0.3659855769230769,
+        "teacher_agreement": 0.6814903846153846,
+        "logit_mse": 0.20372870564460754
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0003458026375402826,
+      "hidden_mse": 0.04352537270257315,
+      "logit_mse": 0.7611931562423706,
+      "basis_bits": 3732480,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 10686016,
+      "coefficient_count": 108649,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.2980769230769231,
+        "teacher_agreement": 0.39903846153846156,
+        "logit_mse": 0.6274440884590149
+      },
+      "T4": {
+        "accuracy": 0.2938701923076923,
+        "teacher_agreement": 0.43569711538461536,
+        "logit_mse": 1.046018123626709
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001571697878604514,
+      "hidden_mse": 0.012856758926077044,
+      "logit_mse": 0.1557713747024536,
+      "basis_bits": 3732992,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 17640064,
+      "coefficient_count": 217298,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.37319711538461536,
+        "teacher_agreement": 0.5739182692307693,
+        "logit_mse": 0.27847766876220703
+      },
+      "T4": {
+        "accuracy": 0.3942307692307692,
+        "teacher_agreement": 0.7355769230769231,
+        "logit_mse": 0.1675596684217453
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021327689000696476,
+      "hidden_mse": 0.028313762917133396,
+      "logit_mse": 0.5467495322227478,
+      "basis_bits": 3732480,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 17639552,
+      "coefficient_count": 217298,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.31310096153846156,
+        "teacher_agreement": 0.4969951923076923,
+        "logit_mse": 0.4516235888004303
+      },
+      "T4": {
+        "accuracy": 0.32992788461538464,
+        "teacher_agreement": 0.5048076923076923,
+        "logit_mse": 0.806915283203125
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00025209189665797283,
+      "hidden_mse": 0.016724838533782278,
+      "logit_mse": 0.15596413612365723,
+      "basis_bits": 7465984,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 10942720,
+      "coefficient_count": 54324,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.35336538461538464,
+        "teacher_agreement": 0.4957932692307692,
+        "logit_mse": 0.29594138264656067
+      },
+      "T4": {
+        "accuracy": 0.36959134615384615,
+        "teacher_agreement": 0.6838942307692307,
+        "logit_mse": 0.18570809066295624
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00046104619281326156,
+      "hidden_mse": 0.05832476976227706,
+      "logit_mse": 0.9859873652458191,
+      "basis_bits": 7464960,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 10941696,
+      "coefficient_count": 54324,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.27283653846153844,
+        "teacher_agreement": 0.3792067307692308,
+        "logit_mse": 0.9431875348091125
+      },
+      "T4": {
+        "accuracy": 0.2704326923076923,
+        "teacher_agreement": 0.3876201923076923,
+        "logit_mse": 1.185044527053833
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00020272208667514752,
+      "hidden_mse": 0.014164126355478306,
+      "logit_mse": 0.14548955857753754,
+      "basis_bits": 7465984,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 14419520,
+      "coefficient_count": 108649,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.3629807692307692,
+        "teacher_agreement": 0.5216346153846154,
+        "logit_mse": 0.28339141607284546
+      },
+      "T4": {
+        "accuracy": 0.39603365384615385,
+        "teacher_agreement": 0.7241586538461539,
+        "logit_mse": 0.1563936173915863
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0003446663352737802,
+      "hidden_mse": 0.043101114062367475,
+      "logit_mse": 0.7675229907035828,
+      "basis_bits": 7464960,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 14418496,
+      "coefficient_count": 108649,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.2926682692307692,
+        "teacher_agreement": 0.3942307692307692,
+        "logit_mse": 0.7130076289176941
+      },
+      "T4": {
+        "accuracy": 0.2926682692307692,
+        "teacher_agreement": 0.4332932692307692,
+        "logit_mse": 1.0491493940353394
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00014962150316941305,
+      "hidden_mse": 0.011046824381817371,
+      "logit_mse": 0.12085360288619995,
+      "basis_bits": 7465984,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 21373056,
+      "coefficient_count": 217298,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.3737980769230769,
+        "teacher_agreement": 0.5709134615384616,
+        "logit_mse": 0.246230348944664
+      },
+      "T4": {
+        "accuracy": 0.3972355769230769,
+        "teacher_agreement": 0.7524038461538461,
+        "logit_mse": 0.11786357313394547
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021463799946285387,
+      "hidden_mse": 0.028092157445069627,
+      "logit_mse": 0.5488969683647156,
+      "basis_bits": 7464960,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 21372032,
+      "coefficient_count": 217298,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.31430288461538464,
+        "teacher_agreement": 0.4891826923076923,
+        "logit_mse": 0.4543597102165222
+      },
+      "T4": {
+        "accuracy": 0.3269230769230769,
+        "teacher_agreement": 0.4969951923076923,
+        "logit_mse": 0.8113864660263062
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00022154653108124694,
+      "hidden_mse": 0.013249306650360039,
+      "logit_mse": 0.10225853323936462,
+      "basis_bits": 14931968,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 18408704,
+      "coefficient_count": 54324,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.34435096153846156,
+        "teacher_agreement": 0.5180288461538461,
+        "logit_mse": 0.29118043184280396
+      },
+      "T4": {
+        "accuracy": 0.37740384615384615,
+        "teacher_agreement": 0.7235576923076923,
+        "logit_mse": 0.14048883318901062
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00045931257856087805,
+      "hidden_mse": 0.058130430742312285,
+      "logit_mse": 0.9764152765274048,
+      "basis_bits": 14929920,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 18406656,
+      "coefficient_count": 54324,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.2764423076923077,
+        "teacher_agreement": 0.3936298076923077,
+        "logit_mse": 0.9736651182174683
+      },
+      "T4": {
+        "accuracy": 0.2776442307692308,
+        "teacher_agreement": 0.40024038461538464,
+        "logit_mse": 1.1563090085983276
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00018236712765616871,
+      "hidden_mse": 0.011184749841646578,
+      "logit_mse": 0.09256694465875626,
+      "basis_bits": 14931968,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 21885504,
+      "coefficient_count": 108649,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.3551682692307692,
+        "teacher_agreement": 0.5438701923076923,
+        "logit_mse": 0.26882174611091614
+      },
+      "T4": {
+        "accuracy": 0.38341346153846156,
+        "teacher_agreement": 0.7319711538461539,
+        "logit_mse": 0.119235098361969
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00034575904941286004,
+      "hidden_mse": 0.04286668222450905,
+      "logit_mse": 0.7574841976165771,
+      "basis_bits": 14929920,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 21883456,
+      "coefficient_count": 108649,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.2938701923076923,
+        "teacher_agreement": 0.44591346153846156,
+        "logit_mse": 0.5470788478851318
+      },
+      "T4": {
+        "accuracy": 0.29447115384615385,
+        "teacher_agreement": 0.44290865384615385,
+        "logit_mse": 1.0796585083007812
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001384377097240556,
+      "hidden_mse": 0.008602488891797419,
+      "logit_mse": 0.07583856582641602,
+      "basis_bits": 14931968,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 28839040,
+      "coefficient_count": 217298,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.35757211538461536,
+        "teacher_agreement": 0.5679086538461539,
+        "logit_mse": 0.24034573137760162
+      },
+      "T4": {
+        "accuracy": 0.39002403846153844,
+        "teacher_agreement": 0.7752403846153846,
+        "logit_mse": 0.08805450797080994
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021936961690973935,
+      "hidden_mse": 0.028106076114094557,
+      "logit_mse": 0.5438224673271179,
+      "basis_bits": 14929920,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 28836992,
+      "coefficient_count": 217298,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.3076923076923077,
+        "teacher_agreement": 0.48978365384615385,
+        "logit_mse": 0.45235365629196167
+      },
+      "T4": {
+        "accuracy": 0.3323317307692308,
+        "teacher_agreement": 0.5024038461538461,
+        "logit_mse": 0.8363978862762451
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00017557501064110938,
+      "hidden_mse": 0.008976526794839991,
+      "logit_mse": 0.05632077157497406,
+      "basis_bits": 29863936,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 33340672,
+      "coefficient_count": 54324,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.35877403846153844,
+        "teacher_agreement": 0.5288461538461539,
+        "logit_mse": 0.2381620556116104
+      },
+      "T4": {
+        "accuracy": 0.3954326923076923,
+        "teacher_agreement": 0.7710336538461539,
+        "logit_mse": 0.09665580838918686
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0004537171065925024,
+      "hidden_mse": 0.05480124675863266,
+      "logit_mse": 0.8894023299217224,
+      "basis_bits": 29859840,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 33336576,
+      "coefficient_count": 54324,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.2782451923076923,
+        "teacher_agreement": 0.3918269230769231,
+        "logit_mse": 0.74576336145401
+      },
+      "T4": {
+        "accuracy": 0.2860576923076923,
+        "teacher_agreement": 0.4020432692307692,
+        "logit_mse": 1.1360987424850464
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00014907201448318392,
+      "hidden_mse": 0.007563294567917931,
+      "logit_mse": 0.04966249316930771,
+      "basis_bits": 29863936,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 36817472,
+      "coefficient_count": 108649,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.3659855769230769,
+        "teacher_agreement": 0.5612980769230769,
+        "logit_mse": 0.22404834628105164
+      },
+      "T4": {
+        "accuracy": 0.4104567307692308,
+        "teacher_agreement": 0.7962740384615384,
+        "logit_mse": 0.08807437866926193
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0003467476162961665,
+      "hidden_mse": 0.040575118214976,
+      "logit_mse": 0.6917831897735596,
+      "basis_bits": 29859840,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 36813376,
+      "coefficient_count": 108649,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.3046875,
+        "teacher_agreement": 0.40384615384615385,
+        "logit_mse": 0.5620160698890686
+      },
+      "T4": {
+        "accuracy": 0.3010817307692308,
+        "teacher_agreement": 0.4465144230769231,
+        "logit_mse": 0.9342328310012817
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00011728054321231156,
+      "hidden_mse": 0.005907512810962523,
+      "logit_mse": 0.04092821478843689,
+      "basis_bits": 29863936,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 43771008,
+      "coefficient_count": 217298,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.3629807692307692,
+        "teacher_agreement": 0.5564903846153846,
+        "logit_mse": 0.22563371062278748
+      },
+      "T4": {
+        "accuracy": 0.4104567307692308,
+        "teacher_agreement": 0.8106971153846154,
+        "logit_mse": 0.07591302692890167
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00022845615599388817,
+      "hidden_mse": 0.026707409995753363,
+      "logit_mse": 0.49703463912010193,
+      "basis_bits": 29859840,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 43766912,
+      "coefficient_count": 217298,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.31009615384615385,
+        "teacher_agreement": 0.4855769230769231,
+        "logit_mse": 0.4300634562969208
+      },
+      "T4": {
+        "accuracy": 0.33353365384615385,
+        "teacher_agreement": 0.5102163461538461,
+        "logit_mse": 0.7420280575752258
+      },
+      "dataset": "squirrel",
+      "seed": 0,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00027362647555861767,
+      "hidden_mse": 0.01935565133634971,
+      "logit_mse": 0.1759270876646042,
+      "basis_bits": 3732992,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 7209728,
+      "coefficient_count": 54324,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.33353365384615385,
+        "teacher_agreement": 0.46875,
+        "logit_mse": 0.26291424036026
+      },
+      "T4": {
+        "accuracy": 0.34375,
+        "teacher_agreement": 0.5793269230769231,
+        "logit_mse": 0.21598170697689056
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0004662986423749628,
+      "hidden_mse": 0.06490724036330496,
+      "logit_mse": 0.8620933890342712,
+      "basis_bits": 3732480,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 7209216,
+      "coefficient_count": 54324,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.2566105769230769,
+        "teacher_agreement": 0.25841346153846156,
+        "logit_mse": 0.9382150769233704
+      },
+      "T4": {
+        "accuracy": 0.2776442307692308,
+        "teacher_agreement": 0.3629807692307692,
+        "logit_mse": 1.0164077281951904
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021685157036824274,
+      "hidden_mse": 0.016902962832363637,
+      "logit_mse": 0.17127114534378052,
+      "basis_bits": 3732992,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 10686528,
+      "coefficient_count": 108649,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.3191105769230769,
+        "teacher_agreement": 0.4723557692307692,
+        "logit_mse": 0.2803584635257721
+      },
+      "T4": {
+        "accuracy": 0.35877403846153844,
+        "teacher_agreement": 0.6225961538461539,
+        "logit_mse": 0.2105282098054886
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00034725291169255477,
+      "hidden_mse": 0.04762307078468437,
+      "logit_mse": 0.6579379439353943,
+      "basis_bits": 3732480,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 10686016,
+      "coefficient_count": 108649,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.2860576923076923,
+        "teacher_agreement": 0.41947115384615385,
+        "logit_mse": 0.4949670732021332
+      },
+      "T4": {
+        "accuracy": 0.2980769230769231,
+        "teacher_agreement": 0.421875,
+        "logit_mse": 0.8793714046478271
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00015796939852603115,
+      "hidden_mse": 0.013532461602455794,
+      "logit_mse": 0.14772728085517883,
+      "basis_bits": 3732992,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 17640064,
+      "coefficient_count": 217298,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.3311298076923077,
+        "teacher_agreement": 0.5024038461538461,
+        "logit_mse": 0.26763176918029785
+      },
+      "T4": {
+        "accuracy": 0.36899038461538464,
+        "teacher_agreement": 0.6508413461538461,
+        "logit_mse": 0.14707791805267334
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021316747127971878,
+      "hidden_mse": 0.03043962689840776,
+      "logit_mse": 0.4698143005371094,
+      "basis_bits": 3732480,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 17639552,
+      "coefficient_count": 217298,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.2932692307692308,
+        "teacher_agreement": 0.35877403846153844,
+        "logit_mse": 0.539557933807373
+      },
+      "T4": {
+        "accuracy": 0.32632211538461536,
+        "teacher_agreement": 0.4933894230769231,
+        "logit_mse": 0.5253866314888
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002527276504667441,
+      "hidden_mse": 0.016990553989152113,
+      "logit_mse": 0.14417149126529694,
+      "basis_bits": 7465984,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 10942720,
+      "coefficient_count": 54324,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.32992788461538464,
+        "teacher_agreement": 0.47415865384615385,
+        "logit_mse": 0.26385703682899475
+      },
+      "T4": {
+        "accuracy": 0.3641826923076923,
+        "teacher_agreement": 0.5949519230769231,
+        "logit_mse": 0.1673925817012787
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0004629672817049417,
+      "hidden_mse": 0.06449196618745079,
+      "logit_mse": 0.8759097456932068,
+      "basis_bits": 7464960,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 10941696,
+      "coefficient_count": 54324,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.2578125,
+        "teacher_agreement": 0.24459134615384615,
+        "logit_mse": 0.9306113719940186
+      },
+      "T4": {
+        "accuracy": 0.2764423076923077,
+        "teacher_agreement": 0.36478365384615385,
+        "logit_mse": 1.0278353691101074
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002035713229411838,
+      "hidden_mse": 0.014634145296100368,
+      "logit_mse": 0.1375107765197754,
+      "basis_bits": 7465984,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 14419520,
+      "coefficient_count": 108649,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.34375,
+        "teacher_agreement": 0.4801682692307692,
+        "logit_mse": 0.24828411638736725
+      },
+      "T4": {
+        "accuracy": 0.3635817307692308,
+        "teacher_agreement": 0.6141826923076923,
+        "logit_mse": 0.14748050272464752
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00034619631745729375,
+      "hidden_mse": 0.04720627081151881,
+      "logit_mse": 0.6659737229347229,
+      "basis_bits": 7464960,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 14418496,
+      "coefficient_count": 108649,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.26382211538461536,
+        "teacher_agreement": 0.32632211538461536,
+        "logit_mse": 0.4806068539619446
+      },
+      "T4": {
+        "accuracy": 0.3004807692307692,
+        "teacher_agreement": 0.4206730769230769,
+        "logit_mse": 0.8339260220527649
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001504772152876649,
+      "hidden_mse": 0.011535516506662194,
+      "logit_mse": 0.11569377779960632,
+      "basis_bits": 7465984,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 21373056,
+      "coefficient_count": 217298,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.33834134615384615,
+        "teacher_agreement": 0.5120192307692307,
+        "logit_mse": 0.24777942895889282
+      },
+      "T4": {
+        "accuracy": 0.37740384615384615,
+        "teacher_agreement": 0.6748798076923077,
+        "logit_mse": 0.10929694026708603
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021448292423990707,
+      "hidden_mse": 0.030266947108783474,
+      "logit_mse": 0.47566843032836914,
+      "basis_bits": 7464960,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 21372032,
+      "coefficient_count": 217298,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.2890625,
+        "teacher_agreement": 0.3503605769230769,
+        "logit_mse": 0.4519607424736023
+      },
+      "T4": {
+        "accuracy": 0.3329326923076923,
+        "teacher_agreement": 0.4885817307692308,
+        "logit_mse": 0.550979733467102
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002222328755955768,
+      "hidden_mse": 0.013088972889158888,
+      "logit_mse": 0.09439481794834137,
+      "basis_bits": 14931968,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 18408704,
+      "coefficient_count": 54324,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.3034855769230769,
+        "teacher_agreement": 0.4621394230769231,
+        "logit_mse": 0.29306817054748535
+      },
+      "T4": {
+        "accuracy": 0.38100961538461536,
+        "teacher_agreement": 0.7493990384615384,
+        "logit_mse": 0.10290802270174026
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00046129917633836934,
+      "hidden_mse": 0.06392517920384454,
+      "logit_mse": 0.8624861836433411,
+      "basis_bits": 14929920,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 18406656,
+      "coefficient_count": 54324,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.28064903846153844,
+        "teacher_agreement": 0.37319711538461536,
+        "logit_mse": 0.612043023109436
+      },
+      "T4": {
+        "accuracy": 0.2800480769230769,
+        "teacher_agreement": 0.36778846153846156,
+        "logit_mse": 1.0435547828674316
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00018308439140990245,
+      "hidden_mse": 0.011183699387520918,
+      "logit_mse": 0.08761999011039734,
+      "basis_bits": 14931968,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 21885504,
+      "coefficient_count": 108649,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.31310096153846156,
+        "teacher_agreement": 0.48197115384615385,
+        "logit_mse": 0.26516130566596985
+      },
+      "T4": {
+        "accuracy": 0.39663461538461536,
+        "teacher_agreement": 0.7776442307692307,
+        "logit_mse": 0.09202633798122406
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0003469563139804204,
+      "hidden_mse": 0.046728234595728044,
+      "logit_mse": 0.6559105515480042,
+      "basis_bits": 14929920,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 21883456,
+      "coefficient_count": 108649,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.2890625,
+        "teacher_agreement": 0.42127403846153844,
+        "logit_mse": 0.4812173843383789
+      },
+      "T4": {
+        "accuracy": 0.3016826923076923,
+        "teacher_agreement": 0.4188701923076923,
+        "logit_mse": 0.8312370777130127
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001390546976766301,
+      "hidden_mse": 0.00873446620085131,
+      "logit_mse": 0.07210657745599747,
+      "basis_bits": 14931968,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 28839040,
+      "coefficient_count": 217298,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.3401442307692308,
+        "teacher_agreement": 0.5030048076923077,
+        "logit_mse": 0.2532111406326294
+      },
+      "T4": {
+        "accuracy": 0.39663461538461536,
+        "teacher_agreement": 0.8052884615384616,
+        "logit_mse": 0.06957938522100449
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021966162894993812,
+      "hidden_mse": 0.03017640430606656,
+      "logit_mse": 0.4726601541042328,
+      "basis_bits": 14929920,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 28836992,
+      "coefficient_count": 217298,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.30528846153846156,
+        "teacher_agreement": 0.4483173076923077,
+        "logit_mse": 0.41082897782325745
+      },
+      "T4": {
+        "accuracy": 0.3191105769230769,
+        "teacher_agreement": 0.47596153846153844,
+        "logit_mse": 0.5504316091537476
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00017615795286746898,
+      "hidden_mse": 0.008574399609227523,
+      "logit_mse": 0.049722906202077866,
+      "basis_bits": 29863936,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 33340672,
+      "coefficient_count": 54324,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.3137019230769231,
+        "teacher_agreement": 0.4795673076923077,
+        "logit_mse": 0.253950834274292
+      },
+      "T4": {
+        "accuracy": 0.38100961538461536,
+        "teacher_agreement": 0.7896634615384616,
+        "logit_mse": 0.06861270219087601
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00045519283516641605,
+      "hidden_mse": 0.060300793356894616,
+      "logit_mse": 0.7764456272125244,
+      "basis_bits": 29859840,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 33336576,
+      "coefficient_count": 54324,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.2692307692307692,
+        "teacher_agreement": 0.3058894230769231,
+        "logit_mse": 0.6308525800704956
+      },
+      "T4": {
+        "accuracy": 0.2878605769230769,
+        "teacher_agreement": 0.3798076923076923,
+        "logit_mse": 0.9838694930076599
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001497012343614444,
+      "hidden_mse": 0.007317233986825444,
+      "logit_mse": 0.04483393207192421,
+      "basis_bits": 29863936,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 36817472,
+      "coefficient_count": 108649,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.31490384615384615,
+        "teacher_agreement": 0.49158653846153844,
+        "logit_mse": 0.24402372539043427
+      },
+      "T4": {
+        "accuracy": 0.3858173076923077,
+        "teacher_agreement": 0.7974759615384616,
+        "logit_mse": 0.058246415108442307
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0003478662202337069,
+      "hidden_mse": 0.044099215822529805,
+      "logit_mse": 0.5909504890441895,
+      "basis_bits": 29859840,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 36813376,
+      "coefficient_count": 108649,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.29927884615384615,
+        "teacher_agreement": 0.4206730769230769,
+        "logit_mse": 0.45458367466926575
+      },
+      "T4": {
+        "accuracy": 0.30709134615384615,
+        "teacher_agreement": 0.4332932692307692,
+        "logit_mse": 0.6684390306472778
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00011783567972008938,
+      "hidden_mse": 0.005760291324002431,
+      "logit_mse": 0.0372578464448452,
+      "basis_bits": 29863936,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 43771008,
+      "coefficient_count": 217298,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.3293269230769231,
+        "teacher_agreement": 0.5240384615384616,
+        "logit_mse": 0.2342328578233719
+      },
+      "T4": {
+        "accuracy": 0.39242788461538464,
+        "teacher_agreement": 0.8215144230769231,
+        "logit_mse": 0.049228593707084656
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00022875006190550663,
+      "hidden_mse": 0.028875933218879244,
+      "logit_mse": 0.42795634269714355,
+      "basis_bits": 29859840,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 43766912,
+      "coefficient_count": 217298,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.3004807692307692,
+        "teacher_agreement": 0.35336538461538464,
+        "logit_mse": 0.47455382347106934
+      },
+      "T4": {
+        "accuracy": 0.33413461538461536,
+        "teacher_agreement": 0.5006009615384616,
+        "logit_mse": 0.49935677647590637
+      },
+      "dataset": "squirrel",
+      "seed": 1,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00027377642733714477,
+      "hidden_mse": 0.0192368524629396,
+      "logit_mse": 0.16111767292022705,
+      "basis_bits": 3732992,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 7209728,
+      "coefficient_count": 54324,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.31850961538461536,
+        "teacher_agreement": 0.5360576923076923,
+        "logit_mse": 0.2659818232059479
+      },
+      "T4": {
+        "accuracy": 0.37319711538461536,
+        "teacher_agreement": 0.6826923076923077,
+        "logit_mse": 0.18431219458580017
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0004643287749451647,
+      "hidden_mse": 0.0662210585422892,
+      "logit_mse": 0.7511579990386963,
+      "basis_bits": 3732480,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 7209216,
+      "coefficient_count": 54324,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.2722355769230769,
+        "teacher_agreement": 0.42367788461538464,
+        "logit_mse": 0.5294543504714966
+      },
+      "T4": {
+        "accuracy": 0.2782451923076923,
+        "teacher_agreement": 0.4254807692307692,
+        "logit_mse": 0.9811160564422607
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021681550022543727,
+      "hidden_mse": 0.01701234903919559,
+      "logit_mse": 0.15569204092025757,
+      "basis_bits": 3732992,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 10686528,
+      "coefficient_count": 108649,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.33353365384615385,
+        "teacher_agreement": 0.5649038461538461,
+        "logit_mse": 0.24784135818481445
+      },
+      "T4": {
+        "accuracy": 0.3780048076923077,
+        "teacher_agreement": 0.7121394230769231,
+        "logit_mse": 0.1648387908935547
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00034540830767708114,
+      "hidden_mse": 0.04814871163193365,
+      "logit_mse": 0.5735164880752563,
+      "basis_bits": 3732480,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 10686016,
+      "coefficient_count": 108649,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.28305288461538464,
+        "teacher_agreement": 0.4543269230769231,
+        "logit_mse": 0.4491310715675354
+      },
+      "T4": {
+        "accuracy": 0.30408653846153844,
+        "teacher_agreement": 0.4723557692307692,
+        "logit_mse": 0.859895646572113
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00015805123091153692,
+      "hidden_mse": 0.013729337266271477,
+      "logit_mse": 0.1335449516773224,
+      "basis_bits": 3732992,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 17640064,
+      "coefficient_count": 217298,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.3425480769230769,
+        "teacher_agreement": 0.5985576923076923,
+        "logit_mse": 0.23069460690021515
+      },
+      "T4": {
+        "accuracy": 0.390625,
+        "teacher_agreement": 0.7518028846153846,
+        "logit_mse": 0.131724014878273
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00021214042373003515,
+      "hidden_mse": 0.03114975083499898,
+      "logit_mse": 0.41133081912994385,
+      "basis_bits": 3732480,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 17639552,
+      "coefficient_count": 217298,
+      "dimension_compression": 93.14891117969822,
+      "T2": {
+        "accuracy": 0.31189903846153844,
+        "teacher_agreement": 0.5060096153846154,
+        "logit_mse": 0.36981821060180664
+      },
+      "T4": {
+        "accuracy": 0.3233173076923077,
+        "teacher_agreement": 0.5318509615384616,
+        "logit_mse": 0.595325767993927
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 16,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002529172985544567,
+      "hidden_mse": 0.016680198040361565,
+      "logit_mse": 0.12722517549991608,
+      "basis_bits": 7465984,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 10942720,
+      "coefficient_count": 54324,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.31490384615384615,
+        "teacher_agreement": 0.5288461538461539,
+        "logit_mse": 0.27582284808158875
+      },
+      "T4": {
+        "accuracy": 0.3641826923076923,
+        "teacher_agreement": 0.703125,
+        "logit_mse": 0.15307459235191345
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00046126173013008717,
+      "hidden_mse": 0.06591531266099722,
+      "logit_mse": 0.7666924595832825,
+      "basis_bits": 7464960,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 10941696,
+      "coefficient_count": 54324,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.2734375,
+        "teacher_agreement": 0.42367788461538464,
+        "logit_mse": 0.5341049432754517
+      },
+      "T4": {
+        "accuracy": 0.27584134615384615,
+        "teacher_agreement": 0.42247596153846156,
+        "logit_mse": 1.0058767795562744
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00020367631429011143,
+      "hidden_mse": 0.014493132661069481,
+      "logit_mse": 0.12112662941217422,
+      "basis_bits": 7465984,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 14419520,
+      "coefficient_count": 108649,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.3251201923076923,
+        "teacher_agreement": 0.5528846153846154,
+        "logit_mse": 0.25680893659591675
+      },
+      "T4": {
+        "accuracy": 0.38461538461538464,
+        "teacher_agreement": 0.7289663461538461,
+        "logit_mse": 0.1375417411327362
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0003442007879807088,
+      "hidden_mse": 0.047770949477304404,
+      "logit_mse": 0.5827996730804443,
+      "basis_bits": 7464960,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 14418496,
+      "coefficient_count": 108649,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.28365384615384615,
+        "teacher_agreement": 0.45072115384615385,
+        "logit_mse": 0.4605390727519989
+      },
+      "T4": {
+        "accuracy": 0.29867788461538464,
+        "teacher_agreement": 0.46935096153846156,
+        "logit_mse": 0.8687718510627747
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0001506275107089572,
+      "hidden_mse": 0.011524725542375026,
+      "logit_mse": 0.10334338992834091,
+      "basis_bits": 7465984,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 21373056,
+      "coefficient_count": 217298,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.33774038461538464,
+        "teacher_agreement": 0.5775240384615384,
+        "logit_mse": 0.2353452444076538
+      },
+      "T4": {
+        "accuracy": 0.39663461538461536,
+        "teacher_agreement": 0.7602163461538461,
+        "logit_mse": 0.10851641744375229
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002136242298646403,
+      "hidden_mse": 0.030880127985626952,
+      "logit_mse": 0.4164746403694153,
+      "basis_bits": 7464960,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 21372032,
+      "coefficient_count": 217298,
+      "dimension_compression": 46.57445558984911,
+      "T2": {
+        "accuracy": 0.3058894230769231,
+        "teacher_agreement": 0.5,
+        "logit_mse": 0.37303900718688965
+      },
+      "T4": {
+        "accuracy": 0.31971153846153844,
+        "teacher_agreement": 0.5282451923076923,
+        "logit_mse": 0.6294153332710266
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 32,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00022225423135863667,
+      "hidden_mse": 0.012880316202343138,
+      "logit_mse": 0.08375503867864609,
+      "basis_bits": 14931968,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 18408704,
+      "coefficient_count": 54324,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.30528846153846156,
+        "teacher_agreement": 0.5216346153846154,
+        "logit_mse": 0.2729731500148773
+      },
+      "T4": {
+        "accuracy": 0.3737980769230769,
+        "teacher_agreement": 0.7121394230769231,
+        "logit_mse": 0.10906537622213364
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00045920710279633725,
+      "hidden_mse": 0.06522500842513279,
+      "logit_mse": 0.7485660314559937,
+      "basis_bits": 14929920,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 18406656,
+      "coefficient_count": 54324,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.2734375,
+        "teacher_agreement": 0.4188701923076923,
+        "logit_mse": 0.5285397171974182
+      },
+      "T4": {
+        "accuracy": 0.2800480769230769,
+        "teacher_agreement": 0.42728365384615385,
+        "logit_mse": 0.9690529704093933
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00018345402501292922,
+      "hidden_mse": 0.011017376550128863,
+      "logit_mse": 0.07691036909818649,
+      "basis_bits": 14931968,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 21885504,
+      "coefficient_count": 108649,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.3173076923076923,
+        "teacher_agreement": 0.5516826923076923,
+        "logit_mse": 0.2527419924736023
+      },
+      "T4": {
+        "accuracy": 0.3798076923076923,
+        "teacher_agreement": 0.7439903846153846,
+        "logit_mse": 0.09155847132205963
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00034538102035236695,
+      "hidden_mse": 0.0474862978073996,
+      "logit_mse": 0.5727635622024536,
+      "basis_bits": 14929920,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 21883456,
+      "coefficient_count": 108649,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.2926682692307692,
+        "teacher_agreement": 0.4561298076923077,
+        "logit_mse": 0.44983869791030884
+      },
+      "T4": {
+        "accuracy": 0.3034855769230769,
+        "teacher_agreement": 0.47415865384615385,
+        "logit_mse": 0.746753990650177
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00013927603541414468,
+      "hidden_mse": 0.008661960355281944,
+      "logit_mse": 0.06335045397281647,
+      "basis_bits": 14931968,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 28839040,
+      "coefficient_count": 217298,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.3371394230769231,
+        "teacher_agreement": 0.5799278846153846,
+        "logit_mse": 0.2294732928276062
+      },
+      "T4": {
+        "accuracy": 0.38221153846153844,
+        "teacher_agreement": 0.7698317307692307,
+        "logit_mse": 0.0732610672712326
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002185458647597224,
+      "hidden_mse": 0.030853649415984855,
+      "logit_mse": 0.41025692224502563,
+      "basis_bits": 14929920,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 28836992,
+      "coefficient_count": 217298,
+      "dimension_compression": 23.287227794924554,
+      "T2": {
+        "accuracy": 0.3112980769230769,
+        "teacher_agreement": 0.49819711538461536,
+        "logit_mse": 0.3694821894168854
+      },
+      "T4": {
+        "accuracy": 0.3245192307692308,
+        "teacher_agreement": 0.5234375,
+        "logit_mse": 0.5391244888305664
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 64,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00017619659881007443,
+      "hidden_mse": 0.008365931824081114,
+      "logit_mse": 0.04300130903720856,
+      "basis_bits": 29863936,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 33340672,
+      "coefficient_count": 54324,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.34915865384615385,
+        "teacher_agreement": 0.6141826923076923,
+        "logit_mse": 0.23329494893550873
+      },
+      "T4": {
+        "accuracy": 0.3864182692307692,
+        "teacher_agreement": 0.7692307692307693,
+        "logit_mse": 0.0805947557091713
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0004533326450719165,
+      "hidden_mse": 0.06187719045702763,
+      "logit_mse": 0.6946433186531067,
+      "basis_bits": 29859840,
+      "residual_target_bits": 3476736,
+      "residual_payload_bits": 3476736,
+      "residual_padded_bits": 3476736,
+      "total_padded_bits": 33336576,
+      "coefficient_count": 54324,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.26802884615384615,
+        "teacher_agreement": 0.42788461538461536,
+        "logit_mse": 0.5130577087402344
+      },
+      "T4": {
+        "accuracy": 0.28185096153846156,
+        "teacher_agreement": 0.43209134615384615,
+        "logit_mse": 0.9289116263389587
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.005,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00014972193899684527,
+      "hidden_mse": 0.007180248471866114,
+      "logit_mse": 0.03894227370619774,
+      "basis_bits": 29863936,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 36817472,
+      "coefficient_count": 108649,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.34375,
+        "teacher_agreement": 0.5919471153846154,
+        "logit_mse": 0.23424145579338074
+      },
+      "T4": {
+        "accuracy": 0.3936298076923077,
+        "teacher_agreement": 0.7872596153846154,
+        "logit_mse": 0.06916380673646927
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0003459928670395516,
+      "hidden_mse": 0.04489392818159719,
+      "logit_mse": 0.5259909629821777,
+      "basis_bits": 29859840,
+      "residual_target_bits": 6953536,
+      "residual_payload_bits": 6953536,
+      "residual_padded_bits": 6953536,
+      "total_padded_bits": 36813376,
+      "coefficient_count": 108649,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.296875,
+        "teacher_agreement": 0.4717548076923077,
+        "logit_mse": 0.4224124848842621
+      },
+      "T4": {
+        "accuracy": 0.30528846153846156,
+        "teacher_agreement": 0.48197115384615385,
+        "logit_mse": 0.7674891352653503
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.01,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.00011795951803475335,
+      "hidden_mse": 0.0056881173637744805,
+      "logit_mse": 0.03286339342594147,
+      "basis_bits": 29863936,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 43771008,
+      "coefficient_count": 217298,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.35697115384615385,
+        "teacher_agreement": 0.6448317307692307,
+        "logit_mse": 0.22931994497776031
+      },
+      "T4": {
+        "accuracy": 0.40444711538461536,
+        "teacher_agreement": 0.8112980769230769,
+        "logit_mse": 0.05540545657277107
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "svd",
+      "residual_mode": "downstream_jacobian"
+    },
+    {
+      "message_mse": 0.0002275686695186277,
+      "hidden_mse": 0.0295568928404974,
+      "logit_mse": 0.38026273250579834,
+      "basis_bits": 29859840,
+      "residual_target_bits": 13907072,
+      "residual_payload_bits": 13907072,
+      "residual_padded_bits": 13907072,
+      "total_padded_bits": 43766912,
+      "coefficient_count": 217298,
+      "dimension_compression": 11.643613897462277,
+      "T2": {
+        "accuracy": 0.3125,
+        "teacher_agreement": 0.5102163461538461,
+        "logit_mse": 0.36562490463256836
+      },
+      "T4": {
+        "accuracy": 0.3239182692307692,
+        "teacher_agreement": 0.5396634615384616,
+        "logit_mse": 0.583346426486969
+      },
+      "dataset": "squirrel",
+      "seed": 2,
+      "rank": 128,
+      "budget": 0.02,
+      "basis": "random_projection",
+      "residual_mode": "downstream_jacobian"
+    }
+  ]
+}

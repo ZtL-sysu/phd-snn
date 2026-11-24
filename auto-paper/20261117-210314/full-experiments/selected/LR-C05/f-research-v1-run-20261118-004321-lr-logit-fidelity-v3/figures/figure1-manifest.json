@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "generator": "research/make_figure1_svg.py",
+  "method": "deterministic FigureSpec-style SVG rendered locally after user-authorized self-draw fallback",
+  "artifacts": [
+    {
+      "path": "figures\\specs\\figure1-architecture-spec.json",
+      "sha256": "0d435b2a824c3eed381a683ca8ee617069475a7917ec2096653b76f296cfdaff",
+      "bytes": 11103
+    },
+    {
+      "path": "figures\\figure1-architecture.svg",
+      "sha256": "95229772a4fb2788eb2e470d497cceaf7f9ec419ef87aec14642d7ec2c3ad815",
+      "bytes": 12346
+    },
+    {
+      "path": "figures\\figure1-architecture.pdf",
+      "sha256": "394a6d38ceaa0fb3e531474e195536394b04e4210385af2920b2a992f86b2a2c",
+      "bytes": 52508
+    },
+    {
+      "path": "figures\\figure1-architecture.png",
+      "sha256": "8f5d6ee669b6fca6ab17673883995e2b89f28042127b435ba7d0e366311eb5ef",
+      "bytes": 346373
+    }
+  ]
+}

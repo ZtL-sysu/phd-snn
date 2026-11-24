@@ -1,0 +1,346 @@
+                                               Abstract
+    Multi-hop positional messages preserve graph structure but are expensive to communicate in frozen
+graph conversions. We study a narrow representation-coding problem on Chameleon and Squirrel: con-
+catenate raw node features with one-, two- and three-hop normalized messages, quantize each channel
+using eight Lloyd centroids plus one escape symbol, and account for four-bit symbols, 32-bit escape pay-
+loads and per-channel codebooks. Across five split/probe seeds, hybrid reconstruction error is 3.952%
+and 4.879%, while the conservative ledger reduces storage by 7.49× and 7.60×. Recomputation after
+node permutation agrees to 2.22e-16. A codec-consistent shuffled-hop control, which quantizes globally
+permuted hop blocks with unchanged ordered-channel codebooks, produces 3.72× and 3.63× mean error
+ratios. Retrained hybrid probes lose 0.083 percentage points on Chameleon and gain 0.768 points on
+Squirrel relative to raw features. Fixed raw-trained probes favor ordered over shuffled hybrid representa-
+tions by 9.57 and 9.08 points. The contribution is a conversion-level multi-hop coding and order-control
+protocol, not a general graph-transformer-to-SNN method.
+
+
+
+
+                                                    1
+    Permutation-Equivariant Hybrid Hop-Message Coding for Frozen
+                  Graph Positional Representations
+                                                Anonymous
+                                           November 18, 2026
+
+
+1     Introduction
+Graph positional information often appears as multi-hop propagation of features or structural identifiers.
+Concatenating hop-wise messages increases feature width and communication cost, while simple global quan-
+tization can distort channel distributions and rare values. Frozen conversion settings make the problem more
+specific: the graph representation is fixed, and the goal is to serialize a positional message without changing
+its node-permutation behavior.
+    Compression error alone is not sufficient evidence. A useful study must also show whether the canonical
+hop order matters, whether the representation is equivariant to node relabeling, and whether downstream
+predictions survive without representation-specific retraining. These controls distinguish a structured hop
+code from a generic high-dimensional quantizer.
+    This paper evaluates the representation
+
+                                          H = [X, AX, A2 X, A3 X],
+   where A is a row-normalized graph operator. Each channel is encoded with eight Lloyd centroids and one
+escape symbol. Escaped values are stored exactly as float32 payloads. The serialization cost is deliberately
+conservative:
+                                                                256
+                                         bavg = 4 + 32fescape +     ,
+                                                                 N
+    where four bits encode one of eight centroid identifiers or the escape marker, f_escape is the escaped
+fraction, and 256/N amortizes eight float32 centroids over N nodes.
+    The central question is whether this hybrid code preserves ordered multi-hop messages at useful storage
+reduction while remaining node-permutation equivariant and sensitive to hop order. We answer this within
+two static graphs and explicitly separate three forms of evidence: representation fidelity/storage, retrained
+linear-probe performance, and fixed raw-probe ordered/shuffled controls.
+
+
+2     Related Work
+Positional encodings and graph transformers represent structure through attention mechanisms, learnable
+structural/positional representations or spectral attention Vaswani et al. [2017], Dwivedi et al. [2022], Kreuzer
+and Hamilton [2021]. These methods motivate the importance of ordered structural channels, but they do
+not provide the exact serialization ledger evaluated here.
+    Graph-model compression studies degree-aware quantization, vector-quantized node representations, aggregation-
+aware mixed precision and communication compression Tailor et al. [2021], Ding et al. [2021], Wang et al.
+[2022], Zhu et al. [2023], Wan et al. [2023], Gholami et al. [2022], Jacob et al. [2018], Nagel et al. [2021]. Our
+method uses standard Lloyd centroids and exact escapes; the contribution is their combined hop-message
+accounting and order controls, not a new general quantizer.
+    ANN-to-SNN conversion work addresses output codes, offsets, grouped neurons, early exit and trans-
+former conversion Hwang and Kung [2025], Hao et al. [2023], Lv et al. [2024], Bu et al. [2022], Li et al.
+
+
+                                                      2
+[2023c], Hu et al. [2023], Zhao et al. [2025], Huang et al. [2024], Li et al. [2024]. Spiking graph models address
+spiking graph convolution, dynamic graphs and graph transformers Zhu et al. [2022], Li et al. [2023a], Yin
+et al. [2024], Wang et al. [2025], Chen et al. [2025], Sun et al. [2026], Zhang et al. [2026]; compact/geometric
+graph representations and asynchronous event processing add adjacent context Li et al. [2023b], Chaurasia
+et al. [2026], Zeng et al. [2025]. These systems are adjacent context; the present paper does not train a
+spiking graph transformer or measure temporal energy.
+    The differentiation is therefore narrow. The work combines multi-hop positional messages, a conservative
+codebook/escape format, exact node-permutation recomputation and a non-tautological codebook-order
+mismatch control for frozen graph representations. It does not claim a new positional encoding, a direct
+graph-transformer conversion result or broad SNN superiority.
+
+
+3     Method
+3.1    Multi-hop representation
+For node features X∈R^(N×F) and row-normalized adjacency A∈R^(N×N), the ordered representation is
+
+                                      H = [X, AX, A2 X, A3 X] ∈ RN ×4F .
+   The four blocks retain hop position. The task experiments use labeled nodes only; representation, bit
+and permutation audits use all graph nodes.
+
+3.2    Hybrid Lloyd/escape encoding
+For each channel, Lloyd quantization estimates eight centroids. Every value receives one four-bit symbol:
+one of eight centroid identifiers or an escape marker. Escaped values retain a 32-bit float payload. Each
+channel stores eight float32 centroids. Here “event” means a source-side coded or escaped message symbol;
+no temporal spike is generated.
+    For representation rows, codebooks are fitted on all nodes and the largest reconstruction errors are
+escaped using a threshold and every tied value, avoiding row-order-dependent top-k selection. For task rows,
+codebooks and escape thresholds are fitted on training nodes only and reused unchanged on validation and
+test nodes. Escapes are selected at the source encoder; labels and test logits are never used.
+    The exact average ledger is
+                                                           256
+                                                               .
+                                          bavg = 4 + 32fescape +
+                                                            N
+   Raw float32 uses 32 bits/value. The eight-centroid Lloyd baseline uses three-bit symbols and 256/N
+codebook overhead. Uniform 8-level coding uses three-bit symbols plus two float32 range endpoints per
+channel.
+
+3.3    Permutation and shuffled-hop controls
+For node permutation P, features, adjacency and labels are permuted consistently, H and the hybrid code
+are recomputed, and the reconstruction is inverse-permuted before comparison. Deterministic sorted Lloyd
+fitting and threshold-plus-ties escape selection make the audit invariant to row order.
+     The shuffled-hop control uses one non-identity global permutation S of the four hop blocks. Ordered
+codebooks are fitted on H; the shuffled raw target S H is quantized with the same codebooks and the same
+escape-fraction policy. The error ratio is
+
+                                             ∥SH − Qord (SH)∥F /∥SH∥F
+                                      ρS =                            .
+                                               ∥H − Qord (H)∥F /∥H∥F
+   This compares the same codec family and does not shuffle target and reconstruction together. Five shuffle
+seeds are aggregated as a graph-level mean; every individual row is retained.
+
+
+
+
+                                                        3
+Figure 1: Ordered multi-hop construction and hybrid codebook/escape serialization. The lower panel shows
+the exact four-bit symbol, 32-bit escape payload and amortized codebook ledger.
+
+
+3.4    Task probes
+Two probe protocols are separated. The retrained protocol fits one linear probe per method, graph and split
+seed. The fixed protocol fits one raw-feature probe and reuses its weights, normalization, split and test nodes
+for raw, uniform, Lloyd, hybrid-ordered and hybrid-shuffled representations. Training uses split-train indices,
+epoch selection uses validation, and final metrics use test indices only. results/task-provenance.json
+hashes all ten label/split records, the task runner, probe source and exact train/selection/evaluation policy.
+
+
+4     Experiments and Results
+4.1    Experimental matrix
+Chameleon and Squirrel are evaluated with split/probe seeds 600-604 Pei et al. [2020], Platonov et al. [2023].
+The accepted matrix contains four retrained methods per seed, one fixed raw probe with five ordered methods
+and five shuffled controls per seed, and separate representation/permutation audits.
+
+
+                             Table 1: Methods, controls and exact accounting.
+ Quantity         Definition                                            Role
+ Hybrid           eight Lloyd centroids + escape                        proposed code
+ Uniform          global 8-level rounding                               simple baseline
+ Lloyd            eight centroids, no escapes                           codebook-only baseline
+ Raw              float32 message                                       reference
+ B_avg            4+32f_escape+256/N                                    conservative proposed ledger
+ ρ_S              ordered-codebook shuffled/ordered error               order-mismatch diagnostic
+
+
+4.2    Representation fidelity and storage
+Hybrid reconstruction error is 3.952% on Chameleon and 4.879% on Squirrel. The actual escape fractions are
+approximately 0.5%, and the conservative average costs are 4.272 and 4.209 bits/value. Storage reductions
+
+
+                                                      4
+Figure 2: Representation error, conservative storage and five-seed retrained balanced accuracy across meth-
+ods. Task error bars are sample SD; lower error and storage are better.
+
+
+
+
+Figure 3: Node-permutation errors and codec-consistent shuffled-hop ratios. Dashed lines mark the 10−10
+permutation and 1.25× mismatch gates; every seed is plotted.
+
+
+are 7.490× and 7.602×. Both fidelity and storage satisfy the binding gates.
+   The uniform and Lloyd-only rows show that the hybrid’s contribution is not raw compression alone. The
+exact escapes reduce tail error while the codebook overhead and escape symbols remain visible in the ledger.
+
+4.3    Permutation and shuffled-hop controls
+Raw and hybrid inverse-permutation errors are 2.22e-16, below the 1e-10 gate. The earlier top-k escape
+implementation was row-order-sensitive; threshold-plus-all-ties selection removed that defect.
+    All five shuffle seeds per graph are non-identity. Under the codec-consistent ordered-codebook control,
+mean error ratios are 3.725× on Chameleon and 3.626× on Squirrel, with a minimum of 3.310×. Thus the
+strong ratio gate passes without comparing different codec families.
+
+4.4    Five-seed task results
+For fixed raw probes, ordered hybrid balanced accuracy is 62.99±2.66% on Chameleon and 45.49±0.82%
+on Squirrel. Shuffled hybrid means are 53.43±7.67% and 36.41±7.23%, giving ordered-minus-shuffled gaps
+of 9.57 and 9.08 pp. These gaps are descriptive order-sensitivity evidence, not proof of causal positional
+reasoning.
+
+
+
+
+                                                     5
+Table 2: Retrained paired balanced accuracy. Hybrid loss is 0.083 pp on Chameleon and a 0.768 pp gain on
+Squirrel; mixed paired differences are reported explicitly.
+ Graph       Raw BA mean±SD        Hybrid BA mean±SD        Paired hybrid−raw pp mean±SD      Min/max pp
+ Chameleon            62.88±2.97               62.80±1.86                        −0.08±1.20   −1.28 / +1.69
+ Squirrel             45.99±0.84               46.76±0.48                        +0.77±1.02   −0.49 / +2.21
+
+
+
+4.5    Leakage audit and negative evidence
+The first task implementation fitted probes on all labels and produced implausibly high accuracy near 99%.
+That run is preserved but excluded. The corrected implementation trains only on split-train indices, selects
+checkpoints on validation and evaluates once on test. Representation values are unchanged, while task
+accuracies fall to the accepted range above. No accepted row depends on the leaky run.
+
+
+5     Discussion
+The evidence supports three scoped statements. First, the conservative hybrid format preserves the tested
+multi-hop representation with 3.95–4.88% error and 7.49–7.60× storage reduction. Second, node permuta-
+tion is reproduced to machine precision after deterministic codebook and escape handling. Third, ordered
+codebooks degrade under non-identity hop-block mismatch, and fixed raw probes prefer ordered over shuffled
+hybrid features.
+    The method does not establish that hop order causes a particular graph-transformer computation. Fixed
+probes show compatibility with the raw ordering, while mismatched-codebook error measures channel-order
+sensitivity. Retrained probes can compensate for some transformations, and their mixed accuracy differences
+should not be promoted to general task superiority.
+    The conservative ledger includes symbol, escape payload and centroid costs, but deployment metadata,
+packet framing and runtime energy may add overhead. The study uses two heterophilic graphs and five
+probe seeds. It does not include a complete graph-transformer model, temporal spikes, dynamic graphs,
+adversarial perturbations or hardware measurements.
+    The prior-art overlap is substantial because Lloyd quantization, exact escapes and permutation equiv-
+ariance are established ingredients. The contribution is the combined frozen positional-message format and
+its paired order controls. A stronger future claim would require real graph-transformer-to-SNN conversion,
+broader graph families and energy-aware event timing.
+
+
+6     Conclusion
+Hybrid hop-event coding preserves ordered multi-hop graph messages at substantially lower conservative
+storage in the tested frozen setting. All binding representation, storage, permutation and shuffled-hop gates
+pass. Five-seed retrained task loss is bounded, and fixed raw probes show clear ordered-versus-shuffled gaps.
+The result is a scoped conversion-level message-coding study, not a general graph-transformer-to-SNN or
+temporal SNN claim.
+
+
+References
+BibTeX source: references.bib.
+
+
+References
+Tong Bu, Wei Fang, Jianhao Ding, Penglin Dai, Zhaofei Yu, and Tiejun Huang. Optimal ann-snn conversion
+  for high-accuracy and ultra-low-latency spiking neural networks. In International Conference on Learning
+  Representations, 2022.
+
+
+                                                      6
+Janhavi Chaurasia, Eshaan Rithesh Adyanthaya, and Manas Ranjan Prusty. SGSPose: Neuromorphic-
+  geometric 6d pose estimation through spiking graph neural networks and se(3)-equivariant learning. IEEE
+  Access, 14:7130–7136, 2026. doi: 10.1109/ACCESS.2026.3651795.
+Dong Chen, Shuai Zheng, Muhao Xu, Zhenfeng Zhu, and Yao Zhao. SiGNN: A spike-induced graph neural
+ network for dynamic graph representation learning. Pattern Recognition, 158:111026, 2025. doi: 10.1016/
+ j.patcog.2024.111026.
+Mucong Ding, Kezhi Kong, Jingling Li, Chen Zhu, John P. Dickerson, Furong Huang, and Tom Goldstein.
+ Vq-gnn: A universal framework to scale up graph neural networks using vector quantization. In Advances
+ in Neural Information Processing Systems, 2021.
+
+Vijay Prakash Dwivedi, Anh Tuan Luu, Thomas Laurent, Yoshua Bengio, and Xavier Bresson. Graph
+  neural networks with learnable structural and positional representations. In International Conference on
+  Learning Representations, 2022.
+Amir Gholami, Sehoon Kim, Zhen Dong, Zhewei Yao, Michael W. Mahoney, and Kurt Keutzer. A survey
+ of quantization methods for efficient neural network inference. In Low-Power Computer Vision. Chapman
+ and Hall/CRC, 2022. doi: 10.1201/9781003162810-13.
+Zecheng Hao, Jianhao Ding, Tong Bu, Tiejun Huang, and Zhaofei Yu. Bridging the gap between anns and
+  snns by calibrating offset spikes. In International Conference on Learning Representations, 2023.
+Yangfan Hu, Qian Zheng, Xudong Jiang, and Gang Pan. Fast-snn: Fast spiking neural network by converting
+  quantized ann. IEEE Transactions on Pattern Analysis and Machine Intelligence, 45(12):14546–14562,
+  2023. doi: 10.1109/TPAMI.2023.3275769.
+Zihan Huang, Xinyu Shi, Zecheng Hao, Tong Bu, Jianhao Ding, Zhaofei Yu, and Tiejun Huang. Towards
+  high-performance spiking transformers from ann to snn conversion. In Proceedings of the 32nd ACM
+  International Conference on Multimedia, pages 10688–10697, 2024. doi: 10.1145/3664647.3680620.
+
+Sangwoo Hwang and Jaeha Kung. One-spike snn: Single-spike phase coding with base manipulation for
+  ann-to-snn conversion loss minimization. IEEE Transactions on Emerging Topics in Computing, 13(1):
+  162–172, 2025. doi: 10.1109/TETC.2024.3386893.
+Benoit Jacob, Skirmantas Kligys, Bo Chen, Menglong Zhu, Matthew Tang, Andrew Howard, Hartwig Adam,
+  and Dmitry Kalenichenko. Quantization and training of neural networks for efficient integer-arithmetic-
+  only inference. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 2704–2713,
+  2018.
+Devin Kreuzer and William L. Hamilton. Rethinking graph transformers with spectral attention. In Advances
+  in Neural Information Processing Systems, 2021.
+Jintang Li, Zhouxin Yu, Zulun Zhu, Liang Chen, Qi Yu, Zibin Zheng, Sheng Tian, Ruofan Wu, and Changhua
+  Meng. Scaling up dynamic graph representation learning via spiking neural networks. In AAAI Conference
+  on Artificial Intelligence, 2023a.
+Jintang Li, Huizhe Zhang, Ruofan Wu, Zulun Zhu, Baokun Wang, Changhua Meng, Zibin Zheng, and Liang
+  Chen. A graph is worth 1-bit spikes: When graph contrastive learning meets spiking neural networks.
+  arXiv preprint, 2023b.
+
+Yuhang Li, Tamar Geller, Youngeun Kim, and Priyadarshini Panda. SEENN: Towards temporal spiking
+  early exit neural networks. In Advances in Neural Information Processing Systems, 2023c.
+Yuhang Li, Shikuang Deng, Xin Dong, and Shi Gu. Error-aware conversion from ann to snn via post-
+  training parameter calibration. International Journal of Computer Vision, 132(9):3586–3609, 2024. doi:
+  10.1007/s11263-024-02046-2.
+
+
+
+
+                                                    7
+Liuzhenghao Lv, Wei Fang, Li Yuan, and Yonghong Tian. Optimal ann-snn conversion with group neu-
+  rons. In ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing
+  (ICASSP), pages 6475–6479, 2024. doi: 10.1109/ICASSP48485.2024.10448202.
+Markus Nagel, Marios Fournarakis, Rana Ali Amjad, Yelysei Bondarenko, Mart van Baalen, and Tijmen
+ Blankevoort. A white paper on neural network quantization. arXiv preprint arXiv:2106.08295, 2021.
+
+Hongbin Pei, Bingzhe Wei, Yu-Chao Chang, Yu Lei, and Bo Yang. Geom-gcn: Geometric graph convolutional
+  networks. In International Conference on Learning Representations, 2020.
+Oleg Platonov, Denis Kuznedelev, Michael Diskin, Artem Babenko, and Liudmila Prokhorenkova. A critical
+  look at the evaluation of gnns under heterophily: Are we really making progress? In International
+  Conference on Learning Representations, 2023. arXiv:2302.11640.
+Yundong Sun, Dongjie Zhu, Yansong Wang, Zhaoshuo Tian, Ning Cao, and Gregory M. P. O’Hare.
+  Spikegraphormer: A high-performance graph transformer with spiking graph attention. Information Sci-
+  ences, 755:123828, 2026. doi: 10.1016/j.ins.2026.123828.
+Shyam A. Tailor, Javier Fernández-Marqués, and Nicholas D. Lane. Degree-quant: Quantization-aware
+  training for graph neural networks. In International Conference on Learning Representations, 2021.
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser,
+  and Illia Polosukhin. Attention is all you need. In Advances in Neural Information Processing Systems,
+  2017.
+
+Borui Wan, Juntao Zhao, and Chuan Wu. Adaptive message quantization and parallelization for distributed
+  full-graph gnn training. In Proceedings of Machine Learning and Systems, volume 5, 2023.
+Yuke Wang, Boyuan Feng, and Yufei Ding. Qgtc: Accelerating quantized graph neural networks via gpu
+  tensor core. In Proceedings of the 27th ACM SIGPLAN Symposium on Principles and Practice of Parallel
+  Programming, pages 107–119, 2022. doi: 10.1145/3503221.3508408.
+
+Zhiqiang Wang, Jianghao Wen, and Jianqing Liang. Delay-dsgn: A dynamic spiking graph neural network
+  with delay mechanisms for evolving graph. In International Conference on Machine Learning, 2025.
+Nan Yin, Mengzhu Wang, Zhenghan Chen, Giulia De Masi, Huan Xiong, and Bin Gu. Dynamic spiking
+  graph neural networks. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages
+  16495–16503, 2024. doi: 10.1609/aaai.v38i15.29587.
+
+DingYi Zeng, Yuchen Wang, Honglin Cao, Wanlong Liu, Yichen Xiao, Chengzhuo Lu, Wenyu Chen, Malu
+  Zhang, Guoqing Wang, and Yang Yang. Leveraging asynchronous spiking neural networks for ultra efficient
+  event-based visual processing. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39,
+  pages 1620–1628, 2025. doi: 10.1609/aaai.v39i2.32154.
+Huizhe Zhang, Jintang Li, Yuchang Zhu, Huazhen Zhong, and Liang Chen. SGNNBench: A holistic evalua-
+ tion of spiking graph neural networks on large-scale graphs. In Advances in Neural Information Processing
+ Systems, 2026.
+Lusen Zhao, Zihan Huang, Jianhao Ding, and Zhaofei Yu. Ttfsformer: A ttfs-based lossless conversion of
+  spiking transformer. In International Conference on Machine Learning, 2025.
+
+Zeyu Zhu, Fanrong Li, Zitao Mo, Qinghao Hu, Gang Li, Zejian Liu, Xiaoyao Liang, and Jian Cheng.
+  A2 Q: Aggregation-aware quantization for graph neural networks. In International Conference on Learning
+  Representations, 2023.
+Zulun Zhu, Jiaying Peng, Jintang Li, Liang Chen, Qi Yu, and Siqiang Luo. Spiking graph convolutional
+  networks. In Proceedings of the International Joint Conference on Artificial Intelligence, pages 2473–2479,
+  2022. doi: 10.24963/ijcai.2022/338.
+
+
+
+                                                     8
+

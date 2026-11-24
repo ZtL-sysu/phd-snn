@@ -1,0 +1,93 @@
+{
+  "dataset": "local Planetoid Cora processed graph from third_party/SpikeGraphormer",
+  "nodes": 2708,
+  "initial_edges": 9500,
+  "events": 1056,
+  "hidden": 64,
+  "full_time_sec": 0.8541264533996582,
+  "scale": 0.36194613575935364,
+  "rows": [
+    {
+      "mode": "exact",
+      "tau_rel": 0.0001,
+      "time_sec": 0.9117124080657959,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.9368375880851433
+    },
+    {
+      "mode": "nodb",
+      "tau_rel": 0.0001,
+      "time_sec": 0.9387474060058594,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.9098575910145599
+    },
+    {
+      "mode": "debt",
+      "tau_rel": 0.0001,
+      "time_sec": 0.954559326171875,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.8947861384635059
+    },
+    {
+      "mode": "lazy",
+      "tau_rel": 0.0001,
+      "time_sec": 0.9157872200012207,
+      "drift": 0.37786245346069336,
+      "propagated": 817,
+      "speedup_vs_full": 0.9326691121530607
+    },
+    {
+      "mode": "nodb",
+      "tau_rel": 0.0003,
+      "time_sec": 0.9428026676177979,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.9059440355189067
+    },
+    {
+      "mode": "debt",
+      "tau_rel": 0.0003,
+      "time_sec": 0.9793665409088135,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.8721213332518616
+    },
+    {
+      "mode": "nodb",
+      "tau_rel": 0.001,
+      "time_sec": 0.9477658271789551,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.9011998838805821
+    },
+    {
+      "mode": "debt",
+      "tau_rel": 0.001,
+      "time_sec": 0.9562008380889893,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.8932500572857358
+    },
+    {
+      "mode": "nodb",
+      "tau_rel": 0.003,
+      "time_sec": 0.94283127784729,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.9059165446333449
+    },
+    {
+      "mode": "debt",
+      "tau_rel": 0.003,
+      "time_sec": 0.944598913192749,
+      "drift": 0.37826403975486755,
+      "propagated": 1056,
+      "speedup_vs_full": 0.9042212959071767
+    }
+  ],
+  "gate": "GO only if >=2x speedup, <=1% drift, and >=50% drift reduction over no-debt/lazy at matched activity; otherwise NO-GO",
+  "status": "pilot"
+}

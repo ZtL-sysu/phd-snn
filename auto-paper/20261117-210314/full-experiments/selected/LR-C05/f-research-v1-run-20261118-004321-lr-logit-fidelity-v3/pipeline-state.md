@@ -1,0 +1,3 @@
+# Pipeline State
+
+Guidance-v3 is a replacement claim after the v2 strong-result block. P0-P21 passed. P19 selectively reviewed the guidance-complete manuscript and retained all prose after diagnosing no concrete AI-style defect. P20 converted `writing/p17/paper-guidance-complete.md` to the generic academic template with the P12/P17 audited-value verifier adapter, preserved the three evidence tables, compiled an 11-page PDF with zero undefined citations and embedded fonts, and recorded unresolved journal-specific metadata as unresolved. P21 delivered `deliverables/LR-C05-final-v1/`, verified exact TeX/BibTeX/figure/package consistency, and successfully recompiled the source archive after clean extraction with normalized PDF text identical to the accepted output.

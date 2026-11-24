@@ -1,0 +1,25 @@
+project:
+  name: "pos-hop-event-controls-v3"
+  mode: "full-auto"
+research:
+  topic: "Permutation-equivariant hybrid hop-event coding for frozen graph positional messages"
+  domains: ["graph-neural-networks", "spiking-neural-networks", "graph-position-encoding"]
+  quality_threshold: 4.0
+runtime:
+  timezone: "Asia/Shanghai"
+  max_parallel_tasks: 1
+experiment:
+  mode: "sandbox"
+  time_budget_sec: 1500
+  metric_key: "relative_error"
+  metric_direction: "minimize"
+  sandbox:
+    python_path: "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe"
+    gpu_required: false
+    max_memory_mb: 4096
+security:
+  hitl_required_stages: []
+  allow_publish_without_approval: false
+  redact_sensitive_logs: true
+figure_agent:
+  enabled: false

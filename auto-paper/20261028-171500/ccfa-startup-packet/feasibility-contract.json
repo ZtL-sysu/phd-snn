@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "decision": "proceed",
+  "claims": [
+    {
+      "id": "C_main",
+      "claim": "图感知时序校准使 GNN 的 ANN->SNN 转换在 T<=8 逼近全精度 GNN(>= -1.5%)且理论 spike 数低于直训脉冲 GNN",
+      "mechanism": "图聚合的异步脉冲传播产生邻域时序错位；推广 FTBC 通道偏置为邻域到达分布校准；TPP 概率神经元补超低 T 信息密度",
+      "assumptions": "A1 邻居激活分布可轻量估计；A2 错位主因是到达时延分散；A3 低 T 下概率神经元保信息密度(视觉已证)",
+      "falsifying_ablation": "去掉邻域校准(F1)或换确定性 IF(F2)后低 T 精度不显著下降则机制弱",
+      "dataset_url": "https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html",
+      "split_protocol": "Cora/CiteSeer/PubMed 标准公开分割；自有洪涝图按 P-SGCN 原分割",
+      "primary_metric": "节点分类准确率",
+      "minimum": "T<=16 时转换 GNN 精度 >= ANN-GNN -3%，优于朴素转换 >=2%",
+      "expected_strong": "T<=8 时精度 >= ANN-GNN -1.5%，spike 数显著低于直训脉冲 GNN",
+      "failure": "T<=8 精度落后 >5% 且校准消融无增益 -> 机制证伪重定位",
+      "simple_baseline": "全精度 ANN-GNN(上限)；朴素转换(无校准)",
+      "strong_baseline": "直训脉冲 GNN(近年权威)；FTBC/并行转换适配版(直接重跑/适配)",
+      "matched_control": "有/无邻域校准；有/无概率脉冲神经元",
+      "implementation_path": "SpikingJelly(ANN2SNN/替代梯度/量化)+自建图转换管线；FTBC/TPP 在 PyTorch 复现",
+      "prototype_check": "Cora 小图跑通 预训练GCN->SNN+校准 sanity check(<=2h,RTX3060)",
+      "calibration_evidence": "FTBC(ECCV24)证明时序偏置校准误差可趋于0；TPP证明概率神经元超低T保精度",
+      "test_isolation": "种子>=5 固定；Cora sanity 用独立种子不与主结果重叠",
+      "stop_return_condition": "低T(<=8)精度落后 ANN-GNN >5% 且 F1/F2 无救 -> 退回直训脉冲GNN+转换对比重定位",
+      "metric_direction": "higher",
+      "runtime_hours": 24,
+      "memory_gb": 12,
+      "seeds": 5,
+      "search_trials": 10
+    }
+  ],
+  "evidence": [
+    {
+      "path": "startup-stage-plan.md",
+      "sha256": "e31557e8ca45a941d181d3c9a4625b696fee02a825a5523013d28d4549c1f504"
+    },
+    {
+      "path": "idea-cards.md",
+      "sha256": "45672a481a06cd274c3462831d9c9f1b3a08e993a98f9097ed1fb5d3e259a3a0"
+    },
+    {
+      "path": "prior-art-opportunity-map.md",
+      "sha256": "c1913d6e7089444caea59c53fc3fea113d6f153f418fec2fe20e5b9ef8e29feb"
+    },
+    {
+      "path": "idea-red-team-review.md",
+      "sha256": "95076afc216fdc0bdde03f078a70ffacbdb2862af8c26c153b595a60307f3a9e"
+    },
+    {
+      "path": "claim-evidence-matrix.md",
+      "sha256": "0821fbd622dba7c74756b28ab3451c79098a4b909cc67b51580c9f05f688cbf0"
+    },
+    {
+      "path": "strong-result-feasibility-contract.md",
+      "sha256": "2fb99f3b7bf0319524e0019c56641142fd93e046fd4b04d0fb7301e1e6de96a6"
+    },
+    {
+      "path": "startup-decision.md",
+      "sha256": "f158ac5430a98d113618411d8d321b037d951e05701b74377419fc7851ce6e41"
+    }
+  ]
+}

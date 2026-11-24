@@ -1,0 +1,10 @@
+{
+  "id": "18489",
+  "chatSessionId": "8ef44763296cb15e116f177f30481b13",
+  "stdout": "{\"id\": \"18489\", \"chatSessionId\": \"8ef44763296cb15e116f177f30481b13\"}\n",
+  "rc": 0,
+  "query_file": "C:\\code\\phd-snn\\auto-paper\\20261107-154000\\Does-Membrane-State-Transfer-to-Real-Optical-Flow\\f-research-v1-run-20261107-154500-membrane-state-transfer\\novix\\query-round010-attempt6.txt",
+  "guard": "no --max-turns/--timeout/--watch; argv-list submission",
+  "expected_strong_not_lowered": true,
+  "real_ceiling_threshold_unchanged": 0.7
+}

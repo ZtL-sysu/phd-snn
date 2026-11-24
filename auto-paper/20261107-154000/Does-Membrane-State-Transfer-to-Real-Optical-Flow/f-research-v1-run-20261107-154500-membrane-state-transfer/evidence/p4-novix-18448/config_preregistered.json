@@ -1,0 +1,411 @@
+{
+  "schema_version": "f-research-v1.p4.c1.attempt5.preregistered.v1",
+  "experiment_id": "f-research-v1-P4-C1-correction-loop-v3-attempt-5",
+  "attempt": 5,
+  "round": "round-008",
+  "frozen_before_outcomes": true,
+  "registration_timestamp_utc": "2026-11-08T08:30:00Z",
+  "mutable_after_hash_lock": false,
+  "purpose": "Real-domain preregistered oracle ladder, three-state decidability, cross-implementation consistency contract, and uniform statistical-power repair.",
+  "forbidden_actions": [
+    "lower_real_domain_threshold",
+    "use_ci_upper_bound_as_threshold_decision",
+    "select_seed_or_test_family_after_results",
+    "register_new_ladder_after_v1_results",
+    "repeat_attempt4_gate_grid",
+    "repeat_attempt4_yoked_2x2_grid",
+    "repeat_attempt4_five_readout_grid",
+    "repeat_attempt4_variance_matched_noise_table",
+    "interpret_A0_as_biological_wiring_advantage",
+    "emit_real_domain_delta_for_non_DOMAIN_USABLE_domain",
+    "replace_missing_real_data_with_toy_or_synthetic_data",
+    "claim_mechanism_from_significance_change_due_only_to_larger_n"
+  ],
+  "thresholds": {
+    "real_domain_ceiling": 0.70,
+    "oracle_strong_decodability": 0.85,
+    "synthetic_ceiling": 0.90,
+    "c1_minimum_real_delta": 0.15,
+    "c1_expected_strong_real_delta": 0.25,
+    "fdr_q": 0.05,
+    "thresholds_lowered": false
+  },
+  "randomness": {
+    "master_seed": 20261108,
+    "primary_seeds": [1, 2, 3, 4, 5],
+    "extended_seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "split_seed": 20261108,
+    "fixed_split_fraction_train": 0.70,
+    "stratified": true,
+    "extended_cohort_changes_only_independent_model_initialization": true,
+    "same_stimuli_and_split_across_seed_cohorts": true,
+    "numpy_generator": "PCG64",
+    "torch_deterministic_algorithms": true
+  },
+  "downloads": {
+    "strategy": "HTTP Range chunks with resumable part files, per-chunk SHA-256, assembled size/SHA-256, and archive CRC/gzip validation",
+    "chunk_bytes": 67108864,
+    "max_retries": 8,
+    "files": [
+      {
+        "id": "connections_biological",
+        "url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content",
+        "filename": "connections_biological.csv.gz",
+        "expected_bytes": 178853187,
+        "expected_md5": "2af9b8db6a8dbbc02cd3cc36f2631c19",
+        "required": true,
+        "license": "CC BY 4.0"
+      },
+      {
+        "id": "neuron_annotations",
+        "url": "https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content",
+        "filename": "neuron_annotations_flywire_v2.1.0.tsv.gz",
+        "expected_bytes": 7740866,
+        "expected_md5": "55789fa30a854bd00451af16441a7d3d",
+        "required": true,
+        "license": "CC BY 4.0"
+      },
+      {
+        "id": "right_visual_positions",
+        "url": "https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content",
+        "filename": "right_visual_positions_all_neurons.csv",
+        "expected_bytes": 629193,
+        "expected_md5": "0b5dddbb0328f6d73ef3cb1cc9f7d6a3",
+        "required": true,
+        "license": "CC BY 4.0"
+      },
+      {
+        "id": "davis_2017_trainval_480p",
+        "url": "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip",
+        "filename": "DAVIS-2017-trainval-480p.zip",
+        "expected_bytes": 832766765,
+        "required": true,
+        "license": "official public benchmark"
+      },
+      {
+        "id": "mpi_sintel_complete",
+        "url": "http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+        "https_fallback_url": "https://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+        "filename": "MPI-Sintel-complete.zip",
+        "expected_bytes": 5627783629,
+        "required": true,
+        "license": "official public benchmark"
+      }
+    ]
+  },
+  "synthetic": {
+    "explicit_domain_label": "SYNTHETIC",
+    "n": 400,
+    "frames": 8,
+    "height": 32,
+    "width": 32,
+    "classes": ["left", "right"],
+    "class_balance": [200, 200],
+    "radius_integer_range_inclusive": [3, 5],
+    "start_x_integer_range_inclusive": [8, 24],
+    "start_y_integer_range_inclusive": [8, 24],
+    "speed_pixels_per_frame": 2,
+    "label": "direction",
+    "fixed_stimulus_seed": 20261108,
+    "flash_control": "same object positions and class balance, temporally alternating visibility independent of direction label",
+    "ridge_l2": 0.01,
+    "pca": {
+      "train_only": true,
+      "variance_retained": 0.95,
+      "max_components": 128,
+      "svd_solver": "randomized"
+    },
+    "historical_anchor_conditions": [
+      "stateless",
+      "lif_homeostasis",
+      "lif_combo",
+      "degree_null_lif",
+      "A=0"
+    ],
+    "one_factor_ablations": [
+      "lif_combo_minus_adaptive_threshold",
+      "lif_combo_minus_refractory",
+      "lif_combo_minus_EI_sign"
+    ],
+    "negative_controls": [
+      "shuffled_frame_order",
+      "flash",
+      "frozen_gain",
+      "label_permutation",
+      "degree_null_lif",
+      "identity_graph",
+      "zero_effect_injection"
+    ],
+    "A0_definition": "Input-information upper-bound control with recurrent adjacency A set to zero; it is not evidence for a biological-wiring advantage."
+  },
+  "real_domain_protocol": {
+    "selection": {
+      "balance_classes": true,
+      "matched_n_across_ladder_conditions": true,
+      "target_n": {"DAVIS": 400, "SINTEL": 94},
+      "deterministic_order": "ascending SHA-256 of domain/sequence/start_frame/window",
+      "common_even_n_rule": "minimum even class-balanced count available over all registered non-stratum ladder conditions, capped at target_n",
+      "no_test_based_selection": true
+    },
+    "input_preprocessing": {
+      "image_resize": [32, 32],
+      "grayscale": true,
+      "available_input_features": "train-only standardized compound-eye image statistics; no GT enters non-oracle input features",
+      "ridge_l2": 0.01,
+      "pca_train_only": true,
+      "pca_variance_retained": 0.95,
+      "pca_max_components": 128,
+      "fixed_split": true
+    },
+    "ladder_families": [
+      {
+        "family": "current",
+        "variants": ["current"],
+        "DAVIS_label": "sign of horizontal displacement of foreground-mask union centroid from t to t+1",
+        "SINTEL_label": "sign of robust spatial mean horizontal component in official .flo from t to t+1",
+        "features": "32x32 grayscale first/last-frame mean, difference, absolute difference, and 8x8 block motion-energy statistics"
+      },
+      {
+        "family": "temporal_accumulation",
+        "variants": ["temporal_w2", "temporal_w4", "temporal_w8"],
+        "windows": [2, 4, 8],
+        "DAVIS_label": "sign of mask-centroid displacement over the frozen window",
+        "SINTEL_label": "sign of sum of per-flow robust global horizontal means over the frozen window",
+        "features": "first/last image statistics plus ordered per-step 8x8 difference summaries; zero padding is forbidden"
+      },
+      {
+        "family": "spatial_multiscale",
+        "variants": ["multiscale"],
+        "label": "same as current",
+        "features": "available-image signed/absolute differences pooled at 4x4, 8x8, and 16x16 plus structure-tensor principal direction"
+      },
+      {
+        "family": "oracle_gt",
+        "variants": ["oracle_gt"],
+        "DAVIS_features": "official mask centroid trajectory displacement, speed, acceleration, path length, and 8-bin trajectory-angle histogram",
+        "SINTEL_features": "official GT-flow mean/median/quantiles and 16-bin magnitude-weighted direction histogram",
+        "label": "same frozen official-GT label as current",
+        "readout": "same train-only scaler/PCA/ridge pipeline",
+        "interpretation": "label-decoding upper bound, not deployable model performance"
+      },
+      {
+        "family": "difficulty_stratified",
+        "variants": ["difficulty_stratified"],
+        "label": "same as current",
+        "strata": ["low", "middle", "high"],
+        "stratifier": "train-only 1/3 and 2/3 quantiles of official-GT displacement magnitude, then applied to held-out samples",
+        "features": "same available-input features as current",
+        "report": "per-stratum and macro metrics; no stratum is omitted"
+      }
+    ],
+    "required_metrics_per_variant": [
+      "five_seed_accuracy_mean",
+      "paired_seed_bootstrap_95pct_ci",
+      "fisher_ratio_train_only",
+      "discretized_mutual_information_train_only",
+      "mi_bin_count",
+      "mi_estimator",
+      "class_balance",
+      "sample_count"
+    ],
+    "mi": {
+      "estimator": "plug-in mutual_info_classif after train-only quantile discretization",
+      "bins": 8,
+      "aggregation": "sum of per-feature MI divided by number of nonconstant features"
+    },
+    "all_registered_variants_must_be_reported": true
+  },
+  "decidability_rule": {
+    "point_estimates_only_for_state_assignment": true,
+    "ci_upper_bound_never_used_for_thresholding": true,
+    "ordered_rules": [
+      {
+        "priority": 1,
+        "if": "current_ceiling >= 0.70",
+        "state": "DOMAIN_USABLE",
+        "permission": "real-domain delta may be computed"
+      },
+      {
+        "priority": 2,
+        "if": "current_ceiling < 0.70 and oracle_upper_bound >= 0.85",
+        "state": "INPUT_BOTTLENECK",
+        "permission": "no real-domain delta; diagnose representation loss"
+      },
+      {
+        "priority": 3,
+        "if": "current_ceiling < 0.70 and oracle_upper_bound < 0.70",
+        "state": "LABEL_NOT_DECODABLE",
+        "permission": "no real-domain delta; diagnostic negative result only"
+      }
+    ],
+    "ambiguous_guardrail": {
+      "if": "current_ceiling < 0.70 and 0.70 <= oracle_upper_bound < 0.85",
+      "state": "LABEL_NOT_DECODABLE",
+      "required_flag": "borderline_oracle_not_decisive",
+      "interpretation": "conservative no-transfer diagnostic; neither input-bottleneck nor domain-usable claim is allowed"
+    },
+    "run_all_conditions_before_state_assignment": true,
+    "zero_information_termination_forbidden": true
+  },
+  "real_domain_delta_policy": {
+    "allowed_only_when": "decidability_state == DOMAIN_USABLE",
+    "contrast": "accuracy(lif_homeostasis) - accuracy(stateless)",
+    "minimum": 0.15,
+    "expected_strong": 0.25,
+    "requires_transfer_verdict_and_one_factor_ablations": true,
+    "both_current_protocols_below_threshold_verdict": "NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE"
+  },
+  "connectome": {
+    "edge_columns": ["pre_root_id", "post_root_id", "syn_count"],
+    "full_file_required": true,
+    "prefix_allowed": false,
+    "duplicate_merge": "sum syn_count for identical ordered node pairs",
+    "edge_weight": "log1p(syn_count)",
+    "adjacency_orientation": "pre_root_id to post_root_id",
+    "eye_to_kc_exact_hops": [1, 2, 3, 4, 5, 6, 7, 8],
+    "frozen_k_selection": "choose smallest hop with at least 2000 annotated KCs; if none, choose hop with maximum annotated KC count; ties choose smaller hop",
+    "expected_reference_only_not_assertion": {
+      "hop_counts_18390": [0, 15, 2544, 0, 0, 0, 0, 0],
+      "selected_hop_18390": 3,
+      "selected_kc_count_18390": 2544,
+      "spectral_radius_18273_prior_reference": 504.30,
+      "spectral_radius_18390_measured": 292.41506239264993
+    },
+    "spectral_radius_estimator": {
+      "method": "nonnegative power iteration on merged weighted directed adjacency",
+      "max_iterations": 500,
+      "relative_tolerance": 1e-8,
+      "residual_tolerance": 1e-6,
+      "report_convergence": true
+    },
+    "degree_null": {
+      "method": "directed double-edge swaps separately preserving self-loops and reciprocal/unilateral edge classes",
+      "minimum_successful_swaps": 10000,
+      "must_exactly_preserve": ["per-node in-degree", "per-node out-degree", "weight multiset", "nnz", "reciprocal edge-pair count", "self-loop count"],
+      "invariant_failure_policy": "mark unavailable and do not substitute a non-exact null"
+    }
+  },
+  "model": {
+    "timesteps": 8,
+    "theta": 0.15,
+    "gain": 8.0,
+    "target_spectral_radius": 0.95,
+    "leak": 0.85,
+    "adaptive_decay": 0.90,
+    "adaptive_increment": 0.08,
+    "refractory_steps": 1,
+    "ei_negative_fraction": 0.20,
+    "soft_temperature": 0.10,
+    "readout_states": "frozen per condition; no attempt4 readout grid",
+    "equal_parameter_count": true,
+    "per_condition_metrics": [
+      "accuracy",
+      "spike_rate",
+      "feature_std",
+      "nonconstant_dimensions",
+      "per_hop_probe_accuracy",
+      "fisher_ratio",
+      "peak_gpu_mib",
+      "elapsed_seconds"
+    ]
+  },
+  "cross_implementation_contract": {
+    "status_of_18273_endpoint": "reconstruction from supplied 18273 report because no 18273 executable artifact is available in this workspace; never relabel as exact reproduction",
+    "probe": "fixed first 32 SYNTHETIC samples, all 8 frames, fixed split-independent tensor probe",
+    "tensor_stages": ["drive", "syn", "v", "soft", "hard"],
+    "tensor_fingerprint_fields": ["min", "max", "mean", "std", "nonzero_frac", "shape", "sha256_float32_le"],
+    "graph_fields": ["raw_rows", "nnz", "duplicate_rows_merged", "merge_rule", "spectral_radius", "spectral_converged", "weight_multiset_sha256", "in_degree_sha256", "out_degree_sha256", "reciprocal_pairs", "self_loops"],
+    "single_factors": [
+      {"id": "adjacency_convention", "legacy": "binary directed", "current": "log1p(syn_count) weighted directed"},
+      {"id": "duplicate_pair_merge", "legacy": "rows retained as parallel contributions", "current": "ordered pairs summed before log1p"},
+      {"id": "spectral_radius_protocol", "legacy": "fixed prior reference lambda=504.30", "current": "measured converged power iteration"},
+      {"id": "fan_in_definition", "legacy": "total degree including self-loop twice", "current": "weighted incoming degree excluding self-loop"},
+      {"id": "frame_aggregation", "legacy": "last frame", "current": "8-frame soft mean"},
+      {"id": "random_stream_gain_init", "legacy": "MT19937 sequential stream with gain jitter", "current": "PCG64 per-seed substream fixed gain=8"},
+      {"id": "data_version_sha256_binding", "legacy": "unbound prior data version", "current": "exact full-file SHA-256 locked"}
+    ],
+    "endpoints": ["all_18273_reconstructed", "all_18390_canonical"],
+    "single_factor_order": "each factor changes exactly one current setting to its legacy setting; all other settings remain current",
+    "flip_target": "kc_feature_std from report-level 0 to report-level 0.049855",
+    "no_factor_found_is_reportable_failure": true
+  },
+  "statistics": {
+    "bootstrap_resamples": 2000,
+    "bootstrap_unit": "paired initialization seed",
+    "bootstrap_ci": "percentile 95%",
+    "test_families": ["exact_sign_flip", "paired_bootstrap_percentile", "paired_permutation"],
+    "exact_sign_flip": "enumerate all 2^n sign assignments; two-sided with >= absolute observed statistic",
+    "paired_permutation": "enumerate all 2^n within-pair swaps for n<=11",
+    "paired_bootstrap_p": "two-sided tail probability with plus-one correction over 2000 paired-seed bootstrap means centered under the null",
+    "effect_size": "paired Cohen dz with zero-variance convention",
+    "bh": {
+      "q": 0.05,
+      "frozen_families": "separate BH family for each seed cohort and test family over every preregistered main contrast including negative controls",
+      "no_selective_reporting": true
+    },
+    "minimum_attainable_two_sided_p": {
+      "n5": 0.0625,
+      "n11": 0.0009765625
+    },
+    "primary_contrasts": [
+      "lif_homeostasis_minus_stateless",
+      "lif_combo_minus_stateless",
+      "lif_combo_minus_lif_homeostasis",
+      "lif_combo_minus_adaptive_threshold_ablation",
+      "lif_combo_minus_refractory_ablation",
+      "lif_combo_minus_EI_sign_ablation",
+      "lif_homeostasis_minus_degree_null_lif",
+      "A0_minus_lif_homeostasis",
+      "shuffled_frame_order_minus_lif_combo",
+      "flash_minus_lif_combo",
+      "frozen_gain_minus_lif_combo",
+      "label_permutation_minus_lif_combo",
+      "identity_graph_minus_lif_homeostasis",
+      "zero_effect_injection"
+    ],
+    "negative_control_calibration": ["label_permutation_minus_lif_combo", "zero_effect_injection"],
+    "conclusion_rule": "significant only if BH q<0.05 and the corresponding 95% CI excludes zero; n increase alone never establishes mechanism",
+    "report_5_and_11_uniformly": true
+  },
+  "invariant_checks": [
+    "kc_reachable_count",
+    "synthetic_ceiling",
+    "real_domain_ceiling_all_registered_variants",
+    "data_integrity"
+  ],
+  "raw_artifacts": {
+    "one_npz_per_condition_per_seed": true,
+    "npz_required_arrays": ["y_true", "y_pred", "scores", "features_summary"],
+    "csv_outputs": [
+      "real_domain_ceiling_ladder.csv",
+      "oracle_upper_bound.csv",
+      "cross_implementation_audit.csv",
+      "statistical_power_matrix.csv",
+      "main_table.csv",
+      "ablation.csv",
+      "negative_controls.csv"
+    ]
+  },
+  "interpretation_guardrails": {
+    "design_valid_is_not_expected_signal_met": true,
+    "experiment_complete_is_not_success": true,
+    "variance_restoration_is_not_label_information_restoration": true,
+    "diagnostic_negative_result_is_not_mechanism_falsification": true,
+    "both_real_domains_unavailable_forbids_transfer_claim": true,
+    "abandon_allowed": false,
+    "failure_next_steps": ["I2_end_to_end_trainable_membrane_state", "I4_hopwise_information_budget_and_residual_repair"]
+  },
+  "configuration_diff_from_query_round007_attempt4": [
+    "ADD preregistered real-domain current/temporal-2-4-8/multiscale/oracle/difficulty ladder",
+    "ADD frozen three-state decidability rule and domain-gated real-domain deltas",
+    "ADD seven-factor cross-implementation contract plus reconstructed-18273 and canonical-18390 endpoints",
+    "ADD uniform 11-seed cohort while retaining five-seed cohort",
+    "ADD exact-sign-flip/bootstrap/permutation conclusion-consistency matrix and negative-control calibration",
+    "DELETE 15-cell theta-by-gain gate grid",
+    "DELETE full yoked equal-rate 2x2 grid",
+    "DELETE five-readout-state grid",
+    "DELETE full variance-matched-noise-injection table",
+    "KEEP five-condition SYNTHETIC anchors, exact degree-null and identity controls, three one-factor ablations, A=0 input upper bound",
+    "KEEP complete public files, train-only transforms, fixed thresholds, bootstrap-2000, BH-FDR, raw NPZ, byte-identical snapshots"
+  ]
+}

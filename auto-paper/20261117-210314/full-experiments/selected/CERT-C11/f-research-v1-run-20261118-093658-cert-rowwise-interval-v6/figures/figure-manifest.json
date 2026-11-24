@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "figure_count": 3,
+  "generator": "research/make_figures.py",
+  "files": [
+    {
+      "path": "figures/captions.md",
+      "sha256": "b84fe47840e777465876b30ce11cf278543025306fc7ae4cf540d39e0d98bf19",
+      "bytes": 788
+    },
+    {
+      "path": "figures/data/figure1-certificate-chain.pdf",
+      "sha256": "724adcd92c4258794fa9448b675d7f6e082c35d464d66fa58712a5312947da1a",
+      "bytes": 31720
+    },
+    {
+      "path": "figures/data/figure1-certificate-chain.png",
+      "sha256": "c417880b23d3b8be4acf43218f428c5e2c4beccce39ebeaa2ee26057813635a1",
+      "bytes": 114169
+    },
+    {
+      "path": "figures/data/figure1-certificate-chain.svg",
+      "sha256": "f34fb8aefe1b12524f293cc09a2c4217f74c313e0d790120123051f6f1c2aeaa",
+      "bytes": 58511
+    },
+    {
+      "path": "figures/data/figure2-width-tightening.pdf",
+      "sha256": "4f2c9871a1e5219d4fdd8333ad73d16a4877beee6e6eae6c3dabe8f32f017fee",
+      "bytes": 19612
+    },
+    {
+      "path": "figures/data/figure2-width-tightening.png",
+      "sha256": "029dcc4c84ac3daf5d5a992c36539166a07140e9ed53b04bd89ae307844b218d",
+      "bytes": 190664
+    },
+    {
+      "path": "figures/data/figure2-width-tightening.svg",
+      "sha256": "7959c296b340dbb8f0d1c59441e5f902260d8fc3e59a0e55a48d7c54710c0b25",
+      "bytes": 65463
+    },
+    {
+      "path": "figures/data/figure3-equality-tightening.pdf",
+      "sha256": "a8e1c21d8a0fcf69dc222edfdf22b8b2a371a7ef5664fe02229f64532bde4e5a",
+      "bytes": 19715
+    },
+    {
+      "path": "figures/data/figure3-equality-tightening.png",
+      "sha256": "eaed9c2f297ab19c48f3084b36b6ea0849940c1f927a49796a40dc9bd5ac0ebd",
+      "bytes": 106732
+    },
+    {
+      "path": "figures/data/figure3-equality-tightening.svg",
+      "sha256": "7dbbe7a9e3454d41265e237b65aaca992e31cf0f477585c0e39e2c4565a2cbec",
+      "bytes": 54664
+    },
+    {
+      "path": "figures/source-data/figure3-rowwise-tightening.csv",
+      "sha256": "6da8bff970753fe1b90c1ca2e47c9616f7b941d88e11376e9c87fbab92d34331",
+      "bytes": 6509
+    }
+  ],
+  "visual_qa": [
+    "Figure 1 inspected: formulas and arrows legible",
+    "Figure 2 inspected: legend repositioned to avoid data overlap",
+    "Figure 3 inspected: equality and tightening panels legible"
+  ]
+}

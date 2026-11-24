@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "probe_date": "2026-11-18",
+  "new_references": [
+    {
+      "key": "vaswani2017attention",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "status": "official arXiv title/authors consistent; publication year corrected to ICLR 2022",
+      "expected_title": "Attention Is All You Need"
+    },
+    {
+      "key": "dwivedi2021graph",
+      "url": "https://arxiv.org/abs/2110.07875",
+      "status": "official arXiv title/year consistent; author list corrected to Devin Kreuzer and William L. Hamilton",
+      "expected_title": "Graph Neural Networks with Learnable Structural and Positional Representations"
+    },
+    {
+      "key": "kreuzer2021rethinking",
+      "url": "https://arxiv.org/abs/2106.03893",
+      "status": "official arXiv title/authors/year consistent",
+      "expected_title": "Rethinking Graph Transformers with Spectral Attention"
+    }
+  ],
+  "inherited_verification": "29 retained keys were present in the CERT-C11 final 40/40 independent citation audit."
+}

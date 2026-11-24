@@ -1,0 +1,29 @@
+topic: Operator-aligned sparse residual coefficients for logit-faithful frozen GNN-to-SNN compression
+target_venue: Q2+ journal / IEEE TNNLS-style
+main_claim: exact-cost output-Jacobian residual allocation reduces logit MSE with bounded task loss
+method: SVD transport + output-Jacobian-selected sparse exact residual coefficients + rate-coded conversion
+datasets: Cora, Chameleon, Squirrel
+baselines: full float; SVD/random; top-abs/random/A2Q-style/One-Spike-style/uniform exact-bit controls
+primary_metric: logit MSE
+secondary_metrics: hidden MSE, task accuracy/agreement, exact bits, coefficients, latency, memory
+expected_minimum: complete exact-cost curves and bounded task loss
+expected_strong: LR-A through LR-E in guidance-v3
+strong_result_entry_gate: all v3 rows pass after evidence migration
+must_run_experiments: LR-A,B,C,D,E
+must_have_ablations: selection/basis/prior-art adaptations
+figure_table_decision_rules: pipeline, MSE-cost, task trade-off, ablation, timing tables
+experiment_traceability: v2 raw JSON + migration audit + v3 visual map
+citation_requirements: >=36 unique verified references, majority 2022-2026
+citation_dedup_requirements: DOI/arXiv/title/version audit
+local_artifact_policy: v3 run root only
+page_length_policy: proportionate
+single_final_pdf_template_policy: one paper.pdf
+central_question: logit fidelity under exact serialized cost
+intended_reader: graph compression/neuromorphic conversion researchers
+domain_design_bridge: transport bottleneck -> output-Jacobian sparse residual -> bounded task-loss fidelity
+planned_claim: logit-fidelity compression
+observed_finding: pending migration acceptance
+writing_preferences_and_source: English paper, user full-pipeline request
+protected_scope_and_source: all v1/v2 failures preserved
+venue_length_requirements_and_source: none verified
+open_assumptions: local static frozen two-layer GCN; no energy claim

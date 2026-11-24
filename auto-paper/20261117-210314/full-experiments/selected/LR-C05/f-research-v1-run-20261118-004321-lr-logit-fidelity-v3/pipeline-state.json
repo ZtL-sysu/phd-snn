@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v1",
+  "contract": [
+    {"path": "inputs/guidance-v3.md", "sha256": "0dd3778603ecdfb959012a27076e42472c21fb2d96102e0fc5908e76d4546593"},
+    {"path": "inputs/literature-baseline-matrix.md", "sha256": "a6882f48667278ed502fce06735a512c0a573cf86c82c9aae1b167ba8c34a512"},
+    {"path": "inputs/v2-baseline.json", "sha256": "44e1a3124a0608a0ddadff6ff7d3bbd06e35adb0c5e801094778cdb3ba396fff"},
+    {"path": "inputs/v2-lr-core.py", "sha256": "deac99194727c4f36aecd100730be47d3a10fc562d44b5eaf669553c4f7fee83"},
+    {"path": "inputs/v2-method-jacobian.json", "sha256": "8e54f3c0a5b19e6f3299ad7f511a8c7313343bffd2739ecd0a139458aa2f3579"},
+    {"path": "inputs/v2-negative-lock.md", "sha256": "d4a3111292c0c4730f5b1b324a79800b923deb4dfb7d2b01655243375d02d080"},
+    {"path": "inputs/v2-summary.json", "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"},
+    {"path": "inputs/v2-timing.json", "sha256": "bd77cd5b8d688380fe7485bb6d20a31fd853189d7ff9354559978f38fcd32dc0"}
+  ],
+  "history": [
+    {"action": "pass", "stage": "P0"},
+    {"action": "pass", "stage": "P1"},
+    {"action": "pass", "stage": "P1A"},
+    {"action": "pass", "stage": "P1B"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "pass", "stage": "P3"},
+    {"action": "pass", "stage": "P3A"},
+    {"action": "pass", "stage": "P4"},
+    {"action": "pass", "stage": "P5"},
+    {"action": "pass", "stage": "P5A"},
+    {"action": "pass", "stage": "P6"},
+    {"action": "pass", "stage": "P7"},
+    {"action": "pass", "stage": "P8"},
+    {"action": "pass", "stage": "P9"},
+    {"action": "pass", "stage": "P10"},
+    {"action": "reopen", "stage": "P8", "reason": "P10 corrected Figure 1 score notation and Figure 4 task-loss data/caption after peer and integrity review; P8 visual dependencies changed and require ordered reacceptance."},
+    {"action": "pass", "stage": "P8"},
+    {"action": "pass", "stage": "P9"},
+    {"action": "pass", "stage": "P10"},
+    {"action": "pass", "stage": "P11"},
+    {"action": "pass", "stage": "P12"},
+    {"action": "pass", "stage": "P13"},
+    {"action": "pass", "stage": "P14"},
+    {"action": "pass", "stage": "P15"},
+    {"action": "reopen", "stage": "P13", "reason": "P15 clean latexmk recompilation changed export PDF/log hashes after P14; P13 export artifacts require ordered reacceptance."},
+    {"action": "pass", "stage": "P13"},
+    {"action": "pass", "stage": "P14"},
+    {"action": "pass", "stage": "P15"},
+    {"action": "pass", "stage": "P16"},
+    {"action": "pass", "stage": "P17"},
+    {"action": "pass", "stage": "P18"},
+    {"action": "pass", "stage": "P19"},
+    {"action": "pass", "stage": "P20"},
+    {"action": "pass", "stage": "P21"}
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "inputs/guidance-v3.md", "sha256": "0dd3778603ecdfb959012a27076e42472c21fb2d96102e0fc5908e76d4546593"},
+        {"path": "input-manifest.json", "sha256": "14d73f2037d06d96aeb3c3e142a05ef8a1c9149e5d48fada8ba8b96f6f3715e6"}
+      ],
+      "evidence": [{"path": "audits/p0-gate-report.md", "sha256": "d82f9ed2329bfa812ac4f1a369ce090424a7208bb172bcb58cde0323249dd0f8"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "inputs/guidance-v3.md", "sha256": "0dd3778603ecdfb959012a27076e42472c21fb2d96102e0fc5908e76d4546593"},
+        {"path": "contract-extraction.yaml", "sha256": "0d8db49bcdae70e7d5ac50416398d309fccbde1e3885e51ea4da9db1f8f156a4"}
+      ],
+      "evidence": [{"path": "audits/p1-guidance-validation.md", "sha256": "042bfa803f7bb96f5df450d055106ac5102c6d93c12d01daaf7dd89f77ad929a"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "claim-evidence-matrix.md", "sha256": "0f9ad7526340a867464ed1976bb9d080756ad9183c46b590be8f23759ecee9f6"},
+        {"path": "contract-extraction.yaml", "sha256": "0d8db49bcdae70e7d5ac50416398d309fccbde1e3885e51ea4da9db1f8f156a4"}
+      ],
+      "evidence": [{"path": "strong-result-feasibility-lock.md", "sha256": "0eec5c6e55f00947daef943e3c27da0fc0c1e072384cba941adda6970e6897a1"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1B",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "claim-evidence-matrix.md", "sha256": "0f9ad7526340a867464ed1976bb9d080756ad9183c46b590be8f23759ecee9f6"},
+        {"path": "strong-result-feasibility-lock.md", "sha256": "0eec5c6e55f00947daef943e3c27da0fc0c1e072384cba941adda6970e6897a1"}
+      ],
+      "evidence": [
+        {"path": "ccfa-pre-experiment-review.md", "sha256": "46dba64aadf91354ec741b2b46baf43eb5906696c855c6b1b6d2b1dc7bbec4c6"},
+        {"path": "ccfa-pre-experiment-integrity.md", "sha256": "f4d46e96542885b38afc90a30648fa7a430869d5c7cc932c86c281c1cc1900ad"},
+        {"path": "concern-to-action-ledger.md", "sha256": "d4627f0cfc3c9d9fc80977108b303faace654c0f7dba536a4e2e2a77eeafcac9"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "config.arc.yaml", "sha256": "3f4428cc27eab3c15fa8e513e9d94eed74fa519629a956c2432bb92796761106"},
+        {"path": "protocols/arc-stage-map.md", "sha256": "2951f96be114abd20c5a94636282d9aaaf0b5055ad0f31a081595a264f066fab"},
+        {"path": "inputs/v2-lr-core.py", "sha256": "deac99194727c4f36aecd100730be47d3a10fc562d44b5eaf669553c4f7fee83"}
+      ],
+      "evidence": [{"path": "audits/p2-evidence-migration-check.md", "sha256": "3f3aee586720ea034ec60184448ce94d89359bb6a5827b24890183b80e7535f2"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "results/confirmation-test-v2.json", "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166"},
+        {"path": "research/run_lr_v3_confirmation_base.py", "sha256": "95971758a69ced18d3c3d29aed8e54ad26cd5908477114ab27621a2b9e087bdc"}
+      ],
+      "evidence": [{"path": "audits/p3-confirmation-gate.md", "sha256": "25b06097d3b9c6b94dfe29ff9120e78ca4118b5fd2e95d63bf6dfc2d29b0c3be"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [{"path": "results/confirmation-summary.json", "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"}],
+      "evidence": [
+        {"path": "ccfa-baseline-numeric-audit.md", "sha256": "9126f061439af3892efb92318becab06f2939606edd5ffce69cf29c23e6077de"},
+        {"path": "ccfa-baseline-evidence-review.md", "sha256": "d97c8f4cdc1b3595552ea56b2fe192770a8d97fed686312f50651ce32ad65fc9"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P4",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [{"path": "experiment-traceability.md", "sha256": "b9f21ac0a3c27cbecaa889678f33b3487a2cefaf7d589e94025ce478bac4204c"}],
+      "evidence": [{"path": "audits/p4-experiment-gate.md", "sha256": "11a2bb0949240f6ceecffea96cea35d646f482368b06ac6e90bec062239f7bc6"}],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P5",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "experiment-completion-lock.md", "sha256": "080c98e1c0f226d202981cd084923fee0677d9f8411dd2215934ab71364f48ec"},
+        {"path": "results/confirmation-summary.json", "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"}
+      ],
+      "evidence": [
+        {"path": "strong-result-lock.md", "sha256": "290d7e575da3efd2bf79e4a3d48136a49eb2a1cd7679b4e01e9e9b7466fa58e9"},
+        {"path": "ccfa-full-numeric-audit.md", "sha256": "a37462cab92657496e786e1130978d722634fa87b7054f5140f66ee00980976c"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P5A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "pre-draft-evidence-dossier.md", "sha256": "65f0b050d1e5cf98a589a3e5bde4e977fde5b4063d9d8935971c5975615adf57"},
+        {"path": "results/confirmation-summary.json", "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"}
+      ],
+      "evidence": [
+        {"path": "ccfa-pre-draft-scientific-review.md", "sha256": "32082761fe52e40b726efbc7806657a72795e8ed91dac730c19aec5266958324"},
+        {"path": "ccfa-pre-draft-integrity-audit.md", "sha256": "3feb81022a9b3ed5a61b978b950c667f4ac68da9d02bb14f2cde8cf5a7d7e36e"},
+        {"path": "ccfa-pre-draft-action-ledger.md", "sha256": "c5ff9ea7677de8b775080c6560f1cfa2317cf0e4bf1177579ee12c0170548135"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P6",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "writing/packet.json", "sha256": "4d96fcc26cd1ba4961f2485ea02ed9a565af3641c38696352a99125594d83918"},
+        {"path": "writing/request-p6.json", "sha256": "1049837cda206ac8ff11dfb1d5d3391b4c34fc38aae85668313eb8a0cbf6d49f"},
+        {"path": "research/run_arc16_isolated.py", "sha256": "ab23b2ee984b833da5d22f268bc05aa27f02b573e6988b1a3440bd71a74b39eb"}
+      ],
+      "evidence": [
+        {"path": "writing/arc-outline-v3/stage-16/outline.md", "sha256": "8ec3ce0262b9e1a7ea9b7f21c799d2051a743d0bc93f13729a76188bc97d5ec2"},
+        {"path": "writing/arc-outline-v3/executor-context-audit.json", "sha256": "a1a14211c774554a6df78fbd0cbbdfcfc566f6abb83dfc11a9996e066489b495"},
+        {"path": "audits/p6-gate-report.md", "sha256": "adc3d2ff6b32f98fb5e6e85f9af961de31d8afdf7f194877f638e20be9b6072d"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P7",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "writing/packet-p7.json", "sha256": "8e4d35abfcf574b9058151518802486db74f2f474e48b3c9a4ba70dc3bb1aa4f"},
+        {"path": "writing/request-p7-part-1-title-abstract-introduction-related-work.json", "sha256": "9c7c1766b13e9c1c3382599c214744b0b96ee1ce246ea71011fa4c088bf3268d"},
+        {"path": "writing/request-p7-part-2-method-experiments-setup.json", "sha256": "23a5a243a2b3fe6901bcd5c9db47fad55fbbc2fdbc6578ec6698711223274c6a"},
+        {"path": "writing/request-p7-part-3-results-discussion-conclusion.json", "sha256": "7cc38bd39c242d4caaed8366417994c20e9488762da04faf363ff6097e2e32f5"},
+        {"path": "research/run_arc17_isolated.py", "sha256": "9f1b017ec135be688c1e83fa0c5b8d544fd24f2cfc177e4b0d6e111d2baca3f1"}
+      ],
+      "evidence": [
+        {"path": "writing/arc-draft-v3/stage-17/paper_draft.md", "sha256": "74494635824f496c4b51b8771d52f6d355c1f17a90ec2cbf2ed95243876bf3b5"},
+        {"path": "writing/arc-draft-v3/reverse-outline.md", "sha256": "356e8644058e9dad098d450b546b7e875e4d10fb88528a4b89ce68fe8c9f0c58"},
+        {"path": "writing/arc-draft-v3/executor-context-audit.json", "sha256": "2198eecab676053fee5181632f5b7da4b373b08e18e863faf25ff303fc0ed07e"},
+        {"path": "writing/p7-structural-revision.md", "sha256": "cb9863abf268eb28dd39ee7ed6f9930f2116148b360536d08247951ba5bf78b6"},
+        {"path": "audits/p7-gate-report.md", "sha256": "dfdebdd13bdf330bdc8a453730edf08e8b7583b4601aca57f867e3d45a96a1d1"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P8",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "research/make_p8_figures.py", "sha256": "12705cfbc12d4adf3a59517a711b9e1949f356bf6bcf5f1c47c148907bcf3740"},
+        {"path": "research/make_figure1_svg.py", "sha256": "d7db5ccee1f99644ae9a349b6a0794da099515ee7f56602423934bd180114351"},
+        {"path": "research/build_p8_draft.py", "sha256": "4fd8e2dd907e85b518865c4de5b977d80e8f54fa728b3148bd1faecc123d460d"},
+        {"path": "figures/figure-contract.md", "sha256": "78eb18ea61302ea4bce28cc74dce6c44f24cad03b3c20032e6451cdf970f3a50"},
+        {"path": "figures/captions.md", "sha256": "a1353f974cd17f0dcb14900294def132384c280ac9cf06f44242184597dffb87"},
+        {"path": "figures/figure1-prompt.md", "sha256": "d5353549b94befbe63653b7295d2c7cc9730fe32ed8ef72638b97bdbd3819a13"},
+        {"path": "figures/specs/figure1-architecture-spec.json", "sha256": "0d435b2a824c3eed381a683ca8ee617069475a7917ec2096653b76f296cfdaff"}
+      ],
+      "evidence": [
+        {"path": "figures/data-figure-manifest.json", "sha256": "6cf60a241defa57e669d48c6ab0400f512a62967a9785323462582dbeb28baee"},
+        {"path": "figures/figure1-manifest.json", "sha256": "124f049d407b675dc32cd4c77f6ede85b9e01225cb92735e2cf32894ab181db4"},
+        {"path": "writing/p8/paper-data-figures.md", "sha256": "e35047b6ed4e6ae0bdcc9470fb754d6fd398f8d6f2f8aaf2e20e574e9726b8cb"},
+        {"path": "writing/p8-table-plan.md", "sha256": "82fb9ffc63672c804b78ea9c6b1fc053617ac6d93ae95c02bd6c46cecaad641b"},
+        {"path": "figure-table-insertion-audit.md", "sha256": "50cf521ebfeac291d8b8a8184e83d0edbd4c5346744c40f86fbe93f12c3774d5"},
+        {"path": "audits/p8-gate-report.md", "sha256": "49afa7d7af52e3d75905de8e79543a8dda06d84a3d7c42d88f76aed37b604e04"},
+        {"path": "audits/p8-gate-report-v2.md", "sha256": "228d934fcab725c31ab6739a057d0d2fb30bad8ecb7beee2b5bef3187883c186"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P9",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "research/build_p9_inputs.py", "sha256": "8ad22db2e9f70f71d9593ecf219bac4d1331f01842b370362c3f838681f2c252"},
+        {"path": "research/run_arc18_isolated.py", "sha256": "d54459b082db5a067cccfc0e507b45a7b34c4b41e53ebd861fe26aec2ba291d1"},
+        {"path": "writing/p9-evidence-digest.json", "sha256": "435748abc9f5621f15f674b9c76968d9749f8c21a377942958098cd8f16ff8c6"},
+        {"path": "writing/request-p9-reviewer-a.json", "sha256": "5656b49b67a217abccc03954efc69054ab6d9279b8dbd423e54fbaf7c5cc929b"},
+        {"path": "writing/request-p9-reviewer-b.json", "sha256": "85936bfffd580f78e23f27b7f782c417c963f326adf5d2faae475f724487f688"}
+      ],
+      "evidence": [
+        {"path": "writing/arc-review-v1/reviewer-a.md", "sha256": "1045eb1699cfd20b43b9b95b0fedd8e3e411a8105c71824aafa66f4b4e99a0f5"},
+        {"path": "writing/arc-review-v1/reviewer-b.md", "sha256": "b93194968dbfe52c3cd77a7ffcdfac795b6c30a37c75db6c25c8ba72f570ee40"},
+        {"path": "writing/arc-review-v1/stage-18/reviews.md", "sha256": "e92b65450b61e18161fda4e0f3e24fd1d148725665868cb515d4bcc5834ee99e"},
+        {"path": "writing/arc-review-v1/executor-context-audit.json", "sha256": "92cfa74de83a1d20b551f56b52bec91b8829da8bb06f50a683d4af34c1a146e2"},
+        {"path": "ccfa-full-paper-review.md", "sha256": "535d3a3bf4167736b0f665b50d9e1ecafc5b96d5d9dc0ce2ad3dcf78c950bc88"},
+        {"path": "ccfa-full-integrity-audit.md", "sha256": "1995bf9ef49c9e66b5a8c1ca0ad62b25203de3c04a60e411fa057bf6c3ed5528"},
+        {"path": "ccfa-p9-merged-concern-ledger.md", "sha256": "dfa5e5f967c6798b796950d73952848fa1fa6fcdd1e7c97f546efa9a5c887d79"},
+        {"path": "audits/p9-gate-report.md", "sha256": "5a8864cad82215fb9f25a2fd614c1948335614985e9c44099c7e3e781e2c5e0d"},
+        {"path": "audits/p9-reacceptance-after-p10-visual-repair.md", "sha256": "22f951bb4db8226971411617f59208cb65785d16e761e1e4054ac0e64eabe525"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P10",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "research/build_p10_evidence.py", "sha256": "290b9912797f2a33ff0a2143edb16811d2987c04e6464fa7ca62a563e44de9e5"},
+        {"path": "research/make_p10_figure_repairs.py", "sha256": "5e8b0765c4c02b084dc0faa6ec973a701ce52c0a67468022051ed945f42eec40"},
+        {"path": "research/build_p10_inputs.py", "sha256": "8b8019bb1c7f58fc69b1f0ecb03f2968d8034941d0694b232d451b759b68d651"},
+        {"path": "research/run_arc19_isolated.py", "sha256": "dd48b7c2365167a858b3ef7f6ef5ece0ae818765ee644772d890aa3783312ca5"},
+        {"path": "writing/packet-p10.json", "sha256": "a04c22be1c46da79cfc701f5be34b531b199ae0b63e04b15f63954648022b6ca"},
+        {"path": "writing/p10-edit-decisions.json", "sha256": "69cc0089f248069f02afa8c104523f8de7993b06608a864c93cd6a35b012ae9a"},
+        {"path": "writing/request-p10-revision.json", "sha256": "710ec4f213ce00473222b324ebabb8b3e1e4dc15269b89ccf91cd6f715e3d67c"}
+      ],
+      "evidence": [
+        {"path": "results/p10-evidence-manifest.json", "sha256": "42fa9a593851a345ad9136506bb7e9931a8c716a29d5962ea2440e0f3fde7ff9"},
+        {"path": "writing/arc-revision-v1/stage-19/paper_revised.md", "sha256": "2a418d00f6f1f509b0e43c9770d95ee2539086cbc76620240d567c1e33ccd6ca"},
+        {"path": "writing/arc-revision-v1/model-response-validation.json", "sha256": "0d32f992dca5077a76c92e2db7121757ee37ba7cd21a4f2f1d3b34ffbea40bdb"},
+        {"path": "writing/arc-revision-v1/executor-context-audit-final.json", "sha256": "aee301288aef97500c2c74190ac7d5051b4e1ec20da6b730d00764c47f67d836"},
+        {"path": "writing/arc-revision-v1/manuscript-lint-v3.json", "sha256": "c2bf65753d6d8fa6d741c0df0592045373e88b72470dda94a43b9f881f817b64"},
+        {"path": "writing/p10-revision-log.md", "sha256": "51ab2f3ae33ebc6d452a4d2ad1c0cb9031b6fdd8088c31ec88b9569e85875bd6"},
+        {"path": "figures/figure1-manifest.json", "sha256": "124f049d407b675dc32cd4c77f6ede85b9e01225cb92735e2cf32894ab181db4"},
+        {"path": "figures/data-figure-manifest.json", "sha256": "6cf60a241defa57e669d48c6ab0400f512a62967a9785323462582dbeb28baee"},
+        {"path": "audits/p10-gate-report.md", "sha256": "e73ad3b704de90440bb5d518cb198650995fdd5559a6d6470561713995dfb56b"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P11",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "research/run_arc20_isolated.py", "sha256": "b1f207ae78e18d80a86d3cf82407b727c0ddcd494aa921268bb04e90b148d0b1"},
+        {"path": "writing/request-p11-quality.json", "sha256": "de0389a19ea0a943847787b791d44c460d5417efef2b723ac987241557f6130c"}
+      ],
+      "evidence": [
+        {"path": "writing/arc-quality-v1/stage-20/quality_report.json", "sha256": "0b977c973acf017a53c80a40219eec17d82aac1fd867e64d5494d30c29a6dac8"},
+        {"path": "writing/arc-quality-v1/stage-20/fabrication_flags.json", "sha256": "d6b5bf96a80308f6c8e912d4e5914873f254e5d865e11a043e7d76c8f6d5eb05"},
+        {"path": "writing/arc-quality-v1/executor-context-audit.json", "sha256": "78f411947b669aceafac1da30ff6217298c0894cfcf772b1133c47af4667c719"},
+        {"path": "audits/p11-gate-report.md", "sha256": "a4d4c56b0b36bfaad7b4450760f4d6087ee398f1b581b497e11eaa4186e00c60"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P12",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "references.bib", "sha256": "6486042a1f0e45745fe955e92658265c5a26dc299f754da4b936343736776508"},
+        {"path": "research/build_p12_reference_package.py", "sha256": "27cef3d9d178651821708255fefcf8cf322d7b72688e341dccaf0684257d8927"},
+        {"path": "research/probe_p12_references.py", "sha256": "5dd2eb179a946ac36c975ed4d36aa74ebebb9d1a4b2da19c62760ffe40a0067b"},
+        {"path": "research/probe_p12_openalex.py", "sha256": "fb43f63ba55c2fa3ac13b0161488820edb61fe295b6ea2f373d3f62aeafaa175"},
+        {"path": "research/probe_p12_official_pages.py", "sha256": "9f47ba6483e408094678ad005280e4714ee10ce61d45ca46eacc45b8031148e7"},
+        {"path": "research/probe_p12_doi.py", "sha256": "ac283e199ed58f6b846158546195044cbd80b77c30d633d79537cee8eaab1827"},
+        {"path": "research/probe_p12_fix_dois.py", "sha256": "4c0f6ac394b2fab57a7cde71dbd34ad15a88895ea16dfb1314268e4c0ef1a002"}
+      ],
+      "evidence": [
+        {"path": "reference-coverage.csv", "sha256": "0c971ba27fc45d8d884f31e699c98159918e47d9eabdfac6c5d63965b6aa1ee4"},
+        {"path": "reference-dedup-audit.md", "sha256": "7f0664188e005e61835046db410b39956d27a726856380c9dc87439032a636f3"},
+        {"path": "CITATION_AUDIT.md", "sha256": "a35a41cfcd7bde1128e9b2499729a2c7f38d532645a918d537a72ccb82f8e5c0"},
+        {"path": "CITATION_AUDIT.json", "sha256": "83ca09ff0a20fe0a35189b83564326607a62e1d25c89b9bf7ff142f021aab024"},
+        {"path": "CITATION_AUDIT_INDEPENDENT_FINAL.md", "sha256": "2ce241327e95fca95eaca629065020afe15c7707b9623c5e3d94627ef138b18f"},
+        {"path": "CITATION_AUDIT_INDEPENDENT_FINAL.json", "sha256": "c46fef973fffe8d82ed799e50f11b07d7fe89fcaa5288022735882ee7f72433b"},
+        {"path": "writing/p12/paper-with-verified-references.md", "sha256": "8a433c73f85c8ae69f7fec1dea3929e330e1e64238e8e389d36a3281f705a33b"},
+        {"path": "audits/p12-gate-report.md", "sha256": "378ddf72ee64b1859273674b46912c8bcda643a087571a6c790373c798932ca8"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P13",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "research/run_arc22_export.py", "sha256": "1ce5cd88eb197b769f2217aba18b633d38687697bd2ce9b6da8f369dbf4be8de"},
+        {"path": "research/finalize_p13_export.py", "sha256": "b2cd2c30a0001cb5761844be28501c5040224c16792e9bbd14a43832dfcbd80e"},
+        {"path": "writing/p13/paper-export-input.md", "sha256": "8c5338a1d20a18c9a1d78b63d8b85fe476f9efcca0fb53a23be8a9f2796cad78"}
+      ],
+      "evidence": [
+        {"path": "writing/arc-export-v1/stage-22/paper.tex", "sha256": "73b80a2dd38e726cd8fffb0059f47ec7aa613b0af0ec36423aa6adefaf77069e"},
+        {"path": "writing/arc-export-v1/stage-22/paper.pdf", "sha256": "f26ce0d6a1296bfe0659d9117aa540aa40410b86c5cf87509b851e5370072d98"},
+        {"path": "writing/arc-export-v1/stage-22/references.bib", "sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"},
+        {"path": "writing/arc-export-v1/stage-22/p13-compile-audit.json", "sha256": "2149255a1c21ef73eed28633254158c8bb6c5422d4ea869f0f3fee3f3047249d"},
+        {"path": "writing/arc-export-v1/executor-context-audit-final.json", "sha256": "4a7ae74bc22e583fc778bb27606a80356712da0999ab8a10e9436f4b36f293bc"},
+        {"path": "audits/p13-gate-report.md", "sha256": "27db4cc8c7337004a1544a27e10bdfddb748f793206646d53222bf83cd862fab"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P14",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "research/run_arc23_citation_verify.py", "sha256": "256c9780f32d8351aec2ef146e082b09a00a9ebcbf2be8372d5314197565a21e"},
+        {"path": "research/run_arc23_citation_verify_v2.py", "sha256": "3a6f899526220ea898160a9b942443ee49aaa87922ec2ce1d96ef30bd91f72b8"}
+      ],
+      "evidence": [
+        {"path": "writing/arc-citation-v1/stage-23/verification_report.json", "sha256": "25c2493731ee274b9dbc34e825635ce73c6c143b92a09133d079a8b62477fbc4"},
+        {"path": "writing/arc-citation-v2/stage-23/verification_report.json", "sha256": "2e832460d92abc6512aafa7450e45a8e8fdc649d0451f805a5c76601793a9271"},
+        {"path": "writing/arc-citation-v2/stage-23/references_verified.bib", "sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"},
+        {"path": "writing/arc-citation-v2/stage-23/paper_final_verified.md", "sha256": "8a433c73f85c8ae69f7fec1dea3929e330e1e64238e8e389d36a3281f705a33b"},
+        {"path": "writing/arc-citation-v2/executor-context-audit.json", "sha256": "671fba806fd7f99eff2019fa36e92c9d81ca51d0ac088bdfc8f955ba4486bb8c"},
+        {"path": "CITATION_AUDIT_INDEPENDENT_FINAL.json", "sha256": "c46fef973fffe8d82ed799e50f11b07d7fe89fcaa5288022735882ee7f72433b"},
+        {"path": "audits/p14-gate-report.md", "sha256": "3ae9b644610b72a71c85947a3f3e6bb4bfe80d6301993510688625318e2c2167"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P15",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "writing/arc-export-v1/stage-22/paper.tex", "sha256": "73b80a2dd38e726cd8fffb0059f47ec7aa613b0af0ec36423aa6adefaf77069e"},
+        {"path": "writing/arc-export-v1/stage-22/references.bib", "sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"}
+      ],
+      "evidence": [
+        {"path": "writing/arc-export-v1/stage-22/paper.pdf", "sha256": "f26ce0d6a1296bfe0659d9117aa540aa40410b86c5cf87509b851e5370072d98"},
+        {"path": "writing/arc-export-v1/stage-22/p13-compile-audit.json", "sha256": "2149255a1c21ef73eed28633254158c8bb6c5422d4ea869f0f3fee3f3047249d"},
+        {"path": "audits/p15-gate-report.md", "sha256": "30983b0df88504d86e046c20348a51f64f6999277da283df987275d88bf2bf6f"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P16",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "writing/arc-export-v1/stage-22/paper.pdf", "sha256": "f26ce0d6a1296bfe0659d9117aa540aa40410b86c5cf87509b851e5370072d98"}
+      ],
+      "evidence": [
+        {"path": "page-count-audit.md", "sha256": "11bf0814c98423cd48fc58007a4597d8ba04fe9b5fbbd66d543d42855107e6c4"},
+        {"path": "audits/p16-gate-report.md", "sha256": "46172f76b7c259b04fc16ac1870b25b2810536571da2e5bbeb380eaae1cff9a1"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P17",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "research/build_p17_guidance_repair.py", "sha256": "dbb26adefbea98f0c4f9bbd720ead195b0e834e6904b0cf9e6bdedc796e7747a"}
+      ],
+      "evidence": [
+        {"path": "writing/p17/paper-guidance-complete.md", "sha256": "e411d0692420f25fde23d1eb0978fdb8e5e3b0ef7fbbf429ab7edd3ee76ff1fe"},
+        {"path": "paper-guidance-audit.md", "sha256": "982169ceee995f204705a053f5dea3d6f150b8ee87246259347d134c3e64c2a0"},
+        {"path": "audits/p17-gate-report.md", "sha256": "42a70e317d82cc046614ed6a6a4ccef0a205457bc40ec4e9f3a66740e3722ed2"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P18",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "writing/p17/paper-guidance-complete.md", "sha256": "e411d0692420f25fde23d1eb0978fdb8e5e3b0ef7fbbf429ab7edd3ee76ff1fe"}
+      ],
+      "evidence": [
+        {"path": "audits/p18-figure-table-audit.md", "sha256": "796af1c91f4f25755c8a649fe8c8daa8c345b0d8832adde417e448a58edd162d"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P19",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "writing/p17/paper-guidance-complete.md", "sha256": "e411d0692420f25fde23d1eb0978fdb8e5e3b0ef7fbbf429ab7edd3ee76ff1fe"}
+      ],
+      "evidence": [
+        {"path": "writing/p17/manuscript-lint.json", "sha256": "df04195c4012b0e8b72afb3354d41e7286fd52f67e45da7e74fbce88b031d3e6"},
+        {"path": "writing/p19-style-audit.md", "sha256": "911f253fc702f999048b601b6ba0f71573225a6535a2d15f8e9c40ca7741771d"},
+        {"path": "audits/p19-gate-report.md", "sha256": "9c96abaf0df96a81f1a868e11f5afac87d0756321119cf22ce776cf11e5f056e"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P20",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "writing/p17/paper-guidance-complete.md", "sha256": "e411d0692420f25fde23d1eb0978fdb8e5e3b0ef7fbbf429ab7edd3ee76ff1fe"}
+      ],
+      "evidence": [
+        {"path": "writing/p20-final-v2/stage-22/paper.tex", "sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf"},
+        {"path": "writing/p20-final-v2/stage-22/paper.pdf", "sha256": "1b492d599edb67314af1fa6369e95d06e2fecc9ffade67fe6cdd920cc9461d73"},
+        {"path": "writing/p20-final-v2/stage-22/references.bib", "sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"},
+        {"path": "writing/p20-final-v2/p20-final-audit.json", "sha256": "3a0f28d004214e5e50dc0169b0b85bf5517a59814265cd230771d6edd8fbbc4b"},
+        {"path": "audits/p20-gate-report.md", "sha256": "d427fe0821a21cc340412b481dc7ff2febcd83c4ebab184f74c64d5c0698ea73"},
+        {"path": "page-count-audit-final.md", "sha256": "0bdcc064b17b5a41255816894005e700e6096e712d8b103fce5d13fc25c32f8e"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P21",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "writing/p20-final-v2/stage-22/paper.tex", "sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf"},
+        {"path": "writing/p20-final-v2/stage-22/paper.pdf", "sha256": "1b492d599edb67314af1fa6369e95d06e2fecc9ffade67fe6cdd920cc9461d73"},
+        {"path": "writing/p20-final-v2/stage-22/references.bib", "sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"}
+      ],
+      "evidence": [
+        {"path": "deliverables/LR-C05-final-v1/paper.tex", "sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf"},
+        {"path": "deliverables/LR-C05-final-v1/paper.pdf", "sha256": "1b492d599edb67314af1fa6369e95d06e2fecc9ffade67fe6cdd920cc9461d73"},
+        {"path": "deliverables/LR-C05-final-v1/references.bib", "sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"},
+        {"path": "deliverables/LR-C05-final-v1/source-archive.zip", "sha256": "b55904992e10f7d91f377b22d02b487856ff04fa0de1c720e3dbcf01b21d28e4"},
+        {"path": "audits/p21-delivery-verification.json", "sha256": "b46d026c82d3e39a8bfaa801a4c1112d9e514bd7c47db8d4af265087d79ddd5e"},
+        {"path": "audits/p21-package-manifest-preacceptance.json", "sha256": "6f3f635c57f0f6a22b623eab2212a7486be11aa7e1acde385ef7b8e7ff3b50fb"},
+        {"path": "writing/p21-clean-build-v1/latexmk.stdout.log", "sha256": "6d7788f1e0fd5a8223e4cc5b2cc2fba95734c075250e1feccfde978fb5623758"},
+        {"path": "audits/p21-gate-report.md", "sha256": "bb605a4559b64c44c25c2b71ff63ba4c217a34ffdd9891086cc75c20c0ed47a3"}
+      ],
+      "gate_verdict": "pass"
+    }
+  ]
+}

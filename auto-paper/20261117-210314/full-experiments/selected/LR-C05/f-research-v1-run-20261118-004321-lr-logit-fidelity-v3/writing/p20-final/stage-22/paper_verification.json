@@ -1,0 +1,134 @@
+{
+  "passed": false,
+  "severity": "REJECT",
+  "total_checked": 173,
+  "total_verified": 91,
+  "strict_violations": 67,
+  "lenient_violations": 15,
+  "fabrication_rate": 0.474,
+  "unverified_numbers": [
+    {
+      "value": 2708.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 1433.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 2277.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 2325.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 5201.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 2089.0,
+      "line": 65,
+      "section": "Method",
+      "in_table": false
+    },
+    {
+      "value": 0.0057,
+      "line": 173,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0077,
+      "line": 173,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0027,
+      "line": 173,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": -65.65,
+      "line": 173,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0337,
+      "line": 174,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0071,
+      "line": 174,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0511,
+      "line": 174,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0119,
+      "line": 174,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": -31.9,
+      "line": 174,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0326,
+      "line": 175,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0035,
+      "line": 175,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.044,
+      "line": 175,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": 0.0047,
+      "line": 175,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    },
+    {
+      "value": -26.54,
+      "line": 175,
+      "section": "Main Logit-Fidelity Result",
+      "in_table": true
+    }
+  ],
+  "fabricated_conditions": [],
+  "config_warnings": [],
+  "summary": "severity=REJECT; checked=173, verified=91, unverified=82; strict_violations=67"
+}

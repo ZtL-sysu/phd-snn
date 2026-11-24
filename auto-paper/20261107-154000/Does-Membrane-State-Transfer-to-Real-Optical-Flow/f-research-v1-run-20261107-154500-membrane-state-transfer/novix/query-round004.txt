@@ -1,0 +1,101 @@
+任务：执行 f-research-v1 的 P4 全量实验批次 —— **C1 死磕第 2 次尝试（correction loop v3）**。
+检验「把脉冲传播深度提到信息实际到达的层、并统一连接组协议后，膜状态增益在 SYNTHETIC 与真实光流上是否成立」。
+只跑代码和出结果，不写论文、不做文献检索、不提交任何子任务。必须留下可复现脚本与原始数值。
+
+【为什么这次和上次不同 · 必须读】
+上一个任务 18156 已跑完全量实验（317 步、5 seeds、DAVIS 真实下载），但判为 REJECT_FAILURE，证据在
+`acceptance-verdict.md`。三个可复核的失败点：
+1. 从 active eye roots 到 Kenyon 的 exact-hop 可达 KC 数 hop1=0, hop2=0, hop3=0，hop4=8, hop5=714。
+   基座约定的 3 步传播在拓扑上到不了 KC，所以 KC 读出 feature std=0、spike rate=0，
+   stateless / lif_homeostasis / lif_combo 全部塌到 0.5（SYNTHETIC）与 0.5205（REAL）。
+2. DAVIS-2017 的 5-seed ceiling = 0.5215，低于协议阈值 0.70，真实域任务本身不可学。
+3. 远程只取了 8 MB edge 前缀（791,218 行 / 130,391 节点 / 717 active eye roots），
+   与本机完整可读边（2,335,888 行）协议不一致；且 finalReply 引用的 result.json 不在可 pull 的
+   workspace 内，导致交付物不齐。
+本轮**不是**重提同一 query，而是修这三点后重测。禁止把上一版配置原样再跑一遍。
+
+【本轮四要素（写进 result.json 的 grind_block）】
+- 上一轮失败点：KC 3 跳不可达 + 真实域 ceiling 0.52 + 图协议不一致 + result.json 缺失。
+- 本轮假设：只要传播深度覆盖信息实际到达的层，且真实域任务本身可学，
+  膜状态相对 stateless 的增益就会重新出现；若仍不出现，则是对该机制的可信否证证据。
+- 具体改动（相对 18156 的 diff）：① 训练前强制做 eye→KC exact-hop 自检并**自动把 K 提到 ≥5**
+  （或把读出层改到 hop-2/3 中间神经元），把实际 K、每层可达数写进 config；
+  ② 用**完整**连接组边表（不是 8 MB 前缀）并与本机构图协议一致；
+  ③ 真实域先做 ceiling 自检，<0.70 则该域标 unavailable 并换 Sintel GT 光流方向标签作第二真实域；
+  ④ `project/result.json` 必须写在可被 `debug pull` 拉回的 workspace 根下的 project/ 目录内；
+  ⑤ 训练前 4 项 invariant checks 失败立即落盘 result.json 并标 design_invalid，不要空跑数百步。
+- 预期信号：SYNTHETIC 上 lif − stateless ≥ +0.15 且 95% CI 下界 >0；KC readout feature std >0；
+  真实域 ceiling ≥0.70。若失败：下一步把读出层移到 hop-2/3 并做 K×T 等预算分解。
+
+【硬件报告】先运行 nvidia-smi 与 torch.cuda.is_available()，记录 GPU 型号、显存、torch/CUDA 版本。
+
+【公开数据，CC BY 4.0 / 官方公开基准，无需鉴权】
+- 连接组边表（**请下载完整文件，不要只用 8 MB 前缀**）：
+  https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content
+  （完整大小约 178,853,187 B；列 pre_root_id,post_root_id,syn_count）
+  若 120 秒内拿不到完整文件，改用 HTTP Range 取前 64 MB 并**明确记录实际字节数、行数与 prefix=true**，
+  绝不把前缀伪装成全图。
+- 注释表 https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content
+- 复眼坐标 https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content
+- DAVIS-2017 https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip
+  （832,766,765 B，ZIP 魔数 PK；已实测 HTTP 200/206）
+- 可选第二真实域 Sintel http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip
+  （约 5.6 GB，若时间/带宽不足则标 unavailable 并说明原因，不要编造）
+任一文件 120 秒内拿不到 → 标 unavailable + 原因，跳过依赖它的条件，绝不编造数据。
+
+【依赖】远程是干净环境，先 pip 安装 numpy scipy scikit-learn pandas pyarrow opencv-python-headless tqdm；
+记录实际安装版本。若 CUDA 版 torch 与 scipy 不兼容，改用 CPU 版 scipy 做统计，图传播仍走 GPU。
+
+【图与编码 · 必须与本机协议一致，逐项报告实测数字】
+- 用出现的 root_id 建索引；A[post, pre] = log1p(syn_count)；COO→CSR，sum_duplicates，eliminate_zeros；
+  谱半径归一化 A *= 0.95 / spectral_radius(A)（幂迭代 ≥40 步）；**不做行归一化**。
+- 复眼采样：32×32 帧像素反相成稀疏墨迹（1 - pixel/255），用 `x_axis`/`y_axis`
+  （**不要用 3D x/y/z**）做 cKDTree 最近邻 Voronoi 映射；每帧 receptor drive 按最大值归一化到 1。
+- Kenyon 读出：注释表 cell_type 以 KC 开头的神经元；注释不可用时退化为
+  「从 eye 出发 BFS 第 K 跳节点中固定随机 1024 个」并标注 fallback。
+- 特征维 >2000 时先做 PCA(32)，只在训练集拟合。
+
+【训练前强制自检 · 4 项 invariant checks，任一失败立即写 result.json 并标 design_invalid】
+1. `kc_reachable_count`：从 active eye roots 出发的 exact-hop 可达 KC 数（hop 1..8 全部报告）。
+   若选定 K 下可达 KC 数 == 0，**自动把 K 增大到 ≥5**（最多 8），或把读出层改到
+   hop-2/3 中间神经元；把最终 K、读出层定义、各跳可达数写进 config.json 与 result.json。
+2. `kc_feature_std > 0`：任一方法条件在 KC 读出的特征标准差必须 > 0，否则标 design_invalid。
+3. `synthetic_ceiling >= 0.90`：8 帧展平 ridge 的 5-seed 天花板均值。
+4. `real_domain_ceiling >= 0.70`：真实域 5-seed 天花板均值。若 <0.70，
+   该真实域标 `unavailable`（原因写实际数值），并尝试用 Sintel GT 光流方向标签作替代真实域；
+   若替代域仍 <0.70，两个真实域都标 unavailable，**不得据此作迁移主张**。
+
+【刺激，明确标注 SYNTHETIC】T=8 帧、32×32、n=400、二分类 direction：
+半径 3–5 的圆点，起始 x 随机 8–24，逐帧 speed=2 向左或向右，标签=方向。
+另做 flash control（闪烁检测）作为负对照。固定 70/30 stratified split，seeds=[1,2,3,4,5]。
+真实域：DAVIS-2017 连续 8 帧 clips，用动态前景质心时间斜率或帧差运动能量生成左右标签，
+类别需平衡；若用 Sintel 则用 GT 光流主方向的左右符号。
+
+【条件，每个 5 seeds = [1,2,3,4,5]，同一批刺激与同一 split】
+1 stateless：每帧独立 K 步 x = tanh(A@x)，8 帧特征取均值（K 与下面一致，等预算）。
+2 lif_homeostasis：LIF，v = 0.6*v + syn + drive；syn = 边级 index_add(上一帧硬脉冲)*8/fan_in*8；
+   硬阈值 0.15，发放后 v -= 0.15；软脉冲 sigmoid((v-0.15)*20) 累积后 8 帧取均值。
+3 lif_combo = lif_homeostasis + 自适应阈值(thr=0.15+0.05*spike+0.85*(thr-0.15))
+   + 不应期 2 步 + 真实 E/I 符号（top_nt 属于 gaba/glutamate/glycine 的突触前神经元出边权重取负）。
+4 degree_null_lif：同 2，但图用保度重连（保 in/out 度序列、权重集合、nnz，保护互反边对）。
+5 A=0：无图传播，仅输入层读出，退化下界。
+6 一因子消融：从 lif_combo 分别移除自适应阈值 / 不应期 / E/I 符号，各跑 5 seeds，
+   用于把增益归因到具体机制。
+统一 ridge 读出（L2=1e-2）。每个条件记录 spike rate、KC readout spike rate、feature std、
+peak GPU MiB、耗时。所有统计：2000 次 bootstrap 95% CI、exact paired sign-flip p、BH-FDR q=0.05，
+并如实说明 5 paired seeds 下最小双侧 p = 0.0625 的效力限制。
+
+【输出 · 必须在任何提前终止前落盘】
+- `experiment.py`、`entrypoint.sh`、`config.json`、`validate_results.py`、`test_pipeline.py`
+  写在 `project/` 目录内（相对于 workspace 根）。
+- **`project/result.json`**：含每条件 per-seed 准确率、mean、delta vs stateless、
+  bootstrap 95% CI、exact p、BH q、两个域的 ceiling、KC 各跳可达数、实际 K、读出层定义、
+  KC feature std、spike rate、GPU 信息、耗时、显存峰值、实际用到的每个数据文件与字节数、
+  unavailable 条件及原因、4 项 invariant checks 结果、grind_block（上面四要素）、
+  以及与 18156 的配置 diff 清单。**这个文件必须在 workspace 根下的 project/ 目录内**，
+  最终回复给出它的字节数与 sha256 前 16 位。
+- `project/evidence/main_table.csv`、`experiment-traceability.csv`、`raw/*.npz`（每条件每 seed 一个）、
+  `validation.json`、`command_history.log`。
+- 最终回复必须给**实际数值**和简短结论，严格区分「实测」与「推断」；
+  不得编造任何数值，不得把 1-seed 或不可学结果写成发现，不得把 design_invalid 写成方法优越，
+  不得把「实验跑完」写成「结果达标」。

@@ -1,0 +1,54 @@
+{
+  "task_id": "18533",
+  "platform_status": "finish",
+  "platform_steps": 536,
+  "pull_method": "short path C:/code/phd-snn/_nv18533 + novix debug pull --sub (targeted single files)",
+  "files": [
+    {
+      "file": "MANIFEST.txt",
+      "bytes": 65614,
+      "sha256": "1015e8a78d4e1c68a4689e14da045efe70ca2cb421f90f8573cf0f5738856268"
+    },
+    {
+      "file": "config.json",
+      "bytes": 32759,
+      "sha256": "78c84bda1396ff492194bd65df79fbf5a571a12bbcbea482336ae2cbe3d1ccf2"
+    },
+    {
+      "file": "config_preregistered.json",
+      "bytes": 22352,
+      "sha256": "0a7c6d473a110e6a94cf7374597e3cbf0174928d4272810b719cbed6f3ab5ba0"
+    },
+    {
+      "file": "entrypoint.sh",
+      "bytes": 4516,
+      "sha256": "79044c4f1181989203a909e73f0761b652f70ace9345e11508e0297d5827a635"
+    },
+    {
+      "file": "experiment.py",
+      "bytes": 16792,
+      "sha256": "0d0f234de85bcf6b5cbe7b7bcaa532a3138d347a6136332730aa720213712d2f"
+    },
+    {
+      "file": "result.json",
+      "bytes": 5393376,
+      "sha256": "9f24e07f0d70384192b24b3224163368e4e642110ae4282c360fb0ff40e3c5f8"
+    },
+    {
+      "file": "platform-finalReply.json",
+      "bytes": 4115,
+      "sha256": "726abb6d38f76b11ee1c57fbb9152f737044a7194063c3b260cb2fd3c2349708"
+    },
+    {
+      "file": "platform-task-get.json",
+      "bytes": 5344233,
+      "sha256": "ba7c0eee07d94575e4b576680f43fb6d6c1692a0ebcf714b59dbe2640e698ba3"
+    },
+    {
+      "file": "verdict-fields-extract.txt",
+      "bytes": 8673,
+      "sha256": "db7406e9109bdca051eace80640fac81367a88639a5d9977c1e65d839009845e"
+    }
+  ],
+  "note": "All three claimed main files SHA-256 MATCH the finalReply claims: result.json 9f24e07f..., config.json 78c84bda..., MANIFEST.txt 1015e8a7.... Full workspace pull NOT attempted (avoids WinError 206 / safe-delete); targeted --sub used per round-008/009 precedent."
+}

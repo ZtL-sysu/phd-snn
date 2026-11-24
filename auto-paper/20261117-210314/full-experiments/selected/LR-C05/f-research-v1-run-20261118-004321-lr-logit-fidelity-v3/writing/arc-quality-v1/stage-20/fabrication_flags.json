@@ -1,0 +1,19 @@
+{
+  "experiment_failed": false,
+  "quality_score": 8.7,
+  "real_metric_values": [
+    0.2623,
+    0.2623,
+    0.2623,
+    0.3399,
+    0.3399,
+    0.3399,
+    0.2583,
+    0.2583,
+    0.2583
+  ],
+  "has_real_data": true,
+  "fabrication_suspected": false,
+  "verified_values_count": 26,
+  "verified_conditions": []
+}

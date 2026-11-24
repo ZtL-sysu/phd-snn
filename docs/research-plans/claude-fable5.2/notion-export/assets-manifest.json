@@ -1,0 +1,92 @@
+[
+  {
+    "block_id": "41b0e334-2e6f-81da-b008-df61e4f95dae",
+    "type": "image",
+    "title": "f1-image-to-graph.svg",
+    "source": "attachment:260eda22-952c-451f-aee6-c3f14059669a:f1-image-to-graph.svg",
+    "local_path": "notion-export/assets/41b0e334-f1-image-to-graph.svg",
+    "bytes": 4270,
+    "sha256": "b76395cf73041c3ffb364ee5c9716ec197f9e769611622941e0ff0c82964027b",
+    "reused_existing": true
+  },
+  {
+    "block_id": "41b0e334-2e6f-8197-b846-d80c7df48844",
+    "type": "embed",
+    "title": "f3-neuron-vs-spiking.html",
+    "source": "attachment:8c15fa70-dda5-428e-aed9-4b2d25cca984:f3-neuron-vs-spiking.html",
+    "local_path": "notion-export/assets/41b0e334-f3-neuron-vs-spiking.html",
+    "bytes": 3255,
+    "sha256": "8df97f66633c2f2bf52687f281f80654ec3d41285d2f64ddebaef9558bbfbee4",
+    "reused_existing": true
+  },
+  {
+    "block_id": "41b0e334-2e6f-8190-b36e-c4fba15e139c",
+    "type": "image",
+    "title": "f3-neuron-vs-spiking.svg",
+    "source": "attachment:c37c4b1c-9bc3-4a6c-b337-ab02cbd6cc82:f3-neuron-vs-spiking.svg",
+    "local_path": "notion-export/assets/41b0e334-f3-neuron-vs-spiking.svg",
+    "bytes": 2478,
+    "sha256": "52000cb2de7486c83aa626dfbbd75ebd72bc3f0c60593d991ab6918b7b6eb265",
+    "reused_existing": true
+  },
+  {
+    "block_id": "41b0e334-2e6f-81ba-bde8-c1d4076b9bf9",
+    "type": "embed",
+    "title": "f5-timesteps.html",
+    "source": "attachment:5c54a200-c7c3-43fc-beb8-f573e94e317d:f5-timesteps.html",
+    "local_path": "notion-export/assets/41b0e334-f5-timesteps.html",
+    "bytes": 2538,
+    "sha256": "7575e827cd1ced3011a0b9dbf7f343b7f9097beb9d917e6a3c0697eff7795611",
+    "reused_existing": true
+  },
+  {
+    "block_id": "41b0e334-2e6f-81d3-9c9e-d12831575913",
+    "type": "image",
+    "title": "f5-timesteps.svg",
+    "source": "attachment:955fbccc-e5ba-4ca8-9504-beff024334ba:f5-timesteps.svg",
+    "local_path": "notion-export/assets/41b0e334-f5-timesteps.svg",
+    "bytes": 2637,
+    "sha256": "3238a321884e028d5f29e9c54e9eaf65dba0371fac896f8ca67233fbbd9d98d6",
+    "reused_existing": true
+  },
+  {
+    "block_id": "41b0e334-2e6f-811b-88e1-f507771e4ad2",
+    "type": "embed",
+    "title": "f7-video-delta.html",
+    "source": "attachment:c9880c6e-395d-41a9-bfb0-0e890e43d303:f7-video-delta.html",
+    "local_path": "notion-export/assets/41b0e334-f7-video-delta.html",
+    "bytes": 3272,
+    "sha256": "60913851f8c0b734e60bac97fd83d3cd16e5755c9ee7b555c0e1e83423844b6b",
+    "reused_existing": true
+  },
+  {
+    "block_id": "41b0e334-2e6f-8110-beff-e68306afc71c",
+    "type": "image",
+    "title": "f7-video-delta.svg",
+    "source": "attachment:159c1204-e0aa-4730-98d0-442037563caa:f7-video-delta.svg",
+    "local_path": "notion-export/assets/41b0e334-f7-video-delta.svg",
+    "bytes": 2556,
+    "sha256": "6f18ca1b18cdd7ff70b1ab378d3483af5a998e9197b2e84fca38edd76c2d61d0",
+    "reused_existing": true
+  },
+  {
+    "block_id": "41b0e334-2e6f-8166-a393-f5082006c72d",
+    "type": "embed",
+    "title": "f6-knn-flip.html",
+    "source": "attachment:f40f7e39-a8cf-4301-a5bd-354a1aab9b28:f6-knn-flip.html",
+    "local_path": "notion-export/assets/41b0e334-f6-knn-flip.html",
+    "bytes": 3099,
+    "sha256": "0a8c46582d149d4d55ad07c8748ddf93c4b986e4956677b3fbb66b81a81fc5dd",
+    "reused_existing": true
+  },
+  {
+    "block_id": "41b0e334-2e6f-8127-9c2a-f1ecae95b072",
+    "type": "image",
+    "title": "f6-knn-flip.svg",
+    "source": "attachment:7b943c06-4b0a-4a7a-8eb3-e45adc987cb7:f6-knn-flip.svg",
+    "local_path": "notion-export/assets/41b0e334-f6-knn-flip.svg",
+    "bytes": 2765,
+    "sha256": "632d8bc4e199429f5d8bd40c126030eded7901110cb7390d0fbc8eb202df33c4",
+    "reused_existing": true
+  }
+]

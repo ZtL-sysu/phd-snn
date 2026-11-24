@@ -1,0 +1,24 @@
+{
+  "datasets": [
+    "MNIST",
+    "CIFAR10"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_train": 5000,
+  "n_val": 1000,
+  "n_test": 2000,
+  "epochs": 1000,
+  "hidden": 128,
+  "lr": 0.01,
+  "device": "cuda",
+  "pool": "sum",
+  "ours_beta": "zero",
+  "note": "local 3060 CORRECTED combination (redundant beta removed); paired with local_full; novix 20049 still in flight",
+  "energy_model": "45nm theoretical arithmetic energy, NOT hardware measurement"
+}

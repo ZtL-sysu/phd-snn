@@ -1,0 +1,166 @@
+[
+  {
+    "proposition": "Narrow the paper to magnitude-weighted output-Jacobian residual allocation for first-layer input-message logit fidelity.",
+    "evidence_status": "observed_verified",
+    "action": "NARROW",
+    "location": "Title, Abstract, Introduction, Discussion, Conclusion",
+    "factual_check": "Preserve the three-graph/seed scope, held-out-after-validation status, and no task-superiority/energy/temporal-event/broad-GNN claims.",
+    "composition": {
+      "point": "The contribution is a bounded logit-fidelity coding result for M0=A_hat X, not a general GNN-to-SNN capability or deployment gain.",
+      "fact_ids": [
+        "F1",
+        "F5",
+        "F10"
+      ],
+      "preserve": [
+        "rank128/2% focal condition",
+        "26.23/33.99/25.83% logit-MSE reductions",
+        "no task superiority"
+      ]
+    }
+  },
+  {
+    "proposition": "Define the transported tensor, tensor shapes, rank validity, split counts, and global transductive selection granularity.",
+    "evidence_status": "observed_verified",
+    "action": "REWRITE",
+    "location": "Section 3 Method before the SVD equations",
+    "factual_check": "Only M0=A_hat X is compressed; A_hat H1 is not compressed; F>128 for all datasets; labels are not used for selection.",
+    "composition": {
+      "point": "Rank 128 applies only to the N x F first-layer input message, with one global residual set per dataset/checkpoint seed over the full transductive graph.",
+      "fact_ids": [
+        "F10"
+      ],
+      "preserve": [
+        "Cora N=2708/F=1433",
+        "Chameleon N=2277/F=2325",
+        "Squirrel N=5201/F=2089"
+      ]
+    }
+  },
+  {
+    "proposition": "Replace the gradient-only score description with the implemented magnitude-weighted composite score and analytic frozen-ANN Jacobian.",
+    "evidence_status": "observed_verified",
+    "action": "REWRITE",
+    "location": "Section 3 Method score equations and Figure 1 reference",
+    "factual_check": "The implementation score is r_i^2 ||J_i||^2; J differentiates frozen ANN logits, not rate-coded outputs.",
+    "composition": {
+      "point": "The evaluated selector is a magnitude-weighted output-Jacobian heuristic for a global sparse residual set.",
+      "fact_ids": [
+        "F11"
+      ],
+      "preserve": [
+        "ReLU hidden mask",
+        "normalized adjacency column norm",
+        "no causal identification claim"
+      ]
+    }
+  },
+  {
+    "proposition": "Publish the exact residual-entry budget, 64-bit pair accounting, basis formula, padding rule, and absolute matched totals.",
+    "evidence_status": "observed_verified",
+    "action": "REWRITE",
+    "location": "Section 3 exact-cost ledger and Section 4.2 comparison protocol",
+    "factual_check": "2% means residual entries; count=round(0.02*N*F); pair cost=64 bits; totals are 21,932,736/25,630,208/43,771,008 bits.",
+    "composition": {
+      "point": "Matched controls share the same total padded serialized-bit budget within each dataset/seed/rank/budget condition, while payload allocation differs.",
+      "fact_ids": [
+        "F3",
+        "F12"
+      ],
+      "preserve": [
+        "full-float and SVD-only are references, not matched residual-budget controls"
+      ]
+    }
+  },
+  {
+    "proposition": "Define every selector control, distinguish matched residual controls from references, and disclose post-hoc comparator selection.",
+    "evidence_status": "observed_verified",
+    "action": "REWRITE",
+    "location": "Section 4.2 compared methods and Section 4.4 controls",
+    "factual_check": "top_abs/random/uniform/A2Q-style/One-Spike-style are defined; top_abs is the post-hoc strongest fidelity control on all three reported datasets.",
+    "composition": {
+      "point": "Existing raw controls isolate the composite selector from magnitude, random, dense-uniform, node-budget, and coefficient-coding alternatives without claiming a causal Jacobian-only ablation.",
+      "fact_ids": [
+        "F8",
+        "F13"
+      ],
+      "preserve": [
+        "9/9 proposed-versus-top_abs logit comparisons positive",
+        "A2Q/One-Spike are our matched-budget adaptations"
+      ]
+    }
+  },
+  {
+    "proposition": "Define the task-loss formula and replace bounded language with maximum observed degradation.",
+    "evidence_status": "observed_verified",
+    "action": "REWRITE",
+    "location": "Abstract, Section 4.5, Discussion, Conclusion",
+    "factual_check": "Three-seed-mean maxima are 0.53/1.17/1.86 pp and single-seed maximum is 2.85 pp using the best matched-budget control per dataset/seed/metric.",
+    "composition": {
+      "point": "Task outcomes are descriptive maxima under a per-metric comparator and do not establish equivalence or a population bound.",
+      "fact_ids": [
+        "F2",
+        "F14"
+      ],
+      "preserve": [
+        "mixed task deltas",
+        "failed task-superiority target"
+      ]
+    }
+  },
+  {
+    "proposition": "Define the timing boundary and p95 convention while keeping the measurement at rank128/1%.",
+    "evidence_status": "observed_verified",
+    "action": "REWRITE",
+    "location": "Section 4.5 runtime paragraph and Figure 4 caption",
+    "factual_check": "Timing is rank128/1%; p95 is per-method quantile over seven repeats after three warmups; CUDA is synchronized; precomputed model/adjacency/features are excluded.",
+    "composition": {
+      "point": "The secondary timing result measures warmed full variant construction and evaluation cost at 1%, not focal 2% cost or energy.",
+      "fact_ids": [
+        "F4",
+        "F15"
+      ],
+      "preserve": [
+        "1.020-1.124x paired p95 ratio",
+        "218.23 MB peak allocation",
+        "wall-clock only"
+      ]
+    }
+  },
+  {
+    "proposition": "Document validation-exposed candidate grids and the pre-test fixation of the focal setting.",
+    "evidence_status": "observed_verified",
+    "action": "REWRITE",
+    "location": "Section 4.1 experimental scope and Section 4.4 sensitivity",
+    "factual_check": "Validation exposed ranks 16/32/64/128 and budgets 0.5/1/2%; guidance-v3 fixed rank128/2% before test; test is held-out confirmation after validation exposure.",
+    "composition": {
+      "point": "The evidence is a post-selection held-out confirmation with a disclosed validation-exposed grid, not preregistered independent replication.",
+      "fact_ids": [
+        "F5",
+        "F16"
+      ],
+      "preserve": [
+        "no test-based focal-setting selection claim"
+      ]
+    }
+  },
+  {
+    "proposition": "Correct Figure 1 notation and Figure 4 caption/condition key.",
+    "evidence_status": "observed_verified",
+    "action": "REWRITE",
+    "location": "Figure 1 caption and Figure 4 caption",
+    "factual_check": "Figure 1 uses r_i and J_i=dz/dr_i; Figure 4 explains the dashed 3 pp reference and labels panel a as rank128/2% task/fidelity and panel b as rank128/1% timing.",
+    "composition": {
+      "point": "Figure notation and panel conditions must match the implemented score and evidence scopes.",
+      "fact_ids": [
+        "F11",
+        "F14",
+        "F15"
+      ],
+      "preserve": [
+        "Figure 1 self-draw fallback disclosure remains external",
+        "no energy interpretation"
+      ]
+    }
+  }
+]

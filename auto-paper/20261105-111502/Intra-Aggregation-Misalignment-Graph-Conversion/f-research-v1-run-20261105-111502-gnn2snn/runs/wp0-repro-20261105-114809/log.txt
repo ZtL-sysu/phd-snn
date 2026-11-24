@@ -1,0 +1,23 @@
+G0 reproduction gate | 2026-11-05T11:48:09
+device=cpu seeds=[0, 1, 2, 3, 4, 5, 6] T=8 hidden=16
+python=3.13.13 numpy=2.4.4
+scipy=1.18.0 torch=2.11.0+cu128
+dataset=cora trace_id=content:99d1956d870af23b
+  seed 0: ANN 0.7900  T8 0.7870  spikes 68247  7.8s
+  seed 1: ANN 0.8020  T8 0.8020  spikes 91591  6.5s
+  seed 2: ANN 0.8160  T8 0.8140  spikes 87593  6.1s
+  seed 3: ANN 0.8060  T8 0.8060  spikes 81830  6.1s
+  seed 4: ANN 0.8090  T8 0.7990  spikes 84108  4.9s
+  seed 5: ANN 0.8100  T8 0.8020  spikes 84271  7.4s
+  seed 6: ANN 0.8090  T8 0.8080  spikes 86104  5.8s
+[cora] ANN 0.8060 vs 0.8060 (d +0.000 pp) | T8 0.8026 vs 0.8026 (d -0.003 pp) -> PASS
+dataset=pubmed trace_id=content:e533ccab41942626
+  seed 0: ANN 0.7740  T8 0.7720  spikes 515950  10.7s
+  seed 1: ANN 0.7960  T8 0.7960  spikes 492982  16.7s
+  seed 2: ANN 0.7680  T8 0.7690  spikes 422035  15.0s
+  seed 3: ANN 0.7920  T8 0.7810  spikes 429445  17.6s
+  seed 4: ANN 0.7450  T8 0.7460  spikes 282062  11.0s
+  seed 5: ANN 0.7730  T8 0.7750  spikes 402788  15.7s
+  seed 6: ANN 0.7820  T8 0.7790  spikes 458459  15.4s
+[pubmed] ANN 0.7757 vs 0.7757 (d +0.001 pp) | T8 0.7740 vs 0.7740 (d +0.000 pp) -> PASS
+G0 reproducibility gate: PASS

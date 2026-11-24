@@ -1,0 +1,30 @@
+# Current contractv5 — independent final CCFA>=7/10
+
+User score-only update is recorded in takeover_20261112/execution-contract-v5.md. All canonical gates reopened fromP0; P0 subsequently passed actual intake/path recheck; scientific gates remain pending. Priorv4 JSON/Markdown ledgers are preserved in takeover_20261112/pipeline-state-v4-before-v5.*. Full-data/strong-teacher scope and existing experiment authorization remain. Old queue64947 is terminal; active queue11944 is the six-configuration affine training-only screen. Consult takeover_20261112/active-runs.md for current handles and do not duplicate it. Existing valid evidence may be reused after applicability checks. workflow_complete=false; submission_ready=false.
+
+- P0: passed (v5), evidence takeover_20261112/p0-intake-v5.md
+- P1: pending (v5)
+- P1A: pending (v5)
+- P1B: pending (v5)
+- P2: pending (v5)
+- P3: pending (v5)
+- P3A: pending (v5)
+- P4: pending (v5)
+- P5: pending (v5)
+- P5A: pending (v5)
+- P6: pending (v5)
+- P7: pending (v5)
+- P8: pending (v5)
+- P9: pending (v5)
+- P10: pending (v5)
+- P11: pending (v5)
+- P12: pending (v5)
+- P13: pending (v5)
+- P14: pending (v5)
+- P15: pending (v5)
+- P16: pending (v5)
+- P17: pending (v5)
+- P18: pending (v5)
+- P19: pending (v5)
+- P20: pending (v5)
+- P21: pending (v5)

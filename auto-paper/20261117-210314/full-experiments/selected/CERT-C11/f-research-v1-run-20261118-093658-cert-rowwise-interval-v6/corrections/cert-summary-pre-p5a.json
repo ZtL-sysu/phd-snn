@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "rows": 36,
+  "containment": 36,
+  "minkowski_valid": 36,
+  "global_equality": 18,
+  "rowwise_tightening_min": 0.7426478701715937,
+  "rowwise_tightening_median": 0.7964717049395805,
+  "rowwise_tightening_max": 0.821233146666029,
+  "rowwise_width_rms_median": 30.712356567965056,
+  "rowwise_width_rms_max": 36.91338940552895,
+  "clipping_count": 0.0,
+  "nonfinite": 0,
+  "strong_gate_pass": true
+}

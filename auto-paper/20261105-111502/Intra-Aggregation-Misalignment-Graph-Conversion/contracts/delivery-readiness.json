@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "version": "v1-2026-11-05",
+  "delivery_mode": "preparation",
+  "submission_ready": false,
+  "workflow_complete": false,
+  "note": "Local preparation only. Author and portal facts are pending and are NOT inferred. workflow_complete is reported by the ordered ledger validator; submission_ready stays false by construction.",
+  "deferred_items": [
+    {
+      "id": "author-names-affiliations",
+      "category": "author-fact",
+      "status": "pending",
+      "owner": "author",
+      "requirement": "Canonical author list, order, affiliations and corresponding-author email.",
+      "source": "venue submission form and author instructions (unverified: 2027 CFPs unpublished)",
+      "affected_surfaces": ["paper/main.tex", "title page", "cover letter", "manuscript-metadata.md"],
+      "unblock_action": "Author supplies the canonical list; then update TeX, PDF, metadata and source archive together.",
+      "scientific_effect": "none"
+    },
+    {
+      "id": "target-venues",
+      "category": "portal",
+      "status": "pending",
+      "owner": "author",
+      "requirement": "Confirmed target venue and track. Working assumption, not a decision: ICML 2027 main track, with NeurIPS 2027 as an alternative. Both 2027 CFPs are unpublished as of 2026-11-05.",
+      "source": "author decision plus official CFP when published",
+      "affected_surfaces": ["submission-constraints.md", "manuscript-metadata.md", "page limit", "template"],
+      "unblock_action": "Author names the venue; then fetch the official style and CFP, apply the strictest limits and recount pages.",
+      "scientific_effect": "none"
+    },
+    {
+      "id": "code-data-release",
+      "category": "access-route",
+      "status": "pending",
+      "owner": "author",
+      "requirement": "Decide the release route for protocols, scripts, logs and the TPP re-implementation: public at submission or anonymous reviewer link.",
+      "source": "venue data/code availability policy",
+      "affected_surfaces": ["data/code availability statement", "cover letter", "source archive", "code_URL"],
+      "unblock_action": "Author chooses the route; keep anonymous-link wording consistent with the venue policy.",
+      "scientific_effect": "none"
+    },
+    {
+      "id": "funding-competing-interests",
+      "category": "author-fact",
+      "status": "pending",
+      "owner": "author",
+      "requirement": "Funding and competing-interest declarations.",
+      "source": "venue declaration form",
+      "affected_surfaces": ["declarations", "title page", "portal fields"],
+      "unblock_action": "Author supplies exact declaration text; route to the venue-required location.",
+      "scientific_effect": "none"
+    },
+    {
+      "id": "generative-ai-disclosure",
+      "category": "author-fact",
+      "status": "pending",
+      "owner": "author",
+      "requirement": "Whether a generative-AI usage statement is required and its wording.",
+      "source": "venue policy",
+      "affected_surfaces": ["declarations", "cover letter"],
+      "unblock_action": "Author confirms the policy and supplies wording.",
+      "scientific_effect": "none"
+    },
+    {
+      "id": "submission-approval",
+      "category": "author-approval",
+      "status": "pending",
+      "owner": "author",
+      "requirement": "Explicit approval to submit, and confirmation of no overlapping submission with the two anonymous companion manuscripts.",
+      "source": "author decision",
+      "affected_surfaces": ["cover letter", "portal fields", "overlap declaration"],
+      "unblock_action": "Author approves after reviewing the division-of-evidence statement in Related Work.",
+      "scientific_effect": "none"
+    },
+    {
+      "id": "official-style-and-page-recount",
+      "category": "production",
+      "status": "pending",
+      "owner": "author",
+      "requirement": "Acquire the official double-blind LaTeX style for the confirmed venue and recount the 8-page main text under it.",
+      "source": "venue CFP (unpublished for 2027)",
+      "affected_surfaces": ["paper/main.tex", "compiled PDF", "submission-constraints.md"],
+      "unblock_action": "Once the CFP exists, fetch the style, rebuild and recount pages.",
+      "scientific_effect": "none"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "stage": "P5",
+  "tests_passed": 6,
+  "representation_gate_pass": true,
+  "task_gate_pass": true,
+  "task_rows": 40,
+  "fixed_rows": 90,
+  "fixed_order_positive": true,
+  "all_finite": true,
+  "strong_gate_pass": true
+}

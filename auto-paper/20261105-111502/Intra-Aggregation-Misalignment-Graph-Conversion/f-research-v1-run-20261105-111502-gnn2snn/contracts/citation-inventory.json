@@ -1,0 +1,662 @@
+[
+  {
+    "key": "tpp2025",
+    "title": "Temporal Misalignment in ANN-SNN Conversion and Its Mitigation via Probabilistic Spiking Neurons",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2502.14487",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2502.14487"
+  },
+  {
+    "key": "ftbc2024",
+    "title": "FTBC: Forward Temporal Bias Correction for Optimizing ANN-SNN Conversion",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2403.18388",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2403.18388"
+  },
+  {
+    "key": "qcfs2022",
+    "title": "Optimal ANN-SNN Conversion for High-accuracy and Ultra-low-latency Spiking Neural Networks",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2303.04347",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2303.04347"
+  },
+  {
+    "key": "residual2023",
+    "title": "Reducing ANN-SNN Conversion Error through Residual Membrane Potential",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2302.02091",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2302.02091"
+  },
+  {
+    "key": "adaptcal2024",
+    "title": "Adaptive Calibration: A Unified Conversion Framework of Spiking Neural Network",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2412.16219",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2412.16219"
+  },
+  {
+    "key": "parallel2024",
+    "title": "Faster and Stronger: When ANN-SNN Conversion Meets Parallel Spiking Calculation",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2412.13610",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2412.13610"
+  },
+  {
+    "key": "inference2024",
+    "title": "Inference-Scale Complexity in ANN-SNN Conversion for High-Performance and Low-Power Applications",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2409.03368",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2409.03368"
+  },
+  {
+    "key": "signd2024",
+    "title": "Sign Gradient Descent-based Neuronal Dynamics: ANN-to-SNN Conversion Beyond ReLU Network",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2407.01645",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2407.01645"
+  },
+  {
+    "key": "noiseadaptor2024",
+    "title": "Noise Adaptor: Enhancing Low-Latency Spiking Neural Networks through Noise-Injected Low-Bit ANN Conversion",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2411.17431",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2411.17431"
+  },
+  {
+    "key": "onespike2024",
+    "title": "One-Spike SNN: Single-Spike Phase Coding with Base Manipulation for ANN-to-SNN Conversion Loss Minimization",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2403.08786",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2403.08786"
+  },
+  {
+    "key": "diffcoding2025",
+    "title": "Differential Coding for Training-Free ANN-to-SNN Conversion",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2503.00301",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2503.00301"
+  },
+  {
+    "key": "spiketransformer2025",
+    "title": "Towards High-performance Spiking Transformers from ANN to SNN Conversion",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2502.21193",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2502.21193"
+  },
+  {
+    "key": "errorcomp2025",
+    "title": "Efficient ANN-SNN Conversion with Error Compensation Learning",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2506.01968",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2506.01968"
+  },
+  {
+    "key": "pascal2025",
+    "title": "PASCAL: Precise and Efficient ANN- SNN Conversion using Spike Accumulation and Adaptive Layerwise Activation",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2505.01730",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2505.01730"
+  },
+  {
+    "key": "las2025",
+    "title": "LAS: Loss-less ANN-SNN Conversion for Fully Spike-Driven Large Language Models",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2505.09659",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2505.09659"
+  },
+  {
+    "key": "trainfree2025",
+    "title": "Training-Free ANN-to-SNN Conversion for High-Performance Spiking Transformer",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2508.07710",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2508.07710"
+  },
+  {
+    "key": "erroramp2026",
+    "title": "Error Amplification Limits ANN-to-SNN Conversion in Continuous Control",
+    "year": 2026,
+    "source_url": "https://arxiv.org/abs/2601.21778",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2601.21778"
+  },
+  {
+    "key": "rmpalign2026",
+    "title": "Reducing ANN-SNN Conversion Error via Residual Membrane Potential Alignment",
+    "year": 2026,
+    "source_url": "https://arxiv.org/abs/2608.13952",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2608.13952"
+  },
+  {
+    "key": "spikinggcn2022",
+    "title": "Spiking Graph Convolutional Networks",
+    "year": 2022,
+    "source_url": "https://arxiv.org/abs/2205.02767",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2205.02767"
+  },
+  {
+    "key": "spikegcl2024",
+    "title": "A Graph is Worth 1-bit Spikes: When Graph Contrastive Learning Meets Spiking Neural Networks",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2305.19306",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2305.19306"
+  },
+  {
+    "key": "spikegraphormer2024",
+    "title": "SpikeGraphormer: A High-Performance Graph Transformer with Spiking Graph Attention",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2403.15480",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2403.15480"
+  },
+  {
+    "key": "msgnn2024",
+    "title": "Spiking Graph Neural Network on Riemannian Manifolds",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2410.17941",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2410.17941"
+  },
+  {
+    "key": "sgnnbench2025",
+    "title": "SGNNBench: A Holistic Evaluation of Spiking Graph Neural Network on Large-scale Graph",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2509.21342",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2509.21342"
+  },
+  {
+    "key": "geometry2025",
+    "title": "Geometry-Aware Spiking Graph Neural Network",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2508.06793",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2508.06793"
+  },
+  {
+    "key": "spikestag2025",
+    "title": "SpikeSTAG: Spatial-Temporal Forecasting via GNN-SNN Collaboration",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2508.02069",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2508.02069"
+  },
+  {
+    "key": "gtsnt2025",
+    "title": "GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2504.11840",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2504.11840"
+  },
+  {
+    "key": "hetero2026",
+    "title": "Spiking Heterogeneous Graph Attention Networks",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2601.02401",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2601.02401"
+  },
+  {
+    "key": "chronospike2026",
+    "title": "ChronoSpike: An Adaptive Spiking Graph Neural Network for Dynamic Graphs",
+    "year": 2026,
+    "source_url": "https://arxiv.org/abs/2602.01124",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2602.01124"
+  },
+  {
+    "key": "spikenet2023",
+    "title": "Scaling Up Dynamic Graph Representation Learning via Spiking Neural Networks",
+    "year": 2022,
+    "source_url": "https://arxiv.org/abs/2208.10364",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2208.10364"
+  },
+  {
+    "key": "gcsnn2021",
+    "title": "Exploiting Spiking Dynamics with Spatial-temporal Feature Normalization in Graph Learning",
+    "year": 2021,
+    "source_url": "https://arxiv.org/abs/2107.06865",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2107.06865"
+  },
+  {
+    "key": "gcn2017",
+    "title": "Semi-Supervised Classification with Graph Convolutional Networks",
+    "year": 2016,
+    "source_url": "https://arxiv.org/abs/1609.02907",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "1609.02907"
+  },
+  {
+    "key": "planetoid2016",
+    "title": "Revisiting Semi-Supervised Learning with Graph Embeddings",
+    "year": 2016,
+    "source_url": "https://arxiv.org/abs/1603.08861",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "1603.08861"
+  },
+  {
+    "key": "ogb2020",
+    "title": "Open Graph Benchmark: Datasets for Machine Learning on Graphs",
+    "year": 2020,
+    "source_url": "https://arxiv.org/abs/2005.00687",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2005.00687"
+  },
+  {
+    "key": "musae2019",
+    "title": "Multi-scale Attributed Node Embedding",
+    "year": 2019,
+    "source_url": "https://arxiv.org/abs/1909.13021",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "1909.13021"
+  },
+  {
+    "key": "graphormer2021",
+    "title": "Do Transformers Really Perform Bad for Graph Representation?",
+    "year": 2021,
+    "source_url": "https://arxiv.org/abs/2106.05234",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2106.05234"
+  },
+  {
+    "key": "heterophily2023",
+    "title": "A critical look at the evaluation of GNNs under heterophily: Are we really making progress?",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2302.11640",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2302.11640"
+  },
+  {
+    "key": "degreebias2024",
+    "title": "Theoretical and Empirical Insights into the Origins of Degree Bias in Graph Neural Networks",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2404.03139",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2404.03139"
+  },
+  {
+    "key": "probsnn2019",
+    "title": "An Introduction to Probabilistic Spiking Neural Networks: Probabilistic Models, Learning Rules, and Applications",
+    "year": 2019,
+    "source_url": "https://arxiv.org/abs/1910.01059",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "doi": "10.1109/MSP.2019.2935234",
+    "arxiv": "1910.01059"
+  },
+  {
+    "key": "noise2023",
+    "title": "Exploiting Noise as a Resource for Computation and Learning in Spiking Neural Networks",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2305.16044",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "doi": "10.1016/j.patter.2023.100831",
+    "arxiv": "2305.16044"
+  },
+  {
+    "key": "lottery2023",
+    "title": "Probabilistic Modeling: Proving the Lottery Ticket Hypothesis in Spiking Neural Network",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2305.12148",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2305.12148"
+  },
+  {
+    "key": "stochastic2023",
+    "title": "Toward stochastic neural computing",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2305.13982",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2305.13982"
+  },
+  {
+    "key": "pspikessm2024",
+    "title": "P-SpikeSSM: Harnessing Probabilistic Spiking State Space Models for Long-Range Dependency Tasks",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2406.02923",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2406.02923"
+  },
+  {
+    "key": "firstspike2024",
+    "title": "Stochastic Spiking Neural Networks with First-to-Spike Coding",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2404.17719",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2404.17719"
+  },
+  {
+    "key": "quantum2025",
+    "title": "Stochastic Quantum Spiking Neural Networks with Quantum Memory and Local Learning",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2506.21324",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2506.21324"
+  },
+  {
+    "key": "stochep2025",
+    "title": "StochEP: Stochastic Equilibrium Propagation for Spiking Convergent Recurrent Neural Networks",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2511.11320",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2511.11320"
+  },
+  {
+    "key": "spikingjelly2023",
+    "title": "SpikingJelly: An open-source machine learning infrastructure platform for spike-based intelligence",
+    "year": 2023,
+    "source_url": "https://doi.org/10.1126/sciadv.adi1480",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "doi": "10.1126/sciadv.adi1480"
+  },
+  {
+    "key": "zeromem2023",
+    "title": "Towards Zero Memory Footprint Spiking Neural Network Training",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2308.08649",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2308.08649"
+  },
+  {
+    "key": "ttsnn2024",
+    "title": "TT-SNN: Tensor Train Decomposition for Efficient Spiking Neural Network Training",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2401.08001",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2401.08001"
+  },
+  {
+    "key": "survey2024",
+    "title": "Toward Large-scale Spiking Neural Networks: A Comprehensive Survey and Future Directions",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2409.02111",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2409.02111"
+  },
+  {
+    "key": "critique2025",
+    "title": "The Enduring Dominance of Deep Neural Networks: A Critical Analysis of the Fundamental Limitations of Quantum Machine Learning and Spiking Neural Networks",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2510.08591",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2510.08591"
+  },
+  {
+    "key": "scaling2026",
+    "title": "Compute-Optimal Scaling Laws for Spiking Language Models",
+    "year": 2026,
+    "source_url": "https://arxiv.org/abs/2610.15146",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "arxiv": "2610.15146"
+  },
+  {
+    "key": "drsgnn2024",
+    "title": "Dynamic Reactive Spiking Graph Neural Network",
+    "year": 2024,
+    "source_url": "https://doi.org/10.1609/aaai.v38i15.29640",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "doi": "10.1609/aaai.v38i15.29640"
+  },
+  {
+    "key": "signn2025",
+    "title": "SiGNN: A spike-induced graph neural network for dynamic graph representation learning",
+    "year": 2025,
+    "source_url": "https://doi.org/10.1016/j.patcog.2024.111026",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ],
+    "doi": "10.1016/j.patcog.2024.111026"
+  },
+  {
+    "key": "companion",
+    "title": "What Reproduces in Spiking Graph Neural Networks? An Audit of Every Method That Publishes Code",
+    "year": 2026,
+    "source_url": "https://arxiv.org/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ]
+  },
+  {
+    "key": "companionb",
+    "title": "When Does Graph-to-Spiking Conversion Work? Spectral Gain, Activation Mass, and an Order-Invariant Readout",
+    "year": 2026,
+    "source_url": "https://arxiv.org/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "Section 2 Related Work / Section 3 Method / Section 4 Experiments and Results / Appendix"
+    ]
+  }
+]

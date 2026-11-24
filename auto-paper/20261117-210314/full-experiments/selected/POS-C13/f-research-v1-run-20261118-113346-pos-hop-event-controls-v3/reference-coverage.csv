@@ -1,0 +1,33 @@
+key,year,title,citation_count
+asgcn,2025,Leveraging Asynchronous Spiking Neural Networks for Ultra Efficient Event-Based Visual Processing,1
+bu2023optimal,2022,Optimal ANN-SNN Conversion for High-accuracy and Ultra-low-latency Spiking Neural Networks,1
+chaurasia2026sgspose,2026,{SGSPose}: Neuromorphic-Geometric 6D Pose Estimation Through Spiking Graph Neural Networks and SE(3)-Equivariant Learning,1
+delay-dsgn,2025,Delay-DSGN: A Dynamic Spiking Graph Neural Network with Delay Mechanisms for Evolving Graph,1
+ding2021vqgnn,2021,VQ-GNN: A Universal Framework to Scale up Graph Neural Networks using Vector Quantization,1
+dwivedi2021graph,2022,Graph Neural Networks with Learnable Structural and Positional Representations,1
+dy-sign,2024,Dynamic Spiking Graph Neural Networks,1
+gholami2022quantization,2022,A Survey of Quantization Methods for Efficient Neural Network Inference,1
+hao2023offset,2023,Bridging the Gap between ANNs and SNNs by Calibrating Offset Spikes,1
+hu2023fast,2023,Fast-SNN: Fast Spiking Neural Network by Converting Quantized ANN,1
+huang2025ecmt,2024,Towards High-performance Spiking Transformers from ANN to SNN Conversion,1
+jacob2018quantization,2018,Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference,1
+kreuzer2021rethinking,2021,Rethinking Graph Transformers with Spectral Attention,1
+li2023graph1bit,2023,A Graph is Worth 1-bit Spikes: When Graph Contrastive Learning Meets Spiking Neural Networks,1
+li2023seenn,2023,{SEENN}: Towards Temporal Spiking Early Exit Neural Networks,1
+li2024erroraware,2024,Error-Aware Conversion from ANN to SNN via Post-training Parameter Calibration,1
+lv2024group,2024,Optimal ANN-SNN Conversion with Group Neurons,1
+nagel2021white,2021,A White Paper on Neural Network Quantization,1
+one-spike,2025,One-Spike SNN: Single-Spike Phase Coding With Base Manipulation for ANN-to-SNN Conversion Loss Minimization,1
+pei2020geomgnn,2020,Geom-GCN: Geometric Graph Convolutional Networks,1
+platonov2023heterophily,2023,A Critical Look at the Evaluation of GNNs under Heterophily: Are We Really Making Progress?,1
+signnn,2025,{SiGNN}: A spike-induced graph neural network for dynamic graph representation learning,1
+spikenet,2023,Scaling Up Dynamic Graph Representation Learning via Spiking Neural Networks,1
+spikinggcn,2022,Spiking Graph Convolutional Networks,1
+sun2024spikegraphormer,2026,SpikeGraphormer: A High-Performance Graph Transformer with Spiking Graph Attention,1
+tailor2021degreequant,2021,Degree-Quant: Quantization-Aware Training for Graph Neural Networks,1
+vaswani2017attention,2017,Attention Is All You Need,1
+wan2023adaqp,2023,Adaptive Message Quantization and Parallelization for Distributed Full-graph GNN Training,1
+wang2022qgtc,2022,QGTC: Accelerating Quantized Graph Neural Networks via GPU Tensor Core,1
+zhang2025sgnnbench,2026,{SGNNBench}: A Holistic Evaluation of Spiking Graph Neural Networks on Large-scale Graphs,1
+zhao2025ttfs,2025,TTFSFormer: A TTFS-based Lossless Conversion of Spiking Transformer,1
+zhu2023a2q,2023,{A$^2$Q}: Aggregation-Aware Quantization for Graph Neural Networks,1

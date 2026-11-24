@@ -1,0 +1,1508 @@
+{
+  "rows": [
+    {
+      "dataset": "chameleon",
+      "split_seed": 600,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9978070175438597,
+      "retrained_balanced_accuracy": 0.9978260869565216,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 600,
+      "method": "uniform",
+      "relative_error": 0.14819386509535415,
+      "average_bits_per_value": 3.0281071585419412,
+      "storage_reduction": 10.567657722987672,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9978070175438597,
+      "retrained_balanced_accuracy": 0.9978260869565216,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 600,
+      "method": "lloyd",
+      "relative_error": 0.1439405707970207,
+      "average_bits_per_value": 3.1124286341677645,
+      "storage_reduction": 10.281360237053761,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 600,
+      "method": "hybrid",
+      "relative_error": 0.03955253060468087,
+      "average_bits_per_value": 4.279144885035488,
+      "storage_reduction": 7.478129593579913,
+      "escape_fraction": 0.00520988283961636,
+      "escape_threshold": 0.019768920574552,
+      "retrained_accuracy": 0.9978070175438597,
+      "retrained_balanced_accuracy": 0.9978260869565216,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 601,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9978070175438597,
+      "retrained_balanced_accuracy": 0.9978021978021978,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 601,
+      "method": "uniform",
+      "relative_error": 0.15012656509543165,
+      "average_bits_per_value": 3.0281071585419412,
+      "storage_reduction": 10.567657722987672,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9824561403508771,
+      "retrained_balanced_accuracy": 0.9829909221213569,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 601,
+      "method": "lloyd",
+      "relative_error": 0.14456443042078335,
+      "average_bits_per_value": 3.1124286341677645,
+      "storage_reduction": 10.281360237053761,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9956140350877193,
+      "retrained_balanced_accuracy": 0.9958791208791208,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 601,
+      "method": "hybrid",
+      "relative_error": 0.03943134603825693,
+      "average_bits_per_value": 4.2791751077866085,
+      "storage_reduction": 7.47807677740767,
+      "escape_fraction": 0.005210827300588872,
+      "escape_threshold": 0.019789550841008065,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 602,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9978070175438597,
+      "retrained_balanced_accuracy": 0.9978260869565216,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 602,
+      "method": "uniform",
+      "relative_error": 0.15039748910393833,
+      "average_bits_per_value": 3.0281071585419412,
+      "storage_reduction": 10.567657722987672,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 602,
+      "method": "lloyd",
+      "relative_error": 0.14230310720998804,
+      "average_bits_per_value": 3.1124286341677645,
+      "storage_reduction": 10.281360237053761,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 602,
+      "method": "hybrid",
+      "relative_error": 0.03926411035977755,
+      "average_bits_per_value": 4.280170947436025,
+      "storage_reduction": 7.476336901723316,
+      "escape_fraction": 0.005241947289633124,
+      "escape_threshold": 0.019767085273320988,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 603,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 603,
+      "method": "uniform",
+      "relative_error": 0.14911457252838317,
+      "average_bits_per_value": 3.0281071585419412,
+      "storage_reduction": 10.567657722987672,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 603,
+      "method": "lloyd",
+      "relative_error": 0.14639668873796693,
+      "average_bits_per_value": 3.1124286341677645,
+      "storage_reduction": 10.281360237053761,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 603,
+      "method": "hybrid",
+      "relative_error": 0.03966946181991743,
+      "average_bits_per_value": 4.2801271244469,
+      "storage_reduction": 7.476413449783972,
+      "escape_fraction": 0.005240577821222983,
+      "escape_threshold": 0.020013105578000012,
+      "retrained_accuracy": 1.0,
+      "retrained_balanced_accuracy": 1.0,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 604,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9956140350877193,
+      "retrained_balanced_accuracy": 0.9956521739130434,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 604,
+      "method": "uniform",
+      "relative_error": 0.14885199875898747,
+      "average_bits_per_value": 3.0281071585419412,
+      "storage_reduction": 10.567657722987672,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9956140350877193,
+      "retrained_balanced_accuracy": 0.9956521739130434,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 604,
+      "method": "lloyd",
+      "relative_error": 0.14772010513895115,
+      "average_bits_per_value": 3.1124286341677645,
+      "storage_reduction": 10.281360237053761,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9978070175438597,
+      "retrained_balanced_accuracy": 0.9978260869565216,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "chameleon",
+      "split_seed": 604,
+      "method": "hybrid",
+      "relative_error": 0.03965241659572694,
+      "average_bits_per_value": 4.276828311162112,
+      "storage_reduction": 7.482180174612823,
+      "escape_fraction": 0.005137489906073356,
+      "escape_threshold": 0.01985558150763575,
+      "retrained_accuracy": 0.9978070175438597,
+      "retrained_balanced_accuracy": 0.9978260869565216,
+      "best_validation_accuracy": 1.0
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 600,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9961575408261287,
+      "retrained_balanced_accuracy": 0.996163047478837,
+      "best_validation_accuracy": 0.9932692050933838
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 600,
+      "method": "uniform",
+      "relative_error": 0.18334336924404335,
+      "average_bits_per_value": 3.0123053258988657,
+      "storage_reduction": 10.623093125678176,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9990393852065321,
+      "retrained_balanced_accuracy": 0.9990384615384615,
+      "best_validation_accuracy": 0.992307722568512
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 600,
+      "method": "lloyd",
+      "relative_error": 0.12193155739078018,
+      "average_bits_per_value": 3.0492213035954623,
+      "storage_reduction": 10.494482628160666,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9942363112391931,
+      "retrained_balanced_accuracy": 0.9942353698932646,
+      "best_validation_accuracy": 0.9932692050933838
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 600,
+      "method": "hybrid",
+      "relative_error": 0.04818371960657376,
+      "average_bits_per_value": 4.213146770298344,
+      "storage_reduction": 7.595273021484128,
+      "escape_fraction": 0.005122670834465037,
+      "escape_threshold": 0.02696875054009641,
+      "retrained_accuracy": 0.9951969260326609,
+      "retrained_balanced_accuracy": 0.9951969083548031,
+      "best_validation_accuracy": 0.9932692050933838
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 601,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9903938520653218,
+      "retrained_balanced_accuracy": 0.9903892160471107,
+      "best_validation_accuracy": 0.995192289352417
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 601,
+      "method": "uniform",
+      "relative_error": 0.1834621004550693,
+      "average_bits_per_value": 3.0123053258988657,
+      "storage_reduction": 10.623093125678176,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9923150816522575,
+      "retrained_balanced_accuracy": 0.9923076923076923,
+      "best_validation_accuracy": 0.9961538314819336
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 601,
+      "method": "lloyd",
+      "relative_error": 0.11962703134659565,
+      "average_bits_per_value": 3.0492213035954623,
+      "storage_reduction": 10.494482628160666,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9942363112391931,
+      "retrained_balanced_accuracy": 0.9942307692307691,
+      "best_validation_accuracy": 0.9971153736114502
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 601,
+      "method": "hybrid",
+      "relative_error": 0.04835197153280632,
+      "average_bits_per_value": 4.211341321572637,
+      "storage_reduction": 7.59852919925528,
+      "escape_fraction": 0.005066250561786687,
+      "escape_threshold": 0.02736736374003748,
+      "retrained_accuracy": 0.9923150816522575,
+      "retrained_balanced_accuracy": 0.9923122929701877,
+      "best_validation_accuracy": 0.9961538314819336
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 602,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9923150816522575,
+      "retrained_balanced_accuracy": 0.9923122929701877,
+      "best_validation_accuracy": 0.9971153736114502
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 602,
+      "method": "uniform",
+      "relative_error": 0.18453041069867518,
+      "average_bits_per_value": 3.0123053258988657,
+      "storage_reduction": 10.623093125678176,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9942363112391931,
+      "retrained_balanced_accuracy": 0.9942307692307691,
+      "best_validation_accuracy": 0.9980769157409668
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 602,
+      "method": "lloyd",
+      "relative_error": 0.11479584713497976,
+      "average_bits_per_value": 3.0492213035954623,
+      "storage_reduction": 10.494482628160666,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9932756964457252,
+      "retrained_balanced_accuracy": 0.9932692307692307,
+      "best_validation_accuracy": 0.9961538314819336
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 602,
+      "method": "hybrid",
+      "relative_error": 0.04859784190104328,
+      "average_bits_per_value": 4.209766339996663,
+      "storage_reduction": 7.601372003944848,
+      "escape_fraction": 0.0050170323875375076,
+      "escape_threshold": 0.027638474258186274,
+      "retrained_accuracy": 0.9932756964457252,
+      "retrained_balanced_accuracy": 0.9932692307692307,
+      "best_validation_accuracy": 0.9961538314819336
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 603,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9865513928914506,
+      "retrained_balanced_accuracy": 0.9865430622009569,
+      "best_validation_accuracy": 0.9932692050933838
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 603,
+      "method": "uniform",
+      "relative_error": 0.18185900992663317,
+      "average_bits_per_value": 3.0123053258988657,
+      "storage_reduction": 10.623093125678176,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9913544668587896,
+      "retrained_balanced_accuracy": 0.9913461538461539,
+      "best_validation_accuracy": 0.9961538314819336
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 603,
+      "method": "lloyd",
+      "relative_error": 0.12381181012236386,
+      "average_bits_per_value": 3.0492213035954623,
+      "storage_reduction": 10.494482628160666,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9913544668587896,
+      "retrained_balanced_accuracy": 0.9913461538461539,
+      "best_validation_accuracy": 0.9932692050933838
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 603,
+      "method": "hybrid",
+      "relative_error": 0.048042627541354334,
+      "average_bits_per_value": 4.214963263775636,
+      "storage_reduction": 7.591999739360806,
+      "escape_fraction": 0.005179436255630407,
+      "escape_threshold": 0.027103606624303056,
+      "retrained_accuracy": 0.9923150816522575,
+      "retrained_balanced_accuracy": 0.9923076923076923,
+      "best_validation_accuracy": 0.9942307472229004
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 604,
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9932756964457252,
+      "retrained_balanced_accuracy": 0.993283032756717,
+      "best_validation_accuracy": 0.9961538314819336
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 604,
+      "method": "uniform",
+      "relative_error": 0.18445406256202831,
+      "average_bits_per_value": 3.0123053258988657,
+      "storage_reduction": 10.623093125678176,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9951969260326609,
+      "retrained_balanced_accuracy": 0.9951969083548031,
+      "best_validation_accuracy": 0.9961538314819336
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 604,
+      "method": "lloyd",
+      "relative_error": 0.12115359873674092,
+      "average_bits_per_value": 3.0492213035954623,
+      "storage_reduction": 10.494482628160666,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0,
+      "retrained_accuracy": 0.9923150816522575,
+      "retrained_balanced_accuracy": 0.9923214942951786,
+      "best_validation_accuracy": 0.9961538314819336
+    },
+    {
+      "dataset": "squirrel",
+      "split_seed": 604,
+      "method": "hybrid",
+      "relative_error": 0.0483353752903565,
+      "average_bits_per_value": 4.215477949199482,
+      "storage_reduction": 7.5910728001973755,
+      "escape_fraction": 0.005195520175125581,
+      "escape_threshold": 0.02710352328660784,
+      "retrained_accuracy": 0.9913544668587896,
+      "retrained_balanced_accuracy": 0.9913599558336401,
+      "best_validation_accuracy": 0.9961538314819336
+    }
+  ],
+  "controls": {
+    "fixed_rows": [
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "raw",
+        "fixed_accuracy": 0.9978070175438597,
+        "fixed_balanced_accuracy": 0.9978260869565216
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "uniform",
+        "fixed_accuracy": 0.9714912280701754,
+        "fixed_balanced_accuracy": 0.971086160216595
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9736842105263158,
+        "fixed_balanced_accuracy": 0.9735825768434463
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "hybrid",
+        "fixed_accuracy": 0.993421052631579,
+        "fixed_balanced_accuracy": 0.9934543717152412
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.5,
+        "fixed_balanced_accuracy": 0.4941710463449594
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.993421052631579,
+        "fixed_balanced_accuracy": 0.9934543717152412
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.6754385964912281,
+        "fixed_balanced_accuracy": 0.6735069278547541
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.6557017543859649,
+        "fixed_balanced_accuracy": 0.6523291925465838
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.5328947368421053,
+        "fixed_balanced_accuracy": 0.5326803631151458
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "raw",
+        "fixed_accuracy": 0.9978070175438597,
+        "fixed_balanced_accuracy": 0.9978021978021978
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "uniform",
+        "fixed_accuracy": 0.9671052631578947,
+        "fixed_balanced_accuracy": 0.968040293040293
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9868421052631579,
+        "fixed_balanced_accuracy": 0.9869047619047618
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "hybrid",
+        "fixed_accuracy": 0.9956140350877193,
+        "fixed_balanced_accuracy": 0.9956043956043956
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.5350877192982456,
+        "fixed_balanced_accuracy": 0.5332258321388756
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.9956140350877193,
+        "fixed_balanced_accuracy": 0.9956043956043956
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.6929824561403509,
+        "fixed_balanced_accuracy": 0.6897674788979137
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.6929824561403509,
+        "fixed_balanced_accuracy": 0.691778149386845
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.5635964912280702,
+        "fixed_balanced_accuracy": 0.5614588310240484
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "raw",
+        "fixed_accuracy": 0.9978070175438597,
+        "fixed_balanced_accuracy": 0.9978260869565216
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "uniform",
+        "fixed_accuracy": 0.9517543859649122,
+        "fixed_balanced_accuracy": 0.9527711419015767
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9824561403508771,
+        "fixed_balanced_accuracy": 0.9826485109093805
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "hybrid",
+        "fixed_accuracy": 0.9956140350877193,
+        "fixed_balanced_accuracy": 0.9956521739130434
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.4956140350877193,
+        "fixed_balanced_accuracy": 0.4897117375378245
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.9956140350877193,
+        "fixed_balanced_accuracy": 0.9956521739130434
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.7390350877192983,
+        "fixed_balanced_accuracy": 0.7356864150342413
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.7127192982456141,
+        "fixed_balanced_accuracy": 0.7083054626532889
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.5482456140350878,
+        "fixed_balanced_accuracy": 0.5493470297818124
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "raw",
+        "fixed_accuracy": 1.0,
+        "fixed_balanced_accuracy": 1.0
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "uniform",
+        "fixed_accuracy": 0.9649122807017544,
+        "fixed_balanced_accuracy": 0.9659579550883899
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9802631578947368,
+        "fixed_balanced_accuracy": 0.9805900621118013
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "hybrid",
+        "fixed_accuracy": 0.993421052631579,
+        "fixed_balanced_accuracy": 0.9934543717152412
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.5350877192982456,
+        "fixed_balanced_accuracy": 0.5319159101767797
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.993421052631579,
+        "fixed_balanced_accuracy": 0.9934543717152412
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.7039473684210527,
+        "fixed_balanced_accuracy": 0.704204491161013
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.6820175438596491,
+        "fixed_balanced_accuracy": 0.6811275680840898
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.5855263157894737,
+        "fixed_balanced_accuracy": 0.5838469501512981
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "raw",
+        "fixed_accuracy": 0.9956140350877193,
+        "fixed_balanced_accuracy": 0.9956521739130434
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "uniform",
+        "fixed_accuracy": 0.9692982456140351,
+        "fixed_balanced_accuracy": 0.9688206720815418
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9868421052631579,
+        "fixed_balanced_accuracy": 0.9864946647555343
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "hybrid",
+        "fixed_accuracy": 0.9956140350877193,
+        "fixed_balanced_accuracy": 0.9956521739130434
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.49780701754385964,
+        "fixed_balanced_accuracy": 0.49382067208154173
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.9956140350877193,
+        "fixed_balanced_accuracy": 0.9956521739130434
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.6754385964912281,
+        "fixed_balanced_accuracy": 0.6724717311673833
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.6666666666666666,
+        "fixed_balanced_accuracy": 0.6623108775282687
+      },
+      {
+        "dataset": "chameleon",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.5087719298245614,
+        "fixed_balanced_accuracy": 0.5080426819557254
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "raw",
+        "fixed_accuracy": 0.9961575408261287,
+        "fixed_balanced_accuracy": 0.996163047478837
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "uniform",
+        "fixed_accuracy": 0.8261287223823247,
+        "fixed_balanced_accuracy": 0.82597994111152
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "lloyd",
+        "fixed_accuracy": 0.978866474543708,
+        "fixed_balanced_accuracy": 0.97885995583364
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "hybrid",
+        "fixed_accuracy": 0.9923150816522575,
+        "fixed_balanced_accuracy": 0.9923122929701875
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.3371757925072046,
+        "fixed_balanced_accuracy": 0.3371825542878174
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.9923150816522575,
+        "fixed_balanced_accuracy": 0.9923122929701875
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.5609990393852066,
+        "fixed_balanced_accuracy": 0.5610231873389768
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.5273775216138329,
+        "fixed_balanced_accuracy": 0.5274107471475892
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 600,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.3573487031700288,
+        "fixed_balanced_accuracy": 0.3574024659550975
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "raw",
+        "fixed_accuracy": 0.9903938520653218,
+        "fixed_balanced_accuracy": 0.9903892160471107
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "uniform",
+        "fixed_accuracy": 0.808837656099904,
+        "fixed_balanced_accuracy": 0.8086860507913141
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9750240153698367,
+        "fixed_balanced_accuracy": 0.9750322046374679
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "hybrid",
+        "fixed_accuracy": 0.9903938520653218,
+        "fixed_balanced_accuracy": 0.9903984173721015
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.3390970220941403,
+        "fixed_balanced_accuracy": 0.33915623849834375
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.9903938520653218,
+        "fixed_balanced_accuracy": 0.9903984173721015
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.542747358309318,
+        "fixed_balanced_accuracy": 0.5427401545822599
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.5062439961575408,
+        "fixed_balanced_accuracy": 0.5062661023187339
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 601,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.3410182516810759,
+        "fixed_balanced_accuracy": 0.3410517114464483
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "raw",
+        "fixed_accuracy": 0.9923150816522575,
+        "fixed_balanced_accuracy": 0.9923122929701877
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "uniform",
+        "fixed_accuracy": 0.8117195004803074,
+        "fixed_balanced_accuracy": 0.8115798675009203
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9798270893371758,
+        "fixed_balanced_accuracy": 0.9798306956201692
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "hybrid",
+        "fixed_accuracy": 0.9875120076849183,
+        "fixed_balanced_accuracy": 0.9875092013249909
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.3515850144092219,
+        "fixed_balanced_accuracy": 0.3515918292234082
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.9875120076849183,
+        "fixed_balanced_accuracy": 0.9875092013249909
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.5341018251681076,
+        "fixed_balanced_accuracy": 0.5340449024659552
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.49375600384245916,
+        "fixed_balanced_accuracy": 0.4937476996687523
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 602,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.3621517771373679,
+        "fixed_balanced_accuracy": 0.36215495031284506
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "raw",
+        "fixed_accuracy": 0.9865513928914506,
+        "fixed_balanced_accuracy": 0.9865430622009569
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "uniform",
+        "fixed_accuracy": 0.8213256484149856,
+        "fixed_balanced_accuracy": 0.8212044534412956
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9731027857829011,
+        "fixed_balanced_accuracy": 0.9730861244019138
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "hybrid",
+        "fixed_accuracy": 0.978866474543708,
+        "fixed_balanced_accuracy": 0.9788507545086492
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.3390970220941403,
+        "fixed_balanced_accuracy": 0.33908262789841737
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.978866474543708,
+        "fixed_balanced_accuracy": 0.9788507545086492
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.5283381364073007,
+        "fixed_balanced_accuracy": 0.5283078763341921
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.48222862632084534,
+        "fixed_balanced_accuracy": 0.48222304011777695
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 603,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.37271853986551395,
+        "fixed_balanced_accuracy": 0.37274567537725434
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "raw",
+        "fixed_accuracy": 0.9932756964457252,
+        "fixed_balanced_accuracy": 0.993283032756717
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "uniform",
+        "fixed_accuracy": 0.8155619596541787,
+        "fixed_balanced_accuracy": 0.8154352226720647
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "lloyd",
+        "fixed_accuracy": 0.9731027857829011,
+        "fixed_balanced_accuracy": 0.9731091277143908
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "hybrid",
+        "fixed_accuracy": 0.983669548511047,
+        "fixed_balanced_accuracy": 0.9836768494663233
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2200,
+        "shuffle_permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "fixed_accuracy": 0.35926993275696445,
+        "fixed_balanced_accuracy": 0.35933934486566066
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2201,
+        "shuffle_permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "fixed_accuracy": 0.983669548511047,
+        "fixed_balanced_accuracy": 0.9836768494663233
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2202,
+        "shuffle_permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "fixed_accuracy": 0.5120076849183477,
+        "fixed_balanced_accuracy": 0.5120445344129555
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2203,
+        "shuffle_permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "fixed_accuracy": 0.47646493756003844,
+        "fixed_balanced_accuracy": 0.4765044166359956
+      },
+      {
+        "dataset": "squirrel",
+        "split_seed": 604,
+        "method": "hybrid_shuffled",
+        "shuffle_seed": 2204,
+        "shuffle_permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "fixed_accuracy": 0.3275696445725264,
+        "fixed_balanced_accuracy": 0.3276361796098638
+      }
+    ]
+  }
+}

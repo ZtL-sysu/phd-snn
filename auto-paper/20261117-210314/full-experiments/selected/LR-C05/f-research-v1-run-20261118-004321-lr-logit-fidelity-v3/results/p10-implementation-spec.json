@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "transport_scope": {
+    "tensor": "M0 = A_hat X",
+    "shape": "N x F for each dataset",
+    "rank": 128,
+    "not_compressed": "A_hat H1 and the output layer",
+    "rank_validity": "F>128 for all three datasets; rank 128 applies only to M0"
+  },
+  "selection": {
+    "score": "s_i = r_i^2 * ||J_i||_2^2",
+    "jacobian": "analytic derivative of frozen ANN logits with respect to a transported message entry using the ReLU hidden mask and normalized adjacency column norm",
+    "granularity": "one global coefficient set per dataset and checkpoint seed over the full transductive graph message",
+    "access": "uses full graph adjacency/features and frozen model outputs/hidden mask, not labels; test features are part of the transductive graph",
+    "tie_rule": "implementation uses numpy argpartition with no additional semantic tie-break"
+  },
+  "budget_and_cost": {
+    "budget_definition": "fraction of residual message entries selected",
+    "rounding": "max(1, round(budget * N * F))",
+    "selected_pair_cost_bits": 64,
+    "basis_cost_bits": "(N*rank + rank + rank*F)*32",
+    "total_cost_bits": "basis_bits + residual_padded_bits",
+    "matching_scope": "identical total_padded_bits within each dataset/seed/rank/budget among matched residual controls; full-float and SVD-only are references outside this matched residual budget"
+  },
+  "rate_conversion": {
+    "operation": "clip hidden at zero, per-hidden-dimension maximum theta, round count=rint(hidden/theta*T), decode count*theta/T",
+    "horizons": [
+      2,
+      4
+    ],
+    "jacobian_model": "frozen ANN logits, not the rate-coded converted model"
+  },
+  "splits": {
+    "cora": {
+      "N": 2708,
+      "F": 1433,
+      "train": 140,
+      "val": 500,
+      "test": 1000
+    },
+    "chameleon": {
+      "N": 2277,
+      "F": 2325,
+      "train": 1092,
+      "val": 729,
+      "test": 456
+    },
+    "squirrel": {
+      "N": 5201,
+      "F": 2089,
+      "train": 2496,
+      "val": 1664,
+      "test": 1041
+    }
+  },
+  "comparators": {
+    "fidelity_headline": "post-hoc strongest evaluated matched-budget non-proposed residual control by three-seed mean logit MSE per dataset; top_abs is best on all three reported datasets",
+    "task_observation": "best matched-budget non-proposed residual control per dataset/seed/metric; report maximum observed degradation, not a bound"
+  },
+  "validation_test_chronology": {
+    "validation_grid": "ranks 16/32/64/128 and residual budgets 0.5/1/2% were evaluated on validation",
+    "focal_fix": "guidance-v3 fixed rank128 and 2% after validation exposure and before the confirmation test run",
+    "test_status": "held-out confirmation after validation exposure; not preregistered or independent replication"
+  },
+  "timing": {
+    "condition": "rank128/1%, not the focal 2% fidelity setting",
+    "p95_convention": "for each method/dataset/seed, numpy quantile 0.95 over seven measured elapsed times after three warmups; headline ratio is method p95 divided by SVD-only p95",
+    "cuda": "synchronize before and after each timed call; reset peak allocation before each call",
+    "scope": "basis construction, residual construction/selection, reconstruction, rate conversion, and evaluation with frozen model/adjacency/features precomputed"
+  },
+  "task_observed_degradation": {
+    "max_three_seed_mean_by_dataset_pp": {
+      "cora": 0.5333333333333301,
+      "chameleon": 1.1695906432748648,
+      "squirrel": 1.8571886007044403
+    },
+    "max_three_seed_mean_pp": 1.8571886007044403,
+    "max_seed_level_pp": 2.8508771929824595,
+    "metric_set": [
+      "T2_accuracy",
+      "T2_teacher_agreement",
+      "T4_accuracy",
+      "T4_teacher_agreement"
+    ]
+  }
+}

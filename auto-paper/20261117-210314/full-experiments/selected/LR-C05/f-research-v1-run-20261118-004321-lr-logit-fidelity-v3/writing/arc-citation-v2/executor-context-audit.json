@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "stage": "P14/AutoResearchClaw-23-CITATION_VERIFY",
+  "status": "passed",
+  "verifier_adapter": {
+    "native_doi_arxiv_checks": true,
+    "independent_fallback": "CITATION_AUDIT_INDEPENDENT_FINAL.json",
+    "reason": "native verifier hit API rate limits/global timeout on the first run; fallback only applies to entries independently verified as KEEP"
+  },
+  "verification_summary": {
+    "total": 41,
+    "verified": 41,
+    "suspicious": 0,
+    "hallucinated": 0,
+    "skipped": 0,
+    "integrity_score": 1.0
+  },
+  "bibliography_entries": 41,
+  "problems": [],
+  "arc_stage_result": {
+    "stage": "23",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "verification_report.json",
+      "references_verified.bib",
+      "paper_final_verified.md"
+    ],
+    "evidence_refs": [
+      "stage-23/verification_report.json",
+      "stage-23/references_verified.bib",
+      "stage-23/paper_final_verified.md"
+    ]
+  }
+}

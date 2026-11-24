@@ -1,0 +1,496 @@
+{
+  "command": "bash /home/novix/workspace/project/entrypoint.sh",
+  "completed_at_utc": "2026-11-08T21:18:39.572378+00:00",
+  "environment": {
+    "captured_at_utc": "2026-11-08T21:07:31.578163+00:00",
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "gpus": [
+      {
+        "compute_capability": [
+          8,
+          9
+        ],
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 4090",
+        "total_memory_bytes": 47661645824,
+        "total_memory_mib": 45453
+      }
+    ],
+    "no_local_time_or_step_budget": true,
+    "numpy": "2.4.6",
+    "nvidia_smi_query": "NVIDIA GeForce RTX 4090, 46068, 45450, 580.126.09",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.11.18",
+    "scikit_learn": "1.9.1",
+    "torch": "2.11.0+cu130",
+    "torch_cuda_build": "13.0"
+  },
+  "execution_lock": {
+    "all_reported_readout_scopes": [
+      "global_pool",
+      "ommatidial_subregions",
+      "hybrid"
+    ],
+    "archive_processing": "read official ZIP members directly; no extraction-time alteration",
+    "coherence_policy": "run every preregistered stratum; empty/one-class cells remain unavailable without threshold changes",
+    "frozen_before_any_condition_0_to_12_model_outcome": true,
+    "gain_training": {
+      "domain": "SYNTHETIC only",
+      "epochs": 80,
+      "gradient_clip_norm": 5.0,
+      "learning_rate": 0.03,
+      "optimizer": "Adam"
+    },
+    "observed_main_contrasts_before_lock": false,
+    "primary_label_family_index": 0,
+    "primary_readout_scope": "ommatidial_subregions",
+    "real_label_family_policy": "report all frozen families; do not select by held-out performance; family index 0 is primary",
+    "real_readout_training": "train-only StandardScaler + train-only PCA(max 128, full SVD) + RidgeClassifier; alpha train-only stratified CV",
+    "real_window": {
+      "SINTEL_flow_frames": 7,
+      "SINTEL_flow_quadrature_stride": 2,
+      "frames": 8,
+      "stride": 8
+    },
+    "reason": "Operational choices that instantiate, but do not alter, config_preregistered.json",
+    "scene_hash_usage": {
+      "exposed_evaluation_fold": 3,
+      "readout_train_folds": [
+        0,
+        1,
+        2
+      ],
+      "unexposed_final_fold": 4
+    },
+    "status_at_lock": "PRE_MAIN_OUTCOME_SUPPLEMENT"
+  },
+  "execution_lock_file": {
+    "bytes": 1273,
+    "path": "execution_lock.json",
+    "sha256": "3308644514fbcc65502125b4a7446b0aee20f4bea1ec22db3882aa2524de3034"
+  },
+  "preregistered": {
+    "branch_localization": {
+      "difference_tolerance": 1e-08,
+      "forced_probe_threshold": 0.9,
+      "hash_algorithm": "sha256 over little-endian float32 C-contiguous bytes",
+      "output_if_none": "NOT_LOCALIZED",
+      "unit_counterfactual_epsilon": 0.25,
+      "units": [
+        "drive",
+        "syn",
+        "v",
+        "spike",
+        "KC",
+        "logit"
+      ],
+      "zero_delta_policy": "never interpret scientifically"
+    },
+    "calibration": {
+      "alpha": 0.05,
+      "empirical_type1_upper_limit": 0.075,
+      "families": {
+        "redefined_permutation_family": {
+          "decision": "exact sign flip when n<=20, otherwise 65536 deterministic Monte Carlo flips",
+          "randomization_unit": "seed within domain/readout/stratum cell",
+          "test_statistic": "paired mean delta"
+        },
+        "stratified_paired_bootstrap": {
+          "decision": "two-sided percentile-bootstrap inversion at alpha 0.05",
+          "strata": "domain x class x coherence stratum",
+          "test_statistic": "paired mean delta"
+        },
+        "studentized_bootstrap": {
+          "decision": "two-sided bootstrap-t at alpha 0.05",
+          "test_statistic": "paired mean divided by paired standard error with +1e-12 guard"
+        }
+      },
+      "global_failure_rule": "if any family empirical type-I error exceeds 0.075, label all contrasts uncalibrated",
+      "monte_carlo_repetitions": 1000,
+      "null_generator": "exchangeable paired Gaussian plus shared stratum random effect; arm-specific independent noise; zero true effect",
+      "report_all_families": true
+    },
+    "condition_arm_symmetry": {
+      "confounded_policy": "retain numerical values; prohibit scientific claims",
+      "forbidden": "any mutable or label-dependent object identity shared across arms",
+      "rng_streams": "numpy SeedSequence spawn using arm-specific child index; require no equal first 4096 uint64 values",
+      "shared_object_registry": [
+        "scaler",
+        "PCA",
+        "ridge",
+        "graph_tensor",
+        "normalization_statistics"
+      ],
+      "states_added": [
+        "NO_INPUT_SIGNAL_PATH",
+        "CONDITION_ASYMMETRY_CONFOUNDED"
+      ],
+      "swap_counterfactual": "swap condition labels without swapping computations; metric vector must swap exactly within 1e-12"
+    },
+    "condition_matrix": {
+      "A=0_interpretation": "input-information upper bound only; never biological-wiring advantage",
+      "ablation": [
+        "lif_combo_minus_adaptive_threshold",
+        "lif_combo_minus_refractory",
+        "lif_combo_minus_EI_sign"
+      ],
+      "degree_null_invariant": "exact in-degree, out-degree, weight multiset, nnz, reciprocal-pair count, and self-loop count equality required",
+      "historical_anchor": [
+        "stateless",
+        "lif_homeostasis",
+        "lif_combo",
+        "degree_null_lif",
+        "A=0"
+      ],
+      "negative_controls": [
+        "shuffled_frame_order",
+        "flash",
+        "frozen_gain",
+        "label_permutation",
+        "degree_preserving_null",
+        "identity_graph"
+      ]
+    },
+    "data": {
+      "annotations": {
+        "filename": "neuron_annotations_flywire_v2.1.0.tsv.gz",
+        "gzip_crc_required": true,
+        "record_api": "https://zenodo.org/api/records/21549559"
+      },
+      "connectome": {
+        "expected_bytes": 178853187,
+        "filename": "connections_biological.csv.gz",
+        "gzip_crc_required": true,
+        "prefix_allowed": false,
+        "range_chunk_bytes": 33554432,
+        "url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content"
+      },
+      "davis": {
+        "archive_crc_required": true,
+        "expected_bytes": 832766765,
+        "filename": "DAVIS-2017-trainval-480p.zip",
+        "url": "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip"
+      },
+      "eye_positions": {
+        "filename": "right_visual_positions_all_neurons.csv",
+        "record_api": "https://zenodo.org/api/records/21549559"
+      },
+      "failure_policy": "mark_unavailable_with_reason_and_observed_bytes; never substitute toy data",
+      "sintel": {
+        "archive_crc_required": true,
+        "expected_bytes": 5627783629,
+        "filename": "MPI-Sintel-complete.zip",
+        "https_fallback_url": "https://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+        "url": "http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip"
+      }
+    },
+    "first_hard_gate": {
+      "ceiling_threshold": 0.7,
+      "claim_rule": "Only DOMAIN_USABLE permits a real-domain delta claim",
+      "class_matching": "deterministic hash order downsample to minority class within split",
+      "frozen_historical_18533_retest_targets": {
+        "DAVIS": 0.617284,
+        "SINTEL": 0.3125,
+        "SINTEL_oracle": 0.6875
+      },
+      "label_construction_families": {
+        "DAVIS": [
+          "foreground_mask_centroid_dx_sign",
+          "foreground_mask_flow_proxy_dx_sign",
+          "scene_temporal_centroid_trend_sign"
+        ],
+        "SINTEL": [
+          "scene_frame_global_median_flow_x_sign",
+          "voronoi_weighted_median_flow_x_sign",
+          "dominant_orientation_halfplane"
+        ]
+      },
+      "name": "real_domain_ceiling_and_label_decidability_gate",
+      "nonusable_policy": "all real-domain contrasts diagnostic_only; still execute conditions 1-12",
+      "state_rule": {
+        "DOMAIN_USABLE": "GT oracle and input ceiling point estimates both >= 0.70",
+        "INPUT_BOTTLENECK": "GT oracle point estimate >= 0.70 and input ceiling point estimate < 0.70",
+        "LABEL_NOT_DECODABLE": "GT oracle upper 95% CI point estimate < 0.70"
+      },
+      "states": [
+        "LABEL_NOT_DECODABLE",
+        "INPUT_BOTTLENECK",
+        "DOMAIN_USABLE"
+      ],
+      "tie_policy": "drop exact zero-direction examples before class matching"
+    },
+    "flow_coherence": {
+      "definition": "magnitude-weighted resultant length of unit GT-flow directions within frozen Voronoi cells, averaged by cell flow energy",
+      "empty_cell_policy": "mark unavailable; do not alter thresholds",
+      "fixed_thresholds": [
+        0.0,
+        0.5,
+        0.75,
+        1.0000001
+      ],
+      "matched_n_rule": "minimum balanced per-class count across three scopes within domain and stratum",
+      "readout_scopes": [
+        "global_pool",
+        "ommatidial_subregions",
+        "hybrid"
+      ],
+      "strata": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "voronoi": {
+        "centers": "4x4 regular centers at (2k+1)/8 for k=0..3",
+        "coordinate_system": "normalized image coordinates",
+        "count": 16,
+        "locked_before_main_contrasts": true
+      }
+    },
+    "guidance": {
+      "both_domains_unusable_migration_verdict": "NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE",
+      "ceiling_threshold": 0.7,
+      "expected_strong": "real-domain delta >= +0.25 plus transfer adjudication plus localized one-factor ablation",
+      "failure_forces_transfer_claim_false": true,
+      "minimum": "real-domain delta >= +0.15 plus transfer adjudication plus localized one-factor ablation"
+    },
+    "hardware_policy": {
+      "dense_connectome_forbidden": true,
+      "gpu_required": true,
+      "local_step_budget": null,
+      "local_time_budget": null,
+      "message_passing": "edge_index_index_add_"
+    },
+    "holdout": {
+      "constructibility": "at least one scene and at least two samples per class after label construction in unexposed fold",
+      "exposed_folds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "matched_n": "twice minority-class count",
+      "matching": "within domain and fold, deterministic sha256(sample id) order downsample both classes to minority count",
+      "no_adaptation_after_results": true,
+      "required_diagnostics": [
+        "SINTEL_exposed_unexposed_sign_consistency",
+        "DAVIS_historical_unexposed_minus_0.011069_sign_flip_preserved"
+      ],
+      "scene_hash": "sha256(UTF-8 scene name) first 8 bytes interpreted big-endian modulo 5",
+      "unavailable_label": "HOLDOUT_NOT_CONSTRUCTIBLE",
+      "unexposed_fold": 4
+    },
+    "idempotent_reference": {
+      "do_not_rerun_or_recompute": true,
+      "files": {
+        "MANIFEST.txt": {
+          "expected_bytes": 65614,
+          "sha256_prefix": "1015e8a78d4e1c68"
+        },
+        "config.json": {
+          "expected_bytes": 32759,
+          "sha256_prefix": "78c84bda1396ff49"
+        },
+        "config_preregistered.json": {
+          "expected_bytes": 22352,
+          "sha256_prefix": "0a7c6d473a110e6a"
+        },
+        "result.json": {
+          "expected_bytes": 5393376,
+          "sha256_prefix": "9f24e07f0d703841"
+        }
+      },
+      "referenced_items": [
+        "measurement_identifiability_gate",
+        "feature_level_known_signal_injection_ladder",
+        "gradient_path_2x2",
+        "stateless_trained_identically",
+        "DAVIS_input_encoding_ladder_7_levels",
+        "SINTEL_delta_zero_three_state",
+        "historical_three_test_calibration",
+        "test_exposure_ledger",
+        "cross_implementation_fixed_covariates"
+      ],
+      "root": "evidence/p4-novix-18533"
+    },
+    "model": {
+      "connectome_hops_reported": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "hidden_feature_dim": 64,
+      "kc_selection_fallback": [
+        2048,
+        1024,
+        512,
+        256,
+        128
+      ],
+      "lif": {
+        "adaptive_threshold_decay": 0.9,
+        "adaptive_threshold_increment": 0.15,
+        "ei_signs": true,
+        "gain": 1.0,
+        "membrane_decay": 0.85,
+        "refractory_frames": 1,
+        "surrogate": "sigmoid straight-through",
+        "surrogate_slope": 10.0,
+        "synaptic_decay": 0.7,
+        "threshold": 1.0
+      },
+      "parameter_matching": "identical frozen projection/readout dimensions and trainable readout count across condition pairs",
+      "pca_max_components": 128,
+      "pca_variance": 0.95,
+      "preprocessing_fit_scope": "train_only",
+      "ridge_alphas": [
+        0.0001,
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "ridge_selection": "train-only 5-fold stratified CV; deterministic tie chooses larger alpha",
+      "selected_k_rule": "largest fallback K with all selected KC reachable and GPU sparse edge representation feasible",
+      "stimulus_frames": 8
+    },
+    "protocol": {
+      "abandon_allowed": false,
+      "attempt": 8,
+      "design_valid_intent": true,
+      "name": "f-research-v1 P4 C1 correction loop v3 attempt #8",
+      "no_test_selection": true,
+      "real_domains_are_required": true,
+      "round": "round-014",
+      "status_at_lock": "PRE_OUTCOME_LOCKED",
+      "synthetic_is_diagnostic_only": true
+    },
+    "reproducibility": {
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 814014,
+      "calibration_inner_bootstrap_resamples": 499,
+      "calibration_monte_carlo_repetitions": 1000,
+      "calibration_seed": 814015,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_torch": true,
+      "extended_seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "main_seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "python_hash_seed": 0,
+      "raw_npz_per_condition_seed": true
+    },
+    "retinal_drive_transfer": {
+      "bootstrap_resamples": 2000,
+      "conditions": [
+        "stateless",
+        "LIF"
+      ],
+      "decay_localization_rule": "earliest adjacent-stage median gain ratio below 0.5; ties choose upstream stage",
+      "injection_dimension": "horizontal-direction opponent drive; positive on right-preferring, negative on left-preferring ommatidia",
+      "injection_location": "before compound-eye sampling and before feature construction",
+      "metrics": [
+        "recovered_amplitude",
+        "phase_lag",
+        "gain",
+        "coherence"
+      ],
+      "no_input_signal_rule": "both KC slopes have 95% CI containing zero and absolute point estimate < 0.01",
+      "phase_radians": 0.0,
+      "primary_estimand": "H_slope(LIF)-H_slope(stateless)",
+      "slope_fit": "OLS through origin across positive SNR levels, per seed",
+      "snr_ladder": [
+        0.0,
+        0.05,
+        0.1,
+        0.15,
+        0.25,
+        0.4
+      ],
+      "stages": [
+        "drive",
+        "syn",
+        "v",
+        "KC"
+      ],
+      "temporal_omega_radians_per_frame": 0.7853981633974483
+    },
+    "statistics": {
+      "confidence_level": 0.95,
+      "effect_threshold_expected_strong": 0.25,
+      "effect_threshold_minimum": 0.15,
+      "eleven_seed_minimum_two_sided_p": 0.0009765625,
+      "exact_p": "two-sided paired sign-flip",
+      "fdr_q": 0.05,
+      "five_seed_minimum_two_sided_p": 0.0625,
+      "multiple_testing": "Benjamini-Hochberg",
+      "noninferiority_margin": 0.15,
+      "paired_bootstrap_resamples": 2000
+    },
+    "synthetic": {
+      "ceiling_threshold": 0.9,
+      "classes": 2,
+      "direction_labels": {
+        "left": 0,
+        "right": 1
+      },
+      "explicit_label": "SYNTHETIC",
+      "flash_control": true,
+      "frames": 8,
+      "height": 32,
+      "n": 400,
+      "radius_inclusive": [
+        3,
+        5
+      ],
+      "speed_pixels_per_frame": 2,
+      "split": {
+        "seed": 14008,
+        "stratified": true,
+        "train_fraction": 0.7
+      },
+      "start_x_inclusive": [
+        8,
+        24
+      ],
+      "stimulus_seed": 14008,
+      "width": 32
+    }
+  },
+  "preregistered_file": {
+    "bytes": 11988,
+    "path": "config_preregistered.json",
+    "sha256": "5bf618d5c21a8a880a1695396eaccfb635309c89f3d37915ef417f22cfc4c3ee"
+  },
+  "resolved_paths": {
+    "data_dir": "/mnt/novix-k8s-workspace-root/session_7327ca85034c4a0b3d92213f59c467d9/workspace/project/data",
+    "project_root": "/mnt/novix-k8s-workspace-root/session_7327ca85034c4a0b3d92213f59c467d9/workspace/project",
+    "raw_dir": "/mnt/novix-k8s-workspace-root/session_7327ca85034c4a0b3d92213f59c467d9/workspace/project/raw",
+    "result": "/mnt/novix-k8s-workspace-root/session_7327ca85034c4a0b3d92213f59c467d9/workspace/project/result.json"
+  },
+  "schema_version": "p4-c1-attempt8-config-v1"
+}

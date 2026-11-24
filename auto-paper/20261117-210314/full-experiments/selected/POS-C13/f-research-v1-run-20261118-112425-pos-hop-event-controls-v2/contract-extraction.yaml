@@ -1,0 +1,14 @@
+schema_version: 1
+guidance: inputs/guidance-v2.md
+title: Permutation-Equivariant Hybrid Hop-Event Coding for Frozen Graph Positional Messages
+representation: H=[X,AX,A^2X,A^3X]
+method: per-channel 8-level Lloyd plus 0.5 percent exact escapes
+matrix: 2 graphs x 5 split/probe seeds x 5 permutation/hop-shuffle seeds
+methods: [raw, uniform, per_channel_lloyd, hybrid_lloyd_escape]
+strong_gate:
+  hybrid_relative_error_max: 0.05
+  storage_reduction_min: 4.0
+  permutation_error_max: 1e-10
+  shuffled_error_ratio_min: 1.25
+  balanced_accuracy_loss_max_pp: 2.0
+interpretation: conversion-level ordered hop-message coding, not general transformer-to-SNN conversion

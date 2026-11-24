@@ -1,0 +1,282 @@
+{
+  "rows": [
+    {
+      "dataset": "chameleon",
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0
+    },
+    {
+      "dataset": "chameleon",
+      "method": "uniform",
+      "relative_error": 0.15154460019785818,
+      "average_bits_per_value": 3.0281071585419412,
+      "storage_reduction": 10.567657722987672,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0
+    },
+    {
+      "dataset": "chameleon",
+      "method": "lloyd",
+      "relative_error": 0.11647442165127408,
+      "average_bits_per_value": 3.1124286341677645,
+      "storage_reduction": 10.281360237053761,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0
+    },
+    {
+      "dataset": "chameleon",
+      "method": "hybrid",
+      "relative_error": 0.039516596857952446,
+      "average_bits_per_value": 4.272435434286767,
+      "storage_reduction": 7.489873280049234,
+      "escape_fraction": 0.005000212503718815,
+      "escape_threshold": 0.01990978822505471
+    },
+    {
+      "dataset": "squirrel",
+      "method": "raw",
+      "relative_error": 0.0,
+      "average_bits_per_value": 32.0,
+      "storage_reduction": 1.0,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0
+    },
+    {
+      "dataset": "squirrel",
+      "method": "uniform",
+      "relative_error": 0.18978453275781737,
+      "average_bits_per_value": 3.0123053258988657,
+      "storage_reduction": 10.623093125678176,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0
+    },
+    {
+      "dataset": "squirrel",
+      "method": "lloyd",
+      "relative_error": 0.10804488424670183,
+      "average_bits_per_value": 3.0492213035954623,
+      "storage_reduction": 10.494482628160666,
+      "escape_fraction": 0.0,
+      "escape_threshold": 0.0
+    },
+    {
+      "dataset": "squirrel",
+      "method": "hybrid",
+      "relative_error": 0.04878773335282821,
+      "average_bits_per_value": 4.209221465585153,
+      "storage_reduction": 7.602355984743003,
+      "escape_fraction": 0.00500000506217781,
+      "escape_threshold": 0.027510960511900537
+    }
+  ],
+  "controls": {
+    "permutation": [
+      {
+        "dataset": "chameleon",
+        "permutation_seed": 1200,
+        "raw_max_error": 2.220446049250313e-16,
+        "hybrid_max_error": 2.220446049250313e-16
+      },
+      {
+        "dataset": "chameleon",
+        "permutation_seed": 1201,
+        "raw_max_error": 1.6653345369377348e-16,
+        "hybrid_max_error": 1.6653345369377348e-16
+      },
+      {
+        "dataset": "chameleon",
+        "permutation_seed": 1202,
+        "raw_max_error": 2.220446049250313e-16,
+        "hybrid_max_error": 2.220446049250313e-16
+      },
+      {
+        "dataset": "chameleon",
+        "permutation_seed": 1203,
+        "raw_max_error": 2.220446049250313e-16,
+        "hybrid_max_error": 2.220446049250313e-16
+      },
+      {
+        "dataset": "chameleon",
+        "permutation_seed": 1204,
+        "raw_max_error": 1.1102230246251565e-16,
+        "hybrid_max_error": 1.6653345369377348e-16
+      },
+      {
+        "dataset": "squirrel",
+        "permutation_seed": 1200,
+        "raw_max_error": 2.220446049250313e-16,
+        "hybrid_max_error": 2.220446049250313e-16
+      },
+      {
+        "dataset": "squirrel",
+        "permutation_seed": 1201,
+        "raw_max_error": 2.220446049250313e-16,
+        "hybrid_max_error": 2.220446049250313e-16
+      },
+      {
+        "dataset": "squirrel",
+        "permutation_seed": 1202,
+        "raw_max_error": 2.220446049250313e-16,
+        "hybrid_max_error": 2.220446049250313e-16
+      },
+      {
+        "dataset": "squirrel",
+        "permutation_seed": 1203,
+        "raw_max_error": 2.220446049250313e-16,
+        "hybrid_max_error": 2.220446049250313e-16
+      },
+      {
+        "dataset": "squirrel",
+        "permutation_seed": 1204,
+        "raw_max_error": 2.220446049250313e-16,
+        "hybrid_max_error": 2.220446049250313e-16
+      }
+    ],
+    "shuffle": [
+      {
+        "dataset": "chameleon",
+        "shuffle_seed": 2200,
+        "ordered_error": 0.039516596857952446,
+        "shuffled_error": 0.1529934736194346,
+        "error_ratio": 3.8716257416950546,
+        "permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "chameleon",
+        "shuffle_seed": 2201,
+        "ordered_error": 0.039516596857952446,
+        "shuffled_error": 0.1433984348994475,
+        "error_ratio": 3.62881539154072,
+        "permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "chameleon",
+        "shuffle_seed": 2202,
+        "ordered_error": 0.039516596857952446,
+        "shuffled_error": 0.13650594928210627,
+        "error_ratio": 3.4543953714636584,
+        "permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "chameleon",
+        "shuffle_seed": 2203,
+        "ordered_error": 0.039516596857952446,
+        "shuffled_error": 0.15314914625786222,
+        "error_ratio": 3.87556516590679,
+        "permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "chameleon",
+        "shuffle_seed": 2204,
+        "ordered_error": 0.039516596857952446,
+        "shuffled_error": 0.14988871338425352,
+        "error_ratio": 3.7930572291700124,
+        "permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "squirrel",
+        "shuffle_seed": 2200,
+        "ordered_error": 0.04878773335282821,
+        "shuffled_error": 0.17891233803389553,
+        "error_ratio": 3.66715823299309,
+        "permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "squirrel",
+        "shuffle_seed": 2201,
+        "ordered_error": 0.04878773335282821,
+        "shuffled_error": 0.16598227536566723,
+        "error_ratio": 3.4021313137320672,
+        "permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "squirrel",
+        "shuffle_seed": 2202,
+        "ordered_error": 0.04878773335282821,
+        "shuffled_error": 0.16150018778263894,
+        "error_ratio": 3.3102621639477503,
+        "permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "squirrel",
+        "shuffle_seed": 2203,
+        "ordered_error": 0.04878773335282821,
+        "shuffled_error": 0.17894652748002443,
+        "error_ratio": 3.6678590125493287,
+        "permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "identity_permutation": false
+      },
+      {
+        "dataset": "squirrel",
+        "shuffle_seed": 2204,
+        "ordered_error": 0.04878773335282821,
+        "shuffled_error": 0.19928629442837859,
+        "error_ratio": 4.0847623107874105,
+        "permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "identity_permutation": false
+      }
+    ]
+  }
+}

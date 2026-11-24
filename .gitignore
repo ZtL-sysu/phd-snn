@@ -1,15 +1,18 @@
-# Git / collaboration metadata
+# Git / local agent / IDE / cache metadata
 .git/
 .claude/
 .codex-finalizer/
 .codex-ppt-build/
 .workbuddy/
+.researchclaw_cache/
+.DS_Store
+Thumbs.db
 
 # Recoverable cleanup area and duplicate inventory
 archive-gnn2snn/trash/
 output/duplicates-inventory.json
 
-# Large local-only research data and weights
+# Large local-only research data, checkpoints, model weights, and archives
 *.zip
 *.pt
 *.pth
@@ -21,21 +24,82 @@ output/duplicates-inventory.json
 *.gz
 *.7z
 *.tar
+*.rar
+*.xz
+*.bz2
 *.onnx
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.parquet
+*.model
+*.tif
+*.tiff
+*.mp4
+*.avi
+*.mov
 
-# Caches and Python artifacts
+# Caches, LaTeX build intermediates, and Python artifacts
 __pycache__/
 *.py[cod]
+*$py.class
 .pytest_cache/
+.mypy_cache/
 .ipynb_checkpoints/
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.synctex*
+*.nav
+*.snm
+*.vrb
 
-# Nested repositories remain independent; do not vendor them into the top-level repo
+# Raw/processed datasets, caches, and teacher weight directories anywhere in tree
+**/data/
+**/datasets/
+**/.data/
+**/.data_stray_backup*/
+**/pyg_bench/
+**/ogbn_arxiv/
+**/full_teacher_runs/
+**/checkpoints/
+**/weights/
+**/train-your-fly/
+**/flyvision/
+auto-paper/20261105-204552/smoke-tests/stimuli/
+auto-paper/20261105-204552/smoke-tests/fake_data/
+
+# Temporary scratch folders and Novix pulled workspace dumps
+**/.tmp*/
+**/_searchtmp/
+**/_tmp_search/
+**/novix/pulled/
+**/.novix-pull*/
+*platform-terminal-get.json
+*.bak-*
+
+# Nested independent repositories (must not be vendored as broken gitlinks)
 auto-paper/**/.git/
 third_party/**/.git/
 archive-gnn2snn/**/.git/
+docs/**/.git/
+docs/research-plans/claude-fable5.2/github-gnn2gsnn/
+docs/research-plans/claude-fable5.2/notion-export/raw/
+auto-paper/20261028-171500/Spiking-GNN-Conversion/f-research-v1-run-20261028-174053-gnn-snn-conv/
 
-# Local archives and historical pull snapshots are large local-only evidence.
-auto-paper/
+# Runs already curated in dedicated public sibling repositories or heavy raw calibration dumps
+# - Journal-track upgrade (Paper A & B) is curated & path-scrubbed in ZtL-sysu/gnn2snn-v2
+auto-paper/20261028-171500/Spiking-GNN-Conversion/f-research-v1-run-20261118-181848-journal-upgrade/
+# - Heavy multi-MB per-graph calibration JSON/JSONL dumps (visual graph conversion archived in ZtL-sysu/gnn2snn)
+auto-paper/20261110-152407/Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs/f-research-v1-run-20261110-172308-superpixel-graph-vision/takeover_20261112/
+
+# Local-only archives, third-party clones, sibling repo worktrees, and platform evidence (may contain token readers / local paths)
 legacy/
 pull003/
 fly-connectome-cvpr2027/
@@ -44,7 +108,7 @@ archive-gnn2snn/
 output/
 tmp/
 
-# Large top-level JSON task snapshots.
+# Large top-level JSON task snapshots
 _*_get.json
 _*_result*.json
 _*_debug*.json
@@ -59,5 +123,3 @@ _library_gnn2snn_vision_report.txt
 *.tmp
 *.part
 *.bak
-.DS_Store
-Thumbs.db

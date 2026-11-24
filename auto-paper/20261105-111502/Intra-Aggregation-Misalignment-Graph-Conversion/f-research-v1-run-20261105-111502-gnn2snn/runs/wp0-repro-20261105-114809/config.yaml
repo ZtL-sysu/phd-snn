@@ -1,0 +1,38 @@
+# content-addressed run configuration
+run_id: "wp0-repro-20261105-114809"
+stage: "S0/G0"
+command: "conda run -n base python experiments/wp0_reproduce.py"
+conda_env: "base"
+device: "cpu"
+seeds: [0, 1, 2, 3, 4, 5, 6]
+T: 8
+hidden: 16
+n_layers: 2
+tolerance_pp: 0.1
+external_asset_commit: "d12511207b1f0f1ee49650ec560de5236942c419"
+traceability: "content-addressed (see audits/traceability-policy.md)"
+code_and_data_sha256:
+python: "3.13.13"
+numpy: "2.4.4"
+  experiments/core.py: e2f0b0a29b09ff60878c8975b8971fef7cbbca659368f0e054400e71bc7e86e4
+  protocols/graph_data.py: 78b73c666b8967ca3bcac4d4ec512c57cc41bbf1a057ae5e7cf3c77ad64f12b3
+  experiments/wp0_reproduce.py: ceb615972ac4c5cb43fbecf0ea732919bef708444d6b4c1e23866b21dfb687b7
+  results/.data/ind.cora.allx: 9419ba2f26f5c35243db64aba110e0f35a04851609e0dc5433450676ca6b8543
+  results/.data/ind.cora.ally: 2b998f5cc7fedc86e7f97ca2498f47a1ffc1462c29e2d578b23bf3f62b6e7d71
+  results/.data/ind.cora.graph: 58f13302f39dde8852dad6fe6d15b89b077b6d7f837626bce671ef80344b383d
+  results/.data/ind.cora.test.index: 297ce89af2b51a6a194181c7dbe1796c6a1cf9cd9349a88383b1b1e227867875
+  results/.data/ind.cora.tx: b9afbaa4a400df991f6f02ef677e1e44da55ffc04801fd02f9e673987829226a
+  results/.data/ind.cora.ty: 41f5ac76596a1699cc33f53084a2419e92961c42bb75f36fc38e616d348532ad
+  results/.data/ind.cora.x: 23cfa55d91c6f624233f5eb7b6e3f141f1bd2b2ae39608a63cf5d084bb27baab
+  results/.data/ind.cora.y: 94465c14eb53e04ca262198dcbb2521ee8af60fb3f3d546cd6ca24a511b0e7d1
+  experiments/core.py: e2f0b0a29b09ff60878c8975b8971fef7cbbca659368f0e054400e71bc7e86e4
+  protocols/graph_data.py: 78b73c666b8967ca3bcac4d4ec512c57cc41bbf1a057ae5e7cf3c77ad64f12b3
+  experiments/wp0_reproduce.py: ceb615972ac4c5cb43fbecf0ea732919bef708444d6b4c1e23866b21dfb687b7
+  results/.data/ind.pubmed.allx: 508e538e2abdccdd54c4d3e9f49d638b4af7107d85845f66ddea5a5152658b7e
+  results/.data/ind.pubmed.ally: 0c37bbe3b5014ec365e9d393cf4791925e5ed94fb194305d74f064a8d7b50f0e
+  results/.data/ind.pubmed.graph: 5b89f0036ca22909471f1e6558eb42fa06e0c730a577bde5b058b40638f81dc9
+  results/.data/ind.pubmed.test.index: b101d421688bbaecbd82e8a18f1e282378d6830f3a37666f28ebc47f844341b5
+  results/.data/ind.pubmed.tx: 4eb5f5d0f30f26497eb0ac6ac9719d09c67e284f1ed0385c93f3ef27a671da3d
+  results/.data/ind.pubmed.ty: ee2e0d4819d9fbcc403689c3bf2e49face401b605932f093bc58ab6461130fdd
+  results/.data/ind.pubmed.x: fbe9cb5c47200d1b7769a26e579be3b7130b556831f9d850e77c4c74f2599b33
+  results/.data/ind.pubmed.y: e6c807633307a07ed659249006536a147c7999c797f11a2560752990181b41b3

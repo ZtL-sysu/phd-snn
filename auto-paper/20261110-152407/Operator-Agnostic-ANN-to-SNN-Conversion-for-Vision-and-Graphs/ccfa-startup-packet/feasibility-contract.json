@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "decision": "proceed",
+  "claims": [
+    {
+      "dataset_url": "https://www.cs.toronto.edu/~kriz/cifar.html",
+      "split_protocol": "CIFAR-10/100 固定 seed 从 50k train 切 45k/5k，10k test 仅最终评测一次；Planetoid split='public'",
+      "primary_metric": "恒等式最大绝对残差与 B4 rate–ANN gap",
+      "simple_baseline": "朴素 rate 转换（无偏置、无校准、计数解码）",
+      "strong_baseline": "PASCAL (TMLR 2025，无官方码须自行复现) 与 TPP (ICML 2025，官方码) 第 0 批必跑，另含 QCFS/FTBC/Parallel/DCGS/AdaFire",
+      "matched_control": "同一 teacher、同一冻结骨干、同一 T/θ/calibration 数据下逐一关闭组件的 A1–A7 消融臂",
+      "implementation_path": "dyg-cold (torch 2.11.0+cu128/CUDA 12.8) + 6 个官方基线仓库 + 自行复现 PASCAL/CS-QCFS/ECL + 自写冻结 KNN 图的脉冲前向；本机 smoke，全量转用户授权的 novix exp-4090",
+      "prototype_check": "M0 已在本机实跑：恒等式 25 格最大残差 9.880984919163893e-15、Hoeffding 上界 0 违反、P3 干净隔离 0.3056→0.3111、失效边界 0.7058/1.1669；后续 M1 QCFS 回归、M2 第 0 批、M3 主臂、M4 全量",
+      "calibration_evidence": "成稿内部先验（未发表、不充当公开证据）给出 ρ 加权与 ρ-不变机制；M0 本机实跑给合成算子证据；官方基线数值见 literature-baseline-matrix.md；绝对阈值须 G7 pilot 复现基线后依基线方差锁定",
+      "test_isolation": "冻结 seed 0–4；验证集只用于方法与超参选择；test 只在最终评测用一次；用于选择的切分之后不得称 unseen；全 trial 记 config/权重/图文件 SHA-256",
+      "stop_return_condition": "S1 恒等式残差超容差、S2 第 0 批复现失败、S3 原版动态/非线性 ViG 恒等式仍成立、S4 单调判据连续 failure、S5 资源未就绪、S6 诚信违规、S7 数据协议违规；以及 H9（G0 命中近邻/G3 证 T1 平凡/G7 落 failure）即回退 pivot-with-rescue-route",
+      "metric_direction": "lower",
+      "runtime_hours": 6.0,
+      "memory_gb": 12.0,
+      "seeds": 5,
+      "search_trials": 12,
+      "id": "C1",
+      "claim": "固定、非负、线性传播算子类上转换误差恒等式精确成立，动态或非线性算子上按预测失效",
+      "mechanism": "B2hat-B2=A(E1W2)，A 可从时间求和中提出；动态 A_t 或 max 聚合破坏该可提出性",
+      "assumptions": "A 固定、非负、线性；soft-reset IF；膜电位累加解码",
+      "falsifying_ablation": "A5 固定图 vs 动态图、A6 线性聚合 vs 原版 max-relative；B4 原版 ViG 失效边界",
+      "minimum": "固定类内残差在浮点容差内且类外显著非零",
+      "expected_strong": "预注册目标/非实测：固定类内残差 <1e-12 且 B4 动态/非线性残差显著非零（配对 CI 不跨 0）",
+      "failure": "固定类内残差超容差，或原版动态/非线性 ViG 上恒等式仍成立"
+    },
+    {
+      "dataset_url": "https://www.cs.toronto.edu/~kriz/cifar.html",
+      "split_protocol": "CIFAR-10/100 固定 seed 从 50k train 切 45k/5k，10k test 仅最终评测一次；Planetoid split='public'",
+      "primary_metric": "conversion loss (pp)，越低越好",
+      "simple_baseline": "朴素 rate 转换（无偏置、无校准、计数解码）",
+      "strong_baseline": "PASCAL (TMLR 2025，无官方码须自行复现) 与 TPP (ICML 2025，官方码) 第 0 批必跑，另含 QCFS/FTBC/Parallel/DCGS/AdaFire",
+      "matched_control": "同一 teacher、同一冻结骨干、同一 T/θ/calibration 数据下逐一关闭组件的 A1–A7 消融臂",
+      "implementation_path": "dyg-cold (torch 2.11.0+cu128/CUDA 12.8) + 6 个官方基线仓库 + 自行复现 PASCAL/CS-QCFS/ECL + 自写冻结 KNN 图的脉冲前向；本机 smoke，全量转用户授权的 novix exp-4090",
+      "prototype_check": "M0 已在本机实跑：恒等式 25 格最大残差 9.880984919163893e-15、Hoeffding 上界 0 违反、P3 干净隔离 0.3056→0.3111、失效边界 0.7058/1.1669；后续 M1 QCFS 回归、M2 第 0 批、M3 主臂、M4 全量",
+      "calibration_evidence": "成稿内部先验（未发表、不充当公开证据）给出 ρ 加权与 ρ-不变机制；M0 本机实跑给合成算子证据；官方基线数值见 literature-baseline-matrix.md；绝对阈值须 G7 pilot 复现基线后依基线方差锁定",
+      "test_isolation": "冻结 seed 0–4；验证集只用于方法与超参选择；test 只在最终评测用一次；用于选择的切分之后不得称 unseen；全 trial 记 config/权重/图文件 SHA-256",
+      "stop_return_condition": "S1 恒等式残差超容差、S2 第 0 批复现失败、S3 原版动态/非线性 ViG 恒等式仍成立、S4 单调判据连续 failure、S5 资源未就绪、S6 诚信违规、S7 数据协议违规；以及 H9（G0 命中近邻/G3 证 T1 平凡/G7 落 failure）即回退 pivot-with-rescue-route",
+      "metric_direction": "lower",
+      "runtime_hours": 6.0,
+      "memory_gb": 12.0,
+      "seeds": 5,
+      "search_trials": 12,
+      "id": "C2",
+      "claim": "非行随机算子上按 ρ_n 加权闭式偏置校准的臂在低 T 降低 conversion loss",
+      "mechanism": "E[E1]=beta-1/(2T)，margin 平移 rho_n/(2T)·sum_h DW_c[h]；beta*=theta/(2T) 与 rho 无关但消除系统项",
+      "assumptions": "亚阈值残差近似均匀独立；激活主要在 [0,theta]；所有方法同 teacher/θ/calibration/T",
+      "falsifying_ablation": "A1 去 β*；A7 把 ρ≈1 的 CNN 臂与 ρ≠1 的 B2/B3 臂对照",
+      "minimum": "预注册目标/非实测：ρ≠1 臂相对最强 must-rerun 基线改善 ≥0.3pp 且方向在 ≥2/3 数据集一致",
+      "expected_strong": "预注册目标/非实测：T≤4 且 ρ≠1 臂低 ≥1.0pp（配对 bootstrap CI 下界>0，BH q<0.05）且 ρ_n/T 趋势斜率显著为正；阈值须 G7 pilot 后重锁",
+      "failure": "conversion loss 与 ρ_n/T 无单调关系，或 ρ≈1 的 CNN 臂上主臂也显著更好"
+    },
+    {
+      "dataset_url": "https://www.cs.toronto.edu/~kriz/cifar.html",
+      "split_protocol": "CIFAR-10/100 固定 seed 从 50k train 切 45k/5k，10k test 仅最终评测一次；Planetoid split='public'",
+      "primary_metric": "Σs=n 命中率、第二相条件方差、conversion loss",
+      "simple_baseline": "朴素 rate 转换（无偏置、无校准、计数解码）",
+      "strong_baseline": "PASCAL (TMLR 2025，无官方码须自行复现) 与 TPP (ICML 2025，官方码) 第 0 批必跑，另含 QCFS/FTBC/Parallel/DCGS/AdaFire",
+      "matched_control": "同一 teacher、同一冻结骨干、同一 T/θ/calibration 数据下逐一关闭组件的 A1–A7 消融臂",
+      "implementation_path": "dyg-cold (torch 2.11.0+cu128/CUDA 12.8) + 6 个官方基线仓库 + 自行复现 PASCAL/CS-QCFS/ECL + 自写冻结 KNN 图的脉冲前向；本机 smoke，全量转用户授权的 novix exp-4090",
+      "prototype_check": "M0 已在本机实跑：恒等式 25 格最大残差 9.880984919163893e-15、Hoeffding 上界 0 违反、P3 干净隔离 0.3056→0.3111、失效边界 0.7058/1.1669；后续 M1 QCFS 回归、M2 第 0 批、M3 主臂、M4 全量",
+      "calibration_evidence": "成稿内部先验（未发表、不充当公开证据）给出 ρ 加权与 ρ-不变机制；M0 本机实跑给合成算子证据；官方基线数值见 literature-baseline-matrix.md；绝对阈值须 G7 pilot 复现基线后依基线方差锁定",
+      "test_isolation": "冻结 seed 0–4；验证集只用于方法与超参选择；test 只在最终评测用一次；用于选择的切分之后不得称 unseen；全 trial 记 config/权重/图文件 SHA-256",
+      "stop_return_condition": "S1 恒等式残差超容差、S2 第 0 批复现失败、S3 原版动态/非线性 ViG 恒等式仍成立、S4 单调判据连续 failure、S5 资源未就绪、S6 诚信违规、S7 数据协议违规；以及 H9（G0 命中近邻/G3 证 T1 平凡/G7 落 failure）即回退 pivot-with-rescue-route",
+      "metric_direction": "lower",
+      "runtime_hours": 6.0,
+      "memory_gb": 12.0,
+      "seeds": 5,
+      "search_trials": 12,
+      "id": "C3",
+      "claim": "确定性两阶段第二相在零条件方差下不劣于 TPP 随机第二相，并给出可测系统增益",
+      "mechanism": "s[t]=round(t n/T)-round((t-1)n/T)，望远镜求和使 Σs=n 精确成立、条件方差 0；对照 Bernoulli 第二相为随机量",
+      "assumptions": "累积相先缓存全部加权输入；n=round(a/theta)；同一 teacher 与 T 网格",
+      "falsifying_ablation": "A3 Bernoulli 第二相 vs 确定性 s[t]；A2 计数解码 vs 膜电位累加解码判冗余",
+      "minimum": "Σs=n 命中率 100%、条件方差 0、conversion loss 不劣于 TPP（非劣效界 ±0.5pp）",
+      "expected_strong": "预注册目标/非实测：零 RNG 可复现性成立，且在 T≤4 相对 TPP 有配对 CI 下界>0 的可归因增益",
+      "failure": "与 PASCAL/TPP 在统一协议下等价，或零方差只是确定性的同义反复而无系统收益"
+    },
+    {
+      "dataset_url": "https://www.cs.toronto.edu/~kriz/cifar.html",
+      "split_protocol": "CIFAR-10/100 固定 seed 从 50k train 切 45k/5k，10k test 仅最终评测一次；Planetoid split='public'",
+      "primary_metric": "图节点分类 conversion loss (pp)",
+      "simple_baseline": "朴素 rate 转换（无偏置、无校准、计数解码）",
+      "strong_baseline": "PASCAL (TMLR 2025，无官方码须自行复现) 与 TPP (ICML 2025，官方码) 第 0 批必跑，另含 QCFS/FTBC/Parallel/DCGS/AdaFire",
+      "matched_control": "同一 teacher、同一冻结骨干、同一 T/θ/calibration 数据下逐一关闭组件的 A1–A7 消融臂",
+      "implementation_path": "dyg-cold (torch 2.11.0+cu128/CUDA 12.8) + 6 个官方基线仓库 + 自行复现 PASCAL/CS-QCFS/ECL + 自写冻结 KNN 图的脉冲前向；本机 smoke，全量转用户授权的 novix exp-4090",
+      "prototype_check": "M0 已在本机实跑：恒等式 25 格最大残差 9.880984919163893e-15、Hoeffding 上界 0 违反、P3 干净隔离 0.3056→0.3111、失效边界 0.7058/1.1669；后续 M1 QCFS 回归、M2 第 0 批、M3 主臂、M4 全量",
+      "calibration_evidence": "成稿内部先验（未发表、不充当公开证据）给出 ρ 加权与 ρ-不变机制；M0 本机实跑给合成算子证据；官方基线数值见 literature-baseline-matrix.md；绝对阈值须 G7 pilot 复现基线后依基线方差锁定",
+      "test_isolation": "冻结 seed 0–4；验证集只用于方法与超参选择；test 只在最终评测用一次；用于选择的切分之后不得称 unseen；全 trial 记 config/权重/图文件 SHA-256",
+      "stop_return_condition": "S1 恒等式残差超容差、S2 第 0 批复现失败、S3 原版动态/非线性 ViG 恒等式仍成立、S4 单调判据连续 failure、S5 资源未就绪、S6 诚信违规、S7 数据协议违规；以及 H9（G0 命中近邻/G3 证 T1 平凡/G7 落 failure）即回退 pivot-with-rescue-route",
+      "metric_direction": "lower",
+      "runtime_hours": 6.0,
+      "memory_gb": 12.0,
+      "seeds": 5,
+      "search_trials": 12,
+      "id": "C4",
+      "claim": "同一算子跨视觉骨干与图消息传递保持通用性，图侧复现既有 1.5pp 带内水平",
+      "mechanism": "误差恒等式只依赖固定非负线性 A，与层类型（卷积/图聚合/消息传递）无关",
+      "assumptions": "图侧使用固定消息传递算子；Planetoid public split；同一 seed 预算",
+      "falsifying_ablation": "A7 跨臂对照；B3 上替换为独立调参的图侧校准律",
+      "minimum": "预注册目标/非实测：Cora/CiteSeer/PubMed 上 T≤8 落在 ANN−1.5pp 带内且不劣于最强图转换基线",
+      "expected_strong": "预注册目标/非实测：三图全部 T≤8 落在带内，且与视觉臂的最优 β*/解码配置一致（无需跨模态重调）",
+      "failure": "图侧需要独立重调才能达到带内，或三图中 ≥2 图超出带内"
+    },
+    {
+      "dataset_url": "https://www.cs.toronto.edu/~kriz/cifar.html",
+      "split_protocol": "CIFAR-10/100 固定 seed 从 50k train 切 45k/5k，10k test 仅最终评测一次；Planetoid split='public'",
+      "primary_metric": "B4 恒等式残差、ANN teacher top-1 差值 (pp)",
+      "simple_baseline": "朴素 rate 转换（无偏置、无校准、计数解码）",
+      "strong_baseline": "PASCAL (TMLR 2025，无官方码须自行复现) 与 TPP (ICML 2025，官方码) 第 0 批必跑，另含 QCFS/FTBC/Parallel/DCGS/AdaFire",
+      "matched_control": "同一 teacher、同一冻结骨干、同一 T/θ/calibration 数据下逐一关闭组件的 A1–A7 消融臂",
+      "implementation_path": "dyg-cold (torch 2.11.0+cu128/CUDA 12.8) + 6 个官方基线仓库 + 自行复现 PASCAL/CS-QCFS/ECL + 自写冻结 KNN 图的脉冲前向；本机 smoke，全量转用户授权的 novix exp-4090",
+      "prototype_check": "M0 已在本机实跑：恒等式 25 格最大残差 9.880984919163893e-15、Hoeffding 上界 0 违反、P3 干净隔离 0.3056→0.3111、失效边界 0.7058/1.1669；后续 M1 QCFS 回归、M2 第 0 批、M3 主臂、M4 全量",
+      "calibration_evidence": "成稿内部先验（未发表、不充当公开证据）给出 ρ 加权与 ρ-不变机制；M0 本机实跑给合成算子证据；官方基线数值见 literature-baseline-matrix.md；绝对阈值须 G7 pilot 复现基线后依基线方差锁定",
+      "test_isolation": "冻结 seed 0–4；验证集只用于方法与超参选择；test 只在最终评测用一次；用于选择的切分之后不得称 unseen；全 trial 记 config/权重/图文件 SHA-256",
+      "stop_return_condition": "S1 恒等式残差超容差、S2 第 0 批复现失败、S3 原版动态/非线性 ViG 恒等式仍成立、S4 单调判据连续 failure、S5 资源未就绪、S6 诚信违规、S7 数据协议违规；以及 H9（G0 命中近邻/G3 证 T1 平凡/G7 落 failure）即回退 pivot-with-rescue-route",
+      "metric_direction": "lower",
+      "runtime_hours": 6.0,
+      "memory_gb": 12.0,
+      "seeds": 5,
+      "search_trials": 12,
+      "id": "C5",
+      "claim": "冻结/线性化的适用边界与表征代价被定量界定，而非文字声明",
+      "mechanism": "冻结 KNN 图与线性化聚合使骨干落入算子类；原版动态图+max 非线性落在类外",
+      "assumptions": "冻结图在前处理落盘并附 SHA-256；线性化仅替换聚合算子",
+      "falsifying_ablation": "A5/A6；B4 原版 ViG 对照；ANN teacher 精度代价对照",
+      "minimum": "B4 上恒等式残差显著非零，且冻结/线性化相对原版 ViG 的 ANN teacher top-1 差值被报告",
+      "expected_strong": "预注册目标/非实测：B4 残差显著非零且代价 <1.0pp；若代价过大须如实报告并收窄主张",
+      "failure": "原版动态/非线性 ViG 上恒等式仍成立，或冻结/线性化代价大到使 conversion loss 失去可比意义"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "startup-stage-plan.md",
+      "sha256": "ad4c0814a0da838fd47b64f64d3acff0b2dd3c389fa2d481bb35e8584aac21fc"
+    },
+    {
+      "path": "idea-cards.md",
+      "sha256": "05d2b6510614bd34c818da752dfb7d1f07aa5a18bbaacc9f201de344c6cc2637"
+    },
+    {
+      "path": "prior-art-opportunity-map.md",
+      "sha256": "ca23fb17043be0911f9fee205d7e4f4d1ff974a94884c028971f0184d17ad86f"
+    },
+    {
+      "path": "idea-red-team-review.md",
+      "sha256": "d304ac39dd82b0968e95cd48362e7bb75a67557c26c01b7206e286a380965aac"
+    },
+    {
+      "path": "claim-evidence-matrix.md",
+      "sha256": "c8133143bbaf25598c0f7c8e130abcc76762d5dd5ba81f7aa654f125e34c11e0"
+    },
+    {
+      "path": "strong-result-feasibility-contract.md",
+      "sha256": "80a043c4743336e95e1eeac33b53a49a7821686c39ab4bb0ab746b7257b5b32e"
+    },
+    {
+      "path": "startup-decision.md",
+      "sha256": "13e20f1e5f65a93de943ad5fcbe0247c0500b6bc88604a6315dcd5743b8883b9"
+    },
+    {
+      "path": "idea-red-team-review-rev2.md",
+      "sha256": "ccaba05dc63eec63e0736fcc9110fe9c2fab614eb8674efb635a0ba0fa4fdbfd"
+    },
+    {
+      "path": "idea-red-team-review-rev3.md",
+      "sha256": "3b636950a3363815b2c975927684b9eeb41cfc75a6a07d10ccdad78206605835"
+    },
+    {
+      "path": "idea-cards-rev2.md",
+      "sha256": "4e2c59c347b08a72a0a2dc62057aabc9dfdfe234ba518856721985550fbe9a5a"
+    }
+  ]
+}

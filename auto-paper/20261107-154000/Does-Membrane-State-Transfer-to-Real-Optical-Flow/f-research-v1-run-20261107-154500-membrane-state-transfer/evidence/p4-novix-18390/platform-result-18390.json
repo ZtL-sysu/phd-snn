@@ -1,0 +1,12 @@
+{
+  "task_id": "18390",
+  "session": "a988d1715a9b330ca943067d4275d58e",
+  "platform_status": "finish",
+  "platform_steps": 395,
+  "updatedAt": "2026-11-08 15:16:33",
+  "design_valid": true,
+  "expected_signal_met": false,
+  "archived_at": "2026-11-08T15:39:20+08:00",
+  "source": "novix --json task result 18390 (rc=0) + debug pull --sub short path + local SHA-256 verification",
+  "note": "All main files really present this time (4th-attempt persistence fix worked); no fabrication."
+}

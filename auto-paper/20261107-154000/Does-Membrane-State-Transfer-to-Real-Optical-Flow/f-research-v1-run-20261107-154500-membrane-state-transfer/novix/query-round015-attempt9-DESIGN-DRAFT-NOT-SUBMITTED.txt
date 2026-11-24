@@ -1,0 +1,270 @@
+================================================================================
+【NOT SUBMITTED — DESIGN DRAFT ONLY · 不得原样启用】
+C1 死磕第 9 次尝试（correction loop v3, attempt #9）· round-015 落盘预案
+生成时间：2026-11-09 05:4x GMT+8
+状态：**本轮未提交任何 novix 任务**。原因：attempt #8 = task `18696`
+经 Step 0 权威复核 `processing` / steps 369→371 增长 / `errorCode=None` /
+顶层 `finalReply=None` / `updatedAt 2026-11-09 04:58:23`、末步正在编辑
+`connectome.py`（保度重连拓扑不变量）→ **真在跑**。按 `WORKFLOW-PLAYBOOK.md`
+§3.6(2) 与 Step 6「同一 idea 在途不得重复提交」，本轮只更新文档、不重提交、
+不等待、不 pull、不出 verdict。
+
+【启用前置条件（硬性）】本预案是**假设**，不是结论。只有在 `18696` 到达平台
+终态、短路径 `--sub` pull + SHA-256 严格核验、`acceptance-verdict-18696.md`
+正式落盘之后，才允许按**真实实测**修订本预案并生成正式提交版。
+修订时必须逐条核对本预案的假设是否被 `18696` 实测支持或部分否证；
+被否证的前提必须删除或改写，**不得原样启用、不得把假设写成已测结论**。
+================================================================================
+
+【四要素 · 死磕账本同源，启用前必须写入 `project/result.json` 的 `grind_block`】
+
+────────────────────────────────────────────────────────────────────
+(1) 上一轮失败点（只引用已落盘实测，不推断、不改写、不删证据）
+────────────────────────────────────────────────────────────────────
+· `18533`（attempt #7，最近一次有正式科学判定）= `finish`/536 + 完整
+  finalReply、短路径 pull + SHA-256 全 MATCH，正式
+  `acceptance-verdict-18533.md` = **`REJECT_FAILURE`**：
+  `design_valid=true`、全阶段真跑完（411 raw NPZ、264/264 梯度 cell、
+  90 contrasts、77/77 + 88/88 + 13/13 校验、447 manifest 缺 0），但
+  `c1_guidance.verdict=failure`、`minimum_met=false`、
+  `expected_strong_met=false`、`transfer_claim_made=false`、
+  `migration_verdict=NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE`。
+  4 条 blocking_failures（逐字）：`negative_control_calibration_failed` /
+  `sintel_current_ceiling_below_0.70` / `both_real_domains_not_DOMAIN_USABLE` /
+  `sintel_unexposed_11seed_readout_unavailable`。
+· 两真实域 ceiling **均 < 0.70**：DAVIS `0.617284`（oracle `0.969136`、
+  gap `0.351852`、`INPUT_BOTTLENECK`）；SINTEL `0.3125`
+  （oracle `0.6875`、`TASK_UNDECIDABLE`）。**SINTEL 的 GT oracle 上界
+  0.6875 本身已低于冻结门槛 0.70** —— 这是历轮最被低估的一条实测：
+  即便把 GT 光流直接当输入，当前标签构造口径也不可判定。
+· 阴性对照校准失败：paired bootstrap 经验 I 类错误 `0.076 > 0.075`
+  冻结上限（exact sign-flip / randomization 均 `0.044` 通过）→ 全部
+  contrast 标 `uncalibrated`。
+· SINTEL 三态 `IMPLEMENTATION_IDENTICAL_BRANCH`（forced probe
+  `0.78125 < 0.90`）→ 按预注册规则 `delta=0` **不得作任何科学结论**；
+  SINTEL unexposed holdout `unavailable`；DAVIS unexposed `−0.011069`
+  CI `[−0.014837,−0.007537]`（符号翻转，原样保留）。
+· 测量可辨识性主门 **PASSED**（两域 `decision_rule_identifiable=true`、
+  `recover_known_plus_0_25=true`、`locked_before_main_contrasts=true`），
+  但 `+0.25` 已知信号注入只恢复 DAVIS `0.067901`（斜率 `0.284383`）/
+  SINTEL `0.0625`（斜率 `0.155642`）→ **可辨识但亚单位灵敏度**。
+  round-011「装置整体不可辨识」前提被实测否证。
+· `18448`（attempt #5）= `REJECT_FAILURE`：首次 `DOMAIN_USABLE`
+  （SINTEL 恰 0.700000）并首次算出 real delta，但 `delta=0.000000`
+  （5/11 seeds、CI `[0,0]`、三检验族 p=1）；阴性对照校准失败
+  （`−0.115909`、p=0.0009765625）；跨实现 `single_factor_flip_localized=false`。
+· `18489`（attempt #6）= `FAILED` / 平台沙箱故障、steps=0、零产物、
+  远程 agent 从未执行实验代码；**不是**科学负结果、不是 kill hit。
+· `18696`（attempt #8）= **在途、无结果**（本轮 Step 0 权威复核）。
+  其 query 的 8 条机制级 diff（主门换 ceiling+标签可判定性 / 输入级
+  `H(ω)` / `flow_coherence`×读出作用域 / 两臂对称性 / 三族校准修复 /
+  `localized_unit` 分支定位 / holdout 可构造性 / 幂等引用 SHA-256 归档）
+  **是否奏效完全未知**，本预案不得预先假定其任一结论。
+
+────────────────────────────────────────────────────────────────────
+(2) 本轮假设（机制级不同于 attempt #6/#7/#8；是**假设**不是结论）
+────────────────────────────────────────────────────────────────────
+连续 7 次正式判定卡在同一处：**两真实域 ceiling < 0.70**，且 SINTEL 的
+GT oracle 上界 `0.6875` 本身就低于门槛。历轮把这一现象归因于「输入编码」
+（41–43、attempt #7 的 7 档阶梯全不收窄）、「装置灵敏度」（attempt #7 主门
+PASSED 但亚单位）、「空间池化 / 读出作用域 / 两臂对称性」（attempt #8 预案），
+全部作用在 **网络侧或测量侧**。本轮提出一个作用对象完全不同的可证伪假设：
+
+  **H9（标签构造算子 / 噪声地基假设）**：真实域的「运动方向」标签是由 GT
+  光流的**全局统计量**导出的；真实光流中相机自运动（ego-motion）在逐像素
+  位移场中占主导，使全局方向统计与局部物体运动信号近独立。由此产生两个
+  可测后果：
+  (a) 标签在**预注册微扰**（像素 bootstrap、±1 帧时间窗平移、幅值抖动）
+      下有不可忽略的翻转率 `r`，则任何分类器的 Bayes 最优 ceiling 上界
+      `<= 1 - r`；若所有构造档的 `1-r < 0.70`，则 ceiling 未达标是
+      **标签噪声地基**，不是任何网络机制可修 → 应把历史全部
+      `delta≈0` 重分类为 `LABEL_NOISE_FLOOR_BELOW_THRESHOLD`
+      （诊断型负结果，**不是**达标、**不是**机制否证、**不是**把负结果
+      写成正结果）。
+  (b) 若在 GT 光流上先做**训练前冻结并哈希锁定的自运动补偿**
+      （逐帧中位数/均值相减、全局单应拟合残差、局部运动能量掩膜），
+      某个补偿档能把噪声地基抬到 `>= 0.70` 且 ceiling 达
+      `DOMAIN_USABLE`，则瓶颈被定位到**标签构造算子**，而不是膜状态、
+      输入编码或读出作用域；此时才允许继续测 `delta(LIF − stateless)`。
+
+  配套定位探针（与 H9 同源、机制级新）：训练前冻结的
+  **retinal-drive ↔ GT-flow 对齐探针**，逐域落盘「复眼驱动方向统计」
+  与「各标签构造档方向统计」的相关系数 + bootstrap 95% CI：
+  · 若相关性 ≈ 0 而 GT-flow-as-input 的 oracle 高 → 瓶颈在**眼前端采样/
+    映射**（与 round-015 候选 P2 相位/抗混叠轴呼应，但本预案只测量、
+    不引入 P2 机制，保持单因子）。
+  · 若相关性高而 ceiling 仍 < 0.70 → 瓶颈在**下游表示/决策规则**。
+  · 两种情形都必须原样落盘，不得挑选好看的一支。
+
+  反向护栏：H9 **不得**被用来下调门槛或改写结论。若补偿后仍全部
+  `1-r < 0.70`，则 `c1_guidance` 仍按实测判 `failure`、
+  `transfer_claim_made` 强制 false、文章仍不合格、继续死磕同一 C1。
+
+────────────────────────────────────────────────────────────────────
+(3) 具体改动（相对 `query-round014-attempt8.txt` 的机制级 diff）
+────────────────────────────────────────────────────────────────────
+以下 9 条均为**机制 / 协议 / 估计量 / 实现层**变化，不是只调超参、
+不是改标题、不是原样重提、不是重跑同一网格凑显著：
+
+ 1.【新增·作用对象=标签构造算子，历轮从未做过】训练前冻结并 SHA-256
+   哈希锁定的 **ego-motion 补偿算子族**作用于 GT 光流（**在标签导出之前**）：
+   `{none, subtract_per_frame_median, subtract_per_frame_mean,
+   homography_global_fit_residual, local_motion_energy_mask}`。逐档落盘
+   ceiling + 95% CI、GT oracle 上界、类别边际、混淆矩阵、
+   `majority_baseline_acc`、三态 `decidability_state`。
+   · 与 attempt #8 的主门区别：#8 的
+     `real_domain_ceiling_and_label_decidability_gate` 只是**诊断/分档**
+     已有标签构造，不改变算子；本轮把**补偿算子本身**变成唯一自变量。
+   · 与 attempt #7 的 DAVIS 7 档输入编码阶梯区别：那改的是**输入编码**，
+     本轮改的是 **GT 光流 → 标签** 的映射，二者在因果链上完全不同。
+   · 与 #8 的 `flow_coherence` 区别：那是**样本分层**，本轮是**标签算子**。
+ 2.【新增·估计量层】预注册微扰下的**标签翻转率 `r` 与噪声地基上界
+   `1-r`**：微扰族 `{pixel_bootstrap_B200, temporal_shift_pm1,
+   flow_magnitude_jitter_5pct}` 全部训练前冻结、哈希锁定；逐档逐域
+   落盘 `flip_rate`、95% CI、`noise_floor_upper_bound=1-r`、
+   `bound_reaches_0.70`。这是历轮**从未测量过**的估计量（历轮只测
+   accuracy ceiling，不测标签自身的稳定性）。
+ 3.【新增·定位探针】`retinal_drive_vs_gt_flow_alignment`：逐域逐构造档
+   落盘相关系数 + CI + 散点充分统计量；预注册「相关≈0 / 相关高」两支
+   **都**必须报告，禁止选择性报告。
+ 4.【新增·重分类标签】第六态 `LABEL_NOISE_FLOOR_BELOW_THRESHOLD`
+   （诊断型负结果）与既有五态并列；命中时全部 real-domain contrast
+   标 `diagnostic_only`、`transfer_claim_made=false`、
+   `c1_guidance` 仍按实测判 failure；**不进 P5、不写论文**。
+ 5.【必修·两臂等标签暴露】LIF 与 stateless 接收**逐字节相同**的标签
+   实现与同一微扰序列（附 RNG 流 bitwise 独立性证明、共享对象注册表、
+   「交换条件标签」单位级反事实）；任何 delta 不得归因于标签侧不对称。
+   承接 #8 的两臂对称性审计，但把审计对象从「训练臂」扩展到「标签臂」。
+ 6.【幂等引用·不重跑】attempt #8 已真跑完并 SHA-256 归档的项目
+   （输入级 `H(ω)` 逐级传递函数、`flow_coherence`×读出作用域全格、
+   三族校准修复全报告、`localized_unit` 分支定位、holdout 可构造性证明、
+   `measurement_identifiability_gate`、特征级注入阶梯、梯度路径 2×2、
+   DAVIS 7 档输入编码阶梯）—— **全部引用 `evidence/p4-novix-18696/`
+   的哈希核验归档**，逐项列归档路径与 SHA-256，**不重跑、不重算、
+   不改数值**。启用前必须等 `18696` 归档真实落盘并逐项核对；
+   若某项在 `18696` 中未真跑完，须在正式提交版里改为「必跑」而非引用。
+ 7.【必修·校准不退化】沿用 #8 的三族校准修复方案，**三族全报告**；
+   任一族未通过则全部 contrast 标 `uncalibrated`，不得只报通过的族
+   （防选择性报告）。`18696` 的三族实测结果必须原样引用，不得删除失败项。
+ 8.【不变·门槛与硬约束】`minimum(+0.15)` / `expected_strong(+0.25)` /
+   ceiling `0.70` **一律不下调**；两域都非 `DOMAIN_USABLE` 时
+   `migration_verdict=NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE`；
+   `A=0` 为输入信息上界（禁止宣称生物接线优势）、精确保度零模型、
+   identity 图、≥11 paired seeds、2000 次 paired bootstrap 95% CI、
+   exact sign-flip p、BH-FDR q=0.05、一因子消融、测试集暴露台账、
+   冻结探针臂非劣效界；`runtime_hours` 只是可行性估算，**绝不是超时参数**。
+ 9.【不变·无预算 + 产物持久化】提交命令
+   `novix task create --json <query> --provider novixlet
+   --resource-pool exp-4090 --gpu --gpu-count 1`，
+   **不带** `--max-turns` / `--timeout` / 阻塞 `watch`；
+   第 0 步先落盘 `experiment.py` 骨架 + 阶段性 `result.json`，
+   每小步增量 flush、断点续跑、不输出超长回复；
+   `project/result.json` / `project/config.json` / `project/MANIFEST.txt`
+   必须在可 pull 的 workspace 内、结束前 `os.path.exists`/`getsize`/
+   `sha256` 自检并把实测输出贴进最终回复；任何提前终止前先落盘
+   `experiment.py` 与阶段性 `result.json`。
+
+────────────────────────────────────────────────────────────────────
+(4) 预期信号 / 若失败下一步
+────────────────────────────────────────────────────────────────────
+· **预期（若 H9 成立）**：至少一个自运动补偿档把 `1-r` 抬到 `>= 0.70`
+  且 ceiling 达 `DOMAIN_USABLE`；对齐探针明确指认瓶颈在眼前端或下游
+  二者之一（两支全报告）；三族校准至少一族通过（三族全报告）；
+  两臂等标签暴露审计通过；此后在 `DOMAIN_USABLE` 域上训练后
+  real-domain `delta(LIF − stateless) >= +0.15` 且 CI 下界 > 0，
+  `stateless_trained_identically` 不追平，unexposed holdout 同号，
+  一因子消融指认承载机制 → 才按 C1 guidance §Expected Results 判
+  `ACCEPT_STRONG` 并 `--before P5` 续跑。
+· **若全部补偿档 `1-r < 0.70`**：如实落 `LABEL_NOISE_FLOOR_BELOW_THRESHOLD`，
+  指出这是**标签噪声地基**而非「膜状态无增益」；不是达标、不是机制
+  否证、不是方法优越、不是把负结果写成正结果。保留全部失败证据，
+  下一步按 `research-recovery.md` 收窄到「不改标签族、改决定性对照」：
+  以 GT 光流本身作输入上界重测 `delta`，并把历史 7 次 `delta≈0`
+  按噪声地基重分类，继续死磕同一 C1。
+· **若补偿后 ceiling 达 0.70 但 `delta` 仍 ≡ 0**：说明瓶颈已从标签侧
+  下移到表示/决策侧；下一步转向 round-015 候选 P1（PSP 核族把「核效应」
+  与「状态效应」正交分离）或 P3（泄漏算子非线性）的机制级检验，
+  **仍不换主攻**。
+· **若对齐探针相关 ≈ 0**：定位到眼前端采样/映射，下一步修复眼驱动
+  构造与视网膜采样（可引入 P2 相位/抗混叠轴，但须作为**新一因子**、
+  单独消融，不得与本轮合并）。
+· **若三族校准仍全失败**：全部 contrast 标 `uncalibrated`、不作机制主张，
+  作为下一次 correction loop 的第一必修。
+· **若 `localized_unit=NOT_LOCALIZED`**：保留 `IMPLEMENTATION_IDENTICAL_BRANCH`
+  结论，`delta=0` 不作科学结论。
+· **任何情况**：不把「实验跑完 / design_valid / 方差恢复 / 首次
+  DOMAIN_USABLE / 主门通过 / 对齐可测 / 标签可补偿」写成「结果达标」；
+  不删失败证据；不把负结果改写成正结果；不把 `A=0` 高于图条件写成
+  生物接线优势；不编造任何数值；`abandon_allowed=False` → 不换主攻。
+  唯一合格线仍是成稿 `ccf-paper-reviewer full` 落盘
+  `**Overall:** X >= 8.0` 且 P21 完成。
+
+================================================================================
+【本轮未提交声明】round-015 遵守 §3.6(2)：`18696` 真在跑 → 本轮
+只更新文档、不重提交、不等待、不 pull、不出 verdict、不标任何 stage passed
+（`pipeline-state.json` 仍 26/26 pending、history 空）。
+本文件仅为 attempt #9 的**设计预案**，标注 **NOT SUBMITTED / 不得原样启用**。
+`expected_strong(+0.25)` / `minimum(+0.15)` / ceiling 0.70 **不下调**；
+失败证据不删、负结果不改写、数值不编造。
+================================================================================
+
+
+================================================================================
+【收尾复核状态跃迁更正 · 2026-11-09 05:5x GMT+8 · 本预案依然 NOT SUBMITTED】
+================================================================================
+
+本预案在 round-015 开工时按「`18696` 在途、结果未知」撰写。**收尾复核发现
+`18696` 已在本轮执行期间转为平台终态** `finish`/507 + 完整 finalReply
+（`rc=0`，非传输错误），短路径 `--sub` pull + 9/9 声明 SHA-256 MATCH，
+正式判定 `acceptance-verdict-18696.md` = **`REJECT_FAILURE`**。
+证据归档 `evidence/p4-novix-18696/`。
+
+**本预案的 H9 前提被实测削弱 / 部分否证，因此更加「不得原样启用」**：
+1. H9 以「SINTEL 的 GT oracle 上界 `0.6875` 本身低于冻结门槛 0.70」为
+   观测起点。18696 的新协议报告两域 `gt_oracle_upper_bound=1.0`，
+   且 finalReply 明确写「**不是**对历史 SINTEL oracle `0.6875` 的重新计算」。
+   → 「oracle 低于门槛」不能作为本轮假设的前提；须改为
+   「`decidability_state=INPUT_BOTTLENECK`、ceiling DAVIS `0.424242` /
+   SINTEL `0.400000` 均 < 0.70」这一**本次实测**起点。
+2. round-014 假设 A「链路整体不通 → `NO_INPUT_SIGNAL_PATH`」被**否证**：
+   输入级注入已验证在 `raw_32x32_luminance_before_4x4_compound_eye_sampling`，
+   两域第五态均 `INPUT_SIGNAL_PATH_MEASURABLE`。但 `H_slope(LIF − stateless)`
+   逐环节全负（DAVIS drive `−1.224299` / syn `−0.141906` / v `−0.210777` /
+   KC `−0.208067`；SINTEL 同号），最大首段衰减定位 `drive→syn`；
+   分支定位 `localized_unit=syn`（forced probe `0.902778 > 0.9`）。
+   → 瓶颈已从「标签噪声地基」转向 **输入侧 `INPUT_BOTTLENECK` + `syn` 单元级
+   衰减**；round-016 必须把 H9 改写为针对 `drive→syn` 衰减的可证伪机制假设，
+   并把「标签翻转率 / 噪声地基上界」降级为**次要诊断**而非主假设。
+3. round-014 假设 C「两臂条件相关偏置」被**否证**：
+   `condition_arms_symmetric=true`、`confounded_contrasts=[]`、
+   交换条件标签反事实精确成立 → 本预案第 5 条「两臂等标签暴露」仍可保留为
+   幂等护栏，但不再是待检验的新机制。
+4. round-014 必修③「holdout 可构造性」**已解决**：两域 `CONSTRUCTIBLE`
+   （DAVIS matched n=154、SINTEL n=24，`partition_modified_after_results=false`）
+   → 本预案不得再把 holdout 不可构造当作待修缺陷。
+5. 三族校准修复**仍失败**：stratified paired bootstrap 经验 I 类错误 `0.149`
+   （> 冻结上限 0.075），studentized `0.051`、redefined permutation `0.058` 通过；
+   `all_families_passed=false`、全部 contrast `uncalibrated` → 校准仍是第一必修。
+6. `idempotent_reference.status=unavailable`、
+   `all_archive_hashes_verified=false`（18533 归档未挂载到远端 workspace）：
+   本预案第 6 条「幂等引用 `evidence/p4-novix-18696/`」在启用前必须逐项核对
+   归档真实存在；对「远端未挂载」的项目须改为**必跑**而非引用。
+
+**round-016 启用前必须做的事**（按 `research-recovery.md`）：
+- 用 `acceptance-verdict-18696.md` 与哈希核验的 `evidence/p4-novix-18696/result.json`
+  逐条复核并**重写**四要素，不得沿用本预案的「装置/标签」旧前提；
+- 给出与 `query-round014-attempt8.txt` 的**新机制级 diff**
+  （核心应为 `drive→syn` 衰减定位与输入侧瓶颈，而非标签构造）；
+- 保留并幂等引用 18696 已真跑完项目（输入级 H(ω)、三族校准全报告、
+  `localized_unit=syn`、两域 holdout 可构造性、两臂对称性审计、
+  `flow_coherence`×读出作用域全格、训练后 real delta 全表）；
+- `expected_strong(+0.25)` / `minimum(+0.15)` / ceiling 0.70 **不下调**；
+  失败证据不删、负结果不改写、数值不编造；
+- 提交命令**不带** `--max-turns` / `--timeout` / 阻塞 `watch`，本轮不等结果；
+- `abandon_allowed=False`（(a) 7/7、(b) 0/2、(c) 0/2）→ 不得换主攻。
+
+**本轮仍不提交 novix**：Step 0–7 全程按在途正确执行、已交付一次实质优化
+（本预案），终态在收尾复核才发现；按 rounds 006/009/011/013 先例，
+终态判定与预案修订交下一轮，本轮不重提、不等待。
+唯一合格线仍是成稿 `ccf-paper-reviewer full` `**Overall:** X >= 8.0` 且 P21 完成。
+================================================================================

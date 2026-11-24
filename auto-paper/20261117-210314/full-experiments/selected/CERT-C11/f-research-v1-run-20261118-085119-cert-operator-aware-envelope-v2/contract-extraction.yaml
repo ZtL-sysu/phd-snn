@@ -1,0 +1,41 @@
+schema_version: 1
+guidance: inputs/guidance-v2.md
+title: Operator-Aware Affine Error Envelopes for Quantized Graph Messages in Frozen GNN-to-SNN Conversion
+target_tier: Q2+
+sections:
+  - Introduction
+  - Related Work
+  - Method
+  - Experiments and Results
+  - Discussion
+  - Conclusion
+main_claim:
+  planned_claim: >-
+    A deterministic output-column interval envelope propagated through normalized adjacency,
+    ReLU, and frozen downstream weights is valid and materially tighter than a global scalar
+    bound for quantized graph messages.
+  observed_finding: pending corrected operator-aware confirmation
+  scope: frozen two-layer GCN, Cora/Chameleon/Squirrel, seeds 0/1/2, 4/8 levels, two uniform quantizers
+  exclusions:
+    - independent statistical coverage
+    - multi-layer nonlinear certification
+    - temporal SNN equivalence
+    - energy or hardware deployment claims
+binding_strong_gate:
+  coverage: 1.0
+  median_width_over_rms_max: 10.0
+  per_cell_width_over_rms_max: 15.0
+  minimum_tightening_vs_global: 0.25
+evidence_policy:
+  prior_v1_rows: background_only
+  corrected_rows_required: true
+  labels_used_by_certificate: false
+  coverage_interpretation: theorem_and_implementation_validity_audit
+deliverables:
+  - final TeX
+  - one compiled PDF
+  - BibTeX
+  - figures
+  - experiment artifacts
+  - source archive
+  - audits and final manifest

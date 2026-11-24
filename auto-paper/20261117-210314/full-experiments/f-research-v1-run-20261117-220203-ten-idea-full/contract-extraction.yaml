@@ -1,0 +1,29 @@
+topic: Ten mechanisms for evidence-backed GNN-to-SNN conversion
+target_venue: Q2+ journal or strong specialized venue; requested deliverable is a Chinese Markdown report
+main_claim: Evaluate ten operator-level frozen-conversion mechanisms with baseline-first full local experiments and report only evidence-supported claims
+method: DYN-C01, EQ-C02, PERM-C03, SIGN-C04, LR-C05, EDGE-C06, CERT-C11, POS-C13, DLY-C14, READ-C18
+datasets: DAVIS-2017 motion clips; MaleCNS coordinates/types; Chameleon/Squirrel/Planetoid/OGBN-Arxiv; FlyWire syn_count
+baselines: raw/absolute/full-output; matched disabled/shuffled; local frozen GCN conversion; random projection/uniform quantization; literature One-Spike/ASGCN/A2Q/AdaQP/SpikeZIP context
+primary_metric: module-specific accuracy, fidelity, exactness, error, compression or certificate metric as frozen in guidance
+secondary_metrics: event/slot/bit reduction, runtime, memory, reconstruction, robustness and uncertainty
+expected_minimum: each module has an explicit minimum in the guidance matrix
+expected_strong: each module has a binding expected-strong in the guidance matrix
+strong_result_entry_gate: all matrices complete and claims narrowed to actual evidence
+must_run_experiments: ten rows in the guidance experiment matrix
+must_have_ablations: disabled/shuffled/equal-budget/oracle controls per row
+figure_table_decision_rules: sequential result table and claim/CCFA score table; optional Pareto/compression/certificate/margin views
+experiment_traceability: results/<ID>.json plus protocols/<ID>.md plus experiment-traceability.md
+citation_requirements: 2022-2026 conversion/direct-spiking-GNN cluster and verified primary URLs
+citation_dedup_requirements: arXiv/published duplicate scan at final review
+local_artifact_policy: all new artifacts under this run root
+page_length_policy: no page target; one Markdown report
+single_final_pdf_template_policy: not applicable because user explicitly requested Markdown
+central_question: which graph-specific conversion mechanisms survive full baseline-first evaluation
+intended_reader: GNN/SNN conversion and neuromorphic graph researchers
+domain_design_bridge: information loss at ten operator locations -> preserve/certify that information -> matched controls
+planned_claim: ten module-specific claims in guidance; no observed result assumed
+observed_finding: pending
+writing_preferences_and_source: Chinese report, English identifiers, user goal
+protected_scope_and_source: historical inputs read-only; negative results preserved
+venue_length_requirements_and_source: none specified
+open_assumptions: local graph checkpoint coverage; DAVIS/MaleCNS are mechanism/application bridges rather than dynamic-edge or full E(3) GNN benchmarks

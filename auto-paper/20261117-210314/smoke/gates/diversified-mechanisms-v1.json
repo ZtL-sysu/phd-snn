@@ -1,0 +1,12 @@
+{
+  "frozen_at": "2026-11-17T22:15:00+08:00",
+  "candidates": {
+    "DYN-C01-v1": {"reconstruction_max": 1e-12, "future_prefix_error_max": 1e-12, "residual_reduction_min": 0.20},
+    "EQ-C02-v1": {"equivariance_error_max": 1e-10, "quantization_relative_error_max": 0.10},
+    "PERM-C03-v1": {"permutation_error_max": 1e-10},
+    "SIGN-C04-v1": {"reconstruction_max": 1e-12, "negative_fraction_min": 0.20},
+    "LR-C05-v1": {"relative_error_max": 0.50, "compression_factor_min": 8.0},
+    "EDGE-C06-v1": {"relative_error_max": 0.25, "storage_reduction_min": 4.0}
+  },
+  "evidence": "smoke/results/mechanism-smoke.json"
+}

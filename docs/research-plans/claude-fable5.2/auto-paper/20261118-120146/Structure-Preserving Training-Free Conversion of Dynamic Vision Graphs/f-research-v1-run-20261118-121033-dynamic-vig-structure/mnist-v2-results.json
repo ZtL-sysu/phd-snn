@@ -1,0 +1,48 @@
+{
+  "dataset": "MNIST",
+  "wall_seconds": 10.799525499343872,
+  "rows": [
+    {
+      "seed": 41,
+      "teacher_accuracy": 0.7715000510215759,
+      "v1_accuracy": 0.1665000021457672,
+      "v2_accuracy": 0.7105000615119934,
+      "v1_message_mse": 0.00539796706289053,
+      "v2_message_mse": 0.0007743146852590144,
+      "calibration": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "message_mse": 0.0008042718400247395
+      },
+      "events_equal": true
+    },
+    {
+      "seed": 42,
+      "teacher_accuracy": 0.7920000553131104,
+      "v1_accuracy": 0.15700000524520874,
+      "v2_accuracy": 0.7015000581741333,
+      "v1_message_mse": 0.004919677507132292,
+      "v2_message_mse": 0.0006539669120684266,
+      "calibration": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "message_mse": 0.0006809444748796523
+      },
+      "events_equal": true
+    },
+    {
+      "seed": 43,
+      "teacher_accuracy": 0.7730000615119934,
+      "v1_accuracy": 0.15450000762939453,
+      "v2_accuracy": 0.7115000486373901,
+      "v1_message_mse": 0.005792403593659401,
+      "v2_message_mse": 0.0008158757700584829,
+      "calibration": {
+        "scale": 15.0,
+        "offset": 0.05,
+        "message_mse": 0.0008419466321356595
+      },
+      "events_equal": true
+    }
+  ]
+}

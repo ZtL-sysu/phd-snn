@@ -1,0 +1,4 @@
+dataset,N,F,transported_tensor,tensor_shape,rank,residual_entries,budget_fraction,rounding_rule,selected_coefficients,bits_per_selected_pair,basis_bits_formula,basis_bits,basis_formula_check,residual_target_bits,total_padded_bits,full_float_bits
+cora,2708,1433,M0=A_hat X,2708x1433,128,3880564,0.02,round-half-even via Python round,77611,64,(N*rank + rank + rank*F)*32,16965632,16965632,4967104,21932736,124178048
+chameleon,2277,2325,M0=A_hat X,2277x2325,128,5294025,0.02,round-half-even via Python round,105880,64,(N*rank + rank + rank*F)*32,18853888,18853888,6776320,25630208,169408800
+squirrel,5201,2089,M0=A_hat X,5201x2089,128,10864889,0.02,round-half-even via Python round,217298,64,(N*rank + rank + rank*F)*32,29863936,29863936,13907072,43771008,347676448

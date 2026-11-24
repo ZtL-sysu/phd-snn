@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v1",
+  "contract": [
+    {"path": "inputs/guidance.md", "sha256": "3622b809aedff07fc612c4432d11a87fa8a44483eeb9ed8d1ceb8f23fc876876"},
+    {"path": "inputs/idea-portfolio.md", "sha256": "cf7d990a5bbc85be46a0a7a93fa5e32ca8d969386ff8c348eb70781b776d6430"},
+    {"path": "inputs/literature-baseline-matrix.md", "sha256": "a6882f48667278ed502fce06735a512c0a573cf86c82c9aae1b167ba8c34a512"},
+    {"path": "inputs/strong-result-feasibility-contract.md", "sha256": "cb114e61619112b2584107f7c0a17c0f4cb97dc5461f4811b6ae179e5a1831c0"}
+  ],
+  "history": [
+    {"action": "pass", "stage": "P0"},
+    {"action": "pass", "stage": "P1"},
+    {"action": "pass", "stage": "P1A"},
+    {"action": "pass", "stage": "P1B"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "reopen", "stage": "P2", "reason": "EQ typed-coordinate pandas sampling implementation crashed during P3; repaired reusable code requires P2 reacceptance"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "reopen", "stage": "P2", "reason": "READ top-two NumPy indexing crashed during P3; shared utility repair requires P2 reacceptance"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "reopen", "stage": "P2", "reason": "LR baseline used overcomplete hidden messages rather than the frozen raw A X message scope; repair requires P2 reacceptance"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "pass", "stage": "P3"},
+    {"action": "pass", "stage": "P3A"},
+    {"action": "reopen", "stage": "P2", "reason": "P4 first matrix exposed representation/precision mismatches in shared experiment code; unchanged thresholds require P2 reacceptance and downstream reacceptance"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "pass", "stage": "P3"},
+    {"action": "pass", "stage": "P3A"},
+    {"action": "reopen", "stage": "P2", "reason": "P5 POS repair added a hybrid escape codebook to shared experiment code; final hashes require P2 and downstream reacceptance"},
+    {"action": "pass", "stage": "P2"},
+    {"action": "pass", "stage": "P3"},
+    {"action": "pass", "stage": "P3A"},
+    {"action": "pass", "stage": "P4"},
+    {"action": "pass", "stage": "P5"},
+    {"action": "pass", "stage": "P5A"}
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "inputs/guidance.md", "sha256": "3622b809aedff07fc612c4432d11a87fa8a44483eeb9ed8d1ceb8f23fc876876"},
+        {"path": "input-manifest.json", "sha256": "3dfb8657a1b9600de24addf4603e33890dc0a8b108e219f8610313d670277fe8"}
+      ],
+      "evidence": [
+        {"path": "audits/p0-gate-report.md", "sha256": "54d62cc4cbcbb9ea19a51eca66c0a4781e2cc476abd0f31a1d746d82d8fbf554"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "inputs/guidance.md", "sha256": "3622b809aedff07fc612c4432d11a87fa8a44483eeb9ed8d1ceb8f23fc876876"},
+        {"path": "contract-extraction.yaml", "sha256": "43e017020fb56b85bd1f1567e89eaef2cfeb87e1edc6017e3fbd9350f746edb4"}
+      ],
+      "evidence": [
+        {"path": "audits/p1-guidance-validation.md", "sha256": "f7b9c13f24bf814b6cb5842de1d8113d60e78decfd83f5d0d5752c9d0aa75626"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "contract-extraction.yaml", "sha256": "43e017020fb56b85bd1f1567e89eaef2cfeb87e1edc6017e3fbd9350f746edb4"},
+        {"path": "claim-evidence-matrix.md", "sha256": "b240ec2307edfa20125296bd9262834161b4cd8814e889bd3bbc64a533b02a8a"}
+      ],
+      "evidence": [
+        {"path": "strong-result-feasibility-lock.md", "sha256": "5bddf17ab8661863fbff30fe2a207c8c1693fdf939ebbadc44d8cfa4b7584e84"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1B",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "claim-evidence-matrix.md", "sha256": "b240ec2307edfa20125296bd9262834161b4cd8814e889bd3bbc64a533b02a8a"},
+        {"path": "strong-result-feasibility-lock.md", "sha256": "5bddf17ab8661863fbff30fe2a207c8c1693fdf939ebbadc44d8cfa4b7584e84"}
+      ],
+      "evidence": [
+        {"path": "ccfa-pre-experiment-review.md", "sha256": "61fc8997a0f37d07382b8321136c4b6b64e64a1f0b073e1391c4c798f8e19009"},
+        {"path": "ccfa-pre-experiment-integrity.md", "sha256": "9a65c62a32eff9723c608a4302c5ddf59b00766dc4be69333af75154fb4d387e"},
+        {"path": "concern-to-action-ledger.md", "sha256": "388678b54d3e85b8ff12046ca92c74dd5da736e657137a523ef25be3ab375caa"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "research/common.py", "sha256": "08c2d516349950468b2c14c0e8143371994337a746f55ac8c13e50ac787d0c2f"},
+        {"path": "research/campaign.py", "sha256": "0072eee193c6b56fbdbb7e64a2ce5ebdfc0ac47fc28fc87281dfbbbd340fcf40"},
+        {"path": "protocols/experiment-commands.md", "sha256": "8840ed12b1a91fda0afafa9f3fce4a404aadc5cd71973112780e622f6f1fb13b"}
+      ],
+      "evidence": [
+        {"path": "audits/p2-setup-check.md", "sha256": "876f80e35d90474eaa816d7e74bda67d2c909589a06734f6669234d7d7f488c2"},
+        {"path": "corrections/p2-eq-sampling-v1.md", "sha256": "1468f152ddf9f3de72a745acaa2a8b8546aaa91d45c62eca3af55137b6c7e453"}
+        ,{"path": "corrections/p2-top2-indexing-v1.md", "sha256": "ab21e8f702f74f788ead2fbdd9134ec23418008c6aa2cd07d05e7c6c45255ee8"},
+        {"path": "corrections/p2-lr-message-scope-v1.md", "sha256": "3bf1987d3e79dd3b9b581b04f6177dc625ebab89a5867d68e17bb39404679a0e"},
+        {"path": "corrections/p4-mechanism-alignment-v1.md", "sha256": "0c4ce72111c7a03ce384caff64e9f05b869beb4027594ebcaa31a5abefc550dc"},
+        {"path": "corrections/p5-pos-escape-v1.md", "sha256": "5b13502997ce9290cc863f656261a6152eefd9274f712f58d6084e5c45099bd3"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "baseline-manifest.json", "sha256": "b7084c2ce109b2af58448dbd788477d94770c3008b9696bc56f9098126b30f3a"},
+        {"path": "research/campaign.py", "sha256": "0072eee193c6b56fbdbb7e64a2ce5ebdfc0ac47fc28fc87281dfbbbd340fcf40"}
+      ],
+      "evidence": [
+        {"path": "audits/p3-baseline-gate.md", "sha256": "5135e5d2684c627c6105a732f5517df7019db16f7dd6372591c272fb810e2b6f"},
+        {"path": "audits/p3-reacceptance-after-alignment.md", "sha256": "f7b7212fabdf6e366a0bb222b1607b102fbb7ea8df1f2abab467e57aebc2818d"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "baseline-manifest.json", "sha256": "b7084c2ce109b2af58448dbd788477d94770c3008b9696bc56f9098126b30f3a"},
+        {"path": "audits/p3-baseline-gate.md", "sha256": "5135e5d2684c627c6105a732f5517df7019db16f7dd6372591c272fb810e2b6f"}
+      ],
+      "evidence": [
+        {"path": "ccfa-baseline-numeric-audit.md", "sha256": "788cf78fbed8bac0fe71183db9bdec41a10e3ed8d71524869a95974c214c3352"},
+        {"path": "ccfa-baseline-evidence-review.md", "sha256": "5547e0091f9ad9a83a2ff920bcc0c6e89929219b58022aeb774457fb7f08f6a8"},
+        {"path": "ccfa-baseline-reacceptance-review.md", "sha256": "06ae90576793785a0d1ab0d1b93695ca820edfaa479cfc83bbf088a15f8f8661"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P4",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "methods-manifest.json", "sha256": "b80dae24e51316536b768a42685b14449fecbaa54d0b8df665f5571d89342895"},
+        {"path": "experiment-traceability.md", "sha256": "9d97356f4a70214967e363d8c21b3296d2a9e8e5a8a9be695a76b70c029ce384"}
+      ],
+      "evidence": [
+        {"path": "audits/p4-experiment-gate.md", "sha256": "76a71ce71b26d996ce4e1c42934875e44969925d464796e6113e53a1b89e3545"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P5",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "methods-manifest.json", "sha256": "b80dae24e51316536b768a42685b14449fecbaa54d0b8df665f5571d89342895"},
+        {"path": "experiment-traceability.md", "sha256": "9d97356f4a70214967e363d8c21b3296d2a9e8e5a8a9be695a76b70c029ce384"}
+      ],
+      "evidence": [
+        {"path": "results/final-summary.json", "sha256": "4513f5aca99ba6afb00897005c69da533b1a98ceccfa1944e39c5f2f36be58ef"},
+        {"path": "experiment-completion-lock.md", "sha256": "fd627c1490ec817110e9d76e7d8111cb5c2dd28393eb5495bd0c63b67643ab79"},
+        {"path": "ccfa-full-numeric-audit.md", "sha256": "e4736ec1e1a87832658f19e8a33027ca0230faceeae48841b391e5b4d4edb341"},
+        {"path": "strong-result-lock.md", "sha256": "a7b1b0f950f258d919c2be2a2db71abc6fdfe40eed5e089344dc8a4423259a53"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P5A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {"path": "results/final-summary.json", "sha256": "4513f5aca99ba6afb00897005c69da533b1a98ceccfa1944e39c5f2f36be58ef"},
+        {"path": "pre-draft-evidence-dossier.md", "sha256": "4a792fe2ece4ca2c5ecbd2b2cc8cfbc1376da28ca61488edcf854b5f2128e170"}
+      ],
+      "evidence": [
+        {"path": "ccfa-independent-review.md", "sha256": "8e1189f618873ebafb26bca21cdad694d8364de04489ffd72a4fefd5ea157dd2"},
+        {"path": "ccfa-pre-draft-integrity-audit.md", "sha256": "804fcd55e9a9972fba787eea331beb314878d7b6d44d671af3b578fc0a803025"},
+        {"path": "ccfa-pre-draft-action-ledger.md", "sha256": "afa34a787e831420e3e4526288e3b13b7f5a2cfdd11576c7b4bebdf2d65e7fb8"}
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P6",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P7",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P8",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P9",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P10",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P11",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P12",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P13",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P14",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P15",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P16",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P17",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P18",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P19",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P20",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    },
+    {
+      "id": "P21",
+      "status": "superseded",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "superseded"
+    }
+  ]
+}

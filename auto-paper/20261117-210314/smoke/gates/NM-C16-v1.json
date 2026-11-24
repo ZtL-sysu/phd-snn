@@ -1,0 +1,12 @@
+{
+  "candidate": "NM-C16-v1",
+  "frozen_at": "2026-11-17T23:30:00+08:00",
+  "confirmation_seeds": [1, 2, 3],
+  "datasets": ["cora", "citeseer", "pubmed", "chameleon", "squirrel", "ogbn-arxiv"],
+  "positive_datasets_per_seed_min": 3,
+  "positive_delta_pp_min": 1.0,
+  "negative_dataset_per_seed_required": true,
+  "negative_delta_pp_max": -0.5,
+  "passing_seeds_min": 2,
+  "test_isolation": "validation masks only; seed0 discovery excluded"
+}

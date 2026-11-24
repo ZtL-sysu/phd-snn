@@ -1,0 +1,420 @@
+{
+  "device": "cuda",
+  "rows": [
+    {
+      "dataset": "cora",
+      "seed": 0,
+      "classes": 7,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.7142857142857143,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 250,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 125,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "cora",
+      "seed": 1,
+      "classes": 7,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.7142857142857143,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 250,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 125,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "cora",
+      "seed": 2,
+      "classes": 7,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.7142857142857143,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 250,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 125,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "citeseer",
+      "seed": 0,
+      "classes": 6,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6666666666666667,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 250,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 125,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "citeseer",
+      "seed": 1,
+      "classes": 6,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6666666666666667,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 208,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 167,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "citeseer",
+      "seed": 2,
+      "classes": 6,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6666666666666667,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 250,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 125,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "pubmed",
+      "seed": 0,
+      "classes": 3,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.33333333333333337,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 250,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 125,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "pubmed",
+      "seed": 1,
+      "classes": 3,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.33333333333333337,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 250,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 125,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "pubmed",
+      "seed": 2,
+      "classes": 3,
+      "graphs": 500,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.33333333333333337,
+      "margin_bins": {
+        "low": {
+          "count": 125,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 250,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 125,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 0,
+      "classes": 5,
+      "graphs": 729,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6,
+      "margin_bins": {
+        "low": {
+          "count": 182,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 364,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 183,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 1,
+      "classes": 5,
+      "graphs": 729,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6,
+      "margin_bins": {
+        "low": {
+          "count": 182,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 364,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 183,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 2,
+      "classes": 5,
+      "graphs": 729,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6,
+      "margin_bins": {
+        "low": {
+          "count": 181,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 364,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 184,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 0,
+      "classes": 5,
+      "graphs": 1664,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6,
+      "margin_bins": {
+        "low": {
+          "count": 415,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 827,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 422,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 1,
+      "classes": 5,
+      "graphs": 1664,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6,
+      "margin_bins": {
+        "low": {
+          "count": 416,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 832,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 416,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 2,
+      "classes": 5,
+      "graphs": 1664,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.6,
+      "margin_bins": {
+        "low": {
+          "count": 416,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 832,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 416,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "ogbn-arxiv",
+      "seed": 0,
+      "classes": 40,
+      "graphs": 29799,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.95,
+      "margin_bins": {
+        "low": {
+          "count": 7450,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 14899,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 7450,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "ogbn-arxiv",
+      "seed": 1,
+      "classes": 40,
+      "graphs": 29799,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.95,
+      "margin_bins": {
+        "low": {
+          "count": 7450,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 14899,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 7450,
+          "top1_error": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "ogbn-arxiv",
+      "seed": 2,
+      "classes": 40,
+      "graphs": 29799,
+      "top2_preservation": 1.0,
+      "top1_preservation": 1.0,
+      "slot_reduction": 0.95,
+      "margin_bins": {
+        "low": {
+          "count": 7450,
+          "top1_error": 0.0
+        },
+        "mid": {
+          "count": 14899,
+          "top1_error": 0.0
+        },
+        "high": {
+          "count": 7450,
+          "top1_error": 0.0
+        }
+      }
+    }
+  ],
+  "elapsed_sec": 12.099895300110802
+}

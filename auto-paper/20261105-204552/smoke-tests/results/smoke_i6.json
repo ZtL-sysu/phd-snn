@@ -1,0 +1,44 @@
+{
+  "source": "smoke_i1.json (real measured, not simulated)",
+  "measured": {
+    "per_cell_seconds": 0.27,
+    "per_cell_peak_gpu_MB": 170.1,
+    "steps": 40,
+    "nnz": 198613,
+    "nodes": 87564
+  },
+  "scaling": {
+    "full_graph_nnz_assumed": 2700000,
+    "nnz_scale": 13.59,
+    "steps_scale": 125.0,
+    "full_cell_seconds_est": 458.8,
+    "full_cell_peak_gpu_MB_est": 1455.5
+  },
+  "grids": {
+    "full": {
+      "cells": 60,
+      "seeds": 5,
+      "runs": 300,
+      "gpu_hours": 38.2
+    },
+    "mini": {
+      "cells": 4,
+      "seeds": 3,
+      "runs": 12,
+      "gpu_hours": 1.5
+    }
+  },
+  "budget": {
+    "wall_days": 11,
+    "gpu_share": 0.4,
+    "gpu_hours_available": 105.6,
+    "vram_budget_MB": 10000
+  },
+  "checks": {
+    "vram_ok": true,
+    "full_grid_fits": true,
+    "mini_grid_fits": true
+  },
+  "verdict": "MINI_BENCHMARK_FEASIBLE",
+  "note": "GPU hours exclude baseline reruns, hyperparameter search, failed runs and writing. Full-grid point estimate alone does not make a CVPR\u4e3b\u4f1a submission feasible in 11 days."
+}

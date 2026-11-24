@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-guidance-builder-v1",
+  "contract_version": "v1",
+  "delivery_mode": "preparation",
+  "readiness": [],
+  "contract": [
+    {
+      "path": "guidance.md",
+      "sha256": "2039490df3a6e6b4191f3667c147cc4a8ba5c9e64dfaf7571402f5d24bda03b7"
+    },
+    {
+      "path": "execution-contract-v1.md",
+      "sha256": "1b71c0ad1ff4e561629459bd7cee880f1a60f73974c057406f90f060d3037ace"
+    },
+    {
+      "path": "ccfa-startup-packet/feasibility-contract.json",
+      "sha256": "11fd7f887bdb0f38918acb00d51ca6330f31fec458da73af7e4553d6d7b91aa2"
+    },
+    {
+      "path": "ccfa-startup-packet/startup-stage-plan.md",
+      "sha256": "9d1d7a50bf1bc795c89b4071e30c1d70b15aa65540edc3049d7c882c12343e44"
+    },
+    {
+      "path": "ccfa-startup-packet/idea-cards.md",
+      "sha256": "a983fa30e30f4be7c6adef74428fac2d7e63a8e7ce3aa1994fde0edcff43dc9a"
+    },
+    {
+      "path": "ccfa-startup-packet/prior-art-opportunity-map.md",
+      "sha256": "5ebc05f4ca33f60d9cc1e8674008186beb2f89f7e3662c34e9c997bf726aa1bd"
+    },
+    {
+      "path": "ccfa-startup-packet/idea-red-team-review.md",
+      "sha256": "9af933b3d9eb68617b92cec46fd7b6fc4116030f654d20d5f338dfe819135695"
+    },
+    {
+      "path": "ccfa-startup-packet/claim-evidence-matrix.md",
+      "sha256": "19b167d6f35c9303e9cf785ded7677a5b04cbefd3f9cf265ee6121435ea08c47"
+    },
+    {
+      "path": "ccfa-startup-packet/strong-result-feasibility-contract.md",
+      "sha256": "6c4064f41d16b09e75e763452d0500791dc683ce31a1fe756f9589493c50b79d"
+    },
+    {
+      "path": "ccfa-startup-packet/startup-decision.md",
+      "sha256": "d5b94107152d39ef3c61527961dbbed30fe96c46bb9a49dba92c5d29de0f9243"
+    }
+  ],
+  "history": [],
+  "stages": [
+    {
+      "id": "CCFA-startup",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G0",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G1",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G2",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G3",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G4",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G5",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G6",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G7",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "G8",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "validation",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    },
+    {
+      "id": "handoff",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": [],
+      "gate_verdict": "pending"
+    }
+  ]
+}

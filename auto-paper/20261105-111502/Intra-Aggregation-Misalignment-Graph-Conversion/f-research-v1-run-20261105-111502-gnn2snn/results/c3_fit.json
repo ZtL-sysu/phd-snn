@@ -1,0 +1,19 @@
+{
+  "a": -1.7798692077647864,
+  "b": 0.6184580414869397,
+  "delta": -0.2197579361662294,
+  "delta_quantile": 0.1,
+  "kappa_min": 56.16745692050701,
+  "kappa_max": 131.19718526294272,
+  "n_pairs": 21,
+  "epsilon_pp": 1.5,
+  "fitted_graphs": [
+    "cora",
+    "citeseer",
+    "pubmed"
+  ],
+  "form": "log2(T) = a + b*log2(kappa) + delta, nearest grid value in log2 space",
+  "delta_rationale": "sufficient-bound conservatism calibrated on fitted residuals only",
+  "pearson_r": 0.3876742024168812,
+  "fitted_in_sample_hit": 1.0
+}

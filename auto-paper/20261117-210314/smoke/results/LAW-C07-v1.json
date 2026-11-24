@@ -1,0 +1,164 @@
+{
+  "rows": [
+    {
+      "dataset": "cora",
+      "teacher_accuracy": 0.79,
+      "topology": {
+        "edge_homophily": 0.8099658961727927,
+        "degree_entropy": 0.2842250164367512,
+        "normalized_spectral_radius": 0.9999995827674866,
+        "mean_degree": 4.89807976366322
+      },
+      "conversion": {
+        "2": {
+          "accuracy": 0.748,
+          "teacher_agreement": 0.854,
+          "gap_pp": 4.200000000000004,
+          "spikes_per_node": 6.466395864106351
+        },
+        "4": {
+          "accuracy": 0.77,
+          "teacher_agreement": 0.936,
+          "gap_pp": 2.0000000000000018,
+          "spikes_per_node": 14.609675036927621
+        }
+      }
+    },
+    {
+      "dataset": "citeseer",
+      "teacher_accuracy": 0.678,
+      "topology": {
+        "edge_homophily": 0.7350615114235501,
+        "degree_entropy": 0.3571265940292528,
+        "normalized_spectral_radius": 0.9999996423721313,
+        "mean_degree": 3.7363991584009617
+      },
+      "conversion": {
+        "2": {
+          "accuracy": 0.48,
+          "teacher_agreement": 0.52,
+          "gap_pp": 19.800000000000008,
+          "spikes_per_node": 4.348361887586414
+        },
+        "4": {
+          "accuracy": 0.69,
+          "teacher_agreement": 0.916,
+          "gap_pp": -1.19999999999999,
+          "spikes_per_node": 14.069431920649233
+        }
+      }
+    },
+    {
+      "dataset": "pubmed",
+      "teacher_accuracy": 0.78,
+      "topology": {
+        "edge_homophily": 0.8023869686851367,
+        "degree_entropy": 0.290871063750462,
+        "normalized_spectral_radius": 0.9999969601631165,
+        "mean_degree": 5.496018664096972
+      },
+      "conversion": {
+        "2": {
+          "accuracy": 0.678,
+          "teacher_agreement": 0.818,
+          "gap_pp": 10.199999999999998,
+          "spikes_per_node": 4.276512654054876
+        },
+        "4": {
+          "accuracy": 0.792,
+          "teacher_agreement": 0.932,
+          "gap_pp": -1.200000000000001,
+          "spikes_per_node": 11.180757721762946
+        }
+      }
+    },
+    {
+      "dataset": "chameleon",
+      "teacher_accuracy": 0.6049382716049383,
+      "topology": {
+        "edge_homophily": 0.2299257275827994,
+        "degree_entropy": 0.8296782507032786,
+        "normalized_spectral_radius": 1.0000001192092896,
+        "mean_degree": 28.55467720685112
+      },
+      "conversion": {
+        "2": {
+          "accuracy": 0.598079561042524,
+          "teacher_agreement": 0.8422496570644719,
+          "gap_pp": 0.6858710562414272,
+          "spikes_per_node": 10.520860781730347
+        },
+        "4": {
+          "accuracy": 0.5871056241426612,
+          "teacher_agreement": 0.8916323731138546,
+          "gap_pp": 1.7832647462277085,
+          "spikes_per_node": 22.200263504611332
+        }
+      }
+    },
+    {
+      "dataset": "squirrel",
+      "teacher_accuracy": 0.4188701923076923,
+      "topology": {
+        "edge_homophily": 0.22213427576089093,
+        "degree_entropy": 0.8871930371800165,
+        "normalized_spectral_radius": 0.9999997019767761,
+        "mean_degree": 77.27494712555279
+      },
+      "conversion": {
+        "2": {
+          "accuracy": 0.4188701923076923,
+          "teacher_agreement": 0.8924278846153846,
+          "gap_pp": 0.0,
+          "spikes_per_node": 8.165160546048837
+        },
+        "4": {
+          "accuracy": 0.4230769230769231,
+          "teacher_agreement": 0.9266826923076923,
+          "gap_pp": -0.4206730769230782,
+          "spikes_per_node": 16.681215150932513
+        }
+      }
+    },
+    {
+      "dataset": "ogbn-arxiv",
+      "teacher_accuracy": 0.6155575690459412,
+      "topology": {
+        "edge_homophily": 0.6542197738985782,
+        "degree_entropy": 0.5375060731169401,
+        "normalized_spectral_radius": 0.9999991655349731,
+        "mean_degree": 14.674010735607613
+      },
+      "conversion": {
+        "2": {
+          "accuracy": 0.5702540353703145,
+          "teacher_agreement": 0.811570858082486,
+          "gap_pp": 4.530353367562667,
+          "spikes_per_node": 24.427434260642602
+        },
+        "4": {
+          "accuracy": 0.5708245243128964,
+          "teacher_agreement": 0.8175442128930501,
+          "gap_pp": 4.473304473304474,
+          "spikes_per_node": 52.61900993840903
+        }
+      }
+    }
+  ],
+  "correlations": {
+    "edge_homophily": {
+      "T2": 0.6,
+      "T4": -0.08571428571428573
+    },
+    "degree_entropy": {
+      "T2": -0.6,
+      "T4": 0.08571428571428573
+    },
+    "normalized_spectral_radius": {
+      "T2": -0.6,
+      "T4": 0.08571428571428573
+    }
+  },
+  "passing_statistics": [],
+  "gate_pass": false
+}

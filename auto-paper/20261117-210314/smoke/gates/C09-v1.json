@@ -1,0 +1,24 @@
+{
+  "candidate": "C09-v1",
+  "frozen_at": "2026-11-17T21:25:00+08:00",
+  "datasets": ["MNIST", "CIFAR10"],
+  "partitions": {"dev": 512, "tune": 512, "internal_validation": 512},
+  "selection": "fit fraction and threshold on tune only; evaluate validation only",
+  "baseline_T": 2,
+  "refined_T": 4,
+  "fraction_grid": [0.0, 0.05, 0.1, 0.2, 0.3, 0.5, 1.0],
+  "random_draws": 2000,
+  "bootstrap_draws": 5000,
+  "minimum": {
+    "accuracy_gain_over_T2_pp_each_dataset": 0.2,
+    "random_percentile": 95
+  },
+  "strong": {
+    "beat_random_and_margin_accuracy_both_datasets": true,
+    "teacher_agreement_gap_to_uniform_T4_pp_max": 0.5,
+    "mean_T_max": 3.0,
+    "paired_bootstrap_accuracy_lower_pp_min": -0.5
+  },
+  "failure": "minimum fail either dataset, mean T > 3.0, or teacher agreement loss > 1 pp",
+  "test_isolation": "no test NPZ read by the driver"
+}

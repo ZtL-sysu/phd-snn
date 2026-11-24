@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "severity": "PASS",
+  "total_checked": 173,
+  "total_verified": 173,
+  "strict_violations": 0,
+  "lenient_violations": 0,
+  "fabrication_rate": 0.0,
+  "unverified_numbers": [],
+  "fabricated_conditions": [],
+  "config_warnings": [],
+  "summary": "P12/P17 audited values reconciled against frozen source artifacts"
+}

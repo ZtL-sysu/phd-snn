@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "stage": "P21/preacceptance-package-manifest",
+  "package": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\deliverables\\LR-C05-final-v1",
+  "run_root": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3",
+  "path_containment": true,
+  "file_count": 25,
+  "files": [
+    {
+      "path": "citation-audit.md",
+      "sha256": "2ce241327e95fca95eaca629065020afe15c7707b9623c5e3d94627ef138b18f",
+      "bytes": 9501
+    },
+    {
+      "path": "experiment-artifacts/confirmation-summary.json",
+      "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be",
+      "bytes": 965
+    },
+    {
+      "path": "experiment-artifacts/confirmation-test-v2.json",
+      "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166",
+      "bytes": 55803
+    },
+    {
+      "path": "experiment-artifacts/p10-bit-ledger.csv",
+      "sha256": "8b7f675e565fa2c108edf1eb19ad8dbcdd97c282fb955f8e3c7c4ecb6f68e0ce",
+      "bytes": 767
+    },
+    {
+      "path": "experiment-artifacts/p10-control-summary.csv",
+      "sha256": "19b6da00627b44aadd19bb4493e3965210a4006ff3d94cd45ae6c24c106bb33e",
+      "bytes": 4854
+    },
+    {
+      "path": "experiment-artifacts/p10-evidence-manifest.json",
+      "sha256": "42fa9a593851a345ad9136506bb7e9931a8c716a29d5962ea2440e0f3fde7ff9",
+      "bytes": 1619
+    },
+    {
+      "path": "experiment-artifacts/p10-task-loss-three-seed-audit.csv",
+      "sha256": "06967d8ab9bd6ab77770c050c6c6eed4fa21507901f9e30f3e79b2d458884b9d",
+      "bytes": 2238
+    },
+    {
+      "path": "experiment-artifacts/p10-timing-summary.csv",
+      "sha256": "898131aa7b498b050dd70a5809ffaaa50f54cccb5c648bace6f82615b469719a",
+      "bytes": 2341
+    },
+    {
+      "path": "experiment-artifacts/p10-validation-grid.csv",
+      "sha256": "caa7553b20ca4ac9af1b05cf5af23c188e0a39b74d78865e30f1c91c91a20e5e",
+      "bytes": 1559
+    },
+    {
+      "path": "experiment-traceability.md",
+      "sha256": "b9f21ac0a3c27cbecaa889678f33b3487a2cefaf7d589e94025ce478bac4204c",
+      "bytes": 683
+    },
+    {
+      "path": "figure-table-insertion-audit.md",
+      "sha256": "796af1c91f4f25755c8a649fe8c8daa8c345b0d8832adde417e448a58edd162d",
+      "bytes": 2948
+    },
+    {
+      "path": "figures/data/figure2-main-logit-mse.png",
+      "sha256": "4e6ca000b8e60720662b5d2ab7d63cf2b8b88b41e02f3d46a06f69ad3c82382a",
+      "bytes": 51678
+    },
+    {
+      "path": "figures/data/figure3-budget-sensitivity.png",
+      "sha256": "c7d0bd40d90d2357966e2946958366fddffd8d875536cd1c1728ac334eebcff6",
+      "bytes": 103348
+    },
+    {
+      "path": "figures/data/figure4-tradeoff-and-runtime.png",
+      "sha256": "559ae18d28099d4089d9f62800d4b9f88763c43a3582409cb3e5edf83c7969ba",
+      "bytes": 82346
+    },
+    {
+      "path": "figures/figure1-architecture.png",
+      "sha256": "8f5d6ee669b6fca6ab17673883995e2b89f28042127b435ba7d0e366311eb5ef",
+      "bytes": 346373
+    },
+    {
+      "path": "manuscript-metadata.md",
+      "sha256": "820c2191848f27b407a69afd3dfd66390f0e4f68e95dce6151ba3002e4a0e26d",
+      "bytes": 663
+    },
+    {
+      "path": "page-count-audit.md",
+      "sha256": "0bdcc064b17b5a41255816894005e700e6096e712d8b103fce5d13fc25c32f8e",
+      "bytes": 1607
+    },
+    {
+      "path": "paper-guidance-audit.md",
+      "sha256": "982169ceee995f204705a053f5dea3d6f150b8ee87246259347d134c3e64c2a0",
+      "bytes": 2268
+    },
+    {
+      "path": "paper.pdf",
+      "sha256": "1b492d599edb67314af1fa6369e95d06e2fecc9ffade67fe6cdd920cc9461d73",
+      "bytes": 820966
+    },
+    {
+      "path": "paper.tex",
+      "sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf",
+      "bytes": 27522
+    },
+    {
+      "path": "pipeline-state.md",
+      "sha256": "4c6a0b77c4ef3e34556bab6ae2639b30a2abc85da261277c0b3d11649a290e80",
+      "bytes": 563
+    },
+    {
+      "path": "reference-dedup-audit.md",
+      "sha256": "7f0664188e005e61835046db410b39956d27a726856380c9dc87439032a636f3",
+      "bytes": 7307
+    },
+    {
+      "path": "references.bib",
+      "sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee",
+      "bytes": 14545
+    },
+    {
+      "path": "source-archive.zip",
+      "sha256": "b55904992e10f7d91f377b22d02b487856ff04fa0de1c720e3dbcf01b21d28e4",
+      "bytes": 550122
+    },
+    {
+      "path": "submission-constraints.md",
+      "sha256": "64e4f266869db78a82b1ef3a9ad663159ceaf361b83c7b284bac67967d5dec4d",
+      "bytes": 611
+    }
+  ]
+}

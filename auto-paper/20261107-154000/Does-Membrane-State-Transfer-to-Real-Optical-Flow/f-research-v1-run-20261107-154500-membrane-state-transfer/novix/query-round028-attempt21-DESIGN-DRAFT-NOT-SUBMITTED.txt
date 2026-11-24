@@ -1,0 +1,269 @@
+================================================================================
+【attempt #21 · round-028 · C1 死磕 correction loop v3 · DESIGN DRAFT / NOT SUBMITTED】
+f-research-v1 / P4 / C1 / 2026-11-10 06:29–06:5x GMT+8
+H22：端点健康门控的双通道状态准入配对门
+     （endpoint-health-gated dual-channel status admissibility paired gate）
+     —— 把「主 get_task 端点 HTTP 503 / 带外 debug 通道 rc=0」这一端点级
+        可用性分叉作为一等观测量；唯一自变量 = 是否用冻结的双通道健康矩阵
+        门控每一次状态结论的证据准入（v1 单通道无门控 → v2 成对健康门控）
+状态：**NOT SUBMITTED / 不得原样启用**（第 12 份 NOT-SUBMITTED 预案）。
+      18885（attempt #9 / H10）在途、跨第 12 轮非终态。按 §3.6(2)
+      **不重提交、不等待、不 pull、不写 verdict、不动科学阶段、不换题**；
+      按 §3.6(3) 交付本轮**一次实质优化**（本预案）。
+      须先按 `acceptance-verdict-18885.md` 的真实实测修订四要素再决定
+      启用 / 合并 / 废弃。草案序号 #21 仅指设计预案；`primary_focus.attempt_count`
+      **保持 9 不虚增**。
+================================================================================
+
+【本预案为何 NOT SUBMITTED】
+同一 idea（C1）已有在途任务 `18885`（attempt #9 / H10）。用户 14:34 指令与
+§3.6(2)：在途不重复提交、不等待、继续同一主攻。本预案是可证伪的**证据准入
+协议层**设计草案，**不是实验结果、不是判定、不是 kill hit、不是「实验跑完」**。
+本轮 **0 次 novix 提交**（参照 rounds 006/009/011/013/015/017–027 先例）。
+本轮主通道 HTTP 503 `no healthy upstream` 属**平台通道故障**，按 §3.6(4)
+与用户硬约束「平台故障一律不构成放弃理由」**不构成放弃理由**；
+`abandon_allowed=False` 不变。
+
+--------------------------------------------------------------------------------
+## 0. 本轮唯一新增事实（本机权威复核原始字节 / 哈希，非推断、非科学结果）
+
+1. **首次出现端点级可用性分叉**：主 `get_task` 端点整轮不可用，而带外
+   `debug task` 通道同时 rc=0。此前 round-018–027 主通道虽被本机链路
+   `IncompleteRead` 截断（>8 MB 单体），但 16 KB 前缀探针均能拿到
+   **HTTP 200 并正式解析 JSON status**；本轮前缀探针两次运行共 4 次 GET
+   **0 次 HTTP 200、0 次解析到 JSON status**。
+2. **`_r028_probe.py`（`11a26bc6abf2467c`，4,313 B）第一次运行**：
+   `prefix-1` = `TimeoutError: The read operation timed out`（60.6 s，本机 60 s
+   诊断读上限）；`prefix-2` = **HTTP 503** / 121 B /
+   `upstream connect error or disconnect/reset before headers. retried and the
+   latest reset reason: remote connection failure`。
+   `conclusion.verdict = INCONCLUSIVE_NO_PARSED_STATUS`。
+3. **单次重试（协议规定的一次重试）**：`prefix-1` / `prefix-2` **双双 HTTP 503 /
+   19 B / `no healthy upstream`**（0.9 s / 0.9 s）；仍 `INCONCLUSIVE_NO_PARSED_STATUS`。
+   落盘 `rounds/round-028-prefix-probe.json`（1,039 B / `b2919050ece879ed`）。
+4. **官方 CLI 主状态通道**：`novix --json task result 18885` attempt A 与
+   attempt B（单次重试）**均 rc=1 / stdout 0 B / stderr 228 B /
+   SHA-256 `f809171047b5e5c6`**，内容一致 = HTTP 503 upstream connect error；
+   `novix --json task get 18885` **rc=1 / 126 B / `121cd20c48068686`** =
+   HTTP 503 `no healthy upstream`。**无一条解析到 JSON status** →
+   按 playbook「只有解析到 JSON status 才判终态」**不作终态判定**。
+   登录态复核：**已登录 user_id=637**（未回显任何凭据）。
+5. **带外有界通道 `novix debug task 18885 --logs`** = **rc=0 /
+   95,415 B / SHA-256 `444376033ad3c37d…`**（r027 86,987 B → +8,428 B）。
+   本机对原始字节直接计数：`aiohttp/payload.py` **67**（r022 4 → r026 19 →
+   r027 39 → r028 67）、`/health` **1130**（r027 1130，恒定）、`unclosed`
+   **11**（r026/r027 11，恒定）、`finalReply` **0**、`result.json` **0**、
+   `COMPLETE` **0**、`metric` **0**、`errorInfo` **0**、`harborPhase` **0**、
+   `updatedAt` **0**、`finish` **0**。`runtime_failure` 2,180 字符全部为
+   aiohttp 大 body 的 `ResourceWarning`；`log_warnings` = `Live allocation
+   evidence unavailable; reading persisted runtime diagnostics`。
+   → **计数变化只是通道字节事实**，按 r027 交接口径**不得写成「单调恶化」、
+   不得据此判定远端故障、不得当作 kill hit 或机制否证**。
+6. **`novix debug task 18885`（logs=false）** = **rc=0 / 1,158 B /
+   `cf52870c115a4c6a…`**：`backend.status=processing` / `task.status=running` /
+   `placement.state=submitted` / `dispatch_phase=invoking` / `pool=exp-4090` /
+   `eligible_nodes=2` / `dispatch_paused=false` / `nomad_alloc_id 513e82bf-…`
+   与 `claim_name` 连续第 5 轮**冻结** / `artifact_sync=null` /
+   `diagnosis=ALLOCATION_EVIDENCE_UNAVAILABLE` /
+   `next_step=不要直接重新派发`。
+   → 这是**带外调度/池状态的过程事实**，不是 `task result` 的正式终态判定；
+   「有分配标识 ≠ 有分配证据」的可判定性分叉保持（r024 首次）。
+7. **`scripts/check_inflight.py`** 机械记 `18885 = transport_error_retry`
+   （06:31:41，本机 120 s 超时）；**原条目保留 + 主会话追加权威纠正**：
+   本轮是**平台网关级通道不可用**，不是任务失败、不是终态、不是科学负结果。
+   `IN-FLIGHT-TASKS.md` / `automation-state.json` / `rounds/last-check.json`
+   已按机械结果更新，本轮再由主会话覆盖为权威口径。
+8. **本机契约 v2 连续第 6 轮正常**：34 文件 / 261,263 B / 0 缺失全文加载
+   （`rounds/round-028-contract-load-log.json`，12 / 26 阶段权威顺序确认）；
+   两份 guidance `validate_guidance.py --strict --packet` 均 **rc=0**；
+   pipeline-state 契约 **11/11 SHA-256 MATCH**、`--before P0` **rc=0**
+   （gate 通过 ≠ P0 已执行）、`--complete` / `--submission-ready` **rc=1**
+   （26/26 pending，预期）、history 仅 `reopen`、0 pass、冻结快照未改写。
+9. 本轮 5 个去重新候选 C1–C5（134–138）由 5 个独立 Agent 加载本机
+   `ccf-idea-reviewer standard` 如实评分 **C2 6.3 > C5 6.2 > C1 5.9 >
+   C3 4.8 = C4 4.8**（末位并列按 axis_number 136<137 排序），
+   主会话严格只读复核 **184/184 PASS**；最高 6.3 **低于历史 6.5**、
+   0 不可修复致命风险、0 abandon、`not searched`。
+   → 只补 `candidate_pool` 130 → 135，**不换主攻**（§3.6(5)）。
+
+**以上全部为通道 / 协议 / 结构 / 过程事实，不是结果 / 判定 / kill hit /
+机制否证 / 平台故障结论 / 放弃理由。**
+
+--------------------------------------------------------------------------------
+## 1. 死磕四要素（§3.6(3) 必填）
+
+### 1.1 上一轮失败点（如实保留，不改写为成功、不计 kill hit）
+- 最近一次有正式科学判定的仍是 **`18696` = `REJECT_FAILURE`**（round-015，
+  9/9 SHA-256 核验归档）：`design_valid=true`、全阶段真跑完
+  （23/23 + 142/142 + 148/148、165 raw NPZ、614/614 重哈希），
+  但两真实域 ceiling `0.424242` / `0.400000` 均 < 0.70（`INPUT_BOTTLENECK`）、
+  `gt_oracle_upper_bound=1.0` 明确非历史 0.6875 重算、stratified paired
+  bootstrap 校准 **0.149 失败**、unexposed 符号翻转、
+  `c1_guidance.verdict=failure`、全部 contrast `uncalibrated`、
+  `scientific_interpretation_allowed=false`、`transfer_claim_made=false`。
+  **诊断进展（不是达标/机制否证）**：`localized_unit=syn`、两域 holdout
+  `CONSTRUCTIBLE`、两臂 `SYMMETRIC`、输入级 `H(ω)` `INPUT_SIGNAL_PATH_MEASURABLE`
+  但 LIF−stateless 逐环节全负、最大衰减 `drive→syn`。
+- **`18885`（attempt #9 / H10）跨第 12 轮非终态**：远程 agent 的科学数值
+  一个都没回收；主 `get_task` 单体 >8 MB 在本机链路被截断（历轮），
+  **本轮进一步整体 HTTP 503 不可用**；`finalReply` 连续第 11 轮不可读。
+  **H10 的突触前能量稀释假设仍未被检验，不是被否证。**
+- 前 11 份 NOT-SUBMITTED 预案（#10 H11 … #20 H21）全是**单任务纵向观察 /
+  本地或远端协议改动 / 跨任务横向带标签签名**；H21 已引入 4 个已终态任务
+  的横向带标签校准集，但**从未把「同一观测窗内两条端点通道的健康状态
+  是否一致」当作证据准入条件**。因此 r028 出现的 503 分叉在当前协议下
+  只能被笼统记为 `transport_error_retry`，**无法被正确地隔离/隔离失败
+  都无法被证明**。
+- 十二份 NOT-SUBMITTED 预案（#10 H11 … #20 H21，加本预案 #21 H22）
+  **均不得原样启用**。
+
+### 1.2 本轮假设（H22，可证伪、机制级不同于 H10–H21；是假设不是结论）
+**H22：端点健康门控的双通道状态准入配对门。**
+可证伪主张：跨 12 轮的「非终态」账本读数，可以分解为
+**(a) 端点级可用性** 与 **(b) 任务级状态** 两个正交层；当前协议把两者
+混在一条 `task result` 读数里，导致主端点 503 时既无正式终态判定、
+又无「哪些历史观测窗的证据准入其实未被门控」的可检验记录。
+若引入**冻结的成对端点健康矩阵**并在同一观测窗内要求两条通道同时满足
+预注册健康谓词，则 v1（现行单通道、无健康门控）与 v2（成对健康门控）
+在「允许用作状态结论的观测窗集合」上会产生可计数的差异。
+
+唯一自变量 `endpoint_health_gate_contract_version`：
+- `v1` = 现行口径：任一通道读到什么就记什么（`processing` / `transport_error_retry`），
+  无独立健康谓词、无隔离规则；
+- `v2` = 同一冻结观测窗内对**主 `get_task` 端点**与**带外 `debug task` 端点**
+  各做一次近同时读取，各自按冻结谓词判定 `healthy` / `unhealthy`，
+  并按冻结的**一致性规则**决定该窗是否 `admissible`；不健康通道的原始字节
+  **保留但标 `quarantined`（隔离）**，只可用于通道诊断，
+  **不得用于任务状态结论、不得互相顶替**。
+
+健康谓词（训练/观测前冻结，不事后改）：HTTP 状态 ∈ {200}、响应体非空且
+≤ 冻结字节上界、可解析为 JSON、含预注册字段集、时间戳落在同一观测窗 ±冻结容差。
+一致性规则（冻结）：两通道 `healthy` 且状态字段相容 → `ADMISSIBLE_AGREE`；
+两通道 `healthy` 但状态字段不相容 → `ADMISSIBLE_DISAGREE`；
+恰一条 `healthy` → `QUARANTINE_SINGLE`；零条 `healthy` → `QUARANTINE_NONE`。
+
+三态诊断落点（**全部预注册、全部为诊断，非达标 / 非机制否证 / 非 kill hit**）：
+- `ADMISSIBILITY_REDUCED`：v2 下存在被隔离的观测窗，而 v1 曾把同一窗的
+  读数写入账本 → 诊断「跨轮状态账本含未受健康门控的窗口」。
+  下一步：**只更新文档**，把健康矩阵列为后续 Step 0 的固定读数项；
+  **不改变 18885 的 `RUNNING` / `POLL_NOVIX` 判定**、不重提、不等待。
+- `ADMISSIBILITY_INVARIANT`：v1/v2 的可准入窗集合一致 → 诊断「503 分叉
+  未污染任何用于状态结论的窗口」；下一步：继续同一 C1、继续等 18885。
+- `UNDECIDABLE`：健康探针自身不可靠 / 窗配对失败 / 一致性规则无法判定 →
+  如实标 `unavailable`，**不编造、不凑数、不把不可判定写成任一结论**。
+
+**本假设是证据准入协议层的假设，不是对 C1 科学命题的主张**；无论落哪一态，
+都**不改变** `primary_focus=C1`、`abandon_allowed=False`、
+`minimum(+0.15)` / `expected_strong(+0.25)` / ceiling 0.70，
+也不进 P5、不写论文。**特别地**：本轮主端点 503 是平台通道故障，
+按用户硬约束**明确不构成放弃理由**，不得写成 kill hit 或机制否证。
+
+### 1.3 具体改动（与上一版 query 的 **10 条机制级 diff**）
+相对已提交 `query-round016-attempt9.txt`（H10）与十一份 NOT-SUBMITTED 预案
+（H11 … H21），本预案的 10 条机制级 diff：
+1. **第一主门换 `endpoint_health_admissibility_gate`**：唯一自变量从
+   H21 的「是否引入横向带标签对照（哪些任务）」、H20 的「声明—落盘对账」
+   换成「是否用**成对端点健康矩阵**门控证据准入（哪条通道可入账）」；
+   H10 五档 `drive_to_syn_energy_ratio` 幂等保留为**第二门**
+   （已真跑完的项目不重跑、不静默删除）。
+2. **观测单位改为「观测窗」**：历轮 H10–H21 的观测单位要么是单个任务
+   （纵向）、要么是任务集合（H21 横向）；H22 首次以**同一窗内两条端点
+   通道的近同时读数三元组**为最小观测单位，冻结窗宽与配对规则。
+3. **首次把「端点可用性分叉」列为一等观测量**：r028 实测主通道
+   HTTP 503 `no healthy upstream`（19 B）与带外通道 rc=0（95,415 B /
+   1,158 B）在同一轮并存；此前 11 轮从未出现该分叉，也从未有协议能表达它。
+4. **新估计量族**（全部定义在原始字节上，不依赖 >8 MB 单体 `get_task`）：
+   `endpoint_health_bit`、`channel_agreement_bit`、`admissible_window_count`、
+   `quarantined_window_count`、`admissibility_delta_v1_v2`、
+   `health_predicate_component_breakdown`（HTTP / 字节上界 / 可解析性 /
+   字段集 / 时窗容差各自命中与否）。
+5. **决定性对照升级为 v1/v2 配对门 + 阴性对照**：
+   `shuffled_window_pairing`（把不同窗的两条读数错配，一致性不得优于
+   冻结随机基线，≥200 次置换零效应经验 I 类错误率，未通过则整门标
+   `uncalibrated`）；`A=0` 与精确保度零模型的**科学侧决定性对照**
+   幂等保留、不下调。
+6. **隔离（quarantine）规则首次引入**：不健康通道的原始字节**保留不删**，
+   但标 `quarantined` 且**禁止**用于任务状态结论、**禁止**拿另一通道字节
+   顶替；H15（不可变身份）只保证字节不被改，不定义「可否入账」。
+7. **跨实现一致性契约复用 H21 校准集但改为健康门的标定**：
+   4 个已终态任务（`18696`/`18533` = 终态可达、`18489`/`17788` =
+   零产物失败）仅用于**检验健康谓词能否复现其已知标签**；
+   **禁止用 18885 自己拟合阈值再自评**；任一对照错分 → `UNDECIDABLE`。
+8. **显式「不重新派发」约束**：`debug task` 的 `next_step=不要直接重新派发`
+   写进契约；主端点不健康**不得**被当作重提理由，与 §3.6(2)
+   「在途不重复提交」双重锁定（H17 分配归属只解释标识，不定义该禁令）。
+9. **H11 … H21 降为独立复核门**（幂等引用、不重跑、不静默删除其已跑完项目）：
+   信息预算 / 离线重判定 / 证据时序 / 执行终止 / 不可变身份 /
+   通道分离 / 分配归属 / 观测者回作用 / 时钟来源 / 声明—落盘对账 /
+   跨任务带标签签名，各自只在三态落点确定后作一次一致性复核；
+   本预案**不再新增**跨任务标签类门（H21 已完成该层）。
+10. **门槛与统计全不下调、提交契约不变**：`minimum(+0.15)` /
+    `expected_strong(+0.25)` / ceiling 0.70 不下调；≥11 paired seeds、
+    2000 次 paired bootstrap 95% CI、BH-FDR q=0.05、三族校准全报告；
+    两真实域各自单独报告、不合并、不凑 0.70；真实域 ceiling < 0.70
+    时 `interpretation_allowed=false`、不作迁移主张；
+    `degree_null − LIF` 按实测符号报告，**禁止宣称「生物接线带来精度优势」**；
+    失败证据不删、负结果不改写、NaN / 缺 raw 脚本 / seed 不足回到任务设计。
+
+### 1.4 预期信号 / 若失败下一步（三态双向预注册，全部为诊断）
+- **若 `ADMISSIBILITY_REDUCED`**：预期信号 = 至少 1 个历史观测窗在 v1 被
+  入账、在 v2 被隔离，且 `shuffled_window_pairing` 阴性对照不优于冻结基线、
+  4 个终态对照任务全部被健康谓词正确复现。
+  → 下一步：**只更新文档**，把健康矩阵列为 Step 0 固定读数项；
+  **不重提、不等待、不 pull、不写 verdict、不动科学阶段、不换题**。
+- **若 `ADMISSIBILITY_INVARIANT`**：预期信号 = v1/v2 可准入窗集合完全一致、
+  健康谓词在 4 个对照任务上 4/4 复现。
+  → 下一步：继续同一 C1、继续等 18885；本预案降级为独立复核门，
+  不消耗新 task。
+- **若 `UNDECIDABLE`**：预期信号 = 健康探针自身 503 / 窗配对失败 /
+  对照错分（任一即触发）。→ 如实标 `unavailable`，
+  **不编造任何分类结论**；把「补齐可读健康探针」列为下一轮 Step 0 的
+  带外读数项，本轮只更新文档。
+- **任何一态都不得**：写成达标、写成机制否证、写成 kill hit、
+  写成「平台故障所以放弃」、写成 `abandon_allowed=True`、
+  写成「实验跑完」、下调任何门槛。
+
+**十二（含本预案）NOT-SUBMITTED 预案均不得原样启用**；须先按
+`acceptance-verdict-18885.md` 真实实测修订四要素再决定启用 / 合并 / 废弃。
+若 `18885` 终态支持 H10，H11–H22 全部降级为独立复核门。
+
+--------------------------------------------------------------------------------
+## 2. 提交契约（仅当 18885 终态且按 verdict 修订后才允许启用）
+- 复用 **strict-PASS（rc=0）的现有 C1 guidance** 与**同一个 run root**，
+  **不重建 guidance、不重启 P0、不新建 run root、不标任何 stage passed**。
+- 命令模板（**无预算参数**）：
+  `novix task create --json "<自包含全量实验 query>" --provider novixlet
+   --resource-pool exp-4090 --gpu --gpu-count 1`
+  **不带** `--max-turns` / `--timeout` / 阻塞 `watch` / 任何时间步数预算参数。
+- **显式反预算声明**：本预案的「三态诊断落点」与「逻辑完成谓词」是
+  **逻辑停止条件**，不是 wall-clock 上限、不是步数上限、不是
+  `--max-turns`、不是 `--timeout`、不是阻塞 watch、不是给 4090 的预算。
+  平台任务跑到自己的终态为止，跨多轮正常；本机不设单轮时长硬预算。
+- query 自包含：公开数据 URL（Zenodo 21549559，CC BY 4.0）、SYNTHETIC
+  标注说明、依赖清单、全部条件与 seeds、决定性对照、kill criteria、
+  原始日志要求、`project/result.json` 落在可 pull 的 workspace 内；
+  拿不到数据标 `unavailable` 不许编造；最终回复必须给实际数值。
+- 有效期 **2026-11-14 23:59:59 (GMT+8)** 不延长；不创建 / 修改定时任务；
+  不投稿、不 OpenReview 注册、不 commit/push、不发布；凭据不进入
+  日志 / guidance / 论文 / 对话。
+
+--------------------------------------------------------------------------------
+## 3. 本轮状态（如实）
+- `primary_focus=C1` 锁定不变、`attempt_count=9`（本轮无新 task，不虚增）、
+  `last_attempt_task_id=18885`、`last_checked_at=2026-11-10T06:31:41+08:00`。
+- `abandon_allowed=False`：**(a) 7/7** 有实验证据的机制不同尝试
+  （18885 结果未出不虚增）、**(b) 0/2** 干净独立 kill
+  （本轮全部为通道 / 协议 / 结构 / 过程事实，不是 kill hit；
+  主通道 503 是平台故障，明确不构成放弃理由）、
+  **(c) 0/2** 连续独立不可修复评审
+  （C1–C5 独立 `ccf-idea-reviewer standard` 0 不可修复 / 0 abandon）；
+  (a)(b)(c) 未全满足且 (c) 单独阻断换题。
+- `qualified=false`、`final_paper_overall=null`、无成稿 / 无 P5 / 无 P5A /
+  无 P9 / 无 full review。26 阶段仍全 pending、history 仅 `reopen`、0 pass。
+- 本轮 **0 次 novix 提交**；`candidate_pool` 130 → 135（只补池）。
+- `hy4` / 960k 上下文：automation 工具未暴露该字段，透传未生效、
+  无法确认已应用，**如实记录，不假装**。
+- 60 分钟触发节奏相对用户 80 分钟诉求的偏离如实记录（平台最小粒度 1 小时，
+  `FREQ=MINUTELY;INTERVAL=80` 与 BYHOUR 多值被拒，仅 `FREQ=HOURLY;INTERVAL=1`
+  可表达）；50 分钟是跨轮并发保护阈值、不是任务预算。
+================================================================================

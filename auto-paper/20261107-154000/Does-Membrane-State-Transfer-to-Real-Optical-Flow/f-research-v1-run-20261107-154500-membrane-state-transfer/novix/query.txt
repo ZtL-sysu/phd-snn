@@ -1,0 +1,46 @@
+任务：执行 f-research-v1 的 P4 全量实验批次 —— 检验「脉冲膜状态在 SYNTHETIC 与真实光流上的增益是否可迁移」。只跑代码和出结果，不写论文、不做文献检索、不提交任何子任务。必须留下可复现脚本与原始数值。
+
+【最高优先级 · 任何提前终止前必须完成】上一个任务 17682 出现平台 status=finish 但工作区零产物（连 experiment.py 都没有），本次必须避免。
+1. 先在工作区写出可运行的 experiment.py，实现 --stage A / B / C 分阶段执行。
+2. 每个阶段结束立刻把该阶段结果增量写入 result.json（哪怕后续阶段没跑，也要有结构化字段与状态）。
+3. 最终回复必须逐项给出 result.json 中实际数值与文件路径，不能只汇报进度。
+4. 任何数据或依赖拿不到就标 unavailable + 原因，绝不编造数值、绝不把计划写成结果。
+
+【阶段 A：环境、数据可达性、图构建、天花板、SYNTHETIC 域】
+- 环境：先跑 nvidia-smi 与 torch.cuda.is_available()，记录 GPU、显存、CUDA、torch 版本。
+- 依赖：干净环境实测缺 scipy / scikit-learn，请自行 pip install scipy scikit-learn pandas opencv-python-headless（不要建 venv）。
+- 连接组（Zenodo 10.5281/zenodo.21549559，CC BY 4.0，均已实测可达）:
+  edges https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content
+  annotations https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content
+  eye https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content
+  边表 178MB：用 HTTP Range 只取前 8MB，流式 gzip 解压并忽略截断尾，约 80 万行真实边即可，不要等完整下载。先校验列名。
+- 图构建：A[post,pre]=log1p(syn_count)，COO→CSR，sum_duplicates；谱半径归一化 A *= 0.95/lambda（幂迭代 40 步）。禁止行归一化（会把信号稀释到 1e-5）。
+- 复眼采样：32x32 帧像素归一化到 [0,1]，cKDTree 找最近复眼坐标 root_id（Voronoi，用 x_axis/y_axis 列，不要用 3D 体素列 x/y）；每图对比度归一化使最亮感受器驱动为 1。
+- 读出：cell_type 以 KC 开头的神经元；注释不可用时退化为复眼 BFS 第 2 跳中固定随机 1024 个并标注。特征维 >2000 时先做 PCA(32)，只在训练集拟合（避免 48k^2 矩阵 OOM）。ridge 读出 L2=1e-2，固定 70/30 划分。
+- SYNTHETIC 刺激：T=8 帧、32x32、n=400、二分类 direction（半径 3-5 圆点，起始 x 随机 8-24，逐帧 speed=2 向左或向右移动）；另有 flash 任务作对照。天花板 = 8 帧展平成 4096 维做 ridge，报告准确率。
+- 阶段 A 条件（每条件 5 seeds=[1,2,3,4,5]，同一批刺激与同一 split）:
+  stateless: 每帧独立 3 步 x=tanh(A@x)，8 帧特征取均值。
+  lif_homeostasis: v=0.6*v+syn+drive；syn=边级 index_add(上一帧硬脉冲)*8/fan_in*8；硬阈值 0.15，发放后 v-=0.15；软脉冲 sigmoid((v-0.15)*20) 累积后 8 帧取均值。用边级 index_add，不要用 torch.sparse.mm 求梯度（会物化 107101^2 稠密矩阵 OOM）。
+  lif_combo: lif_homeostasis + 自适应阈值(thr=0.15+0.05*spike+0.85*(thr-0.15)) + 不应期 2 步 + 真实 E/I 符号(top_nt 为 gaba/glutamate/glycine 的突触前神经元，其出边权重取负)。
+  degree_null_lif: 保度重连，保 in/out 度序列、权重与 nnz，保护互反边对。
+  A=0: 无图传播，仅输入层读出，退化下界。
+- 每条件记录 per-seed 准确率、mean、spike rate、读出特征 std、峰值显存、耗时。阶段 A 结束立刻落盘 result.json 的 stage_A 字段。
+
+【阶段 B：真实光流 DAVIS-2017】
+- 直链（发起方本机实测 HTTP 200、Content-Length 832766765、application/zip、ZIP 魔数 PK）:
+  https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip
+  下载并解压。若 10 分钟内无法完成或域名不可达，标 unavailable + 原因，保留阶段 A 全部结果，不得阻塞阶段 C 与收尾。
+- 真实帧到复眼的派生协议（写死，不许随意改）：取 480p JPEG 帧，转灰度、resize 到 32x32、反相为稀疏墨迹(1-pixel/255)，按上面的 Voronoi 映射到感受器；连续 8 帧为一个 clip；标签由 clip 内物体主运动方向（左/右）或速度变化派生，必须用可复现的帧间差分或质心位移计算，不得用静态外观；若 DAVIS 标注可用则以标注方向为准并说明。
+- 先跑真实域天花板；若 <0.70 标 failure 且不做方法主张。
+- 真实域重复阶段 A 的 5 条件 x 5 seeds，并做一因子消融（逐个移除自适应阈值 / 不应期 / E/I / 稳态）。
+- 阶段 B 结束立刻落盘 result.json 的 stage_B 字段。
+
+【阶段 C：统计与汇总】
+- 每条件 delta vs stateless、95% bootstrap CI(2000 次)、BH-FDR q=0.05。
+- 域间 gap：delta_real - delta_synthetic 及其 CI；给出「增益是否专属于合成规则运动」的迁移裁决。
+- 保度零模型差值无论符号都如实报告；结论不得写成生物接线优势（发起方 8 轮实测保度零模型从未输给真实接线）。
+- 输出 evidence/main_table.csv、evidence/ablation.json、evidence/null.json、evidence/diagnostics.json、evidence/real_ceiling.json、evidence/synthetic_ceiling.json、evidence/stats.json、evidence/robustness.json、evidence/efficiency.json、evidence/run_manifest.json。
+- result.json 顶层含 status(completed/partial)、stage_A、stage_B、stage_C、hardware、seeds、unavailable 列表及原因、limitations、以及全部实际数值。
+- 最终回复逐项给出实际数值与文件路径，严格区分「实测」与「推断」。
+
+【约束】不写论文、不做文献检索、不提交任何子任务、不改动公开数据、不打印任何凭据。所有产物留在工作区，便于 debug pull 拉回。禁止把 1-seed 或不可学结果写成发现；2 seed 会造假阳性，必须 5 seeds + bootstrap CI。结论必须按原始数值复核，不能只信脚本标志位。

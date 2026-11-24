@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "stage": "P13/P14-reacceptance",
+  "source": "writing/p19-tex-v1/paper.tex",
+  "latexmk_returncode": 0,
+  "pages": 10,
+  "tex_sha256": "1e599526f599dd2a10f15b94b238e6f77a167fb403cbe075473d0a6b595a9efd",
+  "pdf_sha256": "606981e124fc1ae6d0d7952e9d9e23aaf9b792b35988d7884e421643085de7b3",
+  "bib_sha256": "8eeb0116c70709e32a7934761fa10ab0e2b34d6ed7edcd30cdb45508cb7db931",
+  "bibliography_command_count": 1,
+  "numbered_body_sections": 6,
+  "caption_count": 5,
+  "manual_figure_paragraphs": 0,
+  "manual_table_paragraphs": 0,
+  "pdf_question_placeholders": false,
+  "pass": true
+}

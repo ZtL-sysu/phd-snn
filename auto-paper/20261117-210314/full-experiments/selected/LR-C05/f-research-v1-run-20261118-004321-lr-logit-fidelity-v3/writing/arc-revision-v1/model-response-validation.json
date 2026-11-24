@@ -1,0 +1,170 @@
+{
+  "manuscript": "# Magnitude-Weighted Output-Jacobian Residual Coding of \\(M_0=\\hat{A}X\\) for Matched-Budget GNN-to-SNN Logit Fidelity\n\n## Abstract\n\nFrozen GNN-to-SNN conversion can require repeated transport of the first-layer input message \\(M_0=\\hat{A}X\\). Under a fixed serialization budget, low-rank coding may omit residual directions that matter to the frozen model's logits. We therefore ask whether magnitude-weighted output-Jacobian allocation of sparse exact residual coefficients improves logit fidelity at matched total padded serialized bits while limiting observed task degradation. On the reported test split, rank-128 transport with a 2% residual budget reduced the ratio of three-seed mean split-specific logit MSE relative to the strongest evaluated matched-budget residual control by 26.23%, 33.99%, and 25.83% on Cora, Chameleon, and Squirrel; all nine dataset-seed comparisons improved. Against our matched-budget A2Q-style and One-Spike-style adaptations, the reductions were 28.93%, 36.19%, and 35.24%, and 42.83%, 47.61%, and 34.03%, respectively. Across \\(T=2/4\\) accuracy and teacher agreement, the maximum observed three-seed-mean degradation was 1.86 percentage points and the maximum seed-level degradation was 2.85 percentage points relative to the best matched-budget non-proposed control for each dataset and task metric. These are descriptive maxima, not equivalence results or population bounds. Compared methods used identical total padded serialized bits within each dataset at rank 128 and 2%. A separate rank128/1% warmed benchmark measured paired p95 full-pipeline runtime ratios of 1.020-1.124 versus SVD-only and peak CUDA allocation of 218.23 MB; it measures wall-clock cost, not energy or focal 2% timing. The evidence is held-out confirmation after validation-exposed setting selection, not preregistered or independent replication, and the contribution is limited to logit-fidelity coding of \\(M_0=\\hat{A}X\\).\n\n## 1 Introduction\n\nFrozen GNN-to-SNN compression repeatedly transports high-dimensional first-layer graph messages. Low-rank transport can preserve large message components while omitting residual directions that influence the frozen model's outputs. This creates a specific output-sensitive coding problem: under a fixed serialization budget, which sparse residual coefficients should be retained to improve logit fidelity without exceeding the transport cost?\n\nWe study this question for the transported input message \\(M_0=\\hat{A}X\\) only. The evaluated method retains an operator-aligned rank-128 basis and allocates a 2% sparse residual budget using the composite score \\(s_i=r_i^2\\lVert J_i\\rVert_2^2\\), where \\(r_i\\) is the residual coefficient and \\(J_i\\) is the analytic derivative of the frozen ANN logits with respect to the corresponding transported message entry under the ReLU hidden mask. Selection is global for each dataset and checkpoint seed over the full transductive graph and does not use labels. The sparse coefficients are exact message residual values with explicit indices; they are not temporal spikes. The second aggregation \\(\\hat{A}H^{(1)}\\) and output layer are not compressed by this method.\n\nThe reported test run confirms lower logit MSE on all three graphs at matched total padded serialized bits. At rank 128 and 2%, the ratio of three-seed means fell by 26.23%, 33.99%, and 25.83% on Cora, Chameleon, and Squirrel relative to the strongest evaluated matched-budget residual control. Task superiority was not established: task deltas were mixed across the evaluated budget grid, and the earlier task-superiority target failed. The supported task statement is instead a descriptive maximum observed degradation of 1.86 percentage points across three-seed means and 2.85 percentage points at seed level under per-metric matched-budget comparisons.\n\n## 2 Related Work\n\nGraph-conversion work spans direct spiking GCNs \\cite{spikinggcn}, dynamic spiking GNNs \\cite{spikenet,dy-sign}, delayed dynamic models \\cite{delay-dsgn}, temporal spiking GNNs \\cite{signnn}, ANN-to-asynchronous-event-graph conversion \\cite{asgcn}, converted-SNN acceleration \\cite{fast-snn}, and output-code-oriented One-Spike SNNs \\cite{one-spike}. These methods differ in source model, temporal semantics, and compute or transport assumptions, so their published outcomes are not direct measurements of a common matched-budget message-compression protocol.\n\nGraph-message compression instead changes what is communicated. A2Q studies graph-aware learned quantization \\cite{a2q}, AdaQP targets graph-message quantization and communication \\cite{adaqp}, and the retained DCGS context concerns qualitative low-rank graph communication \\cite{dcgs}. The trade-off is among coefficient count, payload length, reconstruction fidelity, and the accounting used to equalize cost. In this study, our matched-budget adaptations of A2Q and One-Spike are evaluated only under the exact serialized-cost ledger.\n\nOutput-sensitive coding asks which compressed values should be preserved for downstream outputs. One-Spike provides output-code context \\cite{one-spike}, while A2Q provides graph-aware learned-quantization context \\cite{a2q}; neither context alone establishes how output-Jacobian sensitivity should allocate sparse residual coefficients in frozen GNN-to-SNN compression. The present contribution is therefore narrower than a general conversion or deployment method: it evaluates logit-fidelity coding of the transported message \\(M_0=\\hat{A}X\\) on frozen two-layer hidden-16 GCN checkpoints for Cora, Chameleon, and Squirrel.\n\n## 3 Method\n\nWe consider frozen two-layer hidden-16 GCN checkpoints with parameters \\(\\theta\\) and checkpoint seeds 0, 1, and 2. Let \\(\\hat{A}\\) denote the normalized adjacency operator. The first-layer input message is\n\n$$M_0=\\hat{A}X\\in\\mathbb{R}^{N\\times F},$$\n\nand the frozen network computes\n\n$$H^{(1)}=\\sigma(M_0W^{(1)}), \\qquad Z=\\hat{A}H^{(1)}W^{(2)}.$$\n\nOnly \\(M_0\\) is transported with the proposed coding method. The second aggregation \\(\\hat{A}H^{(1)}\\) and the output transformation are outside its compression scope. The message dimensions are \\(N=2708,F=1433\\) for Cora, \\(N=2277,F=2325\\) for Chameleon, and \\(N=5201,F=2089\\) for Squirrel. Thus \\(F>128\\) on every dataset and rank 128 is valid for the first-layer message. The normalized adjacency and its column norms remain part of the operator-aligned message construction rather than an additional post-hoc score factor.\n\nFor each dataset and checkpoint seed, transport retains a rank-128 SVD representation over the full transductive graph message:\n\n$$M_{0,128}=U_{128}\\Sigma_{128}V_{128}^{T}, \\qquad R=M_0-M_{0,128}.$$\n\nThe residual \\(R\\) is represented by selected exact coefficients with explicit serialized positions. For residual coefficient \\(r_i\\) at position \\(i\\), let \\(J_i\\) be the analytic derivative of the frozen ANN logits with respect to the corresponding transported message entry under the current ReLU hidden mask. The evaluated magnitude-weighted output-Jacobian score is\n\n$$J_i=\\frac{\\partial z_{\\theta}}{\\partial m_{0,i}}, \\qquad s_i=r_i^2\\lVert J_i\\rVert_2^2.$$\n\nGiven a residual-entry budget \\(B\\), the selector transmits the set \\(S=\\operatorname{TopB}(s_i)\\). Selection is global per dataset and checkpoint seed over all entries of the transductive graph message and uses no labels. This composite score is a heuristic allocation rule; the evaluated comparisons do not identify a causal contribution from the Jacobian term alone.\n\nThe serialization ledger explicitly charges each selected index-value pair 64 padded bits. For the rank-128 basis, the charged cost is\n\n$$C_{\\mathrm{basis}}=(N\\cdot128+128+128\\cdot F)\\cdot32\\ \\mathrm{bits},$$\n\nand the total padded cost is\n\n$$C_{\\mathrm{total}}=C_{\\mathrm{basis}}+64|S|.$$\n\nAt the focal 2% budget, \\(|S|=\\operatorname{round}(0.02NF)\\). The resulting totals are 21,932,736 bits for Cora, 25,630,208 bits for Chameleon, and 43,771,008 bits for Squirrel. Within each dataset, seed, rank, and budget comparison, methods are matched by total padded serialized bits even when their payload lengths or coefficient counts differ. Full-float transport and SVD-only transport are reference rows rather than matched residual-budget controls.\n\nRate-coded conversion represents each nonnegative post-activation value as a finite firing rate over \\(T\\in\\{2,4\\}\\) bins, with the decoded scalar equal to the spike count divided by \\(T\\). Frozen parameters, adjacency, features, and serialized-cost conditions are held fixed across conversion comparisons. Sparse residual coefficients are exact message residual values with explicit indices and are not temporal SNN events. The measurement scope excludes hardware energy and does not establish temporal-event equivalence or broad GNN generality.\n\n![Exact-cost output-Jacobian residual transport](../../../figures/figure1-architecture.png)\n\n**Figure 1.** Exact-cost residual coding of \\(M_0=\\hat{A}X\\) for frozen GNN-to-SNN conversion. A rank-128 basis and global sparse exact residual records selected by \\(s_i=r_i^2\\lVert J_i\\rVert_2^2\\) are serialized under an exact padded-bit ledger before rate-coded conversion. The figure represents input-message coding only and not temporal-event or energy behavior.\n\n## 4 Experiments and Results\n\n### 4.1 Experimental Scope\n\nWe evaluate Cora, Chameleon, and Squirrel using the reported split protocol and frozen two-layer hidden-16 GCN checkpoints with seeds 0, 1, and 2. Validation exposed ranks 16, 32, 64, and 128 and residual budgets 0.5%, 1%, and 2%. Guidance-v3 fixed rank 128 and the 2% focal budget after validation exposure and before the confirmation test run. The reported test is therefore held-out confirmation after validation-exposed reframing and setting selection, not preregistered or independent replication. No focal-setting selection based on the test results is claimed.\n\nWe report split-specific logit MSE, hidden-state MSE, \\(T=2/4\\) accuracy, and teacher agreement. For logits \\(z_s\\) on split \\(s\\), the split-specific metric is\n\n$$\\operatorname{MSE}_{\\operatorname{logit}}(s)=\\frac{1}{|s|C}\\sum_{n\\in s}\\lVert z_n^{\\operatorname{converted}}-z_n^{\\operatorname{frozen}}\\rVert_2^2,$$\n\nand hidden-state MSE is defined analogously on the hidden representation. Accuracy is measured at \\(T=2\\) and \\(T=4\\); teacher agreement is the fraction of converted predictions matching the frozen GCN prediction. Task comparisons are descriptive and do not establish equivalence.\n\n### 4.2 Compared Methods and Exact Cost\n\nAll compared encodings use the same rank-128 transport and exact total padded serialized-bit ledger within each dataset, seed, rank, and budget condition. The residual-budget controls use alternative allocation or coefficient-coding rules while allowing payload lengths and coefficient counts to differ.\n\n| Method | Representation and allocation | Comparison role | Citation |\n|---|---|---|---|\n| Full-float | Uncompressed message reference | Reference, not a matched residual-budget control | — |\n| SVD-only | Rank-128 basis without residual coefficients | Reference, not a matched residual-budget control | — |\n| Output-Jacobian sparse residual | Rank-128 basis plus globally selected top-\\(B\\) exact residual pairs | Proposed method | — |\n| Top-absolute residual | Rank-128 basis plus largest-magnitude residual pairs | Matched-budget residual control | — |\n| Random residual indices | Rank-128 basis plus randomly indexed residual pairs | Matched-budget residual control | — |\n| Dense uniform residual quantization | Uniform quantization of the residual under the same ledger | Matched-budget residual control | — |\n| A2Q-style node-budget adaptation | Graph-aware node-budget allocation adapted to the same ledger | Matched-budget adapted control | \\cite{a2q} |\n| One-Spike-style coefficient adaptation | Coefficient-coding allocation adapted to the same ledger | Matched-budget adapted control | \\cite{one-spike} |\n\nFor logit-MSE comparisons, the strongest evaluated residual control is selected post hoc, separately for each dataset, as the non-proposed matched-budget residual method with the lowest three-seed mean logit MSE. For task metrics, the comparator is the best matched-budget non-proposed control separately for each dataset and task metric. Together, the raw controls compare the complete composite selector with magnitude-only, random, dense-uniform, node-budget, and coefficient-coding alternatives; they do not constitute a Jacobian-only interaction ablation or a causal decomposition. All differences are descriptive, and no formal confidence interval is claimed.\n\n### 4.3 Main Logit-Fidelity Result\n\nAt rank 128 and a 2% sparse residual budget on the reported test split, output-Jacobian selection reduced the ratio of three-seed mean split-specific logit MSE versus the strongest evaluated matched-budget residual control by 26.23% on Cora, 33.99% on Chameleon, and 25.83% on Squirrel. All nine dataset-seed comparisons improved. Each comparison used identical total padded serialized bits within the corresponding dataset, although payload lengths and coefficient counts could differ. No formal confidence interval is claimed.\n\nThe proposed composite selector also improved on the top-absolute residual control in all nine dataset-seed logit-MSE comparisons. Relative to our matched-budget A2Q-style adaptation, its three-seed mean logit MSE reductions were 28.93%, 36.19%, and 35.24% on Cora, Chameleon, and Squirrel. Relative to our matched-budget One-Spike-style adaptation, the reductions were 42.83%, 47.61%, and 34.03%. These paired descriptive comparisons use matched total padded serialized-bit budgets and the frozen two-layer GCN checkpoints.\n\n![Matched-budget logit MSE for the proposed selector and controls](../../../figures/data/figure2-main-logit-mse.png)\n\n**Figure 2.** Matched-budget logit fidelity on Cora, Chameleon, and Squirrel at rank 128 and a 2% residual budget. Bars show three-seed means and sample SD; lower logit MSE is better. Full-float and SVD-only are reference rows rather than matched residual-budget controls.\n\n### 4.4 Sensitivity and Matched-Budget Controls\n\nAt rank 128 and the 2% residual budget, hidden-state MSE fell by 16.88%, 12.86%, and 10.63% relative to the strongest matched-budget control on Cora, Chameleon, and Squirrel. These three-seed mean reductions are descriptive sensitivity measurements without formal confidence intervals and were obtained in the validation-grid analysis preceding held-out confirmation of the focal setting.\n\nAcross the evaluated 0.5%, 1%, and 2% residual budgets and three graphs, logit MSE was below the strongest corresponding matched-budget residual control in all nine dataset-budget cells, with reductions from 2.98% to 30.40%. This validation-grid sensitivity analysis shows a consistent direction across the evaluated cells; it does not replace the separately reported held-out confirmation at the focal 2% setting.\n\n![Logit-MSE reduction across residual budgets](../../../figures/data/figure3-budget-sensitivity.png)\n\n**Figure 3.** Logit-MSE reduction over the evaluated 0.5%, 1%, and 2% residual-budget grid. The focal 2% setting later received held-out confirmation after validation exposure.\n\nThe matched-budget control set further shows that the result is not specific to comparison with a single encoding rule. The proposed composite selector outperformed top-absolute residual selection in all nine dataset-seed logit-MSE comparisons and was also compared with random indices, dense uniform residual quantization, and our A2Q-style and One-Spike-style adaptations. These comparisons evaluate the complete allocation rule against alternative rules; because no Jacobian-only or interaction ablation was performed, they do not isolate the causal contribution of the Jacobian factor.\n\n### 4.5 Task and Runtime Trade-offs\n\nTask superiority was not established. Across \\(T=2/4\\) accuracy and teacher agreement, deltas were mixed over the 0.5%-2% residual-budget grid, and the earlier task-superiority target failed. The accepted task statement is therefore limited to observed degradation rather than universal task gain.\n\nUsing the best matched-budget non-proposed control separately for each dataset and task metric, the maximum three-seed-mean observed degradations were 0.53, 1.17, and 1.86 percentage points on Cora, Chameleon, and Squirrel. Across all metrics and seeds, the largest observed single-seed degradation was 2.85 percentage points. These are descriptive maxima under per-metric comparators, not bounds, equivalence results, or evidence of population-level task preservation.\n\nA separate secondary benchmark measures warmed full variant construction and evaluation cost at rank128/1%, not the focal 2% condition. The timed operation includes basis construction, residual construction and selection, reconstruction, rate conversion, and evaluation, while the frozen model, adjacency, and features are precomputed. Each method-dataset-seed p95 is the 0.95 quantile of seven measured elapsed times after three warmups, with CUDA synchronization before and after each call. Across nine dataset-seed pairs, paired p95 full-pipeline runtime ratios versus SVD-only ranged from 1.020 to 1.124, and the maximum recorded peak CUDA allocation was 218.23 MB. This is a wall-clock pipeline measurement and does not measure hardware energy.\n\n![Task trade-off and warmed runtime overhead](../../../figures/data/figure4-tradeoff-and-runtime.png)\n\n**Figure 4.** Observed task trade-off and warmed runtime overhead. Panel a reports reported-test logit-fidelity gains against the maximum observed three-seed-mean task degradation relative to the per-metric matched-budget control; panel b reports paired p95 full-pipeline runtime ratios at rank128/1%. Panel b does not represent focal 2% timing or energy.\n\n## 5 Discussion\n\nWithin the reported static-graph setting, the evidence supports a local fidelity-resource result for coding \\(M_0=\\hat{A}X\\): magnitude-weighted output-Jacobian residual allocation reduced logit MSE under matched total padded serialized bits, and the maximum observed task degradation remained limited in the evaluated comparisons. The improvements over the strongest evaluated residual control, our matched-budget A2Q-style and One-Spike-style adaptations, and the nine positive dataset-seed comparisons against top-absolute selection are descriptive observations. Squared output-Jacobian sensitivity may preferentially retain residual directions that influence frozen-model outputs, but this explanation remains a mechanism hypothesis rather than an identified causal mechanism.\n\nThe evidence is restricted to frozen two-layer hidden-16 GCN checkpoints on Cora, Chameleon, and Squirrel. The focal setting and logit-fidelity reframing were fixed after validation exposure and before the test run; the test run is held-out confirmation, not preregistered or independent replication. Sparse residual coefficients are exact transported-message values rather than temporal SNN events. The study does not establish formal equivalence, hardware-energy savings, broad GNN generality, downstream utility beyond the reported metrics, or focal 2% runtime cost. These boundaries constrain both the logit-fidelity interpretation and the task trade-off.\n\n## 6 Conclusion\n\nFor frozen two-layer hidden-16 GCN checkpoints on Cora, Chameleon, and Squirrel, magnitude-weighted output-Jacobian coding of the first-layer input message \\(M_0=\\hat{A}X\\) improved logit fidelity at matched total padded serialized bits. At rank 128 and a 2% residual budget, the ratio of three-seed mean split-specific logit MSE fell by 26.23%, 33.99%, and 25.83% relative to the strongest evaluated matched-budget residual control. Task superiority was not established; the maximum observed three-seed-mean degradation was 1.86 percentage points and the maximum seed-level degradation was 2.85 percentage points under per-metric matched-budget comparisons. The result is held-out confirmation after validation exposure within the evaluated static graphs, not preregistered or independent replication.",
+  "notes": "Edit mapping: NARROW revised the title, abstract, introduction, discussion, and conclusion to limit the contribution to logit-fidelity coding of M0=A_hat X while preserving rank128/2%, the 26.23%, 33.99%, and 25.83% reductions, and the absence of task superiority. REWRITE defined the N-by-F first-layer message, dataset dimensions, rank validity, global transductive selection, and compression exclusions while preserving Cora N=2708/F=1433, Chameleon N=2277/F=2325, and Squirrel N=5201/F=2089. REWRITE replaced the incomplete score with s_i=r_i^2||J_i||_2^2 and preserved the ReLU hidden mask, normalized-adjacency construction, label-free global selection, and noncausal heuristic interpretation. REWRITE added the exact 64-bit pair charge, rank-basis charge, 2% cardinality, dataset totals, and matched padded-bit protocol while preserving the distinction between references and residual-budget controls. REWRITE added top-absolute, random, dense-uniform, A2Q-style node-budget, and One-Spike-style coefficient controls while preserving 9/9 positive comparisons versus top-absolute selection, the adapted status of A2Q and One-Spike, and the absence of a Jacobian-only interaction ablation. REWRITE replaced universal task language with per-metric descriptive maxima while preserving mixed task deltas, the failed task-superiority target, 0.53/1.17/1.86 percentage-point mean maxima, 2.85 percentage points at seed level, and the absence of equivalence or population-bound claims. REWRITE isolated the rank128/1% warmed timing result while preserving 1.020-1.124 paired p95 ratios, 218.23 MB peak allocation, three warmups, seven measured repeats, wall-clock-only scope, and no focal 2% timing or energy claim. REWRITE disclosed validation exposure to ranks 16, 32, 64, and 128 and budgets 0.5%, 1%, and 2%, followed by fixed Guidance-v3 rank128/2% confirmation, while preserving that no focal setting was selected from test results. REWRITE aligned Figure 1 with the implemented composite score and Figure 4 with per-metric task maxima and rank128/1% timing while preserving all four figures, the external Figure 1 self-draw fallback disclosure, and the no-energy interpretation. Reverse outline: Abstract states the question, main matched-budget result, descriptive task maxima, secondary 1% timing result, and scope boundary. Section 1 moves from output-sensitive loss to the bounded M0 contribution and then to the main result and negative task finding. Section 2 separates conversion, message compression, and output-sensitive coding contexts. Section 3 defines the frozen model, M0 dimensions, SVD residual representation, composite selector, exact cost ledger, rate coding, and event/energy scope. Section 4.1 defines metrics and validation-test chronology. Section 4.2 distinguishes references, matched residual controls, adapted controls, and comparators. Section 4.3 reports the focal logit result beside Figure 2. Section 4.4 reports hidden-MSE and budget sensitivity beside Figure 3 and bounds interpretation of the control suite. Section 4.5 reports negative task evidence, per-metric maxima, and rank128/1% runtime beside Figure 4. Section 5 interprets the local fidelity-resource result and its limits. Section 6 answers the question without a new promise. Preserved facts: F1-F16 remain represented; all four figures and nearby discussion remain; citation placeholders are unchanged and final bibliography acceptance remains blocked pending the later 36-reference audit; no independent replication, formal equivalence, energy, downstream-utility, interaction-ablation, or focal 2% timing claim was added; negative task-superiority evidence and validation exposure remain explicit.",
+  "provenance": {
+    "adapter": "writing_adapter.build/v1",
+    "contract_sha256": "5ea84114722267e6e81689f75ebeb3dbb098bd01830d1efcd7d4041d20912f5e",
+    "dependency": {
+      "name": "paper-refine",
+      "path": "C:\\Users\\xhf\\.codex\\skills\\paper-refine\\SKILL.md",
+      "sha256": "04e3981e5e4d06d9e12d8510088b771080626194626ae03b70229eb6d326b338"
+    },
+    "evidence_manifest": [
+      {
+        "fact_id": "F1",
+        "path": "results/confirmation-summary.json",
+        "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"
+      },
+      {
+        "fact_id": "F2",
+        "path": "results/confirmation-summary.json",
+        "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"
+      },
+      {
+        "fact_id": "F3",
+        "path": "results/confirmation-test-v2.json",
+        "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166"
+      },
+      {
+        "fact_id": "F4",
+        "path": "inputs/v2-timing.json",
+        "sha256": "bd77cd5b8d688380fe7485bb6d20a31fd853189d7ff9354559978f38fcd32dc0"
+      },
+      {
+        "fact_id": "F5",
+        "path": "ccfa-pre-draft-scientific-review.md",
+        "sha256": "32082761fe52e40b726efbc7806657a72795e8ed91dac730c19aec5266958324"
+      },
+      {
+        "fact_id": "F6",
+        "path": "inputs/v2-summary.json",
+        "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+      },
+      {
+        "fact_id": "F7",
+        "path": "inputs/v2-summary.json",
+        "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+      },
+      {
+        "fact_id": "F8",
+        "path": "results/p10-f8-derivation.csv",
+        "sha256": "f2bf86cd235eceeaba53f98a529489d2dc424738cdde5e4d8bdaa86dac872f1e"
+      },
+      {
+        "fact_id": "F9",
+        "path": "inputs/v2-summary.json",
+        "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+      },
+      {
+        "fact_id": "F10",
+        "path": "results/p10-implementation-spec.json",
+        "sha256": "117af1c76c41184f3b81d33afdba10c3f26892f1ae81b5c2a561da1304191691"
+      },
+      {
+        "fact_id": "F11",
+        "path": "results/p10-implementation-spec.json",
+        "sha256": "117af1c76c41184f3b81d33afdba10c3f26892f1ae81b5c2a561da1304191691"
+      },
+      {
+        "fact_id": "F12",
+        "path": "results/p10-bit-ledger.csv",
+        "sha256": "8b7f675e565fa2c108edf1eb19ad8dbcdd97c282fb955f8e3c7c4ecb6f68e0ce"
+      },
+      {
+        "fact_id": "F13",
+        "path": "results/p10-per-seed-control-comparison.csv",
+        "sha256": "6b08db8bf5a6a73a829c92b410bd80984f7052629da2edcc935fbf26b34ab026"
+      },
+      {
+        "fact_id": "F14",
+        "path": "results/p10-task-loss-three-seed-audit.csv",
+        "sha256": "06967d8ab9bd6ab77770c050c6c6eed4fa21507901f9e30f3e79b2d458884b9d"
+      },
+      {
+        "fact_id": "F14",
+        "path": "results/p10-task-loss-audit.csv",
+        "sha256": "16aa32a54ac82b74022d3e3ff77346495057dc11154e19352b7383701f3c4f38"
+      },
+      {
+        "fact_id": "F15",
+        "path": "results/p10-implementation-spec.json",
+        "sha256": "117af1c76c41184f3b81d33afdba10c3f26892f1ae81b5c2a561da1304191691"
+      },
+      {
+        "fact_id": "F16",
+        "path": "results/p10-validation-grid.csv",
+        "sha256": "caa7553b20ca4ac9af1b05cf5af23c188e0a39b74d78865e30f1c91c91a20e5e"
+      }
+    ],
+    "verification_notes": [],
+    "revision_checks": [
+      {
+        "location": "Title, Abstract, Introduction, Discussion, Conclusion",
+        "proposition": "Narrow the paper to magnitude-weighted output-Jacobian residual allocation for first-layer input-message logit fidelity.",
+        "factual_check": "Preserve the three-graph/seed scope, held-out-after-validation status, and no task-superiority/energy/temporal-event/broad-GNN claims."
+      },
+      {
+        "location": "Section 3 Method before the SVD equations",
+        "proposition": "Define the transported tensor, tensor shapes, rank validity, split counts, and global transductive selection granularity.",
+        "factual_check": "Only M0=A_hat X is compressed; A_hat H1 is not compressed; F>128 for all datasets; labels are not used for selection."
+      },
+      {
+        "location": "Section 3 Method score equations and Figure 1 reference",
+        "proposition": "Replace the gradient-only score description with the implemented magnitude-weighted composite score and analytic frozen-ANN Jacobian.",
+        "factual_check": "The implementation score is r_i^2 ||J_i||^2; J differentiates frozen ANN logits, not rate-coded outputs."
+      },
+      {
+        "location": "Section 3 exact-cost ledger and Section 4.2 comparison protocol",
+        "proposition": "Publish the exact residual-entry budget, 64-bit pair accounting, basis formula, padding rule, and absolute matched totals.",
+        "factual_check": "2% means residual entries; count=round(0.02*N*F); pair cost=64 bits; totals are 21,932,736/25,630,208/43,771,008 bits."
+      },
+      {
+        "location": "Section 4.2 compared methods and Section 4.4 controls",
+        "proposition": "Define every selector control, distinguish matched residual controls from references, and disclose post-hoc comparator selection.",
+        "factual_check": "top_abs/random/uniform/A2Q-style/One-Spike-style are defined; top_abs is the post-hoc strongest fidelity control on all three reported datasets."
+      },
+      {
+        "location": "Abstract, Section 4.5, Discussion, Conclusion",
+        "proposition": "Define the task-loss formula and replace bounded language with maximum observed degradation.",
+        "factual_check": "Three-seed-mean maxima are 0.53/1.17/1.86 pp and single-seed maximum is 2.85 pp using the best matched-budget control per dataset/seed/metric."
+      },
+      {
+        "location": "Section 4.5 runtime paragraph and Figure 4 caption",
+        "proposition": "Define the timing boundary and p95 convention while keeping the measurement at rank128/1%.",
+        "factual_check": "Timing is rank128/1%; p95 is per-method quantile over seven repeats after three warmups; CUDA is synchronized; precomputed model/adjacency/features are excluded."
+      },
+      {
+        "location": "Section 4.1 experimental scope and Section 4.4 sensitivity",
+        "proposition": "Document validation-exposed candidate grids and the pre-test fixation of the focal setting.",
+        "factual_check": "Validation exposed ranks 16/32/64/128 and budgets 0.5/1/2%; guidance-v3 fixed rank128/2% before test; test is held-out confirmation after validation exposure."
+      },
+      {
+        "location": "Figure 1 caption and Figure 4 caption",
+        "proposition": "Correct Figure 1 notation and Figure 4 caption/condition key.",
+        "factual_check": "Figure 1 uses r_i and J_i=dz/dr_i; Figure 4 explains the dashed 3 pp reference and labels panel a as rank128/2% task/fidelity and panel b as rank128/1% timing."
+      }
+    ],
+    "model": "unknown",
+    "tool_version": "unknown",
+    "execution": "input-built-only; no model invoked",
+    "inputs": [
+      {
+        "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\writing\\packet-p10.json",
+        "sha256": "a04c22be1c46da79cfc701f5be34b531b199ae0b63e04b15f63954648022b6ca"
+      },
+      {
+        "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\writing\\p8\\paper-data-figures.md",
+        "sha256": "e35047b6ed4e6ae0bdcc9470fb754d6fd398f8d6f2f8aaf2e20e574e9726b8cb"
+      },
+      {
+        "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\writing\\p10-edit-decisions.json",
+        "sha256": "69cc0089f248069f02afa8c104523f8de7993b06608a864c93cd6a35b012ae9a"
+      },
+      {
+        "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\writing\\arc-revision-v1\\model-response.json",
+        "sha256": "2d1f9910cb3f23de7bc87017263fb5c5bf183de0b5abc1287f168800717541b7"
+      }
+    ]
+  },
+  "status": "format-checked; semantic-review-required"
+}

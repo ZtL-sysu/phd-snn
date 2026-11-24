@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "manuscript": "writing\\p12-citation-updated-manuscript.md",
+  "bibliography": "writing\\references-final.bib",
+  "bibliography_sha256": "be176ede7327203c59bbb3ceaf0482853863064406964a0d744a73fdc4f0e6bb",
+  "entry_count": 40,
+  "cited_unique_count": 40,
+  "missing_keys": [],
+  "uncited_keys": [],
+  "duplicate_keys": [],
+  "duplicate_titles": [],
+  "duplicate_dois": [],
+  "recent_2022_2026_count": 30,
+  "new_reference_count": 9,
+  "new_reference_sources": {
+    "gowal2018ibp": "https://arxiv.org/abs/1810.12715",
+    "wong2018provable": "https://proceedings.mlr.press/v80/wong18a.html",
+    "mirman2018diffai": "https://proceedings.mlr.press/v80/mirman18b.html",
+    "katz2017reluplex": "https://doi.org/10.1007/978-3-319-63387-9_5",
+    "jacob2018quantization": "https://doi.org/10.1109/CVPR.2018.00286",
+    "nagel2021white": "https://arxiv.org/abs/2106.08295",
+    "yang2016planetoid": "https://proceedings.mlr.press/v48/yanga16.html",
+    "pei2020geomgnn": "https://arxiv.org/abs/2002.05287",
+    "platonov2023heterophily": "https://arxiv.org/abs/2302.11640"
+  },
+  "lr_verified_overlap_note": "31 retained keys were present in the LR-C05 41/41 independent final citation audit; 9 retained keys have direct official source probes.",
+  "rows": [
+    {
+      "key": "asgcn",
+      "title": "Leveraging Asynchronous Spiking Neural Networks for Ultra Efficient Event-Based Visual Processing",
+      "year": 2025,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "bu2023optimal",
+      "title": "Optimal ANN-SNN Conversion for High-accuracy and Ultra-low-latency Spiking Neural Networks",
+      "year": 2022,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "chaurasia2026sgspose",
+      "title": "{SGSPose}: Neuromorphic-Geometric 6D Pose Estimation Through Spiking Graph Neural Networks and SE(3)-Equivariant Learning",
+      "year": 2026,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "cherukuri2025lowrank",
+      "title": "Low-Rank Matrix Approximation for Neural Network Compression",
+      "year": 2025,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "dampfhoffer2023snnlearning",
+      "title": "Backpropagation-Based Learning Techniques for Deep Spiking Neural Networks: A Survey",
+      "year": 2024,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "delay-dsgn",
+      "title": "Delay-DSGN: A Dynamic Spiking Graph Neural Network with Delay Mechanisms for Evolving Graph",
+      "year": 2025,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "ding2021vqgnn",
+      "title": "VQ-GNN: A Universal Framework to Scale up Graph Neural Networks using Vector Quantization",
+      "year": 2021,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "dy-sign",
+      "title": "Dynamic Spiking Graph Neural Networks",
+      "year": 2024,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "gholami2022quantization",
+      "title": "A Survey of Quantization Methods for Efficient Neural Network Inference",
+      "year": 2022,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "gowal2018ibp",
+      "title": "On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models",
+      "year": 2018,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "https://arxiv.org/abs/1810.12715"
+    },
+    {
+      "key": "hao2023offset",
+      "title": "Bridging the Gap between ANNs and SNNs by Calibrating Offset Spikes",
+      "year": 2023,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "hu2023fast",
+      "title": "Fast-SNN: Fast Spiking Neural Network by Converting Quantized ANN",
+      "year": 2023,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "huang2025ecmt",
+      "title": "Towards High-performance Spiking Transformers from ANN to SNN Conversion",
+      "year": 2024,
+      "citation_count": 2,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "jacob2018quantization",
+      "title": "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference",
+      "year": 2018,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "https://doi.org/10.1109/CVPR.2018.00286"
+    },
+    {
+      "key": "katz2017reluplex",
+      "title": "Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks",
+      "year": 2017,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "https://doi.org/10.1007/978-3-319-63387-9_5"
+    },
+    {
+      "key": "li2023graph1bit",
+      "title": "A Graph is Worth 1-bit Spikes: When Graph Contrastive Learning Meets Spiking Neural Networks",
+      "year": 2023,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "li2023seenn",
+      "title": "{SEENN}: Towards Temporal Spiking Early Exit Neural Networks",
+      "year": 2023,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "li2024erroraware",
+      "title": "Error-Aware Conversion from ANN to SNN via Post-training Parameter Calibration",
+      "year": 2024,
+      "citation_count": 2,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "lv2024group",
+      "title": "Optimal ANN-SNN Conversion with Group Neurons",
+      "year": 2024,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "mirman2018diffai",
+      "title": "Differentiable Abstract Interpretation for Provably Robust Neural Networks",
+      "year": 2018,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "https://proceedings.mlr.press/v80/mirman18b.html"
+    },
+    {
+      "key": "msg",
+      "title": "Spiking Graph Neural Network on Riemannian Manifolds",
+      "year": 2024,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "nagel2021white",
+      "title": "A White Paper on Neural Network Quantization",
+      "year": 2021,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "https://arxiv.org/abs/2106.08295"
+    },
+    {
+      "key": "nunes2022snnsurvey",
+      "title": "Spiking Neural Networks: A Survey",
+      "year": 2022,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "one-spike",
+      "title": "One-Spike SNN: Single-Spike Phase Coding With Base Manipulation for ANN-to-SNN Conversion Loss Minimization",
+      "year": 2025,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "pei2020geomgnn",
+      "title": "Geom-GCN: Geometric Graph Convolutional Networks",
+      "year": 2020,
+      "citation_count": 1,
+      "sections": "4 Experiments and Results",
+      "source": "https://arxiv.org/abs/2002.05287"
+    },
+    {
+      "key": "platonov2023heterophily",
+      "title": "A Critical Look at the Evaluation of GNNs under Heterophily: Are We Really Making Progress?",
+      "year": 2023,
+      "citation_count": 1,
+      "sections": "4 Experiments and Results",
+      "source": "https://arxiv.org/abs/2302.11640"
+    },
+    {
+      "key": "signnn",
+      "title": "{SiGNN}: A spike-induced graph neural network for dynamic graph representation learning",
+      "year": 2025,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "spikenet",
+      "title": "Scaling Up Dynamic Graph Representation Learning via Spiking Neural Networks",
+      "year": 2023,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "spikinggcn",
+      "title": "Spiking Graph Convolutional Networks",
+      "year": 2022,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "sun2024spikegraphormer",
+      "title": "SpikeGraphormer: A High-Performance Graph Transformer with Spiking Graph Attention",
+      "year": 2026,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "tailor2021degreequant",
+      "title": "Degree-Quant: Quantization-Aware Training for Graph Neural Networks",
+      "year": 2021,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "wan2023adaqp",
+      "title": "Adaptive Message Quantization and Parallelization for Distributed Full-graph GNN Training",
+      "year": 2023,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "wang2022qgtc",
+      "title": "QGTC: Accelerating Quantized Graph Neural Networks via GPU Tensor Core",
+      "year": 2022,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "wang2022taxonomicsnn",
+      "title": "A hierarchical taxonomic survey of spiking neural networks",
+      "year": 2022,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "wong2018provable",
+      "title": "Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope",
+      "year": 2018,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "https://proceedings.mlr.press/v80/wong18a.html"
+    },
+    {
+      "key": "yang2016planetoid",
+      "title": "Revisiting Semi-Supervised Learning with Graph Embeddings",
+      "year": 2016,
+      "citation_count": 1,
+      "sections": "4 Experiments and Results",
+      "source": "https://proceedings.mlr.press/v48/yanga16.html"
+    },
+    {
+      "key": "you2024spikezip",
+      "title": "SpikeZIP-TF: Conversion is All You Need for Transformer-based SNN",
+      "year": 2024,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "zhang2025sgnnbench",
+      "title": "{SGNNBench}: A Holistic Evaluation of Spiking Graph Neural Networks on Large-scale Graphs",
+      "year": 2026,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "zhao2025ttfs",
+      "title": "TTFSFormer: A TTFS-based Lossless Conversion of Spiking Transformer",
+      "year": 2025,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    },
+    {
+      "key": "zhu2023a2q",
+      "title": "{A$^2$Q}: Aggregation-Aware Quantization for Graph Neural Networks",
+      "year": 2023,
+      "citation_count": 1,
+      "sections": "2 Related Work",
+      "source": "inputs/lr-citation-audit-final.json"
+    }
+  ],
+  "pass": true
+}

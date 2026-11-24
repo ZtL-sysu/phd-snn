@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "stage": "P15",
+  "latexmk_returncode": 0,
+  "pages": 8,
+  "normalized_text_match": true,
+  "font_embedding_failures": [],
+  "pdf_question_placeholders": false,
+  "accepted_pdf_sha256": "666af61e71ef21b67e7f727c832e3aaf60bc71e5389c6cad217d6364be8cb259",
+  "clean_pdf_sha256": "0819cfb82509a612fcf0f5fd7ae16228a395a05b9b1411893c49b1bb7e745fcf",
+  "pass": true
+}

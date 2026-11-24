@@ -1,0 +1,64 @@
+{
+  "task_id": "18156",
+  "pulled_from": "novix exp-4090 session 460339fcefef37ef1789bf931a749f11",
+  "full_pull_dir": "C:/code/phd-snn/_nv18156 (13951 files, keep as raw evidence)",
+  "key_files": [
+    {
+      "file": "experiment.py",
+      "bytes": 2355,
+      "sha256": "79c8b7d632dfbad9"
+    },
+    {
+      "file": "entrypoint.sh",
+      "bytes": 1833,
+      "sha256": "a246c65021bf1acf"
+    },
+    {
+      "file": "config.json",
+      "bytes": 2748,
+      "sha256": "41b76f03d7a6abf2"
+    },
+    {
+      "file": "validate_results.py",
+      "bytes": 5329,
+      "sha256": "5b01372270467108"
+    },
+    {
+      "file": "test_pipeline.py",
+      "bytes": 2417,
+      "sha256": "e38af08ea53d6274"
+    },
+    {
+      "file": "requirements.txt",
+      "bytes": 112,
+      "sha256": "72edb0788b4a97dd"
+    },
+    {
+      "file": "main_table.csv",
+      "bytes": 8390,
+      "sha256": "ffacfc5c47562eb2"
+    },
+    {
+      "file": "validation.json",
+      "bytes": 150,
+      "sha256": "75b6dac4920dd463"
+    },
+    {
+      "file": "experiment-traceability.csv",
+      "bytes": 25363,
+      "sha256": "22eb8fb0b3ee2743"
+    },
+    {
+      "file": "command_history.log",
+      "bytes": 1710,
+      "sha256": "c308b42e40353b9c"
+    },
+    {
+      "file": "progress.md",
+      "bytes": 1714,
+      "sha256": "1adcbf659d92a69e"
+    }
+  ],
+  "raw_npz_count_in_full_pull": 110,
+  "result_json": "NOT PRESENT in pulled workspace (remote finalReply cites /home/novix/workspace/project/result.json); equivalent measured data is in main_table.csv + validation.json + experiment-traceability.csv"
+}

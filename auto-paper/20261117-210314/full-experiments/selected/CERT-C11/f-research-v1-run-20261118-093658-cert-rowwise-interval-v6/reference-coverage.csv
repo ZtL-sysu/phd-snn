@@ -1,0 +1,41 @@
+key,title,year,citation_count,sections,source
+asgcn,Leveraging Asynchronous Spiking Neural Networks for Ultra Efficient Event-Based Visual Processing,2025,1,2 Related Work,inputs/lr-citation-audit-final.json
+bu2023optimal,Optimal ANN-SNN Conversion for High-accuracy and Ultra-low-latency Spiking Neural Networks,2022,1,2 Related Work,inputs/lr-citation-audit-final.json
+chaurasia2026sgspose,{SGSPose}: Neuromorphic-Geometric 6D Pose Estimation Through Spiking Graph Neural Networks and SE(3)-Equivariant Learning,2026,1,2 Related Work,inputs/lr-citation-audit-final.json
+cherukuri2025lowrank,Low-Rank Matrix Approximation for Neural Network Compression,2025,1,2 Related Work,inputs/lr-citation-audit-final.json
+dampfhoffer2023snnlearning,Backpropagation-Based Learning Techniques for Deep Spiking Neural Networks: A Survey,2024,1,2 Related Work,inputs/lr-citation-audit-final.json
+delay-dsgn,Delay-DSGN: A Dynamic Spiking Graph Neural Network with Delay Mechanisms for Evolving Graph,2025,1,2 Related Work,inputs/lr-citation-audit-final.json
+ding2021vqgnn,VQ-GNN: A Universal Framework to Scale up Graph Neural Networks using Vector Quantization,2021,1,2 Related Work,inputs/lr-citation-audit-final.json
+dy-sign,Dynamic Spiking Graph Neural Networks,2024,1,2 Related Work,inputs/lr-citation-audit-final.json
+gholami2022quantization,A Survey of Quantization Methods for Efficient Neural Network Inference,2022,1,2 Related Work,inputs/lr-citation-audit-final.json
+gowal2018ibp,On the Effectiveness of Interval Bound Propagation for Training Verifiably Robust Models,2018,1,2 Related Work,https://arxiv.org/abs/1810.12715
+hao2023offset,Bridging the Gap between ANNs and SNNs by Calibrating Offset Spikes,2023,1,2 Related Work,inputs/lr-citation-audit-final.json
+hu2023fast,Fast-SNN: Fast Spiking Neural Network by Converting Quantized ANN,2023,1,2 Related Work,inputs/lr-citation-audit-final.json
+huang2025ecmt,Towards High-performance Spiking Transformers from ANN to SNN Conversion,2024,2,2 Related Work,inputs/lr-citation-audit-final.json
+jacob2018quantization,Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference,2018,1,2 Related Work,https://doi.org/10.1109/CVPR.2018.00286
+katz2017reluplex,Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks,2017,1,2 Related Work,https://doi.org/10.1007/978-3-319-63387-9_5
+li2023graph1bit,A Graph is Worth 1-bit Spikes: When Graph Contrastive Learning Meets Spiking Neural Networks,2023,1,2 Related Work,inputs/lr-citation-audit-final.json
+li2023seenn,{SEENN}: Towards Temporal Spiking Early Exit Neural Networks,2023,1,2 Related Work,inputs/lr-citation-audit-final.json
+li2024erroraware,Error-Aware Conversion from ANN to SNN via Post-training Parameter Calibration,2024,2,2 Related Work,inputs/lr-citation-audit-final.json
+lv2024group,Optimal ANN-SNN Conversion with Group Neurons,2024,1,2 Related Work,inputs/lr-citation-audit-final.json
+mirman2018diffai,Differentiable Abstract Interpretation for Provably Robust Neural Networks,2018,1,2 Related Work,https://proceedings.mlr.press/v80/mirman18b.html
+msg,Spiking Graph Neural Network on Riemannian Manifolds,2024,1,2 Related Work,inputs/lr-citation-audit-final.json
+nagel2021white,A White Paper on Neural Network Quantization,2021,1,2 Related Work,https://arxiv.org/abs/2106.08295
+nunes2022snnsurvey,Spiking Neural Networks: A Survey,2022,1,2 Related Work,inputs/lr-citation-audit-final.json
+one-spike,One-Spike SNN: Single-Spike Phase Coding With Base Manipulation for ANN-to-SNN Conversion Loss Minimization,2025,1,2 Related Work,inputs/lr-citation-audit-final.json
+pei2020geomgnn,Geom-GCN: Geometric Graph Convolutional Networks,2020,1,4 Experiments and Results,https://arxiv.org/abs/2002.05287
+platonov2023heterophily,A Critical Look at the Evaluation of GNNs under Heterophily: Are We Really Making Progress?,2023,1,4 Experiments and Results,https://arxiv.org/abs/2302.11640
+signnn,{SiGNN}: A spike-induced graph neural network for dynamic graph representation learning,2025,1,2 Related Work,inputs/lr-citation-audit-final.json
+spikenet,Scaling Up Dynamic Graph Representation Learning via Spiking Neural Networks,2023,1,2 Related Work,inputs/lr-citation-audit-final.json
+spikinggcn,Spiking Graph Convolutional Networks,2022,1,2 Related Work,inputs/lr-citation-audit-final.json
+sun2024spikegraphormer,SpikeGraphormer: A High-Performance Graph Transformer with Spiking Graph Attention,2026,1,2 Related Work,inputs/lr-citation-audit-final.json
+tailor2021degreequant,Degree-Quant: Quantization-Aware Training for Graph Neural Networks,2021,1,2 Related Work,inputs/lr-citation-audit-final.json
+wan2023adaqp,Adaptive Message Quantization and Parallelization for Distributed Full-graph GNN Training,2023,1,2 Related Work,inputs/lr-citation-audit-final.json
+wang2022qgtc,QGTC: Accelerating Quantized Graph Neural Networks via GPU Tensor Core,2022,1,2 Related Work,inputs/lr-citation-audit-final.json
+wang2022taxonomicsnn,A hierarchical taxonomic survey of spiking neural networks,2022,1,2 Related Work,inputs/lr-citation-audit-final.json
+wong2018provable,Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope,2018,1,2 Related Work,https://proceedings.mlr.press/v80/wong18a.html
+yang2016planetoid,Revisiting Semi-Supervised Learning with Graph Embeddings,2016,1,4 Experiments and Results,https://proceedings.mlr.press/v48/yanga16.html
+you2024spikezip,SpikeZIP-TF: Conversion is All You Need for Transformer-based SNN,2024,1,2 Related Work,inputs/lr-citation-audit-final.json
+zhang2025sgnnbench,{SGNNBench}: A Holistic Evaluation of Spiking Graph Neural Networks on Large-scale Graphs,2026,1,2 Related Work,inputs/lr-citation-audit-final.json
+zhao2025ttfs,TTFSFormer: A TTFS-based Lossless Conversion of Spiking Transformer,2025,1,2 Related Work,inputs/lr-citation-audit-final.json
+zhu2023a2q,{A$^2$Q}: Aggregation-Aware Quantization for Graph Neural Networks,2023,1,2 Related Work,inputs/lr-citation-audit-final.json

@@ -1,0 +1,61 @@
+{
+  "stage": "P4",
+  "split": "Fashion-MNIST official test, first final evaluation after teacher selection",
+  "seed_policy": "teacher seeds selected on validation only",
+  "rows": [
+    {
+      "seed": 41,
+      "method": "signed_uniform",
+      "teacher_accuracy": 0.830500066280365,
+      "neighbor_jaccard": 0.06206273970231945,
+      "winner_agreement": 0.47796236250549556,
+      "events": 6272000,
+      "samples": 2000
+    },
+    {
+      "seed": 41,
+      "method": "signed_multilevel",
+      "teacher_accuracy": 0.830500066280365,
+      "neighbor_jaccard": 0.050423349468091586,
+      "winner_agreement": 0.5060707800909877,
+      "events": 6271971,
+      "samples": 2000
+    },
+    {
+      "seed": 42,
+      "method": "signed_uniform",
+      "teacher_accuracy": 0.8400000333786011,
+      "neighbor_jaccard": 0.06210636778020866,
+      "winner_agreement": 0.4898019669726491,
+      "events": 6272000,
+      "samples": 2000
+    },
+    {
+      "seed": 42,
+      "method": "signed_multilevel",
+      "teacher_accuracy": 0.8400000333786011,
+      "neighbor_jaccard": 0.10635766717326478,
+      "winner_agreement": 0.546438445597887,
+      "events": 6271979,
+      "samples": 2000
+    },
+    {
+      "seed": 43,
+      "method": "signed_uniform",
+      "teacher_accuracy": 0.8375000357627869,
+      "neighbor_jaccard": 0.07092390512226875,
+      "winner_agreement": 0.4781519357264042,
+      "events": 6272000,
+      "samples": 2000
+    },
+    {
+      "seed": 43,
+      "method": "signed_multilevel",
+      "teacher_accuracy": 0.8375000357627869,
+      "neighbor_jaccard": 0.08476282756267933,
+      "winner_agreement": 0.5101050595715642,
+      "events": 6271966,
+      "samples": 2000
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "17682",
+  "status": "finish",
+  "chatSessionId": "2a8823db9cc05765727c871f2740d1cd",
+  "steps": 40
+}
+workspace: novix debug ls task:17682   trajectory: novix debug traj task:17682

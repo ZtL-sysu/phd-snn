@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "stage": "P6/AutoResearchClaw-16-PAPER_OUTLINE",
+  "status": "failed-validation",
+  "arc_checkout": "C:\\code\\AutoResearchClaw",
+  "arc_version": "0.3.1",
+  "arc_stage_source": "C:\\code\\AutoResearchClaw\\researchclaw\\pipeline\\stage_impls\\_paper_writing.py",
+  "arc_stage_source_sha256": "aa1a84ff85691fed8a6691d0ab1839e5b6e449347840458ed10535432b559321",
+  "executor_identity": {
+    "provider": "openai-compatible",
+    "base_url": "https://api.deepseek.com/v1",
+    "wire_api": "chat_completions",
+    "configured_model": "deepseek-v4-pro",
+    "response_model": "deepseek-v4-pro",
+    "researchclaw_version": "0.3.1"
+  },
+  "context_isolation": {
+    "status": "verified-clean-external-boundary",
+    "external_message_count": 3,
+    "external_messages_sha256": "9a3dfeacb7093c87ea91c2125a343c9dcc911dbc49d9242873d3e62f5938bda1",
+    "arc_internal_prompt_sent_to_model": false,
+    "raw_execution_logs_collected": false,
+    "internal_arc_calls": 1,
+    "external_model_calls": 1,
+    "note": "The installed ARC Stage 16 implementation was executed, but an adapter replaced its historical context prompt at the external model boundary with the exact writing_adapter messages from request-p6.json. ARC analysis/decision files were not sent."
+  },
+  "response": {
+    "prompt_tokens": 13423,
+    "completion_tokens": 11396,
+    "total_tokens": 24819,
+    "finish_reason": "stop",
+    "truncated": false
+  },
+  "validation": {
+    "valid": false,
+    "problems": [
+      "section headings are [], expected ['1 Introduction', '2 Related Work', '3 Method', '4 Experiments and Results', '5 Discussion', '6 Conclusion']",
+      "Conclusion section is missing or incomplete",
+      "missing required evidence fragment: matched total padded serialized-bit budget"
+    ],
+    "expected_sections": [
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "4 Experiments and Results",
+      "5 Discussion",
+      "6 Conclusion"
+    ],
+    "actual_sections": [],
+    "outline_sha256": "3d0c89dd46fed93f342c4d38de5bb18fcbcef4a92cecc18dc17525ecc417f8c8"
+  },
+  "inputs": {
+    "request_p6_sha256": "1049837cda206ac8ff11dfb1d5d3391b4c34fc38aae85668313eb8a0cbf6d49f",
+    "analysis_sha256": "5b895f3ce6fcfcdc9654988c5f3d2e7bf3050df2112534934a360cd44bbcb4dc",
+    "decision_sha256": "a6479351e8006a6bb7e2bace2c46c96eb41d47d915723a081f28256a4aeb8210"
+  },
+  "arc_stage_result": {
+    "stage": "16",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "outline.md"
+    ],
+    "evidence_refs": [
+      "stage-16/outline.md"
+    ]
+  }
+}

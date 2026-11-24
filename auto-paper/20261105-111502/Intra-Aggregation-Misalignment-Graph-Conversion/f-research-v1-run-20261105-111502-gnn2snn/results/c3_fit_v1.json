@@ -1,0 +1,11 @@
+{
+  "c": 0.05370670480172348,
+  "n_pairs": 21,
+  "epsilon_pp": 1.5,
+  "fitted_graphs": [
+    "cora",
+    "citeseer",
+    "pubmed"
+  ],
+  "pearson_r": 0.2874605013340074
+}

@@ -1,0 +1,37 @@
+{
+  "round": "023",
+  "repair": "local structural contract v1->v2 with frozen versioned snapshot",
+  "old_contract_version": "v1",
+  "new_contract_version": "v2",
+  "old_binding": {
+    "path": "experiment-traceability.md",
+    "sha256": "34b498f3e124221882d10a6f02ddef988f0589f9efbce3ca6fe428e82c35d14e"
+  },
+  "live_hash_of_mutable_log": "dafea5c70e9cf4cc0aa8a845fa7ef8a01988005e23ebf22d2714a000d2358ba0",
+  "frozen_snapshot": {
+    "path": "contract-snapshots\\experiment-traceability-frozen-v2.md",
+    "sha256": "dafea5c70e9cf4cc0aa8a845fa7ef8a01988005e23ebf22d2714a000d2358ba0",
+    "bytes": 23407
+  },
+  "v2_contract_document": {
+    "path": "execution-contract-v2.md",
+    "sha256": "f41cf3a05805965bc8287b603b869335bb450330690be8ee600b8dd97d07e941"
+  },
+  "backup_of_original_state": "pipeline-state.json.bak-pre-contract-v2-round023",
+  "history_events": [
+    {
+      "action": "reopen",
+      "stage": "P0",
+      "reason": "round-023 contract v1->v2: replace immutable hash binding of mutable append-only experiment-traceability.md with frozen versioned snapshot contract-snapshots/experiment-traceability-frozen-v2.md; original stale-hash failure evidence preserved; no scientific stage advanced."
+    }
+  ],
+  "stages_status_unchanged": true,
+  "stages_pending": 26,
+  "pass_events": 0,
+  "contract_entries": 11,
+  "all_contract_hashes_correct": true,
+  "workflow_complete": false,
+  "submission_ready": false,
+  "mutable_log_modified": false,
+  "scientific_gates_advanced": 0
+}

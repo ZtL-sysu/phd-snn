@@ -1,0 +1,29 @@
+topic: Operator-aligned low-rank sparse residual coefficients for frozen GNN-to-SNN conversion
+target_venue: Q2+ journal / IEEE TNNLS-style
+main_claim: exact serialized-cost improvement in hidden/logit MSE and teacher agreement
+method: SVD or random basis plus sensitivity-selected sparse exact residual coefficients; rate-coded conversion
+datasets: Cora, Chameleon, Squirrel
+baselines: full float; SVD/random; top-abs/random residual; dense uniform; A2Q-style mixed precision; One-Spike-style adaptation
+primary_metric: hidden MSE and logit MSE
+secondary_metrics: accuracy, teacher agreement, exact bits, coefficients, latency, memory
+expected_minimum: complete exact-cost curves and one task gain
+expected_strong: LR-A through LR-E in guidance-v2
+strong_result_entry_gate: all binding rows pass
+must_run_experiments: LR-A,B,C,D,E
+must_have_ablations: sensitivity vs top-abs vs random; SVD vs random basis; exact-bit prior-art adaptations
+figure_table_decision_rules: pipeline Figure 1, exact-bit table, Pareto, ablation and runtime tables
+experiment_traceability: raw JSON + cost audit + code hashes + visual mapping
+citation_requirements: minimum 36 unique verified relevant references, majority 2022-2026
+citation_dedup_requirements: DOI/arXiv/title/version audit
+local_artifact_policy: all artifacts under v2 run root
+page_length_policy: proportionate
+single_final_pdf_template_policy: one paper.pdf
+central_question: exact-cost benefit of downstream-sensitivity sparse residuals
+intended_reader: graph compression and neuromorphic conversion researchers
+domain_design_bridge: large A X transport -> operator basis + sensitivity residual allocation -> exact-cost rate-coded conversion
+planned_claim: equal-cost improvement over strong adaptations
+observed_finding: pending
+writing_preferences_and_source: English manuscript, user full-pipeline request
+protected_scope_and_source: v1 evidence immutable; negative results preserved
+venue_length_requirements_and_source: none verified
+open_assumptions: local static graphs, frozen two-layer GCN, no energy claim

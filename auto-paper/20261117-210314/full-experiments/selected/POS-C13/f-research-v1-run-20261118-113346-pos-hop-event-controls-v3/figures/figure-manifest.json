@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "figure_count": 3,
+  "generator": "research/make_pos_figures.py",
+  "files": [
+    {
+      "path": "figures/captions.md",
+      "sha256": "9aa7a01b421c3b84d811d9ee2c2f2f680e3e8ba63017e4eadf077d0b8b7786f1",
+      "bytes": 591
+    },
+    {
+      "path": "figures/data/figure1-hop-coding.pdf",
+      "sha256": "696258c59f4136e92e0394e1aa5546c864e3bfee19f9948af760b572a930b3ab",
+      "bytes": 22827
+    },
+    {
+      "path": "figures/data/figure1-hop-coding.png",
+      "sha256": "67e9b0648ffc2537312f48cfa20cdc6130cc2f6486cf829a32dbbfe2a2ea8475",
+      "bytes": 103298
+    },
+    {
+      "path": "figures/data/figure1-hop-coding.svg",
+      "sha256": "142e54b2c433feec2205f4e250d7ae56c8139906a2a646ecc32e0fc5ef4c5dcc",
+      "bytes": 48068
+    },
+    {
+      "path": "figures/data/figure2-method-tradeoff.pdf",
+      "sha256": "efe6915c3b0c8465a7ca01e5817305cb318afcf92ef7949d81ddb927a2027d41",
+      "bytes": 18527
+    },
+    {
+      "path": "figures/data/figure2-method-tradeoff.png",
+      "sha256": "44a8ddce5d7163edcba875efe2452b06968c2ac6d4cb0644f2d071408407cc00",
+      "bytes": 146022
+    },
+    {
+      "path": "figures/data/figure2-method-tradeoff.svg",
+      "sha256": "6d2f40ec1db1e6e86e81ac528a085e7237d81795c95836c21ed700458eebe01e",
+      "bytes": 64557
+    },
+    {
+      "path": "figures/data/figure3-order-controls.pdf",
+      "sha256": "22444107decd881359d53f415ab2977d0d423d88125289137e659de56af02f73",
+      "bytes": 18005
+    },
+    {
+      "path": "figures/data/figure3-order-controls.png",
+      "sha256": "30a4fd9dca685668800b284622bee5d3c96e046bfd1bf8382fb67f0f472dfcad",
+      "bytes": 133320
+    },
+    {
+      "path": "figures/data/figure3-order-controls.svg",
+      "sha256": "bd4bf9e2a209da259cd96592cdddc607ceff72aa8cba33d175ed6e04a7f04e97",
+      "bytes": 65259
+    },
+    {
+      "path": "figures/source-data/figure2-method-tradeoff.csv",
+      "sha256": "472a69d917990d670a905d01cb671b15ab2e78aceb704e992d14b6d491f5178a",
+      "bytes": 797
+    },
+    {
+      "path": "figures/source-data/figure3-order-controls.csv",
+      "sha256": "8c0a1326c806323471625e3657fa4c3202357d18405bc6cd6771e3debd2e7ff0",
+      "bytes": 1791
+    }
+  ],
+  "visual_qa": [
+    "Figure 1 inspected: two-stage hop/serialization chain legible",
+    "Figure 2 inspected: three panels and error bars legible",
+    "Figure 3 inspected: log permutation and ratio gates legible"
+  ]
+}

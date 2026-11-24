@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "stage": "P21/final-delivery-consistency",
+  "run_root": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3",
+  "package": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\deliverables\\LR-C05-final-v1",
+  "clean_extraction": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\LR-C05\\f-research-v1-run-20261118-004321-lr-logit-fidelity-v3\\writing\\p21-clean-extraction-v1",
+  "source_consistency": {
+    "paper.tex": {
+      "accepted_sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf",
+      "package_sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf",
+      "extracted_sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf",
+      "archive_sha256": "c5729cfd8e0e99910a93eaedc9f90cfa3e92ab4996753e33a57d4eee9c3ddcbf",
+      "match": true
+    },
+    "references.bib": {
+      "accepted_sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee",
+      "package_sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee",
+      "extracted_sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee",
+      "archive_sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee",
+      "match": true
+    },
+    "figures/figure1-architecture.png": {
+      "accepted_sha256": "8f5d6ee669b6fca6ab17673883995e2b89f28042127b435ba7d0e366311eb5ef",
+      "package_sha256": "8f5d6ee669b6fca6ab17673883995e2b89f28042127b435ba7d0e366311eb5ef",
+      "extracted_sha256": "8f5d6ee669b6fca6ab17673883995e2b89f28042127b435ba7d0e366311eb5ef",
+      "archive_sha256": "8f5d6ee669b6fca6ab17673883995e2b89f28042127b435ba7d0e366311eb5ef",
+      "match": true
+    },
+    "figures/data/figure2-main-logit-mse.png": {
+      "accepted_sha256": "4e6ca000b8e60720662b5d2ab7d63cf2b8b88b41e02f3d46a06f69ad3c82382a",
+      "package_sha256": "4e6ca000b8e60720662b5d2ab7d63cf2b8b88b41e02f3d46a06f69ad3c82382a",
+      "extracted_sha256": "4e6ca000b8e60720662b5d2ab7d63cf2b8b88b41e02f3d46a06f69ad3c82382a",
+      "archive_sha256": "4e6ca000b8e60720662b5d2ab7d63cf2b8b88b41e02f3d46a06f69ad3c82382a",
+      "match": true
+    },
+    "figures/data/figure3-budget-sensitivity.png": {
+      "accepted_sha256": "c7d0bd40d90d2357966e2946958366fddffd8d875536cd1c1728ac334eebcff6",
+      "package_sha256": "c7d0bd40d90d2357966e2946958366fddffd8d875536cd1c1728ac334eebcff6",
+      "extracted_sha256": "c7d0bd40d90d2357966e2946958366fddffd8d875536cd1c1728ac334eebcff6",
+      "archive_sha256": "c7d0bd40d90d2357966e2946958366fddffd8d875536cd1c1728ac334eebcff6",
+      "match": true
+    },
+    "figures/data/figure4-tradeoff-and-runtime.png": {
+      "accepted_sha256": "559ae18d28099d4089d9f62800d4b9f88763c43a3582409cb3e5edf83c7969ba",
+      "package_sha256": "559ae18d28099d4089d9f62800d4b9f88763c43a3582409cb3e5edf83c7969ba",
+      "extracted_sha256": "559ae18d28099d4089d9f62800d4b9f88763c43a3582409cb3e5edf83c7969ba",
+      "archive_sha256": "559ae18d28099d4089d9f62800d4b9f88763c43a3582409cb3e5edf83c7969ba",
+      "match": true
+    }
+  },
+  "accepted_pdf": {
+    "sha256": "1b492d599edb67314af1fa6369e95d06e2fecc9ffade67fe6cdd920cc9461d73",
+    "package_sha256": "1b492d599edb67314af1fa6369e95d06e2fecc9ffade67fe6cdd920cc9461d73",
+    "package_copy_match": true,
+    "pages": 11,
+    "embedded_font_failures": []
+  },
+  "clean_recompile": {
+    "latexmk_returncode": 0,
+    "sha256": "4d1ef7828672645c42faa6a05a4de3f8865f70070aa05b79e161668bb2749fbe",
+    "pages": 11,
+    "embedded_font_failures": [],
+    "normalized_text_match": true,
+    "accepted_normalized_text_sha256": "104aa289354477fe848885f654202d6dce109850f576198e5ef76535a885107c",
+    "clean_normalized_text_sha256": "104aa289354477fe848885f654202d6dce109850f576198e5ef76535a885107c"
+  },
+  "bibliography": {
+    "package_copy_match": true,
+    "entry_count": 41,
+    "citation_key_count": 41,
+    "uncited_entries": [],
+    "missing_bibliography_keys": []
+  },
+  "pdf_text_checks": {
+    "question_mark_placeholders": false,
+    "contains_conclusion": true,
+    "contains_references": true
+  },
+  "path_containment": true
+}

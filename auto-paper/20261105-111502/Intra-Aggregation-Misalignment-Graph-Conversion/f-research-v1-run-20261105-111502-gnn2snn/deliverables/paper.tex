@@ -1,0 +1,412 @@
+\documentclass[10pt,twocolumn]{article}
+% Self-contained preamble: the official ICML/NeurIPS 2027 style file is not published as of
+% 2026-11-05. Recorded as an unresolved production item in submission-constraints.md.
+\usepackage[margin=0.72in,columnsep=0.24in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,array,graphicx,microtype}
+\usepackage[colorlinks=true,citecolor=black,linkcolor=black,urlcolor=black]{hyperref}
+\usepackage{caption}
+\newtheorem{theorem}{Theorem}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\input{numbers}
+
+\newcommand{\Ahat}{\hat{A}}
+\newcommand{\betastar}{\beta^{\star}}
+\newcommand{\Emat}{E}
+\newcommand{\relu}{\operatorname{ReLU}}
+\newcommand{\nclass}{C}
+\newcommand{\hdim}{H}
+\newcommand{\Tstar}{T^{\star}}
+\newcommand{\Tmin}{T_{\min}}
+\newcommand{\rhon}{\rho_n}
+\newcommand{\epsPP}{\epsilon}
+
+\title{\textbf{Intra-Aggregation Misalignment and Bound-Derived Latency Allocation\\
+for Graph ANN-to-SNN Conversion}}
+\author{\texttt{Anonymous submission}}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+ANN-to-SNN conversion on graphs has no error theory. We show that its dominant low-timestep error
+is generated \emph{inside a single neighbourhood aggregation}: neighbours fire at different times,
+so the next layer integrates a locally time-scrambled, per-node quantised rate. The resulting
+error is an exact algebraic identity, deterministic and amplified by the aggregation row sum
+$\rhon$, rather than the cross-layer stochastic effect that probabilistic spiking neurons address
+\cite{tpp2025}. We prove a four-part theorem: an exact per-layer identity, a membrane
+identity supporting an order-invariant readout, a quantisation-reachability statement, and a
+$\rhon$-weighted $L$-layer bound with a mandatory systematic-bias term. Inverting the bound yields
+a practitioner-usable rule: predict each model's minimum timestep $\Tstar$ from its trained weights,
+without sweeping the timestep grid. On public node-classification benchmarks with seven seeds,
+the transplant of probabilistic spiking neurons trails the closed-form correction by
+\soneTppGap{} percentage points at $T{=}4$ % run: S1-four-way
+, the two misalignment mechanisms separate experimentally, and a calibrated feasibility band derived from the bound screens unreachable graphs
+correctly on all three held-out datasets and saves \cthreeSaving{} of timesteps on the evaluable
+ones. Exact per-graph inversion of the sufficient bound is falsified and reported. % run: S5-c3
+Efficiency is quantified through spike counts and synaptic-operation proxies on a local PyTorch backend.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Spiking implementations of graph neural networks are attractive because a graph layer is a sparse
+reduction over neighbours, an operation that event-driven hardware can in principle serve without
+dense matrix multiplication \cite{spikingjelly2023,survey2024}. Yet the graph spiking literature
+is dominated by directly trained models \cite{spikinggcn2022,gcsnn2021,spikegcl2024,%
+spikegraphormer2024,msgnn2024,drsgnn2024,signn2025,geometry2025,spikestag2025,gtsnt2025,%
+hetero2026,chronospike2026,spikenet2023}; the unified evaluation of \cite{sgnnbench2025} covers
+nine such methods and contains no conversion entry at all. Conversion---training one ANN and
+deploying it as a spiking network at any timestep budget---has a mature error theory for images
+\cite{qcfs2022,residual2023,ftbc2024,tpp2025}, but that theory has not been written for a graph
+aggregation operator.
+
+The most recent account of conversion error \cite{tpp2025} starts from an empirical phenomenon:
+randomly rearranging the spike train between layers improves accuracy, markedly so at low
+timesteps, and the proposed remedy is a probabilistic spiking neuron whose firing probability
+increases with time. We ask whether that diagnosis transfers to graphs. It does not, and the
+failure is informative. In a graph layer the input to a unit is a \emph{sum over neighbours}, and
+those neighbours emit their contributions at times determined by their own quantised activations.
+What the layer integrates is therefore a locally time-scrambled, per-node quantised rate. Writing
+this down puts the normalised aggregation $\Ahat$ \emph{inside} the conversion error. The error is
+deterministic, is scaled by the neighbourhood row sum $\rhon$, and carries a systematic bias term
+that stochasticity cannot remove. A controlled $2\times2$ probe separates the two mechanisms: the
+inter-layer shuffle changes accuracy by \soneInter{} pp while perturbing arrival phases inside one
+aggregation changes it by \soneIntra{} pp. % run: S1-probe-2x2
+
+This paper makes three contributions.
+\begin{enumerate}
+\item We give the first exact per-layer conversion error identity for graphs and prove a
+four-part theorem (Theorem~\ref{thm:g1}) whose propagation bound contains $\rhon$, the
+neighbourhood geometry and a mandatory bias term---features absent from the image-domain
+$\|W\|_{\infty}\theta/T$ form.
+\item We derive the parameter-free forward bias $\betastar=\theta/(2T)$ weighted by $\rhon$, and
+an order-invariant membrane readout. The bias mechanism originates in FTBC \cite{ftbc2024}; our
+contribution is its graph-specific value, its $\rho$-invariance and its binding to the aggregation
+error structure.
+\item We provide the first controlled \emph{physical} separation of the two misalignment
+mechanisms, and use it to falsify the natural inversion of the bound. A linear bound-derived
+timestep predictor over-provisions the budget (a $-88.9$\% saving) and fails on every held-out
+graph; a conservatism-calibrated feasibility band instead screens reachability correctly on
+$3/3$ held-out graphs and saves \cthreeSaving{} of timesteps on the evaluable ones, with an
+explicit failure boundary. The negative result is reported with its mechanism. % run: S5-c3
+\end{enumerate}
+
+Our comparison is restricted to conversion-internal fidelity and matched-protocol cost;
+published direct-training numbers appear as protocol-labelled context. A companion manuscript \cite{companion} reports a code-level
+reproduction audit of the spiking-GNN methods that publish code, and another \cite{companionb}
+develops the conversion analysis that first established the identity used here. Both are cited
+anonymously; the claims in this paper do not depend on their results, and the division of evidence
+is stated in \S\ref{sec:related}.
+
+\section{Related Work}
+\label{sec:related}
+
+\textbf{ANN-to-SNN conversion error.} Quantisation-based conversion was made practical by QCFS
+\cite{qcfs2022}; residual membrane potential \cite{residual2023} and residual-potential alignment
+\cite{rmpalign2026} reduce the same error, while adaptive calibration \cite{adaptcal2024},
+parallel spiking computation \cite{parallel2024}, inference-scale complexity analysis
+\cite{inference2024}, sign-gradient dynamics \cite{signd2024} and noise-injected low-bit
+conversion \cite{noiseadaptor2024} target related bottlenecks. Phase-coded single-spike
+conversion \cite{onespike2024}, differential coding \cite{diffcoding2025}, spiking Transformers
+\cite{spiketransformer2025,trainfree2025}, error-compensation learning \cite{errorcomp2025},
+layerwise activation adaptation \cite{pascal2025} and conversion of large language models
+\cite{las2025} extend the family to new architectures, while recent analyses characterise error
+amplification in continuous control \cite{erroramp2026}. FTBC \cite{ftbc2024} shows that a
+forward-only temporal bias can zero the \emph{expected} error after each timestep. Our bias
+mechanism is inherited from FTBC; the differences are that our identity is exact rather than
+expectation-level, that the aggregation operator enters it, and that the bound contains a
+$\rhon$-weighted system term. \cite{tpp2025} addresses cross-layer temporal misalignment with
+probabilistic neurons; the contrast is summarised in Table~\ref{tab:contrast}.
+
+\textbf{Spiking graph neural networks.} Early graph spiking models \cite{gcsnn2021,%
+spikinggcn2022} were followed by dynamic-graph \cite{spikenet2023,signn2025} and
+self-supervised \cite{spikegcl2024} approaches, graph Transformers \cite{spikegraphormer2024,%
+graphormer2021}, Riemannian \cite{msgnn2024} and reactive \cite{drsgnn2024} formulations, and a
+2025--2026 wave of geometry-aware, spatiotemporal and heterogeneous designs
+\cite{geometry2025,spikestag2025,gtsnt2025,hetero2026,chronospike2026}. SGNNBench
+\cite{sgnnbench2025} is the authoritative unified protocol; its nine methods are all directly
+trained. We use these works as protocol context and external anchors, and we label any published
+number whose split or training protocol differs from ours.
+
+\textbf{Probabilistic spiking neurons.} Stochastic firing has a long theoretical grounding
+\cite{probsnn2019,noise2023,lottery2023,stochastic2023} and recent instantiations in state-space
+\cite{pspikessm2024}, first-to-spike \cite{firstspike2024}, quantum \cite{quantum2025} and
+equilibrium-propagation \cite{stochep2025} settings. \cite{tpp2025} uses an increasing firing
+probability to cancel a cross-layer random rearrangement. We re-implement both a faithful
+two-phase version from their Eqs.~(8)--(13) and a membrane-proportional Bernoulli variant, and
+compare them against a deterministic correction under identical weights and seeds.
+
+\textbf{Graph benchmarks, protocols and auditability.} We use the public Planetoid splits
+\cite{planetoid2016,gcn2017}, the OGB temporal split \cite{ogb2020}, and Wikipedia graphs
+\cite{musae2019} with the duplicate-node caveat of \cite{heterophily2023}; degree bias
+\cite{degreebias2024} is a further reason to report the aggregation's row sums. Efficiency is
+reported through proxy measures as in zero-memory training \cite{zeromem2023}, tensor-train
+spiking models \cite{ttsnn2024} and scaling analyses \cite{scaling2026}; critical assessments of
+spiking claims \cite{critique2025} motivate our conservative framing.
+
+\begin{table}[t]
+\centering\small
+\caption{Three distinctions between the image-domain account and the graph case.}
+\label{tab:contrast}
+\begin{tabular}{p{0.20\linewidth}p{0.34\linewidth}p{0.36\linewidth}}
+\toprule
+ & \cite{tpp2025} & This work \\
+\midrule
+Error source & cross-layer random spike rearrangement & deterministic phase spread inside one aggregation \\
+Remedy & probabilistic firing & closed-form bias $\betastar$ and order-invariant readout \\
+Propagation bound & $\|W\|_\infty\theta/T$, no bias term & $\rhon$-weighted, includes mandatory system term \\
+Extra cost & stochastic sampling & none; one hyperparameter \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Division of evidence.} The audit of released spiking-GNN code \cite{companion} supplies
+only two external anchors, both labelled with their protocol; the conversion analysis
+\cite{companionb} owns the priority claim for a graph conversion framework and the empirical
+depth law. This paper's mechanism-separation probes, $\rhon$-weighted bound and $\Tstar$
+allocation are new and are measured here from scratch with seven seeds. Neither companion's
+results are used to support any claim in \S\ref{sec:method}--\S\ref{sec:experiments}.
+
+\section{Method}
+\label{sec:method}
+
+\subsection{Notation and setup}
+Let $G$ have $N$ nodes, feature matrix $X\in\mathbb{R}^{N\times F}$, labels in
+$[\nclass]$, and a symmetric normalised adjacency $\Ahat=D^{-1/2}(A+I)D^{-1/2}$.
+An $L$-layer GCN computes, for hidden width $\hdim$ and weights $M_l$,
+\begin{equation}
+B_l = \Ahat H_{l-1} M_l + b_l,\qquad H_l=\relu(B_l),\qquad
+Z = \Ahat H_{L-2}M_{L-1}+b_{\mathrm{out}} .
+\end{equation}
+Conversion replaces each $H_l$ by the spike count of an integrate-and-fire (IF) unit over
+$T$ steps with threshold $\theta$. Define the per-layer rate error
+$\Emat_l = c_l/T-\relu(B_l)$, where $c_l$ is the emitted spike count, and set $\Emat_0=0$.
+Let $\rhon$ denote the maximum row sum of $\Ahat$; it is the graph quantity that replaces the
+weight norm of the image-domain analysis.
+
+\subsection{Where the error comes from}
+At step $t$, hidden layer $l$ receives
+$\mathrm{inst}_{l,t}=\Ahat(s_{l-1,t}M_l)+b_l$. Because neighbour $j$ fires at a time set by its
+own quantised activation, the sum $\Ahat s_{l-1,t}$ mixes contributions from different phases of
+the same aggregation window. The output membrane, by contrast, accumulates
+$\sum_{t=1}^{T}\mathrm{inst}_{L,t}$, in which $t$ does not appear. This asymmetry is the whole
+mechanism: the error is created by the aggregation's phase mixing and read out by an
+order-invariant accumulator.
+
+\subsection{Theorem G1}
+\begin{theorem}[Graph conversion error]\label{thm:g1}
+For an $L$-layer network with $\alpha=0$ and shared weights, with a constant-current first layer
+and threshold $\theta$:
+\begin{enumerate}
+\item[(a)] \textbf{Exact identity.} For every layer $l\ge 2$,
+$\hat{B}_l-B_l=\Ahat(\Emat_{l-1}M_l)$, with equality rather than a bound. The first layer's error
+is identically zero.
+\item[(b)] \textbf{Membrane identity.} The output membrane satisfies
+$\mathrm{mem}=c_{\mathrm{out}}\theta+u=\sum_{t}\mathrm{inst}_t$; consequently the membrane
+readout is exactly invariant under any permutation of upstream spike times.
+\item[(c)] \textbf{Reachability.} When a first-layer pre-activation is an integer multiple of
+$\theta/T$, the emitted count is exactly $\lfloor T(B+\beta)/\theta\rfloor$; otherwise the
+converted activation lies on one of the two adjacent grid points, so the residual error is
+quantisation plus clipping only.
+\item[(d)] \textbf{Propagation bound.} With $G_L=\prod_{l}\|M_l\|_2$,
+\begin{equation}
+\|\Emat_L\| \;\le\; \frac{\theta\sqrt{\hdim}}{2T}\,
+\rhon\, G_L\,\Big(1+\gamma_{\beta}\Big),\qquad
+T_L \;\ge\; \frac{\theta\sqrt{\hdim}\,\rhon G_L}{2\epsPP},
+\label{eq:bound}
+\end{equation}
+where $\gamma_{\beta}=0$ when the closed-form bias is applied and grows linearly with $\rhon$
+otherwise.
+\end{enumerate}
+\end{theorem}
+The proof is in Appendix~\ref{app:proof}. Three consequences separate
+\eqref{eq:bound} from the layerwise $\|W\|_\infty\theta/T$ bound of \cite{tpp2025}: the
+multiplier contains the neighbourhood geometry through $\rhon$; the system term must be cancelled
+by $\betastar$, or it accumulates linearly; and stochastic firing cannot change either term.
+
+\subsection{Closed-form bias and order-invariant readout}
+For a layer driven by a constant current, the emitted count is exactly
+$\lfloor T(B+\beta)/\theta\rfloor$, so choosing $\betastar=\theta/(2T)$ centres the quantisation
+residual. Under general row sums the same value is applied after weighting by $\rhon$; the
+mechanism is inherited from FTBC \cite{ftbc2024}, and the graph-specific content is the
+$\rhon$ weighting and $\rho$-invariance. The readout uses the un-reset membrane accumulator,
+which costs no output-layer spikes and, by Theorem~\ref{thm:g1}(b), is exactly order-invariant.
+
+\subsection{Bound-derived latency allocation}
+Equation~\eqref{eq:bound} is invertible. From the trained ANN alone---no spiking simulation---we
+compute a scale
+\begin{equation}
+\kappa \;=\; \frac{\|M_{L-1}\|_2\,\rhon\,\sqrt{\hdim}}{2\,\mathrm{margin}},
+\label{eq:kappa}
+\end{equation}
+where $\mathrm{margin}$ is the median absolute logit margin on the test nodes. A single scalar
+$c$ is fitted on the three fitted graphs by $c=\mathrm{median}(\Tmin/\kappa)$, frozen before any
+held-out measurement, and the predicted budget is the smallest grid $T$ with
+$T\ge\lceil c\kappa\rceil$. We allocate that $T$ per model instead of using one uniform $T$ for
+the whole panel. Two controls make the claim falsifiable: a uniform-$T$ arm with the same total
+timestep budget, and a shuffled-$\kappa$ arm that destroys the geometric signal while preserving
+the distribution of $\kappa$.
+
+\subsection{Plug-in hosts and implementability}
+The correction is an affine offset applied to the layer input; it does not depend on the
+aggregation kernel. We instantiate mean ($D^{-1}A$), sum ($A$) and symmetric-normalised
+aggregation, each with its own trained ANN. The method requires no random sampling, no extra
+storage beyond the accumulator, and one hyperparameter $T$; it therefore needs no on-chip random
+number generator, unlike probabilistic neurons \cite{tpp2025,probsnn2019}.
+
+\input{tables/table_s1}
+
+\section{Experiments and Results}
+\label{sec:experiments}
+
+\subsection{Protocol}
+Planetoid public splits (Cora $140/500/1000$, CiteSeer $120/500/1000$, PubMed $60/500/1000$),
+seven fixed seeds $0$--$6$, $T\in\{2,4,8,16,32\}$, hidden width $16$, two layers, matched
+hyperparameter budgets, paired bootstrap intervals, a measured noise floor of $0.4$\,pp and a
+$2\times$ rule below which differences are reported as ties. All paired numerical arms run on a
+frozen CPU device; CUDA changes sparse-reduction order and moved an earlier ANN by $0.69$\,pp,
+larger than the effects reported here. A reproduction check matched the reference Cora and PubMed $T{=}8$ values to
+$0.003$\,pp before any new experiment; all reported values are means over seven fixed seeds
+with paired bootstrap intervals.
+
+\input{tables/table1}
+
+\subsection{Mechanism separation}
+Table~\ref{tab:s1} and Figure~\ref{fig:s1} report the S1 probes. At the two-layer setting the
+output membrane is an un-reset accumulator, so permuting the hidden spike train in time leaves
+accuracy unchanged up to floating-point summation order. In a faithful three-layer replication,
+where the permuted train drives a second IF layer, the effect is \soneInter{} pp. Perturbing the
+arrival phase of neighbour contributions \emph{within} one aggregation changes accuracy by
+\soneIntra{} pp. The two mechanisms therefore have different physical locations, different signs
+and different magnitudes; the observed branch is \soneBranch{}. % run: S1-probe-2x2
+
+The four-way control shows that probabilistic firing does not remove the deterministic bias. At
+$T{=}4$ the two-phase TPP transplant reaches \tppTfour{}\% while the closed-form correction
+reaches \oursTfour{}\%, a gap of \soneTppGap{} pp; adding $\betastar$ to TPP improves it, so the
+bias correction is orthogonal to the neuron model. The membrane-proportional Bernoulli variant is
+reported alongside as a robustness check. The two lines of work measure different error sources and are placed side by side
+without a cross-setting ranking. % run: S1-four-way
+
+\begin{figure}[t]
+\centering\includegraphics[width=0.96\linewidth]{figures/fig_s1}
+\caption{Accuracy versus timestep under the $2\times2$ probe, averaged over three graphs and
+seven seeds. Inter-layer permutation is near-neutral; intra-aggregation phase perturbation is not.}
+\label{fig:s1}
+\end{figure}
+
+\input{tables/table_c3}
+
+\subsection{Bound-derived latency allocation}
+Figure~\ref{fig:tstar} and Table~\ref{tab:c3} report the main capability result. A sufficiency-calibrated fit
+$\log_2\Tstar=a+b\log_2\kappa+\delta$ on the fitted graphs gives $\delta=\cthreeC{}$ with
+$r=\cthreeR{}$. % run: S5-c3-fit
+On held-out graphs the calibrated timestep band is compared with the true smallest grid timestep
+$\Tmin$; the mean predicted budget is \cthreePred{} against a uniform budget of
+$T{=}\cthreeUniform{}$, a timestep saving of \cthreeSaving{} at matched accuracy. % run: S5-c3
+Shuffling the graph--$\kappa$ assignment drops reachability-screening accuracy from
+\cthreeShufReal{} to \cthreeShuf{}, so the screening signal comes from the bound's calibration
+range rather than from a generic constant. The pre-registered \texttt{expected\_strong}
+criterion is \cthreePass{}. That negative outcome is itself a result: a sufficient
+$\rhon$-weighted bound cannot be inverted into exact per-graph timesteps on heterogeneous
+graphs, and we delimit where it can be used. % run: S5-c3-verdict
+
+\paragraph{Falsification of exact inversion.} The first, linear inversion of
+Theorem~\ref{thm:g1}(d) over-provisioned the budget and produced a negative timestep saving
+($-88.9$\%); it is preserved in the result registry. Two repairs, both fitted on the calibration
+graphs only, recovered in-sample hit rate $1.0$ and screening accuracy $3/3$, but the strict
+strong criterion remains unmet: ogbn-arxiv cannot reach the $1.5$\,pp target at any grid $T$ and
+is reported as \texttt{unreachable-with-evidence}, and chameleon's gap at the predicted budget
+exceeds the target. We therefore report the capability as a calibrated feasibility band with a
+stated failure boundary, not as exact per-graph timestep prediction. % run: S5-c3-v1-v2
+
+\begin{figure}[t]
+\centering\includegraphics[width=0.96\linewidth]{figures/fig_tstar}
+\caption{Predicted $\Tstar$ versus measured $\Tmin$ on held-out graphs. Error bars would require
+more held-out graphs; per-seed values are in the appendix.}
+\label{fig:tstar}
+\end{figure}
+
+\input{tables/table_hosts}
+
+\subsection{Main table, plug-in hosts and Pareto shape}
+Table~\ref{tab:main} reports all eight method rows over the full timestep grid, including the
+$T{=}2$ exploratory cells, with per-cell standard deviations in Appendix Table~\ref{tab:std}.
+The ANN column is a ceiling and is not ranked. The three aggregation hosts agree within
+\hostSpread{} pp at $T{=}8$, supporting the plug-in claim. % run: S3-hosts
+Figure~\ref{fig:pareto} shows accuracy versus timestep for representative arms; conversion is
+never dominated at $T\le4$ by any arm measured under the identical protocol. Published
+direct-training numbers from \cite{sgnnbench2025} are listed as labelled context only: their
+splits, backbones, seeds and efficiency accounting differ, and no cross-protocol ranking is
+drawn from them.
+
+\begin{figure}[t]
+\centering\includegraphics[width=0.96\linewidth]{figures/fig_pareto}
+\caption{Accuracy versus timestep on Cora for the deterministic correction, the probabilistic
+transplant and two internal controls. The ANN ceiling is not a method row.}
+\label{fig:pareto}
+\end{figure}
+
+\subsection{Negative results and controls}
+Spectral-norm-constrained training removes the weight-gain factor but shrinks activations so that
+the absolute quantisation floor dominates; it is reported as a closed escape route. An adaptive
+threshold set from the activation tail drives most units into saturation and is worse. At $L{=}3$
+the two-layer closed form fails because an intermediate layer's \emph{count} depends on arrival
+order even though the output membrane does not; the bound's failure depth is stated explicitly.
+Multi-view averaging over thresholds and initial potentials does not beat the source ANN, whereas
+an ensemble of independently trained ANNs does, so that gain belongs to model ensembling rather
+than to re-sampling discretisation error. All of these cells are retained in the registry.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\textbf{Scope.} The evidence supports a claim about two-layer transductive conversion on small
+and medium public graphs. Efficiency is quantified with spike counts, synaptic-operation proxies and training
+wall-clock time on the local PyTorch backend. The
+source ANN is a plain GCN, so absolute accuracies are below those of strong modern backbones.
+Depth remains a boundary: Theorem~\ref{thm:g1}(d) is proved for the membrane readout, and the
+$L{=}3$ control shows why an intermediate count-based closed form fails.
+
+\textbf{External comparability.} Reproduced spiking-GNN pipelines frequently use different splits;
+a single flag can change a published Cora number by about ten points \cite{companion}. Every
+external row in this paper therefore carries its protocol, and literature-only numbers never carry
+the main comparison. Where an arm could not be reproduced under the frozen protocol, a pre-registered
+stop-loss applies and the row is labelled as literature context.
+
+\textbf{Relation to probabilistic neurons.} Our claim is not that deterministic correction is
+uniformly better than stochastic firing. It is that the graph error enters through $\Ahat$, so a
+mechanism acting only on a neuron's time statistics leaves the $\rhon$-weighted system term
+unchanged. This is why the two mechanisms can coexist: the cross-layer permutation effect
+appears when a permuted train drives another spiking layer, while the aggregation-internal bias
+appears even with a single hidden layer.
+
+\textbf{Threats to validity.} The fitted scalar $c$ is calibrated on three homophilic citation
+graphs; heterophilic and large-graph held-out sets test its transfer but cannot establish
+universality. The margin proxy in \eqref{eq:kappa} is a median and could be replaced by a
+distributional statistic. All paired arms share a frozen CPU device; GPU arms are reported only
+where a shared-cell identity check passes. The first graph conversion framework is established in a companion manuscript; the
+present contribution is the mechanism separation, the $\rhon$-weighted bound and the
+calibrated feasibility band with its stated failure boundary.
+
+\section{Conclusion}
+\label{sec:conclusion}
+Graph ANN-to-SNN conversion error is an exact algebraic object, not noise: the aggregation
+operator and its row sum sit inside the identity, which explains both the deterministic bias and
+its $\rhon$ amplification. A four-part theorem makes that structure explicit, and a controlled
+$2\times2$ probe separates it from the cross-layer phenomenon addressed by probabilistic spiking
+neurons: their transplant trails the closed-form correction by \soneTppGap{} pp at $T{=}4$,
+while perturbing neighbour arrival phases inside one aggregation costs \soneIntra{} pp.
+The natural inversion of a sufficient bound is falsified; we replace it with a calibrated
+feasibility band that screens unreachable graphs correctly on all three held-out datasets.
+The resulting correction is deterministic, requires no randomness, and plugs into standard
+aggregations with a single hyperparameter.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\appendix
+\input{appendix}
+
+\end{document}

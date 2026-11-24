@@ -1,0 +1,13 @@
+{"ts": "2026-11-11T18:19:41.763495", "round": 1, "submit_rc": 0, "task_id": "21528", "err": ""}
+{"ts": "2026-11-11T18:21:43.329933", "round": 1, "probe": 1, "task_id": "21528", "status": "processing", "steps": 0}
+{"ts": "2026-11-11T18:23:45.522970", "round": 1, "probe": 2, "task_id": "21528", "status": "processing", "steps": 0}
+{"ts": "2026-11-11T18:25:47.189497", "round": 1, "probe": 3, "task_id": "21528", "status": "processing", "steps": 0}
+{"ts": "2026-11-11T18:27:48.836079", "round": 1, "probe": 4, "task_id": "21528", "status": "error", "steps": 0}
+{"ts": "2026-11-11T18:42:53.515696", "round": 2, "submit_rc": 0, "task_id": "21558", "err": ""}
+{"ts": "2026-11-11T18:44:55.459593", "round": 2, "probe": 1, "task_id": "21558", "status": "processing", "steps": 0}
+{"ts": "2026-11-11T18:46:57.040879", "round": 2, "probe": 2, "task_id": "21558", "status": "processing", "steps": 0}
+{"ts": "2026-11-11T18:48:58.572464", "round": 2, "probe": 3, "task_id": "21558", "status": "processing", "steps": 0}
+{"ts": "2026-11-11T18:51:00.114160", "round": 2, "probe": 4, "task_id": "21558", "status": "error", "steps": 0}
+{"ts": "2026-11-11T19:06:02.835156", "round": 3, "submit_rc": 0, "task_id": "21589", "err": ""}
+{"ts": "2026-11-11T19:08:04.358566", "round": 3, "probe": 1, "task_id": "21589", "status": "processing", "steps": 1}
+{"ts": "2026-11-11T19:08:04.359448", "event": "PLATFORM_RECOVERED", "task_id": "21589"}

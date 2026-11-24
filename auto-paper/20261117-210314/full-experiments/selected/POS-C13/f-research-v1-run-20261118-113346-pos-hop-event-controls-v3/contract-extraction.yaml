@@ -1,0 +1,16 @@
+schema_version: 2
+guidance: inputs/guidance-v3.md
+representation: H=[X,AX,A^2X,A^3X]
+alphabet: 8 Lloyd centroids plus 1 escape symbol
+serialization:
+  symbol_bits: 4
+  escape_payload_bits: 32
+  codebook_bits_per_channel: 256
+  average_bits: 4 + 32*f_escape + 256/N
+shuffled_control: fit ordered channel codebooks, globally permute hop blocks, quantize shuffled columns with unchanged codebooks, compare to shuffled raw
+strong_gate:
+  hybrid_relative_error_max: 0.05
+  storage_reduction_min: 4.0
+  permutation_error_max: 1e-10
+  mismatched_shuffle_error_ratio_min: 1.25
+  balanced_accuracy_loss_max_pp: 2.0

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "stage": "P13/AutoResearchClaw-22-EXPORT_PUBLISH",
+  "status": "failed-validation",
+  "template": "generic",
+  "context": {
+    "input_paper": "writing\\p12-citation-updated-manuscript.md",
+    "input_paper_sha256": "8fd8534f9b54dadddd83366906c111e88db769fbe6376f67b823c146988c343f",
+    "bib_sha256": "be176ede7327203c59bbb3ceaf0482853863064406964a0d744a73fdc4f0e6bb",
+    "figure_inputs": [
+      "figures/data/figure1-certificate-chain.png",
+      "figures/data/figure2-width-tightening.png",
+      "figures/data/figure3-equality-tightening.png"
+    ]
+  },
+  "validation": {
+    "problems": [
+      "paper.pdf missing",
+      "bibliography command missing or duplicated"
+    ],
+    "paper_tex_sha256": "7f9f01744d22dd884dbec72764f260821505147d99abe6ca7a9f7b96b14be7bf",
+    "paper_pdf_sha256": "",
+    "references_sha256": "be176ede7327203c59bbb3ceaf0482853863064406964a0d744a73fdc4f0e6bb"
+  },
+  "arc_stage_result": {
+    "stage": "22",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "paper_final.md",
+      "paper_final_latex.md",
+      "references.bib",
+      "paper.tex"
+    ],
+    "evidence_refs": [
+      "stage-22/paper_final.md",
+      "stage-22/paper_final_latex.md",
+      "stage-22/references.bib",
+      "stage-22/paper.tex"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "packet": {
+    "path": "writing\\packet-p7.json",
+    "sha256": "8e4d35abfcf574b9058151518802486db74f2f474e48b3c9a4ba70dc3bb1aa4f"
+  },
+  "requests": [
+    {
+      "path": "writing\\request-p7-part-1-title-abstract-introduction-related-work.json",
+      "sha256": "9c7c1766b13e9c1c3382599c214744b0b96ee1ce246ea71011fa4c088bf3268d"
+    },
+    {
+      "path": "writing\\request-p7-part-2-method-experiments-setup.json",
+      "sha256": "23a5a243a2b3fe6901bcd5c9db47fad55fbbc2fdbc6578ec6698711223274c6a"
+    },
+    {
+      "path": "writing\\request-p7-part-3-results-discussion-conclusion.json",
+      "sha256": "7cc38bd39c242d4caaed8366417994c20e9488762da04faf363ff6097e2e32f5"
+    }
+  ],
+  "compatibility_fixture": {
+    "path": "writing/arc-draft-v1/stage-12/runs/migrated-verification.json",
+    "sha256": "c930721e22ccc699cb40e84d083bdc0b780afa0ef5794fba86f998097ec6c628",
+    "purpose": "satisfy ARC Stage 17 anti-simulation guard using truthful migrated evidence; not used as model context"
+  }
+}

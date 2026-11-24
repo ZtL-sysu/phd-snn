@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "stage": "P13/AutoResearchClaw-22-EXPORT_PUBLISH",
+  "status": "passed",
+  "template": "generic",
+  "context": {
+    "input_paper": "writing\\p13\\paper-export-input.md",
+    "input_paper_sha256": "8c5338a1d20a18c9a1d78b63d8b85fe476f9efcca0fb53a23be8a9f2796cad78",
+    "bib_sha256": "6486042a1f0e45745fe955e92658265c5a26dc299f754da4b936343736776508",
+    "figure_inputs": [
+      "figures/figure1-architecture.png",
+      "figures/data/figure2-main-logit-mse.png",
+      "figures/data/figure3-budget-sensitivity.png",
+      "figures/data/figure4-tradeoff-and-runtime.png"
+    ]
+  },
+  "validation": {
+    "problems": [],
+    "paper_tex_sha256": "1145079f0f162d318b6925d2aa44a427f1df24b21e2afc4d1fd751eb4c3f2aa1",
+    "paper_pdf_sha256": "c515f62bbaa2228f824ebdc21a3c573989a2590878488f94ae1d75a19c59b768",
+    "references_sha256": "348ce5f027b1def266c6fa38f61cb9d4f2d5c5b39bbd17c6ac4ffb8bdd0695ee"
+  },
+  "arc_stage_result": {
+    "stage": "22",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "paper_final.md",
+      "paper_final_latex.md",
+      "references.bib",
+      "paper.tex",
+      "charts/"
+    ],
+    "evidence_refs": [
+      "stage-22/paper_final.md",
+      "stage-22/paper_final_latex.md",
+      "stage-22/references.bib",
+      "stage-22/paper.tex",
+      "stage-22/charts/"
+    ]
+  }
+}

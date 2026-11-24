@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "stage": "P11/AutoResearchClaw-20-QUALITY_GATE",
+  "status": "passed",
+  "arc_version": "0.3.1",
+  "executor_identity": {
+    "provider": "acp",
+    "agent": "codex",
+    "agent_cli_version": "0.169.0-alpha.11.1",
+    "configured_model": "group/never-stuck",
+    "acpx_version": "0.19.2"
+  },
+  "context_isolation": {
+    "status": "verified-clean-external-boundary",
+    "request_messages_sha256": "168b4afd24d7070333f42e0dd50dce20aaa3b70d1c9b7bb69a3e69abccdafab3",
+    "internal_arc_calls": 1,
+    "external_model_calls": 1,
+    "arc_internal_prompt_sent_to_model": false,
+    "raw_execution_logs_sent_to_model": false,
+    "reviews_sent_to_model": false,
+    "note": "ARC Stage 20 control flow executed; external evaluator received only the P11 clean quality request."
+  },
+  "validation": {
+    "problems": [],
+    "score": 8.7,
+    "verdict": "proceed",
+    "manuscript_sha256": "2a418d00f6f1f509b0e43c9770d95ee2539086cbc76620240d567c1e33ccd6ca",
+    "quality_report_sha256": "0b977c973acf017a53c80a40219eec17d82aac1fd867e64d5494d30c29a6dac8"
+  },
+  "arc_stage_result": {
+    "stage": "20",
+    "status": "StageStatus.DONE",
+    "decision": "proceed",
+    "artifacts": [
+      "quality_report.json",
+      "fabrication_flags.json"
+    ],
+    "evidence_refs": [
+      "stage-20/quality_report.json"
+    ]
+  }
+}

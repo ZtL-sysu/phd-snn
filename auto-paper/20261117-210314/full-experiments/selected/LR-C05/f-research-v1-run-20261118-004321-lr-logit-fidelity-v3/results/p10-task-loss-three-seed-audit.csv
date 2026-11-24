@@ -1,0 +1,13 @@
+dataset,metric,proposed_three_seed_mean,best_control_mode,best_control_three_seed_mean,three_seed_mean_observed_degradation_pp,aggregation_rule
+cora,T2_accuracy,0.765,top_abs,0.7703333333333333,0.5333333333333301,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+cora,T2_teacher_agreement,0.8663333333333333,top_abs,0.871,0.4666666666666708,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+cora,T4_accuracy,0.7896666666666667,one_spike,0.795,0.5333333333333301,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+cora,T4_teacher_agreement,0.9333333333333335,top_abs,0.9326666666666666,0.0,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+chameleon,T2_accuracy,0.5146198830409356,a2q_node_budget,0.5248538011695906,1.0233918128654929,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+chameleon,T2_teacher_agreement,0.6776315789473685,a2q_node_budget,0.6885964912280702,1.0964912280701733,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+chameleon,T4_accuracy,0.5562865497076023,a2q_node_budget,0.5672514619883041,1.0964912280701844,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+chameleon,T4_teacher_agreement,0.8194444444444443,a2q_node_budget,0.831140350877193,1.1695906432748648,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+squirrel,T2_accuracy,0.35382644892731346,top_abs,0.356708293307717,0.2881844380403509,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+squirrel,T2_teacher_agreement,0.5782901056676272,top_abs,0.5830931796349664,0.48030739673392553,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+squirrel,T4_accuracy,0.4188280499519692,top_abs,0.4217098943323727,0.2881844380403509,"three-seed means, then best matched-budget non-proposed control per dataset/metric"
+squirrel,T4_teacher_agreement,0.824847902657701,a2q_node_budget,0.8434197886647454,1.8571886007044403,"three-seed means, then best matched-budget non-proposed control per dataset/metric"

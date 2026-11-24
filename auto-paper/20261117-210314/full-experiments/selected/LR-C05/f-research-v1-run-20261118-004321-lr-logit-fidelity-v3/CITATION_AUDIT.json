@@ -1,0 +1,641 @@
+{
+  "audit_skill": "citation-audit",
+  "verdict": "PASS",
+  "reason_code": "all_entries_verified_and_placed",
+  "summary": "41 unique verified references are cited in appropriate background or method contexts; 30 are from 2022-2026; duplicate scans are clean.",
+  "audited_input_hashes": {
+    "references.bib": "6486042a1f0e45745fe955e92658265c5a26dc299f754da4b936343736776508",
+    "paper": "8a433c73f85c8ae69f7fec1dea3929e330e1e64238e8e389d36a3281f705a33b",
+    "coverage": "0c971ba27fc45d8d884f31e699c98159918e47d9eabdfac6c5d63965b6aa1ee4"
+  },
+  "trace_path": "results/p12-reference-probe.json + results/p12-openalex-probe.json + results/p12-doi-probe.json + results/p12-official-page-probe.json",
+  "review_role": "paper architect/reviewer with programmatic Crossref, OpenAlex, arXiv, and official proceedings checks",
+  "generated_at": "2026-11-17T23:59:07.807687+00:00",
+  "details": {
+    "total_entries": 41,
+    "counts": {
+      "KEEP": 41,
+      "FIX": 0,
+      "REPLACE": 0,
+      "REMOVE": 0
+    },
+    "recent_2022_2026": 30,
+    "per_entry": [
+      {
+        "key": "kipf2017gcn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "hamilton2018graphsage",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "velickovic2018gat",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "xu2019gin",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "li2019deepgcn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "abu2019mixhop",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "chen2020gcnii",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "li2018deeper",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "wu2021gnnsurvey",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "tailor2021degreequant",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "SUPPORTS",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "method/context support"
+          }
+        ]
+      },
+      {
+        "key": "ding2021vqgnn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "SUPPORTS",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "method/context support"
+          }
+        ]
+      },
+      {
+        "key": "wang2022qgtc",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "SUPPORTS",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "method/context support"
+          }
+        ]
+      },
+      {
+        "key": "zhu2023a2q",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "SUPPORTS",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "method/context support"
+          }
+        ]
+      },
+      {
+        "key": "wan2023adaqp",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "SUPPORTS",
+        "verification_source": "official proceedings metadata",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "method/context support"
+          }
+        ]
+      },
+      {
+        "key": "hu2023fast",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "SUPPORTS",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "method/context support"
+          }
+        ]
+      },
+      {
+        "key": "gholami2022quantization",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "cherukuri2025lowrank",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "one-spike",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "SUPPORTS",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "method/context support"
+          }
+        ]
+      },
+      {
+        "key": "hao2023offset",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "lv2024group",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "bu2023optimal",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "li2023seenn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "official proceedings metadata",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "you2024spikezip",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "official proceedings metadata",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "zhao2025ttfs",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "official proceedings metadata",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "huang2025ecmt",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "li2024erroraware",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "SUPPORTS",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "method/context support"
+          }
+        ]
+      },
+      {
+        "key": "spikinggcn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "spikenet",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "dy-sign",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "delay-dsgn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "official proceedings metadata",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "signnn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "msg",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "official proceedings metadata",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "negative-spike",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "official proceedings metadata",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "sun2024spikegraphormer",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "zhang2025sgnnbench",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "official proceedings metadata",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "li2023graph1bit",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "arXiv API metadata + OpenAlex cross-check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "chaurasia2026sgspose",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "asgcn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "dampfhoffer2023snnlearning",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "nunes2022snnsurvey",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      },
+      {
+        "key": "wang2022taxonomicsnn",
+        "verdict": "KEEP",
+        "axis_failures": [],
+        "existence": "YES",
+        "metadata": "correct",
+        "context": "BACKGROUND_SUPPORT",
+        "verification_source": "Crossref DOI metadata + OpenAlex/official source check",
+        "uses": [
+          {
+            "file": "writing/p12/paper-with-verified-references.md",
+            "verdict": "background support"
+          }
+        ]
+      }
+    ]
+  }
+}

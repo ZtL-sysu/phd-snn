@@ -1,0 +1,307 @@
+================================================================================
+【attempt #11 设计预案 · NOT SUBMITTED · round-018 · C1 死磕 correction loop v3】
+f-research-v1 / P4 / C1 / 2026-11-09 10:5x GMT+8
+
+★ 本文件是「本轮实质优化」的落盘证据，**本轮不提交 novix**。
+  理由：Step 0 权威复核 `18885`（attempt #9，H10 突触前 drive→syn 能量稀释）=
+  `processing` / steps 5028（上轮 2949，steps 确实增长）、`errorCode=None`、
+  `finalReply` 为**在跑中的代码审查发现清单**（非终态结果、非数值结论）。
+  按 §3.6(2)「还在跑 → 只更新文档、不重提交、不等待」与 rounds
+  006/009/011/013/015/017 在途先例，本轮不重提交、不动流水线、不 pull、
+  不判定、不写 verdict；但按 §3.6(3)「每轮必须有一次实质优化、不许原地踏步」，
+  落盘本预案并写清四要素与**机制级 diff**。
+
+★ **不得原样启用**：`18885` 终态结果未出，round-017 的 attempt #10 预案（H11
+  标签—输入信息预算）也仍未被 `acceptance-verdict-18885.md` 实测修订。
+  下一轮（round-019）必须先读 `18885` 的正式 verdict 与哈希核验归档，
+  再决定本预案与 attempt #10 的启用 / 合并 / 废弃。
+  **禁止把本预案当作 18885 的结果，禁止预支 H10 成败，禁止把在跑进度说明
+  写成科学结论。**
+
+★ 本预案相对 `query-round016-attempt9.txt`（已提交，H10）与
+  `query-round017-attempt10-DESIGN-DRAFT-NOT-SUBMITTED.txt`（H11 未提交）
+  均有**机制级 diff**（见 §3，共 10 条）：从「改突触界面算子」(H10) 与
+  「沿前向链测信息量」(H11) 转向「审查判定装置本身的一致性」(H12)。
+  **不是原样重提、不是只调超参、不是凑显著、不是把负结果改写成正结果、
+  不是把实验跑完写成结果达标。**
+================================================================================
+
+================================================================================
+【§1 上一轮失败点（只引用已落盘实测 / 本轮 Step 0 权威读数，不推断不改写不删证据）】
+================================================================================
+
+(A) 最近一次**有正式科学判定**的仍是 `18696` = `REJECT_FAILURE`
+    （round-015/016 幂等、9/9 SHA-256 核验、15 文件归档
+    `evidence/p4-novix-18696/`）：
+    · `design_valid=true`、全量真跑完（23/23 单测 + 142/142 pre-final +
+      148/148 final、165 raw NPZ、614/614 重哈希、`validation.passed=true`）。
+    · 两真实域 ceiling DAVIS `0.424242` CI `[0.340909,0.515152]` /
+      SINTEL `0.400000` CI `[0.2,0.6]` 均 < 0.70，两域
+      `decidability_state=INPUT_BOTTLENECK`、`interpretation_allowed=false`。
+    · `gt_oracle_upper_bound=1.0`（平台明确「不是」历史 0.6875 重算）。
+    · 三族校准全报告：stratified paired bootstrap 经验 I 类错误 `0.149`
+      **失败**（上限 0.075）、studentized `0.051` 通过、redefined permutation
+      `0.058` 通过 → `all_families_passed=false`、全部 contrast `uncalibrated`。
+    · unexposed 符号翻转（DAVIS `+0.022727` / `−0.128099`、
+      SINTEL `+0.081818` / `−0.015152`），
+      `unexposed_holdout_same_positive_sign=false`。
+    · `c1_guidance.verdict=failure`、`minimum_met=false`、
+      `expected_strong_met=false`、`transfer_claim_made=false`、
+      `migration_verdict=NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE`。
+    · 诊断型进展（**不是**达标 / 机制否证）：`localized_unit=syn`、两域 holdout
+      `CONSTRUCTIBLE`、两臂 `SYMMETRIC`、输入级 `H(ω)` 可测但
+      `H_slope(LIF−stateless)` 逐环节全负（DAVIS drive `−1.224299` /
+      syn `−0.141906` / v `−0.210777` / KC `−0.208067`）、最大首段衰减
+      `drive→syn`；SYNTHETIC 锚点 Δ `−0.114394` 与继承 `+0.2817` 反向、
+      谱半径 `504.30 → 292.415`，原样保留为**跨实现不一致待查事实**。
+    · 第五次交付缺陷：`project/config.json` 远端路径不存在（内容经
+      `config.snapshot-a/b.json` 16,885 B `03128444…` 等价核验）。
+
+(B) 更早的横向事实（连续多轮、不得改写）：
+    · `18533` 主门「测量可辨识性」PASSED，但 +0.25 已知信号注入只恢复
+      `0.067901` / `0.0625`（斜率 `0.284383` / `0.155642`）→ 可辨识但
+      **亚单位灵敏度**；`IMPLEMENTATION_IDENTICAL_BRANCH`；unexposed
+      holdout `unavailable`。
+    · `18448` 首次 `DOMAIN_USABLE`（SINTEL `0.700000` 恰达门槛）并首次算出
+      real-domain delta，但 `delta = 0.000000`（5/11 seeds、CI `[0,0]`、
+      三检验族 p=1）；阴性对照校准失败（label_permutation − lif_combo
+      11-seed `−0.115909`、p=`0.0009765625`）。
+    · 反复出现的**同一组症状**：真实域 `delta≈0` / 阴性对照校准显著非 0 /
+      exposed-unexposed 符号翻转 / `IMPLEMENTATION_IDENTICAL_BRANCH` /
+      跨实现张量不一致 / 「设计有效但主读出不可解释」。
+
+(C) **本轮 Step 0 的新观测（唯一新增事实，属在跑进度说明，不是结果）**：
+    `novix --json task result 18885` rc=0 → `processing` / steps `5028`
+    （round-017 收尾为 2949，steps 真实增长）、`errorCode=None`、
+    顶层 `finalReply` 是一份**代码审查发现清单**（JSON 数组，3210 B），
+    逐条指向 `project/src/experiment_runner.py` 与
+    `project/src/scientific_aggregation.py` 的四个潜在缺陷：
+      1. line 2512：崩溃恢复接受了缺失的 `evaluation_elapsed_seconds`，
+         把不完整的记录当作「已恢复」持久化。
+      2. 另一处：恢复流程在不改 config / lock / static resolution hash 的
+         情况下，`resume` 发布了**修复前的旧 payload**，而 manifest 记录的是
+         较新的源文件 —— 即「判定所用数值」与「manifest 声明的源码」可能不同版。
+      3. line 5811：`finalize_results()` 只接受
+         `NO_TRANSFER_CLAIM_EFFECT_CRITERIA_NOT_MET`，而 aggregation 已按
+         预注册发出 `NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE`，
+         导致在写最终 manifest **之前中止**。
+      4. `scientific_aggregation.py` line 111：**范围漂移**——三种检验方法被
+         合并进一个 78-cell 的 BH 家族，而预注册写的是 26 个 confirmatory
+         contrasts；举例 `p=0.001` 在 `0.05/26` 下会被 method-specific BH
+         拒绝，在 `0.05/78` 下不会。
+    **这是远程 agent 自己代码审查列出的候选缺陷，不是终态结果、不是实测数值、
+    不是对 18885 成败的判断、也不是科学结论**。但它恰好落在 (B) 那组
+    「反复出现的同一组症状」上：BH 家族范围漂移能直接解释「校准失败 /
+    q 值不一致」；旧 payload + manifest 新源码能解释「跨实现不一致 /
+    IMPLEMENTATION_IDENTICAL_BRANCH / 张量指纹漂移」；崩溃恢复缺字段能
+    解释「unavailable / 缺原始证据」；finalize 枚举不全能解释「设计有效
+    却拿不到最终 manifest」。
+
+================================================================================
+【§2 本轮假设（H12，可证伪、机制级不同于 H10 / H11 / H9 / #7 / #8）】
+================================================================================
+
+**H12 = 「判定装置一致性」假设**：连续多轮 `REJECT_FAILURE` 中反复出现的
+`delta≈0`、阴性对照校准失败、exposed/unexposed 符号翻转、
+`IMPLEMENTATION_IDENTICAL_BRANCH`、跨实现张量不一致、
+「design_valid=true 但 scientific_interpretation_allowed=false」，
+**至少部分不是生物物理机制结论，而是判定/聚合管线自身的四类实现缺陷
+（BH 家族范围漂移、恢复旧 payload 与 manifest 源码不同版、崩溃恢复缺
+必填字段、finalize 枚举不全）在测量层面造成的伪影**。
+
+与前面各假设的**正交性**：
+  · H10（已提交 18885）改的是 **突触前 `drive→syn` 界面归一化算子**
+    （yoked 能量匹配），作用在「信号如何进入网络」。
+  · H11（round-017 预案）测的是 **沿前向链的条件互信息阶梯**，
+    作用在「标签信息在哪一跳丢失」，是**测量**但不干预。
+  · H12 两者都不动：它把**判定装置本身**（统计家族定义、恢复一致性、
+    manifest↔payload 绑定、finalize 枚举完备性）作为唯一自变量，
+    在网络与数据完全不变的条件下，用**已哈希核验归档的历史原始数值**
+    做**离线重判定**（re-adjudication），检验「换用一致的判定装置后，
+    历史 verdict 是否改变」。
+
+**双向可证伪落点**（预先写死、不许 post-hoc 改）：
+  · `VERDICT_PIPELINE_ARTIFACT`：若四类缺陷中任一类在归档原始数值上
+    被复现，且修正后**至少一个历史任务的 `c1_guidance.verdict` /
+    校准结论 / 符号结论发生方向性改变** → 判定装置确为伪影来源；
+    此时**不得**写成「C1 机制成立」，只能写成「历史判定不可直接引用，
+    须在修正装置下重跑」，并把受影响的历史 verdict 标
+    `superseded_by_re_adjudication`（原文件不删）。
+  · `VERDICT_PIPELINE_CLEAN`：若四类缺陷在归档数值上**全部不成立**
+    （家族定义与预注册一致、payload/manifest 哈希一致、恢复字段完整、
+    finalize 枚举完备），且重判定与历史 verdict **逐条一致** → H12 被否证，
+    判定装置不是伪影来源 → 回到 H10 / H11 的机制线继续死磕，
+    **不得**把「装置干净」写成「结果达标」。
+  · 第五态 `UNINFORMATIVE_ARCHIVE`（诊断型，不是达标、不是机制否证）：
+    归档原始数值不足以复算某类缺陷（缺字段 / 缺 seed 级张量 / 缺家族清单）
+    → 该类标 `unavailable`，如实记录，不作任何结论。
+  · **反向护栏**：H12 无论落在哪一态，都**不**改变
+    `minimum(+0.15)` / `expected_strong(+0.25)` / ceiling `0.70`；
+    两真实域 ceiling < 0.70 时仍 `INPUT_BOTTLENECK`、
+    `interpretation_allowed=false`；`transfer_claim_made=false` 不变；
+    禁止宣称生物接线带来精度优势（`A=0` 为输入信息上界、保度零模型
+    8 轮从未输给真实接线）；不静默下调 `expected_strong`、不删失败证据、
+    不改写负结果、不编造数值、不换主攻。
+
+================================================================================
+【§3 具体改动：与上一版 query 的机制级 diff（逐条，共 10 条）】
+================================================================================
+
+基准 A = `query-round016-attempt9.txt`（31,630 B，已提交 → `18885`，H10）
+基准 B = `query-round017-attempt10-DESIGN-DRAFT-NOT-SUBMITTED.txt`（19,075 B，H11）
+
+① **第一主门整体替换**：A 的 `drive_to_syn_energy_dilution_gate` / B 的
+   `information_budget_ladder` → 新的 `adjudication_pipeline_consistency_gate`
+   （四类缺陷各一个可证伪子门 + 一个总判定）。这是**判定装置层**，
+   与 A 的「网络界面层」、B 的「前向链信息层」互不重叠，可在同一
+   run 内并行且互不污染。
+② **研究材料从「新跑实验」改为「离线重判定」**：唯一自变量是
+   `adjudicator_version ∈ {as_archived, corrected_frozen}`，
+   输入是**已哈希核验归档的历史原始数值**（`evidence/p4-novix-18533/`、
+   `evidence/p4-novix-18696/` 9/9 SHA-256 MATCH、`evidence/p4-novix-18390/`、
+   `evidence/p4-novix-18448/`），**不重新训练、不重新取数、不新增 seeds**。
+   A/B 都是「提交新的全量 P4 批次」，本预案是「复用已落盘证据、
+   只换判定算子」——证据路径与成本结构完全不同。
+   明确：`idempotent_reference` 必须是本地**真实挂载且重哈希通过**的路径；
+   若 `status=unavailable`（18696 曾出现 18533 归档未挂载），该项改
+   `MUST_PULL_AND_VERIFY_FIRST`，禁止假设归档存在。
+③ **BH 家族可辨识性子门（历轮从未有过）**：从每份归档的
+   `config_preregistered.json` 抽取**预注册的 confirmatory contrast 清单
+   与家族定义**，与实际 aggregation 使用的 cell 数（26 vs 78）逐条比对；
+   在**同一组原始 p 值**上分别按 `family_26` / `family_78` /
+   `method_specific` 三种定义重算 BH q=0.05 拒绝集，报告
+   `rejection_set_symmetric_difference` 与 `family_scope_drift=true/false`。
+   预注册写死：三族**全部报告**，主族由**训练前冻结哈希锁定**的
+   `preregistered_family_definition` 决定，禁止看到 p 值后挑族。
+   直接针对 (C)-4 与 (B) 的校准反复失败。
+④ **payload ↔ manifest 版本绑定子门（历轮从未有过）**：对每份归档，
+   重算 `manifest.declared_source_sha256` 与
+   `result.json` 内 `payload_provenance.executed_source_sha256`，
+   报告 `source_payload_binding_consistent`；若归档缺 `executed_source_sha256`
+   字段 → 落 `UNINFORMATIVE_ARCHIVE`（不猜、不补、不编造）。
+   并要求新跑的 `18885` 在 `result.json` 顶层强制写
+   `executed_source_sha256` + `execution_lock_sha256` +
+   `static_resolution_hash` 三个字段，任何提前终止前都必须已落盘。
+   直接针对 (C)-2 与「跨实现不一致 / 谱半径 504.30→292.415 / SYNTHETIC
+   符号反转」。
+⑤ **恢复完整性子门（历轮从未有过）**：构造一个**故意中断-恢复**的
+   单元级反事实（不碰真实数据）：在 `evaluation NPZ` 已写、
+   `evaluation_elapsed_seconds` 未写时触发 resume，检查恢复出的记录是否被
+   错误标为 `recovered`；报告 `incomplete_recovery_rejected` 布尔值。
+   直接针对 (C)-1 与历轮 `unavailable` / 缺原始证据。
+⑥ **finalize 枚举完备性子门（历轮从未有过）**：枚举预注册中出现过的
+   全部 `migration_verdict` 取值（含
+   `NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE`、
+   `NO_TRANSFER_CLAIM_EFFECT_CRITERIA_NOT_MET`），
+   逐一注入 `finalize_results()`，报告 `verdict_enum_coverage` 与
+   `abort_before_manifest` 计数；不允许静默丢弃任一枚举。
+   直接针对 (C)-3 与「design_valid=true 却拿不到最终 manifest」。
+⑦ **新估计量族（历轮全为幅值/增益/信息量类，本轮为一致性类）**：
+   `family_scope_drift`、`rejection_set_symmetric_difference`、
+   `source_payload_binding_consistent`、`incomplete_recovery_rejected`、
+   `verdict_enum_coverage`、`re_adjudication_verdict_delta`（历史 verdict
+   → 重判定 verdict 的方向性变化矩阵，逐任务逐字段）。
+⑧ **估计器校准前置硬门（幂等保留 B 的设计并前移）**：任何重判定结论
+   生效前，先做 ≥200 次标签置换零基线 + 判定算子自身的经验 I 类错误率；
+   若 > 0.075，全部重判定 contrast 标 `uncalibrated`、不作解释。
+   A 的 `calibration_failure_locus`（≥500 次零效应蒙特卡洛 × 三族 ×
+   分层/不分层 × 统计量）与 B 的信息估计器校准门**幂等保留必跑**，
+   不因本预案改主门而删除。
+⑨ **幂等护栏与交付缺陷修复（保留 A/B 全部已解决项）**：
+   `CONSTRUCTIBLE`（两域 holdout）/ `SYMMETRIC`（两臂）/
+   exposed-unexposed 双表与符号翻转 / 跨实现不一致事实原样保留；
+   `A=0` 与精确保度零模型决定性对照、`I(A=0;Y)`/`I(degree_null;Y)`
+   信息论对照保留；≥11 paired seeds / 2000 paired bootstrap 95% CI /
+   BH q=0.05 / 测试集暴露台账 / 冻结臂等效界 / 三态
+   `decidability_state` 不变；`minimum(+0.15)` / `expected_strong(+0.25)` /
+   ceiling `0.70` **不下调**。
+   **修第五次交付缺陷**：`project/result.json`、`project/config.json`、
+   `project/experiment.py`、`project/config_preregistered.json`、
+   `project/MANIFEST.txt`、`project/entrypoint.sh` 六主文件必须**真实存在
+   且非空于 `project/` 根**；第 0 步骨架落盘 + 每小步增量 flush +
+   断点续跑 + 不输出超长回复；`result.json` 落在可 pull 的 workspace 内。
+⑩ **提交契约不变**：若将来启用，命令必须是
+   `novix task create --json "<query>" --provider novixlet
+   --resource-pool exp-4090 --gpu --gpu-count 1`，
+   **不带** `--max-turns` / `--timeout` / `--watch` / 任何预算参数；
+   `runtime_hours` 只是 `feasibility-contract.json` 的可行性估算，
+   绝不是超时参数。复用 strict-PASS（rc=0）既有 C1 guidance 与**同一
+   run root**，不新建 guidance、不重启 P0、不标任何 stage passed。
+
+**不是原样重提、不是只调超参、不是凑显著、不是把负结果改写成正结果、
+不是把「实验跑完 / design_valid / 主门通过」写成「结果达标」。**
+
+================================================================================
+【§4 预期信号 / 若失败下一步（预注册，不许 post-hoc 改口径）】
+================================================================================
+
+**只有同时满足以下全部，才允许判 `ACCEPT_STRONG` 并 `--before P5`**：
+  至少一真实域 `DOMAIN_USABLE`（ceiling ≥ 0.70 且标签可判定）、
+  三族校准全报告且估计器校准门通过、训练后 real-domain
+  `delta(LIF − stateless) >= +0.15` 且 95% CI 下界 > 0、
+  `stateless_trained_identically` 不追平、unexposed 同号、
+  一因子消融指认承载机制、全部六主文件真实存在且哈希一致。
+  **H12 的任何落点都不满足这组条件**，因此本预案无论结果如何都
+  **不是达标路径**，只是「把判定装置查清楚」的诊断支路。
+
+**四分支（全部为诊断型，不是达标、不是机制否证、不是 kill hit）**：
+  · `VERDICT_PIPELINE_ARTIFACT` → 受影响历史 verdict 标
+    `superseded_by_re_adjudication`（原文件不删），
+    下一步 = 在修正后的冻结判定装置下**重跑同一 C1 全量 P4**
+    （新设计、无预算参数），并把 H10 五档能量门 / H11 信息阶梯
+    按 `18885` 正式 verdict 决定幂等或必跑。
+  · `VERDICT_PIPELINE_CLEAN` → H12 被否证，判定装置不是伪影来源；
+    下一步 = 回到机制线，优先 `syn→v` 电流—脉冲转换代数
+    （承接 `SYNAPTIC_ENERGY_NOT_CARRIER` 分支）与
+    「冻结标签离散化族 × 复眼池化核」一因子阶梯。
+  · `UNINFORMATIVE_ARCHIVE` → 第一必修 = 补齐归档字段契约
+    （`executed_source_sha256` / seed 级张量 / 家族清单），
+    在此之前不重判定、不作结论、不编造缺失值。
+  · 估计器校准门仍失败（经验 I 类错误 > 0.075）→ 全部重判定
+    contrast `uncalibrated` 作第一必修，转「校准统计量定义域」
+    一因子阶梯。
+
+**`18885` 终态到来时的合并规则（写死，交 round-019）**：
+  1. 若 `18885` 正式 verdict 支持 H10（yoked 抬正 `H_slope`、
+     能量比回 ≈1）→ 本预案**降级为 H10 阳性结果的独立复核门**
+     （防把「幅值恢复」误读为「信息/机制恢复」），不废弃、不优先。
+  2. 若 `18885` = `REJECT_FAILURE` → 本预案与 attempt #10（H11）
+     按上述四要素**合并成一份新的自包含全量 query**，
+     保留 H12 一致性子门为前置硬门。
+  3. 若 `18885` 平台故障 / 零产物 → 按 §5 换新设计、不重提旧 query、
+     不记 kill hit、不写 verdict。
+  4. 任何情况：不把在跑进度说明写成科学结论、不删失败证据、
+     不改写负结果、不编造数值、不静默下调 `expected_strong`、
+     不换主攻（`abandon_allowed=False`）。
+
+================================================================================
+【§5 硬门槛自动判定（如实，不得自评放宽）】
+================================================================================
+
+(a) 有实验证据的机制不同尝试：**7/7**（`18885` 结果未出，不虚增；
+    本轮为 NOT SUBMITTED 预案，同样不虚增）。
+(b) 干净独立 kill criteria 命中：**0/2**（历次 `REJECT_FAILURE` 均伴随
+    校准失败 / 两域非 `DOMAIN_USABLE` / 主读出 diagnostic_only /
+    平台明确不作机制结论，不计干净独立 kill）。
+(c) 连续独立 `ccf-idea-reviewer standard` 判「不可修复致命风险」：
+    **0/2**（round-018 S1–S5 独立评审 0 不可修复 / 0 abandon）。
+→ `abandon_allowed=False`；(a)(b)(c) 未全满足且 (c) 单独阻断换题
+  → **C1 继续锁定**。「分数低 / 一次负结果 / 平台故障 / 跑得久」
+  明文不构成放弃理由。
+
+================================================================================
+【§6 本轮提交决策】
+================================================================================
+
+**NOT SUBMITTED**。`18885` 在途且无终态结果（`processing`/5028），
+按 §3.6(2) 不重提交、不等待、不动流水线、不 pull、不写 verdict
+（参照 rounds 006/009/011/013/015/017 在途先例）。
+复用 strict-PASS（rc=0）既有 C1 guidance 与同一 run root，
+未新建 guidance、未重启 P0、`pipeline-state.json` 26/26 pending /
+history 空、两完成标志未置位。`attempt_count=9` 不虚增。
+
+**标注「不得原样启用」**：round-019 必须先按
+`acceptance-verdict-18885.md` 的真实实测修订四要素（H10 五档实际落点、
+校准、符号、跨实现、finalReply 四类缺陷是否已被 18885 自身修复），
+再决定本预案与 attempt #10 的启用 / 合并 / 废弃。
+================================================================================

@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "decision": "proceed",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Structured discretization error produces measurable neighbor and signed-max winner disagreement in dynamic vision graphs.",
+      "mechanism": "Signed multi-threshold coding perturbs features; kNN and signed max convert small perturbations into discrete flips.",
+      "assumptions": "A public or locally reproducible dynamic-graph teacher and public calibration data exist.",
+      "falsifying_ablation": "Replace quantized features with teacher features and verify disagreement vanishes.",
+      "dataset_url": "https://huggingface.co/datasets/uoft-cs/cifar10/tree/main/plain_text",
+      "split_protocol": "Official CIFAR-10 train/test; fixed calibration subset from train; three training splits; test frozen before tuning.",
+      "primary_metric": "layerwise neighbor Jaccard and max-winner agreement",
+      "metric_direction": "higher",
+      "minimum": "Measurable disagreement and a valid oracle intervention.",
+      "expected_strong": "At T<=4, baseline loses at least 5 pp neighbor Jaccard or 2 pp winner agreement and restoring teacher structure recovers at least half the accuracy loss.",
+      "failure": "Less than 1 percent structure disagreement and less than 1 pp accuracy gap at T=4.",
+      "simple_baseline": "unsigned rate coding",
+      "strong_baseline": "independently reimplemented signed multi-threshold coding from the published DCGS algorithm",
+      "matched_control": "signed uniform quantization at the same nominal levels and event budget",
+      "implementation_path": "Reproduce a small ViG-style Grapher operator in PyTorch from the paper; implement signed multi-threshold coding separately from upstream code.",
+      "prototype_check": "64 samples through one Grapher block with shape and finite-value assertions.",
+      "calibration_evidence": "Imported audit plus direct arXiv and GitHub checks recorded in prior-art-opportunity-map.md.",
+      "test_isolation": "Official test used once after configuration freeze.",
+      "stop_return_condition": "Failed license, data, baseline, prototype, or budget condition returns to scenario design before a full campaign.",
+      "runtime_hours": 24.0,
+      "memory_gb": 8.0,
+      "seeds": 3,
+      "search_trials": 12
+    },
+    {
+      "id": "C2",
+      "claim": "Structure-aware calibration improves discrete agreement at a matched event budget.",
+      "mechanism": "Calibration minimizes topology and winner disagreement instead of activation MSE alone.",
+      "assumptions": "C1 is observed and the calibration signal transfers to held-out examples.",
+      "falsifying_ablation": "Activation-MSE calibration with equal parameters and event budget matches or beats structure-aware calibration.",
+      "dataset_url": "https://huggingface.co/datasets/uoft-cs/cifar10/tree/main/plain_text",
+      "split_protocol": "Same frozen CIFAR-10 protocol as C1.",
+      "primary_metric": "structure disagreement recovery at matched event count",
+      "metric_direction": "higher",
+      "minimum": "No degradation beyond seed noise versus matched baseline.",
+      "expected_strong": "At least 50 percent recovery of baseline disagreement loss with no higher event count and at most 1 pp teacher accuracy gap.",
+      "failure": "No recovery over activation-MSE control or recovery only with a deployable teacher-structure oracle.",
+      "simple_baseline": "activation-MSE calibration",
+      "strong_baseline": "signed multi-threshold coding with matched calibration budget",
+      "matched_control": "same parameter count and event budget",
+      "implementation_path": "Add a calibration objective over training-subset Grapher outputs and freeze parameters before test.",
+      "prototype_check": "Calibration loss decreases on train/calibration data without test labels.",
+      "calibration_evidence": "Baseline gap measured in run R2 before tuning.",
+      "test_isolation": "Same frozen test as C1.",
+      "stop_return_condition": "If C1 fails, C2 is void and the run returns to scenario selection.",
+      "runtime_hours": 24.0,
+      "memory_gb": 8.0,
+      "seeds": 3,
+      "search_trials": 12
+    },
+    {
+      "id": "C3",
+      "claim": "Discrete structure preservation causally explains accuracy recovery.",
+      "mechanism": "Teacher-neighbor and teacher-winner oracles isolate the contribution of each discrete decision.",
+      "assumptions": "Oracle interventions are valid diagnostics and not deployable components.",
+      "falsifying_ablation": "Both-oracle intervention does not improve accuracy while the method does.",
+      "dataset_url": "https://huggingface.co/datasets/uoft-cs/cifar10/tree/main/plain_text",
+      "split_protocol": "Same frozen CIFAR-10 protocol as C1.",
+      "primary_metric": "accuracy recovery attributable to structure restoration",
+      "metric_direction": "higher",
+      "minimum": "All intervention rows complete.",
+      "expected_strong": "Method recovers at least half of both-oracle accuracy recovery.",
+      "failure": "Oracle interventions do not change accuracy or method gains are orthogonal to structure agreement.",
+      "simple_baseline": "random-neighbor control",
+      "strong_baseline": "both-teacher-oracle upper bound",
+      "matched_control": "teacher-neighbor-only and teacher-winner-only interventions",
+      "implementation_path": "Modify Grapher to accept teacher indices/winners during diagnostic only.",
+      "prototype_check": "Oracle exactly matches teacher layer outputs when quantized activations are also replaced.",
+      "calibration_evidence": "Intervention gains measured on the frozen test after design freeze.",
+      "test_isolation": "Any test-driven redesign marks the test exposed and opens a replacement contract.",
+      "stop_return_condition": "Test exposure or invalid oracle semantics returns to the earliest affected stage.",
+      "runtime_hours": 24.0,
+      "memory_gb": 8.0,
+      "seeds": 3,
+      "search_trials": 4
+    }
+  ],
+  "evidence": [
+    {
+      "path": "startup-stage-plan.md",
+      "sha256": "8e243f9642719f8fa838d4fab32410a723c312b0e6e413a5c9bfe25f5718d03b"
+    },
+    {
+      "path": "idea-cards.md",
+      "sha256": "c7f8d30b2b651a582d8e9960d7ecd61315696f0a6a222b0ef1e7beec40f73d53"
+    },
+    {
+      "path": "prior-art-opportunity-map.md",
+      "sha256": "a4c9ff6dafb7b009c18f076c6e717127b97da0469f1c99381c39e088d67c2c69"
+    },
+    {
+      "path": "idea-red-team-review.md",
+      "sha256": "a9cee55e73dd69e423674a97c7942e15cc1b735f6fefb836423e6c19c0b43895"
+    },
+    {
+      "path": "claim-evidence-matrix.md",
+      "sha256": "5b0a253904163d71e9a25e2c1fec3f18b5a5ad5904e041e59c23784122011df8"
+    },
+    {
+      "path": "strong-result-feasibility-contract.md",
+      "sha256": "b63fc3f284eb8b278ad804091202d06c877ca467b009432d338d530af8fce98f"
+    },
+    {
+      "path": "startup-decision.md",
+      "sha256": "cd7d37244e99ddf8d9c3ed5b81d74a6e368ba4be96df700bdb9adb0a8559976e"
+    }
+  ]
+}

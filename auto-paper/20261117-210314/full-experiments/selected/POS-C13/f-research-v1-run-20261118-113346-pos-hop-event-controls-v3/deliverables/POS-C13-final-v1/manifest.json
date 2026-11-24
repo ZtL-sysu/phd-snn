@@ -1,0 +1,106 @@
+{
+  "artifact": "POS-C13-final-v1",
+  "generated_at": "2026-11-18",
+  "items": [
+    {
+      "path": "experiment-artifacts/CITATION_AUDIT_INDEPENDENT_FINAL.json",
+      "bytes": 2030,
+      "sha256": "caeecae18fb5c81b69dfbc20596e4936ae559c811e9941557e62eab8d80826d6"
+    },
+    {
+      "path": "experiment-artifacts/CITATION_AUDIT_INDEPENDENT_FINAL.md",
+      "bytes": 1850,
+      "sha256": "f02bc9b05c4a3c35669127824f48cf2da52c4818b0d4555497defda6632b7381"
+    },
+    {
+      "path": "experiment-artifacts/figure-table-insertion-audit-final.md",
+      "bytes": 943,
+      "sha256": "950665f09fcd618630ab53d8ab6d5c166748ca5c622ffeaf7a1591db784d919b"
+    },
+    {
+      "path": "experiment-artifacts/page-count-audit.md",
+      "bytes": 859,
+      "sha256": "f55bb131c8d449138831bff87c0163d0127b156f825770957d3bd8378945ac57"
+    },
+    {
+      "path": "experiment-artifacts/paper-guidance-audit.md",
+      "bytes": 1234,
+      "sha256": "a55625b6878615e4de8dc6faa595119c81662f42f568739e2792425ec8a184ec"
+    },
+    {
+      "path": "experiment-artifacts/pipeline-state-final.json",
+      "bytes": 31885,
+      "sha256": "86b822defcdbcb4cad5c3db92d491452b15246494d929ca70b64fadc88e152d0"
+    },
+    {
+      "path": "experiment-artifacts/pipeline-state.json",
+      "bytes": 30371,
+      "sha256": "3142df57960286b12aec0bf48efe3dc83363a76304e47ad82a42d17fe41bdf13"
+    },
+    {
+      "path": "experiment-artifacts/pipeline-state.md",
+      "bytes": 146,
+      "sha256": "ce96c71f6912956ae1d8cdab6045583af7675066af4b37b45d124ed8e1413814"
+    },
+    {
+      "path": "experiment-artifacts/pos-dispersion-summary.json",
+      "bytes": 2814,
+      "sha256": "c72c217a01f6fa56d242c7d1adde48032e9caabf4d191505ae8013ca2035fb51"
+    },
+    {
+      "path": "experiment-artifacts/pos-representation-summary.json",
+      "bytes": 1138,
+      "sha256": "09eefced63052c55156926995fd60b382f2163a87339fda6e5cf67cd50d10232"
+    },
+    {
+      "path": "experiment-artifacts/pos-representation.json",
+      "bytes": 7719,
+      "sha256": "7545588d8a53703f0b2ac0cab184fc00d617ef6babc205fb2dd09b3647f39a1a"
+    },
+    {
+      "path": "experiment-artifacts/pos-task-rows.json",
+      "bytes": 44667,
+      "sha256": "0711375ed8f725fef3bf597f15aac5322f4e410fdf9a55fa1a1c5ebaca86e3d5"
+    },
+    {
+      "path": "experiment-artifacts/pos-task-summary.json",
+      "bytes": 1105,
+      "sha256": "a77d83ab766044d2b82086bd9959daf18cec3376cd56eb32b651b6e1af838d11"
+    },
+    {
+      "path": "experiment-artifacts/reference-dedup-audit.md",
+      "bytes": 735,
+      "sha256": "0d1c739780fef482137c016c0ab9e51c9f71b994ba7c46b6c6873af6d7284f61"
+    },
+    {
+      "path": "experiment-artifacts/strong-result-lock.md",
+      "bytes": 794,
+      "sha256": "d8e2dba0266e5e289dd3b7ac15cf773f8ba819fabbda83e216baef0df6f0818d"
+    },
+    {
+      "path": "final-delivery-note.md",
+      "bytes": 874,
+      "sha256": "6967862b8f4f976c368c5568115a128899bf68d684d614037921230adae66e4a"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 3652,
+      "sha256": "d4bb3f4c95ff8a89577c2fd86c0e0b72a4922d30e9588028cbbe33ac82d8cc13"
+    },
+    {
+      "path": "paper.pdf",
+      "bytes": 698121,
+      "sha256": "bc59185a9ebc4ceef6b76aeee5b53f48fc49f44cb8e01cc6fea73197ff50ecdf"
+    },
+    {
+      "path": "paper.tex",
+      "bytes": 15448,
+      "sha256": "48b2be0bbcb774e4418d1a5d273d6423f97628a20dacfbdeb8e7b713ddc7c37a"
+    },
+    {
+      "path": "references.bib",
+      "bytes": 11508,
+      "sha256": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5"
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+任务：执行 f-research-v1 的 P4 全量实验批次 —— **C1 死磕第 6 次尝试（correction loop v3, attempt #6）**。
+本 query 是对 round-009 `query-round009-attempt6-DESIGN-DRAFT-NOT-SUBMITTED.txt` 的**实测驱动的机制级改写**，
+不是原样启用。核心命题：**连续 5 次远程实验全部只用「冻结图传播特征 + train-only linear ridge 探针」，
+膜状态时间递推 `v = decay*v + syn + drive` 从未接收梯度、脉冲动力学从未被训练；而本机
++0.2817（CI [0.2033,0.3617]）恰恰来自训练过的 LIF（可学 gain + surrogate gradient）。
+因此 C1 主命题「膜状态让时序方向可学」在远程协议下根本没有被检验。**
+本轮把梯度路径设为受控自变量，并**必修** 18448 暴露的三项失效/隐患：阴性对照校准失败、
+DAVIS 输入编码瓶颈、SINTEL delta 恒 0 的实现层未区分。
+只跑代码和出结果，不写论文、不做文献检索、不提交任何子任务。必须留下可复现脚本与原始数值。
+
+================================================================================
+【上一版实测结论 · 必须读，禁止原样重提上一版 query】
+================================================================================
+上一版 attempt #5 = novix task `18448`，已在本项目落盘正式判定
+`acceptance-verdict-18448.md` = **`REJECT_FAILURE`**（不是 design_invalid、不是平台故障、
+不是机制否证、不是达标）。平台 `finish`/steps 316，主文件 `project/result.json`
+575,285 B（sha256 `74a186458c202f03…`）、`config.json` 20,955 B、
+`config_preregistered.json` 18,448 B 全部真实存在且本地 SHA-256 MATCH；
+146/146 validation、32/32 测试、326 raw NPZ、11 paired seeds、`design_valid=true`。
+
+**首次突破**：第一次有真实域达到 `DOMAIN_USABLE`，第一次真正算出 real-domain delta。
+- DAVIS：`INPUT_BOTTLENECK`，current ceiling **0.613333**（CI `[0.601667,0.623333]`），
+  w2 0.575000 / w4 0.605000 / w8 0.591667 / multiscale 0.650000，
+  **oracle 1.000000**，`oracle − current = +0.386667`（CI `[0.376667,0.398333]`）。
+  即标签本身完全可分，**信息在输入编码侧丢失**。
+- SINTEL：`DOMAIN_USABLE`，current ceiling **0.700000**（恰冻结门槛，按预注册 inclusive
+  point-estimate 规则判可用，`ci_upper_bound_used_for_state=false`），oracle 0.800000。
+- **C1 真实域主对比（SINTEL，唯一允许 real delta 的域）**：
+  `lif_homeostasis − stateless` = **0.000000**，5-seed 与 11-seed 同值、CI `[0,0]`、
+  sign-flip / bootstrap / permutation 三检验族 p 全 = 1.0；两条件 accuracy 全 0.466667，
+  **11 个 paired differences 全 0**。→ `c1_guidance.verdict=failure`、
+  `minimum(+0.15)` / `expected_strong(+0.25)` 均未达、`transfer_claim_made=false`、
+  `transfer_outcome_verdict=NO_POSITIVE_TRANSFER_C1_MINIMUM_NOT_MET`。
+- **两项失败证据原样保留，本轮必修**：
+  ① **阴性对照校准失败**：预注册 `label_permutation − lif_combo` 11-seed delta
+     `−0.115909`、exact/permutation p `0.0009765625`，未满足「恒不显著」预期 →
+     `negative_controls_calibrated_nonsignificant=false`、`diagnostic_expected_signal_met=false`。
+     平台未事后更换检验族或重定义对照。**这是未解决的有效性隐患**，本轮修好之前
+     不得把任何 contrast 写成机制成立。
+  ② **跨实现单因子未定位**：`single_factor_flip_localized=false`（7 单因子 +
+     2 端点全部完成，canonical `kc_feature_std=0.0673775` vs reconstructed-18273
+     端点 `2.2631e-6`，无任一单因子达到冻结的 exact-zero flip 判据）。
+- 统计效力修复有效但不构成机制证据：5 paired seeds 最小双侧 exact p `0.0625`
+  → 11 seeds `0.0009765625`；多个 contrast 显著性翻转，平台明确「仅反映检验力增加，
+  **不作为机制成立证据**」。零效应注入校准通过（delta 0、三检验 p=1）。
+- SYNTHETIC 锚点：stateless 0.475000 / lif_homeostasis 0.536667 / lif_combo 0.631667 /
+  degree_null_lif 0.886667 / `A=0` 0.975000 → `A=0` 仍为**输入信息上界**，
+  **保度零模型仍高于全部真实图 LIF 条件，禁止宣称生物接线优势**。
+- 图与数据：完整边表 178,853,187 B、16,847,997 原始边行、15,091,983 合并有向对、
+  1,756,014 重复行合并、138,639 节点、eye→KC `[0,15,2544,0,0,0,0,0]` → K=3 / 2,544 KC；
+  精确保度零模型 100,000 次成功 double-edge swaps、六项统计量精确保持；
+  五个公开文件逐字节 SHA-256 复核。`frozen_before_outcomes=true`、
+  `hash_lock_verified=true`、`post_hoc_ladder_variants_added=false`、`thresholds_lowered=false`。
+
+**禁止事项**：不是重提 `query-round008-attempt5.txt`（18448 的 query），不是继续跑
+ceiling 阶梯/oracle 全网格当作主实验（那是 18448 已完成的），不是启用
+`query-round009-attempt6-DESIGN-DRAFT-NOT-SUBMITTED.txt` 的原文（它写于 18448 结果出来之前，
+且明确要求「若 18448 落 DOMAIN_USABLE，round-010 必须改写，不得原样启用」），
+不是只调超参/加 seeds 凑显著，不是把负结果改写成正结果，不是把「实验跑完」写成「结果达标」。
+
+================================================================================
+【本轮四要素 · 必须逐字写进 `project/result.json` 的 `grind_block`】
+================================================================================
+- 上一轮失败点（18448 已落盘实测，非推断）：
+  设计有效、跑完全量、主文件交付完整且哈希 MATCH、首次拿到 `DOMAIN_USABLE` 真实域并
+  首次算出 real-domain delta，但 SINTEL `delta(lif_homeostasis − stateless) = 0.000000`
+  （5/11 seeds、CI `[0,0]`、三检验族 p=1、11 个 paired differences 全 0）
+  → `c1_guidance=failure`、minimum/expected_strong 未达、`transfer_claim_made=false`。
+  DAVIS = `INPUT_BOTTLENECK`（oracle 1.0 vs current 0.613333、gap +0.386667）
+  → 标签可分但输入编码丢失信息。另有两项未解决有效性隐患：
+  **阴性对照校准失败**（`label_permutation − lif_combo` −0.115909、p=0.0009765625），
+  **跨实现 single_factor_flip_localized=false**。
+
+- 本轮假设（新，机制级不同；是假设不是结论）：
+  远程 5 次实验（18156/18228/18273/18390/18448）共用一个**从未被检验的实现事实**：
+  全部只用「冻结的图传播特征 + train-only 线性 ridge 探针」，膜状态递推从未接收梯度、
+  脉冲动力学从未被训练；而本机 +0.2817 来自**训练过的** LIF。
+  因此 C1 主命题「膜状态让时序方向可学」在远程协议下**根本没有被检验** ——
+  远程测的是「冻结 LIF 特征是否比冻结 stateless 特征更线性可分」，这是另一个量。
+  18448 的 SINTEL delta 恰好恒为 0（两条件 accuracy 全 0.466667、11 个 paired
+  differences 全 0）与「冻结探针下两条件产生相同输出」一致，进一步强化该假设。
+  可证伪推论：在同一图 / 复眼 / K / 刺激 / split / seeds / 参数预算下，只切换**梯度路径**
+  （`frozen+ridge` → `surrogate_gradient_e2e`）：
+  (i) 端到端 `delta(LIF − stateless) >= +0.15` 且 bootstrap CI 下界 > 0；
+  (ii) `stateless_trained_identically` 不追平 LIF（把「训练有帮助」与「训练动力学有帮助」分开）；
+  (iii) 冻结探针臂 delta 的 CI 排除 +0.15（把效力受限零结果升级为可判定诊断）；
+  (iv) 新 unexposed holdout 与已暴露测试集结论同号。
+  若 (i) 不成立或 (ii) 中同样训练的 stateless 追平 LIF → 假设被否证，本机 +0.2817
+  须归因到本机特定协议而非「膜状态一般性增益」，收窄为诊断型负结果。
+  **并列子假设（由 18448 实测驱动，均可证伪）**：
+  (v) 阴性对照校准失败源于「标签置换后仍保留时序/类别结构」或「检验族在零效应下
+      经验 I 类错误率失配」，可由构造审计 + 零效应蒙特卡洛定位；
+  (vi) DAVIS 的 `INPUT_BOTTLENECK` 可由输入编码侧一因子修复阶梯收窄
+      `oracle − current` gap，但**不得 post-hoc 换协议凑 0.70**；
+  (vii) SINTEL 的「11 个 paired differences 全 0」需与「两条件走同一实现分支」区分
+      （逐环节张量指纹 + 单位级反事实注入 + 分支判别探针）。
+
+- 具体改动（相对 `query-round008-attempt5.txt` 与 round-009 NOT SUBMITTED 预案的
+  机制级 diff，均为机制 / 协议 / 测量层，不是只调超参）：
+  1.【核心转向·新增】主预算换成**梯度路径 2×2**：
+     `{frozen_features+ridge, surrogate_gradient_e2e} × {stateless, LIF}`，
+     外加 `learnable_decay` / `learnable_gain_only` / `straight_through_rate` 三变体，
+     全部等参数量、等 SynOps 预算、train-only split、训练前冻结。
+     attempt #5 只改「真实域标签构造 / 输入表示」轴与统计协议，**从未碰梯度路径**。
+  2.【新增·决定性对照】`stateless_trained_identically`：stateless 用与 LIF 完全相同的
+     端到端训练流程与预算。5 次远程实验都没有。
+  3.【新增·必修 ①：阴性对照校准失效诊断】把「校准失败」列为**训练前强制诊断门**：
+     (a) 标签置换构造审计：逐档报告置换后是否仍保留时序/类别结构（置换作用在哪一维、
+         是否跨样本、类别平衡、与未置换特征的互信息）；
+     (b) 三检验族（exact sign-flip / paired bootstrap percentile / paired permutation）
+         在**零效应注入蒙特卡洛 ≥200 次**下的经验 I 类错误率与 CI；
+     (c) `lif_combo` 与置换对照是否共享未被置换触及的信息通路（逐环节张量指纹重合度）。
+     训练前冻结判据：**只有在阴性对照校准通过（`negative_controls_calibrated_nonsignificant
+     = true`）后，任何 contrast 才允许被写为「机制成立」**；未通过则本 run 全部 contrast
+     标 `uncalibrated`，如实落盘、不得删改、不得事后换检验族或重定义对照。
+     这是把 18448 的失败证据变成可定位结论，**不是删除或改写失败证据**。
+  4.【新增·必修 ②：DAVIS 输入编码一因子修复阶梯】针对 `INPUT_BOTTLENECK`
+     （oracle 1.0 / current 0.613333 / gap +0.386667），训练前**一次性冻结并哈希锁定**
+     输入编码侧受控单因子阶梯：复眼 Voronoi 采样密度（1×/2×/4×）、逐帧时间差分 on/off、
+     对比度/亮度归一化 on/off、光流向量直方图 on/off、多尺度池化 on/off。
+     每档报 ceiling 均值 + bootstrap 95% CI + oracle−current gap + Fisher 比 + MI +
+     类别平衡 + 样本量；**所有档全部落盘全部报告，不许只报达标档**。
+     预注册读出 = `oracle − current` gap 的收敛量；**禁止看到 v1 后再注册 v2、
+     禁止改 0.70 门槛、禁止用 CI 上界判定、禁止挑 seed、禁止 post-hoc 换协议凑 0.70**。
+     只有修复后现行口径 ceiling >= 0.70 才允许把 DAVIS 升级 `DOMAIN_USABLE` 并计算 real delta。
+  5.【新增·必修 ③：SINTEL delta 恒 0 的实现层诊断】对「11 个 paired differences 全 0」
+     做三态判定 `REAL_ZERO_EFFECT / IMPLEMENTATION_IDENTICAL_BRANCH / INSUFFICIENT_PROBE`：
+     (a) 逐环节逐跳逐帧张量指纹（drive/syn/v/soft/hard 的 min/max/mean/std/nonzero_frac）
+         在 `{stateless, LIF}` 两条件间逐元素差异计数与哈希；
+     (b) **单位级反事实注入**（单帧全 1 刺激 / 单 receptor 热点）验证 LIF 分支 v 是否响应输入；
+     (c) 强制分支判别探针：两条件中间张量是否 byte-identical / 是否只差常量缩放。
+     若判 `IMPLEMENTATION_IDENTICAL_BRANCH`，则 delta=0 **不得**作为科学结论，
+     必须单独标为无效并保留全部原始数值，继续按其诊断结果走 correction loop。
+  6.【新增·主读出升级】因 18448 已落 `SINTEL=DOMAIN_USABLE`，本轮把**训练后动力学下的
+     real-domain delta 升为主读出**（不是只在 SYNTHETIC 上做机制检验），并按 C1 guidance
+     §Expected Results 判 `minimum` / `expected_strong` / `failure`。
+     这是落实 round-009 预案「若 DOMAIN_USABLE 必须改写」的硬性要求。
+  7.【新增·效度修复，来自 research-recovery.md】**测试集暴露台账**：前 5 次远程都用同一批
+     DAVIS/Sintel held-out 结果触发 redesign，属自适应评估。本轮把这些测试显式标 `exposed`，
+     冻结一组**新的不相交 holdout**（DAVIS 按序列 ID 哈希、Sintel 按 scene，哈希锁定写进
+     `config_preregistered.json`），最终选择只在未暴露 holdout 上评估一次；
+     exposed 与 unexposed 两套数值**分别全部报告**，不得只报好看的。
+  8.【新增·统计】冻结探针臂预注册**等效性 / 非劣效界**：在 >=11 paired seeds 下报其 delta
+     的 CI 是否排除 +0.15。效应量与 CI 定义不变、统一应用、不选择性报告、
+     不改写成「机制成立」。零效应注入校准与标签置换对照继续保留。
+  9.【保留·不删除】attempt #5 的三态 `decidability_state` 契约降为**次级门**保留
+     （只有 `DOMAIN_USABLE` 才允许 real-domain delta 与迁移裁决）；
+     跨实现一致性契约（7 单因子 + 两端点）降为**固定协变量审计**保留，
+     但因 18390 已否证「KC 方差严格 0」的观测前提、`single_factor_flip_localized=false`，
+     本轮**不再追求重定位 0→0.049855 翻变**，只保留与新/旧端点可比性。
+  10.【删除】不再把 18448 已完成的 ceiling 阶梯全网格、oracle 上界全网格、
+      >=11-seed 效力矩阵、7 单因子跨实现全表当**主实验**重跑；只保留 5-seed 可比锚点。
+      预算让给梯度路径 2×2 + 三项必修诊断 + 训练后 real delta。
+  11.【沿用·禁止退化】完整边表 178,853,187 B（`prefix=false`、HTTP Range 分块拼接 + gzip
+      校验）、eye→KC exact-hop 自检 K=3 / 2,544 annotated KC、训练前 invariant checks、
+      2000 次 paired bootstrap 95% CI、BH-FDR q=0.05、PCA/scaler/ridge/MI 分位数一律
+      train-only；`A=0` 明确为**输入信息上界（不得写成生物接线优势）**、精确保度零模型
+      （in/out 度、权重多重集、nnz、互反边对、自环精确相等）、identity 图、
+      自适应阈值 / 不应期 / E-I 各一因子移除消融、打乱帧序 / flash / 冻结 gain /
+      标签置换阴性对照、每条件每 seed 一个 raw NPZ；「保度零模型从未输给真实接线」继续成立。
+  12.【沿用·已验证有效】产物持久化沿用 18390/18448 实测有效的做法：全部计算结束后
+      最后一步用 Python 直接写 `project/result.json` 与 `project/config.json` 两个主文件 +
+      byte-identical 双 snapshot + `project/MANIFEST.txt`，立即 `os.path.exists` /
+      `getsize` / `sha256` 自检并把**实测输出**贴进最终回复，
+      并给出 `ls -l project/result.json project/config.json` 真实输出。不许退化回前三次缺陷。
+  13.【不变】`minimum` / `expected_strong` 一律沿用 C1 `guidance.md` §Expected Results
+      （real-domain `delta >= +0.15` / `>= +0.25` + 迁移裁决 + 一因子消融），**不静默下调**；
+      真实域 ceiling 冻结门槛 0.70 **不下调**；两域都 unavailable 时**不得作迁移主张**；
+      `runtime_hours` 只是可行性估算，**不是超时参数**；提交命令不带
+      `--max-turns` / `--timeout`、不阻塞 `watch`。
+
+- 预期信号 / 若失败下一步：
+  · 预期：>=11 paired seeds 下 e2e `delta(LIF − stateless) >= +0.15` 且 CI 下界 > 0；
+    `stateless_trained_identically` 不追平；冻结探针 delta 的 CI 排除 +0.15；
+    阴性对照校准通过（经验 I 类错误率在名义水平内）；DAVIS gap 在至少一档显著收窄；
+    SINTEL 三态判定落 `REAL_ZERO_EFFECT` 或 `IMPLEMENTATION_IDENTICAL_BRANCH` 且证据完整；
+    unexposed holdout 与 exposed 同号；一因子消融指认梯度路径中的承载机制。
+  · 若假设被否证（e2e 仍 delta≈0，或同样训练的 stateless 追平 LIF）：如实收窄为
+    「连接组约束协议下无可训练膜状态增益」的**诊断型负结果**，
+    **不是达标、不是机制否证、不是方法优越**；保留全部失败证据，
+    继续死磕同一 C1（`abandon_allowed=False`），下一步转 I4 逐跳信息预算 / 残差修复
+    并结合测试集暴露台账，或把 claim 收窄到本机协议特异性。
+  · 若阴性对照校准仍失败：本 run 全部 contrast 标 `uncalibrated`、不作机制主张，
+    如实报告并作为下一次 correction loop 的必修项。
+  · 若 SINTEL 判 `IMPLEMENTATION_IDENTICAL_BRANCH`：该 run 的 delta=0 标无效、
+    不作科学结论，按指纹定位到的实现层缺陷重设计。
+  · 任何情况：不把「实验跑完 / design_valid / 方差恢复 / 首次 DOMAIN_USABLE」写成「结果达标」，
+    不删失败证据，不把负结果改写成正结果，不把 `A=0` 高于图条件写成生物接线优势。
+
+================================================================================
+【硬件报告】先运行 `nvidia-smi` 与 `torch.cuda.is_available()`，记录 GPU 型号、显存、
+torch/CUDA 版本。**不给 4090 任何本地时间/步数预算**，任务跑到平台自己的终态为止。
+
+【公开数据，CC BY 4.0 / 官方公开基准，无需鉴权】
+- 连接组边表（下载**完整文件**，不要只用 8 MB 前缀）：
+  https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content
+  （约 178,853,187 B；列 pre_root_id, post_root_id, syn_count）
+  18448 实测用 HTTP Range 分块 + 断点续传 + 每块校验可拿全，直接复用该策略并给实测 SHA-256。
+  神经元注释 `neuron_annotations_flywire_v2.1.0.tsv.gz`、复眼坐标
+  `right_visual_positions_all_neurons.csv` 同记录（Zenodo 21549559）。
+- DAVIS-2017 trainval-480p（官方直链，含 480p JPEG 与 GT 分割 mask）：
+  https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip （832,766,765 B）
+- MPI-Sintel complete（官方直链，含 GT 光流 .flo）：
+  http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip （5,627,783,629 B）
+  18448 已用 Range 分块 + 断点续传拿全并逐字节哈希验证，**直接复用**并给实测字节数与校验。
+- 拿不到数据 / 下载不完整：必须标 `unavailable` 并写清原因与实测字节数，
+  **不许编造、不许用 toy 数据冒充真实域**。
+
+【依赖清单 · 远程是干净环境，缺什么自行安装并给实测版本】
+python 3.10+、numpy、scipy、scikit-learn、pandas、requests、Pillow（DAVIS JPEG）、
+torch（CUDA）、可选 opencv-python（`.flo` 读取可自己实现，不强依赖）。
+训练 LIF 用边级 `index_add_` 消息传递（**不要物化 107,101² 稠密矩阵**，会 OOM）；
+surrogate gradient 用冻结形状的 sigmoid/straight-through 之一，训练前写死进 config。
+
+【刺激，明确标注 SYNTHETIC】T=8 帧、32×32、n=400、二分类 direction：
+半径 3–5 的圆点，起始 x 随机 8–24，逐帧 speed=2 向左或向右，标签=方向。
+另做 flash control（闪烁检测）作为负对照。固定 70/30 stratified split，
+主口径 seeds=[1,2,3,4,5] 与预注册扩展 seeds=[1..11]（后者只增独立初始化 seed，
+刺激与 split 完全相同）。
+真实域标签构造、输入编码阶梯、三态判定规则、暴露/未暴露 holdout 划分、
+阴性对照校准判据、检验族与 BH family **全部训练前**写进 `config_preregistered.json`
+并 SHA-256 哈希锁定；类别需平衡；`matched_n` 子采样保证各档 n 一致。
+SYNTHETIC 只是受控诊断域，**所有迁移结论只在真实域 ceiling 达标时才可下**。
+
+【条件矩阵 · 每个条件两种子口径，同一批刺激与同一 split，等参数量】
+A. 历史可比锚点（SYNTHETIC，5 条件 × 5 seeds）：stateless / lif_homeostasis /
+   lif_combo / degree_null_lif / A=0，冻结特征 + train-only ridge（与 18156..18448 可比）。
+B. 【核心】梯度路径 2×2：`{frozen+ridge, surrogate_gradient_e2e} × {stateless, LIF}`
+   + `stateless_trained_identically` + 三变体（learnable_decay / learnable_gain_only /
+   straight_through_rate），全部等参数量、等 SynOps、train-only、训练前冻结；
+   每条件 5 / 11 seeds，落盘训练曲线、最终 accuracy、delta、bootstrap 95% CI、
+   exact p、BH q、spike rate、feature std、SynOps 代理、peak GPU MiB、耗时。
+C. 【必修 ①】阴性对照校准诊断：置换构造审计、零效应蒙特卡洛 >=200 次的
+   三检验族经验 I 类错误率、逐环节张量指纹重合度；输出
+   `negative_controls_calibrated_nonsignificant` 与 `uncalibrated_contrasts` 清单。
+D. 【必修 ②】DAVIS 输入编码一因子修复阶梯（5 个单因子 × on/off），每档
+   ceiling + CI + oracle−current gap + Fisher 比 + MI + 类别平衡 + 样本量；
+   全部档落盘、全部报告；只有 ceiling >= 0.70 才升级 DOMAIN_USABLE。
+E. 【必修 ③】SINTEL delta 恒 0 三态判定：逐环节逐跳逐帧张量指纹差异计数与哈希、
+   单位级反事实注入、强制分支判别探针；输出 `sintel_zero_delta_state`。
+F. 【主读出升级】训练后动力学下的 SINTEL real-domain `delta(LIF − stateless)`：
+   5 / 11 seeds、bootstrap 95% CI、三检验族 p、BH q，并按 C1 guidance §Expected
+   Results 给 `minimum` / `expected_strong` / `failure` 判定。
+G. 三态 `decidability_state` 次级门（每个真实域一个，只有 DOMAIN_USABLE 允许 real delta）
+   + 跨实现一致性固定协变量审计（7 单因子 + 两端点，仅保留可比性，不重跑全表）。
+H. 测试集暴露台账：exposed / unexposed 两套数值分别全部报告；
+   最终选择只在未暴露 holdout 上评估一次。
+I. 一因子消融（从 lif_combo 分别移除自适应阈值 / 不应期 / E/I 符号，各 5 seeds）
+   与阴性对照（打乱帧序、flash、冻结 gain、标签置换、保度零模型、identity 图）；
+   冻结探针臂等效性 / 非劣效界（CI 是否排除 +0.15）。
+每条件记录 spike rate、feature std、非常数维、逐跳 probe_acc、Fisher 比、peak GPU MiB、耗时。
+所有统计：2000 次 bootstrap 95% CI、exact paired sign-flip p、BH-FDR q=0.05；
+统一报告 5 paired seeds 下最小双侧 p=0.0625 的效力限制，以及 >=11 seeds 下的新下限。
+**不许用 held-out test 表现去选择训练配置、输入编码档、seed 数、检验族或任何超参。**
+
+【训练前强制自检 · 任一失败先完成诊断再落盘，不得零信息终止】
+1. `kc_reachable_count`：eye→KC exact-hop 可达数（hop 1..8 全报）；按冻结回退规则取 K。
+2. `synthetic_ceiling >= 0.90`：8 帧展平 ridge 的 5-seed 天花板均值。
+3. `real_domain_ceiling`：沿用 18448 已实测的冻结口径（DAVIS 0.613333 /
+   SINTEL 0.700000）并复测；门槛恒为 0.70；任一域 < 0.70 标 unavailable；
+   两域现行口径都 < 0.70 则 `migration_verdict` 明确写
+   `NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE`，**不作迁移主张**。
+4. `gradient_path_actually_distinct`：训练前用单位级反事实注入确认
+   `surrogate_gradient_e2e` 分支确实接收梯度、`frozen+ridge` 分支不接收；
+   若无法区分则标 `IMPLEMENTATION_IDENTICAL_BRANCH` 并落盘全部诊断再结论。
+5. `negative_control_calibration`：C 的判据在看到任何主 contrast 结果**之前**冻结并执行，
+   未通过则本 run 全部 contrast 标 `uncalibrated`（不是终止、不是删除）。
+6. `data_integrity`：每个下载文件实测字节数与 SHA-256 落盘；不一致标 unavailable。
+
+【输出 · 必须在任何提前终止前落盘】
+- `experiment.py`、`entrypoint.sh`、`config.json`、`validate_results.py`、`test_pipeline.py`
+  写在 `project/` 目录内（相对于 workspace 根）；
+  **任何提前终止之前先落盘 `experiment.py` 与阶段性 `result.json`**，
+  每完成一小步就增量 flush，断点可续跑，不输出超长回复。
+- **`project/result.json`**（主文件，不可省略，**必须落在可 pull 的 workspace 内**）：
+  含每条件每 seed 数值、mean、delta、bootstrap 95% CI、exact p、BH q；
+  梯度路径 2×2 全表、阴性对照校准诊断（含经验 I 类错误率与 uncalibrated 清单）、
+  DAVIS 输入编码阶梯全档、SINTEL 三态判定与张量指纹、训练后 real-domain delta、
+  exposed/unexposed 两套数值、三态 `decidability_state`、跨实现固定协变量审计、
+  `migration_verdict`、`grind_block`（四要素逐字）、与 `18448` / round-009 预案的
+  配置 diff 清单、unavailable 条件及原因、实际用到的每个数据文件与字节数/SHA-256、
+  GPU 信息、耗时、显存峰值。
+- **`project/config.json`**（主文件，不可省略）：预注册的全部真实域构造档与哈希锁定、
+  输入编码阶梯、三态判定规则、阴性对照校准判据、暴露/未暴露 holdout 划分、
+  surrogate 形状、seeds、split、检验族与 BH family、全部超参。
+- `project/evidence/` 下 `result_snapshot.json`（与 result.json byte-identical）、
+  `config_snapshot.json`、`gradient_path_2x2.csv`、`negative_control_calibration.csv`、
+  `davis_input_encoding_ladder.csv`、`sintel_zero_delta_diagnostics.csv`、
+  `real_domain_delta_trained.csv`、`exposure_ledger.csv`、`decidability_states.json`、
+  `cross_implementation_covariates.csv`、`main_table.csv`、`ablation.csv`、
+  `negative_controls.csv`、`validation.json`、`raw/*.npz`（每条件每 seed 一个）、
+  `command_history.log`、`project/MANIFEST.txt`（每个预期文件的存在性与字节数）。
+- **最后一个动作**必须是：写出上面两个主文件 + 两个 snapshot + MANIFEST，
+  然后执行 `ls -l project/result.json project/config.json` 与
+  `python -c "import os,hashlib; ..."` 的自检，把**实测输出**贴进最终回复
+  （字节数 + sha256 前 16 位）。**不许只写 snapshot、不许只声称写了文件**。
+- 最终回复必须给**实际数值**和简短结论，严格区分「实测」与「推断」；
+  不得编造任何数值，不得把 1-seed 或不可学结果写成发现，
+  不得把 design_valid / 实验跑完 / 方差恢复写成「方法优越」或「结果达标」，
+  不得把 `A=0` 高于图条件写成生物接线优势，不得把 post-hoc 协议当成预注册达标，
+  不得删改或隐藏任何失败档位的原始数值（含 18448 的校准失败与 delta=0）。

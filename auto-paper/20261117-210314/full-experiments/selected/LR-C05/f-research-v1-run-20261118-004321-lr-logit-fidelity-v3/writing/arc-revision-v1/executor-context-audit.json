@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "stage": "P10/AutoResearchClaw-19-PAPER_REVISION",
+  "status": "failed-validation",
+  "arc_version": "0.3.1",
+  "arc_stage_source": "C:\\code\\AutoResearchClaw\\researchclaw\\pipeline\\stage_impls\\_review_publish.py",
+  "arc_stage_source_sha256": "8fad56dfaf795a3cb9a0da0ce3a8cb42eefcd7a2704c38c28b1e062ed56a331d",
+  "executor_identity": {
+    "provider": "acp",
+    "agent": "codex",
+    "agent_cli_version": "0.169.0-alpha.11.1",
+    "configured_model": "group/never-stuck",
+    "acpx_version": "0.19.2"
+  },
+  "context_isolation": {
+    "status": "verified-clean-external-boundary",
+    "request_messages_sha256": "4526b0c36f6ea8a3695bd2581e7b3a6557d069d753d267f62a10fbff470544c9",
+    "internal_arc_calls": 1,
+    "external_model_calls": 2,
+    "arc_internal_prompt_sent_to_model": false,
+    "raw_execution_logs_sent_to_model": false,
+    "reviews_sent_to_model": false,
+    "note": "The installed ARC Stage 19 control flow was executed. Its historical draft/review/raw-metrics context was replaced at the external model boundary by the clean writing_adapter P10 request containing the current manuscript, scientific facts, and explicit edit decisions only."
+  },
+  "validation": {
+    "problems": [
+      "missing required repair phrase: A_hat X",
+      "Figure 4 caption does not explain the 3 pp reference"
+    ],
+    "source_sha256": "e35047b6ed4e6ae0bdcc9470fb754d6fd398f8d6f2f8aaf2e20e574e9726b8cb",
+    "revised_sha256": "3077b27bd14617752d08aa54d48834e2105b291df4086b46e27caae3df5d1438",
+    "source_words": 2156,
+    "revised_words": 2607,
+    "expected_sections": [
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "4 Experiments and Results",
+      "5 Discussion",
+      "6 Conclusion"
+    ],
+    "actual_sections": [
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "4 Experiments and Results",
+      "5 Discussion",
+      "6 Conclusion"
+    ]
+  },
+  "arc_stage_result": {
+    "stage": "19",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "paper_revised.md"
+    ],
+    "evidence_refs": [
+      "stage-19/paper_revised.md"
+    ]
+  }
+}

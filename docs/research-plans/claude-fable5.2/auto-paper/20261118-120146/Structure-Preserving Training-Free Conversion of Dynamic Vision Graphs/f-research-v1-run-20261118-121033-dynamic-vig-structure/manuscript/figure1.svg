@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330">
+  <style>
+    .box{fill:#f8fafc;stroke:#334155;stroke-width:2;rx:8}
+    .blue{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:8}
+    .gray{fill:#f3f4f6;stroke:#6b7280;stroke-width:2;rx:8}
+    .txt{font-family:Arial,sans-serif;font-size:16px;fill:#111827;text-anchor:middle}
+    .small{font-family:Arial,sans-serif;font-size:13px;fill:#374151;text-anchor:middle}
+    .arrow{stroke:#475569;stroke-width:2;marker-end:url(#a)}
+  </style>
+  <defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#475569"/></marker></defs>
+  <rect class="box" x="20" y="105" width="150" height="120"/>
+  <text class="txt" x="95" y="145">Image patches</text>
+  <g stroke="#94a3b8" fill="none"><rect x="45" y="170" width="22" height="22"/><rect x="84" y="170" width="22" height="22"/><rect x="123" y="170" width="22" height="22"/><rect x="45" y="199" width="22" height="22"/><rect x="84" y="199" width="22" height="22"/><rect x="123" y="199" width="22" height="22"/></g>
+  <line class="arrow" x1="170" y1="165" x2="235" y2="165"/>
+  <rect class="box" x="235" y="90" width="160" height="150"/>
+  <text class="txt" x="315" y="125">Dynamic graph</text>
+  <text class="small" x="315" y="150">kNN + signed messages</text>
+  <g stroke="#64748b" stroke-width="1.5"><line x1="265" y1="180" x2="365" y2="180"/><line x1="265" y1="180" x2="365" y2="210"/><line x1="265" y1="210" x2="365" y2="180"/><line x1="265" y1="210" x2="365" y2="210"/></g>
+  <g fill="#0f172a"><circle cx="265" cy="180" r="5"/><circle cx="265" cy="210" r="5"/><circle cx="365" cy="180" r="5"/><circle cx="365" cy="210" r="5"/></g>
+  <line class="arrow" x1="395" y1="120" x2="475" y2="120"/>
+  <line class="arrow" x1="395" y1="210" x2="475" y2="210"/>
+  <rect class="gray" x="475" y="75" width="150" height="80"/>
+  <text class="small" x="550" y="110">v1</text>
+  <text class="small" x="550" y="132">scale calibration</text>
+  <rect class="blue" x="475" y="170" width="150" height="80"/>
+  <text class="small" x="550" y="205">v2</text>
+  <text class="small" x="550" y="227">message-aware calibration</text>
+  <line class="arrow" x1="625" y1="210" x2="700" y2="210"/>
+  <rect class="blue" x="700" y="165" width="220" height="90"/>
+  <text class="txt" x="810" y="200">minimize Grapher message MSE</text>
+  <text class="small" x="810" y="225">fit on training subset only</text>
+  <line class="arrow" x1="810" y1="255" x2="810" y2="285"/>
+  <rect class="box" x="665" y="285" width="290" height="35"/>
+  <text class="small" x="810" y="307">low-step signed codes · matched event budget</text>
+</svg>

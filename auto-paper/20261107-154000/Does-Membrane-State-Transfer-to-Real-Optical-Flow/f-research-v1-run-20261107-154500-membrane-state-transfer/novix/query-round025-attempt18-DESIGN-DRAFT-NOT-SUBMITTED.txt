@@ -1,0 +1,328 @@
+================================================================================
+【attempt #18 · round-025 · C1 死磕 correction loop v3 · DESIGN DRAFT / NOT SUBMITTED】
+f-research-v1 / P4 / C1 / 2026-11-10 00:3x–01:4x GMT+8
+H19：状态活性时钟来源门 × 终态可达性配对对照阶梯
+     （status-liveness clock provenance gate + terminal-reachability paired-control ladder）
+     —— 用「10 个已终态任务」作时间戳校准对照，判定 processing 是租约续期假象还是计算进展
+状态：**NOT SUBMITTED / 不得原样启用**（第 9 份 NOT-SUBMITTED 预案）。
+      18885（attempt #9 / H10）在途、跨第 9 轮 `processing`。按 §3.6(2)
+      **不重提交、不等待、不 pull、不写 verdict、不动科学阶段、不换题**；
+      按 §3.6(3) 交付本轮**一次实质优化**（本预案）。
+      须先按 `acceptance-verdict-18885.md` 的真实实测修订四要素再决定
+      启用 / 合并 / 废弃。草案序号 #18 仅指设计预案；`primary_focus.attempt_count`
+      **保持 9 不虚增**。
+================================================================================
+
+【本预案为何 NOT SUBMITTED】
+同一 idea（C1）已有在途任务 `18885`（attempt #9 / H10）。用户 14:34 指令与
+§3.6(2)：在途不重复提交、不等待、继续同一主攻。本预案是可证伪的协议/测量层
+设计草案，**不是实验结果、不是判定、不是 kill hit、不是「实验跑完」**。
+本轮 **0 次 novix 提交**（参照 rounds 006/009/011/013/015/017–024 先例）。
+
+--------------------------------------------------------------------------------
+## 0. 本轮唯一新增事实（本机权威复核原始字节，非推断、非科学结果）
+
+1. **前缀只读探针首次双次超时**：`_r025_probe.py`（16 KB / r023 修正正则 /
+   本机 30 s 诊断读上限）两次独立 GET **均 `TimeoutError: The read operation
+   timed out`**（30.7 s / 33.6 s），`parsed_status_count=0`、
+   `verdict=INCONCLUSIVE_NO_PARSED_STATUS`。按「传输层错误重试一次、
+   绝不误判为任务失败」规则，以**本机 60 s 诊断读上限**（`_r025_probe_retry.py`）
+   重试 → **2× HTTP 200 / 正式解析 JSON status**：
+   `code=0` / `message=Success` / **`status=processing`** / `version=2` 恒定 /
+   `createdAt 07:31:58` / `updatedAt 00:32:14 → 00:33:02`（r024 收尾
+   22:27:41，单调）/ `step_entries_in_prefix=1` /
+   `last_step_updateAt_in_prefix 07:32:30`（业务时间戳冻结约 17 h）/
+   `finalReply_in_prefix=false`；本次两读耗时 **43.0 s / 39.8 s**。
+   → **跨第 9 轮非终态、本轮无状态跃迁**；`result_json_in_prefix=true`
+   仅是 query 文本字面串，**不是产物**。
+   **本轮首次可测的新量**：本机 30 s 诊断上限下**两次独立 GET 全部超时**
+   （r023 为 6.1 / 8.8 s 双 200；r024 首探针 30.7 s 超时 + 24.1 s 200、
+   r024 重试 8.5 / 7.1 s 双 200）；本轮 60 s 上限重试的两次成功读
+   耗时 43.0 / 39.8 s，是**首次实测到成功的前缀读越过 30 s**。
+   该延迟是**本机诊断读观测值**，不是远端任务预算、不是计算负载证据；
+   r023→r025 并非单调漂移，故**不得**拟合成趋势或写成「延迟单调恶化」。
+2. **带外有界通道** `novix --json debug task 18885 --logs` = **rc=0 /
+   78,563 B / SHA-256 `b9b3d1e0485740d8f13f8742e541389aa7d1856f97045d81663486f7d87ed3fb`**
+   （r024 为 77,962 B / `4b438113…`，**+601 B**）：`backend.status=processing` /
+   `task.status=running` / `placement.state=submitted` /
+   `dispatch_phase=invoking` / `reason=recovered runtime dispatch` /
+   `artifact_sync=null` / `diagnosis=ALLOCATION_EVIDENCE_UNAVAILABLE` /
+   `next_step="Nomad 暂不可达或历史记录已回收；保留任务记录，不要直接重新派发。"`；
+   `result.json` 计数 **0** / `COMPLETE` 计数 **0** / `finalReply` 计数 **0** /
+   无任何实验指标。
+3. **本轮首次「心跳计数冻结 / 警告组成改变」逐轮同源复核**
+   （直接对 `round-0{22,23,24,25}-outofband-debug-task-logs.json` 原始字节计数）：
+   `health` 子串计数 **1131 / 1131 / 1131 / 1131**（四轮**恒定**，
+   r022 账本记的 1130 属不同计数口径，本轮以原始字节复核为准）；
+   `ResourceWarning: unclosed` **18 / 16 / 16 / 13**（递减）；
+   `aiohttp/payload.py` 大 body 锁相关 **4 / 6 / 6 / 10**（递增）；
+   带外日志体积 **77,660 / 77,962 / 77,962 / 78,563 B**（本轮 +601 B）。
+   → 可测事实仅到「**心跳计数四轮恒定，而警告组成与日志体积在变**」；
+   **不得**写成「警告单调增长」（unclosed 实为递减）、
+   **不得**写成「runner 健康循环已停止」（本轮证据不足以判定循环状态），
+   更不得推断为算力状态或计算结果。这是历轮首次把「心跳计数」与
+   「日志组成变化」分开逐轮计数，属**通道 / 协议事实**。
+4. **控制面时钟与业务时钟背离扩大**：`updatedAt` 从 r024 `22:27:41`
+   推进到 r025 `00:32:14 → 00:33:02`（约 2 h 单调），
+   而业务 `steps[]` 前缀 `updateAt` 恒为 `07:32:30`（约 17 h 冻结）、
+   `version=2` 跨 9 轮恒定、`step_entries_in_prefix=1` 恒定。
+   → `processing` 状态的**唯一可观测量是顶层 `updatedAt` 在动**，
+   但没有任何业务步写入证据。
+5. **第二条有界通道** `novix --json debug task 18885`（logs=false）
+   rc=0 / **1,158 B / SHA-256 `d1c33e9903f687892364525f3fc07b861c844c79bdaff5924e24b77878165b8c`**：
+   分配标识元组与 r024 **完全一致**（`nomad_alloc_id=513e82bf-0c92-e565-…` /
+   `claim_name=claim-novixlet-2d8169…` / `cpu=4.0 / memory_mb=49152 / gpu=1` /
+   `node=aliyun-hz-exp-4090-1` / `session_id=8f6f214f…` /
+   `created_at=1794180717.87619` / `dispatch_paused=false` / `eligible_nodes=2`），
+   **同时** `dispatch_phase=invoking`、`artifact_sync=null`、
+   `diagnosis=ALLOCATION_EVIDENCE_UNAVAILABLE`。→ 「有分配标识 ≠ 有分配证据」
+   连续第 2 轮成立，且标识元组本身**未发生任何变化**。
+6. `check_inflight.py` 机械记 `transport_error_retry`（本机 120 s / `IncompleteRead`
+   / >8 MB 单体响应）→ 原条目保留 + 权威纠正：**传输层错误，
+   不是任务失败、不是终态、不是科学负结果**。
+7. **本机契约复核（r023 修复后第 3 轮）**：`contract_version=v2`、
+   **11/11 哈希 MATCH**、冻结快照未改写、history 仅一条 `reopen`、
+   **0 个 pass**、**26/26 pending**；`--before P0` rc=0、
+   `--complete` / `--submission-ready` rc=1（预期）；两份 guidance
+   `--strict --packet` 均 rc=0。**`--before P0` rc=0 不等于 P0 已执行。**
+8. 技能契约 31 文件 / 227,481 B / 0 缺失全文加载并 SHA-256 留痕
+   `rounds/round-025-contract-load-log.json`。
+
+**以上 1–8 全部是通道 / 协议 / 本机结构事实，不是科学结果、不是判定、
+不是 kill hit、不计入任何分数或达标判定。** `finalReply` 连续第 8 轮不可读。
+
+--------------------------------------------------------------------------------
+## 1. 死磕四要素（§3.6(3)）
+
+### 1.1 上一轮失败点（如实，不改写、不删除、不把负结果改正）
+
+- 最近一次**有正式科学判定**的仍是 `18696` = `REJECT_FAILURE`
+  （round-015/016 幂等、9/9 SHA-256 归档）：`design_valid=true`、全量真跑完
+  （23/23 + 142/142 + 148/148、165 raw NPZ、614/614 重哈希），但两真实域
+  ceiling DAVIS `0.424242` / SINTEL `0.400000` 均 < 0.70
+  （`INPUT_BOTTLENECK`）、`gt_oracle_upper_bound=1.0` 明确非历史 `0.6875`
+  重算、三族校准 stratified paired bootstrap `0.149` 失败（上限 0.075）、
+  unexposed 符号翻转、`c1_guidance.verdict=failure`、
+  `minimum_met=false` / `expected_strong_met=false` / `transfer_claim_made=false`。
+  诊断进展（不是达标）：`localized_unit=syn`、两域 holdout `CONSTRUCTIBLE`、
+  `INPUT_SIGNAL_PATH_MEASURABLE`，但 `H_slope(LIF−stateless)` 逐环节全负、
+  最大衰减定位 `drive→syn`。`idempotent_reference=unavailable` 如实保留。
+- `18885`（attempt #9 / H10 突触前 drive→syn 能量稀释）**结果未出**：
+  五档 `drive_to_syn_energy_ratio`、`H_slope` 恢复、`localized_unit` 落点
+  **全部未知**。不得假定 H10 成败、不得预支结论、不得把 attempt #10–#17
+  八份预案原样启用。
+- 本轮新增失败点（**不是科学负结果、不是机制否证、不是 kill hit**）：
+  `finalReply` 连续第 8 轮不可完整回收；30 s 上限前缀读首次**双次**超时、
+  60 s 上限重试才得 2× HTTP 200 且成功读首次越过 30 s（43.0 / 39.8 s，
+  非单调漂移）；`version` 恒定且 `steps[]` 前缀业务时间戳冻结约 17 h；
+  `health` 心跳计数四轮恒定 1131 而日志组成与体积在变（方向不一致，
+  unclosed 递减 / 大 body 警告递增）；本机全量 `get_task` 读仍触发
+  `IncompleteRead`（>8 MB 单体）。
+- **历轮预案的机制层已覆盖**：H10 科学侧能量稀释；H11 条件互信息预算 /
+  信息测量级别（估计器前置校准门）；H12 离线重判定 / manifest↔payload 绑定；
+  H13 证据生成时序与分片；H14 远程执行终止谓词；H15 证据工件身份与不可变性；
+  H16 控制面—数据面传输通道拓扑（runner 侧）；H17 派发层资源归属状态机 /
+  孤儿会话判据；H18 本机观测者读取混合（观测剂量 / 零全量窗口）。
+  **没有任何一个检验过「`processing` 这个状态字段本身由哪个时钟续期、
+  终态是否仍可达」，也没有任何一个把 10 个已终态任务当作时间戳校准对照。**
+
+### 1.2 本轮假设 H19（可证伪、机制级不同于 H10–H18）
+
+**H19：状态活性时钟来源假设（lease-liveness clock provenance）。**
+9 轮观测到的共同结构是：顶层 `updatedAt` 单调推进（控制面在写），
+但 `version=2` 恒定、`steps[]` 业务 `updateAt` 冻结 ~17 h、
+`finalReply` 从不可读、`health` 心跳计数冻结、`result.json` / `COMPLETE`
+计数恒为 0。历轮隐含假设是「`status=processing` 且 `updatedAt` 在动 ⇒
+计算仍在推进、终态迟早可达」。**这一隐含假设从未被检验过。**
+
+H19 提出：`updatedAt` 的推进可能来自**控制面的租约 / 会话续期写入**
+（lease renewal、liveness heartbeat 的持久化副作用），
+而**不是**业务 agent 的计算进展；`processing` 因而可以是
+**租约存活的假象**，与「是否有算力在跑、终态是否可达」无因果关系。
+若成立，则「继续等同一个 task」在机制上就不可能收敛，
+必须在此之前先用**独立校准对照**判定终态可达性，
+而不是再改 runner / 派发层 / 观测剂量。
+
+这既不是 H18（改**本机观测者的读取混合 / 观测剂量**，runner 与派发层零改动），
+也不是 H17（改**派发层资源归属状态机语义**与孤儿会话判据），
+不是 H16（改**同一 HTTP 响应 / aiohttp POST 的通道拓扑**），
+不是 H13（改**证据生成时序 / 分片契约**），
+不是 H14（改 **agent 何时停止**的谓词），
+不是 H11（改**信息测量级别 / 估计器校准门**），
+不是 H10（改**科学侧能量稀释**）——
+**H19 改的是「用什么证据判定状态字段的活性来源与终态可达性」这一
+测量 / 校准层**：唯一自变量是一个只读的**配对对照测量协议**，
+对 runner、派发层、网络拓扑、观测总量、科学侧实验设计**全部零改动**，
+不新增任何 novix 任务、不重派发、不重训、不重判定。
+
+- **唯一自变量**：`liveness_clock_provenance_gate_version ∈
+  {implicit_progress_assumption (rounds 016–025, as archived),
+   terminal_reachability_paired_control_ladder}`。
+  网络 / 数据 / seeds / 阈值 / 估计量 / 判定算子 / H10 五档能量门 /
+  H17 归属门 / H16 分离门 / H18 观测窗口 **全部不变**，
+  不下调任何门槛、不重新派发、不新增任何 novix 任务。
+- **新机制（历轮从未有）**：
+  (a) **终态配对对照阶梯（terminal paired-control ladder）**：用本机已归档、
+      **10 个已终态任务**（各有正式判定；其中 `18696` 另有 9/9 SHA-256
+      证据归档，其余任务以 `automation-state.json` 的 `tasks[]` 判定状态为准，
+      **不声称全部具备 9/9 哈希归档**）：`17682` steps 40 /
+      `17788` 2 / `18156` 317 / `18228` 348 / `18273` 355 / `18390` 395 /
+      `18448` 316 / `18533` 536 / `18696` 507 / `18489` 0）
+      作**时间戳校准对照**。对每个任务用同一 16 KB 前缀有界 GET
+      （同一 headers、同一本机 60 s 诊断读上限）测三元组
+      `T = (updatedAt, version, last_step_updateAt)` 及 `finalReply` 前缀可读性，
+      得到「终态任务的 `updatedAt` 是否冻结 / 是否仍在租约续期」的**基线分布**。
+      这是历轮唯一使用**已终态任务作状态字段校准**的对照，
+      且完全只读、不触碰在途任务、不产生任何新算力消耗。
+  (b) **两时钟背离量（预注册、可证伪）**：
+      `Δ_control_clock = updatedAt(t2) − updatedAt(t1)`、
+      `Δ_business_clock = last_step_updateAt(t2) − last_step_updateAt(t1)`、
+      `Δ_version = version(t2) − version(t1)`、
+      `Δ_health = health_ping_count(t2) − health_ping_count(t1)`、
+      `Δ_log_composition = (unclosed_count, large_body_warning_count,
+       log_bytes)` 三元组变化（**分别记录符号，不合并、不预设单调方向**）。
+      **判据（训练前冻结、双向）**：若 18885 呈
+      `Δ_control_clock > 0 ∧ Δ_business_clock = 0 ∧ Δ_version = 0 ∧
+       Δ_health = 0 ∧ Δ_log_composition ≠ 0`，
+      而**终态对照阶梯中 ≥8/10 任务**呈
+      `Δ_business_clock > 0`（终态前有业务步写入）且终态后
+      `Δ_control_clock = 0`（`updatedAt` 冻结），
+      则「18885 的 `processing` 由租约续期维持、业务计算零进展、
+      终态不可由等待达成」获支持（H19 成立）。
+      若终态对照的 `updatedAt` 同样持续漂移、或 18885 出现
+      `Δ_business_clock > 0` / `Δ_version > 0` / `Δ_health > 0`，
+      则 **H19 被否证**。`Δ_log_composition` 三个分量的符号
+      （本轮 unclosed 递减、大 body 警告递增、体积 +601 B）
+      必须**逐分量如实记录**，不得为迎合假设挑一个方向写成单调。
+  (c) **终态可达性 write-once 台账** `project/liveness-clock-ledger.json`
+      （第十主文件，预注册 ≤ 8 KB、内容寻址、SHA-256）：逐轮记录每次有界
+      读取的 `T` 三元组、五个 Δ 量、对照阶梯基线分布与判据命中状态；
+      训练 / 判定前落盘，不原地改写。H15 的不可变对象语义复用，
+      但对象不同（H15 绑证据工件、H18 绑观测行为流水、H19 绑状态时钟）。
+  (d) **终态可达性三态落点（全部预注册、双向）**：
+      `LEASE_LIVENESS_ONLY`（H19 成立）→ 停止把 `processing` 当作计算进展，
+      保留任务记录与全部失败证据，**仍不重提交、不等待、不换题**；
+      待 18885 转终态后按 guidance §6 出 `acceptance-verdict-18885.md`，
+      **达标才 `--before P5`**；同时在账本写明「等待不产生终态」的
+      机制级证据，供 §3.6(4)(b) 评估时区分「平台故障」与「科学负结果」。
+      `PROGRESS_CONFIRMED`（H19 否证，业务时钟恢复推进）→ 回 H10 主线，
+      按真实 `acceptance-verdict-18885.md` 修订四要素。
+      `UNINFORMATIVE_TRACE`（**含本轮**：对照阶梯未跑、β 未标定、
+      无 `result.json` / 无 COMPLETE / 无实验指标）→ 不写科学结论，
+      继续同一 C1。
+  (e) **阴性对照防致盲**：对**已终态且 9/9 SHA-256 归档**的 `18696`
+      做同刻有界读取，要求阶梯能正确识别其为终态并保有完整证据；
+      若不能，则 H19 判 `UNINFORMATIVE_TRACE`，不得据以改流程。
+      （H18 的阴性对照只验「终态可判定」，H19 进一步验
+      「时钟基线可校准」，二者层级不同、互不替代。）
+  (f) **非推断规则显式化**：`ALLOCATION_EVIDENCE_UNAVAILABLE` 与
+      「分配标识元组冻结」**不得**推断为算力已运行 / 结果将返回 / 可重派发；
+      平台 `next_step="不要直接重新派发"`、
+      H16 `no_re_dispatch_without_terminal_beacon`、
+      H17 `no_re_dispatch_without_allocation_provenance`、
+      H18 `no_re_dispatch_without_zero_full_body_window_receipt`
+      **四条件门**全部升为提交前硬检查；本预案**不派发、不重提、不等待**。
+  (g) **本机判定装置一致性复核门**：contract v2 冻结快照 + `reopen` 事件 +
+      11/11 哈希 MATCH + 0 个 pass + 26/26 pending 作为本机装置可运行性证据；
+      明确标注**不证明平台侧 allocation 存在、不推进任何科学阶段、
+      不是 P0 pass**。
+- **决定性对照（沿用，不新增网络机制）**：`A=0` 输入信息上界、
+  精确保度零模型、`stateless_trained_identically`；
+  `degree_null − LIF` 按实测符号报告；**禁止「生物接线带来精度优势」主张**。
+
+### 1.3 具体改动：相对 `query-round016-attempt9.txt`（H10，最后一次**已提交**）
+###      与 H11/H12/H13/H14/H15/H16/H17/H18 八份 NOT-SUBMITTED 预案的 10 条机制级 diff
+
+1. **第一主门整体替换**：H10 的 `drive_to_syn_energy_dilution_gate` 前移为
+   `liveness_clock_provenance_gate`（终态配对对照阶梯 + 五 Δ 判据 + 时钟台账
+   + 阴性对照）。H10 五档能量门**幂等保留为第二主门**；H18 观测回作用门、
+   H17 归属门、H16 分离门、H15 身份门、H14 完成谓词分别降为第三至第七
+   独立复核门，不删除、不下调。
+2. **改的是「状态字段的因果来源」而非任何执行层**：H16 改 runner 侧响应
+   通道拓扑、H17 改派发层资源归属语义、H18 改本机观测者的读取混合、
+   H14 改 agent 终止谓词、H13 改证据时序；
+   **H19 四者全不动**，只新增一个只读的配对对照测量协议，
+   判定 `updatedAt` 推进是否由业务计算产生。这是历轮唯一以
+   「状态活性时钟来源」为自变量的层。
+3. **首次引入终态配对对照阶梯**：10 个已终态任务（steps 0–536、
+   各有正式判定；仅 `18696` 另有 9/9 SHA-256 证据归档）作时间戳校准基线；
+   H18 只用 `18696` 单个阴性对照验「终态可判定」，
+   H17/H16 的四通道对照不含任何已终态任务的时间戳基线。
+4. **首个「心跳计数恒定 / 日志组成变化」分离可测量**：本轮直接对
+   r022–r025 四份带外日志原始字节逐轮计数，得到
+   `health` 1131/1131/1131/1131 恒定，而 `unclosed` 18/16/16/13、
+   大 body 警告 4/6/6/10、体积 77,660/77,962/77,962/78,563 B
+   （**方向不一致**）。H19 把 `Δ_health` 与
+   `Δ_log_composition` 三元组（逐分量记符号）升为预注册判据分量；
+   H16 的 `large_body_warning_count==0` 是远端背压硬判据、
+   H18 把它用于观测剂量因果，二者既不逐轮分离计数，
+   也不允许「警告方向不一致」这一否证分支。
+5. **本机读延迟首次作为可测量**：r023 6.1/8.8 s 双 200；
+   r024 首探针 30.7 s 超时 + 24.1 s 200、重试 8.5/7.1 s 双 200；
+   r025 30 s 上限双次超时、60 s 上限重试 43.0 / 39.8 s 双 200。
+   H19 把 `prefix_read_latency_s` 纳入时钟台账（**本机诊断读参数，
+   不是远端任务预算**），并预注册「延迟非单调、不得拟合趋势、
+   不得推断为计算负载加重」；H18 的零全量窗口只记录读取次数 / 字节，
+   不记录延迟，也未处理「同一阈值下双次全超时」这一情形。
+6. **「有分配标识 ≠ 有分配证据」连续第 2 轮且标识元组完全冻结**，
+   升为显式非推断规则 + 四条件不重派发门（H18 为三条件）。
+7. **三态落点重写并双向可证伪**：`LEASE_LIVENESS_ONLY` /
+   `PROGRESS_CONFIRMED` / `UNINFORMATIVE_TRACE`（含本轮），
+   判据用五个 Δ 的合取式与 8/10 对照比例训练前冻结；
+   H18 的三态是 `BACKACTION_CONFIRMED/REFUTED/UNINFORMATIVE`，
+   作用于观测剂量因果，二者自变量与判据完全不同。
+8. **第十主文件 `project/liveness-clock-ledger.json`**（≤ 8 KB、
+   write-once、SHA-256）：H16 为第八主文件、H18 为第九主文件
+   `observer-census.json`（H13 仍沿用「六主文件」口径，未新增主文件编号）；
+   H19 新对象 = 状态时钟三元组与 Δ 量序列，
+   与前两者不重叠、不原地改写。
+9. **提交侧硬约束全不下调**：`minimum(+0.15)` / `expected_strong(+0.25)` /
+   真实域 ceiling `0.70` 不下调；≥11 paired seeds、2000 bootstrap 95% CI、
+   BH-FDR q=0.05、三族校准全报告；两真实域各自单独报告；
+   禁止生物接线优势主张；六主文件 + `project/result.json` 必须落在
+   **可 pull 的 workspace 内**；`project/status.json` 分片可增量读取
+   保持为提交前硬检查项；**提交命令不带 `--max-turns` / `--timeout` /
+   阻塞 watch / 任何时间步数预算参数**（显式反预算声明）。
+   60 s 前缀读上限是**本机诊断读参数**，与远端任务预算无关。
+10. **H11/H12/H13 降独立复核门**：信息估计器前置校准、离线重判定
+    manifest↔payload 绑定、证据分片契约全部保留为窗口结束后的独立复核门，
+    不作第一主门、不修改其内容。本预案 **0 次 novix 提交**。
+
+### 1.4 预期信号 / 若失败下一步
+
+- **预期信号**（全部为通道 / 协议诊断，**不是**科学结果）：
+  阶梯跑通后，若 H19 成立，10 个终态对照的 `updatedAt` 在终态后应冻结、
+  业务 `updateAt` 在终态前应有推进；而 18885 应呈
+  `Δ_control_clock > 0 ∧ Δ_business_clock = 0 ∧ Δ_version = 0 ∧
+   Δ_health = 0 ∧ Δ_log_composition ≠ 0`。
+  `prefix_read_latency_s` 只作逐轮如实记录，**不预期单调漂移**。
+  阴性对照 `18696` 在有界通道下仍判终态、9/9 哈希不丢。
+- **若失败下一步**：`PROGRESS_CONFIRMED` → 回 H10（能量稀释）/ H17
+  （资源归属）主线，按 `acceptance-verdict-18885.md` 真实实测修订四要素；
+  `UNINFORMATIVE_TRACE` → 只更新文档、继续同一 C1、不换题。
+  **任何情形均不进 P5、不写论文、不标 stage passed、不重新派发、
+  不改写负结果、不编造数值、不把「实验跑完」写成「结果达标」。**
+  九份 NOT-SUBMITTED 预案（r017 H11 … r024 H18 / **r025 H19**）
+  **均不得原样启用**，须先按 `acceptance-verdict-18885.md` 真实实测修订。
+  若 18885 支持 H10，九者降级为独立复核门。
+- **若出现第三次独立干净失败必须重新评估 (b) kill criteria**。
+
+--------------------------------------------------------------------------------
+## 2. 诚实性声明
+
+本预案中的每一个平台数值都来自本轮落盘的
+`rounds/round-025-prefix-probe.json` / `...-prefix-probe-retry.json` /
+`round-025-outofband-debug-task-logs.json` / `round-025-debug-task-nologs.json` /
+`rounds/last-check.json` / `round-025-contract-load-log.json`，
+以及 r022–r024 同源带外日志，没有推断、没有补数、没有把
+`processing` 写成终态、没有把「通道可读」写成「结果达标」、
+没有把「有分配标识」写成「算力已运行」、没有把「读延迟变化」写成
+「计算负载加重」，也没有把「日志体积 +601 B」写成
+「警告单调增长」（本轮 unclosed 实为递减 16→13）。
+本轮首次双次 30 s 超时后，按规则只重试了一次本机诊断读，
+未重复刷额度、未改变远端任务、未把 `TimeoutError` 记作任务失败。
+**H19 是假设，不是结论；是诊断型测量契约，不是科学结果、不是 kill hit。**
+`C1` 主命题「膜状态增益可迁移到真实光流」在本轮**仍未获支持**，
+失败证据全部保留。唯一合格线仍是成稿 `ccf-paper-reviewer full`
+`**Overall:** X >= 8.0` 且 P21 完成，本轮**未达到、未宣称达到**。
+================================================================================

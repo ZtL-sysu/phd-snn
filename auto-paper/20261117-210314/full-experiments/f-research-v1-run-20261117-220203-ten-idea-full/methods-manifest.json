@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "files": [
+    {"path": "results/methods-CERT-C11.json", "sha256": "077e19dc1a7d4e5d0814bbc12ab63c7c17601f77939f7029faedd15d54f935f4"},
+    {"path": "results/methods-DLY-C14.json", "sha256": "80f79b82c044a13ec49aec5f285ef91d8bc508754cc64cea22d61e9f91f550ef"},
+    {"path": "results/methods-DYN-C01.json", "sha256": "9c7ba7c72b3fcd6291a84bc9baa8d27c34c0671a99877b1e698b25658bc43de3"},
+    {"path": "results/methods-EDGE-C06.json", "sha256": "37de689085338d97b7b2661eeef4d408a02d1bb6c985713d5a1c793a6b2ff42d"},
+    {"path": "results/methods-EQ-C02.json", "sha256": "910c884a47f31fea9b8a5639f0db745c66caef8643f00fb7abd50295947ae81c"},
+    {"path": "results/methods-LR-C05.json", "sha256": "466643cb282d163e3a7adc2c4a8e8ba0b8a440c18c3e452c56365aa1b1123992"},
+    {"path": "results/methods-PERM-C03.json", "sha256": "6ac919e01f41acb7c959ff6328f972ab063e800f2c0cefa7835828c8192d1bff"},
+    {"path": "results/methods-POS-C13.json", "sha256": "a4399d1141e1caf9cc68282f9a53da6ddd29c0980e7c95fc2235f801dcea0158"},
+    {"path": "results/methods-READ-C18.json", "sha256": "a63182022e7ba13afb1fdf66c210cea6f992f80e961a3f9ef213c10813f7fc2e"},
+    {"path": "results/methods-SIGN-C04.json", "sha256": "8d0e9590eed2367faa8acf64a9103fcc182aba49d5b5306c334fcbe52667e279"}
+  ],
+  "note": "First-round affected outputs were superseded only after recorded implementation corrections; current hashes are the final P4 evidence."
+}

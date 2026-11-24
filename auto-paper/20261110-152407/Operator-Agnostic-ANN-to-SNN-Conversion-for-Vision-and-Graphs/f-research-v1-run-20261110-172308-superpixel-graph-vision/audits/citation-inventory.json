@@ -1,0 +1,506 @@
+[
+  {
+    "key": "maass1997",
+    "title": "Networks of spiking neurons: The third generation of neural network models",
+    "year": 1997,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "krizhevsky2009",
+    "title": "Learning multiple layers of features from tiny images",
+    "year": 2009,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "lecun1998",
+    "title": "Gradient-based learning applied to document recognition",
+    "year": 1998,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "achanta2012",
+    "title": "SLIC superpixels compared to state-of-the-art superpixel methods",
+    "year": 2012,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§3 Method / §4 Experiments"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "horowitz2014",
+    "title": "1.1 Computing's energy problem (and what we can do about it)",
+    "year": 2014,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§3 Method / §4 Experiments"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "diehl2015",
+    "title": "Fast-classifying, high-accuracy spiking deep networks through weight and threshold balancing",
+    "year": 2015,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "yang2016planetoid",
+    "title": "Revisiting semi-supervised learning with graph embeddings",
+    "year": 2016,
+    "source_url": "https://arxiv.org/abs/1603.08861",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "kipf2017",
+    "title": "Semi-supervised classification with graph convolutional networks",
+    "year": 2017,
+    "source_url": "https://arxiv.org/abs/1609.02907",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "hamilton2017",
+    "title": "Inductive representation learning on large graphs",
+    "year": 2017,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "rueckauer2017",
+    "title": "Conversion of continuous-valued deep networks to efficient event-driven networks for image classification",
+    "year": 2017,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "velickovic2018",
+    "title": "Graph attention networks",
+    "year": 2018,
+    "source_url": "https://arxiv.org/abs/1710.10903",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "orchard2015",
+    "title": "Converting static image datasets to spiking neuromorphic datasets using saccades",
+    "year": 2015,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "li2017cifardvs",
+    "title": "CIFAR10-DVS: An event-stream dataset for object classification",
+    "year": 2017,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "neftci2019",
+    "title": "Surrogate gradient learning in spiking neural networks",
+    "year": 2019,
+    "source_url": "https://arxiv.org/abs/1901.09948",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "sengupta2019",
+    "title": "Going deeper in spiking neural networks: VGG and residual architectures",
+    "year": 2019,
+    "source_url": "https://arxiv.org/abs/1802.02627",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "knyazev2019",
+    "title": "Image classification with hierarchical multigraph networks",
+    "year": 2019,
+    "source_url": "https://arxiv.org/abs/1911.06911",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "han2020rmp",
+    "title": "RMP-SNN: Residual membrane potential neuron for enabling deeper high-accuracy and low-latency spiking neural networks",
+    "year": 2020,
+    "source_url": "https://arxiv.org/abs/2003.01811",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "kugele2020",
+    "title": "Efficient processing of spatio-temporal data streams with spiking neural networks",
+    "year": 2020,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "deng2021",
+    "title": "Optimal conversion of conventional artificial neural networks to spiking neural networks",
+    "year": 2021,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "bu2022qcfs",
+    "title": "Optimal ANN-SNN conversion for high-accuracy and ultra-low-latency spiking neural networks",
+    "year": 2022,
+    "source_url": "https://arxiv.org/abs/2303.04347",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§3 Method / §4 Experiments"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "han2022vig",
+    "title": "Vision GNN: An image is worth graph of nodes",
+    "year": 2022,
+    "source_url": "https://arxiv.org/abs/2206.00272",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "liu2022spikeconverter",
+    "title": "SpikeConverter: Efficient and accurate conversion of spiking neural networks",
+    "year": 2022,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "dwivedi2023",
+    "title": "Benchmarking graph neural networks",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2003.00982",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§3 Method / §4 Experiments"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "fang2023spikingjelly",
+    "title": "SpikingJelly: An open-source machine learning infrastructure platform for spike-based intelligence",
+    "year": 2023,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "eshraghian2023",
+    "title": "Training spiking neural networks using lessons from deep learning",
+    "year": 2023,
+    "source_url": "https://arxiv.org/abs/2109.12894",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "wu2024ftbc",
+    "title": "FTBC: Forward temporal bias correction for optimizing ANN-SNN conversion",
+    "year": 2024,
+    "source_url": "https://arxiv.org/abs/2403.18388",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§3 Method / §4 Experiments"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "bojkovic2024ot",
+    "title": "Optimal transport view of ANN-to-SNN conversion",
+    "year": 2024,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "dualphase2024",
+    "title": "Dual-phase spiking neurons with membrane-potential decoding for accurate ANN-SNN conversion",
+    "year": 2024,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "bojkovic2025tpp",
+    "title": "Temporal misalignment in ANN-SNN conversion and its mitigation via probabilistic spiking neurons",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2502.14487",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§3 Method / §4 Experiments"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "hao2025parallel",
+    "title": "Faster and stronger: When ANN-SNN conversion meets parallel spiking calculation",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2412.13610",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§3 Method / §4 Experiments"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "huang2025dcgs",
+    "title": "Differential coding for training-free ANN-to-SNN conversion",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2503.00301",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "wang2025adafire",
+    "title": "Adaptive calibration: A unified conversion framework for spiking neural networks",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2311.14265",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "ramesh2025pascal",
+    "title": "PASCAL: Adaptive layerwise timesteps for low-latency ANN-SNN conversion",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2505.01730",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "yang2025csqcfs",
+    "title": "Channel-wise softplus QCFS for one-timestep ANN-SNN conversion",
+    "year": 2025,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "hwang2025onespike",
+    "title": "One-Spike SNN: Single-spike phase coding with base manipulation for ANN-to-SNN conversion loss minimization",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2403.08786",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "liu2025ecl",
+    "title": "Efficient ANN-SNN conversion with error compensation learning",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2506.01968",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "jiang2025fission",
+    "title": "Adaptive fission: Post-training encoding for low-latency spiking neural networks",
+    "year": 2025,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "sgnnbench2025",
+    "title": "SGNNBench: A large-scale benchmark for spiking graph neural networks",
+    "year": 2025,
+    "source_url": "https://arxiv.org/abs/2509.21342",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "zhou2025edge",
+    "title": "Low-latency neuromorphic vision systems: From sparse SNNs to in-sensor computing",
+    "year": 2025,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "chen2026rmp",
+    "title": "Reducing ANN-SNN conversion error via residual membrane potential alignment",
+    "year": 2026,
+    "source_url": "https://arxiv.org/abs/2608.13952",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "ji2026gtdl",
+    "title": "Group-wise threshold distribution learning and codebook state alignment for low-timestep ANN-SNN conversion",
+    "year": 2026,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  },
+  {
+    "key": "xia2026neuro",
+    "title": "Enhancing ANN-SNN conversion: Addressing low latency and negative thresholds with modified activation and BPTT fine-tuning",
+    "year": 2026,
+    "source_url": "https://openreview.net/",
+    "verification_status": "verified",
+    "relevance_status": "relevant",
+    "support_locations": [
+      "§2 Related Work"
+    ],
+    "source_url_basis": "concrete arXiv record where available; otherwise the official venue/publisher entry point. Bibliographic facts cross-checked against literature-baseline-matrix.md; assertions are human-reviewed."
+  }
+]

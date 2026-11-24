@@ -1,0 +1,258 @@
+{
+  "datasets": {
+    "cora": {
+      "0.005": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.00025454329289619404,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.0002471071458616776,
+          "relative_reduction": -0.03009280451435803
+        },
+        "logit_mse": {
+          "proposed": 0.008059431798756123,
+          "best_control": "top_abs",
+          "best_control_value": 0.008306818703810373,
+          "relative_reduction": 0.02978118505713545
+        },
+        "T2": {
+          "proposed": 0.8653333333333334,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.8713333333333333,
+          "gain_pp": -0.5999999999999894
+        },
+        "T4": {
+          "proposed": 0.916,
+          "best_control": "top_abs",
+          "best_control_value": 0.9173333333333334,
+          "gain_pp": -0.13333333333334085
+        }
+      },
+      "0.01": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.00022727590156934523,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.00024242407097874383,
+          "relative_reduction": 0.06248624300483274
+        },
+        "logit_mse": {
+          "proposed": 0.006905907299369574,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.008142746208856503,
+          "relative_reduction": 0.15189456698793757
+        },
+        "T2": {
+          "proposed": 0.87,
+          "best_control": "top_abs",
+          "best_control_value": 0.8633333333333333,
+          "gain_pp": 0.666666666666671
+        },
+        "T4": {
+          "proposed": 0.916,
+          "best_control": "top_abs",
+          "best_control_value": 0.9206666666666666,
+          "gain_pp": -0.4666666666666597
+        }
+      },
+      "0.02": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.0001898275743068789,
+          "best_control": "top_abs",
+          "best_control_value": 0.00022837195757095786,
+          "relative_reduction": 0.16877896775965917
+        },
+        "logit_mse": {
+          "proposed": 0.005528345238417387,
+          "best_control": "top_abs",
+          "best_control_value": 0.007697760903586944,
+          "relative_reduction": 0.28182424634138337
+        },
+        "T2": {
+          "proposed": 0.8693333333333334,
+          "best_control": "top_abs",
+          "best_control_value": 0.866,
+          "gain_pp": 0.33333333333334103
+        },
+        "T4": {
+          "proposed": 0.918,
+          "best_control": "top_abs",
+          "best_control_value": 0.9206666666666666,
+          "gain_pp": -0.2666666666666595
+        }
+      }
+    },
+    "chameleon": {
+      "0.005": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.005455305039403435,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.005717998374050014,
+          "relative_reduction": 0.045941484670362964
+        },
+        "logit_mse": {
+          "proposed": 0.04597749933600426,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.04938114434480667,
+          "relative_reduction": 0.06892600513743197
+        },
+        "T2": {
+          "proposed": 0.6762688614540466,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.6712391403749428,
+          "gain_pp": 0.5029721079103822
+        },
+        "T4": {
+          "proposed": 0.801554641060814,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.8111568358481938,
+          "gain_pp": -0.9602194787379781
+        }
+      },
+      "0.01": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.004590731077591069,
+          "best_control": "top_abs",
+          "best_control_value": 0.005200100777556039,
+          "relative_reduction": 0.11718420969744425
+        },
+        "logit_mse": {
+          "proposed": 0.0397677601625522,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.05372181907296181,
+          "relative_reduction": 0.25974658250976246
+        },
+        "T2": {
+          "proposed": 0.6707818930041153,
+          "best_control": "top_abs",
+          "best_control_value": 0.6808413351623228,
+          "gain_pp": -1.0059442158207532
+        },
+        "T4": {
+          "proposed": 0.8143575674439871,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.8353909465020576,
+          "gain_pp": -2.1033379058070456
+        }
+      },
+      "0.02": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.003504064356580763,
+          "best_control": "top_abs",
+          "best_control_value": 0.004021089340525107,
+          "relative_reduction": 0.12857833789806472
+        },
+        "logit_mse": {
+          "proposed": 0.030767121041814487,
+          "best_control": "top_abs",
+          "best_control_value": 0.044207435101270676,
+          "relative_reduction": 0.3040283614886734
+        },
+        "T2": {
+          "proposed": 0.6712391403749428,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.6927297668038409,
+          "gain_pp": -2.1490626428898096
+        },
+        "T4": {
+          "proposed": 0.8344764517604024,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.8376771833561958,
+          "gain_pp": -0.32007315957933713
+        }
+      }
+    },
+    "squirrel": {
+      "0.005": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.008638952742716208,
+          "best_control": "top_abs",
+          "best_control_value": 0.008925789029137357,
+          "relative_reduction": 0.03213567848005372
+        },
+        "logit_mse": {
+          "proposed": 0.04968166227142016,
+          "best_control": "top_abs",
+          "best_control_value": 0.05419761314988136,
+          "relative_reduction": 0.08332379630764408
+        },
+        "T2": {
+          "proposed": 0.5408653846153847,
+          "best_control": "top_abs",
+          "best_control_value": 0.5206330128205128,
+          "gain_pp": 2.0232371794871917
+        },
+        "T4": {
+          "proposed": 0.7766426282051282,
+          "best_control": "top_abs",
+          "best_control_value": 0.7866586538461539,
+          "gain_pp": -1.001602564102566
+        }
+      },
+      "0.01": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.007353592342203163,
+          "best_control": "top_abs",
+          "best_control_value": 0.007932700347723644,
+          "relative_reduction": 0.07300263216001357
+        },
+        "logit_mse": {
+          "proposed": 0.04447956631580988,
+          "best_control": "top_abs",
+          "best_control_value": 0.053034248451391854,
+          "relative_reduction": 0.16130486214814
+        },
+        "T2": {
+          "proposed": 0.5482772435897436,
+          "best_control": "top_abs",
+          "best_control_value": 0.5655048076923076,
+          "gain_pp": -1.7227564102563986
+        },
+        "T4": {
+          "proposed": 0.7936698717948718,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.8102964743589743,
+          "gain_pp": -1.6626602564102533
+        }
+      },
+      "0.02": {
+        "proposed_rows": 3,
+        "hidden_mse": {
+          "proposed": 0.005785307166246478,
+          "best_control": "top_abs",
+          "best_control_value": 0.006473413530330887,
+          "relative_reduction": 0.10629729753248685
+        },
+        "logit_mse": {
+          "proposed": 0.03701648488640785,
+          "best_control": "top_abs",
+          "best_control_value": 0.0499229667087396,
+          "relative_reduction": 0.25852794161113657
+        },
+        "T2": {
+          "proposed": 0.5751201923076924,
+          "best_control": "top_abs",
+          "best_control_value": 0.578926282051282,
+          "gain_pp": -0.3806089743589647
+        },
+        "T4": {
+          "proposed": 0.8145032051282052,
+          "best_control": "a2q_node_budget",
+          "best_control_value": 0.8401442307692308,
+          "gain_pp": -2.564102564102566
+        }
+      }
+    }
+  },
+  "budgets": {},
+  "strong_gates_at_2pct": {
+    "LR_A_logit_mse": true,
+    "LR_B_task_gain": false
+  }
+}

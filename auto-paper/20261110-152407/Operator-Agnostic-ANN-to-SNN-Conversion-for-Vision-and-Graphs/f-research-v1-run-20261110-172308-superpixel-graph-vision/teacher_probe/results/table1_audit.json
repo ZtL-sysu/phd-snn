@@ -1,0 +1,65 @@
+{
+  "seed": 10,
+  "config": {
+    "n_train": 2000,
+    "n_val": 1000,
+    "n_test": 2000,
+    "epochs": 800,
+    "hidden": 128,
+    "lr": 0.01,
+    "device": "cuda",
+    "pool": "sum"
+  },
+  "points": {
+    "MNIST": {
+      "margin_coef": 0.4,
+      "keep_frac": 0.08,
+      "theta": 1.5,
+      "T": 3
+    },
+    "CIFAR10": {
+      "margin_coef": 0.2,
+      "keep_frac": 0.08,
+      "theta": 1.0,
+      "T": 3
+    }
+  },
+  "records": [
+    {
+      "dataset": "MNIST",
+      "seed": 10,
+      "teacher_full": 69.35,
+      "teacher_at_working_point": 34.5,
+      "converted": 28.95,
+      "loss_pp": 5.55,
+      "converted_minus_masked_pp": -5.55,
+      "identity_residual": 6.661338147750939e-15,
+      "energy_primary": 9.615805755030431,
+      "energy_conservative": 6.211321702423228,
+      "spikes": 980434,
+      "paper_teacher": 32.85,
+      "paper_loss_pp": 3.25,
+      "repro_delta_teacher": 1.65,
+      "repro_delta_loss": 2.3,
+      "kept_units": 10
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 10,
+      "teacher_full": 33.75,
+      "teacher_at_working_point": 29.9,
+      "converted": 29.3,
+      "loss_pp": 0.6,
+      "converted_minus_masked_pp": -0.6,
+      "identity_residual": 8.770761894538737e-15,
+      "energy_primary": 7.7982563889609,
+      "energy_conservative": 6.047248112822553,
+      "spikes": 2200587,
+      "paper_teacher": 29.95,
+      "paper_loss_pp": 2.8,
+      "repro_delta_teacher": -0.05,
+      "repro_delta_loss": -2.2,
+      "kept_units": 10
+    }
+  ]
+}

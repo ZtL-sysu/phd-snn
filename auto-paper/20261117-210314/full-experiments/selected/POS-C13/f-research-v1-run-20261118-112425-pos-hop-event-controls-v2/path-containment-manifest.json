@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "run_root": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\POS-C13\\f-research-v1-run-20261118-112425-pos-hop-event-controls-v2",
+  "local_outputs_under_run_root": true,
+  "external_sources_read_only": true,
+  "path_containment_pass": true
+}

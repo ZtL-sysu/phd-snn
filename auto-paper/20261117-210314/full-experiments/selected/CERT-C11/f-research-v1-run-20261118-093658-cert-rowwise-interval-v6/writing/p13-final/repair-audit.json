@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "stage": "P13/generic-export-repair",
+  "status": "failed",
+  "source": "writing\\arc-export-v3\\stage-22",
+  "destination": "writing\\p13-final\\stage-22",
+  "geometry_removed": true,
+  "labels_removed": 21,
+  "latexmk_returncode": 12,
+  "problems": [
+    "latexmk return code 12"
+  ],
+  "tex_sha256": "11959b231ac62b7c604037e39fc6ac527aa6f68c43f2b89b133fa69b5e8671ab",
+  "pdf_sha256": "f4c228c3219065449fefecb98c1dfe4d4e3c8fe7536fc31614db9b592dc0f11e",
+  "bib_sha256": "be176ede7327203c59bbb3ceaf0482853863064406964a0d744a73fdc4f0e6bb"
+}

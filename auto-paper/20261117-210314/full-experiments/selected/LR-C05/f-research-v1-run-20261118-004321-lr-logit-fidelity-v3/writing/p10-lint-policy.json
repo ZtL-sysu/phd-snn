@@ -1,0 +1,36 @@
+{
+  "protected_sections": [],
+  "protected_artifacts": [],
+  "assertions": [
+    {
+      "id": "transport-scope",
+      "location_pattern": "Only .*M_0.*",
+      "pattern": "M_0.*transported.*outside its compression scope",
+      "forbidden": "both graph aggregations are compressed"
+    },
+    {
+      "id": "magnitude-jacobian-score",
+      "location_pattern": "s_i=r_i.*",
+      "pattern": "s_i=r_i\\^2",
+      "forbidden": "s_i=\\\\lVert J_i\\\\rVert_2\\^2"
+    },
+    {
+      "id": "task-maxima",
+      "location_pattern": "maximum three-seed-mean observed degradations.*",
+      "pattern": "0\\.53.*1\\.17.*1\\.86.*2\\.85",
+      "forbidden": "bounded task loss"
+    },
+    {
+      "id": "timing-scope",
+      "location_pattern": "secondary benchmark measures.*",
+      "pattern": "rank128/1%.*1\\.020.*1\\.124",
+      "forbidden": "focal 2% runtime"
+    },
+    {
+      "id": "test-provenance",
+      "location_pattern": "Guidance-v3 fixed.*",
+      "pattern": "validation exposure.*held-out confirmation.*not preregistered",
+      "forbidden": "independent replication confirms"
+    }
+  ]
+}

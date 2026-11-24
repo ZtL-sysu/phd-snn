@@ -1,0 +1,11 @@
+{
+  "candidate": "LAW-C07-v1",
+  "frozen_at": "2026-11-17T22:25:00+08:00",
+  "datasets": ["cora", "citeseer", "pubmed", "chameleon", "squirrel", "ogbn-arxiv"],
+  "T": [2, 4],
+  "statistics": ["edge_homophily", "degree_entropy", "normalized_spectral_radius"],
+  "minimum_datasets": 5,
+  "minimum_abs_spearman": 0.60,
+  "same_sign_across_T": true,
+  "test_isolation": "validation masks only; no test mask read"
+}

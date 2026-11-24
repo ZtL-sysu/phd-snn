@@ -1,0 +1,138 @@
+{
+  "seed_rows": [
+    {
+      "seed": 1,
+      "rows": [
+        {
+          "dataset": "cora",
+          "T2": 0.698,
+          "T4": 0.766,
+          "delta_pp": 6.800000000000006
+        },
+        {
+          "dataset": "citeseer",
+          "T2": 0.404,
+          "T4": 0.692,
+          "delta_pp": 28.799999999999994
+        },
+        {
+          "dataset": "pubmed",
+          "T2": 0.736,
+          "T4": 0.792,
+          "delta_pp": 5.600000000000005
+        },
+        {
+          "dataset": "chameleon",
+          "T2": 0.5871056241426612,
+          "T4": 0.588477366255144,
+          "delta_pp": 0.137174211248281
+        },
+        {
+          "dataset": "squirrel",
+          "T2": 0.4170673076923077,
+          "T4": 0.41466346153846156,
+          "delta_pp": -0.24038461538461453
+        },
+        {
+          "dataset": "ogbn-arxiv",
+          "T2": 0.5001174536058257,
+          "T4": 0.4977012651431256,
+          "delta_pp": -0.24161884627000862
+        }
+      ],
+      "positive_datasets": 3,
+      "negative_datasets": 0,
+      "seed_pass": false
+    },
+    {
+      "seed": 2,
+      "rows": [
+        {
+          "dataset": "cora",
+          "T2": 0.694,
+          "T4": 0.784,
+          "delta_pp": 9.000000000000007
+        },
+        {
+          "dataset": "citeseer",
+          "T2": 0.64,
+          "T4": 0.66,
+          "delta_pp": 2.0000000000000018
+        },
+        {
+          "dataset": "pubmed",
+          "T2": 0.71,
+          "T4": 0.746,
+          "delta_pp": 3.600000000000003
+        },
+        {
+          "dataset": "chameleon",
+          "T2": 0.5994513031550068,
+          "T4": 0.6035665294924554,
+          "delta_pp": 0.4115226337448541
+        },
+        {
+          "dataset": "squirrel",
+          "T2": 0.4140625,
+          "T4": 0.4182692307692308,
+          "delta_pp": 0.4206730769230782
+        },
+        {
+          "dataset": "ogbn-arxiv",
+          "T2": 0.5693479646968019,
+          "T4": 0.5702204771972214,
+          "delta_pp": 0.08725125004194201
+        }
+      ],
+      "positive_datasets": 3,
+      "negative_datasets": 0,
+      "seed_pass": false
+    },
+    {
+      "seed": 3,
+      "rows": [
+        {
+          "dataset": "cora",
+          "T2": 0.77,
+          "T4": 0.778,
+          "delta_pp": 0.8000000000000007
+        },
+        {
+          "dataset": "citeseer",
+          "T2": 0.492,
+          "T4": 0.696,
+          "delta_pp": 20.399999999999995
+        },
+        {
+          "dataset": "pubmed",
+          "T2": 0.782,
+          "T4": 0.762,
+          "delta_pp": -2.0000000000000018
+        },
+        {
+          "dataset": "chameleon",
+          "T2": 0.5953360768175583,
+          "T4": 0.6200274348422496,
+          "delta_pp": 2.4691358024691357
+        },
+        {
+          "dataset": "squirrel",
+          "T2": 0.4104567307692308,
+          "T4": 0.41586538461538464,
+          "delta_pp": 0.5408653846153855
+        },
+        {
+          "dataset": "ogbn-arxiv",
+          "T2": 0.5413940065102856,
+          "T4": 0.5425349843954496,
+          "delta_pp": 0.11409778851639851
+        }
+      ],
+      "positive_datasets": 2,
+      "negative_datasets": 1,
+      "seed_pass": false
+    }
+  ],
+  "passing_seeds": 0,
+  "gate_pass": false
+}

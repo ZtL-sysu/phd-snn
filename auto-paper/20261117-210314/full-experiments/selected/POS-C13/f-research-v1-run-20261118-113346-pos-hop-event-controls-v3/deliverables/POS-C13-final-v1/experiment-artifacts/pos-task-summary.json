@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "datasets": {
+    "chameleon": {
+      "retrained_raw_balanced_accuracy_mean": 0.6288150979455327,
+      "retrained_hybrid_balanced_accuracy_mean": 0.6279813664596273,
+      "retrained_hybrid_loss_pp": 0.08337314859053757,
+      "fixed_ordered_balanced_accuracy_mean": 0.6299179805701545,
+      "fixed_shuffled_balanced_accuracy_mean": 0.5342562509953814,
+      "fixed_ordered_minus_shuffled_pp": 9.566172957477303,
+      "hybrid_error_max": 0.03966946181991743,
+      "hybrid_storage_min": 7.476336901723316
+    },
+    "squirrel": {
+      "retrained_raw_balanced_accuracy_mean": 0.4598831431726168,
+      "retrained_hybrid_balanced_accuracy_mean": 0.4675588884799411,
+      "retrained_hybrid_loss_pp": -0.7675745307324289,
+      "fixed_ordered_balanced_accuracy_mean": 0.4548859035701141,
+      "fixed_shuffled_balanced_accuracy_mean": 0.36407765918292234,
+      "fixed_ordered_minus_shuffled_pp": 9.080824438719176,
+      "hybrid_error_max": 0.04859784190104328,
+      "hybrid_storage_min": 7.5910728001973755
+    }
+  },
+  "strong_gate_pass": true
+}

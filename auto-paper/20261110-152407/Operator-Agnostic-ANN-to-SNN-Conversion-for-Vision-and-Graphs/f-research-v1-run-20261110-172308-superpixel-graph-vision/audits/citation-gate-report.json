@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "verdict": "pass",
+  "errors": [],
+  "policy": {
+    "min_unique": 36,
+    "projectquota": null,
+    "as_of": "2026-11-10",
+    "recent_window_years": 5,
+    "recent_years_inclusive": [
+      2022,
+      2026
+    ],
+    "require_recent_majority": true,
+    "window_rationale": "QCFS (ICLR 2022) established the clip-floor-shift paradigm on which all recent low-latency conversion baselines build; a 5-year window retains the foundational calibration work while requiring a strict recent majority."
+  },
+  "checks": {
+    "bib_entry_records": 42,
+    "bib_unique_keys": 42,
+    "duplicate_bib_keys": 0,
+    "inventory_records": 42,
+    "inventory_unique_keys": 42,
+    "cited_keys": 42,
+    "unknown_cited_keys": 0,
+    "uncited_bib_keys": 0,
+    "bib_keys_missing_inventory": 0,
+    "inventory_keys_missing_bib": 0,
+    "eligible_distinct_sources": 42,
+    "recent_eligible_sources": 23,
+    "undated_inventory_records": 0,
+    "future_year_records": 0,
+    "duplicate_identity_conflicts": 0,
+    "field_mismatches": 0
+  },
+  "inputs": {
+    "bib": {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261110-152407\\Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs\\f-research-v1-run-20261110-172308-superpixel-graph-vision\\tex\\references.bib",
+      "sha256": "7b3f202dcd06f8a9ac4f0dd013a67ce102bbc12562c2dbe1990407cf0fd3c1ae"
+    },
+    "manuscript": {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261110-152407\\Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs\\f-research-v1-run-20261110-172308-superpixel-graph-vision\\tex\\manuscript_all.tex",
+      "sha256": "77e790f59125c9337f49afe7fe5c79f8a79fdda830426b0079cbdfe97594bad6"
+    },
+    "inventory": {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261110-152407\\Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs\\f-research-v1-run-20261110-172308-superpixel-graph-vision\\audits\\citation-inventory.json",
+      "sha256": "a7c6da2fec07aa0640595ca30ae566ac01199569464f29bf1ccb12847e593fa3"
+    },
+    "policy": {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261110-152407\\Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs\\f-research-v1-run-20261110-172308-superpixel-graph-vision\\contracts\\citation-policy.json",
+      "sha256": "2a1fcff098df6c79308491255420bf76cd24dddfb35fabb79f19fb3c29f26b75"
+    }
+  },
+  "binding_inputs": {
+    "C:\\code\\phd-snn\\auto-paper\\20261110-152407\\Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs\\f-research-v1-run-20261110-172308-superpixel-graph-vision\\tex\\references.bib": {
+      "sha256": "7b3f202dcd06f8a9ac4f0dd013a67ce102bbc12562c2dbe1990407cf0fd3c1ae",
+      "bytes": 10077
+    },
+    "C:\\code\\phd-snn\\auto-paper\\20261110-152407\\Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs\\f-research-v1-run-20261110-172308-superpixel-graph-vision\\tex\\manuscript_all.tex": {
+      "sha256": "77e790f59125c9337f49afe7fe5c79f8a79fdda830426b0079cbdfe97594bad6",
+      "bytes": 29147
+    },
+    "C:\\code\\phd-snn\\auto-paper\\20261110-152407\\Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs\\f-research-v1-run-20261110-172308-superpixel-graph-vision\\audits\\citation-inventory.json": {
+      "sha256": "a7c6da2fec07aa0640595ca30ae566ac01199569464f29bf1ccb12847e593fa3",
+      "bytes": 23658
+    },
+    "C:\\code\\phd-snn\\auto-paper\\20261110-152407\\Operator-Agnostic-ANN-to-SNN-Conversion-for-Vision-and-Graphs\\f-research-v1-run-20261110-172308-superpixel-graph-vision\\contracts\\citation-policy.json": {
+      "sha256": "2a1fcff098df6c79308491255420bf76cd24dddfb35fabb79f19fb3c29f26b75",
+      "bytes": 386
+    }
+  },
+  "assertions_are_human_supplied": true,
+  "limitation": "The inventory verification, relevance, support locations, and source URLs are human-supplied assertions. This deterministic gate checks their presence and internal consistency; it does not independently verify that a source exists, supports a claim, or is relevant."
+}

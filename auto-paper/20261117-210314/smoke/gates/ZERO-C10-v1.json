@@ -1,0 +1,10 @@
+{
+  "candidate": "ZERO-C10-v1",
+  "frozen_at": "2026-11-17T22:45:00+08:00",
+  "datasets": ["chameleon", "squirrel"],
+  "T": 2,
+  "minimum_zero_node_fraction": 0.10,
+  "logit_max_error": 1e-10,
+  "message_slot_reduction_matches_zero_fraction": true,
+  "test_isolation": "validation masks only"
+}

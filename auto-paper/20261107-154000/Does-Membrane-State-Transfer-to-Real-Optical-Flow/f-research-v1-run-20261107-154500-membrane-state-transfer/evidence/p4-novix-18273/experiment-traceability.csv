@@ -1,0 +1,12 @@
+requirement,preregistered_source,evidence,status
+full edge table,config.json public_data.connectome,result.json graph + evidence/data_manifest.json,complete
+eye→KC exact-hop 1..8,config.json graph.K_auto_rule,result.json graph.kc_reachable_count_by_hop,complete
+training invariant checks,config.json invariants,result.json invariant_checks,complete
+five seed raw readouts,config.json reproducibility.seeds,evidence/raw/*.npz,complete
+per-hop probes,config.json diagnostics.probe_hops,evidence/probe_vs_hop.csv,complete
+hop/frame variance,config.json diagnostics.variance_trajectory,evidence/variance_trajectory.csv,complete
+lambda×K phase map,config.json diagnostics.phase_map,evidence/lambda_K_phase.csv,complete
+structure×dynamics 2×2,config.json conditions.structure_dynamics_2x2,evidence/structure_dynamics_2x2.csv,complete
+preregistered DAVIS v1,evidence/config_preregistered.json,result.json ceilings.DAVIS,complete
+pretraining protocol correction,user annotation-fallback constraint,evidence/protocol_correction_before_training.json,complete
+redundant result snapshot,config.json output_contract,evidence/result_snapshot.json,complete

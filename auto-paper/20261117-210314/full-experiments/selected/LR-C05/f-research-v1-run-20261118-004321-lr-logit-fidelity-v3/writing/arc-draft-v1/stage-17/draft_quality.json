@@ -1,0 +1,127 @@
+{
+  "section_analysis": [
+    {
+      "heading": "Output-Jacobian Sparse Residual Allocation for Matched-Budget Logit Fidelity in Frozen GCN-to-SNN Conversion",
+      "word_count": 0,
+      "canonical": ""
+    },
+    {
+      "heading": "Abstract",
+      "word_count": 162,
+      "canonical": "abstract",
+      "target": [
+        180,
+        220
+      ],
+      "status": "short",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    },
+    {
+      "heading": "1 Introduction",
+      "word_count": 342,
+      "canonical": "",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    },
+    {
+      "heading": "2 Related Work",
+      "word_count": 238,
+      "canonical": "",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    },
+    {
+      "heading": "Method",
+      "word_count": 9,
+      "canonical": "method",
+      "target": [
+        1000,
+        1500
+      ],
+      "status": "severely_short",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    },
+    {
+      "heading": "Experiments",
+      "word_count": 1,
+      "canonical": "experiments",
+      "target": [
+        800,
+        1200
+      ],
+      "status": "severely_short",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    },
+    {
+      "heading": "Results",
+      "word_count": 9,
+      "canonical": "results",
+      "target": [
+        600,
+        800
+      ],
+      "status": "severely_short",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    },
+    {
+      "heading": "Discussion",
+      "word_count": 1,
+      "canonical": "discussion",
+      "target": [
+        400,
+        600
+      ],
+      "status": "severely_short",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    },
+    {
+      "heading": "Limitations",
+      "word_count": 1,
+      "canonical": "limitations",
+      "target": [
+        200,
+        300
+      ],
+      "status": "severely_short",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    },
+    {
+      "heading": "Conclusion",
+      "word_count": 1,
+      "canonical": "conclusion",
+      "target": [
+        200,
+        300
+      ],
+      "status": "severely_short",
+      "bullet_density": 0.0,
+      "bullet_status": "ok"
+    }
+  ],
+  "overall_warnings": [
+    "Abstract is under target (162 words, target 180-220)",
+    "Method is severely under target (9 words, target 1000-1500)",
+    "Experiments is severely under target (1 words, target 800-1200)",
+    "Results is severely under target (9 words, target 600-800)",
+    "Discussion is severely under target (1 words, target 400-600)",
+    "Limitations is severely under target (1 words, target 200-300)",
+    "Conclusion is severely under target (1 words, target 200-300)",
+    "Section imbalance: method (9 words) vs experiments (1 words) — ratio 9.0x"
+  ],
+  "revision_directives": [
+    "Expand Abstract from 162 to 180+ words.",
+    "EXPAND Method from 9 to 1000+ words. Add substantive content — do NOT pad with filler.",
+    "EXPAND Experiments from 1 to 800+ words. Add substantive content — do NOT pad with filler.",
+    "EXPAND Results from 9 to 600+ words. Add substantive content — do NOT pad with filler.",
+    "EXPAND Discussion from 1 to 400+ words. Add substantive content — do NOT pad with filler.",
+    "EXPAND Limitations from 1 to 200+ words. Add substantive content — do NOT pad with filler.",
+    "EXPAND Conclusion from 1 to 200+ words. Add substantive content — do NOT pad with filler.",
+    "Rebalance sections: expand experiments and/or compress method to achieve more even section lengths."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "device": "cuda",
+  "steps": 60,
+  "seed": 42,
+  "disclaimer": "single-seed short smoke run; NOT a paper result",
+  "seed_info": {
+    "columns": [
+      "root_id",
+      "cell_type",
+      "x",
+      "y",
+      "z",
+      "PC1",
+      "PC2",
+      "x_axis",
+      "y_axis"
+    ],
+    "x_col": "x_axis",
+    "y_col": "y_axis",
+    "type_col": "cell_type",
+    "n_seeds_used": 400,
+    "n_rows": 5354
+  },
+  "feature_dim": 400,
+  "mean_input_intensity": {
+    "voronoi": 0.0601,
+    "grid": 0.0447
+  },
+  "target_input_spike_rate": 0.2,
+  "rate_scale": {
+    "voronoi": 3.3262,
+    "grid": 4.4718
+  },
+  "conditions": {
+    "voronoi": {
+      "loss_first": 0.7393,
+      "loss_last": 0.1412,
+      "test_acc": 0.3725,
+      "mean_input_spike_rate": 0.114652,
+      "peak_gpu_MB": 19.0,
+      "seconds": 0.47
+    },
+    "grid": {
+      "loss_first": 0.7453,
+      "loss_last": 0.2099,
+      "test_acc": 0.4118,
+      "mean_input_spike_rate": 0.10706,
+      "peak_gpu_MB": 19.0,
+      "seconds": 0.33
+    }
+  },
+  "delta_acc_voronoi_minus_grid": -0.0393,
+  "failure_signals": {
+    "no_geometry_gain": true,
+    "no_learnable_signal": true,
+    "too_slow": false
+  },
+  "verdict": "DROP_OR_REVISE"
+}

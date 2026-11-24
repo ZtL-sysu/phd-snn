@@ -1,0 +1,220 @@
+{
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "result",
+      "statement": "At rank 128 and a 2% sparse residual budget on the reported test split, output-Jacobian selection reduced the ratio of three-seed mean split-specific logit MSE versus the strongest evaluated matched-budget control by 26.23% on Cora, 33.99% on Chameleon, and 25.83% on Squirrel; all nine dataset-seed comparisons improved.",
+      "status": "observed_verified",
+      "model": "frozen two-layer hidden-16 GCN checkpoint seeds 0/1/2",
+      "condition": "SVD rank 128 plus 2% output-Jacobian-selected sparse residual coefficients",
+      "metric": "split-specific logit MSE reduction",
+      "value": [
+        26.23,
+        33.99,
+        25.83
+      ],
+      "unit": "percent reduction",
+      "aggregation": "ratio of three-seed mean per dataset",
+      "uncertainty": "all nine dataset-seed paired comparisons positive; no formal CI claimed",
+      "measurement_scope": "reported test split; validation-exposed reframing preceded the run",
+      "evidence": [
+        {
+          "path": "results/confirmation-summary.json",
+          "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "kind": "result",
+      "statement": "The maximum three-seed-mean degradation across T=2/4 accuracy and teacher agreement was 1.86 percentage points; the largest seed-level degradation was 2.85 percentage points.",
+      "status": "observed_verified",
+      "model": "frozen two-layer hidden-16 GCN checkpoint seeds 0/1/2",
+      "condition": "same rank-128/2% matched-budget comparison",
+      "metric": "task degradation relative to strongest control",
+      "value": [
+        1.86,
+        2.85
+      ],
+      "unit": "percentage points",
+      "aggregation": "maximum three-seed-mean and maximum seed-level",
+      "uncertainty": "bounded observation, not equivalence proof",
+      "measurement_scope": "reported test split",
+      "evidence": [
+        {
+          "path": "results/confirmation-summary.json",
+          "sha256": "ca043c5071866ff84f4f1de8cd57a5e0460eee105053cbbf6582c5d4ecb5a9be"
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "kind": "result",
+      "statement": "All compared rank-128/2% methods used identical total padded serialized bits within each dataset, although payload lengths and coefficient counts could differ.",
+      "status": "observed_verified",
+      "model": "exact serialized-cost ledger",
+      "condition": "rank 128 and 2% residual budget",
+      "metric": "total padded serialized bits",
+      "value": "matched within each dataset",
+      "unit": "bits",
+      "aggregation": "row-level equality",
+      "uncertainty": "not applicable",
+      "measurement_scope": "serialized transport, excluding energy",
+      "evidence": [
+        {
+          "path": "results/confirmation-test-v2.json",
+          "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166"
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "kind": "result",
+      "statement": "Across nine dataset-seed pairs, paired p95 full-pipeline runtime ratios versus SVD-only ranged from 1.020 to 1.124, and peak CUDA allocation was 218.23 MB.",
+      "status": "observed_verified",
+      "model": "RTX3060 warmed benchmark with three warmups and seven measured repeats",
+      "condition": "rank128/1% full encode/selection/decode/conversion timing",
+      "metric": "runtime ratio and peak memory",
+      "value": [
+        1.02,
+        1.124,
+        218.23
+      ],
+      "unit": "ratio and MB",
+      "aggregation": "p95 range across dataset-seed pairs; maximum memory",
+      "uncertainty": "timing variance retained in raw repeats",
+      "measurement_scope": "wall-clock pipeline; not hardware energy",
+      "evidence": [
+        {
+          "path": "inputs/v2-timing.json",
+          "sha256": "bd77cd5b8d688380fe7485bb6d20a31fd853189d7ff9354559978f38fcd32dc0"
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "kind": "limitation",
+      "statement": "The focal setting and logit-fidelity reframing were fixed after validation exposure and before the test run; the test run is held-out confirmation, not preregistered or independent replication. Sparse residual coefficients are not temporal SNN events, and no energy or broad GNN-generality claim is supported.",
+      "status": "observed_verified",
+      "attribution": "run contract and independent pre-draft review",
+      "evidence": [
+        {
+          "path": "ccfa-pre-draft-scientific-review.md",
+          "sha256": "32082761fe52e40b726efbc7806657a72795e8ed91dac730c19aec5266958324"
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "kind": "result",
+      "statement": "At rank 128 and the 2% residual budget, hidden-state MSE fell by 16.88%, 12.86%, and 10.63% relative to the strongest matched-budget control on Cora, Chameleon, and Squirrel.",
+      "status": "observed_verified",
+      "model": "frozen two-layer hidden-16 GCN checkpoint seeds 0/1/2",
+      "condition": "SVD rank 128 plus 2% output-Jacobian-selected sparse residual coefficients",
+      "metric": "hidden-state MSE relative reduction",
+      "value": [
+        16.88,
+        12.86,
+        10.63
+      ],
+      "unit": "percent reduction",
+      "aggregation": "three-seed mean per dataset",
+      "uncertainty": "descriptive sensitivity result; no formal CI claimed",
+      "measurement_scope": "validation-grid analysis preceding held-out confirmation",
+      "evidence": [
+        {
+          "path": "inputs/v2-summary.json",
+          "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+        }
+      ]
+    },
+    {
+      "id": "F7",
+      "kind": "result",
+      "statement": "Across the evaluated 0.5%, 1%, and 2% residual budgets and three graphs, logit MSE was below the strongest corresponding control in all nine dataset-budget cells, with reductions from 2.98% to 30.40%.",
+      "status": "observed_verified",
+      "model": "frozen two-layer hidden-16 GCN checkpoint seeds 0/1/2",
+      "condition": "SVD rank 128 with output-Jacobian-selected sparse residuals",
+      "metric": "logit MSE relative reduction over matched-budget grid",
+      "value": [
+        2.98,
+        30.4
+      ],
+      "unit": "percent reduction range",
+      "aggregation": "nine dataset-budget cells",
+      "uncertainty": "validation-grid sensitivity; focal 2% setting later received held-out confirmation",
+      "measurement_scope": "Cora, Chameleon, Squirrel at 0.5%, 1%, and 2%",
+      "evidence": [
+        {
+          "path": "inputs/v2-summary.json",
+          "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+        }
+      ]
+    },
+    {
+      "id": "F8",
+      "kind": "result",
+      "statement": "At rank 128 and 2%, the proposed selector reduced three-seed mean logit MSE relative to our matched-budget A2Q-style adaptation by 28.93%, 36.19%, and 35.24%, and relative to our matched-budget One-Spike-style adaptation by 42.83%, 47.61%, and 34.03% on Cora, Chameleon, and Squirrel.",
+      "status": "observed_verified",
+      "model": "matched-budget adaptations evaluated on frozen two-layer GCN checkpoints",
+      "condition": "identical total padded serialized-bit budget",
+      "metric": "three-seed mean logit MSE reduction",
+      "value": [
+        [
+          28.93,
+          36.19,
+          35.24
+        ],
+        [
+          42.83,
+          47.61,
+          34.03
+        ]
+      ],
+      "unit": "percent reduction",
+      "aggregation": "three-seed mean per dataset and control",
+      "uncertainty": "descriptive paired comparison; no formal CI claimed",
+      "measurement_scope": "reported test split and matched-budget adaptations",
+      "evidence": [
+        {
+          "path": "results/confirmation-test-v2.json",
+          "sha256": "1f4ecbef61917bac8002ee33c73b42f0551d99dfba06a92a35592da6ea45f166"
+        }
+      ]
+    },
+    {
+      "id": "F9",
+      "kind": "result",
+      "statement": "Task superiority was not established: T=2/4 accuracy and teacher-agreement deltas were mixed across budgets, and the earlier task-superiority target failed. The accepted claim is bounded task degradation rather than universal task gain.",
+      "status": "observed_verified",
+      "model": "frozen two-layer hidden-16 GCN checkpoint seeds 0/1/2",
+      "condition": "0.5%-2% residual-budget grid",
+      "metric": "T=2/4 accuracy and teacher-agreement deltas",
+      "value": "mixed signs; task-superiority gate false",
+      "unit": "percentage points",
+      "aggregation": "dataset, budget, horizon, and seed",
+      "uncertainty": "negative evidence retained; no equivalence claim",
+      "measurement_scope": "three local static graphs",
+      "evidence": [
+        {
+          "path": "inputs/v2-summary.json",
+          "sha256": "1e1194d772cdc34afd9945faa4676425d4cf6854cd274c685ef6f556adbfa5b6"
+        }
+      ]
+    }
+  ],
+  "measurement_boundaries": [
+    "Focal setting and logit-fidelity reframing were fixed after validation exposure and before the test run.",
+    "The test run is held-out confirmation after validation exposure, not preregistered independent replication.",
+    "Sparse residual coefficients are exact message residual values with explicit indices, not temporal SNN events.",
+    "Runtime is wall-clock pipeline cost at rank128/1%; no hardware-energy claim is supported.",
+    "Task superiority was not established; task loss is a bounded descriptive trade-off."
+  ],
+  "figures": {
+    "Figure 1": "Deterministic self-drawn SVG under explicit user fallback authorization after three GPT image-generation failures.",
+    "Figure 2": "Three-seed mean logit MSE with sample SD at rank128/2%.",
+    "Figure 3": "Validation-grid logit-MSE reductions at 0.5%, 1%, and 2%.",
+    "Figure 4": "Official-test task trade-off and rank128/1% warmed runtime ratios."
+  },
+  "known_late_gate": "A 36-reference authenticity/relevance/placement/duplicate audit is still scheduled at P12; reviewers must flag citation gaps without inventing references."
+}

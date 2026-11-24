@@ -1,0 +1,886 @@
+{
+  "preregistered": {
+    "ablations_and_controls": {
+      "frozen_probe_noninferiority_margin": 0.15,
+      "lif_combo_single_factor_removals": [
+        "adaptive_threshold",
+        "refractory",
+        "EI_sign"
+      ],
+      "negative_controls": [
+        "shuffled_frame_order",
+        "flash",
+        "frozen_gain",
+        "label_permutation",
+        "degree_preserving_null",
+        "identity_graph"
+      ],
+      "report_all": true,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "claims_contract": {
+      "a_zero_interpretation": "input information upper bound; never biological wiring advantage",
+      "bootstrap_ci_must_exclude_zero_for_positive_claim": true,
+      "c1_states": [
+        "failure",
+        "minimum",
+        "expected_strong",
+        "UNINFORMATIVE_MEASUREMENT"
+      ],
+      "degree_null_interpretation": "degree-preserving control; a higher score cannot support biological wiring advantage",
+      "measurement_failure_is_mechanism_falsification": false,
+      "measurement_failure_state_is_success": false,
+      "real_domain_ceiling_threshold": 0.7,
+      "real_domain_expected_strong_delta": 0.25,
+      "real_domain_minimum_delta": 0.15,
+      "transfer_claim_forbidden_when_any_primary_gate_fails": true
+    },
+    "cross_implementation_covariates": {
+      "endpoints": [
+        "canonical_18448",
+        "reconstructed_18273"
+      ],
+      "historical_canonical_kc_feature_std": 0.0673775,
+      "historical_reconstructed_18273_endpoint_std": 2.2631e-06,
+      "rerun_full_table": false,
+      "role": "fixed comparability covariate only",
+      "seven_factors": [
+        "input_scaling",
+        "edge_normalization",
+        "threshold_operator",
+        "reset_rule",
+        "temporal_aggregation",
+        "kc_pooling",
+        "ridge_standardization"
+      ],
+      "single_factor_flip_localized_historical": false
+    },
+    "data": {
+      "connectome": {
+        "degree_null": {
+          "preserve": [
+            "in_degree",
+            "out_degree",
+            "weight_multiset",
+            "nnz",
+            "reciprocal_edge_pairs",
+            "self_loops"
+          ],
+          "reject_duplicate_or_invariant_changing_swaps": true,
+          "successful_double_edge_swaps": 100000
+        },
+        "download": {
+          "gzip_crc_check": true,
+          "http_range_chunk_bytes": 8388608,
+          "per_chunk_sha256_sidecar": true,
+          "resume": true
+        },
+        "edge_columns": [
+          "pre_root_id",
+          "post_root_id",
+          "syn_count"
+        ],
+        "expected_historical_full_graph": {
+          "duplicate_rows_merged": 1756014,
+          "merged_directed_pairs": 15091983,
+          "nodes": 138639,
+          "raw_rows": 16847997
+        },
+        "eye_to_kc": {
+          "frozen_fallback": "choose smallest hop with at least 512 annotated KCs; expected K=3 and 2544 KCs; if mismatch report rather than force",
+          "input_eye_source": "right_visual_positions_all_neurons root IDs",
+          "kc_annotation_regex": "(^|[^A-Za-z])KC|Kenyon",
+          "report_hops": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "target_pool_bins": 64
+        },
+        "files": [
+          {
+            "expected_bytes": 178853187,
+            "expected_md5": "2af9b8db6a8dbbc02cd3cc36f2631c19",
+            "name": "connections_biological.csv.gz",
+            "prefix_allowed": false,
+            "url": "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content"
+          },
+          {
+            "expected_bytes": 7740866,
+            "expected_md5": "55789fa30a854bd00451af16441a7d3d",
+            "name": "neuron_annotations_flywire_v2.1.0.tsv.gz",
+            "url": "https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content"
+          },
+          {
+            "expected_bytes": 629193,
+            "expected_md5": "0b5dddbb0328f6d73ef3cb1cc9f7d6a3",
+            "name": "right_visual_positions_all_neurons.csv",
+            "url": "https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content"
+          },
+          {
+            "expected_bytes": 1857,
+            "expected_md5": "8b925ecfe0d8fa848a24e26c0875a60a",
+            "name": "SHA256SUMS",
+            "url": "https://zenodo.org/api/records/21549559/files/SHA256SUMS/content"
+          },
+          {
+            "expected_bytes": 4061,
+            "expected_md5": "1664975a2231aaccef4afa95a76ebd88",
+            "name": "README.md",
+            "url": "https://zenodo.org/api/records/21549559/files/README.md/content"
+          },
+          {
+            "expected_bytes": 2615,
+            "expected_md5": "098266aa3fb8265258d1f4101d741e85",
+            "name": "DATA_DICTIONARY.md",
+            "url": "https://zenodo.org/api/records/21549559/files/DATA_DICTIONARY.md/content"
+          }
+        ],
+        "license": "CC BY 4.0",
+        "record": "Zenodo 21549559"
+      },
+      "davis": {
+        "archive_member_roots": [
+          "DAVIS/JPEGImages/480p",
+          "DAVIS/Annotations/480p",
+          "DAVIS/ImageSets/2017"
+        ],
+        "expected_bytes": 832766765,
+        "license_or_status": "official public benchmark",
+        "sample": {
+          "T": 8,
+          "exclude_abs_displacement_leq_pixels": 0.0,
+          "image_input_does_not_include_mask": true,
+          "label": "sign of largest-foreground-mask centroid x(last)-x(first)",
+          "max_matched_n_per_partition": 400,
+          "window_stride": 2
+        },
+        "url": "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip"
+      },
+      "integrity_failure_policy": "mark affected domain unavailable with measured bytes/reason; never replace with toy data",
+      "sintel": {
+        "archive_member_roots": [
+          "training/clean",
+          "training/flow"
+        ],
+        "expected_bytes": 5627783629,
+        "https_fallback": "https://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+        "license_or_status": "official public benchmark",
+        "sample": {
+          "T": 8,
+          "exclude_abs_flow_leq": 0.1,
+          "flow_used_for_label_only": true,
+          "label": "sign of finite-pixel median horizontal GT flow averaged over the window",
+          "max_matched_n_per_partition": 400,
+          "window_stride": 2
+        },
+        "url": "http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip"
+      }
+    },
+    "davis_input_encoding_ladder": {
+      "all_other_factors_baseline_off": true,
+      "ceiling_model": "train-only scaler/PCA/ridge",
+      "domain_usable_rule": "point ceiling_accuracy >=0.70; CI upper bound is not used",
+      "frozen_variants": [
+        {
+          "factor": "sampling_density",
+          "level": "1x",
+          "name": "sampling_density_1x"
+        },
+        {
+          "factor": "sampling_density",
+          "level": "2x",
+          "name": "sampling_density_2x"
+        },
+        {
+          "factor": "sampling_density",
+          "level": "4x",
+          "name": "sampling_density_4x"
+        },
+        {
+          "factor": "temporal_difference",
+          "level": "on",
+          "name": "temporal_difference_on"
+        },
+        {
+          "factor": "contrast_normalization",
+          "level": "on",
+          "name": "contrast_normalization_on"
+        },
+        {
+          "factor": "flow_vector_histogram",
+          "level": "on",
+          "name": "flow_vector_histogram_on"
+        },
+        {
+          "factor": "multiscale_pooling",
+          "level": "on",
+          "name": "multiscale_pooling_on"
+        }
+      ],
+      "metrics": [
+        "ceiling_accuracy",
+        "bootstrap_95_ci",
+        "oracle_minus_current_gap",
+        "fisher_ratio",
+        "mutual_information",
+        "class_balance",
+        "sample_n"
+      ],
+      "no_post_hoc_variants": true,
+      "oracle": "mask-centroid displacement scalar supplied only to oracle arm"
+    },
+    "decidability": {
+      "DOMAIN_USABLE": "current ceiling point estimate >=0.70",
+      "INPUT_BOTTLENECK": "current <0.70 and oracle >=0.70",
+      "TASK_UNDECIDABLE": "oracle <0.70",
+      "only_domain_usable_allows_real_delta_interpretation": true
+    },
+    "experiment_id": "f-research-v1-P4-C1-round012-attempt7",
+    "frozen_at_utc": "2026-11-08T16:05:00+00:00",
+    "frozen_before_outcomes": true,
+    "gradient_path_matrix": {
+      "audits_and_variants": [
+        "stateless_trained_identically",
+        "learnable_decay",
+        "learnable_gain_only",
+        "straight_through_rate"
+      ],
+      "base_conditions": [
+        "stateless",
+        "LIF"
+      ],
+      "batch_size": 64,
+      "epochs": 60,
+      "gradient_clip_norm": 1.0,
+      "learning_rate": 0.003,
+      "loss": "BCEWithLogitsLoss",
+      "modes": [
+        "frozen_features+ridge",
+        "surrogate_gradient_e2e"
+      ],
+      "optimizer": "AdamW",
+      "parameter_matching": "64 dynamic parameters plus 64+1 readout parameters in both stateless and LIF; unused biological semantics are replaced by trainable temperature in stateless, never dummy parameters",
+      "save_training_curves": true,
+      "selection": "fixed final epoch; validation is reported but never selects epoch/hyperparameters",
+      "synops_matching": "identical frozen graph-current computation and equal 64-unit x T dynamic update proxy",
+      "train_only": true,
+      "weight_decay": 0.0001
+    },
+    "graph_dynamics": {
+      "T": 8,
+      "gradient_counterfactual": "nonzero gradient to LIF decay/gain and readout after unit loss; frozen feature tensor has requires_grad=false; recurrence ablation changes fingerprint",
+      "input_current": "frozen edge-level index_add propagation; no dense adjacency",
+      "kc_pooling": "64 bins by sha256(root_id) modulo 64",
+      "lif": {
+        "adaptive_threshold_decay": 0.9,
+        "adaptive_threshold_increment": 0.1,
+        "decay_initial": 0.8,
+        "gain_initial": 1.0,
+        "refractory_steps": 1,
+        "reset": "subtract threshold after spike",
+        "surrogate": "sigmoid",
+        "surrogate_slope": 10.0,
+        "threshold": 0.5
+      },
+      "stateless": {
+        "activation": "sigmoid surrogate threshold per frame",
+        "no_membrane_recurrence": true,
+        "temperature_initial": 1.0
+      },
+      "weight_normalization": "divide syn_count by destination incoming absolute weight sum per hop"
+    },
+    "historical_reanalysis": {
+      "known_fixed_facts": {
+        "18448_davis_current": 0.613333,
+        "18448_negative_control_delta": -0.115909,
+        "18448_negative_control_p": 0.0009765625,
+        "18448_sintel_current": 0.7,
+        "18448_sintel_delta": 0.0,
+        "18448_verdict": "REJECT_FAILURE",
+        "18489_artifacts": 0,
+        "18489_platform_status": "FAILED",
+        "18489_steps": 0
+      },
+      "labels": [
+        "INFORMATIVE_NEGATIVE",
+        "UNINFORMATIVE_MEASUREMENT",
+        "INSUFFICIENT_RAW"
+      ],
+      "never_fabricate_missing_archive": true,
+      "rule": "INFORMATIVE_NEGATIVE only if archived per-sample margins/predictions establish identifiability and same-pipeline positive injection is recoverable; UNINFORMATIVE_MEASUREMENT if raw proves gate failure; otherwise INSUFFICIENT_RAW",
+      "tasks": [
+        18390,
+        18448,
+        18489
+      ]
+    },
+    "known_signal_injection_ladder": {
+      "bootstrap_replicates": 2000,
+      "construction": "z_i = hash_normal(sample_id, seed=52012) + level*(2*y_i-1); train/test labels and splits unchanged",
+      "execution_order": 1,
+      "injection_dimension": -1,
+      "injection_position": "after train-only PCA, append one dedicated fixed coordinate before ridge",
+      "interpretation": "predeclared SNR-like signed direction signal, not a natural-domain effect estimate",
+      "levels": [
+        0.0,
+        0.05,
+        0.1,
+        0.15,
+        0.25,
+        0.4
+      ],
+      "monotonicity": "Spearman rho(level, mean recovered_delta), plus count of adjacent nondecreases with tolerance 1e-12",
+      "not_selected_after_results": true,
+      "recover_known_plus_0_25_rule": "level=0.25 recovered_delta point estimate >0 and bootstrap CI lower >0 and sensitivity_slope CI lower >0",
+      "recovered_delta": "accuracy(level)-accuracy(level=0), paired within initialization seed and partition",
+      "same_noise_across_levels": true,
+      "sensitivity_slope": "OLS slope of seed-level recovered_delta on level; paired-seed bootstrap 95% percentile CI"
+    },
+    "label_marginal_dispatch_grid": {
+      "condition_dispatch": [
+        "independent_fit",
+        "shared_scaler",
+        "shared_pca"
+      ],
+      "independent_fit": "condition-specific train-only scaler and PCA",
+      "label_marginals_positive": [
+        0.5,
+        0.6,
+        0.75
+      ],
+      "partition": "validation only; train resampled by stable hash to requested marginal, evaluation retains natural matched validation",
+      "purpose": "diagnose degeneracy, not select class weights or main model",
+      "shared_pca": "one pooled train-only scaler and PCA",
+      "shared_scaler": "one pooled train-only scaler then condition-specific PCA"
+    },
+    "measurement_identifiability_gate": {
+      "decision_rule_identifiable_criteria": {
+        "both_predicted_classes_min_fraction": 0.05,
+        "confusion_matrix_has_two_nonzero_predicted_columns": true,
+        "logit_margin_std_gt": 1e-08,
+        "nonconstant_dimensions_gte": 1
+      },
+      "execution_order": 0,
+      "must_freeze_before_main_contrasts": true,
+      "on_failure": {
+        "continue_conditions_4_through_12": true,
+        "contrast_tag": "uninterpretable_measurement",
+        "migration_verdict": "NO_CLAIM_MEASUREMENT_NOT_IDENTIFIABLE",
+        "transfer_claim_made": false
+      },
+      "primary_gate_rule": "at least one real domain with ceiling >=0.70 must also have identifiable current-pipeline rule and pass its +0.25 signal recovery",
+      "reported_per_domain_per_condition": [
+        "confusion_matrix",
+        "predicted_class_marginal",
+        "class_marginal",
+        "logit_margin_min",
+        "logit_margin_max",
+        "logit_margin_mean",
+        "logit_margin_std",
+        "nonconstant_dimensions",
+        "constant_predictor",
+        "majority_baseline_acc",
+        "decision_rule_identifiable",
+        "reasons"
+      ]
+    },
+    "negative_control_calibration": {
+      "alpha": 0.05,
+      "bootstrap_replicates": 2000,
+      "calibrated_rule": "each empirical type-I rate <=0.075 and >=0.0; zero-effect injection yields CI containing 0 and all p>=0.05; permutation audit has no test-label mutation",
+      "execution_order": "before interpretation of main contrasts",
+      "families": [
+        "exact_paired_sign_flip",
+        "paired_bootstrap_two_sided",
+        "paired_randomization"
+      ],
+      "monte_carlo_replicates": 500,
+      "null_generator": "two exchangeable Bernoulli-correctness vectors with shared latent difficulty and independent hash noise; true paired mean difference zero",
+      "on_failure": {
+        "change_test_family_post_hoc": false,
+        "tag_all_contrasts": "uncalibrated",
+        "transfer_claim_made": false
+      },
+      "paired_n": 11,
+      "randomization_replicates": 20000,
+      "tensor_fingerprint_overlap": "report exact SHA-256 overlap at each immutable stage and require labels-only change for label permutation"
+    },
+    "post_hoc_ladder_variants_added": false,
+    "preprocessing": {
+      "feature_pipeline": [
+        "retina time series",
+        "frozen edge-level index_add graph current",
+        "64 stable KC hash pools",
+        "condition dynamics",
+        "train-only StandardScaler",
+        "train-only PCA",
+        "linear ridge or trainable readout"
+      ],
+      "grayscale": "ITU-R BT.601 luminance divided by 255",
+      "image_resize": [
+        32,
+        32
+      ],
+      "mutual_information": {
+        "fit_or_estimate": "train only",
+        "seed": 12012,
+        "type": "mutual_info_classif"
+      },
+      "pca": {
+        "fit": "train only",
+        "n_components": "min(64,n_train-1,n_features)",
+        "seed": 12012,
+        "svd_solver": "full",
+        "type": "PCA"
+      },
+      "retina_sampling": "bilinear at min-max-normalized right-eye coordinates; no label use",
+      "ridge": {
+        "alpha": 1.0,
+        "class_weight": null,
+        "fit": "train only",
+        "fit_intercept": true,
+        "type": "RidgeClassifier"
+      },
+      "scaler": {
+        "epsilon": 1e-08,
+        "fit": "train only",
+        "type": "StandardScaler"
+      }
+    },
+    "protocol_name": "correction loop v3, attempt #7, round-012 formal submission",
+    "raw_artifacts": {
+      "incremental_flush_after_each_cell": true,
+      "one_npz_per_condition_per_seed": true,
+      "required_arrays": [
+        "sample_id",
+        "y_true",
+        "y_pred",
+        "logit_margin",
+        "features_summary",
+        "spike_rate",
+        "training_loss",
+        "partition"
+      ],
+      "retain_failed_cells": true
+    },
+    "real_domain_primary": {
+      "contrast": "surrogate_gradient_e2e LIF minus surrogate_gradient_e2e stateless_trained_identically",
+      "domain": "SINTEL if and only if ceiling>=0.70 and measurement gate passes; otherwise no interpretable real-domain primary",
+      "final_selection_partition": "unexposed_holdout evaluated once after fixed model completion",
+      "guidance": {
+        "UNINFORMATIVE_MEASUREMENT": "measurement gate fails; still a C1 failure with no transfer claim",
+        "expected_strong": "delta>=0.25 and CI lower>0 plus migration and ablation contracts",
+        "failure": "delta<0.15 or CI lower<=0 or required gates/ablations fail",
+        "minimum": "delta>=0.15 and CI lower>0 plus migration and ablation contracts"
+      },
+      "partitions_reported": [
+        "validation",
+        "exposed_test",
+        "unexposed_holdout"
+      ],
+      "scopes": [
+        5,
+        11
+      ]
+    },
+    "reproducibility": {
+      "bootstrap_seed": 22012,
+      "cudnn_benchmark": false,
+      "extended_seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "graph_null_seed": 42012,
+      "monte_carlo_seed": 32012,
+      "primary_seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "runtime_hours_is_timeout": false,
+      "same_stimulus_and_split_across_initialization_seeds": true,
+      "split_seed": 12012,
+      "stimulus_seed": 12012,
+      "torch_deterministic_algorithms": true
+    },
+    "resume_policy": "stage markers plus atomic fsync/rename; never infer completion from an absent callback",
+    "schema_version": "round012.attempt7.preregistered.v1",
+    "sintel_zero_delta_diagnostics": {
+      "fingerprint": "SHA-256 plus elementwise unequal count, max absolute difference, L2 difference",
+      "forced_branch_probe": "replace LIF decay by 0.0 vs 0.95 and require feature/logit discriminator accuracy >=0.90",
+      "stages": [
+        "retina_input",
+        "graph_current_each_hop_each_frame",
+        "membrane_each_frame",
+        "spike_each_frame",
+        "pooled_feature",
+        "logit",
+        "prediction"
+      ],
+      "state_rule": "identical pre-dynamics is expected; if all dynamics and downstream stages identical or counterfactual/forced probe fails => IMPLEMENTATION_IDENTICAL_BRANCH; if distinct with adequate nonconstant probe and observed delta CI includes zero => REAL_ZERO_EFFECT; missing artifacts => INSUFFICIENT_PROBE",
+      "states": [
+        "REAL_ZERO_EFFECT",
+        "IMPLEMENTATION_IDENTICAL_BRANCH",
+        "INSUFFICIENT_PROBE"
+      ],
+      "unit_counterfactual": "inject +0.125 into one membrane unit at frame 3 and require downstream fingerprint change"
+    },
+    "splits": {
+      "bins": {
+        "exposed_test": [
+          75,
+          84
+        ],
+        "train": [
+          0,
+          64
+        ],
+        "unexposed_holdout": [
+          85,
+          99
+        ],
+        "validation": [
+          65,
+          74
+        ]
+      },
+      "historical_exposure_note": "all prior DAVIS/Sintel held-out numbers are exposed; archive absence does not make them unexposed",
+      "matched_n": "within each partition retain equal label counts; select smallest sha256(sample_id) per label up to max",
+      "stable_hash": "uint64(first 16 hex chars of sha256('round012:'+domain+':'+group)) % 100",
+      "test_performance_used_for_selection": false,
+      "unexposed_holdout_evaluations": 1,
+      "unit": "DAVIS sequence ID or Sintel scene; no group crosses partitions"
+    },
+    "statistics": {
+      "accuracy_ci": "nonparametric bootstrap over held-out samples, 2000 replicates",
+      "bh_fdr": {
+        "family": "all preregistered real-domain main and variant LIF-minus-stateless contrasts, separately for 5-seed and 11-seed scopes",
+        "q": 0.05
+      },
+      "bootstrap_replicates": 2000,
+      "bootstrap_unit": "paired initialization seed for contrasts; sample for single-model ceiling",
+      "ci": 0.95,
+      "exact_paired_sign_flip": {
+        "enumerate_when_n_leq": 20,
+        "two_sided": true,
+        "zero_differences_retained": true
+      },
+      "paired_bootstrap_p": "two-sided 2*min[P(mean<=0),P(mean>=0)] capped at 1",
+      "paired_randomization_replicates": 20000,
+      "power_note": {
+        "n11_minimum_two_sided_exact_p": 0.0009765625,
+        "n5_minimum_two_sided_exact_p": 0.0625
+      }
+    },
+    "synthetic": {
+      "T": 8,
+      "ceiling": {
+        "model": "8-frame flattened ridge",
+        "required_mean_accuracy": 0.9
+      },
+      "directions": [
+        -1,
+        1
+      ],
+      "dot_radius_inclusive": [
+        3,
+        5
+      ],
+      "explicit_label": "SYNTHETIC",
+      "flash_control": "same object and class-balanced labels, temporally independent global flash amplitude; no direction cue",
+      "height": 32,
+      "n": 400,
+      "speed_pixels_per_frame": 2,
+      "split": {
+        "seed": 12012,
+        "stratified": true,
+        "train_fraction": 0.7
+      },
+      "start_x_inclusive": [
+        8,
+        24
+      ],
+      "task": "binary direction",
+      "width": 32
+    },
+    "thresholds_lowered": false,
+    "validation": {
+      "expected_outputs": [
+        "experiment.py",
+        "entrypoint.sh",
+        "config.json",
+        "config_preregistered.json",
+        "validate_results.py",
+        "test_pipeline.py",
+        "result.json",
+        "evidence/result_snapshot.json",
+        "evidence/config_snapshot.json",
+        "evidence/measurement_identifiability.csv",
+        "evidence/known_signal_injection_ladder.csv",
+        "evidence/historical_delta_interpretability.csv",
+        "evidence/label_marginal_dispatch_grid.csv",
+        "evidence/gradient_path_2x2.csv",
+        "evidence/negative_control_calibration.csv",
+        "evidence/davis_input_encoding_ladder.csv",
+        "evidence/sintel_zero_delta_diagnostics.csv",
+        "evidence/real_domain_delta_trained.csv",
+        "evidence/exposure_ledger.csv",
+        "evidence/decidability_states.json",
+        "evidence/cross_implementation_covariates.csv",
+        "evidence/main_table.csv",
+        "evidence/ablation.csv",
+        "evidence/negative_controls.csv",
+        "evidence/validation.json",
+        "evidence/command_history.log",
+        "MANIFEST.txt"
+      ],
+      "main_snapshot_byte_identical": true,
+      "no_missing_silent_success": true
+    }
+  },
+  "runtime_resolution": {
+    "actual_hardware": {
+      "cuda_available": true,
+      "cuda_device_count": 1,
+      "gpu_model": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_bytes": 47661645824,
+      "gpu_total_memory_mib": 45453.6875,
+      "nvidia_smi_query": "NVIDIA GeForce RTX 4090, 46068, 580.126.09",
+      "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+      "python": "3.11.18 (main, Oct 26 2026, 15:28:54) [GCC 11.4.0]",
+      "torch": "2.11.0+cu130",
+      "torch_cuda_runtime": "13.0"
+    },
+    "actual_package_versions": {
+      "Pillow": "13.0.0",
+      "numpy": "2.4.6",
+      "pandas": "3.1.0",
+      "requests": "2.34.2",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0"
+    },
+    "actual_unexposed_holdout_evaluations_by_domain": {
+      "DAVIS": 1,
+      "SINTEL": 0
+    },
+    "command_history": "evidence/command_history.log",
+    "config_preregistered_sha256": "0a7c6d473a110e6a94cf7374597e3cbf0174928d4272810b719cbed6f3ab5ba0",
+    "data_integrity": {
+      "DATA_DICTIONARY.md": {
+        "chunks_total": 1,
+        "chunks_verified": 1,
+        "completed_at_utc": "2026-11-08T16:15:54.758956+00:00",
+        "expected_bytes": 2615,
+        "expected_md5": "098266aa3fb8265258d1f4101d741e85",
+        "gzip_crc_verified": false,
+        "md5": "098266aa3fb8265258d1f4101d741e85",
+        "measured_bytes": 2615,
+        "name": "DATA_DICTIONARY.md",
+        "prefix": false,
+        "range_chunk_bytes": 8388608,
+        "reused_existing": false,
+        "sha256": "5d7376b8d952b9d398a3dc1de72bc27f11860080af5536fbed775f0540551fc3",
+        "started_at_utc": "2026-11-08T16:15:53.363298+00:00",
+        "status": "verified",
+        "urls": [
+          "https://zenodo.org/api/records/21549559/files/DATA_DICTIONARY.md/content"
+        ]
+      },
+      "DAVIS-2017-trainval-480p.zip": {
+        "chunks_total": 100,
+        "chunks_verified": 100,
+        "completed_at_utc": "2026-11-08T16:17:51.936515+00:00",
+        "downloaded_or_reused_bytes": 832766765,
+        "expected_bytes": 832766765,
+        "expected_md5": null,
+        "gzip_crc_verified": false,
+        "last_progress_at_utc": "2026-11-08T16:17:37.634251+00:00",
+        "md5": "0300f1c9bae14ff581d74f1dae812645",
+        "measured_bytes": 832766765,
+        "name": "DAVIS-2017-trainval-480p.zip",
+        "prefix": false,
+        "range_chunk_bytes": 8388608,
+        "reused_existing": false,
+        "sha256": "e3d0b5b77c3d031b000a19e0e25e3e2cac65d183755601bc2cf066df1a2aa492",
+        "started_at_utc": "2026-11-08T16:15:54.983979+00:00",
+        "status": "verified",
+        "urls": [
+          "https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip"
+        ]
+      },
+      "MPI-Sintel-complete.zip": {
+        "chunks_total": 671,
+        "chunks_verified": 671,
+        "completed_at_utc": "2026-11-08T16:46:23.006759+00:00",
+        "downloaded_or_reused_bytes": 5627783629,
+        "expected_bytes": 5627783629,
+        "expected_md5": null,
+        "gzip_crc_verified": false,
+        "last_progress_at_utc": "2026-11-08T16:45:13.327611+00:00",
+        "md5": "2d2836c2c6b4fb6c9d2d2d58189eb014",
+        "measured_bytes": 5627783629,
+        "name": "MPI-Sintel-complete.zip",
+        "prefix": false,
+        "range_chunk_bytes": 8388608,
+        "reused_existing": false,
+        "sha256": "bdc80abbe6ae13f96f6aa02e04d98a251c017c025408066a00204cd2c7104c5f",
+        "started_at_utc": "2026-11-08T16:16:02.704106+00:00",
+        "status": "verified",
+        "urls": [
+          "http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip",
+          "https://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip"
+        ]
+      },
+      "README.md": {
+        "chunks_total": 1,
+        "chunks_verified": 1,
+        "completed_at_utc": "2026-11-08T16:15:53.123216+00:00",
+        "expected_bytes": 4061,
+        "expected_md5": "1664975a2231aaccef4afa95a76ebd88",
+        "gzip_crc_verified": false,
+        "md5": "1664975a2231aaccef4afa95a76ebd88",
+        "measured_bytes": 4061,
+        "name": "README.md",
+        "prefix": false,
+        "range_chunk_bytes": 8388608,
+        "reused_existing": false,
+        "sha256": "3957176782fee9f0a261c93aa729ebb51453c1bed7bc0dcc0a57261f7de130ab",
+        "started_at_utc": "2026-11-08T16:15:51.680062+00:00",
+        "status": "verified",
+        "urls": [
+          "https://zenodo.org/api/records/21549559/files/README.md/content"
+        ]
+      },
+      "SHA256SUMS": {
+        "chunks_total": 1,
+        "chunks_verified": 1,
+        "completed_at_utc": "2026-11-08T16:15:51.456362+00:00",
+        "expected_bytes": 1857,
+        "expected_md5": "8b925ecfe0d8fa848a24e26c0875a60a",
+        "gzip_crc_verified": false,
+        "md5": "8b925ecfe0d8fa848a24e26c0875a60a",
+        "measured_bytes": 1857,
+        "name": "SHA256SUMS",
+        "prefix": false,
+        "range_chunk_bytes": 8388608,
+        "reused_existing": false,
+        "sha256": "49eb39f7a74dcf4c0d97ec2ae48d85a3d892f485da00dece97b6faf0ed1f7300",
+        "started_at_utc": "2026-11-08T16:15:50.008798+00:00",
+        "status": "verified",
+        "urls": [
+          "https://zenodo.org/api/records/21549559/files/SHA256SUMS/content"
+        ]
+      },
+      "connections_biological.csv.gz": {
+        "chunks_total": 22,
+        "chunks_verified": 22,
+        "completed_at_utc": "2026-11-08T16:18:26.016832+00:00",
+        "downloaded_or_reused_bytes": 178853187,
+        "expected_bytes": 178853187,
+        "expected_md5": "2af9b8db6a8dbbc02cd3cc36f2631c19",
+        "gzip_crc_verified": true,
+        "last_progress_at_utc": "2026-11-08T16:18:20.132692+00:00",
+        "md5": "2af9b8db6a8dbbc02cd3cc36f2631c19",
+        "measured_bytes": 178853187,
+        "name": "connections_biological.csv.gz",
+        "prefix": false,
+        "range_chunk_bytes": 8388608,
+        "reused_existing": false,
+        "sha256": "402fa0e61198e6f26b2ef4fd18e0123cc2edff0bb1edca9dd31b29b8171580bc",
+        "started_at_utc": "2026-11-08T16:15:46.261418+00:00",
+        "status": "verified",
+        "urls": [
+          "https://zenodo.org/api/records/21549559/files/connections_biological.csv.gz/content"
+        ]
+      },
+      "neuron_annotations_flywire_v2.1.0.tsv.gz": {
+        "chunks_total": 1,
+        "chunks_verified": 1,
+        "completed_at_utc": "2026-11-08T16:16:02.480643+00:00",
+        "expected_bytes": 7740866,
+        "expected_md5": "55789fa30a854bd00451af16441a7d3d",
+        "gzip_crc_verified": true,
+        "md5": "55789fa30a854bd00451af16441a7d3d",
+        "measured_bytes": 7740866,
+        "name": "neuron_annotations_flywire_v2.1.0.tsv.gz",
+        "prefix": false,
+        "range_chunk_bytes": 8388608,
+        "reused_existing": false,
+        "sha256": "c68615fea6699908a3e13bad2b17917a77b1a2865d861f70373fd2714db2f43d",
+        "started_at_utc": "2026-11-08T16:15:46.261554+00:00",
+        "status": "verified",
+        "urls": [
+          "https://zenodo.org/api/records/21549559/files/neuron_annotations_flywire_v2.1.0.tsv.gz/content"
+        ]
+      },
+      "right_visual_positions_all_neurons.csv": {
+        "chunks_total": 1,
+        "chunks_verified": 1,
+        "completed_at_utc": "2026-11-08T16:15:49.771776+00:00",
+        "expected_bytes": 629193,
+        "expected_md5": "0b5dddbb0328f6d73ef3cb1cc9f7d6a3",
+        "gzip_crc_verified": false,
+        "md5": "0b5dddbb0328f6d73ef3cb1cc9f7d6a3",
+        "measured_bytes": 629193,
+        "name": "right_visual_positions_all_neurons.csv",
+        "prefix": false,
+        "range_chunk_bytes": 8388608,
+        "reused_existing": false,
+        "sha256": "fbbd0c2ab83719cc4eff3df9a90e4a6dffe1b2ff9144db64709049c6567cd932",
+        "started_at_utc": "2026-11-08T16:15:46.261644+00:00",
+        "status": "verified",
+        "urls": [
+          "https://zenodo.org/api/records/21549559/files/right_visual_positions_all_neurons.csv/content"
+        ]
+      }
+    },
+    "git": {
+      "branch": "round012-attempt7",
+      "commit": "bf721afbca4853e546a1bf48174610baf01d8957",
+      "status_porcelain": ""
+    },
+    "hash_lock_verified": true,
+    "implementation_corrections_pre_main": [
+      {
+        "action": "stopped restartable matrix after 68/264 synthetic-only cells, corrected code, force-reran deterministic pretraining gate, then resumed from checkpoint",
+        "corrected_at_utc": "2026-11-08T16:59:44.984352+00:00",
+        "frozen_protocol_rule": "measurement gate = decision_rule_identifiable AND recover_known_plus_0_25; real-domain ceiling remains a separate downstream decidability gate",
+        "issue": "domain_measurement_gate_passed incorrectly conjoined the separate 0.70 domain ceiling",
+        "main_contrast_observed_before_correction": false,
+        "phase": "pre_main_before_any_real_domain_gradient_cell",
+        "thresholds_or_data_changed": false
+      }
+    ],
+    "post_hoc_changes": [],
+    "resolved_graph": {
+      "K": 3,
+      "KC": 2544
+    },
+    "thresholds_lowered": false,
+    "unexposed_holdout_evaluation_limit": 1
+  }
+}

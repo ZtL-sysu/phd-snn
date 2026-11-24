@@ -1,0 +1,205 @@
+================================================================================
+【attempt #22 · round-029 · C1 死磕 correction loop v3 · DESIGN DRAFT / NOT SUBMITTED】
+f-research-v1 / P4 / C1 / 2026-11-10 08:49–09:4x GMT+8
+H23：失败溯源分层 × 辅助调用隔离配对门
+     （failure-provenance stratification × auxiliary-call isolation paired gate）
+     —— 把「同一份带外 debug 载荷内 backend.status=processing 与
+        task.status=failed 并存」这一**纵向溯源矛盾**作为一等观测量；
+        唯一自变量 = 状态判定是否按「失败字符串的发出层」分层
+        （v1 扁平：任意 status=failed 字符串都算终态失败
+         → v2 分层：只有科学执行层发出的终态失败才准入，
+           辅助 SDK 调用层的失败被隔离为 channel_fact，不得写成任务终态）
+状态：**NOT SUBMITTED / 不得原样启用**（第 13 份 NOT-SUBMITTED 预案）。
+      18885（attempt #9 / H10）在途、跨第 13 轮非终态。按 §3.6(2)
+      **不重提交、不等待、不 pull、不写 verdict、不动科学阶段、不换题**；
+      按 §3.6(3) 交付本轮**一次实质优化**（本预案）。
+      须先按 `acceptance-verdict-18885.md` 的真实实测修订四要素再决定
+      启用 / 合并 / 废弃。草案序号 #22 仅指设计预案；`primary_focus.attempt_count`
+      **保持 9 不虚增**。
+================================================================================
+
+【本预案为何 NOT SUBMITTED】
+同一 idea（C1）已有在途任务 `18885`（attempt #9 / H10）。用户 14:34 指令与
+§3.6(2)：在途不重复提交、不等待、继续同一主攻。本预案是可证伪的**证据准入
+协议层**设计草案，**不是实验结果、不是判定、不是 kill hit、不是「实验跑完」**。
+本轮 **0 次 novix 提交**（参照 rounds 006/009/011/013/015/017–028 先例）。
+本轮主通道 `novix --json task result` / `task get` 均 rc=4 传输读超时，
+属**平台通道故障**；按 §3.6(4) 与用户硬约束「平台故障一律不构成放弃理由」
+**不构成放弃理由**；`abandon_allowed=False` 不变。
+
+--------------------------------------------------------------------------------
+## 0. 本轮唯一新增事实（本机权威复核原始字节 / 哈希，非推断、非科学结果）
+
+1. **主状态通道 0 次解析到 JSON status**：
+   `novix --json task result 18885` attempt A = **rc=4 / stdout 0 B** /
+   stderr `GET .../api/task/get_task?taskId=18885 -> The read operation timed out`；
+   按协议**单次重试** attempt B 同样 **rc=4 / 0 B**；
+   `novix --json task get 18885`（本机 100 s 诊断读上限）同样 **rc=4 / 0 B**。
+   三次均无 JSON status → 按 playbook「只有解析到 JSON status 才判终态」
+   **不作终态判定**，保持 `RUNNING` / `POLL_NOVIX`。
+   `scripts/check_inflight.py` 08:57:15 亦记 `18885 = transport_error_retry`。
+2. **带外 `novix debug task 18885 --logs` = rc=0 / 96,321 B /
+   SHA-256 `fbaff1834e4d9df9d863ae61bbf199a9827336ad405d45ad994ec0ee6c5ffca1`**；
+   `novix debug task 18885`（logs=false）= rc=0，同一字段集。
+3. **【本轮首次】同一份载荷内出现纵向溯源矛盾**：
+   - `backend`：`status=processing`、`source=web`、`error_code=""`、
+     `error_info=""`、`phase=""` —— 权威 web 后端**明确未标记失败**。
+   - `task`：`status=failed`、`message` = 「后台任务执行失败: Unknown SDK error
+     (subtype=success): API Error: Request rejected (429) · The usage limit has
+     been reached」，`Claude stderr tail` =
+     `[claude-code:unrecognized_model] {"model":"gpt-5.6-sol(max)",
+     "query_source":"generate_session_title"}`，
+     `trace_id=1794180853758-7-8c17511514f0484cbf328c1af58cb58b`、
+     `trace_status=spawned`、`classification=runtime_s...`（原文截断）。
+     → 失败字符串来自 **generate_session_title 辅助 SDK 调用**（会话标题生成，
+       未识别模型 + 429 配额耗尽），**不是科学实验执行体的终态**。
+   - `placement`：`state=submitted`、`dispatch_phase=invoking`、
+     `pool=exp-4090`、`node=aliyun-hz-exp-4090-1`、
+     `nomad_alloc_id 513e82bf…` / `claim_name …` 连续第 6 轮冻结、
+     `reason=recovered runtime dispatch`。
+   - `artifact_sync`：`state=pending`、`attempts=9`、
+     `first_pending_at=1794263943.170534`（round-028 为 `null`，**本轮首次变为
+     有界 pending 计数**，属通道/协议过程事实，不是产物、不是指标）。
+   - `pool_status`：`dispatch_paused=false`、`eligible_nodes=2`；
+     `diagnosis=ALLOCATION_EVIDENCE_UNAVAILABLE`；
+     `next_step` = 「Nomad 暂不可达或历史记录已回收；保留任务记录，不要直接重新派发。」
+   - `runtime_failure` 2,195 字符全是 aiohttp 大 body `ResourceWarning`，
+     `log_warnings` = `Live allocation evidence unavailable; reading persisted
+     runtime diagnostics`；`/health` 1131、`unclosed` 11 为通道字节事实。
+4. **与 round-028 落盘快照的逐字段 diff（本机实测，非推断）**：
+   `_r028_debug_nologs.json` / `_r028_debug_logs.json` 中
+   `task.status=running`、`task.message=后台 call_agent_v2 已启动`、
+   `artifact_sync=null`；本轮 `task.status=failed`、429 辅助调用失败、
+   `artifact_sync=pending/attempts=9`。**backend.status 两轮均为 processing**，
+   `error_code` / `error_info` 两轮均为空。
+5. **定性**：这是**带外调度/运行时/配额层的通道事实**，与
+   `task result` 的正式终态判定不是同一语义层；**不是结果、不是判定、
+   不是 kill hit、不是机制否证、不是放弃理由**。
+   最近正式科学判定仍是 `18696 = REJECT_FAILURE`（幂等、9/9 SHA-256 归档）。
+   `aiohttp` 计数与 `artifact_sync.attempts` 按 r027/r028 交接口径
+   **不得写成单调恶化、不得据此判定远端故障或 kill hit**。
+6. 登录态：CLI 正常返回带外数据，非登录失效（未回显任何凭据）。
+
+--------------------------------------------------------------------------------
+## 1. 上一轮失败点（四要素之一）
+
+- `18696 = REJECT_FAILURE`（正式、9/9 SHA-256 归档）：全阶段真跑完
+  （23/23 单测 + 142/142 prefinal + 148/148 final、165 raw NPZ、614/614 重哈希），
+  但两真实域 ceiling DAVIS `0.424242` / SINTEL `0.400000` 均 < 0.70
+  （`INPUT_BOTTLENECK`）、stratified paired bootstrap 校准 `0.149` 失败、
+  `transfer_claim_made=false`、`minimum_met=false`。负结果不改写、失败证据不删。
+- `18885`（attempt #9 / H10）跨第 **13** 轮非终态，`finalReply` 连续第 12 轮不可读。
+- H10 突触前 `drive→syn` 能量稀释假设**仍未被检验，不是被否证**。
+- H22（attempt #21 / round-028）把「主端点 503 / 带外 rc=0」的**横向通道健康
+  分叉**作为一等观测量；它只回答「哪条通道健康、哪些字节可准入」，
+  **不回答「同一份载荷里两条相互矛盾的状态字符串，哪一条有资格代表任务终态」**。
+  本轮新出现的 `backend.status=processing` vs `task.status=failed(429 辅助调用)`
+  正是 H22 无法分类的**纵向溯源矛盾**：两条通道都可读（debug rc=0），
+  矛盾发生在载荷**内部**而非通道之间。因此 H22 的健康矩阵对本轮观测不可判定。
+  → **这是本轮必须修的真实失败点，不是原样重提、不是调超参。**
+
+## 2. 本轮假设（H23，机制级不同于 H10–H22）（四要素之二）
+
+- **纵向而非横向**：H21 改「哪些任务可入证据集」（横向带标签对照集）；
+  H22 改「证据准入是否被成对端点健康矩阵门控」（横向双通道健康）；
+  **H23 改「状态字符串按发出层分层后，哪一层有资格代表任务终态」**
+  （纵向溯源分层：web 后端权威状态层 / 科学执行体层 / 辅助 SDK 调用层 /
+  调度 placement 层 / artifact_sync 层）。
+- **唯一自变量** `failure_provenance_contract_version`：
+  - v1（现行扁平口径）：载荷中任意 `status="failed"` 字符串都按终态失败处理；
+  - v2（分层口径）：训练前冻结**溯源判定规则**——只有
+    `backend` 层的 `error_code` / `error_info` 非空 **且** 科学执行体层给出
+    与 `task_id` 绑定的终态记录，才准入为任务终态；
+    `query_source != scientific_runner` 的失败（如
+    `generate_session_title` 的 429 / unrecognized_model）
+    一律**隔离为 `channel_fact`**，字节保留、不得入账、不得互相顶替、
+    不得写成 `FAILED` / `REJECT_*` / kill hit。
+- **三态双向预注册落点（全部为诊断，非达标、非验收、非机制否证）**：
+  - `AUXILIARY_ONLY_FAILURE`：v2 判定失败仅来自辅助调用层，
+    `backend.error_code=""` → 保持 `RUNNING` / `POLL_NOVIX`、`finalReply`
+    仍标 unavailable；**不改任何科学门槛**。
+  - `RUNNER_TERMINAL_CONFIRMED`：v2 判定科学执行体层确有与 `task_id`
+    绑定的终态记录 → 才允许进入 pull / SHA-256 核验 / acceptance-verdict 路径；
+    本轮**未出现**，不得预先假设。
+  - `UNDECIDABLE_PROVENANCE`：溯源链不可判（字段截断 / 通道不可读）→
+    如实标 `unavailable`，不编造分类、不推断终态。
+- **是假设不是结论**：不改变 `minimum(+0.15)` / `expected_strong(+0.25)` /
+  真实域 ceiling `0.70` / 校准三族 / 11 seeds / BH-FDR / A=0 与精确保度零模型，
+  不进 P5、不写论文、不记 kill hit。
+
+## 3. 具体改动（与上一版 query 的 diff）（四要素之三）
+
+相对 `query-round028-attempt21-DESIGN-DRAFT-NOT-SUBMITTED.txt` 的
+**10 条机制级 diff**（不是原样重提、不是只调超参、不是把负结果改正）：
+
+1. **首门更换**：`endpoint_health_admissibility_gate` →
+   `failure_provenance_stratification_gate`；门控对象由「通道健康」改为
+   「状态字符串的发出层」。
+2. **观测单位**：由「观测窗（近同时读数三元组）」改为
+   「**单份载荷内的带溯源标签状态记录**」（`backend` / `task` / `placement` /
+   `artifact_sync` / `runtime_failure` 五层各一条）。
+3. **一等观测量更换**：H22 的一等观测量是端点可用性分叉（503 vs rc=0）；
+   H23 是**载荷内部矛盾**（`processing` vs `failed` 且 `error_code=""`），
+   两者在本轮读数下不可互推。
+4. **新估计量族**：`provenance_layer_bit` / `auxiliary_call_flag` /
+   `query_source_typed_count` / `quarantined_failure_count` /
+   `terminal_eligible_layer_count` / `v1_v2_verdict_agreement` /
+   `artifact_sync_attempts_delta` / `backend_error_field_nonempty`；
+   全部为**通道/协议诊断量**，不是科学指标、不进主表。
+5. **配对门与阴性对照**：v1/v2 配对判定 +
+   `shuffled_provenance_labels`（≥200 次层标签置换，检验分层是否有效）+
+   `A=0` 与精确保度零模型**幂等保留、不参与本门**；
+   明确禁止用 18885 自身读数自拟合分层阈值。
+6. **隔离规则升级**：H22 隔离「不健康通道字节」；
+   H23 隔离「**辅助 SDK 调用层发出的失败字符串**」，
+   并新增 `backend_error_field_nonempty` 硬条件，防止把 429 配额耗尽
+   误判成科学执行体终态。
+7. **带标签校准集更换**：H21 用 4 个终态历史任务的带外日志；
+   H23 用**本机已落盘的 r028 与本轮 debug 快照逐字段 diff**
+   （`task.status` running→failed、`artifact_sync` null→pending/9）
+   作为**已知溯源变化的阳性对照**，不引入新任务、不重新派发。
+8. **显式约束继承并加固**：`next_step=不要直接重新派发` 写进冻结规则；
+   新增「`classification` / `trace_status` 字段截断时标 unavailable」，
+   不得把 `trace_status=spawned` 当成 `finish`。
+9. **H11–H22 降为幂等独立复核门**：每份预案只作一次只读复核，
+   不叠加执行、不改变主结论、不重复提交。
+10. **全部统计门槛 / 无预算提交契约不变**：
+    提交命令仍不带 `--max-turns` / `--timeout` / 阻塞 watch / 任何预算参数；
+    `project/result.json` 仍须落在可 pull 的 workspace 内；
+    六主文件 SHA-256 核验、≥11 seeds、三族校准、BH-FDR 全部不变。
+
+## 4. 预期信号 / 若失败下一步（四要素之四）
+
+- `AUXILIARY_ONLY_FAILURE` → **只更新文档**：把「溯源分层表 + 辅助调用隔离位」
+  列为 Step 0 固定读数项，保持 `RUNNING` / `POLL_NOVIX`，`abandon_allowed=False`；
+  下轮继续同一 C1，先复核 `backend.error_code` 是否仍为空。
+- `RUNNER_TERMINAL_CONFIRMED` → 才允许短路径 pull + SHA-256 核验六主文件 +
+  `acceptance-verdict-18885.md`；**达标才 `--before P5`**，
+  核对 H10 五档 / 三族校准 / 符号 / 18533 必跑项 / real delta 是否达 `minimum(+0.15)`。
+- `UNDECIDABLE_PROVENANCE` → 如实标 `unavailable`、不编造分类，
+  补齐可读的溯源探针（记录字段名与哈希，不推断数值）。
+- **任何一态都不**：重提交 / 等待 / pull / 写 verdict / 换题 / 声称达标 /
+  记 kill hit / 把平台故障写成放弃理由 / 下调门槛 / 静默下调 `expected_strong`。
+- **若出现第三次独立干净失败**须重新评估 §3.6(4)(b)；
+  本轮 429 辅助调用失败**明确不是**干净 kill hit（校准与域可用性均未满足）。
+- 十三份 NOT-SUBMITTED 预案（r017 H11 … r028 H22 / **r029 H23**）
+  **均不得原样启用**，须先按 `acceptance-verdict-18885.md` 真实实测修订四要素。
+
+--------------------------------------------------------------------------------
+## 5. 本轮对齐检查（如实，不得写成 passed）
+
+- 两份既有 guidance `validate_guidance.py --strict --packet` **均 rc=0 / PASS**
+  （结构校验，非科学有效性）；C1 run root `pipeline-state.json`：
+  契约 v2 **11/11 SHA-256 MATCH**、`--before P0` **rc=0**（≠ P0 已执行）、
+  `--complete` **rc=1**、`--submission-ready` **rc=1**、26/26 `pending`、
+  history 仅 `reopen`、**0 pass**。未伪造 passed、未手编 history、
+  未启动 P0、未改冻结快照。
+- `guidance-pipeline-state.md`（12 阶段）全如实 pending。
+- 本轮 **0 次 novix 提交**；`primary_focus.attempt_count=9` 不虚增；
+  `candidate_pool` 135 → 140（D1–D5，只补池）；`qualified=false`、
+  `final_paper_overall=null`、无成稿 / P5 / P5A / P9 / full review。
+- `review_execution = independent-agent (ccf-idea-reviewer standard)`（5 个独立
+  Agent，互不参考、禁止联网、`not searched`）；主会话严格只读复核
+  **125/125 PASS**（首轮 115/125、次轮 123/125 失败**全部为校验脚本锚点缺陷**，
+  只改脚本重跑，评审内容一字未改、SHA-256 未变、分数未变）。
+================================================================================

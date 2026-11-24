@@ -1,0 +1,105 @@
+{
+  "files": [
+    {
+      "file": "result.json",
+      "bytes": 1971899,
+      "sha256": "6749655d3601b77361cd02991e0257b823b61a4eb12fe9e7ca7bee9663911213"
+    },
+    {
+      "file": "config.json",
+      "bytes": 29945,
+      "sha256": "4b921cb3ee34215f2a5fddac59e139828a442ca4f092044071fb406b473255da"
+    },
+    {
+      "file": "experiment.py",
+      "bytes": 64070,
+      "sha256": "c7d5b61029411cc678a817558c6d7208b28f2df296599228352632eef68fdd2a"
+    },
+    {
+      "file": "entrypoint.sh",
+      "bytes": 4197,
+      "sha256": "ca841a0f3b28f7b96a6b8d3e24c428bc524d6ee45b6a2090da53a6cd1d2bdbbe"
+    },
+    {
+      "file": "MANIFEST.txt",
+      "bytes": 46738,
+      "sha256": "f4b7ad3585fa9c83933b4675e05c14cd794b2da708cb0ceabb82dabef7ccae2c"
+    },
+    {
+      "file": "config_preregistered.json",
+      "bytes": 15913,
+      "sha256": "f182d79e6810175c7f422ce8279167b9cf19ef72bf3cc7add76b2877a42c14f5"
+    },
+    {
+      "file": "result_snapshot.json",
+      "bytes": 1971899,
+      "sha256": "6749655d3601b77361cd02991e0257b823b61a4eb12fe9e7ca7bee9663911213"
+    },
+    {
+      "file": "config_snapshot.json",
+      "bytes": 29945,
+      "sha256": "4b921cb3ee34215f2a5fddac59e139828a442ca4f092044071fb406b473255da"
+    },
+    {
+      "file": "validation.json",
+      "bytes": 20406,
+      "sha256": "f8d9d4ef3c1d3ae07f509f068ce83339f9b48a1a5d8036e0874a6341104813e9"
+    },
+    {
+      "file": "main_table.csv",
+      "bytes": 71106,
+      "sha256": "2b30f184633b400d72920a580567e37078ca1a1227aa3d0c112dc0bf6f9fa49d"
+    },
+    {
+      "file": "gate_operating_point.csv",
+      "bytes": 74498,
+      "sha256": "a270fb3b9cba7c4656ce031ea7faeade89672327903e50e9d71c918362555d09"
+    },
+    {
+      "file": "yoked_firing_rate_2x2.csv",
+      "bytes": 18217,
+      "sha256": "1835daa8fb98a2cc69a4e1ba178be68f5652f2d807c4af36b34c63ac2f3516c2"
+    },
+    {
+      "file": "readout_state_variables.csv",
+      "bytes": 5624,
+      "sha256": "94d88db695f79b6ddcd86fa1e7e6a28460cf78981d90a8434062a38c9cf22fb2"
+    },
+    {
+      "file": "variance_vs_information.csv",
+      "bytes": 403902,
+      "sha256": "2280c83bd4f95d5562817838e74bd16d3a8d4ee08379dbc8d81ffef9a9edf825"
+    },
+    {
+      "file": "variance_trajectory.csv",
+      "bytes": 54715,
+      "sha256": "30d955b23ab39abfffb05556b01ee9e8e65af641e44e986051a152c6e18b434e"
+    },
+    {
+      "file": "probe_vs_hop.csv",
+      "bytes": 88650,
+      "sha256": "a0d44037ec1d2ad3e95da5c2efbd71fdb4badd79536d5a335494c7e8067f689d"
+    },
+    {
+      "file": "experiment-traceability.csv",
+      "bytes": 830,
+      "sha256": "6f24ecb3520d3bb1c935f52392132054c9bc071b7164b415774bfb76bb629491"
+    },
+    {
+      "file": "command_history.log",
+      "bytes": 2598,
+      "sha256": "aa40d57fbcbc9ae316aa99504574b4ec01a0632d500e7cd80536627a025a478c"
+    },
+    {
+      "file": "test_pipeline.log",
+      "bytes": 3182,
+      "sha256": "a4bb9db098851c96ed75df94229a3b0bc4403a642f651f2cb4a1b542bb8aea0d"
+    },
+    {
+      "file": "validate_results.log",
+      "bytes": 177,
+      "sha256": "da00a74893c073e230347051e0beee8d72f215cc734cb3febf6474147172319d"
+    }
+  ],
+  "count": 20
+}

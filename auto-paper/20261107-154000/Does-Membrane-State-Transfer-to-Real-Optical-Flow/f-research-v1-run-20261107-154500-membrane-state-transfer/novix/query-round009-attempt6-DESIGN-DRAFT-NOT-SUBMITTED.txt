@@ -1,0 +1,168 @@
+================================================================================
+C1 DEAD-GRIND attempt #6 — DESIGN DRAFT — **NOT SUBMITTED**
+round-009 / 2026-11-08 17:4x GMT+8
+Status: DESIGN ONLY. No novix task created, no query sent, no stage marked passed.
+Reason: primary_focus C1's attempt #5 (novix 18448) is genuinely in flight
+        (processing, steps 282->302, updatedAt 17:43:10, errorCode=None,
+         top-level finalReply=None). Per WORKFLOW-PLAYBOOK.md §3.6(2) and
+         Step 6 "same idea in flight => no duplicate submission".
+Activation: round-010 Step 0 MUST first read 18448's formal
+        acceptance-verdict and its preregistered decidability_state, then decide
+        ENABLE / REVISE / DISCARD. **Must not enable verbatim.**
+================================================================================
+
+【本轮四要素 · v3 §3.6(3)，同步写入 GRIND-LEDGER.md 与 rounds/round-009.md】
+
+- 上一轮失败点（已落盘判定的最近一次终态，不是推断）：
+  18390 正式判定 REJECT_FAILURE（acceptance-verdict-18390.md）：设计有效、跑完全量
+  （design_valid=true、97/97 validator、280/280 raw NPZ、25 tests 24 passed/1 skipped/
+  0 failed），主文件交付缺陷第四次已修复（result.json 1,971,899 B、config.json
+  29,945 B 真实存在且 SHA-256 MATCH、双 snapshot byte-identical）。
+  但两真实域 ceiling DAVIS 0.691667 / Sintel 0.435714 仍 < 冻结门槛 0.70
+  -> real_domain_contrasts=[]、NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE、
+  无 real-domain delta；预注册 7 项强信号 5 true / 2 false、thresholds_lowered=false。
+  【关键新事实】18273 的「biological-graph LIF KC 特征跨样本方差严格 0 /
+  hard-spike rate 0」在 18390 的规范实现中未复现（feature_std 0.049855、
+  hard_spike_rate 0.576893、probe 0.705000）-> round-006「整体旁路」→ round-007
+  「门控工作点失配」这条机制假说链的观测基础不稳定，前 3 轮围绕「修塌缩」的
+  干预不再成立。另有 5 paired seeds 下 exact sign-flip 最小双侧 p=0.0625 的
+  结构性效力天花板，以及 18273 谱半径 504.30 vs 18390 实测 292.415 的
+  跨实现不一致。
+  18448（attempt #5，本轮在途）尚无结果，不得推断、不得抢占、不得预先判定。
+
+- 本轮假设（新，机制级不同；是假设不是结论）：
+  连续 5 次远程实验（18156 / 18228 / 18273 / 18390 / 18448）共用一个从未被
+  检验的实现事实：**全部只用「冻结的图传播特征 + train-only 线性 ridge 探针」**，
+  膜状态时间递推 `v = decay*v + syn + drive` 从未接收梯度，脉冲动力学从未被训练。
+  而本机 +0.2817（CI [0.2033,0.3617]）恰恰来自**训练过的** LIF（可学 gain +
+  surrogate gradient）。因此 C1 主命题「膜状态让时序方向可学」在远程协议下
+  **根本没有被检验** —— 远程测的是「冻结 LIF 特征是否比冻结 stateless 特征
+  更线性可分」，这是另一个量。
+  可证伪推论：在完全相同的图 / 复眼 / K / 刺激 / split / seeds / 参数预算下，
+  只切换梯度路径（frozen+ridge -> surrogate-gradient 端到端），
+  (i) 端到端 `delta(LIF − stateless) >= +0.15` 且 bootstrap CI 下界 > 0；
+  (ii) **同样训练的 stateless** 不获得同等增益（决定性对照，把「训练有帮助」
+       与「训练动力学有帮助」分开）；
+  (iii) 冻结探针口径的 delta 仍 <= 0 且其 CI 排除 +0.15（把效力受限的
+       「不显著」升级为「决定性不是强结果」）；
+  (iv) 新 unexposed holdout 与已暴露测试集结论同号。
+  若 (i) 不成立或 (ii) 中同样训练的 stateless 追平 LIF，则本假设被否证，
+  本机 +0.2817 须归因到本机特定协议（4,097 复眼感受器 / 2,335,888 行完整边）
+  而非「膜状态一般性地带来增益」，贡献收窄为诊断型负结果。
+
+- 具体改动（相对 query-round008-attempt5.txt 的机制级 diff，不是原样重提、
+  不是只调超参凑显著）：
+  1.【核心转向·新增】把 attempt #5 的主预算从「真实域标签构造阶梯 + GT oracle
+     上界 + 三态可判定性」换成 **梯度路径 2×2**：
+     {frozen_features+ridge, surrogate_gradient_e2e} × {stateless, LIF}，
+     外加 learnable_decay / learnable_gain_only / straight_through_rate 三个变体，
+     全部**等参数量、等 SynOps 预算、train-only split、训练前冻结**。
+     attempt #5 只改「标签 / 输入表示」轴与统计协议，从未碰梯度路径。
+  2.【新增·决定性对照】`stateless_trained_identically`：stateless 用与 LIF
+     完全相同的端到端训练流程与预算。这是把「训练」与「训练到哪里」拆开的
+     唯一对照，5 次远程实验都没有。
+  3.【新增·效度修复，来自 research-recovery.md】**测试集暴露台账**：
+     前 5 次远程实验都用同一批 DAVIS / Sintel held-out 结果触发了 redesign，
+     属自适应评估。本轮把这些测试显式标 `exposed`，冻结一组**新的不相交
+     holdout**（DAVIS 按序列 ID 哈希、Sintel 按 scene，哈希锁定写进
+     config_preregistered.json），最终选择只在未暴露 holdout 上评估一次；
+     exposed 与 unexposed 两套数值**分别全部报告**，不得只报好看的。
+     历轮从未做过暴露审计，这是新的评估协议层变化。
+  4.【新增·统计】冻结探针臂预注册**等效性 / 非劣效界**：在 >=11 paired seeds
+     下报其 delta 的 CI 是否排除 +0.15，把「5 seeds 下 p 最小 0.0625」的
+     效力受限零结果转成可判定的诊断结论；效应量与 CI 定义不变、
+     全部条件统一应用、不选择性报告、不改写成「机制成立」。
+  5.【保留·不删除】attempt #5 的三态 `decidability_state` 契约降为**次级门**
+     保留：若 18448 落 DOMAIN_USABLE，attempt #6 必须在**训练后动力学**下
+     重算 real-domain delta 并按 C1 guidance §Expected Results 判定；若落
+     LABEL_NOT_DECODABLE / INPUT_BOTTLENECK，则如实报告、不作迁移主张，
+     梯度路径机制检验只在 SYNTHETIC + 任何可用域上进行。
+     跨实现一致性契约（7 受控单因子）降为**固定协变量审计**保留，
+     使新 run 与 18273 / 18390 可比，而不是静默重复未知的实现漂移。
+  6.【删除】不再把 attempt #5 的 ceiling 阶梯全网格、oracle 上界全网格、
+     >=11-seed 效力矩阵当**主实验**重跑（那是 18448 的任务，结果未出）；
+     只保留 5-seed 可比性锚点。禁止在 18448 结果未出时抢跑其实验设计。
+  7.【沿用·禁止退化】完整边表 178,853,187 B（prefix=false、HTTP Range 分块
+     拼接 + gzip 校验）、eye→KC exact-hop 自检 K=3 / 2,544 annotated KC、
+     训练前 invariant checks、2000 次 paired bootstrap 95% CI、BH-FDR q=0.05、
+     PCA/scaler/ridge/MI 分位数一律 train-only；`A=0` 明确为输入信息上界
+     （**不得写成生物接线优势**）、精确保度零模型（in/out 度、权重多重集、
+     nnz、互反边对、自环精确相等）、identity 图、自适应阈值 / 不应期 / E-I
+     各一因子移除消融、打乱帧序 / flash / 冻结 gain / 标签置换阴性对照、
+     每条件每 seed 一个 raw NPZ；「保度零模型从未输给真实接线」继续成立。
+  8.【沿用·已验证有效】产物持久化沿用 18390 实测有效的做法：全部计算结束后
+     最后一步用 Python 直接写 project/result.json 与 project/config.json 两个
+     主文件 + byte-identical 双 snapshot + project/MANIFEST.txt，立即
+     os.path.exists / getsize / sha256 自检并把**实测输出**贴进最终回复。
+  9.【不变】minimum / expected_strong 一律沿用 C1 guidance §Expected Results
+     （real-domain delta >= +0.15 / >= +0.25 + 迁移裁决 + 一因子消融），
+     **不静默下调**；真实域 ceiling 门槛 0.70 不下调；两域都 unavailable
+     时不得作迁移主张；`runtime_hours` 只是可行性估算、不是超时参数；
+     提交命令不带 --max-turns / --timeout、不阻塞 watch。
+
+- 预期信号 / 若失败下一步：
+  · 预期：>=11 paired seeds 下 e2e `delta(LIF − stateless) >= +0.15` 且
+    CI 下界 > 0；`stateless_trained_identically` 不追平；冻结探针 delta 的
+    CI 排除 +0.15；unexposed holdout 与 exposed 同号；一因子消融指认
+    梯度路径中的承载机制。
+  · 若假设被否证（e2e 仍 delta≈0，或同样训练的 stateless 追平 LIF）：
+    如实收窄为「连接组约束协议下无可训练膜状态增益」的诊断型负结果，
+    **不是达标、不是机制否证、不是方法优越**；保留全部失败证据，
+    继续死磕同一 C1（abandon_allowed=False），下一步转 I4 逐跳信息预算 /
+    残差修复并结合测试集暴露台账，或把 claim 收窄到本机协议特异性。
+  · 若 18448 落 LABEL_NOT_DECODABLE / INPUT_BOTTLENECK：如实报告、
+    不作迁移主张；本预案保留梯度路径轴作为 SYNTHETIC 上的机制检验。
+  · 若 18448 落 DOMAIN_USABLE：round-010 **必须改写**本预案，把训练后动力学的
+    real-domain delta 升为主读出，**不得原样启用**。
+  · 任何情况：不把「实验跑完 / design_valid / 方差恢复」写成「结果达标」，
+    不删失败证据，不把负结果改写成正结果，不把 A=0 高于图条件写成生物接线优势。
+
+================================================================================
+【本轮不提交的理由，逐条写死】
+- 18448 在途（本轮 Step 0 权威复核：novix --json task result 18448 rc=0
+  status=processing steps 282；task get rc=0 status=processing steps_count=302
+  updatedAt 17:43:10 errorCode=None errorInfo=None finalReply=None；
+  单次重试中 task result 出现 rc=4 传输超时，按 playbook 只重试一次、
+  重试后 rc=0 仍 processing/302，绝不误判为任务失败）。
+- §3.6(2)：「还在跑：本轮只更新文档，不换题、不另起新篇、不催不等」。
+- Step 6：「同一 idea 在途时不得重复提交」。
+- 本文件是 DESIGN DRAFT，不是 query.txt，不是 create-response.json；
+  automation-state.json 的 tasks[] 不新增 task，attempt_count 不虚增（仍 5）。
+================================================================================
+
+
+================================================================================
+【round-009 收尾复核追加 · 18448 结果已出，本预案必须改写后再启用】
+================================================================================
+本文件写于 17:4x，当时 18448 为 processing（真在跑）。收尾复核（约 18:22）
+发现它已在本轮执行期间转为平台终态 finish/steps 316；短路径定向 pull +
+SHA-256 三主文件 MATCH，正式判定 acceptance-verdict-18448.md = REJECT_FAILURE。
+因此本预案里「18448 尚无结果、不得预先判定」一句已过时，改为以下实测事实：
+
+- DAVIS = INPUT_BOTTLENECK（current 0.613333、oracle 1.000000、gap +0.386667）
+- SINTEL = DOMAIN_USABLE（current 恰 0.700000、oracle 0.800000）
+- SINTEL real-domain delta(lif_homeostasis - stateless) = 0.000000
+  （5/11 seeds、CI [0,0]、三检验族 p=1）；c1_guidance=failure、
+  minimum(+0.15)/expected_strong(+0.25) 未达、transfer_claim_made=false
+- 阴性对照校准失败：label_permutation - lif_combo 11-seed -0.115909、
+  p=0.0009765625 -> negative_controls_calibrated_nonsignificant=false
+- 跨实现 single_factor_flip_localized=false（7 单因子未定位）
+- 统计效力修复有效（5->11 seeds 最小 p 0.0625->0.0009765625）但
+  平台明确仅反映检验力增加、不构成机制证据
+
+【round-010 启用本预案前必须新增/改写的内容，不得原样启用】
+  1. 把「阴性对照校准失败」列为训练前强制诊断与必修项：定位为何预注册
+     label_permutation 对照显著，修好前不得把任何 contrast 写成机制成立。
+  2. 针对 DAVIS 的 INPUT_BOTTLENECK（oracle 1.0 / current 0.613333）加
+     输入编码侧一因子修复阶梯 + oracle-current gap 收敛作为预注册读出；
+     禁止 post-hoc 换协议凑 0.70、禁止下调门槛。
+  3. SINTEL 已是 DOMAIN_USABLE，real delta 必须在训练后动力学下重算；
+     「11 个 paired differences 全 0」需用逐环节张量指纹区分真实零效应
+     与「两条件走同一实现分支」。
+  4. 保留本预案的梯度路径 2x2、stateless_trained_identically、
+     测试集暴露台账、冻结臂等效界；保留三态 decidability_state 与跨实现
+     一致性契约；expected_strong(+0.25) 与 0.70 门槛不下调、失败证据不删。
+  5. 提交命令仍不得带 --max-turns / --timeout / 阻塞 watch；本轮不等结果。
+
+本文件在 round-009 状态仍为 NOT SUBMITTED；没有任何 novix 任务因本文件被创建。
+================================================================================

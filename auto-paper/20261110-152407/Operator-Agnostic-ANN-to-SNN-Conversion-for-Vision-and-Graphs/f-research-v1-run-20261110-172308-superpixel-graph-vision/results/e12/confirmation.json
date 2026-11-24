@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "note": "E12 NEW HOLDOUT (seeds 5-9), larger test (2000 graphs), same frozen points; NO tuning",
+    "started": "2026-11-10T23:30:03.481144",
+    "config": {
+      "n_train": 2000,
+      "n_val": 500,
+      "n_test": 2000,
+      "epochs": 800,
+      "hidden": 128,
+      "lr": 0.01,
+      "device": "cuda",
+      "pool": "sum"
+    },
+    "frozen_points": {
+      "MNIST": {
+        "keep_frac": 0.1,
+        "theta": 1.5,
+        "T": 3
+      },
+      "CIFAR10": {
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      }
+    },
+    "seeds": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "finished": "2026-11-10T23:41:13.322798",
+    "total_sec": 669.84
+  },
+  "runs": [
+    {
+      "dataset": "MNIST",
+      "seed": 5,
+      "point": {
+        "keep_frac": 0.1,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 35.7,
+      "test_loss_pp": 6.0,
+      "energy_primary": 6.6976,
+      "energy_conservative": 5.3854,
+      "spikes": 1458866,
+      "zero_spike": false,
+      "identity_f64_residual": 2.3079421174188042e-07,
+      "kept_units": 13,
+      "wall_sec": 53.4
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 6,
+      "point": {
+        "keep_frac": 0.1,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 35.25,
+      "test_loss_pp": 0.4,
+      "energy_primary": 7.8401,
+      "energy_conservative": 5.7525,
+      "spikes": 1258721,
+      "zero_spike": false,
+      "identity_f64_residual": 2.2242593011867484e-07,
+      "kept_units": 13,
+      "wall_sec": 49.8
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 7,
+      "point": {
+        "keep_frac": 0.1,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 33.05,
+      "test_loss_pp": 2.95,
+      "energy_primary": 7.8553,
+      "energy_conservative": 5.7571,
+      "spikes": 1243728,
+      "zero_spike": false,
+      "identity_f64_residual": 1.7725120837752684e-07,
+      "kept_units": 13,
+      "wall_sec": 49.9
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 8,
+      "point": {
+        "keep_frac": 0.1,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 37.35,
+      "test_loss_pp": 4.8,
+      "energy_primary": 8.1304,
+      "energy_conservative": 5.8357,
+      "spikes": 1220840,
+      "zero_spike": false,
+      "identity_f64_residual": 4.6675826048669933e-07,
+      "kept_units": 13,
+      "wall_sec": 49.9
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 9,
+      "point": {
+        "keep_frac": 0.1,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 38.35,
+      "test_loss_pp": 6.25,
+      "energy_primary": 8.3421,
+      "energy_conservative": 5.8943,
+      "spikes": 1180543,
+      "zero_spike": false,
+      "identity_f64_residual": 2.3718021147089985e-07,
+      "kept_units": 13,
+      "wall_sec": 49.6
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 5,
+      "point": {
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 28.25,
+      "test_loss_pp": 2.85,
+      "energy_primary": 6.545,
+      "energy_conservative": 5.593,
+      "spikes": 2680591,
+      "zero_spike": false,
+      "identity_f64_residual": 2.8464872374456274e-07,
+      "kept_units": 10,
+      "wall_sec": 83.6
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 6,
+      "point": {
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 28.1,
+      "test_loss_pp": 0.35,
+      "energy_primary": 10.2457,
+      "energy_conservative": 6.7287,
+      "spikes": 1727211,
+      "zero_spike": false,
+      "identity_f64_residual": 2.5725663281572775e-07,
+      "kept_units": 10,
+      "wall_sec": 83.2
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 7,
+      "point": {
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 29.95,
+      "test_loss_pp": 2.4,
+      "energy_primary": 7.0717,
+      "energy_conservative": 5.7947,
+      "spikes": 2485784,
+      "zero_spike": false,
+      "identity_f64_residual": 2.053778976884857e-07,
+      "kept_units": 10,
+      "wall_sec": 83.3
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 8,
+      "point": {
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 27.7,
+      "test_loss_pp": 2.05,
+      "energy_primary": 9.0981,
+      "energy_conservative": 6.437,
+      "spikes": 1927690,
+      "zero_spike": false,
+      "identity_f64_residual": 1.5649972828768455e-07,
+      "kept_units": 10,
+      "wall_sec": 83.9
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 9,
+      "point": {
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 23.8,
+      "test_loss_pp": 1.6,
+      "energy_primary": 6.4818,
+      "energy_conservative": 5.5676,
+      "spikes": 2703978,
+      "zero_spike": false,
+      "identity_f64_residual": 2.5447322496430225e-07,
+      "kept_units": 10,
+      "wall_sec": 83.2
+    }
+  ],
+  "summary": {
+    "MNIST": {
+      "n": 5,
+      "ann_mean": 35.94,
+      "ann_std": 1.827,
+      "loss_mean": 4.08,
+      "loss_std": 2.179,
+      "loss_ci95": 1.91,
+      "energy_primary_mean": 7.7731,
+      "energy_conservative_mean": 5.725,
+      "energy_primary_min": 6.6976,
+      "energy_conservative_min": 5.3854,
+      "identity_max": 4.6675826048669933e-07,
+      "teacher_ok": true,
+      "accuracy_ok": false,
+      "energy_ok": true
+    },
+    "CIFAR10": {
+      "n": 5,
+      "ann_mean": 27.56,
+      "ann_std": 2.032,
+      "loss_mean": 1.85,
+      "loss_std": 0.855,
+      "loss_ci95": 0.749,
+      "energy_primary_mean": 7.8885,
+      "energy_conservative_mean": 6.0242,
+      "energy_primary_min": 6.4818,
+      "energy_conservative_min": 5.5676,
+      "identity_max": 2.8464872374456274e-07,
+      "teacher_ok": true,
+      "accuracy_ok": false,
+      "energy_ok": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+schema_version: 4
+guidance: inputs/guidance-v5.md
+title: Layerwise Interval Certificates for Quantized Messages in Frozen Two-Layer GNN-to-SNN Conversion
+exact_chain: M=XW0; M_hat=Q(M); H=relu(A M+b0); Z=A H W1+b_out
+dimensions: A:NxN; M:NxH; delta:H; W1:HxC; c:N
+collapse: c=(abs(A) @ abs(A)) @ ones(N)
+bounds:
+  proposed: B_abs[i,k]=c[i]*sum_h(delta[h]*abs(W1[h,k]))
+  minkowski: B_mink[i,k]=c[i]*norm(delta,2)*norm(W1[:,k],2)
+  global_outputwise: B_global_col[i,k]=c[i]*max(delta)*norm(W1[:,k],1)
+controls:
+  global_uniform: B_abs equals B_global_col within tolerance
+  per_channel: every cell tightens at least 25 percent versus B_global_col
+precision: all quantization, dequantization, reconstruction and bound arithmetic in float64
+tolerance: value <= bound + 1e-10 + 1e-12*abs(bound)
+strong_gate: 36 containment cells; median width/RMS <=10; max <=15; 18 equality cells; 18 per-channel tightening cells >=25%; B_abs<=B_mink

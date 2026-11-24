@@ -1,0 +1,258 @@
+================================================================================
+【attempt #17 · round-024 · C1 死磕 correction loop v3 · DESIGN DRAFT / NOT SUBMITTED】
+f-research-v1 / P4 / C1 / 2026-11-09 22:4x GMT+8
+H18：观测者回作用契约（observer-backaction contract）
+     —— 本机全量轮询作为症状簇的因果因子 × 零全量读取可证伪窗口
+        × 三通道有界观测替代 × 已知终态阴性对照 × 观测剂量 write-once 普查
+状态：**NOT SUBMITTED / 不得原样启用**（第 8 份 NOT-SUBMITTED 预案）。
+      18885（attempt #9 / H10）在途、跨第 8 轮 `processing`。按 §3.6(2)
+      **不重提交、不等待、不 pull、不写 verdict、不动科学阶段、不换题**；
+      按 §3.6(3) 交付本轮**一次实质优化**（本预案）。
+      须先按 `acceptance-verdict-18885.md` 的真实实测修订四要素再决定
+      启用 / 合并 / 废弃。草案序号 #17 仅指设计预案；`primary_focus.attempt_count`
+      **保持 9 不虚增**。
+================================================================================
+
+【本预案为何 NOT SUBMITTED】
+同一 idea（C1）已有在途任务 `18885`（attempt #9 / H10）。用户 14:34 指令与
+§3.6(2)：在途不重复提交、不等待、继续同一主攻。本预案是可证伪的协议/实现层
+设计草案，**不是实验结果、不是判定、不是 kill hit、不是「实验跑完」**。
+
+--------------------------------------------------------------------------------
+## 0. 本轮唯一新增事实（本机权威复核原始字节，非推断、非科学结果）
+
+1. **前缀只读探针**（`_r024_probe.py`，16 KB / r023 修正正则）：首读一次本机
+   30 s 诊断读超时 → 按「重试一次」规则二次独立采样 **2× HTTP 200 /
+   正式解析 JSON status**：`code=0` / `message=Success` / **`status=processing`** /
+   `version=2` 恒定 / `createdAt 07:31:58` /
+   `updatedAt 22:27:07 → 22:27:41`（r023 收尾 20:39:46，单调）/
+   `step_entries_in_prefix=1` / `last_step_updateAt_in_prefix 07:32:30`
+   （业务时间戳冻结约 15 h）/ `finalReply_in_prefix=false`
+   → **跨第 8 轮非终态、本轮无状态跃迁**。`result_json_in_prefix=true`
+   仅是 query 文本字面串，**不是产物**。
+2. **带外有界通道** `novix --json debug task 18885 --logs` = rc=0 / **77,962 B** /
+   SHA-256 `4b438113b30d278b6870227f7c36cff1c3765c3c93096c56b267118b1854376f`
+   （r023 为 77,962 B / `604c35ce…`，体积恒定、哈希不同）：
+   `backend.status=processing` / `task.status=running` /
+   `placement.state=submitted` / `dispatch_phase=invoking` /
+   `reason=recovered runtime dispatch` / `artifact_sync=null` /
+   `diagnosis=ALLOCATION_EVIDENCE_UNAVAILABLE` /
+   `next_step="不要直接重新派发"`；1131 次 health 200（r023 亦 1131）、
+   `result.json` 计数 0 / `COMPLETE` 计数 0 / 无任何实验指标。
+3. **本轮新方法①（新有界通道）**：`novix --json debug task 18885`
+   （**logs=false**）rc=0 / **1,158 B**，首次读到**完整分配标识元组**
+   `nomad_alloc_id=513e82bf-0c92-e565-6082-937f1b5942fa` /
+   `claim_name=claim-novixlet-2d8169b99b73866525298c8090d135ef` /
+   `cpu=4.0 / memory_mb=49152 / gpu=1` /
+   `node=aliyun-hz-exp-4090-1` / `session_id=8f6f214f…` /
+   `created_at=1794180717.87619` / `pool_status.dispatch_paused=false` /
+   `eligible_nodes=2`，**同时** `dispatch_phase=invoking`、
+   `artifact_sync=null`、`diagnosis=ALLOCATION_EVIDENCE_UNAVAILABLE`。
+   → **「有分配标识 ≠ 有分配证据」首次可判定性分叉**：控制面记录完整，
+   平台仍声明分配证据不可用。此为**通道 / 协议事实**，不是资源已运行的证据。
+4. **本轮新方法②（新有界通道）**：`novix --json task list` rc=0 /
+   210,434 B / SHA-256 `cb12b5c08e0f5e91a937853b8f50c1641ec2ee0c6c16b8f053f6d66f3cb2a642`，
+   含本机 `local` create 历史 10 条 + `sessions` 20 条 +
+   `sessions_error=null`，**无任何服务端 `status` 字段** → 不能判终态，
+   但可作**观测剂量与本机 create 事实**的有界证据。
+5. `check_inflight.py` 机械记 `transport_error_retry`（本机 120 s /
+   `IncompleteRead`，>8 MB 单体响应）→ 原条目保留 + 权威纠正：
+   **传输层错误，不是任务失败、不是终态、不是科学负结果**。
+6. **本机契约复核（r023 修复后第 1 轮）**：`contract_version=v2`、
+   **11/11 哈希 MATCH**、冻结快照未改写、history 仅一条 `reopen`、
+   **0 个 pass**、**26/26 pending**；`--before P0` rc=0、
+   `--complete` / `--submission-ready` rc=1（预期）；两份 guidance
+   `--strict --packet` 均 rc=0。**`--before P0` rc=0 不等于 P0 已执行。**
+7. 技能契约 31 文件 / 227,481 B / 0 缺失全文加载并 SHA-256 留痕
+   `rounds/round-024-contract-load-log.json`。
+
+**以上 1–7 全部是通道 / 协议 / 本机结构事实，不是科学结果、不是判定、
+不是 kill hit、不计入任何分数或达标判定。** `finalReply` 连续第 7 轮不可读。
+
+--------------------------------------------------------------------------------
+## 1. 死磕四要素（§3.6(3)）
+
+### 1.1 上一轮失败点（如实，不改写、不删除、不把负结果改正）
+
+- 最近一次**有正式科学判定**的仍是 `18696` = `REJECT_FAILURE`
+  （round-015/016 幂等、9/9 SHA-256 归档）：`design_valid=true`、全量真跑完
+  （23/23 + 142/142 + 148/148、165 raw NPZ、614/614 重哈希），但两真实域
+  ceiling DAVIS `0.424242` / SINTEL `0.400000` 均 < 0.70
+  （`INPUT_BOTTLENECK`）、`gt_oracle_upper_bound=1.0` 明确非历史 `0.6875`
+  重算、三族校准 stratified paired bootstrap `0.149` 失败（上限 0.075）、
+  unexposed 符号翻转、`c1_guidance.verdict=failure`、
+  `minimum_met=false` / `expected_strong_met=false` / `transfer_claim_made=false`。
+  诊断进展（不是达标）：`localized_unit=syn`、两域 holdout `CONSTRUCTIBLE`、
+  `INPUT_SIGNAL_PATH_MEASURABLE`，但 `H_slope(LIF−stateless)` 逐环节全负、
+  最大衰减定位 `drive→syn`。`idempotent_reference=unavailable` 如实保留。
+- `18885`（attempt #9 / H10 突触前 drive→syn 能量稀释）**结果未出**：
+  五档 `drive_to_syn_energy_ratio`、`H_slope` 恢复、`localized_unit` 落点
+  **全部未知**。不得假定 H10 成败、不得预支结论、不得把 attempt #10–#16
+  七份预案原样启用。
+- 本轮新增失败点（**不是科学负结果、不是机制否证、不是 kill hit**）：
+  `finalReply` 连续第 7 轮不可完整回收；`version` 恒定且 `steps[]` 前缀
+  业务时间戳冻结约 15 h；`updatedAt` 控制面单调增而业务步零进展；
+  本机全量 `get_task` 读仍触发 `IncompleteRead`（>8 MB 单体）。
+- **历轮预案的机制层已覆盖**：H10 科学侧能量稀释；H11 信息测量级别；
+  H12 离线重判定 / manifest↔payload 绑定；H13 证据生成时序与分片；
+  H14 远程执行终止谓词；H15 证据工件身份与不可变性；H16 控制面—数据面
+  传输通道拓扑；H17 派发层资源归属状态机。**没有任何一个把「本机观测者
+  的轮询行为本身」当作唯一自变量。**
+
+### 1.2 本轮假设 H18（可证伪、机制级不同于 H10–H17）
+
+**H18：观测者回作用假设。** 症状簇（`steps[]` 无界 >8 MB、
+本机全量 GET 持续 `IncompleteRead`、业务 `updateAt` 冻结 ~15 h 而控制面
+`updatedAt` 与 health 心跳单调增、runner 侧 `aiohttp/payload.py:362` 大 body
+锁事件循环警告与 `unclosed TCPTransport` 累积、`finalReply` 连续 7 轮不可读）
+可能**部分**来自：**每轮一次（有时两次）对同一单体任务对象的 >8 MB
+全量 GET 本身**。该读与 runner 的 aiohttp 大 body POST 争用同一事件循环 /
+连接池，并把「无界追加的 `steps[]`」持续物化为超大响应；本机既是观测者
+又是（通过读行为）负载源，历轮却把观测视作零成本的被动行为。
+
+这既不是 H16（改的是**同一个 HTTP 响应 / 同一个 aiohttp POST 的通道拓扑**，
+作用在 **runner 侧**），也不是 H17（改的是**派发层资源归属状态机语义**），
+不是 H15（证据工件身份）、不是 H14（agent 何时停止）、不是 H13（证据生成
+时序）、不是 H12（离线重判定）、不是 H11（测量级别）、不是 H10（科学侧
+能量稀释）——**H18 改的是本机观测者的读取混合（observation dose）这一
+因果因子，runner 与派发层完全不动**，是历轮从未检验的测量回作用层。
+
+- **唯一自变量**：`observer_probe_policy_version ∈
+  {full_monolith_get_every_round (as archived in rounds 016–024),
+   zero_full_body_get_bounded_only}`。
+  网络 / 数据 / seeds / 阈值 / 估计量 / 判定算子 / H10 五档能量门 /
+  H17 归属门 / H16 分离门 **全部不变**，不重训、不重判定、不下调任何门槛、
+  不重新派发、不新增任何 novix 任务。
+- **新机制（历轮从未有）**：
+  (a) **观测剂量 write-once 普查** `project/observer-census.json`
+      （预注册 ≤ 8 KB、内容寻址、SHA-256）：逐轮记录对 `18885` 的
+      **每一次读取**（channel / bytes / rc / duration / `is_full_body` /
+      是否触发 `IncompleteRead` / 当轮 `updatedAt` 与业务 `updateAt` 差值 /
+      `health_ping_count` 增量 / `steps_bytes` 增量），使「观测剂量」
+      成为可测、有界、可复核的量；训练 / 判定前落盘，不原地改写。
+  (b) **零全量读取可证伪窗口**：训练前冻结连续 N 轮（N 在窗口开始前
+      预注册并写入普查），窗口内**零次** `novix --json task result` /
+      `task get` 全量单体读取；只允许四条有界通道：
+      ① 16 KB 前缀 `get_task`；② `debug task <id>`（logs=false，1,158 B）；
+      ③ `debug task <id> --logs`（≤ 80 KB）；④ `task list`（≤ 220 KB）；
+      以及合法位置参数的有界 `debug ls task:<id> project -L 1`。
+      机械 `check_inflight.py` 的全量 `task result` 调用在窗口内由
+      **有界通道适配器**替代（实现层改动，预案启用时才执行）。
+  (c) **回作用遥测（预注册阈值，双向）**：
+      `large_body_warning_count`、`unclosed_transport_warning_count`、
+      `health_ping_delta_per_round`、`steps_bytes_delta_per_round`、
+      `business_step_updateAt_resumed`（布尔）。
+      窗口内剂量 → 0 时若警告计数下降 / `steps_bytes` 增长停止 /
+      业务 `updateAt` 恢复推进 / `finalReply` 变可读 → 支持 H18；
+      若剂量归零后仍全部冻结 → **否证 H18**。
+  (d) **已知终态阴性对照（本轮新事实直接催生、历轮全无）**：
+      用同一组有界通道对**已终态且 9/9 SHA-256 归档**的 `18696`
+      做同刻读取，要求有界通道能正确识别其为终态并保有完整证据；
+      若不能，则「零全量读取」有**致盲风险**，H18 判
+      `UNINFORMATIVE_TRACE` 且不得据以改流程。该对照同时证明
+      「有界观测不等于放弃终态可判定性」。
+  (e) **不重派发不变量保留**：平台 `next_step="不要直接重新派发"`、
+      H16 `no_re_dispatch_without_terminal_beacon`、
+      H17 `no_re_dispatch_without_allocation_provenance` 的**双条件门**
+      全部升为提交前硬检查；本预案**不派发、不重提、不等待**。
+  (f) **本机判定装置一致性复核门**：contract v2 冻结快照 + `reopen` 事件 +
+      11/11 哈希 MATCH + 0 个 pass + 26/26 pending 作为本机装置可运行性证据；
+      明确标注**不证明平台侧 allocation 存在、不推进任何科学阶段、
+      不是 P0 pass**。
+- **三态诊断落点（全部预注册、双向；均为诊断，均不是达标、均不是机制否证）**：
+  - `BACKACTION_CONFIRMED`：窗口内剂量归零且 (c) 的预注册判据命中 →
+    支持 H18；下一版把「观测剂量有界化」升第一硬门，
+    18885 转终态后按 guidance §6 出 `acceptance-verdict-18885.md`，
+    **达标才 `--before P5`**。
+  - `BACKACTION_REFUTED`：剂量归零后业务步仍冻结、警告计数不降 →
+    H18 被否证，回 H17 / H10 主线；**仍不重提交、不等待、
+    不写科学结论、不计 kill**，保留任务记录、继续同一 C1。
+  - `UNINFORMATIVE_TRACE`（**含本轮**：有界通道可读但无 `result.json` /
+    无 COMPLETE / 无实验指标 / 阴性对照未跑 / 窗口未开启）→
+    不写科学结论，继续同一 C1。
+- **决定性对照（沿用，不新增网络机制）**：`A=0` 输入信息上界、
+  精确保度零模型、`stateless_trained_identically`；
+  `degree_null − LIF` 按实测符号报告；**禁止「生物接线带来精度优势」主张**。
+
+### 1.3 具体改动：相对 `query-round016-attempt9.txt`（H10，最后一次**已提交**）
+###      与 H11/H12/H13/H14/H15/H16/H17 七份 NOT-SUBMITTED 预案的 10 条机制级 diff
+
+1. **第一主门整体替换**：H10 的 `drive_to_syn_energy_dilution_gate` 前移为
+   `observer_backaction_gate`（观测剂量普查 + 零全量窗口 + 三通道替代 +
+   阴性对照）。H10 五档能量门**幂等保留为第二主门**；H17 归属门、
+   H16 分离门、H15 身份门、H14 完成谓词**分别降为第三至第六独立复核门**，
+   不删除、不下调。
+2. **判定对象换层**：H16 改 runner 侧响应通道拓扑、H17 改派发层资源归属
+   语义；H18 改**本机观测者的读取混合**（哪条通道、读多少字节、是否全量），
+   **runner 与派发层零改动**。这是历轮唯一以「观测行为」为自变量的层。
+3. **新增观测剂量 write-once 普查** `project/observer-census.json`（第九主文件，
+   ≤ 8 KB），逐轮记录每一次读取的 rc / 字节 / 时长 / 是否全量 /
+   `IncompleteRead`；H15 的不可变对象语义在此复用但对象不同（H15 绑证据工件，
+   H18 绑观测行为流水），且**不原地改写**。
+4. **零全量读取可证伪窗口**（历轮全无）：训练前冻结 N 轮、窗口内零次
+   >8 MB 全量 GET，机械 `check_inflight.py` 由有界通道适配器替代；
+   r019–r023 的「更长本机读取 / 分片 / 有界清单」建议均被实测证伪或不可读，
+   本预案不再尝试读全量，而是**停止制造全量读**。
+5. **本机三通道 + 已知终态阴性对照**（本轮新事实 3/4 直接催生）：
+   `debug task` logs=false（1,158 B）、`--logs`（77,962 B）、
+   `task list`（210,434 B）三路有界可判定性对照；并以 `18696`
+   （终态、9/9 SHA-256）作阴性对照，防止零全量策略致盲。
+   H17 的四通道对照**不含阴性对照、不含 `task list`、不含 logs=false**。
+6. **「有分配标识 ≠ 有分配证据」升为显式非推断规则**：本轮首次读到完整
+   `nomad_alloc_id` / `claim_name` / `cpu` / `memory_mb` / `gpu` / `node`，
+   但平台同时声明 `ALLOCATION_EVIDENCE_UNAVAILABLE`；预案预注册
+   **标识存在不得推断为算力已运行 / 结果将返回 / 可重派发**，三态落点
+   均不得据此写成科学结论。H17 只提出归属判据，未处理该语义分叉。
+7. **回作用遥测预注册**（H16 有 `large_body_warning_count==0` 硬判据，
+   但 H16 把它用于**远端背压**，H18 用于**本机观测剂量因果**并新增
+   `steps_bytes_delta_per_round` / `business_step_updateAt_resumed` /
+   `health_ping_delta_per_round` 三个历轮未用的量）。
+8. **H11/H12/H13 降独立复核门**：测量级别、离线重判定、证据生成时序
+   全部保留为窗口结束后的独立复核门，不作第一主门；
+   H11 的 Wilson CI / bin 敏感性、H12 的 manifest↔payload 绑定、
+   H13 的分片契约均不改。
+9. **提交侧硬约束全不下调**：`minimum(+0.15)` / `expected_strong(+0.25)` /
+   真实域 ceiling `0.70` 不下调；≥11 paired seeds、2000 bootstrap 95% CI、
+   BH-FDR q=0.05、三族校准全报告；两真实域各自单独报告；
+   禁止生物接线优势主张；六主文件 + `project/result.json` 必须落在
+   **可 pull 的 workspace 内**；`project/status.json` 分片可增量读取
+   保持为提交前硬检查项；**提交命令不带 `--max-turns` / `--timeout` /
+   阻塞 watch / 任何时间步数预算参数**（显式反预算声明）。
+10. **不重派发双条件门升级为三条件**：在 H16/H17 两条之上加
+    `no_re_dispatch_without_zero_full_body_window_receipt`；
+    平台 `next_step="不要直接重新派发"` 仍为提交前硬检查。
+    本预案**0 次 novix 提交**（参照 rounds 006/009/011/013/015/017–
+    023 在途先例）。
+
+### 1.4 预期信号 / 若失败下一步
+
+- **预期信号**（全部为通道 / 协议诊断，**不是**科学结果）：窗口开启后
+  `observer_full_body_gets_per_round` 由 ≥1 降为 0；若 H18 成立，
+  `large_body_warning_count` 增量下降、`steps_bytes_delta` 趋 0、
+  业务 `updateAt` 恢复推进或 `finalReply` 可读；阴性对照 `18696`
+  在有界通道下仍判终态、9/9 哈希不丢。
+- **若失败下一步**：`BACKACTION_REFUTED` → 回 H17（资源归属）/ H10
+  （能量稀释）主线，按 `acceptance-verdict-18885.md` 真实实测修订四要素；
+  `UNINFORMATIVE_TRACE` → 只更新文档、继续同一 C1、不换题。
+  **任何情形均不进 P5、不写论文、不标 stage passed、不重新派发、
+  不改写负结果、不编造数值、不把「实验跑完」写成「结果达标」。**
+- 八份 NOT-SUBMITTED 预案（r017 H11 … r023 H17 / **r024 H18**）
+  **均不得原样启用**，须先按 `acceptance-verdict-18885.md` 真实实测修订。
+  若 18885 支持 H10，八者降级为独立复核门。
+- **若出现第三次独立干净失败必须重新评估 (b) kill criteria**。
+
+--------------------------------------------------------------------------------
+## 2. 诚实性声明
+
+本预案中的每一个平台数值都来自本轮落盘的
+`rounds/round-024-prefix-probe.json` / `...-prefix-probe-retry.json` /
+`round-024-outofband-debug-task-logs.json` / `round-024-debug-task-nologs.json` /
+`round-024-task-list.json` / `round-024-check-inflight.log` 与
+`round-024-contract-load-log.json`，没有推断、没有补数、没有把
+`processing` 写成终态、没有把「通道可读」写成「结果达标」、
+没有把「有分配标识」写成「算力已运行」。
+**H18 是假设，不是结论；是诊断型契约，不是科学结果、不是 kill hit。**
+`C1` 主命题「膜状态增益可迁移到真实光流」在本轮**仍未获支持**，
+失败证据全部保留。唯一合格线仍是成稿 `ccf-paper-reviewer full`
+`**Overall:** X >= 8.0` 且 P21 完成，本轮**未达到、未宣称达到**。
+================================================================================

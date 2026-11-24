@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <rect width="900" height="330" fill="#fff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="17" font-weight="bold">视频里只算变化的部分（示意，非真实数据）</text>
+  <!-- frame t -->
+  <g transform="translate(30,50)">
+    <text x="100" y="0" text-anchor="middle" font-size="13">第 t 帧</text>
+    <rect y="10" width="200" height="200" fill="#e8f1fb" stroke="#999"/>
+    <circle cx="90" cy="110" r="60" fill="#f2a65a"/><polygon points="45,70 55,25 80,60" fill="#f2a65a"/><polygon points="100,60 125,25 135,70" fill="#f2a65a"/>
+    <rect y="190" width="200" height="20" fill="#7cb87c"/>
+    <circle cx="40" cy="170" r="12" fill="#c0392b"/>
+  </g>
+  <g transform="translate(260,50)">
+    <text x="100" y="0" text-anchor="middle" font-size="13">第 t+1 帧（只有毛线球动了）</text>
+    <rect y="10" width="200" height="200" fill="#e8f1fb" stroke="#999"/>
+    <circle cx="90" cy="110" r="60" fill="#f2a65a"/><polygon points="45,70 55,25 80,60" fill="#f2a65a"/><polygon points="100,60 125,25 135,70" fill="#f2a65a"/>
+    <rect y="190" width="200" height="20" fill="#7cb87c"/>
+    <circle cx="160" cy="170" r="12" fill="#c0392b"/>
+  </g>
+  <g transform="translate(490,50)">
+    <text x="100" y="0" text-anchor="middle" font-size="13">两帧之差：要重算的区域（红）</text>
+    <rect y="10" width="200" height="200" fill="#f2f2f2" stroke="#999"/>
+    <rect x="20" y="150" width="40" height="40" fill="#d9534f"/><rect x="140" y="150" width="40" height="40" fill="#d9534f"/>
+  </g>
+  <g transform="translate(720,50)">
+    <text x="80" y="0" text-anchor="middle" font-size="13">下一层：变化向周围扩散</text>
+    <rect y="10" width="160" height="160" fill="#f2f2f2" stroke="#999"/>
+    <rect x="4" y="112" width="56" height="56" fill="#f5b7b1"/><rect x="100" y="112" width="56" height="56" fill="#f5b7b1"/>
+    <rect x="16" y="124" width="32" height="32" fill="#d9534f"/><rect x="112" y="124" width="32" height="32" fill="#d9534f"/>
+  </g>
+  <text x="450" y="290" text-anchor="middle" font-size="13" fill="#333">只把“差”送进网络，不变的部分沿用上一帧结果。但卷积或图的消息传递会让变化每过一层向外扩一圈。</text>
+  <text x="450" y="312" text-anchor="middle" font-size="12" fill="#555">DeltaCNN（CVPR 2022）第 3.3 节：一个像素经三层 3×3 卷积扩散到 49 个像素，所以每层都要把太小的变化截断。</text>
+</svg>

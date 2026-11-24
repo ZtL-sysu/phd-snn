@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "split_seeds": [
+    600,
+    601,
+    602,
+    603,
+    604
+  ],
+  "probe": {
+    "class": "TorchLinearProbe",
+    "source": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\f-research-v1-run-20261117-220203-ten-idea-full\\research\\common.py",
+    "source_sha256": "08c2d516349950468b2c14c0e8143371994337a746f55ac8c13e50ac787d0c2f",
+    "epochs": 120,
+    "lr": 0.03,
+    "weight_decay": 0.001,
+    "train_scope": "train indices only",
+    "selection_scope": "validation accuracy",
+    "evaluation_scope": "test indices only"
+  },
+  "task_runner_sha256": "bc61c989cae69efd2479ee111121ef96eb118ed1b69f34bc9bbfbb74c1241201",
+  "rows": [
+    {
+      "dataset": "chameleon",
+      "seed": 600,
+      "labels_sha256": "54b84cc1f70e47083db40d0695d7c1e0955576ed7e69ede03d31c8185dc1a6f0",
+      "train_sha256": "052e27f91e9fcf2ac56c33b4226a4a21b6a6f010f222e06435cde7cee8e0b2cf",
+      "validation_sha256": "279820b51c2d40effdafd82a9d028133431406b9044fb5b650984910ccfae463",
+      "test_sha256": "6ef5254f83eac518a28b0da9416ab4f86d2974e455c9d0593ed02c6bb305325c"
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 601,
+      "labels_sha256": "54b84cc1f70e47083db40d0695d7c1e0955576ed7e69ede03d31c8185dc1a6f0",
+      "train_sha256": "5476c5d9686e4fb043f3cedfc6ee24652130bd8c0b0b6d3a92bf518ab1688cdc",
+      "validation_sha256": "143b27e91b7019d6f39793da16ca0f1981fa1c422dcdc63b6ba913c883f8237e",
+      "test_sha256": "3cde112fb0bc3d4c33de782ad260f1957476a499a71e28c72bbab0c6affd3f8c"
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 602,
+      "labels_sha256": "54b84cc1f70e47083db40d0695d7c1e0955576ed7e69ede03d31c8185dc1a6f0",
+      "train_sha256": "187af6321c9870e54aa51b6b8a3f96379ae95c0c1b3244521a48a52ce3476b42",
+      "validation_sha256": "8382d08c3fcdcc261b9379dff0e50cbbc847ed08ad6ab4e097a0b822cc63ef4a",
+      "test_sha256": "fe63cae8488a7b4e01059b11c69566c5dad85d03f6394c351e451a180e89bef3"
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 603,
+      "labels_sha256": "54b84cc1f70e47083db40d0695d7c1e0955576ed7e69ede03d31c8185dc1a6f0",
+      "train_sha256": "3e7d207106a30164b80561c8b16c587430f23d2ed4628965649e60f789091da7",
+      "validation_sha256": "d00825f8d67a64d5531f562bb29efe78407ceb6a9bc443fae4b687c9a7a4f7be",
+      "test_sha256": "7117e6f17a3c6fee58fbc36680a0fb8badc7f9b0aac15d763c7f904acbafc776"
+    },
+    {
+      "dataset": "chameleon",
+      "seed": 604,
+      "labels_sha256": "54b84cc1f70e47083db40d0695d7c1e0955576ed7e69ede03d31c8185dc1a6f0",
+      "train_sha256": "651c8952c8aeb8beed431c56bcf82efd19d61ef1e19ed2ad1ce5b93003b2251e",
+      "validation_sha256": "ffa355d718f504e1918eda241b7c9945c72cd541d2013a0955565543b3ebbfa4",
+      "test_sha256": "199111d492e382dc343d9c4ca6e70cab104db2d540ea645ddef412577b9590e1"
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 600,
+      "labels_sha256": "5304c6c5d07128d72f0142b01b8bb6b02d7055ac30239e0e8d40f403d32bb1ab",
+      "train_sha256": "9c7ce7d1d91e8a94d343410a07fcf5f2bdbdd4f038a8fb44eebdfdf75c6fe8c1",
+      "validation_sha256": "c54c767a1a9bd3af118443176b2174cb44f36d8f352b9ce1a0ac2b74d6e9e3a5",
+      "test_sha256": "4c3809287786face419196ab28db8d1c6d49da0adaf298dd8476b3c31cc4758a"
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 601,
+      "labels_sha256": "5304c6c5d07128d72f0142b01b8bb6b02d7055ac30239e0e8d40f403d32bb1ab",
+      "train_sha256": "b6d0e10088adb3d086383eee5ea4774ceba5e0f5426a34eb574edc6c1a59f849",
+      "validation_sha256": "54604c93b228437a475f1517aed7df84568d33ca44e4a0003e29d544efd4f6dd",
+      "test_sha256": "d2876283440c23eca42149f39b75bd742f412e346d6e1e4e9fcd078b6323f180"
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 602,
+      "labels_sha256": "5304c6c5d07128d72f0142b01b8bb6b02d7055ac30239e0e8d40f403d32bb1ab",
+      "train_sha256": "c923dcf3e51ac90e09205b1f3ebd1d5653c370dac7f58ed59d1d0593e49fd203",
+      "validation_sha256": "38e386c392e42e49bcf0a454c82fd1f0702e41fccba82c951f8cb4722b708cd9",
+      "test_sha256": "ad0fff30fb1ffd807dd304729b21d6ae104654a9a2492369fe7e7cd36cbd97ce"
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 603,
+      "labels_sha256": "5304c6c5d07128d72f0142b01b8bb6b02d7055ac30239e0e8d40f403d32bb1ab",
+      "train_sha256": "f7eb1ffa1e5f5d35ca99245f2bc5989b0114ee0e710cbaabafb6a1dd355f7577",
+      "validation_sha256": "7bb9b048f2f43ed79a16f0eb3bf5e067ada9e5be5284637a427c38ce1f04ecc5",
+      "test_sha256": "13e9481bf2992a4ac7ec8fa417d21f83f09c8ebfc9fc3d11c764bd19afbb24ad"
+    },
+    {
+      "dataset": "squirrel",
+      "seed": 604,
+      "labels_sha256": "5304c6c5d07128d72f0142b01b8bb6b02d7055ac30239e0e8d40f403d32bb1ab",
+      "train_sha256": "672c31eaeab9ecde21e21d9b82573d770aeee44757f98ffed64572200aec5fa8",
+      "validation_sha256": "a3f2c02d3c7f61188c5c472c395f0b2dd474a4565ffbf9e889e243a2356fbefc",
+      "test_sha256": "ca3ff1b4d5e5bde78ad0856c0f73f6fb4583c0d017d0a0ad083f747655d3d07f"
+    }
+  ]
+}

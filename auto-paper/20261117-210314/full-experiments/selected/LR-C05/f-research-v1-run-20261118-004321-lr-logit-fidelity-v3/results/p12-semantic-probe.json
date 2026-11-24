@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "queries": [
+    {
+      "query": "Semi-Supervised Classification with Graph Convolutional Networks",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Inductive Representation Learning on Large Graphs",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Graph Attention Networks Velickovic",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Graph Isomorphism Network",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Simple and Deep Graph Convolutional Networks GCNII",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "DeepGCNs Can GCNs Go as Deep as CNNs",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "MixHop Higher-Order Graph Convolutional Architectures",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Degree-Quant Quantization-Aware Training for Graph Neural Networks",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "VQ-GNN Vector Quantized Graph Neural Network",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Quartz Randomized Quantization Communication-Efficient Graph Neural Networks",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "QGTC Accelerating Quantized Graph Neural Networks via GPU Tensor Core",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "SpikingJelly End-to-End Spiking Deep Learning Framework",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "A Survey on Spiking Neural Networks algorithms and hardware",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Deep Spiking Neural Networks A Survey",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Spiking Graph Neural Networks survey",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "ANN to SNN conversion survey",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Optimal ANN-SNN Conversion High Accuracy Ultra Low Latency",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Taming Spikes Training and Inference for Spiking Neural Networks",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Low-Rank Graph Neural Networks",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Graph Neural Network compression low rank approximation",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Sensitivity Driven Regularization Quantization Aware Training Graph Neural Networks",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Post Training Quantization Graph Neural Networks",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "Spiking Graph Convolutional Network Semi-Supervised Node Classification",
+      "error": "HTTP Error 429: ",
+      "items": []
+    },
+    {
+      "query": "SpikeNet Graph Spiking Neural Network Multi-View Semi-Supervised Learning",
+      "error": "HTTP Error 429: ",
+      "items": []
+    }
+  ]
+}

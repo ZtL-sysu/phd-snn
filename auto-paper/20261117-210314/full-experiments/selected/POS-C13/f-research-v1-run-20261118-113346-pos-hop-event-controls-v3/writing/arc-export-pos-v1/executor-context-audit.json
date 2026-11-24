@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage": "P13/AutoResearchClaw-22-EXPORT_PUBLISH",
+  "status": "passed",
+  "template": "generic",
+  "context": {
+    "input_paper": "writing\\p13\\paper-export-input-v3.md",
+    "input_paper_sha256": "30c4c6892fb0bdf079b6d621ca554fc16f323c7142a3d12d01835dc4312e1a81",
+    "bib_sha256": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5",
+    "figure_inputs": [
+      "figures/data/figure1-hop-coding.png",
+      "figures/data/figure2-method-tradeoff.png",
+      "figures/data/figure3-order-controls.png"
+    ]
+  },
+  "validation": {
+    "problems": [],
+    "paper_tex_sha256": "542bcdfd030df763bea4986e84a5c4af7fbbd66657b98f4877ba19d78fc70411",
+    "paper_pdf_sha256": "8939b2d36fafcddc16dece14f078b3cacffd2462246c47a889186090ab56e256",
+    "references_sha256": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5"
+  },
+  "arc_stage_result": {
+    "stage": "22",
+    "status": "StageStatus.DONE",
+    "artifacts": [
+      "paper_final.md",
+      "paper_final_latex.md",
+      "references.bib",
+      "paper.tex"
+    ],
+    "evidence_refs": [
+      "stage-22/paper_final.md",
+      "stage-22/paper_final_latex.md",
+      "stage-22/references.bib",
+      "stage-22/paper.tex"
+    ]
+  }
+}

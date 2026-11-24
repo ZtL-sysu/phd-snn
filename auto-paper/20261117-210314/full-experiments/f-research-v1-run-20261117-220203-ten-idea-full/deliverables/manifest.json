@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "ten-idea-full-experiment-and-ccfa-review.md",
+      "sha256": "91c0f19ce80213965f48118709338d1227c1901457a5637d595367d70bc7e906"
+    }
+  ],
+  "verification": {
+    "tests": "13 passed",
+    "json_files_parsed": 34,
+    "pipeline_before_P6": "PASS",
+    "path_privacy": "PASS",
+    "final_md_placeholders": "none"
+  }
+}

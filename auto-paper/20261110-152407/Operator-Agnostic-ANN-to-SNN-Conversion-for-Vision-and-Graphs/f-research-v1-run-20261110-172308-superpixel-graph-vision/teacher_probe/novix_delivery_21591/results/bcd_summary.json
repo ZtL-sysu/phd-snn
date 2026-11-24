@@ -1,0 +1,25 @@
+{
+  "strong": {
+    "MNIST": {
+      "exp": "T4",
+      "mean_teacher": 61.42,
+      "candidates": {
+        "T4": 61.42,
+        "T5": 54.02
+      }
+    },
+    "CIFAR10": {
+      "exp": "T4",
+      "mean_teacher": 37.4,
+      "candidates": {
+        "T4": 37.4,
+        "T5": 35.7
+      }
+    }
+  },
+  "n_conv": 80,
+  "n_energy": 80,
+  "n_width": 150,
+  "n_audit": 10,
+  "config_hash": "4238b0dc8d31"
+}

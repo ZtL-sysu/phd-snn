@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "stage": "P20/final-template-conversion-and-metadata",
+  "status": "passed",
+  "source": {
+    "path": "writing/p19-final-manuscript.md",
+    "sha256": "a840044a7e3e52b789986d9b888a97eae8d21f7dbafb7a0edb8783270c3d6785"
+  },
+  "export": {
+    "template": "generic",
+    "tex": "writing/p20-final-v1/stage-22/paper.tex",
+    "pdf": "writing/p20-final-v1/stage-22/paper.pdf",
+    "bib": "writing/p20-final-v1/stage-22/references.bib"
+  },
+  "validation": {
+    "latex_returncode": 0,
+    "pages": 10,
+    "font_embedding_failures": [],
+    "tex_sha256": "e26251d639fa836e375ecbcfee628f8ef2e7b64c9637c7fe6c82074923cf02b5",
+    "pdf_sha256": "f08e8e3d38dfa76e12fe493a4db295aea1e9b03b51327d526b887122d4e52f4e",
+    "bib_sha256": "be176ede7327203c59bbb3ceaf0482853863064406964a0d744a73fdc4f0e6bb",
+    "cited_keys": 40,
+    "bib_entries": 40,
+    "missing_keys": [],
+    "pdf_question_placeholders": false,
+    "manual_caption_paragraphs": 0
+  },
+  "unresolved_metadata": [
+    "exact target journal",
+    "authors and affiliations",
+    "abstract/keyword/highlight limits",
+    "funding, data/code, declarations and portal fields"
+  ],
+  "paper_verifier_adapter": "P12/P19 audited-value and style reconciliation"
+}

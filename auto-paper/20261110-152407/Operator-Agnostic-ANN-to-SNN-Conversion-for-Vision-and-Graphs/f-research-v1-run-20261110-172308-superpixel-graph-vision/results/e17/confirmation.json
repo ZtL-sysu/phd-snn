@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "note": "E17 FINAL: frozen points, untouched holdout seeds 10-14, fp64 unified forward, test once, NO tuning",
+    "started": "2026-11-11T00:49:18.869446",
+    "config": {
+      "n_train": 2000,
+      "n_val": 1000,
+      "n_test": 2000,
+      "epochs": 800,
+      "hidden": 128,
+      "lr": 0.01,
+      "device": "cuda",
+      "pool": "sum"
+    },
+    "frozen_points": {
+      "MNIST": {
+        "margin_coef": 0.4,
+        "keep_frac": 0.08,
+        "theta": 1.5,
+        "T": 3
+      },
+      "CIFAR10": {
+        "margin_coef": 0.2,
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      }
+    },
+    "seeds": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "min_ann_val": 20.0,
+    "finished": "2026-11-11T01:00:25.374228",
+    "total_sec": 666.5
+  },
+  "runs": [
+    {
+      "dataset": "MNIST",
+      "seed": 10,
+      "point": {
+        "margin_coef": 0.4,
+        "keep_frac": 0.08,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 32.85,
+      "test_loss_pp": 3.25,
+      "energy_primary": 9.8455,
+      "energy_conservative": 6.2627,
+      "identity_residual": 6.661338147750939e-15,
+      "spikes": 957563,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 54.1
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 11,
+      "point": {
+        "margin_coef": 0.4,
+        "keep_frac": 0.08,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 32.15,
+      "test_loss_pp": 1.65,
+      "energy_primary": 9.2275,
+      "energy_conservative": 6.1204,
+      "identity_residual": 5.551115123125783e-15,
+      "spikes": 1021746,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 49.4
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 12,
+      "point": {
+        "margin_coef": 0.4,
+        "keep_frac": 0.08,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 36.15,
+      "test_loss_pp": 7.5,
+      "energy_primary": 8.2921,
+      "energy_conservative": 5.8809,
+      "identity_residual": 4.884981308350689e-15,
+      "spikes": 1140775,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 49.7
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 13,
+      "point": {
+        "margin_coef": 0.4,
+        "keep_frac": 0.08,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 35.7,
+      "test_loss_pp": 5.05,
+      "energy_primary": 8.9172,
+      "energy_conservative": 6.0443,
+      "identity_residual": 9.325873406851315e-15,
+      "spikes": 1059468,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 49.5
+    },
+    {
+      "dataset": "MNIST",
+      "seed": 14,
+      "point": {
+        "margin_coef": 0.4,
+        "keep_frac": 0.08,
+        "theta": 1.5,
+        "T": 3
+      },
+      "ann_test": 33.25,
+      "test_loss_pp": 1.5,
+      "energy_primary": 9.2307,
+      "energy_conservative": 6.121,
+      "identity_residual": 7.105427357601002e-15,
+      "spikes": 1022690,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 50.1
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 10,
+      "point": {
+        "margin_coef": 0.2,
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 29.95,
+      "test_loss_pp": 2.8,
+      "energy_primary": 7.7603,
+      "energy_conservative": 6.0347,
+      "identity_residual": 7.244205235679146e-15,
+      "spikes": 2211350,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 82.5
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 11,
+      "point": {
+        "margin_coef": 0.2,
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 27.45,
+      "test_loss_pp": 1.75,
+      "energy_primary": 10.082,
+      "energy_conservative": 6.6897,
+      "identity_residual": 1.1102230246251565e-14,
+      "spikes": 1699580,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 82.7
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 12,
+      "point": {
+        "margin_coef": 0.2,
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 27.5,
+      "test_loss_pp": 1.2,
+      "energy_primary": 6.2306,
+      "energy_conservative": 5.4642,
+      "identity_residual": 1.2101430968414206e-14,
+      "spikes": 2753272,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 83.5
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 13,
+      "point": {
+        "margin_coef": 0.2,
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 26.7,
+      "test_loss_pp": 0.95,
+      "energy_primary": 7.478,
+      "energy_conservative": 5.939,
+      "identity_residual": 8.548717289613705e-15,
+      "spikes": 2293580,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 82.4
+    },
+    {
+      "dataset": "CIFAR10",
+      "seed": 14,
+      "point": {
+        "margin_coef": 0.2,
+        "keep_frac": 0.08,
+        "theta": 1.0,
+        "T": 3
+      },
+      "ann_test": 24.75,
+      "test_loss_pp": 1.15,
+      "energy_primary": 6.4641,
+      "energy_conservative": 5.5604,
+      "identity_residual": 1.021405182655144e-14,
+      "spikes": 2658018,
+      "zero_spike": false,
+      "kept_units": 10,
+      "wall_sec": 82.7
+    }
+  ],
+  "summary": {
+    "MNIST": {
+      "n": 5,
+      "ann_mean": 34.02,
+      "ann_std": 1.601,
+      "loss_mean": 3.79,
+      "loss_std": 2.257,
+      "loss_ci95": 1.978,
+      "energy_primary_mean": 9.1026,
+      "energy_conservative_mean": 6.0859,
+      "energy_primary_min": 8.2921,
+      "energy_conservative_min": 5.8809,
+      "identity_max": 9.325873406851315e-15,
+      "teacher_ok": true,
+      "accuracy_ok": false,
+      "energy_ok": true,
+      "identity_ok": true
+    },
+    "CIFAR10": {
+      "n": 5,
+      "ann_mean": 27.27,
+      "ann_std": 1.67,
+      "loss_mean": 1.57,
+      "loss_std": 0.67,
+      "loss_ci95": 0.587,
+      "energy_primary_mean": 7.603,
+      "energy_conservative_mean": 5.9376,
+      "energy_primary_min": 6.2306,
+      "energy_conservative_min": 5.4642,
+      "identity_max": 1.2101430968414206e-14,
+      "teacher_ok": true,
+      "accuracy_ok": false,
+      "energy_ok": true,
+      "identity_ok": true
+    }
+  }
+}

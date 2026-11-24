@@ -1,0 +1,19 @@
+{
+  "candidate": "C10-v1",
+  "frozen_at": "2026-11-17T21:45:00+08:00",
+  "datasets": ["chameleon", "squirrel"],
+  "hosts": ["H1_mean", "H2_sum", "H3_sym"],
+  "seeds": [0, 1, 2, 3],
+  "T": 2,
+  "factor_grid": [0.5, 0.65, 0.8, 1.0, 1.25, 1.5, 2.0],
+  "fit": "teacher-logit fidelity on training mask only",
+  "minimum_accuracy_gain_pp_each_dataset": 1.0,
+  "strong": {
+    "improve_both_datasets": true,
+    "improve_at_least_hosts": 2,
+    "beat_random_control": true,
+    "paired_bootstrap_lower_pp": 0,
+    "spike_count_increase_max": 0.10
+  },
+  "test_isolation": "test masks never used; fixed public validation masks"
+}

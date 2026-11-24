@@ -1,0 +1,11 @@
+{
+  "coordinates": 3982,
+  "translation": [
+    1200.0,
+    -700.0,
+    350.0
+  ],
+  "translation_error": 0.0,
+  "relative_quantization_error": 0.1604470202340623,
+  "gate_pass": false
+}

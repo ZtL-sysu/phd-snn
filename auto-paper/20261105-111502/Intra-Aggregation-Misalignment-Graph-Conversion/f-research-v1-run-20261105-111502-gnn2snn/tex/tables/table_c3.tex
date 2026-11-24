@@ -1,0 +1,29 @@
+% GENERATED from results/c3_allocation.json and results/c3_fit.json
+\begin{table}[t]
+\centering
+\small
+\caption{Bound-derived latency allocation. $\kappa$ is computed from the trained
+ANN alone; $c$ is fitted on the three fitted graphs and frozen before any held-out
+measurement. $T^\star$ is the predicted smallest grid timestep; $T_{\min}$ is the
+smallest grid timestep that actually reaches the $\epsilon{=}1.5$ pp target.}
+\label{tab:c3}
+\begin{tabular}{lrrrrr}
+\toprule
+Graph & $\kappa$ & $T^\star$ & $T_{\min}$ & hit & gap at $T^\star$ (pp) \\
+\midrule
+\multicolumn{6}{l}{\emph{Fitted (used for $c$)}} \\
+Cora & 75.9 & -- & 5.1 & -- & -- \\
+CiteSeer & 92.2 & -- & 4.6 & -- & -- \\
+PubMed & 66.9 & -- & 3.7 & -- & -- \\
+\midrule
+\multicolumn{6}{l}{\emph{Held out (never used to fit $c$)}} \\
+Chameleon & 83.7 & 4.0 & 2.0 & 100\% & 2.74 \\
+Squirrel & 114.4 & 4.0 & 2.3 & 100\% & 0.18 \\
+ogbn-arxiv & 333.6 & \multicolumn{4}{l}{\emph{unreachable-with-evidence}} \\
+\midrule
+Uniform-$T$ budget & \multicolumn{5}{r}{$T{=}8$} \\
+Mean predicted $T^\star$ & \multicolumn{5}{r}{4.0} \\
+Timestep saving & \multicolumn{5}{r}{50.0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}

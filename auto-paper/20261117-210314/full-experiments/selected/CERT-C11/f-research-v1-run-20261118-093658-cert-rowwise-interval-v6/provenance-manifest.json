@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "run_root": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\CERT-C11\\f-research-v1-run-20261118-093658-cert-rowwise-interval-v6",
+  "entries": [
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H1_mean__s0.npz",
+      "sha256": "355fbb78c649840c667a9a0c99ac35ec390af62d2b617cc23ce8b142e68a2b9d",
+      "bytes": 141787,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H1_mean__s1.npz",
+      "sha256": "98d152fd7838cada73a63c03b5180058c0140d7df6f2445c8655a7b70a576bc3",
+      "bytes": 141849,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\chameleon__H1_mean__s2.npz",
+      "sha256": "12623ce9c817b915c7742d8ecaf59429d3349546fbfa885a30f8f6a66da7d9a6",
+      "bytes": 141889,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\cora__H1_mean__s0.npz",
+      "sha256": "5ec03b945a55405d3551852b47671cb97904e8665d8604217c283ab39e4f5100",
+      "bytes": 90298,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\cora__H1_mean__s1.npz",
+      "sha256": "0c2780218408212123eaf124845050580c660e0061fdf8e689fd74a1fc6affc9",
+      "bytes": 89869,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\cora__H1_mean__s2.npz",
+      "sha256": "769a8563de4569e444864c1591809c388486c749295b99f603c43a4c4022c3d9",
+      "bytes": 90330,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H1_mean__s0.npz",
+      "sha256": "314109f1ec7e57809ae7cfb76fb7313d29d3d149e8534a5e42243e973cdaea0c",
+      "bytes": 128969,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H1_mean__s1.npz",
+      "sha256": "535100859ce32a0caca1df483679d0c95f00aef3d1875a6f59dd0f28b51dc7fa",
+      "bytes": 129008,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261105-111502\\Intra-Aggregation-Misalignment-Graph-Conversion\\f-research-v1-run-20261105-111502-gnn2snn\\results\\models\\squirrel__H1_mean__s2.npz",
+      "sha256": "a7d534c297348b691095b77138ba2071e75c39ba09d44e9c6d7f49c47fa93558",
+      "bytes": 129100,
+      "role": "frozen model snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\ind.cora.allx",
+      "sha256": "9419ba2f26f5c35243db64aba110e0f35a04851609e0dc5433450676ca6b8543",
+      "bytes": 257305,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\ind.cora.ally",
+      "sha256": "2b998f5cc7fedc86e7f97ca2498f47a1ffc1462c29e2d578b23bf3f62b6e7d71",
+      "bytes": 47959,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\ind.cora.graph",
+      "sha256": "58f13302f39dde8852dad6fe6d15b89b077b6d7f837626bce671ef80344b383d",
+      "bytes": 59847,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\ind.cora.test.index",
+      "sha256": "297ce89af2b51a6a194181c7dbe1796c6a1cf9cd9349a88383b1b1e227867875",
+      "bytes": 5000,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\ind.cora.tx",
+      "sha256": "b9afbaa4a400df991f6f02ef677e1e44da55ffc04801fd02f9e673987829226a",
+      "bytes": 148025,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\ind.cora.ty",
+      "sha256": "41f5ac76596a1699cc33f53084a2419e92961c42bb75f36fc38e616d348532ad",
+      "bytes": 28135,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\ind.cora.x",
+      "sha256": "23cfa55d91c6f624233f5eb7b6e3f141f1bd2b2ae39608a63cf5d084bb27baab",
+      "bytes": 22119,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\ind.cora.y",
+      "sha256": "94465c14eb53e04ca262198dcbb2521ee8af60fb3f3d546cd6ca24a511b0e7d1",
+      "bytes": 4054,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\pyg\\chameleon\\geom_gcn\\processed\\data.pt",
+      "sha256": "483030c5eb4776d04871f3e410ebbb7b38332ac2bf8e7a543196380364519bf2",
+      "bytes": 21842965,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261028-171500\\Spiking-GNN-Conversion\\f-research-v1-run-20261028-174053-gnn-snn-conv\\results\\.data\\pyg\\squirrel\\geom_gcn\\processed\\data.pt",
+      "sha256": "c58f552e61aa286a3d3de57c984f4218f442621377addcfbb8f7d03a57c126e1",
+      "bytes": 47133141,
+      "role": "dataset snapshot"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\CERT-C11\\f-research-v1-run-20261118-093658-cert-rowwise-interval-v6\\research\\cert_core.py",
+      "sha256": "54b350232e6a59c2a67f857e245ecfc389df5c126367439317b7061611ef564c",
+      "bytes": 7114,
+      "role": "run code/output"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\CERT-C11\\f-research-v1-run-20261118-093658-cert-rowwise-interval-v6\\research\\cert_runner.py",
+      "sha256": "001498e362dea42fc49ed03433d4629bc1be9df8b96d39cc8c7824945f14fa25",
+      "bytes": 6128,
+      "role": "run code/output"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\CERT-C11\\f-research-v1-run-20261118-093658-cert-rowwise-interval-v6\\results\\cert-baseline.json",
+      "sha256": "b596ca05b30808a3b5db025e7ad886da54d58ebae3d463fae8509ee03c064901",
+      "bytes": 9575,
+      "role": "run code/output"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\CERT-C11\\f-research-v1-run-20261118-093658-cert-rowwise-interval-v6\\results\\cert-methods.json",
+      "sha256": "5b370f20c4a16dd7e1d9843628351490b7c554d932cdc4dff803e36e2941ac77",
+      "bytes": 28651,
+      "role": "run code/output"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\CERT-C11\\f-research-v1-run-20261118-093658-cert-rowwise-interval-v6\\results\\cert-summary.json",
+      "sha256": "144445ea78cccc08098304fcbf7cfab2a80225a0fc4b761da9a9c37fdba50f9a",
+      "bytes": 439,
+      "role": "run code/output"
+    }
+  ]
+}

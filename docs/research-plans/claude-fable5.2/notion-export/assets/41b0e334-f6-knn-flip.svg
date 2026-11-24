@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <rect width="860" height="330" fill="#fff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="17" font-weight="bold">动态选邻居为什么可能出错（示意，非真实数据）</text>
+  <text x="430" y="48" text-anchor="middle" font-size="13" fill="#555">中心块从 6 个候选里选最近的 k = 3 个；绿色 = 被选中</text>
+  <g font-size="12">
+    <text x="10" y="114">没有误差</text>
+    <line x1="80" y1="110" x2="830" y2="110" stroke="#999"/>
+    <circle cx="80" cy="110" r="10" fill="#f2a65a" stroke="#333"/>
+    <circle cx="260" cy="110" r="10" fill="#4caf50" stroke="#333"/><text x="260" y="92" text-anchor="middle">A 1.00</text>
+    <circle cx="332" cy="110" r="10" fill="#4caf50" stroke="#333"/><text x="332" y="92" text-anchor="middle">B 1.40</text>
+    <circle cx="440" cy="110" r="10" fill="#4caf50" stroke="#333"/><text x="440" y="92" text-anchor="middle">C 2.00</text>
+    <circle cx="467" cy="110" r="10" fill="#ddd" stroke="#333"/><text x="482" y="134" text-anchor="middle">D 2.15</text>
+    <circle cx="620" cy="110" r="10" fill="#ddd" stroke="#333"/><text x="620" y="92" text-anchor="middle">E 3.00</text>
+    <circle cx="728" cy="110" r="10" fill="#ddd" stroke="#333"/><text x="728" y="92" text-anchor="middle">F 3.60</text>
+    <text x="10" y="224">有一点误差</text>
+    <line x1="80" y1="220" x2="830" y2="220" stroke="#999"/>
+    <circle cx="80" cy="220" r="10" fill="#f2a65a" stroke="#333"/>
+    <circle cx="271" cy="220" r="10" fill="#4caf50" stroke="#333"/><text x="271" y="202" text-anchor="middle">A 1.06</text>
+    <circle cx="310" cy="220" r="10" fill="#4caf50" stroke="#333"/><text x="310" y="202" text-anchor="middle">B 1.28</text>
+    <circle cx="472" cy="220" r="10" fill="#ddd" stroke="#333"/><text x="482" y="244" text-anchor="middle">C 2.18</text>
+    <circle cx="438" cy="220" r="10" fill="#4caf50" stroke="#333"/><text x="430" y="202" text-anchor="middle">D 1.99</text>
+    <circle cx="627" cy="220" r="10" fill="#ddd" stroke="#333"/><text x="627" y="202" text-anchor="middle">E 3.04</text>
+    <circle cx="714" cy="220" r="10" fill="#ddd" stroke="#333"/><text x="714" y="202" text-anchor="middle">F 3.52</text>
+  </g>
+  <text x="430" y="285" text-anchor="middle" font-size="13" fill="#d9534f">每个距离偏差不超过 0.2，第 3 近（C）和第 4 近（D）就互换了：邻居从 A、B、C 变成 A、B、D</text>
+  <text x="430" y="308" text-anchor="middle" font-size="12" fill="#555">C 与 D 原本只差 0.15。偏差小于 0.075 时一定不会换；若每个点特征误差不超过 ε，对应条件是“间隔 &gt; 4ε”（questions.md Q9）。</text>
+</svg>

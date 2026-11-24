@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "stage": "P15",
+  "latexmk_returncode": 0,
+  "pages": 11,
+  "normalized_text_match": true,
+  "accepted_text_sha256": "dc3e3ce0b2a27eb55866e4a3435c6e107c497a3afeda075eb3369955ad6a8bc7",
+  "clean_text_sha256": "dc3e3ce0b2a27eb55866e4a3435c6e107c497a3afeda075eb3369955ad6a8bc7",
+  "font_embedding_failures": [],
+  "pdf_question_placeholders": false,
+  "pass": true
+}

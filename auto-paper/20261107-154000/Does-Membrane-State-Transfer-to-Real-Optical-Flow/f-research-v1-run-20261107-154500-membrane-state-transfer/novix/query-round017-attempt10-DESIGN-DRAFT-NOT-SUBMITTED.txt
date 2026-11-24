@@ -1,0 +1,254 @@
+================================================================================
+【attempt #10 设计预案 · NOT SUBMITTED · round-017 · C1 死磕 correction loop v3】
+f-research-v1 / P4 / C1 / 2026-11-09 08:5x GMT+8
+
+★ 本文件是「本轮实质优化」的落盘证据，**本轮不提交 novix**。
+  理由：Step 0 权威复核 `18885`（attempt #9，H10 突触前能量稀释）=
+  `processing` / steps 2442 / `finalReply` 为在跑进度说明（"the verified real-data
+  and projection caches are now present, so I'm moving directly to the complete
+  runner implementation"），**不是终态结果**。按 §3.6(2)「还在跑 → 只更新文档、
+  不重提交、不等待」与 rounds 006/009/011/013/015 在途先例，本轮不重提交、
+  不动流水线、不 pull、不判定；但按 §3.6(3)「每轮必须有一次实质优化、不许原地
+  踏步」，落盘本预案并写清四要素与机制级 diff。
+
+★ **不得原样启用**：`18885` 终态结果未出。下一轮（round-018）必须先按
+  `acceptance-verdict-18885.md` 的真实实测修订本预案的四要素与假设，
+  尤其是 H10 五档 `drive_to_syn_energy_ratio` / `H_slope_recovery` /
+  `calibration_failure_locus` / `sign_flip_factor` 的实际落点，
+  再决定启用、合并或废弃。**禁止把本预案当作 18885 的结果，禁止预支结论。**
+★ 本预案相对 `query-round016-attempt9.txt` 有 9 条机制级 diff（见 §3），
+  不是原样重提、不是只调超参、不是凑显著、不是把负结果改写成正结果。
+================================================================================
+
+================================================================================
+【§1 上一轮失败点（只引用已落盘实测，不推断、不改写、不删证据）】
+================================================================================
+
+(1a) 最近一次**有正式判定**的实测仍是 `18696`（attempt #8）=
+     `acceptance-verdict-18696.md` = `REJECT_FAILURE`（9/9 SHA-256 MATCH 归档
+     `evidence/p4-novix-18696/`）：`design_valid=true`、全量真跑完
+     （23/23 + 142/142 + 148/148、165 raw NPZ、614/614 重哈希），但
+     · 两真实域 ceiling DAVIS `0.424242` / SINTEL `0.400000` 均 < 0.70，
+       两域 `decidability_state=INPUT_BOTTLENECK`、`interpretation_allowed=false`；
+       `gt_oracle_upper_bound=1.0`（平台明确「不是对历史 0.6875 的重算」）；
+     · 三族校准：stratified paired bootstrap 经验 I 类错误 `0.149` 失败
+       （上限 0.075），studentized `0.051` / redefined permutation `0.058` 通过
+       → `all_families_passed=false`、全部 contrast `uncalibrated`；
+     · 11-seed 主读出 unexposed 符号翻转（DAVIS `+0.022727` / `−0.128099`，
+       SINTEL `+0.081818` / `−0.015152`），`c1_guidance.verdict=failure`、
+       `minimum_met=false`、`expected_strong_met=false`、
+       `transfer_claim_made=false`、`paper_qualified=false`；
+     · 诊断型进展（不是达标）：`localized_unit=syn`、两域 holdout
+       `CONSTRUCTIBLE`、两臂 `SYMMETRIC`（假设 C 否证）、输入级 `H(ω)`
+       `INPUT_SIGNAL_PATH_MEASURABLE`（假设 A 否证）但 `H_slope(LIF−stateless)`
+       逐环节全负（DAVIS drive `−1.224299` / syn `−0.141906` / v `−0.210777` /
+       KC `−0.208067`），两域最大首段衰减都在 `drive→syn`；
+     · SYNTHETIC 锚点跨实现符号反转（Δ `−0.114394` vs 继承 `+0.2817`）、
+       谱半径 `504.30 → 292.415`，原样保留为**跨实现不一致待查**，不作机制证据；
+     · 第五次交付缺陷：`project/config.json` 远端路径不存在（仅 snapshot 等价）。
+     **不是**平台故障 / `design_invalid` / 机制否证 / 达标。
+     不进 P5、不写论文、26 阶段仍全 pending / history 空。
+
+(1b) `18885`（attempt #9，H10）**在途、无结果**：本轮 Step 0 两次权威复核
+     `novix --json task result 18885` rc=0 → `processing` / steps **2442** /
+     `finalReply` 为在跑进度说明；`novix --json task get 18885` rc=0 →
+     `processing` / `createdBy=637` / `createdAt 2026-11-09 07:31:58` /
+     `updatedAt 08:52:24` / 首步含本轮 query 标识；`check_inflight.py` rc=0
+     → `still_running`。**无任何数值结果、无任何终态、无 errorCode。**
+     平台在跑内容自述「优先 80-epoch、11-seed、五算子设计，全部消融/对照、
+     一次性保守 holdout 暴露、uncalibrated contrasts、P0–P25 不动；
+     real-data 与 projection caches 已就绪，正在实现完整 runner」。
+     → **H10 假设既未被证实也未被否证**。本预案不假定其成败。
+
+(1c) 连续多轮的元问题（本预案真正要打破的循环）：自 `18448` 起，每轮都拿到
+     「设计有效、全量跑完、诊断项有进展」，但两真实域 ceiling 始终 < 0.70、
+     主读出始终 `diagnostic_only` / `uncalibrated` / `interpretation_allowed=false`。
+     历轮把 ceiling 低归因为「输入编码档位」(18533 的 7 档 gap 恒 `0.351852`)、
+     「装置亚单位灵敏度」(18533 注入恢复 `0.067901`/`0.0625`)、
+     「标签构造 / 噪声地基」(H9，被 `gt_oracle=1.0` 削弱)、
+     「突触前能量稀释」(H10，18885 在测)。
+     **但从未把 `INPUT_BOTTLENECK` 这个平台标签本身拆成可分离的信息论来源**，
+     也从未在训练前测量「GT 光流标签的信息在哪一级被丢掉」。
+================================================================================
+
+================================================================================
+【§2 本轮假设（H11，机制级不同于 H10 / H9 / #6 / #7 / #8；是假设不是结论）】
+================================================================================
+
+命名：**标签—输入信息预算可辨识性假设（information-budget identifiability）**。
+
+观测起点（全部来自 18696 已落盘实测，不推断）：
+· `gt_oracle_upper_bound=1.0` ⇒ 官方 GT 光流 `.flo` 本身对任务标签**完全可分**；
+· 但当前 ceiling 仅 `0.424242` / `0.400000` ⇒ 约 0.58–0.60 的可判定性
+  在「GT 光流 → 网络可读输入」这条链上丢失；
+· `INPUT_SIGNAL_PATH_MEASURABLE` + `localized_unit=syn` + `H_slope` 逐环节全负
+  ⇒ 链路是通的、能量/增益在衰减，但**「衰减的是任务相关信息还是纯幅值」从未
+  被分开测量**——历轮所有估计量（H_slope、能量比、恢复斜率、forced probe）
+  都是**幅值/增益类**，没有一个直接测「标签信息量」。
+
+  **H11（可证伪）**：ceiling < 0.70 的主因不是突触前能量稀释（H10），
+  也不是标签噪声（H9），而是**光流→离散标签的量化映射与 4×4 复眼空间下采样
+  联合造成的可判定信息塌缩**；该信息损失发生在 `drive→syn` **之前**，
+  因此对 LIF 与 stateless 同样生效，这解释了历轮「两臂 delta 恒 ≈0 /
+  逐环节全负 / 校准失败」的共存现象。
+
+  可测后果（两支都必须报告，禁止选择性报告）：
+  (a) 若训练前冻结、SHA-256 哈希锁定的**条件互信息预算阶梯**显示
+      `I(4x4_sampled; Y) << I(raw_32x32_luminance; Y)` 且
+      `I(readout_LIF; Y) ≈ I(readout_stateless; Y) ≈ I(4x4_sampled; Y)`，
+      则瓶颈被定位到**输入空间下采样 / 标签量化**，落
+      `LABEL_QUANTIZATION_OR_SAMPLING_BOTTLENECK`（诊断型负结果），
+      下一轮转向「冻结标签离散化族 × 复眼池化核」的一因子阶梯；
+      此时即使 H10 的 yoked 能量档把能量比抬到 ≈1，也不得据此作迁移主张。
+  (b) 若 `I(4x4_sampled; Y) ≈ I(raw; Y)` 而 `I(readout; Y)` 在 LIF 分支
+      显著低于 stateless（超出置换零基线 CI），则 H11 被否证，
+      信息损失发生在读出/膜状态侧，落 `READOUT_INFORMATION_LOSS`，
+      下一轮转向 `syn→v` 电流—脉冲转换代数的信息论版本（round-016 交接
+      的 `SYNAPTIC_ENERGY_NOT_CARRIER` 分支承接）。
+  (c) 若所有估计量都落在置换零基线内（不可辨识），落
+      `UNINFORMATIVE_MEASUREMENT`（第四态），**不作机制结论**，
+      如实记录并按 correction loop 继续同一 C1。
+
+  配套两个**历轮从未做过的必跑门**：
+  · **无参数互信息估计器的校准门**：训练前冻结离散化 bin 数网格、
+    Miller–Madow 偏差校正、≥200 次标签置换零基线（给出经验 I 类错误率与
+    Wilson 95% CI），并在已知 +0.25 信号注入阳性对照上验证估计器灵敏度
+    （18533 只做过 accuracy 版：恢复 `0.067901`/`0.0625`，斜率 `0.284383`/
+    `0.155642`，属亚单位灵敏度；本轮做**信息量版**，且必须先过校准才允许
+    解释任何 I 值）。任一格未通过 → 全部 `I` 标 `uncalibrated`。
+  · **`A=0` 上界的信息论重验门**：历轮只把 `A=0` 当 accuracy 上界
+    （`0.458` / `0.515152`），从未测过 `I(A=0; Y)`。本轮把
+    `I(A=0; Y)` 与 `I(degree_null; Y)` 一起纳入阶梯，
+    直接检验「保度零模型从未输给真实接线」在信息量层面是否同样成立；
+    **禁止**据此宣称生物接线优势。
+
+  反向护栏：H11 **不得**被用来下调门槛或改写结论；只要 ceiling 仍 < 0.70、
+  校准仍失败或 unexposed 符号翻转，`c1_guidance` 仍按实测判 failure、
+  `transfer_claim_made=false`、文章仍不合格、继续死磕同一 C1。
+================================================================================
+
+================================================================================
+【§3 具体改动（相对 `query-round016-attempt9.txt` 的 9 条机制级 diff）】
+================================================================================
+以下均为**机制 / 协议 / 估计量 / 实现层**变化，不是只调超参、不是改标题、
+不是原样重提、不是重跑同一网格凑显著：
+
+ 1.【新增·第一主门，历轮从未做过】训练前冻结并 SHA-256 哈希锁定的
+   **`information_budget_ladder`**：沿
+   `raw_32x32_luminance → 4x4_compound_eye_sampled → retinal_drive →
+   syn → v → spike → KC → logit` 八级，逐级别落盘 `I(X_level; Y)`
+   （条件互信息，控制 seed / scene / fold）、置换零基线、Miller–Madow 校正、
+   Wilson 95% CI、bin 数敏感性全格。**唯一自变量 = 信息测量级别**，
+   不改任何网络的归一化算子（与 H10 的「改 `drive→syn` 界面算子」正交：
+   H10 是干预，本轮是测量；两者可在同一 run 内互不污染）。
+ 2.【新增·估计量族】历轮全部估计量是幅值/增益类（`H_slope`、
+   `drive_to_syn_energy_ratio`、`H_slope_recovery`、forced-probe 精度）。
+   本轮新增**信息量类**估计量 `label_information_residual` /
+   `quantization_information_loss` / `sampling_information_loss`，
+   作为预注册主读出之一；并定义 `information_loss_locus` ∈
+   {label_quantization, spatial_sampling, readout, unresolved}。
+   与 18533 的 `measurement_identifiability_gate`（accuracy 决策规则可辨识）
+   不是同一量纲。
+ 3.【必修·估计器校准先于解释】新增「互信息估计器校准门」：
+   bin 网格 × Miller–Madow × ≥200 次置换零基线 × 已知 +0.25 注入的
+   信息量恢复斜率；**校准未过则全部 `I` 标 `uncalibrated`，不许解释**。
+   这直接针对 18696 `0.149` 校准失败与 18533 亚单位灵敏度的共同病根：
+   历轮都是「先出主 contrast、后发现校准失败」，本轮把校准**前置为硬门**。
+   attempt #9 的 `calibration_failure_locus`（零效应蒙特卡洛 ≥500 次 ×
+   三族 × 分层/不分层 × 统计量）**幂等保留为必跑**，不重跑不重算。
+ 4.【新增·三态可判定性的信息论重定义】attempt #8/#9 的三态是
+   `LABEL_NOT_DECODABLE / INPUT_BOTTLENECK / DOMAIN_USABLE`，
+   判据是 ceiling 数值。本轮增列**信息论判据**并输出第四态
+   `UNINFORMATIVE_MEASUREMENT`；`DOMAIN_USABLE` 必须同时满足
+   ceiling >= 0.70 **且** `I(4x4_sampled; Y)` 显著超置换零基线上界，
+   否则仍 `interpretation_allowed=false`。**0.70 门槛不下调**。
+ 5.【新增·`A=0` / 保度零模型的信息论对照】把
+   `I(A=0; Y)`、`I(degree_null; Y)`、`I(identity_graph; Y)` 纳入同一阶梯，
+   与 `I(real_graph; Y)` 按实测符号报告；8 轮禁令继续适用，
+   禁止把 `I(real) > I(null)` 写成「生物接线带来精度优势」。
+ 6.【幂等引用 + 必跑修正（沿用 #9 的护栏）】`18696` 已真跑完且 9/9
+   SHA-256 核验归档的项目（输入级 `H(ω)` 逐级传递函数、
+   `flow_coherence`×读出作用域全格、三族校准全报告、`localized_unit=syn`、
+   两域 holdout `CONSTRUCTIBLE`、两臂对称性审计、`measurement_identifiability_gate`、
+   特征级注入阶梯、梯度路径 2×2、DAVIS 7 档输入编码阶梯、训练后 real delta 全表）
+   → **幂等引用 `evidence/p4-novix-18696/`，逐项列归档路径与 SHA-256，
+   不重跑、不重算、不改数值**。`18885` 终态后按其正式
+   `acceptance-verdict-18885.md` 与 `evidence/p4-novix-18885/` 的实测，
+   把 H10 五档能量稀释门、校准失效归因、跨实现张量指纹门 `sign_flip_factor`
+   **按实际落点决定幂等引用或必跑**；若 18885 未真跑完则全部改必跑。
+   `18696` 的 `idempotent_reference.status=unavailable` 的 18533 历史项
+   继续维持 #9 的「必跑」口径，不退回声明保留。
+ 7.【必修·不退化项】保留 18696 已解决项作幂等护栏：两域 holdout
+   `CONSTRUCTIBLE`（DAVIS matched n=154 / SINTEL n=24、
+   `partition_modified_after_results=false`）、`condition_arms_symmetric=true`、
+   exposed/unexposed **两套数值全部报告**与符号翻转原样保留
+   （DAVIS `+0.022727`/`−0.128099`；SINTEL `+0.081818`/`−0.015152`）。
+   `A=0` 为输入信息上界、精确保度零模型（2,000,000 次交换、不变量精确）、
+   identity 图；SYNTHETIC 锚点符号反转与谱半径 `504.30 → 292.415`
+   原样保留、不改写、不作机制证据。
+ 8.【不变·门槛与硬约束】`minimum(+0.15)` / `expected_strong(+0.25)` /
+   real-domain ceiling `0.70` **一律不下调、不静默下调**；两域都非
+   `DOMAIN_USABLE` 时 `migration_verdict` 明确写
+   `NO_TRANSFER_CLAIM_BOTH_REAL_DOMAINS_UNAVAILABLE`；
+   ≥11 paired seeds、2000 次 paired bootstrap 95% CI、exact paired
+   sign-flip p、BH-FDR q=0.05、一因子消融、测试集暴露台账、
+   冻结探针臂非劣效界；`runtime_hours` 只是可行性估算，**绝不是超时参数**。
+ 9.【必跑·交付缺陷修复 + 无预算 + 产物持久化】`project/config.json`、
+   `project/config_preregistered.json`、`project/result.json`、
+   `project/MANIFEST.txt`、`project/experiment.py`、`project/entrypoint.sh`
+   **必须全部真实存在于 `project/` 根**（修 18696 第五次交付缺陷），
+   结束前 `os.path.exists` / `getsize` / `sha256` 逐文件自检并把实测输出
+   贴进最终回复；双 snapshot byte-identical 校验落盘。
+   第 0 步骨架落盘 + 增量 flush + 断点续跑 + `project/result.json` 落在
+   可 pull workspace；提交命令
+   `novix task create --json <query> --provider novixlet
+   --resource-pool exp-4090 --gpu --gpu-count 1`，
+   **不带** `--max-turns` / `--timeout` / `--watch`。
+   `grind_block` 四要素逐字写进 `project/result.json`。
+
+ 与 attempt #9 的关系总结：#9 改**突触前界面算子**并做能量/增益干预；
+ 本预案改**训练前信息预算测量协议**并引入信息量估计量、估计器前置校准门、
+ 信息论三态重定义与 `A=0` 信息论对照。二者层级不同、可共存、非原样重提。
+================================================================================
+
+================================================================================
+【§4 预期信号 / 若失败下一步】
+================================================================================
+
+只有全部满足才允许判 `ACCEPT_STRONG` 并 `--before P5`：
+· 至少一真实域 `DOMAIN_USABLE`（ceiling >= 0.70 且信息论判据过置换零基线）；
+· 三族校准全报告且估计器校准门通过（无 `uncalibrated`）；
+· 训练后 real delta >= +0.15、CI 下界 > 0、stateless 不追平；
+· unexposed holdout 同号；一因子消融指认承载机制；
+· `A=0` / 保度零模型 / identity 图对照齐、无「生物接线优势」宣称。
+
+分支（全部为诊断型，不是达标、不是机制否证、不是把负结果写成正结果）：
+· 落 `LABEL_QUANTIZATION_OR_SAMPLING_BOTTLENECK` → 下一轮转
+  「冻结标签离散化族 × 复眼池化核」一因子阶梯（训练前冻结、哈希锁定、
+  全档报告、禁 post-hoc 凑 0.70），并把 `gt_oracle_upper_bound=1.0`
+  作为固定上界重算 gap；
+· 落 `READOUT_INFORMATION_LOSS` → 下一轮转 `syn→v` 电流—脉冲转换
+  代数的信息论版本（新一因子单独消融），承接 round-016 交接的
+  `SYNAPTIC_ENERGY_NOT_CARRIER` 分支；
+· 落 `UNINFORMATIVE_MEASUREMENT` → 保留全部失败证据，
+  转向「估计器本身的可辨识性」作为第一必修，不得作任何机制结论；
+· 校准门仍失败 → 全部 `I` 标 `uncalibrated` 作下一轮第一必修；
+· 若 18885 终态显示 H10 被支持（yoked 抬正 `H_slope`、能量比回 ≈1），
+  本预案**不废弃但不优先**：先按 18885 正式 verdict 修订，把信息预算阶梯
+  作为 H10 阳性结果的**独立复核门**（防幅值恢复被误读为信息恢复）；
+· 若 18885 落平台故障 / 零产物 → 按 §5 换新设计、不重提旧 query、
+  不把平台故障记为科学负结果或 kill hit。
+
+任何情况：不把「实验跑完 / design_valid / 主门通过 / 能量比恢复 /
+信息量阶梯测出」写成「结果达标」；不删失败证据、不改写负结果、
+不编造数值、不静默下调 `expected_strong`、不换主攻
+（`abandon_allowed=False`：(a) 7/7 有实验证据的机制不同尝试、
+(b) 0/2 干净独立 kill、(c) 0/2 连续独立不可修复评审）。
+================================================================================
+
+【本轮提交决策】**NOT SUBMITTED**。`18885` 在途且无终态结果；
+按 §3.6(2) 不重提交、不等待、不动流水线。本文件只作为本轮
+「实质优化」的落盘证据与 round-018 的**待修订输入**（不得原样启用）。
+`primary_focus=C1` 锁定、`attempt_count=9` 不虚增、
+`qualified=false`、`final_paper_overall=null`、26 阶段仍全 pending / history 空。
+================================================================================

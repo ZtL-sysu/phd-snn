@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "decision": "proceed",
+  "claims": [
+    {
+      "id": "P",
+      "claim": "The accuracy a converted L-layer network will reach at latency T is predictable, before any spiking simulation, from the trained weights via the cumulative spectral gain G=prod_l||M_l||_2, the active width H, the logit margin, and T.",
+      "mechanism": "The exact recursion B_hat_l - B_l = (1-alpha) A_hat (E_{l-1} M_l) with E_0=0 gives ||E_L|| ~ ||E_1|| * prod_l||M_l||; the layer-1 error is a sum of independent per-unit quantisation errors, so ||E_1|| ~ sqrt(H)/(2T); a decision flips when the logit perturbation exceeds the margin.",
+      "assumptions": "No-leak integrate-and-fire with subtractive reset; constant-current layer-1 input; per-unit quantisation errors approximately independent (falsifiable through the sqrt(H) law); the ReLU active-set mask absorbs sign flips, so the norm bound is conservative.",
+      "falsifying_ablation": "Shuffle the per-unit quantisation errors before propagating them: if the shuffled model predicts gaps as well as the real one, the independence assumption carries no information and the mechanism is unsupported.",
+      "dataset_url": "https://github.com/kimiyoung/planetoid",
+      "split_protocol": "Planetoid public split, 20 per class train + 500 validation + 1000 test; 7 seeds; identical hyper-parameter budget for every arm; frozen in experiments/protocol.md.",
+      "primary_metric": "Mean absolute error in percentage points between predicted and observed conversion gap on held-out (dataset, depth, width, T) cells.",
+      "metric_direction": "lower",
+      "minimum": "Spearman rho >= 0.7 between predicted and observed gap over held-out cells.",
+      "expected_strong": "MAE <= 1.0 pp on held-out cells and predicted required-T exact on >= 70% of cells, with no error larger than one grid step.",
+      "failure": "MAE > 2.0 pp, or required-T exact on < 50% of cells; the predictive claim then leaves the title and the laws are reported as descriptive.",
+      "simple_baseline": "Predict each dataset's mean gap at that T, ignoring architecture (constant-per-latency predictor).",
+      "strong_baseline": "Predict from the ANN's validation accuracy alone, assuming the gap is a fixed function of dataset and T.",
+      "matched_control": "The same predictor fitted on the same number of cells with G replaced by a random draw of the same distribution, so any gain is not the fit's degrees of freedom.",
+      "implementation_path": "experiments/core.py supplies G, H, B_l and margins; experiments/wp7_predict.py performs leave-one-config-out and leave-one-dataset-out fitting and scoring.",
+      "prototype_check": "Reproduce the published amplification exponent 0.948 from the nine already-measured depth cells before any new grid is run.",
+      "calibration_evidence": "results/wp3_depth.json gives exponent 0.948 at r=0.990 over nine cells, and ||E_1||/sqrt(H) stable at 1.72 down to 1.61 over H=16..128.",
+      "test_isolation": "No cell contributes to both fit and evaluation; each T is excluded from its own fit set; fitting uses train/validation statistics only and never test labels.",
+      "stop_return_condition": "If the grid cannot finish within 24 h wall clock, cut widths to {16,64} keeping 7 seeds; if MAE still exceeds 2 pp, return to guidance before experiments rather than train toward the target.",
+      "runtime_hours": 20,
+      "memory_gb": 8,
+      "seeds": 7,
+      "search_trials": 24
+    },
+    {
+      "id": "E",
+      "claim": "Under one protocol and at T <= 4 the conversion is not Pareto-dominated in accuracy versus synaptic operations by three published spiking-GNN formulations.",
+      "mechanism": "Conversion discretises an already-trained computation: it pays no per-latency training cost and inherits the ANN's features, whereas a directly trained spiking network learns sparser but weaker layer-1 features at low T.",
+      "assumptions": "The three arms are re-implemented faithfully enough to be comparable; SOPs = T * edges * active_hidden is an acceptable energy proxy; published numbers are not reproduced because no checkpoints exist.",
+      "falsifying_ablation": "Repeat the Pareto with the conversion arm trained at one T and evaluated on all others (its actual deployment mode); if the advantage disappears it was a tuning artefact, not a property of conversion.",
+      "dataset_url": "https://github.com/kimiyoung/planetoid",
+      "split_protocol": "Same as claim P, plus the ogbn-arxiv official time split for the scale row; every arm shares split, seeds and hyper-parameter budget.",
+      "primary_metric": "Number of graphs on which some conversion point at T <= 4 is dominated (lower accuracy and higher SOPs) by an external arm.",
+      "metric_direction": "lower",
+      "minimum": "No external arm dominates the conversion at T <= 4 on more than one graph.",
+      "expected_strong": "Conversion reaches ANN-1.5 pp with strictly fewer SOPs than every external arm on at least two of the three citation graphs.",
+      "failure": "An external arm has both higher accuracy and lower SOPs at T <= 4 on two or more graphs; section 4.2 is then rewritten as a training-cost trade and the low-latency claim is withdrawn.",
+      "simple_baseline": "Rate-coded (Poisson) spiking GCN of the published SpikingGCN formulation.",
+      "strong_baseline": "Directly trained spiking GCN with surrogate-gradient BPTT and per-step dropout, plus the SpikingGCN architecture (SGC-2 propagation with a 512-wide spiking layer).",
+      "matched_control": "The same two-layer GCN trained as an ANN and converted: identical width, depth and data.",
+      "implementation_path": "protocols/baselines_published.py for the direct and Poisson arms; protocols/spikinggcn_baseline.py for the published architecture.",
+      "prototype_check": "Confirm all three arms reproduce their stored seven-seed means to within 0.01 pp before extending the grid to T=32.",
+      "calibration_evidence": "Measured: conversion 0.8046/0.6907/0.7771, direct 0.7920/0.6646/0.7751, SpikingGCN-architecture 0.8169/0.7073/0.7603 on Cora/CiteSeer/PubMed at each arm's best T.",
+      "test_isolation": "Early stopping and bias calibration use train/validation masks only; test labels are read once per run for the reported number.",
+      "stop_return_condition": "If any arm misses the prototype check by more than 0.1 pp, stop and diagnose before extending the grid; never publish a Pareto whose arms were not re-validated.",
+      "runtime_hours": 6,
+      "memory_gb": 12,
+      "seeds": 7,
+      "search_trials": 18
+    },
+    {
+      "id": "O",
+      "claim": "The membrane readout is exactly invariant to the temporal order of upstream spikes, while the integer-count readout is not.",
+      "mechanism": "The output accumulator is sum_t inst_t = A_hat (count_1 M_2) + T b_2, which contains no t; the count decoder depends on when the running sum crosses theta, so it does see the order.",
+      "assumptions": "No-leak integrate-and-fire with subtractive reset; the decoder reads the un-reset accumulator; layer-1 input is constant, so its spike train can be reordered offline without touching anything upstream.",
+      "falsifying_ablation": "Replace the sum readout with a leaky membrane (decay != 1): order should then matter, and if it still does not, the invariance is a simulator artefact rather than a property of the decoder.",
+      "dataset_url": "https://github.com/kimiyoung/planetoid",
+      "split_protocol": "Same as claim P; two graphs, both neuron models, four perturbation cells, 7 seeds.",
+      "primary_metric": "Spread (max minus min) of test accuracy in percentage points across the four temporal perturbations, for the membrane decoder.",
+      "metric_direction": "lower",
+      "minimum": "Membrane spread <= 0.1 pp.",
+      "expected_strong": "Membrane spread <= 0.01 pp on both graphs and both neuron models, with count spread >= 0.3 pp in the same cells.",
+      "failure": "Membrane spread > 0.1 pp, which would falsify the accumulator identity as implemented.",
+      "simple_baseline": "Integer-count readout, the field's default decoder.",
+      "strong_baseline": "TPP stochastic neuron from the 2025 cross-layer misalignment work, where order is expected to matter for both decoders.",
+      "matched_control": "The unperturbed spike train (base cell) for each dataset and neuron, so every spread is measured against its own control.",
+      "implementation_path": "experiments/wp6a_misalignment.py.",
+      "prototype_check": "Confirm on one seed that permuting the layer-1 train leaves the membrane accuracy unchanged bit for bit.",
+      "calibration_evidence": "Measured spread 0.000 pp in all four membrane cells and 0.386-1.614 pp in the count cells.",
+      "test_isolation": "Only the spike train is perturbed; weights, masks and theta are untouched, so order is the single changed variable.",
+      "stop_return_condition": "If the leaky-membrane ablation shows order still does not matter, drop the order language entirely and describe the decoder only by its quantisation behaviour.",
+      "runtime_hours": 2,
+      "memory_gb": 6,
+      "seeds": 7,
+      "search_trials": 4
+    }
+  ],
+  "evidence": [
+    {
+      "path": "startup-stage-plan.md",
+      "sha256": "be1478ef7b520a644025676defa6472f328ec4a972cd43cc186d6dff64a1a84a"
+    },
+    {
+      "path": "idea-cards.md",
+      "sha256": "437bab7a95782baa3a2a62162eb2cd4ec6393c6d0b0536288688aee6f1313f51"
+    },
+    {
+      "path": "prior-art-opportunity-map.md",
+      "sha256": "aba61cba56a6490158d4b6041844f21d5f4a7fe9a20711188f46f7cdb55d91d2"
+    },
+    {
+      "path": "idea-red-team-review.md",
+      "sha256": "a5692ce7232650960f7969a906c7d407ea018f0caa513411b88bf9238d23d77d"
+    },
+    {
+      "path": "claim-evidence-matrix.md",
+      "sha256": "f557a8e5b503b14eaed9343e585d0f1afa2fbe8ab43b4580bc2e84d4e77fdb1d"
+    },
+    {
+      "path": "strong-result-feasibility-contract.md",
+      "sha256": "2c9d9b9c92c0e0aea1180ec77d36e1080fe17f13164530bf9604a4350b46e4df"
+    },
+    {
+      "path": "startup-decision.md",
+      "sha256": "e4b378af2ae778120f96a32ef69ac154aa2543f630a3274f3d4efa7f07678bf5"
+    }
+  ]
+}

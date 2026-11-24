@@ -1,0 +1,31 @@
+% GENERATED from results/s1_probe.json
+\begin{table}[t]
+\centering
+\small
+\caption{Mechanism separation. Top: the $2\times2$ probe, averaged over the three
+fitted graphs and seven seeds (five permutation seeds per cell). Middle: the faithful
+three-layer replication of the ICML'25 inter-layer shuffle. Bottom: the four-way
+neuron/bias control at $T{=}4$.}
+\label{tab:s1}
+\begin{tabular}{lrrr}
+\toprule
+Condition & $T{=}2$ & $T{=}4$ & $T{=}8$ \\
+\midrule
+Neither & 66.67 & 75.37 & 75.58 \\
+Inter-layer only & 66.67 & 75.37 & 75.58 \\
+Intra-aggregation only & 44.36 & 63.54 & 74.08 \\
+Both & 51.98 & 68.40 & 73.41 \\
+\midrule
+\multicolumn{4}{l}{\emph{Three-layer inter-layer replay (Cora, 3 seeds)}} \\
+Baseline ($T{\in}\{2,4,8\}$) & \multicolumn{3}{r}{52.62} \\
+Spike train permuted & \multicolumn{3}{r}{53.16} \\
+$\Delta$ (pp) & \multicolumn{3}{r}{+0.54} \\
+\midrule
+\multicolumn{4}{l}{\emph{Four-way control at $T{=}4$ (mean over fitted graphs)}} \\
+IF, no bias & \multicolumn{3}{r}{58.34} \\
+IF + $\beta^\star$ (ours) & \multicolumn{3}{r}{75.37} \\
+TPP, no bias & \multicolumn{3}{r}{71.13} \\
+TPP + $\beta^\star$ & \multicolumn{3}{r}{71.13} \\
+\bottomrule
+\end{tabular}
+\end{table}

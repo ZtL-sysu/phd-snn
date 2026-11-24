@@ -1,0 +1,82 @@
+{
+  "schema_version": 3,
+  "run_root": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\selected\\CERT-C11\\f-research-v1-run-20261118-091610-cert-layerwise-interval-v5",
+  "local_python": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe",
+  "hardware": "RTX 3060 12GB",
+  "inputs": [
+    {
+      "path": "inputs/ccfa-pre-experiment-integrity-v2.md",
+      "sha256": "734e242fe530f9f9fe6b07bef23edf7ae9816d397eded957b9d6fd75b003644e",
+      "bytes": 7034
+    },
+    {
+      "path": "inputs/ccfa-pre-experiment-integrity-v3.md",
+      "sha256": "0bf269d2e127a1c59858dabb9e68354e01eeec0f2a94ff8d2d6f7db37d416d64",
+      "bytes": 5893
+    },
+    {
+      "path": "inputs/ccfa-pre-experiment-integrity-v4.md",
+      "sha256": "ce4ad7fb3505ffdf0066dacef77c966310c455e0e868c809d08b7a6d131dc18a",
+      "bytes": 4721
+    },
+    {
+      "path": "inputs/ccfa-pre-experiment-review-v2.md",
+      "sha256": "b316b0e3ab9d2d7746249fcfbaa8d5d16b9ed13f7ba12abe5a9caa73082c8f6a",
+      "bytes": 7259
+    },
+    {
+      "path": "inputs/ccfa-pre-experiment-review-v3.md",
+      "sha256": "0377599453ee3d534d718468361008762b578218ec25e57d05b175905c98a852",
+      "bytes": 7990
+    },
+    {
+      "path": "inputs/ccfa-pre-experiment-review-v4.md",
+      "sha256": "06d6324feab42c33ed9dcb6d2df8d98b66ab02a6e4e948311a7db82ee4cec2e9",
+      "bytes": 5712
+    },
+    {
+      "path": "inputs/guidance-v5.md",
+      "sha256": "6521c599c73dbc8a9618e81fe99c28b44e2820ede691c4d238e31c7d5393a35a",
+      "bytes": 9866
+    },
+    {
+      "path": "inputs/prior-cert-v1-baseline.json",
+      "sha256": "2d131174db7763d2ee62b5f208a31531fec5be31bf1161976e0bdb70bddd8c87",
+      "bytes": 1661
+    },
+    {
+      "path": "inputs/prior-cert-v1-candidate.md",
+      "sha256": "55d1b32d7225deabf5513242cbb18cba2cf8ac06f9d216481c196c6df876caa6",
+      "bytes": 710
+    },
+    {
+      "path": "inputs/prior-cert-v1-methods.json",
+      "sha256": "077e19dc1a7d4e5d0814bbc12ab63c7c17601f77939f7029faedd15d54f935f4",
+      "bytes": 1662
+    },
+    {
+      "path": "inputs/prior-experiment-traceability.md",
+      "sha256": "9d97356f4a70214967e363d8c21b3296d2a9e8e5a8a9be695a76b70c029ce384",
+      "bytes": 2344
+    },
+    {
+      "path": "inputs/prior-strong-result-lock.md",
+      "sha256": "5bddf17ab8661863fbff30fe2a207c8c1693fdf939ebbadc44d8cfa4b7584e84",
+      "bytes": 2034
+    }
+  ],
+  "external_sources": [
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\f-research-v1-run-20261117-220203-ten-idea-full\\research\\campaign.py",
+      "sha256": "0072eee193c6b56fbdbb7e64a2ce5ebdfc0ac47fc28fc87281dfbbbd340fcf40",
+      "bytes": 18451,
+      "role": "read-only loader source"
+    },
+    {
+      "path": "C:\\code\\phd-snn\\auto-paper\\20261117-210314\\full-experiments\\f-research-v1-run-20261117-220203-ten-idea-full\\research\\common.py",
+      "sha256": "08c2d516349950468b2c14c0e8143371994337a746f55ac8c13e50ac787d0c2f",
+      "bytes": 12029,
+      "role": "read-only loader source"
+    }
+  ]
+}

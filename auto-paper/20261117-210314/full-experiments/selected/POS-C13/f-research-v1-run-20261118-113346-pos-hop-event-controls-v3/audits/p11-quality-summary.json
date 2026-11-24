@@ -1,0 +1,55 @@
+{
+  "review_execution": "independent-agent",
+  "verdict": "proceed",
+  "score": 9.1,
+  "confidence": "high",
+  "checks": [
+    {
+      "id": 1,
+      "name": "six_sections",
+      "status": "pass",
+      "evidence": "Exactly six numbered sections; Abstract and References unnumbered."
+    },
+    {
+      "id": 2,
+      "name": "claim_evidence_alignment",
+      "status": "pass",
+      "evidence": "All headline claims map to raw representation/task/summary rows."
+    },
+    {
+      "id": 3,
+      "name": "numeric_consistency",
+      "status": "pass",
+      "evidence": "Bit ledger, storage, paired dispersion and summary statistics recompute exactly."
+    },
+    {
+      "id": 4,
+      "name": "citations",
+      "status": "pass",
+      "evidence": "32 cited keys resolve to 43 BibTeX entries; missing keys: 0."
+    },
+    {
+      "id": 5,
+      "name": "figures_tables",
+      "status": "pass",
+      "evidence": "Figures 1-3 assets/source data exist; Table 1/2 and insertion audit are traceable."
+    },
+    {
+      "id": 6,
+      "name": "scope_wording",
+      "status": "pass",
+      "evidence": "Source-side event definition and non-causal fixed-probe wording are explicit; broad SNN claims excluded."
+    },
+    {
+      "id": 7,
+      "name": "reproducibility_readability",
+      "status": "pass",
+      "evidence": "Task provenance, train-only fitting, fixed-probe separation, and readable scoped narrative are present."
+    }
+  ],
+  "blocking_actions": [],
+  "nonblocking_actions": [
+    "Optionally prune or document 11 uncited BibTeX entries.",
+    "Preserve task provenance, raw rows, dispersion, figure source data and leaky-run negative evidence in the final package."
+  ]
+}

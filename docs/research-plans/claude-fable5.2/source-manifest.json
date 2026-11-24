@@ -1,0 +1,33 @@
+{
+  "artifact_type": "research_plan",
+  "research_plan_label": "claude-fable5.2",
+  "imported_at": "2026-11-18",
+  "project_adoption_status": "not_adopted",
+  "sources": [
+    {
+      "type": "github_repository",
+      "url": "https://github.com/Casey-sketch-cyber/gnn2gsnn.git",
+      "local_path": "github-gnn2gsnn",
+      "revision": "14f616f6b5d589af4c3a983fde0c61d729344133",
+      "clone_mode": "depth_1",
+      "tracked_files": 21,
+      "working_tree_clean": true
+    },
+    {
+      "type": "notion_page_tree",
+      "url": "https://app.notion.com/p/41b0e3342e6f818f86b9d9a6cbc71968?source=copy_link",
+      "local_path": "notion-export",
+      "root_page_id": "41b0e334-2e6f-818f-86b9-d9a6cbc71968",
+      "markdown_pages": 13,
+      "child_pages": 12,
+      "collection_rows": 115,
+      "raw_json_files": 19,
+      "assets": 9,
+      "missing_blocks": 0,
+      "asset_errors": 0
+    }
+  ],
+  "verification_scope": "source_import_only",
+  "scientific_claims_verified": false,
+  "experiments_run": false
+}

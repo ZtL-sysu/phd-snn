@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-guidance-builder-v1",
+  "contract_version": "v1",
+  "delivery_mode": "preparation",
+  "readiness": [
+    {
+      "path": "delivery-readiness.json",
+      "sha256": "49f87b293665fa7b5983bc7e55f094a3937f8abd6ff12f8f15f6f761063d5c08"
+    }
+  ],
+  "contract": [
+    {
+      "path": "execution-contract-v1.md",
+      "sha256": "08eb04aea01babbf1346918e32b7bc2de012ff335d6a6a12e1f40d2523e825ba"
+    },
+    {
+      "path": "guidance.md",
+      "sha256": "1dd8bba90ab8688d9dc8344f888cb50455978c5035e9753b4a933a9a15d45dff"
+    }
+  ],
+  "history": [
+    {
+      "action": "pass",
+      "stage": "CCFA-startup"
+    },
+    {
+      "action": "pass",
+      "stage": "G0"
+    },
+    {
+      "action": "pass",
+      "stage": "G1"
+    },
+    {
+      "action": "pass",
+      "stage": "G2"
+    },
+    {
+      "action": "pass",
+      "stage": "G3"
+    },
+    {
+      "action": "pass",
+      "stage": "G4"
+    },
+    {
+      "action": "pass",
+      "stage": "G5"
+    },
+    {
+      "action": "pass",
+      "stage": "G6"
+    },
+    {
+      "action": "pass",
+      "stage": "G7"
+    },
+    {
+      "action": "pass",
+      "stage": "G8"
+    },
+    {
+      "action": "pass",
+      "stage": "validation"
+    },
+    {
+      "action": "pass",
+      "stage": "handoff"
+    }
+  ],
+  "stages": [
+    {
+      "id": "CCFA-startup",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/startup-decision.md",
+          "sha256": "13e20f1e5f65a93de943ad5fcbe0247c0500b6bc88604a6315dcd5743b8883b9"
+        },
+        {
+          "path": "ccfa-startup-packet/idea-red-team-review-rev3.md",
+          "sha256": "3b636950a3363815b2c975927684b9eeb41cfc75a6a07d10ccdad78206605835"
+        },
+        {
+          "path": "ccfa-startup-conflict-resolution.md",
+          "sha256": "6ec00198d5085a5e668cfb9e4a147f5444b0d48efceb291103f7d4c9f5cc3bce"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "ccfa-startup-packet/startup-decision.md",
+          "sha256": "13e20f1e5f65a93de943ad5fcbe0247c0500b6bc88604a6315dcd5743b8883b9"
+        },
+        {
+          "path": "ccfa-startup-packet/idea-red-team-review-rev3.md",
+          "sha256": "3b636950a3363815b2c975927684b9eeb41cfc75a6a07d10ccdad78206605835"
+        },
+        {
+          "path": "ccfa-startup-conflict-resolution.md",
+          "sha256": "6ec00198d5085a5e668cfb9e4a147f5444b0d48efceb291103f7d4c9f5cc3bce"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "literature-baseline-matrix.md",
+          "sha256": "99e04358530a1c2f56f55c04236cc20dca4ec155eec2bd714263fd8cc6a490f9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "literature-baseline-matrix.md",
+          "sha256": "99e04358530a1c2f56f55c04236cc20dca4ec155eec2bd714263fd8cc6a490f9"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "dataset-access-log.md",
+          "sha256": "b6dae51b9402d51682626b0d6b31caf71722705b46f2735fab805d4fe9a89e07"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "dataset-access-log.md",
+          "sha256": "b6dae51b9402d51682626b0d6b31caf71722705b46f2735fab805d4fe9a89e07"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "matched-protocol.md",
+          "sha256": "c76d5072e5abdf5714e5ffad6a52dd12425707a8253c2b34bd71460421da12cc"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "matched-protocol.md",
+          "sha256": "c76d5072e5abdf5714e5ffad6a52dd12425707a8253c2b34bd71460421da12cc"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G3",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "theoretical-feasibility-audit.md",
+          "sha256": "13d064367e27d37a39f19c13e59079af080bbe4850f6bd962cec7b8e5a935437"
+        },
+        {
+          "path": "evidence-snapshots/m0-results.json",
+          "sha256": "ea4c05a67300766ed9141bb0f1e99b2407760321f32ab95dcdb6c25e5ec7575f"
+        },
+        {
+          "path": "evidence-snapshots/m0-theory-check.md",
+          "sha256": "cbaf02200a3e1d9b53344896ad3fa89dce4624d650868b48162d3959ab0476b6"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "theoretical-feasibility-audit.md",
+          "sha256": "13d064367e27d37a39f19c13e59079af080bbe4850f6bd962cec7b8e5a935437"
+        },
+        {
+          "path": "evidence-snapshots/m0-results.json",
+          "sha256": "ea4c05a67300766ed9141bb0f1e99b2407760321f32ab95dcdb6c25e5ec7575f"
+        },
+        {
+          "path": "evidence-snapshots/m0-theory-check.md",
+          "sha256": "cbaf02200a3e1d9b53344896ad3fa89dce4624d650868b48162d3959ab0476b6"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G4",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "novelty-feasibility-report.md",
+          "sha256": "d17b92131785fac2b1de37fe82e0acea2c0d4173b331cfb92b207a2770fa2b1d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "novelty-feasibility-report.md",
+          "sha256": "d17b92131785fac2b1de37fe82e0acea2c0d4173b331cfb92b207a2770fa2b1d"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G5",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "hardware-profile.md",
+          "sha256": "eb04c17048bd025c44b28d32e41042ad6898685cffb4c4f935312ff1db5ecd28"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "hardware-profile.md",
+          "sha256": "eb04c17048bd025c44b28d32e41042ad6898685cffb4c4f935312ff1db5ecd28"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G6",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "matched-protocol.md",
+          "sha256": "c76d5072e5abdf5714e5ffad6a52dd12425707a8253c2b34bd71460421da12cc"
+        },
+        {
+          "path": "literature-baseline-matrix.md",
+          "sha256": "99e04358530a1c2f56f55c04236cc20dca4ec155eec2bd714263fd8cc6a490f9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "matched-protocol.md",
+          "sha256": "c76d5072e5abdf5714e5ffad6a52dd12425707a8253c2b34bd71460421da12cc"
+        },
+        {
+          "path": "literature-baseline-matrix.md",
+          "sha256": "99e04358530a1c2f56f55c04236cc20dca4ec155eec2bd714263fd8cc6a490f9"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G7",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "ccfa-startup-packet/strong-result-feasibility-contract.md",
+          "sha256": "80a043c4743336e95e1eeac33b53a49a7821686c39ab4bb0ab746b7257b5b32e"
+        },
+        {
+          "path": "ccfa-startup-packet/claim-evidence-matrix.md",
+          "sha256": "c8133143bbaf25598c0f7c8e130abcc76762d5dd5ba81f7aa654f125e34c11e0"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "ccfa-startup-packet/strong-result-feasibility-contract.md",
+          "sha256": "80a043c4743336e95e1eeac33b53a49a7821686c39ab4bb0ab746b7257b5b32e"
+        },
+        {
+          "path": "ccfa-startup-packet/claim-evidence-matrix.md",
+          "sha256": "c8133143bbaf25598c0f7c8e130abcc76762d5dd5ba81f7aa654f125e34c11e0"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "G8",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "story-strength-audit.md",
+          "sha256": "e6e368277e17f1a1ca80ac7055c51e317028cfff7a54805d9bf996d86eab864a"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "story-strength-audit.md",
+          "sha256": "e6e368277e17f1a1ca80ac7055c51e317028cfff7a54805d9bf996d86eab864a"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "validation",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "guidance.md",
+          "sha256": "1dd8bba90ab8688d9dc8344f888cb50455978c5035e9753b4a933a9a15d45dff"
+        },
+        {
+          "path": "ccfa-startup-packet/feasibility-contract.json",
+          "sha256": "92ba286eb2b75d3a7a19d8186f93d3468c001a068dca342e423f6c694d682b60"
+        },
+        {
+          "path": "guidance-pipeline-state.md",
+          "sha256": "de6e6956041c9cfd1ecf47f0fa5058d87e3f611037a8bff114e5bf1d55c82f0f"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "guidance.md",
+          "sha256": "1dd8bba90ab8688d9dc8344f888cb50455978c5035e9753b4a933a9a15d45dff"
+        },
+        {
+          "path": "ccfa-startup-packet/feasibility-contract.json",
+          "sha256": "92ba286eb2b75d3a7a19d8186f93d3468c001a068dca342e423f6c694d682b60"
+        },
+        {
+          "path": "guidance-pipeline-state.md",
+          "sha256": "de6e6956041c9cfd1ecf47f0fa5058d87e3f611037a8bff114e5bf1d55c82f0f"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "handoff",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "delivery-readiness.json",
+          "sha256": "49f87b293665fa7b5983bc7e55f094a3937f8abd6ff12f8f15f6f761063d5c08"
+        },
+        {
+          "path": "delivery-readiness.md",
+          "sha256": "a304209c5e6109632596e54c4b24fadf99083348741c0d4b5d4661c9758880f6"
+        },
+        {
+          "path": "scenario-decision-log.md",
+          "sha256": "da6ad339722c09abce5653b89580b0d6b375e27c6811118f4166970021ba7b4a"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "delivery-readiness.json",
+          "sha256": "49f87b293665fa7b5983bc7e55f094a3937f8abd6ff12f8f15f6f761063d5c08"
+        },
+        {
+          "path": "delivery-readiness.md",
+          "sha256": "a304209c5e6109632596e54c4b24fadf99083348741c0d4b5d4661c9758880f6"
+        },
+        {
+          "path": "scenario-decision-log.md",
+          "sha256": "da6ad339722c09abce5653b89580b0d6b375e27c6811118f4166970021ba7b4a"
+        }
+      ],
+      "gate_verdict": "pass"
+    }
+  ]
+}

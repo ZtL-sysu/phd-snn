@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "files": [
+    {"path": "inputs/guidance.md", "sha256": "3622B809AEDFF07FC612C4432D11A87FA8A44483EEB9ED8D1CEB8F23FC876876"},
+    {"path": "inputs/idea-portfolio.md", "sha256": "CF7D990A5BBC85BE46A0A7A93FA5E32CA8D969386FF8C348EB70781B776D6430"},
+    {"path": "inputs/literature-baseline-matrix.md", "sha256": "A6882F48667278ED502FCE06735A512C0A573CF86C82C9AAE1B167BA8C34A512"},
+    {"path": "inputs/strong-result-feasibility-contract.md", "sha256": "CB114E61619112B2584107F7C0A17C0F4CB97DC5461F4811B6AE179E5A1831C0"}
+  ]
+}

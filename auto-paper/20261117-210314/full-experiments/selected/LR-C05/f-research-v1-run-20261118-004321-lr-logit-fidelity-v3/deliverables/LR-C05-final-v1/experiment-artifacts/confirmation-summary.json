@@ -1,0 +1,20 @@
+{
+  "split": "official_test",
+  "rank": 128,
+  "budget": 0.02,
+  "datasets": {
+    "cora": {"logit_mse_reduction": 0.2623240871, "worst_task_loss_pp": 0.4666666667, "best_control": "top_abs"},
+    "chameleon": {"logit_mse_reduction": 0.3398668714, "worst_task_loss_pp": 1.1695906433, "best_control": "top_abs"},
+    "squirrel": {"logit_mse_reduction": 0.2582841138, "worst_task_loss_pp": 1.8571886007, "best_control": "top_abs"}
+  },
+  "strong_gates": {
+    "LR_A": true,
+    "LR_B": true,
+    "LR_C": true,
+    "LR_D": true,
+    "LR_E": true
+  },
+  "task_loss": {"max_three_seed_mean_pp": 1.8571886007, "max_seed_level_pp": 2.85},
+  "timing": {"paired_p95_ratio_min": 1.020, "paired_p95_ratio_max": 1.124, "peak_memory_mb_max": 218.23},
+  "disclosure": "The focal setting and logit-fidelity reframing were fixed after validation exposure and before the test run. The subsequent test run is held-out confirmation, not a preregistered or independent replication."
+}

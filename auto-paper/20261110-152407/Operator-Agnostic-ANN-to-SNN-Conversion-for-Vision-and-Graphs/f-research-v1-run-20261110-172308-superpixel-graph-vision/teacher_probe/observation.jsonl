@@ -1,0 +1,7 @@
+{"ts": "2026-11-11T17:20:59.181112", "probe": 1, "minutes": 0, "status": null, "steps": null, "ls_rc": 0, "ls_timeouts": 0, "csvs": [], "project_result_json": false}
+{"ts": "2026-11-11T17:27:46.021606", "probe": 2, "minutes": 5, "status": "processing", "steps": 2873, "ls_rc": 124, "ls_timeouts": 1, "csvs": [], "project_result_json": false}
+{"ts": "2026-11-11T17:36:07.622631", "probe": 3, "minutes": 10, "status": "processing", "steps": 3357, "ls_rc": 0, "ls_timeouts": 0, "csvs": [], "project_result_json": false}
+{"ts": "2026-11-11T17:41:56.501657", "probe": 4, "minutes": 15, "status": null, "steps": null, "ls_rc": 0, "ls_timeouts": 0, "csvs": [], "project_result_json": false}
+{"ts": "2026-11-11T17:48:30.648800", "probe": 5, "minutes": 20, "status": "processing", "steps": 4461, "ls_rc": 0, "ls_timeouts": 0, "csvs": [], "project_result_json": false}
+{"ts": "2026-11-11T17:56:18.672092", "probe": 6, "minutes": 25, "status": null, "steps": null, "ls_rc": 0, "ls_timeouts": 0, "csvs": [], "project_result_json": false}
+{"ts": "2026-11-11T18:04:53.762145", "probe": 7, "minutes": 30, "status": "processing", "steps": 4922, "ls_rc": 0, "ls_timeouts": 0, "csvs": [], "project_result_json": false}

@@ -1,0 +1,125 @@
+{
+  "datasets": {
+    "cora": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "rank": 128,
+      "residual_fraction": 0.01,
+      "T2": {
+        "proposed_teacher_agreement": 0.8626666666666667,
+        "strongest_control": "random_residual",
+        "strongest_control_teacher_agreement": 0.8493333333333334,
+        "gain": {
+          "mean": 1.3333333333333346,
+          "lower_95": 0.8000000000000007,
+          "upper_95": 2.0000000000000018
+        }
+      },
+      "T4": {
+        "proposed_teacher_agreement": 0.9153333333333333,
+        "strongest_control": "random_residual",
+        "strongest_control_teacher_agreement": 0.908,
+        "gain": {
+          "mean": 0.733333333333334,
+          "lower_95": 0.40000000000000036,
+          "upper_95": 1.4000000000000012
+        }
+      },
+      "message_error": {
+        "proposed": 0.4340073504638975,
+        "strongest_control": "uniform_residual",
+        "strongest_control_error": 0.5377454687694524,
+        "relative_reduction": 0.192913049630978,
+        "dimension_compression": 7.3211558198502775
+      }
+    },
+    "chameleon": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "rank": 128,
+      "residual_fraction": 0.01,
+      "T2": {
+        "proposed_teacher_agreement": 0.67946959304984,
+        "strongest_control": "uniform_residual",
+        "strongest_control_teacher_agreement": 0.6424325560128029,
+        "gain": {
+          "mean": 3.703703703703701,
+          "lower_95": 1.9204389574759897,
+          "upper_95": 5.76131687242799
+        }
+      },
+      "T4": {
+        "proposed_teacher_agreement": 0.8239597622313672,
+        "strongest_control": "uniform_residual",
+        "strongest_control_teacher_agreement": 0.7485139460448104,
+        "gain": {
+          "mean": 7.544581618655692,
+          "lower_95": 5.349794238683127,
+          "upper_95": 9.190672153635116
+        }
+      },
+      "message_error": {
+        "proposed": 0.30910754095577836,
+        "strongest_control": "uniform_residual",
+        "strongest_control_error": 0.44538183879307286,
+        "relative_reduction": 0.3059718335318301,
+        "dimension_compression": 8.987303414276402
+      }
+    },
+    "squirrel": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "rank": 128,
+      "residual_fraction": 0.01,
+      "T2": {
+        "proposed_teacher_agreement": 0.5452724358974359,
+        "strongest_control": "uniform_residual",
+        "strongest_control_teacher_agreement": 0.5116185897435898,
+        "gain": {
+          "mean": 3.3653846153846168,
+          "lower_95": -1.9831730769230838,
+          "upper_95": 6.971153846153849
+        }
+      },
+      "T4": {
+        "proposed_teacher_agreement": 0.8088942307692308,
+        "strongest_control": "uniform_residual",
+        "strongest_control_teacher_agreement": 0.7393830128205128,
+        "gain": {
+          "mean": 6.951121794871799,
+          "lower_95": 5.889423076923084,
+          "upper_95": 7.692307692307698
+        }
+      },
+      "message_error": {
+        "proposed": 0.42084229262905937,
+        "strongest_control": "uniform_residual",
+        "strongest_control_error": 0.5680073977370607,
+        "relative_reduction": 0.25909012047080116,
+        "dimension_compression": 11.643613897462277
+      }
+    }
+  },
+  "runtime": {
+    "mean_ratio": 1.2499007715793955,
+    "median_ratio": 1.0157791603407382,
+    "p95_ratio": 1.1134200578131048,
+    "max_ratio": 26.553658625734897,
+    "fraction_over_1_2": 0.018518518518518517
+  },
+  "strong_gates": {
+    "LR_A": true,
+    "LR_B": true,
+    "LR_C": true,
+    "LR_D": true
+  }
+}

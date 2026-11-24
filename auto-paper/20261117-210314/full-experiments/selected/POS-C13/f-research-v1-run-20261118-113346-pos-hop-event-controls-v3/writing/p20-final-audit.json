@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "stage": "P20/final-template-conversion-and-metadata",
+  "status": "passed",
+  "source": {
+    "path": "writing/p19-final-manuscript.md",
+    "sha256": "c49f3af5b55e73b8278a677b562b3dba8c6a6e0a47b70231343e1bdcfe9eb688"
+  },
+  "export": {
+    "template": "generic",
+    "tex": "writing/p19-tex-v1/paper.tex",
+    "pdf": "writing/p19-tex-v1/paper.pdf",
+    "bib": "writing/p19-tex-v1/references.bib"
+  },
+  "validation": {
+    "latex_returncode": 0,
+    "pages": 8,
+    "tex_sha256": "48b2be0bbcb774e4418d1a5d273d6423f97628a20dacfbdeb8e7b713ddc7c37a",
+    "pdf_sha256": "bc59185a9ebc4ceef6b76aeee5b53f48fc49f44cb8e01cc6fea73197ff50ecdf",
+    "bib_sha256": "979ef01646224805f1248d6da03be0d96c5ccf86c32efee135f0a7f5c7a56aa5",
+    "cited_keys": 32,
+    "bib_entries": 32,
+    "missing_keys": [],
+    "pdf_question_placeholders": false,
+    "manual_caption_paragraphs": 0
+  },
+  "unresolved_metadata": [
+    "exact target journal",
+    "authors and affiliations",
+    "abstract/keyword/highlight limits",
+    "funding, data/code, declarations and portal fields"
+  ]
+}

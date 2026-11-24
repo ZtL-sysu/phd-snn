@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "min_unique": 36,
+  "as_of": "2026-11-05",
+  "recent_window_years": 4,
+  "require_recent_majority": true,
+  "window_rationale": "Spiking-GNN and low-latency ANN-SNN conversion literature becomes substantive from 2023; a four-year inclusive window (2023-2026) is frozen before final counting, per f-research-v1 citation-requirements.md."
+}
